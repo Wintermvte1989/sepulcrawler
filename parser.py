@@ -15,7 +15,12 @@ from pydantic import BaseModel, Field
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 TARGET_URLS = [
-    # Berlin: Friedhöfe & Verbände
+    # Aktionstage & Gedenktage
+    "https://www.tag-des-offenen-denkmals.de/",
+    "https://denkmaltag.berlin.de/",
+    "https://www.tag-des-friedhofs.de/",
+
+    # Berlin: Friedhöfe, Verbände & Grüfte
     "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "https://www.kkbs.de/veranstaltungen/veranstaltungen-auf-friedhofen",
     "https://berlin.volksbund.de/aktuell/termine",
@@ -27,13 +32,18 @@ TARGET_URLS = [
     "https://www.evfbs.de/",
     "https://forum1848.de/veranstaltungen/",
     "https://www.garnisonfriedhof-berlin.de/",
+    "https://marienkirche-berlin.de/",
+    "https://www.parochialkirche.de/",
+    "https://www.hedwigs-kathedrale.de/",
+    "https://www.berlinerdom.de/",
 
-    # Brandenburg: Friedhöfe & Gedenkstätten
+    # Brandenburg: Friedhöfe, Klöster & Gedenkstätten
     "https://www.suedwestkirchhof.de/veranstaltungen.html",
     "https://www.bornstedter-friedhof.de/",
     "https://www.potsdam.de/de/friedhoefe-potsdam",
     "https://www.denkmal-halbe.de/",
     "https://www.goerlitz.de/",
+    "https://www.stift-neuzelle.de/",
 
     # Berlin & Brandenburg: Bestattungskultur, Hospize & Private
     "https://www.ahorn-gruppe.de/",
@@ -68,12 +78,14 @@ TARGET_URLS = [
     "https://www.stadt-oppenheim.de/",
     "https://www.muenster-doberan.de/",
     "https://www.cham.de/",
-    "https://www.berlinerdom.de/",
     "https://www.frauenkirche-dresden.de/",
     "https://www.koelner-dom.de/",
     "https://www.st-michaelis.de/",
     "https://www.kapuzinergruft.com/",
     "https://www.hallstatt.net/",
+    "https://www.magdeburgerdom.de/",
+    "https://www.naumburger-dom.de/",
+    "https://www.michaelerkirche.at/",
 
     # Überregional Deutschland: Archäologische Landesmuseen & Fachmuseen
     "https://www.landesmuseum-vorgeschichte.de/",
@@ -100,7 +112,7 @@ TARGET_URLS = [
     "https://www.friedhofsverwalter.de/",
     "https://aufdasleben.de/event/",
 
-    # Schweiz & Österreich: Sepulkralkultur & Bestattung
+    # Schweiz & Österreich
     "https://www.stadt-zuerich.ch/friedhofforum/de/veranstaltungen.html",
     "https://www.bestattungsmuseum.at/",
     "https://www.friedhoefewien.at/veranstaltungen"
@@ -108,7 +120,7 @@ TARGET_URLS = [
 
 DB_FILE = "events_db.json"
 HTML_OUTPUT_FILE = "index.html"
-BATCH_SIZE = 5
+BATCH_SIZE = 8
 
 client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
 
