@@ -11,24 +11,40 @@ from pydantic import BaseModel, Field
 
 # --- Erweiterte Ziel-URLs (Fokus Berlin, Friedhofskultur & Geschichte) ---
 TARGET_URLS = [
-    # Friedhöfe & Verbände Berlin
+    # --- Berlin: Friedhöfe, Stiftungen & Vereine ---
     "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "https://www.kkbs.de/veranstaltungen/veranstaltungen-auf-friedhofen",
     "https://www.suedwestkirchhof.de/veranstaltungen.html",
     "https://berlin.volksbund.de/aktuell/termine",
-    "https://www.evfbs.de/index.php?id=380",  # Ev. Friedhofsverband Berlin Stadtmitte
-    "https://www.juedischer-friedhof-weissensee.de/",  # Jüdischer Friedhof Weißensee
+    "https://www.stiftung-historische-friedhoefe.de/veranstaltungen/",
+    "https://www.efeu-ev.de/termine.html",
+    "https://www.zwoelf-apostel-berlin.de/friedhoefe/veranstaltungen/",
+    "https://www.invalidenfriedhof-berlin.de/",
+    "https://www.evfbs.de/veranstaltungen",
+    "https://www.friedhof-der-maerzgefallenen.de/veranstaltungen/",
+    "https://www.garnisonfriedhof-berlin.de/",
 
-    # Berliner Museen & Kulturinstitutionen
-    "https://www.smb.museum/veranstaltungen/",  # Ägyptisches Museum / Totenkult u.a.
-    "https://www.berlin.museum/programm",  # Stadtmuseum Berlin (Nikolaikirche etc.)
-    "https://www.dhm.de/programm/veranstaltungskalender/",  # Deutsches Historisches Museum
-    "https://www.zlb.de/veranstaltungen.html",  # Zentral- und Landesbibliothek Berlin
+    # --- Berlin: Bestattungshäuser & Private Kulturträger ---
+    "https://www.ahorn-gruppe.de/veranstaltungen",
+    "https://www.sarggeschichten.de/",
 
-    # Überregional / DACH
-    "https://www.sepulkralmuseum.de/veranstaltungen/",  # Museum für Sepulkralkultur Kassel
-    "https://www.friedhof-hamburg.de/besucher/veranstaltungen/",  # Parkfriedhof Ohlsdorf
-    "https://www.ohlsdorf-derpark.de/termine-ohlsdorf/"
+    # --- Berlin: Museen, Gedenkstätten & Archäologie ---
+    "https://www.smb.museum/veranstaltungen/",
+    "https://www.smb.museum/museen-einrichtungen/aegyptisches-museum-und-papyrussammlung/veranstaltungen/",
+    "https://www.smb.museum/museen-einrichtungen/museum-fuer-vor-und-fruehgeschichte/veranstaltungen/",
+    "https://www.stadtmuseum.de/veranstaltungen",
+    "https://www.dhm.de/programm/veranstaltungskalender/",
+    "https://www.humboldtforum.org/de/programm/",
+    "https://www.jmberlin.de/veranstaltungskalender",
+
+    # --- Überregional / DACH ---
+    "https://www.sepulkralmuseum.de/veranstaltungen/",
+    "https://www.friedhof-hamburg.de/besucher/veranstaltungen/",
+    "https://www.ohlsdorf-derpark.de/termine-ohlsdorf/",
+    "https://www.fof-ohlsdorf.de/termine",
+    "https://www.bestattungsmuseum.at/",
+    "https://www.friedhoefewien.at/veranstaltungen",
+    "https://www.paul-benndorf-gesellschaft.de/termine"
 ]
 
 DB_FILE = "seen_events.json"
