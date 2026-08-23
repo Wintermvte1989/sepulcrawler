@@ -15,7 +15,7 @@ from pydantic import BaseModel, Field
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 TARGET_URLS = [
-  # Berlin: Friedhöfe & Verbände
+# Berlin: Friedhöfe & Verbände
     "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "https://www.kkbs.de/veranstaltungen/veranstaltungen-auf-friedhofen",
     "https://www.suedwestkirchhof.de/veranstaltungen.html",
@@ -58,7 +58,19 @@ TARGET_URLS = [
     "https://www.museum-eberswalde.de/angebote/kalender",
     "https://www.brandenburg-preussen-museum.de/besuch-planen/veranstaltungen.html",
 
-    # Überregional (Deutschland)
+    # Überregional Deutschland: Archäologische Landesmuseen & Fachmuseen
+    "https://www.landesmuseum-vorgeschichte.de/ausstellungen/sonderausstellungen.html",
+    "https://www.leiza.de/veranstaltungen/",
+    "https://www.lwl-landesmuseum-herne.de/de/veranstaltungen/",
+    "https://landesmuseum-bonn.lvr.de/de/ausstellungen/ausstellungen_1.html",
+    "https://www.archaeologisches-museum-frankfurt.de/de/ausstellungen/sonderausstellungen",
+    "https://www.landesmuseum-trier.de/",
+    "https://www.alm-bw.de/",
+    "https://schloss-gottorf.de/de/ausstellungen",
+    "https://roemisch-germanisches-museum.de/",
+    "https://www.antike-am-koenigsplatz.mweb5.de/",
+
+    # Überregional Deutschland: Friedhofskultur & Vereine
     "https://www.sepulkralmuseum.de/veranstaltungen/",
     "https://paul-benndorf-gesellschaft.de/fuehrungen.html",
     "https://eliasfriedhof.de/category/veranstaltungen/",
