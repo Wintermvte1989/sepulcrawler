@@ -1,6 +1,7 @@
 import hashlib
 import json
 import os
+import re
 import httpx
 from datetime import datetime
 from bs4 import BeautifulSoup
@@ -8,27 +9,33 @@ from google import genai
 from google.genai import types
 from pydantic import BaseModel, Field
 
-# Liste der zu überwachenden Webseiten
+# --- Erweiterte Ziel-URLs (Fokus Berlin, Friedhofskultur & Geschichte) ---
 TARGET_URLS = [
-    # --- Berlin: Friedhöfe & Friedhofsverbände ---
+    # Friedhöfe & Verbände Berlin
     "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "https://www.kkbs.de/veranstaltungen/veranstaltungen-auf-friedhofen",
     "https://www.suedwestkirchhof.de/veranstaltungen.html",
     "https://berlin.volksbund.de/aktuell/termine",
+    "https://www.evfbs.de/index.php?id=380",  # Ev. Friedhofsverband Berlin Stadtmitte
+    "https://www.juedischer-friedhof-weissensee.de/",  # Jüdischer Friedhof Weißensee
 
-    # --- Berlin: Museen (Geschichte, Archäologie, Kultur) ---
-    "https://www.smb.museum/veranstaltungen/",
-    "https://www.berlin.museum/programm",
-    "https://www.dhm.de/programm/veranstaltungskalender/",
+    # Berliner Museen & Kulturinstitutionen
+    "https://www.smb.museum/veranstaltungen/",  # Ägyptisches Museum / Totenkult u.a.
+    "https://www.berlin.museum/programm",  # Stadtmuseum Berlin (Nikolaikirche etc.)
+    "https://www.dhm.de/programm/veranstaltungskalender/",  # Deutsches Historisches Museum
+    "https://www.zlb.de/veranstaltungen.html",  # Zentral- und Landesbibliothek Berlin
 
-    # --- Überregional / DACH ---
-    "https://www.sepulkralmuseum.de/veranstaltungen/",
-    "https://www.friedhof-hamburg.de/besucher/veranstaltungen/",
+    # Überregional / DACH
+    "https://www.sepulkralmuseum.de/veranstaltungen/",  # Museum für Sepulkralkultur Kassel
+    "https://www.friedhof-hamburg.de/besucher/veranstaltungen/",  # Parkfriedhof Ohlsdorf
     "https://www.ohlsdorf-derpark.de/termine-ohlsdorf/"
 ]
 
 DB_FILE = "seen_events.json"
 HTML_OUTPUT_FILE = "neue_events.html"
+
+# Globaler Gemini-Client
+client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
 
 class Event(BaseModel):
     title: str = Field(description="Titel der Veranstaltung")
@@ -39,6 +46,22 @@ class Event(BaseModel):
 
 class EventList(BaseModel):
     events: list[Event]
+
+def normalize_date(date_str: str) -> str:
+    """Konvertiert verschiedene Datumsformate verlässlich nach YYYY-MM-DD."""
+    date_str = date_str.strip()
+    
+    # Bereits im ISO-Format YYYY-MM-DD
+    if re.match(r"^\d{4}-\d{2}-\d{2}$", date_str):
+        return date_str
+        
+    # Deutsches Format DD.MM.YYYY
+    match = re.match(r"^(\d{1,2})\.(\d{1,2})\.(\d{4})$", date_str)
+    if match:
+        day, month, year = match.groups()
+        return f"{year}-{int(month):02d}-{int(day):02d}"
+        
+    return date_str
 
 def load_seen_events() -> set:
     if os.path.exists(DB_FILE):
@@ -115,14 +138,13 @@ def fetch_page_text(url: str) -> str:
     return soup.get_text(separator=" ", strip=True)
 
 def extract_events_with_gemini(raw_text: str, source_url: str, today_str: str) -> list[dict]:
-    client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
-    
     prompt = f"""
     Das heutige Datum ist {today_str}.
     Analysiere folgenden Text einer Webseite auf Veranstaltungen im Bereich Sepulkralkultur, 
     Friedhofsführungen, Bestattungswesen, Totenkult, Gedenkkultur, Grabkunst oder historische Ausstellungen zum Thema Tod/Sterben. 
     
     WICHTIG: Extrahiere AUSSCHLIESSLICH Veranstaltungen, deren Datum (date_start) am oder nach dem heutigen Datum ({today_str}) liegt. 
+    Formatierung für date_start MUSS strikt YYYY-MM-DD sein.
     Ignoriere alle vergangenen Veranstaltungen strikt. Quell-URL: {source_url}
     
     Webseiten-Text:
@@ -130,7 +152,7 @@ def extract_events_with_gemini(raw_text: str, source_url: str, today_str: str) -
     """
 
     response = client.models.generate_content(
-        model='gemini-3.6-flash',
+        model='gemini-2.5-flash',
         contents=prompt,
         config=types.GenerateContentConfig(
             response_mime_type="application/json",
@@ -156,8 +178,11 @@ if __name__ == "__main__":
             
             site_new_events = 0
             for event in events:
-                # Nachgelagerter Filter im Python-Code gegen veraltete Termine
-                if event.get("date_start", "") < today_str:
+                # Datum normalisieren
+                event["date_start"] = normalize_date(event.get("date_start", ""))
+                
+                # Filter gegen vergangene Events
+                if event["date_start"] < today_str:
                     continue
                     
                 event_id = generate_event_id(event)
