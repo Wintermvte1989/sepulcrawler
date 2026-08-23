@@ -33,14 +33,17 @@ TARGET_URLS = [
     "https://www.evfbs.de/",
     "https://forum1848.de/veranstaltungen/",
     "https://www.garnisonfriedhof-berlin.de/",
+    "https://www.domfriedhof-berlin.de/",
+    "https://www.evangelischer-friedhofsverband-neukoelln.de/",
     "https://marienkirche-berlin.de/",
     "https://www.parochialkirche.de/",
     "https://www.hedwigs-kathedrale.de/",
     "https://www.berlinerdom.de/termine/",
 
-    # Brandenburg: Friedhöfe, Klöster & Gedenkstätten
+    # Brandenburg & Preußische Schlösser/Krypten
     "https://www.suedwestkirchhof.de/veranstaltungen.html",
     "https://www.bornstedter-friedhof.de/bornstedter-friedhof/historische-graeber/fuehrungen/termine-fuer-fuehrungen/",
+    "https://www.spsg.de/veranstaltungen-kalender/",
     "https://www.potsdam.de/de/friedhoefe-potsdam",
     "https://www.denkmal-halbe.de/termine/",
     "https://www.goerlitz.de/",
@@ -52,7 +55,7 @@ TARGET_URLS = [
     "https://www.ricam-hospiz.de/events/",
     "https://bjoern-schulz-stiftung.de/akademie/",
 
-    # Berlin: Staatliche & Bezirksmuseen
+    # Berlin & Sachsen: Staatliche & Bezirksmuseen
     "https://www.smb.museum/veranstaltungen/",
     "https://www.smb.museum/museen-einrichtungen/aegyptisches-museum-und-papyrussammlung/veranstaltungen/",
     "https://www.smb.museum/museen-einrichtungen/museum-fuer-vor-und-fruehgeschichte/veranstaltungen/",
@@ -64,6 +67,7 @@ TARGET_URLS = [
     "https://www.berlin.de/museum-pankow/aktuelles/veranstaltungen/",
     "https://www.villa-oppenheim-berlin.de/",
     "https://www.zitadelle-berlin.de/en/education/events/",
+    "https://www.dhmd.de/ausstellungen/",
 
     # Brandenburg: Stadtmuseen & Regionalgeschichte
     "https://www.potsdam-museum.de/de/veranstaltungen",
@@ -78,7 +82,8 @@ TARGET_URLS = [
     "https://www.praha-vysehrad.cz/en/culture-events/",
     "https://www.nm.cz/en/visit-us/events",
 
-    # Beinhäuser, Grüfte & Sakralbauten (Deutschland & Österreich)
+    # Beinhäuser, Mumien, Grüfte & Sakralbauten (Deutschland & Österreich)
+    "https://stpetridom.de/der-dom/besucher-info/bleikeller/",
     "https://www.stadt-oppenheim.de/",
     "https://www.muenster-doberan.de/",
     "https://www.cham.de/",
