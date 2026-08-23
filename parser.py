@@ -23,20 +23,23 @@ TARGET_URLS = [
     "https://stiftung-historische-friedhoefe.de/fuehrungen_und_veranstaltungen/",
     "https://stiftung-historische-friedhoefe.de/stiftung/veranstaltungen/",
     "http://www.efeu-ev.de/",
+    "https://jewish-cemetery-weissensee.org/entdecken/fuehrungen/",
     "https://www.zwoelf-apostel-berlin.de/alle-termine-der-zwolf-apostel-kirchengemeinde-und-der-kirchhofe",
     "https://www.invalidenfriedhof-berlin.de/",
     "https://www.evfbs.de/",
     "https://forum1848.de/veranstaltungen/",
     "https://www.garnisonfriedhof-berlin.de/",
 
-    # Brandenburg
+    # Brandenburg: Friedhöfe
     "https://www.bornstedter-friedhof.de/bornstedter-friedhof/historische-graeber/fuehrungen/termine-fuer-fuehrungen/",
 
-    # Berlin: Bestattungskultur & Private
+    # Berlin: Bestattungskultur, Hospize & Private
     "https://www.ahorn-gruppe.de/",
     "https://www.sarggeschichten.de/",
+    "https://www.ricam-hospiz.de/events/",
+    "https://www.bjoern-schulz-stiftung.de/akademie/fortbildungen-und-veranstaltungen/",
 
-    # Berlin: Museen & Archäologie
+    # Berlin: Staatliche & Bezirksmuseen
     "https://www.smb.museum/veranstaltungen/",
     "https://www.smb.museum/museen-einrichtungen/aegyptisches-museum-und-papyrussammlung/veranstaltungen/",
     "https://www.smb.museum/museen-einrichtungen/museum-fuer-vor-und-fruehgeschichte/veranstaltungen/",
@@ -45,6 +48,15 @@ TARGET_URLS = [
     "https://www.humboldtforum.org/de/programm/",
     "https://www.jmberlin.de/",
     "https://tickets.jmberlin.de/events/",
+    "https://www.berlin.de/museum-pankow/aktuelles/veranstaltungen/",
+    "https://www.villa-oppenheim-berlin.de/",
+    "https://www.zitadelle-berlin.de/en/education/events/",
+
+    # Brandenburg: Stadtmuseen & Regionalgeschichte
+    "https://www.potsdam-museum.de/de/veranstaltungen",
+    "https://stadtmuseum.stadt-brandenburg.de/stadtmuseum/termine",
+    "https://www.museum-eberswalde.de/angebote/kalender",
+    "https://www.brandenburg-preussen-museum.de/besuch-planen/veranstaltungen.html",
 
     # Überregional (Deutschland)
     "https://www.sepulkralmuseum.de/veranstaltungen/",
