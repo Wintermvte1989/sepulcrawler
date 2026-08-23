@@ -15,7 +15,7 @@ from pydantic import BaseModel, Field
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 TARGET_URLS = [
-# Berlin: Friedhöfe & Verbände
+    # Berlin: Friedhöfe & Verbände
     "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "https://www.kkbs.de/veranstaltungen/veranstaltungen-auf-friedhofen",
     "https://berlin.volksbund.de/aktuell/termine",
@@ -33,6 +33,7 @@ TARGET_URLS = [
     "https://www.bornstedter-friedhof.de/",
     "https://www.potsdam.de/de/friedhoefe-potsdam",
     "https://www.denkmal-halbe.de/",
+    "https://www.goerlitz.de/",
 
     # Berlin & Brandenburg: Bestattungskultur, Hospize & Private
     "https://www.ahorn-gruppe.de/",
@@ -55,6 +56,24 @@ TARGET_URLS = [
     "https://stadtmuseum.stadt-brandenburg.de/",
     "https://www.museum-eberswalde.de/",
     "https://www.brandenburg-preussen-museum.de/",
+
+    # Prag & Tschechien: Beinhäuser, Jüdischer Friedhof & Museen
+    "https://www.sedlec.info/",
+    "https://www.brnenske-podzemi.cz/",
+    "https://www.jewishmuseum.cz/",
+    "https://www.praha-vysehrad.cz/",
+    "https://www.nm.cz/",
+
+    # Beinhäuser, Grüfte & Sakralbauten (Deutschland & Österreich)
+    "https://www.stadt-oppenheim.de/",
+    "https://www.muenster-doberan.de/",
+    "https://www.cham.de/",
+    "https://www.berlinerdom.de/",
+    "https://www.frauenkirche-dresden.de/",
+    "https://www.koelner-dom.de/",
+    "https://www.st-michaelis.de/",
+    "https://www.kapuzinergruft.com/",
+    "https://www.hallstatt.net/",
 
     # Überregional Deutschland: Archäologische Landesmuseen & Fachmuseen
     "https://www.landesmuseum-vorgeschichte.de/",
@@ -81,7 +100,7 @@ TARGET_URLS = [
     "https://www.friedhofsverwalter.de/",
     "https://aufdasleben.de/event/",
 
-    # Schweiz & Österreich
+    # Schweiz & Österreich: Sepulkralkultur & Bestattung
     "https://www.stadt-zuerich.ch/friedhofforum/de/veranstaltungen.html",
     "https://www.bestattungsmuseum.at/",
     "https://www.friedhoefewien.at/veranstaltungen"
