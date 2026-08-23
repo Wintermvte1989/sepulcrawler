@@ -3,52 +3,54 @@ import json
 import os
 import re
 import httpx
+import urllib3
 from datetime import datetime
 from bs4 import BeautifulSoup
 from google import genai
 from google.genai import types
 from pydantic import BaseModel, Field
 
-# --- Erweiterte Ziel-URLs (Fokus Berlin, Friedhofskultur & Geschichte) ---
+# Deaktiviert SSL-Warnungen im Terminal für alte Vereins-Webseiten
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
+# --- Bereinigte & verifizierte Ziel-URLs ---
 TARGET_URLS = [
-    # --- Berlin: Friedhöfe, Stiftungen & Vereine ---
+    # Berlin: Friedhöfe & Verbände
     "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "https://www.kkbs.de/veranstaltungen/veranstaltungen-auf-friedhofen",
     "https://www.suedwestkirchhof.de/veranstaltungen.html",
     "https://berlin.volksbund.de/aktuell/termine",
-    "https://www.stiftung-historische-friedhoefe.de/veranstaltungen/",
-    "https://www.efeu-ev.de/termine.html",
-    "https://www.zwoelf-apostel-berlin.de/friedhoefe/veranstaltungen/",
+    "https://www.stiftung-historische-friedhoefe.de/",
+    "https://www.efeuev.de/",
+    "https://www.zwoelf-apostel-berlin.de/friedhoefe",
     "https://www.invalidenfriedhof-berlin.de/",
-    "https://www.evfbs.de/veranstaltungen",
-    "https://www.friedhof-der-maerzgefallenen.de/veranstaltungen/",
+    "https://www.evfbs.de/",
+    "https://www.friedhof-der-maerzgefallenen.de/",
     "https://www.garnisonfriedhof-berlin.de/",
 
-    # --- Berlin: Bestattungshäuser & Private Kulturträger ---
-    "https://www.ahorn-gruppe.de/veranstaltungen",
+    # Berlin: Bestattungskultur & Private
+    "https://www.ahorn-gruppe.de/",
     "https://www.sarggeschichten.de/",
 
-    # --- Berlin: Museen, Gedenkstätten & Archäologie ---
+    # Berlin: Museen & Archäologie
     "https://www.smb.museum/veranstaltungen/",
     "https://www.smb.museum/museen-einrichtungen/aegyptisches-museum-und-papyrussammlung/veranstaltungen/",
     "https://www.smb.museum/museen-einrichtungen/museum-fuer-vor-und-fruehgeschichte/veranstaltungen/",
-    "https://www.stadtmuseum.de/veranstaltungen",
+    "https://www.stadtmuseum.de/programm",
     "https://www.dhm.de/programm/veranstaltungskalender/",
     "https://www.humboldtforum.org/de/programm/",
-    "https://www.jmberlin.de/veranstaltungskalender",
+    "https://www.jmberlin.de/programm",
 
-    # --- Überregional / DACH ---
+    # Überregional / DACH
     "https://www.sepulkralmuseum.de/veranstaltungen/",
     "https://www.friedhof-hamburg.de/besucher/veranstaltungen/",
     "https://www.ohlsdorf-derpark.de/termine-ohlsdorf/",
-    "https://www.fof-ohlsdorf.de/termine",
     "https://www.bestattungsmuseum.at/",
-    "https://www.friedhoefewien.at/veranstaltungen",
-    "https://www.paul-benndorf-gesellschaft.de/termine"
+    "https://www.friedhoefewien.at/veranstaltungen"
 ]
 
 DB_FILE = "seen_events.json"
-HTML_OUTPUT_FILE = "neue_events.html"
+HTML_OUTPUT_FILE = "index.html"
 
 # Globaler Gemini-Client
 client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
@@ -67,11 +69,9 @@ def normalize_date(date_str: str) -> str:
     """Konvertiert verschiedene Datumsformate verlässlich nach YYYY-MM-DD."""
     date_str = date_str.strip()
     
-    # Bereits im ISO-Format YYYY-MM-DD
     if re.match(r"^\d{4}-\d{2}-\d{2}$", date_str):
         return date_str
         
-    # Deutsches Format DD.MM.YYYY
     match = re.match(r"^(\d{1,2})\.(\d{1,2})\.(\d{4})$", date_str)
     if match:
         day, month, year = match.groups()
@@ -125,26 +125,32 @@ def save_events_to_html(new_events: list[dict]):
 
         f.write(f'<div class="run-block">\n')
         f.write(f'  <div class="timestamp">Suchlauf vom {timestamp} ({len(new_events)} neue Funde)</div>\n')
-        f.write('  <table>\n')
-        f.write('    <thead><tr><th>Datum</th><th>Titel</th><th>Ort</th><th>Beschreibung</th><th>Aktion</th></tr></thead>\n')
-        f.write('    <tbody>\n')
         
-        for event in new_events:
-            f.write('      <tr>\n')
-            f.write(f'        <td><span class="date-badge">{event["date_start"]}</span></td>\n')
-            f.write(f'        <td><strong>{event["title"]}</strong></td>\n')
-            f.write(f'        <td class="location">{event["location"]}</td>\n')
-            f.write(f'        <td>{event["description"]}</td>\n')
-            f.write(f'        <td><a href="{event["url"]}" target="_blank" class="btn">Link öffnen</a></td>\n')
-            f.write('      </tr>\n')
+        if new_events:
+            f.write('  <table>\n')
+            f.write('    <thead><tr><th>Datum</th><th>Titel</th><th>Ort</th><th>Beschreibung</th><th>Aktion</th></tr></thead>\n')
+            f.write('    <tbody>\n')
             
-        f.write('    </tbody>\n')
-        f.write('  </table>\n')
+            for event in new_events:
+                f.write('      <tr>\n')
+                f.write(f'        <td><span class="date-badge">{event["date_start"]}</span></td>\n')
+                f.write(f'        <td><strong>{event["title"]}</strong></td>\n')
+                f.write(f'        <td class="location">{event["location"]}</td>\n')
+                f.write(f'        <td>{event["description"]}</td>\n')
+                f.write(f'        <td><a href="{event["url"]}" target="_blank" class="btn">Link öffnen</a></td>\n')
+                f.write('      </tr>\n')
+                
+            f.write('    </tbody>\n')
+            f.write('  </table>\n')
+        else:
+            f.write('  <p>Keine neuen Termine bei diesem Durchlauf gefunden.</p>\n')
+            
         f.write('</div>\n')
 
 def fetch_page_text(url: str) -> str:
     headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
-    response = httpx.get(url, headers=headers, follow_redirects=True, timeout=15.0)
+    # verify=False verhindert Abstürze bei fehlerhaften SSL-Zertifikaten kleinerer Vereine
+    response = httpx.get(url, headers=headers, follow_redirects=True, timeout=15.0, verify=False)
     response.raise_for_status()
     
     soup = BeautifulSoup(response.text, "html.parser")
@@ -168,7 +174,7 @@ def extract_events_with_gemini(raw_text: str, source_url: str, today_str: str) -
     """
 
     response = client.models.generate_content(
-        model='gemini-2.5-flash',
+        model='gemini-3.6-flash',
         contents=prompt,
         config=types.GenerateContentConfig(
             response_mime_type="application/json",
@@ -194,10 +200,8 @@ if __name__ == "__main__":
             
             site_new_events = 0
             for event in events:
-                # Datum normalisieren
                 event["date_start"] = normalize_date(event.get("date_start", ""))
                 
-                # Filter gegen vergangene Events
                 if event["date_start"] < today_str:
                     continue
                     
@@ -211,9 +215,6 @@ if __name__ == "__main__":
         except Exception as e:
             print(f"Fehler beim Verarbeiten von {url}: {e}")
 
-    if all_new_events:
-        save_seen_events(seen_ids)
-        save_events_to_html(all_new_events)
-        print(f"\nInsgesamt {len(all_new_events)} neue Events in '{HTML_OUTPUT_FILE}' gespeichert.")
-    else:
-        print("\nKeine neuen Events auf den überwachten Seiten gefunden.")
+    save_seen_events(seen_ids)
+    save_events_to_html(all_new_events)
+    print(f"\nEs wurden {len(all_new_events)} neue Events in '{HTML_OUTPUT_FILE}' geschrieben.")
