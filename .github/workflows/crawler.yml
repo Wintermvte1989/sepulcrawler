@@ -2,9 +2,9 @@ name: Sepulkral Event Crawler
 
 on:
   schedule:
-    # Läuft täglich um 04:00 Uhr UTC (06:00 Uhr deutscher Sommerzeit)
-    - cron: '0 4 * * *'
-  workflow_dispatch: # Erlaubt manuelles Ausführen über die GitHub-Oberfläche
+    # Läuft täglich um 08:00 Uhr UTC (10:00 Uhr deutscher Sommerzeit)
+    - cron: '0 8 * * *'
+  workflow_dispatch:
 
 permissions:
   contents: write # Erlaubt das Zurückschreiben von aktualisierten JSON-/HTML-Dateien
