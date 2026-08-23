@@ -2,6 +2,7 @@ import hashlib
 import json
 import os
 import re
+import time
 import httpx
 import urllib3
 from datetime import datetime
@@ -10,10 +11,9 @@ from google import genai
 from google.genai import types
 from pydantic import BaseModel, Field
 
-# Deaktiviert SSL-Warnungen im Terminal für alte Vereins-Webseiten
+# Deaktiviert SSL-Warnungen für ältere Vereins-Webseiten
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-# --- Bereinigte & verifizierte Ziel-URLs ---
 TARGET_URLS = [
     # Berlin: Friedhöfe & Verbände
     "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
@@ -51,8 +51,8 @@ TARGET_URLS = [
 
 DB_FILE = "seen_events.json"
 HTML_OUTPUT_FILE = "index.html"
+BATCH_SIZE = 5  # Bündelt 5 Webseiten pro Gemini-API-Anfrage
 
-# Globaler Gemini-Client
 client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
 
 class Event(BaseModel):
@@ -66,17 +66,13 @@ class EventList(BaseModel):
     events: list[Event]
 
 def normalize_date(date_str: str) -> str:
-    """Konvertiert verschiedene Datumsformate verlässlich nach YYYY-MM-DD."""
     date_str = date_str.strip()
-    
     if re.match(r"^\d{4}-\d{2}-\d{2}$", date_str):
         return date_str
-        
     match = re.match(r"^(\d{1,2})\.(\d{1,2})\.(\d{4})$", date_str)
     if match:
         day, month, year = match.groups()
         return f"{year}-{int(month):02d}-{int(day):02d}"
-        
     return date_str
 
 def load_seen_events() -> set:
@@ -149,7 +145,6 @@ def save_events_to_html(new_events: list[dict]):
 
 def fetch_page_text(url: str) -> str:
     headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
-    # verify=False verhindert Abstürze bei fehlerhaften SSL-Zertifikaten kleinerer Vereine
     response = httpx.get(url, headers=headers, follow_redirects=True, timeout=15.0, verify=False)
     response.raise_for_status()
     
@@ -159,18 +154,24 @@ def fetch_page_text(url: str) -> str:
         
     return soup.get_text(separator=" ", strip=True)
 
-def extract_events_with_gemini(raw_text: str, source_url: str, today_str: str) -> list[dict]:
+def extract_events_batch(batch_sources: list[tuple[str, str]], today_str: str) -> list[dict]:
+    combined_text = ""
+    for url, text in batch_sources:
+        combined_text += f"\n--- QUELL-URL: {url} ---\n{text[:6000]}\n"
+
     prompt = f"""
     Das heutige Datum ist {today_str}.
-    Analysiere folgenden Text einer Webseite auf Veranstaltungen im Bereich Sepulkralkultur, 
+    Analysiere die folgenden Webseiten-Texte auf Veranstaltungen im Bereich Sepulkralkultur, 
     Friedhofsführungen, Bestattungswesen, Totenkult, Gedenkkultur, Grabkunst oder historische Ausstellungen zum Thema Tod/Sterben. 
     
-    WICHTIG: Extrahiere AUSSCHLIESSLICH Veranstaltungen, deren Datum (date_start) am oder nach dem heutigen Datum ({today_str}) liegt. 
-    Formatierung für date_start MUSS strikt YYYY-MM-DD sein.
-    Ignoriere alle vergangenen Veranstaltungen strikt. Quell-URL: {source_url}
+    WICHTIG:
+    - Extrahiere AUSSCHLIESSLICH Veranstaltungen, deren Datum (date_start) am oder nach dem heutigen Datum ({today_str}) liegt.
+    - Formatierung für date_start MUSS strikt YYYY-MM-DD sein.
+    - Ignoriere alle vergangenen Veranstaltungen strikt.
+    - Trage in das Feld 'url' jeweils die zugehörige QUELL-URL ein.
     
-    Webseiten-Text:
-    {raw_text[:15000]}
+    Webseiten-Daten:
+    {combined_text}
     """
 
     response = client.models.generate_content(
@@ -191,30 +192,43 @@ if __name__ == "__main__":
     seen_ids = load_seen_events()
     all_new_events = []
     
+    # 1. Alle Webseiten lokal abrufen
+    fetched_pages = []
+    print("--- Phase 1: Webseiten laden ---")
     for url in TARGET_URLS:
-        print(f"\nLade Webseite: {url}...")
         try:
             page_text = fetch_page_text(url)
-            print("Analysiere Daten mit Gemini API...")
-            events = extract_events_with_gemini(page_text, url, today_str)
-            
-            site_new_events = 0
+            if page_text:
+                fetched_pages.append((url, page_text))
+                print(f"Erfolgreich geladen: {url}")
+        except Exception as e:
+            print(f"Fehler beim Laden von {url}: {e}")
+
+    # 2. In 5er-Paketen an Gemini senden
+    print(f"\n--- Phase 2: KI-Analyse in {BATCH_SIZE}er-Paketen ---")
+    for i in range(0, len(fetched_pages), BATCH_SIZE):
+        batch = fetched_pages[i:i + BATCH_SIZE]
+        print(f"\nSende Paket {i//BATCH_SIZE + 1} ({len(batch)} Seiten) an Gemini API...")
+        
+        try:
+            events = extract_events_batch(batch, today_str)
+            batch_new = 0
             for event in events:
                 event["date_start"] = normalize_date(event.get("date_start", ""))
-                
                 if event["date_start"] < today_str:
                     continue
-                    
+                
                 event_id = generate_event_id(event)
                 if event_id not in seen_ids:
                     all_new_events.append(event)
                     seen_ids.add(event_id)
-                    site_new_events += 1
-            print(f"-> {site_new_events} neue(s) Event(s) auf dieser Seite gefunden.")
-            
+                    batch_new += 1
+            print(f"-> {batch_new} neue(s) Event(s) in diesem Paket gefunden.")
         except Exception as e:
-            print(f"Fehler beim Verarbeiten von {url}: {e}")
+            print(f"Fehler bei API-Anfrage für Paket {i//BATCH_SIZE + 1}: {e}")
+        
+        time.sleep(4)
 
     save_seen_events(seen_ids)
     save_events_to_html(all_new_events)
-    print(f"\nEs wurden {len(all_new_events)} neue Events in '{HTML_OUTPUT_FILE}' geschrieben.")
+    print(f"\nInsgesamt {len(all_new_events)} neue Events in '{HTML_OUTPUT_FILE}' geschrieben.")
