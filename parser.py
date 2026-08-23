@@ -242,7 +242,7 @@ def extract_events_batch(batch_sources: list[tuple[str, str]], today_str: str) -
     for url, text in batch_sources:
         combined_text += f"\n--- QUELL-URL: {url} ---\n{text[:6000]}\n"
 
-    prompt = f"""
+prompt = f"""
     Das heutige Datum ist {today_str}.
     Analysiere die folgenden Webseiten-Texte auf Veranstaltungen im Bereich Sepulkralkultur, 
     Friedhofsführungen, Bestattungswesen, Totenkult, Gedenkkultur, Grabkunst oder historische Ausstellungen zum Thema Tod/Sterben. 
@@ -252,6 +252,7 @@ def extract_events_batch(batch_sources: list[tuple[str, str]], today_str: str) -
     - Formatierung für date_start MUSS strikt YYYY-MM-DD sein.
     - Ignoriere alle vergangenen Veranstaltungen strikt.
     - Trage in das Feld 'url' jeweils die zugehörige QUELL-URL ein.
+    - WICHTIG FÜR MEHRSPRACHIGE TEXTE: Falls der Quelltext auf Englisch, Tschechisch oder einer anderen Sprache verfasst ist, übersetze Titel (title), Ort (location) und Beschreibung (description) präzise ins Deutsche.
     
     Webseiten-Daten:
     {combined_text}
