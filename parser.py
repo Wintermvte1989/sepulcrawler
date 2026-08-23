@@ -125,6 +125,12 @@ TARGET_URLS = [
     "https://www.stadt-zuerich.ch/friedhofforum/de/veranstaltungen.html",
     "https://www.bestattungsmuseum.at/besucherinfo/auf-einen-blick",
     "https://www.friedhoefewien.at/veranstaltungen"
+
+    # Weitere geprüfte Nischen- & Führungsquellen
+    "https://www.totentanz-online.de/veranstaltungen.php",
+    "https://www.hannover.de/Kultur-Freizeit/Naherholung/G%C3%A4rten-und-Parks/Friedh%C3%B6fe-in-Hannover/F%C3%BChrungen-%C3%BCber-Hannovers-Friedh%C3%B6fe",
+    "https://www.friedhoefewien.at/friedhofsfuehrungen",
+
 ]
 
 DB_FILE = "events_db.json"
