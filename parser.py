@@ -18,75 +18,72 @@ TARGET_URLS = [
 # Berlin: Friedhöfe & Verbände
     "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "https://www.kkbs.de/veranstaltungen/veranstaltungen-auf-friedhofen",
-    "https://www.suedwestkirchhof.de/veranstaltungen.html",
     "https://berlin.volksbund.de/aktuell/termine",
-    "https://stiftung-historische-friedhoefe.de/fuehrungen_und_veranstaltungen/",
-    "https://stiftung-historische-friedhoefe.de/stiftung/veranstaltungen/",
-    "http://www.efeu-ev.de/",
-    "https://jewish-cemetery-weissensee.org/entdecken/fuehrungen/",
-    "https://www.zwoelf-apostel-berlin.de/alle-termine-der-zwolf-apostel-kirchengemeinde-und-der-kirchhofe",
+    "https://stiftung-historische-friedhoefe.de/",
+    "https://www.efeu-ev.de/",
+    "https://jewish-cemetery-weissensee.org/",
+    "https://www.zwoelf-apostel-berlin.de/",
     "https://www.invalidenfriedhof-berlin.de/",
     "https://www.evfbs.de/",
     "https://forum1848.de/veranstaltungen/",
     "https://www.garnisonfriedhof-berlin.de/",
 
-    # Brandenburg: Friedhöfe
-    "https://www.bornstedter-friedhof.de/bornstedter-friedhof/historische-graeber/fuehrungen/termine-fuer-fuehrungen/",
+    # Brandenburg: Friedhöfe & Gedenkstätten
+    "https://www.suedwestkirchhof.de/veranstaltungen.html",
+    "https://www.bornstedter-friedhof.de/",
+    "https://www.potsdam.de/de/friedhoefe-potsdam",
+    "https://www.denkmal-halbe.de/",
 
-    # Berlin: Bestattungskultur, Hospize & Private
+    # Berlin & Brandenburg: Bestattungskultur, Hospize & Private
     "https://www.ahorn-gruppe.de/",
     "https://www.sarggeschichten.de/",
     "https://www.ricam-hospiz.de/events/",
-    "https://www.bjoern-schulz-stiftung.de/akademie/fortbildungen-und-veranstaltungen/",
+    "https://bjoern-schulz-stiftung.de/akademie/",
 
     # Berlin: Staatliche & Bezirksmuseen
     "https://www.smb.museum/veranstaltungen/",
-    "https://www.smb.museum/museen-einrichtungen/aegyptisches-museum-und-papyrussammlung/veranstaltungen/",
-    "https://www.smb.museum/museen-einrichtungen/museum-fuer-vor-und-fruehgeschichte/veranstaltungen/",
     "https://www.stadtmuseum.de/programm",
     "https://www.dhm.de/programm/veranstaltungskalender/",
     "https://www.humboldtforum.org/de/programm/",
     "https://www.jmberlin.de/",
-    "https://tickets.jmberlin.de/events/",
     "https://www.berlin.de/museum-pankow/aktuelles/veranstaltungen/",
     "https://www.villa-oppenheim-berlin.de/",
-    "https://www.zitadelle-berlin.de/en/education/events/",
+    "https://www.zitadelle-berlin.de/",
 
     # Brandenburg: Stadtmuseen & Regionalgeschichte
     "https://www.potsdam-museum.de/de/veranstaltungen",
-    "https://stadtmuseum.stadt-brandenburg.de/stadtmuseum/termine",
-    "https://www.museum-eberswalde.de/angebote/kalender",
-    "https://www.brandenburg-preussen-museum.de/besuch-planen/veranstaltungen.html",
+    "https://stadtmuseum.stadt-brandenburg.de/",
+    "https://www.museum-eberswalde.de/",
+    "https://www.brandenburg-preussen-museum.de/",
 
     # Überregional Deutschland: Archäologische Landesmuseen & Fachmuseen
-    "https://www.landesmuseum-vorgeschichte.de/ausstellungen/sonderausstellungen.html",
+    "https://www.landesmuseum-vorgeschichte.de/",
     "https://www.leiza.de/veranstaltungen/",
     "https://www.lwl-landesmuseum-herne.de/de/veranstaltungen/",
-    "https://landesmuseum-bonn.lvr.de/de/ausstellungen/ausstellungen_1.html",
-    "https://www.archaeologisches-museum-frankfurt.de/de/ausstellungen/sonderausstellungen",
+    "https://landesmuseum-bonn.lvr.de/",
+    "https://www.archaeologisches-museum-frankfurt.de/",
     "https://www.landesmuseum-trier.de/",
     "https://www.alm-bw.de/",
-    "https://schloss-gottorf.de/de/ausstellungen",
+    "https://schloss-gottorf.de/",
     "https://roemisch-germanisches-museum.de/",
-    "https://www.antike-am-koenigsplatz.mweb5.de/",
+    "https://www.antike-am-koenigsplatz.de/",
 
     # Überregional Deutschland: Friedhofskultur & Vereine
     "https://www.sepulkralmuseum.de/veranstaltungen/",
     "https://paul-benndorf-gesellschaft.de/fuehrungen.html",
-    "https://eliasfriedhof.de/category/veranstaltungen/",
-    "http://www.friedhofskultur-halle.de/terminefuehrungen/",
+    "https://eliasfriedhof.de/",
+    "http://www.friedhofskultur-halle.de/",
     "https://www.friedhof-hamburg.de/besucher/veranstaltungen/",
-    "https://www.ohlsdorf-derpark.de/termine-ohlsdorf/",
-    "https://www.stattreisen-muenchen.de/fuehrungen/der-alte-sudliche-friedhof",
+    "https://www.ohlsdorf-derpark.de/",
+    "https://www.stattreisen-muenchen.de/",
     "https://www.florian-scheungraber.de/termine/",
-    "https://theatergemeinde-koeln.org/Kulturkompass/werk/25725/M04/stadtfuhrungen-koln/fuhrung-uber-melaten",
-    "https://www.friedhofsverwalter.de/fachveranstaltung-der-arbeitsgemeinschaft-friedhof-und-denkmal-e-v/",
+    "https://theatergemeinde-koeln.org/",
+    "https://www.friedhofsverwalter.de/",
     "https://aufdasleben.de/event/",
 
     # Schweiz & Österreich
     "https://www.stadt-zuerich.ch/friedhofforum/de/veranstaltungen.html",
     "https://www.bestattungsmuseum.at/",
-    "https://www.bestattungsmuseum.at/besucherinfo/auf-einen-blick",
     "https://www.friedhoefewien.at/veranstaltungen"
 ]
 
