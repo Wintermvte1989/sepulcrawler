@@ -2,7 +2,7 @@ name: Sepulkral Event Crawler
 
 on:
   schedule:
-    # Läuft jeden Sonntag um 08:00 Uhr UTC (10:00 Uhr deutscher Zeit)
+    # Läuft täglich um 08:00 Uhr UTC (10:00 Uhr deutscher Zeit)
     - cron: '0 8 * * *'
   workflow_dispatch: # Erlaubt manuelles Ausführen über die GitHub-Oberfläche
 
@@ -37,5 +37,5 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add seen_events.json neue_events.html || true
+          git add events_db.json index.html || true
           git diff --quiet && git diff --staged --quiet || (git commit -m "Automatisches Event-Update" && git pull --rebase origin main && git push)
