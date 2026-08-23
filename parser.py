@@ -181,9 +181,17 @@ def render_html(events: list[dict]):
     <title>Sepulkralkultur Event-Feed</title>
     <style>
         body {{ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f6f8; color: #333; margin: 20px; }}
-        h1 {{ color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }}
+        h1 {{ color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; margin-bottom: 10px; }}
         .container {{ background: white; border-radius: 8px; padding: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }}
-        .timestamp {{ font-size: 0.9em; color: #7f8c8d; margin-bottom: 20px; }}
+        .timestamp {{ font-size: 0.85em; color: #7f8c8d; margin-bottom: 20px; }}
+        
+        .filter-container {{ display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; align-items: center; background: #f8f9fa; padding: 15px; border-radius: 6px; border: 1px solid #e9ecef; }}
+        .search-input {{ flex: 1; min-width: 250px; padding: 8px 12px; border: 1px solid #ced4da; border-radius: 4px; font-size: 0.95em; }}
+        .filter-tags {{ display: flex; gap: 5px; flex-wrap: wrap; }}
+        .tag-btn {{ background: #e9ecef; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 0.85em; color: #495057; font-weight: 600; transition: all 0.2s; }}
+        .tag-btn:hover {{ background: #dee2e6; }}
+        .tag-btn.active {{ background: #3498db; color: white; }}
+
         table {{ width: 100%; border-collapse: collapse; margin-top: 10px; }}
         th {{ background-color: #2c3e50; color: white; text-align: left; padding: 10px; font-size: 0.9em; }}
         td {{ padding: 12px 10px; border-bottom: 1px solid #ecf0f1; vertical-align: top; font-size: 0.95em; }}
@@ -192,17 +200,31 @@ def render_html(events: list[dict]):
         .location {{ font-weight: bold; color: #34495e; }}
         a.btn {{ display: inline-block; background-color: #27ae60; color: white; text-decoration: none; padding: 5px 10px; border-radius: 4px; font-size: 0.85em; }}
         a.btn:hover {{ background-color: #219150; }}
+        .no-results {{ display: none; padding: 20px; text-align: center; color: #7f8c8d; font-style: italic; }}
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Sepulkralkultur & Friedhofskultur – Aktuelle Termine</h1>
-        <div class="timestamp">Stand: {timestamp} | Aktive bevorstehende Events: {len(sorted_events)}</div>
+        <h1>Sepulkralkultur & Friedhofskultur – Termine</h1>
+        <div class="timestamp">Stand: {timestamp} | Zeige <span id="visibleCount">{len(sorted_events)}</span> von {len(sorted_events)} Events</div>
+
+        <div class="filter-container">
+            <input type="text" id="searchInput" class="search-input" placeholder="Events durchsuchen (z. B. Führung, Berlin, Beinhaus)..." onkeyup="filterEvents()">
+            <div class="filter-tags">
+                <button class="tag-btn active" data-filter="" onclick="setTagFilter(this)">Alle</button>
+                <button class="tag-btn" data-filter="berlin" onclick="setTagFilter(this)">Berlin</button>
+                <button class="tag-btn" data-filter="brandenburg" onclick="setTagFilter(this)">Brandenburg</button>
+                <button class="tag-btn" data-filter="prag" onclick="setTagFilter(this)">Prag / Tschechien</button>
+                <button class="tag-btn" data-filter="gruft" onclick="setTagFilter(this)">Grüfte / Beinhäuser</button>
+            </div>
+        </div>
+
+        <div id="noResults" class="no-results">Keine passenden Veranstaltungen für die Suchkriterien gefunden.</div>
 """
 
     if sorted_events:
         html_content += """
-        <table>
+        <table id="eventsTable">
             <thead>
                 <tr>
                     <th>Datum</th>
@@ -239,6 +261,39 @@ def render_html(events: list[dict]):
 
     html_content += """
     </div>
+
+    <script>
+        let currentTag = '';
+
+        function setTagFilter(btn) {
+            document.querySelectorAll('.tag-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentTag = btn.getAttribute('data-filter').toLowerCase();
+            filterEvents();
+        }
+
+        function filterEvents() {
+            const searchValue = document.getElementById('searchInput').value.toLowerCase();
+            const rows = document.querySelectorAll('#eventsTable tbody tr');
+            let visibleCount = 0;
+
+            rows.forEach(row => {
+                const text = row.innerText.toLowerCase();
+                const matchesSearch = text.includes(searchValue);
+                const matchesTag = currentTag === '' || text.includes(currentTag);
+
+                if (matchesSearch && matchesTag) {
+                    row.style.display = '';
+                    visibleCount++;
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+
+            document.getElementById('visibleCount').innerText = visibleCount;
+            document.getElementById('noResults').style.display = (visibleCount === 0 && rows.length > 0) ? 'block' : 'none';
+        }
+    </script>
 </body>
 </html>
 """
@@ -279,7 +334,7 @@ def extract_events_batch(batch_sources: list[tuple[str, str]], today_str: str) -
     """
 
     response = client.models.generate_content(
-        model='gemini-3.6-flash',
+        model='gemini-3.7-flash',
         contents=prompt,
         config=types.GenerateContentConfig(
             response_mime_type="application/json",
