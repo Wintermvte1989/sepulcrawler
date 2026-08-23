@@ -20,12 +20,12 @@ TARGET_URLS = [
     "https://www.kkbs.de/veranstaltungen/veranstaltungen-auf-friedhofen",
     "https://www.suedwestkirchhof.de/veranstaltungen.html",
     "https://berlin.volksbund.de/aktuell/termine",
-    "https://www.stiftung-historische-friedhoefe.de/",
-    "https://www.efeuev.de/",
-    "https://www.zwoelf-apostel-berlin.de/friedhoefe",
+    "https://stiftung-historische-friedhoefe.de/fuehrungen_und_veranstaltungen/",
+    "http://www.efeu-ev.de/",
+    "https://www.zwoelf-apostel-berlin.de/alle-termine-der-zwolf-apostel-kirchengemeinde-und-der-kirchhofe",
     "https://www.invalidenfriedhof-berlin.de/",
     "https://www.evfbs.de/",
-    "https://www.friedhof-der-maerzgefallenen.de/",
+    "https://forum1848.de/veranstaltungen/",
     "https://www.garnisonfriedhof-berlin.de/",
 
     # Berlin: Bestattungskultur & Private
@@ -39,7 +39,8 @@ TARGET_URLS = [
     "https://www.stadtmuseum.de/programm",
     "https://www.dhm.de/programm/veranstaltungskalender/",
     "https://www.humboldtforum.org/de/programm/",
-    "https://www.jmberlin.de/programm",
+    "https://www.jmberlin.de/",
+    "https://tickets.jmberlin.de/events/",
 
     # Überregional / DACH
     "https://www.sepulkralmuseum.de/veranstaltungen/",
