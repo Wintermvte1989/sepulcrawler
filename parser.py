@@ -15,18 +15,22 @@ from pydantic import BaseModel, Field
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 TARGET_URLS = [
-    # Berlin: Friedhöfe & Verbände
+  # Berlin: Friedhöfe & Verbände
     "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "https://www.kkbs.de/veranstaltungen/veranstaltungen-auf-friedhofen",
     "https://www.suedwestkirchhof.de/veranstaltungen.html",
     "https://berlin.volksbund.de/aktuell/termine",
     "https://stiftung-historische-friedhoefe.de/fuehrungen_und_veranstaltungen/",
+    "https://stiftung-historische-friedhoefe.de/stiftung/veranstaltungen/",
     "http://www.efeu-ev.de/",
     "https://www.zwoelf-apostel-berlin.de/alle-termine-der-zwolf-apostel-kirchengemeinde-und-der-kirchhofe",
     "https://www.invalidenfriedhof-berlin.de/",
     "https://www.evfbs.de/",
     "https://forum1848.de/veranstaltungen/",
     "https://www.garnisonfriedhof-berlin.de/",
+
+    # Brandenburg
+    "https://www.bornstedter-friedhof.de/bornstedter-friedhof/historische-graeber/fuehrungen/termine-fuer-fuehrungen/",
 
     # Berlin: Bestattungskultur & Private
     "https://www.ahorn-gruppe.de/",
@@ -42,11 +46,23 @@ TARGET_URLS = [
     "https://www.jmberlin.de/",
     "https://tickets.jmberlin.de/events/",
 
-    # Überregional / DACH
+    # Überregional (Deutschland)
     "https://www.sepulkralmuseum.de/veranstaltungen/",
+    "https://paul-benndorf-gesellschaft.de/fuehrungen.html",
+    "https://eliasfriedhof.de/category/veranstaltungen/",
+    "http://www.friedhofskultur-halle.de/terminefuehrungen/",
     "https://www.friedhof-hamburg.de/besucher/veranstaltungen/",
     "https://www.ohlsdorf-derpark.de/termine-ohlsdorf/",
+    "https://www.stattreisen-muenchen.de/fuehrungen/der-alte-sudliche-friedhof",
+    "https://www.florian-scheungraber.de/termine/",
+    "https://theatergemeinde-koeln.org/Kulturkompass/werk/25725/M04/stadtfuhrungen-koln/fuhrung-uber-melaten",
+    "https://www.friedhofsverwalter.de/fachveranstaltung-der-arbeitsgemeinschaft-friedhof-und-denkmal-e-v/",
+    "https://aufdasleben.de/event/",
+
+    # Schweiz & Österreich
+    "https://www.stadt-zuerich.ch/friedhofforum/de/veranstaltungen.html",
     "https://www.bestattungsmuseum.at/",
+    "https://www.bestattungsmuseum.at/besucherinfo/auf-einen-blick",
     "https://www.friedhoefewien.at/veranstaltungen"
 ]
 
