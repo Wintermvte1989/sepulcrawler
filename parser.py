@@ -1,4 +1,5 @@
 import hashlib
+import html
 import json
 import os
 import re
@@ -11,7 +12,6 @@ from google import genai
 from google.genai import types
 from pydantic import BaseModel, Field
 
-# Deaktiviert SSL-Warnungen für ältere Vereins-Webseiten
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 TARGET_URLS = [
@@ -49,9 +49,9 @@ TARGET_URLS = [
     "https://www.friedhoefewien.at/veranstaltungen"
 ]
 
-DB_FILE = "seen_events.json"
+DB_FILE = "events_db.json"
 HTML_OUTPUT_FILE = "index.html"
-BATCH_SIZE = 5  # Bündelt 5 Webseiten pro Gemini-API-Anfrage
+BATCH_SIZE = 5
 
 client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
 
@@ -66,7 +66,7 @@ class EventList(BaseModel):
     events: list[Event]
 
 def normalize_date(date_str: str) -> str:
-    date_str = date_str.strip()
+    date_str = str(date_str or "").strip()
     if re.match(r"^\d{4}-\d{2}-\d{2}$", date_str):
         return date_str
     match = re.match(r"^(\d{1,2})\.(\d{1,2})\.(\d{4})$", date_str)
@@ -75,73 +75,99 @@ def normalize_date(date_str: str) -> str:
         return f"{year}-{int(month):02d}-{int(day):02d}"
     return date_str
 
-def load_seen_events() -> set:
+def load_events_db() -> dict:
     if os.path.exists(DB_FILE):
-        with open(DB_FILE, "r", encoding="utf-8") as f:
-            return set(json.load(f))
-    return set()
+        try:
+            with open(DB_FILE, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception:
+            return {}
+    return {}
 
-def save_seen_events(seen_ids: set):
+def save_events_db(db: dict):
     with open(DB_FILE, "w", encoding="utf-8") as f:
-        json.dump(list(seen_ids), f, ensure_ascii=False, indent=2)
+        json.dump(db, f, ensure_ascii=False, indent=2)
 
 def generate_event_id(event: dict) -> str:
-    raw = f"{event['title']}_{event['date_start']}"
+    raw = f"{event.get('title', '')}_{event.get('date_start', '')}"
     return hashlib.md5(raw.encode("utf-8")).hexdigest()
 
-def save_events_to_html(new_events: list[dict]):
+def render_html(events: list[dict]):
     timestamp = datetime.now().strftime("%d.%m.%Y um %H:%M Uhr")
-    file_exists = os.path.exists(HTML_OUTPUT_FILE)
-    
-    with open(HTML_OUTPUT_FILE, "a", encoding="utf-8") as f:
-        if not file_exists:
-            f.write("""<!DOCTYPE html>
+    sorted_events = sorted(events, key=lambda x: x.get("date_start", ""))
+
+    html_content = f"""<!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sepulkralkultur Event-Feed</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f6f8; color: #333; margin: 20px; }
-        h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
-        .run-block { background: white; border-radius: 8px; padding: 20px; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .timestamp { font-size: 0.9em; color: #7f8c8d; font-weight: bold; margin-bottom: 15px; }
-        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-        th { background-color: #2c3e50; color: white; text-align: left; padding: 10px; font-size: 0.9em; }
-        td { padding: 12px 10px; border-bottom: 1px solid #ecf0f1; vertical-align: top; font-size: 0.95em; }
-        tr:hover { background-color: #f8f9fa; }
-        .date-badge { background-color: #3498db; color: white; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 0.85em; whitespace: nowrap; }
-        .location { font-weight: bold; color: #34495e; }
-        a.btn { display: inline-block; background-color: #27ae60; color: white; text-decoration: none; padding: 5px 10px; border-radius: 4px; font-size: 0.85em; }
-        a.btn:hover { background-color: #219150; }
+        body {{ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f6f8; color: #333; margin: 20px; }}
+        h1 {{ color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }}
+        .container {{ background: white; border-radius: 8px; padding: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }}
+        .timestamp {{ font-size: 0.9em; color: #7f8c8d; margin-bottom: 20px; }}
+        table {{ width: 100%; border-collapse: collapse; margin-top: 10px; }}
+        th {{ background-color: #2c3e50; color: white; text-align: left; padding: 10px; font-size: 0.9em; }}
+        td {{ padding: 12px 10px; border-bottom: 1px solid #ecf0f1; vertical-align: top; font-size: 0.95em; }}
+        tr:hover {{ background-color: #f8f9fa; }}
+        .date-badge {{ background-color: #3498db; color: white; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 0.85em; white-space: nowrap; }}
+        .location {{ font-weight: bold; color: #34495e; }}
+        a.btn {{ display: inline-block; background-color: #27ae60; color: white; text-decoration: none; padding: 5px 10px; border-radius: 4px; font-size: 0.85em; }}
+        a.btn:hover {{ background-color: #219150; }}
     </style>
 </head>
 <body>
-    <h1>Sepulkralkultur & Friedhofskultur - Event-Feed</h1>
-""")
+    <div class="container">
+        <h1>Sepulkralkultur & Friedhofskultur – Aktuelle Termine</h1>
+        <div class="timestamp">Stand: {timestamp} | Aktive bevorstehende Events: {len(sorted_events)}</div>
+"""
 
-        f.write(f'<div class="run-block">\n')
-        f.write(f'  <div class="timestamp">Suchlauf vom {timestamp} ({len(new_events)} neue Funde)</div>\n')
-        
-        if new_events:
-            f.write('  <table>\n')
-            f.write('    <thead><tr><th>Datum</th><th>Titel</th><th>Ort</th><th>Beschreibung</th><th>Aktion</th></tr></thead>\n')
-            f.write('    <tbody>\n')
-            
-            for event in new_events:
-                f.write('      <tr>\n')
-                f.write(f'        <td><span class="date-badge">{event["date_start"]}</span></td>\n')
-                f.write(f'        <td><strong>{event["title"]}</strong></td>\n')
-                f.write(f'        <td class="location">{event["location"]}</td>\n')
-                f.write(f'        <td>{event["description"]}</td>\n')
-                f.write(f'        <td><a href="{event["url"]}" target="_blank" class="btn">Link öffnen</a></td>\n')
-                f.write('      </tr>\n')
-                
-            f.write('    </tbody>\n')
-            f.write('  </table>\n')
-        else:
-            f.write('  <p>Keine neuen Termine bei diesem Durchlauf gefunden.</p>\n')
-            
-        f.write('</div>\n')
+    if sorted_events:
+        html_content += """
+        <table>
+            <thead>
+                <tr>
+                    <th>Datum</th>
+                    <th>Titel</th>
+                    <th>Ort</th>
+                    <th>Beschreibung</th>
+                    <th>Aktion</th>
+                </tr>
+            </thead>
+            <tbody>
+"""
+        for event in sorted_events:
+            date_s = html.escape(event.get('date_start', ''))
+            title_s = html.escape(event.get('title', ''))
+            loc_s = html.escape(event.get('location', ''))
+            desc_s = html.escape(event.get('description', ''))
+            url_s = html.escape(event.get('url', '#'))
+
+            html_content += f"""
+                <tr>
+                    <td><span class="date-badge">{date_s}</span></td>
+                    <td><strong>{title_s}</strong></td>
+                    <td class="location">{loc_s}</td>
+                    <td>{desc_s}</td>
+                    <td><a href="{url_s}" target="_blank" rel="noopener noreferrer" class="btn">Link öffnen</a></td>
+                </tr>
+"""
+        html_content += """
+            </tbody>
+        </table>
+"""
+    else:
+        html_content += "<p>Derzeit keine bevorstehenden Termine in der Datenbank.</p>"
+
+    html_content += """
+    </div>
+</body>
+</html>
+"""
+
+    with open(HTML_OUTPUT_FILE, "w", encoding="utf-8") as f:
+        f.write(html_content)
 
 def fetch_page_text(url: str) -> str:
     headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
@@ -184,15 +210,23 @@ def extract_events_batch(batch_sources: list[tuple[str, str]], today_str: str) -
         ),
     )
     
-    result = json.loads(response.text)
-    return result.get("events", [])
+    raw_text = (response.text or "").strip()
+    if raw_text.startswith("```"):
+        raw_text = re.sub(r"^```[a-z]*\n?", "", raw_text)
+        raw_text = re.sub(r"\n?```$", "", raw_text)
+
+    try:
+        result = json.loads(raw_text)
+        return result.get("events", [])
+    except json.JSONDecodeError as e:
+        print(f"Fehler beim Parsen der API-Antwort: {e}")
+        return []
 
 if __name__ == "__main__":
     today_str = datetime.now().strftime("%Y-%m-%d")
-    seen_ids = load_seen_events()
-    all_new_events = []
+    events_db = load_events_db()
     
-    # 1. Alle Webseiten lokal abrufen
+    # Phase 1: Webseiten laden
     fetched_pages = []
     print("--- Phase 1: Webseiten laden ---")
     for url in TARGET_URLS:
@@ -204,7 +238,7 @@ if __name__ == "__main__":
         except Exception as e:
             print(f"Fehler beim Laden von {url}: {e}")
 
-    # 2. In 5er-Paketen an Gemini senden
+    # Phase 2: KI-Analyse
     print(f"\n--- Phase 2: KI-Analyse in {BATCH_SIZE}er-Paketen ---")
     for i in range(0, len(fetched_pages), BATCH_SIZE):
         batch = fetched_pages[i:i + BATCH_SIZE]
@@ -212,23 +246,24 @@ if __name__ == "__main__":
         
         try:
             events = extract_events_batch(batch, today_str)
-            batch_new = 0
             for event in events:
                 event["date_start"] = normalize_date(event.get("date_start", ""))
-                if event["date_start"] < today_str:
-                    continue
-                
-                event_id = generate_event_id(event)
-                if event_id not in seen_ids:
-                    all_new_events.append(event)
-                    seen_ids.add(event_id)
-                    batch_new += 1
-            print(f"-> {batch_new} neue(s) Event(s) in diesem Paket gefunden.")
+                if event["date_start"] >= today_str:
+                    event_id = generate_event_id(event)
+                    events_db[event_id] = event
         except Exception as e:
             print(f"Fehler bei API-Anfrage für Paket {i//BATCH_SIZE + 1}: {e}")
         
         time.sleep(4)
 
-    save_seen_events(seen_ids)
-    save_events_to_html(all_new_events)
-    print(f"\nInsgesamt {len(all_new_events)} neue Events in '{HTML_OUTPUT_FILE}' geschrieben.")
+    # Phase 3: Bereinigung vergangener Events aus der Datenbank
+    cleaned_db = {}
+    for event_id, event in events_db.items():
+        if event.get("date_start", "") >= today_str:
+            cleaned_db[event_id] = event
+
+    # Speichern & HTML neu bauen
+    save_events_db(cleaned_db)
+    render_html(list(cleaned_db.values()))
+    
+    print(f"\nVerarbeitung abgeschlossen. {len(cleaned_db)} aktive Zukunfts-Events in '{HTML_OUTPUT_FILE}' geschrieben.")
