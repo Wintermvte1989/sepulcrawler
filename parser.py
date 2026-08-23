@@ -18,34 +18,31 @@ TARGET_URLS = [
     # Aktionstage & Gedenktage
     "https://www.tag-des-offenen-denkmals.de/",
     "https://denkmaltag.berlin.de/",
-    "https://www.tag-des-friedhofs.de/",
+    "https://www.meinkiez-meinfriedhof.berlin.de/tag-des-friedhofs",
 
     # Berlin: Friedhöfe, Verbände & Grüfte
     "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "https://www.kkbs.de/veranstaltungen/veranstaltungen-auf-friedhofen",
     "https://berlin.volksbund.de/aktuell/termine",
-    "https://stiftung-historische-friedhoefe.de/fuehrungen_und_veranstaltungen/",
-    "https://stiftung-historische-friedhoefe.de/stiftung/veranstaltungen/",
-    "https://www.efeu-ev.de/",
+    "https://stiftung-historische-friedhoefe.de/",
+    "https://www.efeu-ev.com/",
     "https://jewish-cemetery-weissensee.org/entdecken/fuehrungen/",
     "https://www.zwoelf-apostel-berlin.de/alle-termine-der-zwolf-apostel-kirchengemeinde-und-der-kirchhofe",
     "https://www.invalidenfriedhof-berlin.de/",
     "https://www.evfbs.de/",
     "https://forum1848.de/veranstaltungen/",
     "https://www.garnisonfriedhof-berlin.de/",
-    "https://www.domfriedhof-berlin.de/",
-    "https://www.evangelischer-friedhofsverband-neukoelln.de/",
     "https://marienkirche-berlin.de/",
-    "https://www.parochialkirche.de/",
+    "https://georgen-parochial.de/",
     "https://www.hedwigs-kathedrale.de/",
     "https://www.berlinerdom.de/termine/",
 
     # Brandenburg & Preußische Schlösser/Krypten
     "https://www.suedwestkirchhof.de/veranstaltungen.html",
     "https://www.bornstedter-friedhof.de/bornstedter-friedhof/historische-graeber/fuehrungen/termine-fuer-fuehrungen/",
-    "https://www.spsg.de/veranstaltungen-kalender/",
-    "https://www.potsdam.de/de/friedhoefe-potsdam",
-    "https://www.denkmal-halbe.de/termine/",
+    "https://www.spsg.de/aktuelles/veranstaltungen",
+    "https://www.friedhof-in-potsdam.de/allgemeines/aktuelles",
+    "https://kriegsgraeberstaetten.volksbund.de/friedhof/halbe",
     "https://www.goerlitz.de/",
     "https://www.stift-neuzelle.de/",
 
@@ -77,36 +74,35 @@ TARGET_URLS = [
 
     # Prag & Tschechien: Beinhäuser, Jüdischer Friedhof & Museen
     "https://www.sedlec.info/",
-    "https://www.brnenske-podzemi.cz/",
+    "https://gotobrno.cz/de/platz/kostnice-u-sv-jakuba-beinhaus-st-jakob/",
     "https://www.jewishmuseum.cz/en/info/visit/",
-    "https://www.praha-vysehrad.cz/en/culture-events/",
-    "https://www.nm.cz/en/visit-us/events",
+    "https://praha-vysehrad.cz/en/",
+    "https://www.nm.cz/en/program/events",
 
     # Beinhäuser, Mumien, Grüfte & Sakralbauten (Deutschland & Österreich)
     "https://stpetridom.de/der-dom/besucher-info/bleikeller/",
     "https://www.stadt-oppenheim.de/",
     "https://www.muenster-doberan.de/",
-    "https://www.cham.de/",
+    "https://www.bayerischer-wald.de/attraktion/beinhaus-in-chammuenster-e380fb354c",
     "https://www.frauenkirche-dresden.de/kalender/",
-    "https://www.koelner-dom.de/termine/",
-    "https://www.st-michaelis.de/veranstaltungen/",
-    "https://www.kapuzinergruft.com/",
+    "https://www.koelner-dom.de/aktuelles",
+    "https://www.st-michaelis.de/veranstaltungen-am-michel",
+    "https://www.kaisergruft.com/site/de/landingpages/imtodsindallegleich",
     "https://www.hallstatt.net/",
     "https://www.magdeburgerdom.de/",
     "https://www.naumburger-dom.de/",
     "https://www.michaelerkirche.at/",
 
     # Überregional Deutschland: Archäologische Landesmuseen & Fachmuseen
-    "https://www.landesmuseum-vorgeschichte.de/ausstellungen/sonderausstellungen.html",
-    "https://www.leiza.de/veranstaltungen/",
+    "https://www.landesmuseum-vorgeschichte.de/veranstaltungen/familiennachmittage",
+    "https://www.leiza.de/aktuelles",
     "https://www.lwl-landesmuseum-herne.de/de/veranstaltungen/",
-    "https://landesmuseum-bonn.lvr.de/de/ausstellungen/ausstellungen_1.html",
-    "https://www.archaeologisches-museum-frankfurt.de/de/ausstellungen/sonderausstellungen",
+    "https://landesmuseum-bonn.lvr.de/",
+    "https://www.archaeologisches-museum-frankfurt.de/",
     "https://www.landesmuseum-trier.de/",
     "https://www.alm-bw.de/",
-    "https://schloss-gottorf.de/de/ausstellungen",
+    "https://schloss-gottorf.de/",
     "https://roemisch-germanisches-museum.de/",
-    "https://www.antike-am-koenigsplatz.de/",
 
     # Überregional Deutschland: Friedhofskultur & Vereine
     "https://www.sepulkralmuseum.de/veranstaltungen/",
@@ -117,20 +113,17 @@ TARGET_URLS = [
     "https://www.ohlsdorf-derpark.de/termine-ohlsdorf/",
     "https://www.stattreisen-muenchen.de/fuehrungen/der-alte-sudliche-friedhof",
     "https://www.florian-scheungraber.de/termine/",
-    "https://theatergemeinde-koeln.org/Kulturkompass/werk/25725/M04/stadtfuhrungen-koln/fuhrung-uber-melaten",
+    "https://theatergemeinde-koeln.org/Kulturkompass/werk/25725/M04/stadtfuhrungen-koln/fuehrung-uber-melaten",
     "https://www.friedhofsverwalter.de/fachveranstaltung-der-arbeitsgemeinschaft-friedhof-und-denkmal-e-v/",
     "https://aufdasleben.de/event/",
+    "https://www.totentanz-online.de/veranstaltungen.php",
+    "https://www.hannover.de/Kultur-Freizeit/Naherholung/G%C3%A4rten-und-Parks/Friedh%C3%B6fe-in-Hannover/F%C3%BChrungen-%C3%BCber-Hannovers-Friedh%C3%B6fe",
 
     # Schweiz & Österreich
     "https://www.stadt-zuerich.ch/friedhofforum/de/veranstaltungen.html",
     "https://www.bestattungsmuseum.at/besucherinfo/auf-einen-blick",
-    "https://www.friedhoefewien.at/veranstaltungen"
-
-    # Weitere geprüfte Nischen- & Führungsquellen
-    "https://www.totentanz-online.de/veranstaltungen.php",
-    "https://www.hannover.de/Kultur-Freizeit/Naherholung/G%C3%A4rten-und-Parks/Friedh%C3%B6fe-in-Hannover/F%C3%BChrungen-%C3%BCber-Hannovers-Friedh%C3%B6fe",
-    "https://www.friedhoefewien.at/friedhofsfuehrungen",
-
+    "https://www.friedhoefewien.at/veranstaltungen",
+    "https://www.friedhoefewien.at/friedhofsfuehrungen"
 ]
 
 DB_FILE = "events_db.json"
