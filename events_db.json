@@ -4,7 +4,7 @@
     "date_start": "2026-09-13",
     "date_end": null,
     "location": "Ev. Domfriedhof I, Berlin",
-    "description": "Die zentrale Berliner Veranstaltung zum Tag des Friedhofs 2026.",
+    "description": "Zentrale Berliner Veranstaltung zum Tag des Friedhofs 2026.",
     "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
@@ -13,8 +13,8 @@
     "title": "Führung über den Alten St.-Matthäus-Friedhof",
     "date_start": "2026-08-26",
     "date_end": null,
-    "location": "Haupteingang des Alten St.-Matthäus-Friedhofs, Berlin",
-    "description": "Regelmäßige Friedhofsführung über den Alten St.-Matthäus-Friedhof mit Ralf Illauer.",
+    "location": "Alter St.-Matthäus-Friedhof, Berlin",
+    "description": "Mittwochsführung über den historischen Alten St.-Matthäus-Friedhof mit Ralf Illauer.",
     "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
@@ -24,7 +24,7 @@
     "date_start": "2026-08-26",
     "date_end": null,
     "location": "Dorotheenstädtischer Friedhof I, Berlin",
-    "description": "Themenführung über den Dorotheenstädtischen Friedhof I zu den Grabstätten berühmter Frauen.",
+    "description": "Thematische Führung über den Dorotheenstädtischen Friedhof I zu den Grabstätten berühmter Frauen.",
     "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
@@ -34,7 +34,7 @@
     "date_start": "2026-08-28",
     "date_end": null,
     "location": "Friedhof Dreifaltigkeit II, Berlin",
-    "description": "Abendliche Veranstaltung zur Friedhofsnacht auf dem Friedhof Dreifaltigkeit II an der Bergmannstraße.",
+    "description": "Abendliche Veranstaltung mit Kulturprogramm auf dem Friedhof Dreifaltigkeit II an der Bergmannstraße.",
     "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
@@ -44,7 +44,7 @@
     "date_start": "2026-08-30",
     "date_end": null,
     "location": "Friedhof Heerstraße, Berlin",
-    "description": "Ein informativer Friedhofsrundgang mit Ulrich Thom über den Friedhof Heerstraße.",
+    "description": "Geführter Rundgang über den Friedhof Heerstraße mit Ulrich Thom.",
     "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
@@ -54,7 +54,7 @@
     "date_start": "2026-09-05",
     "date_end": null,
     "location": "Südwestkirchhof Stahnsdorf",
-    "description": "Ein Spätsommer-Nachmittag und Abend voller Musik, Performance, Kunst und Poesie auf dem Südwestkirchhof.",
+    "description": "Kultureller Nachmittag und Abend mit Musik, Performance, Kunst und Poesie auf dem Südwestkirchhof Stahnsdorf.",
     "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
@@ -73,8 +73,8 @@
     "title": "Führung über den Alten St.-Matthäus-Friedhof",
     "date_start": "2026-09-09",
     "date_end": null,
-    "location": "Haupteingang des Alten St.-Matthäus-Friedhofs, Berlin",
-    "description": "Friedhofsführung über den Alten St.-Matthäus-Friedhof unter der Leitung von Ralf Illauer.",
+    "location": "Alter St.-Matthäus-Friedhof, Berlin",
+    "description": "Führung über den Alten St.-Matthäus-Friedhof mit Ralf Illauer.",
     "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
@@ -84,7 +84,7 @@
     "date_start": "2026-09-13",
     "date_end": null,
     "location": "Südwestkirchhof Stahnsdorf",
-    "description": "Stimmungsvolles Konzert mit Harfe und Poesie zum Tag des Denkmals.",
+    "description": "Konzert mit Harfe und Poesie anlässlich des Tags des offenen Denkmals.",
     "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
@@ -93,8 +93,8 @@
     "title": "Führung über den Alten St.-Matthäus-Friedhof",
     "date_start": "2026-09-23",
     "date_end": null,
-    "location": "Haupteingang des Alten St.-Matthäus-Friedhofs, Berlin",
-    "description": "Mittwochsführung über den Alten St.-Matthäus-Friedhof mit Ralf Illauer.",
+    "location": "Alter St.-Matthäus-Friedhof, Berlin",
+    "description": "Führung über den Alten St.-Matthäus-Friedhof mit Ralf Illauer.",
     "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
@@ -104,7 +104,7 @@
     "date_start": "2026-09-27",
     "date_end": null,
     "location": "Südwestkirchhof Stahnsdorf",
-    "description": "Besondere Führung mit Thomas Specht über den Baumbestand und die Natur im Lebensraum Friedhof.",
+    "description": "Sonderführung zur Bedeutung von Bäumen auf dem Friedhof mit Thomas Specht.",
     "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
@@ -113,8 +113,8 @@
     "title": "Führung über den Alten St.-Matthäus-Friedhof",
     "date_start": "2026-10-07",
     "date_end": null,
-    "location": "Haupteingang des Alten St.-Matthäus-Friedhofs, Berlin",
-    "description": "Rundgang über den historischen Alten St.-Matthäus-Friedhof mit Ralf Illauer.",
+    "location": "Alter St.-Matthäus-Friedhof, Berlin",
+    "description": "Führung über den Alten St.-Matthäus-Friedhof mit Ralf Illauer.",
     "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
@@ -124,7 +124,7 @@
     "date_start": "2026-10-16",
     "date_end": null,
     "location": "Friedhöfe am Halleschen Tor, Berlin",
-    "description": "Themenführung zu den Grabstätten von Verwandten und Freunden der Familie Mendelssohn mit Eva Gosh und Karin Maaß.",
+    "description": "Führung zu den Grabstätten des Mendelssohn-Freundeskreises und der Familie Mendelssohn mit Eva Gosh und Karin Maaß.",
     "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
@@ -133,7 +133,7 @@
     "title": "Führung über den Alten St.-Matthäus-Friedhof",
     "date_start": "2026-10-28",
     "date_end": null,
-    "location": "Haupteingang des Alten St.-Matthäus-Friedhofs, Berlin",
+    "location": "Alter St.-Matthäus-Friedhof, Berlin",
     "description": "Führung über den Alten St.-Matthäus-Friedhof mit Ralf Illauer.",
     "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "first_seen": "2026-08-24",
@@ -143,8 +143,8 @@
     "title": "Führung über den Alten St.-Matthäus-Friedhof",
     "date_start": "2026-11-18",
     "date_end": null,
-    "location": "Haupteingang des Alten St.-Matthäus-Friedhofs, Berlin",
-    "description": "Herbstliche Führung über den Alten St.-Matthäus-Friedhof mit Ralf Illauer.",
+    "location": "Alter St.-Matthäus-Friedhof, Berlin",
+    "description": "Führung über den Alten St.-Matthäus-Friedhof mit Ralf Illauer.",
     "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
@@ -154,7 +154,7 @@
     "date_start": "2026-09-06",
     "date_end": null,
     "location": "Jüdischer Friedhof Berlin-Weißensee",
-    "description": "Themenführung zu den Grabstätten widerständiger Frauen während der NS-Zeit mit Dr. Monika Wittig.",
+    "description": "Thematischer Rundgang zu den Grabstätten von Widerstandskämpferinnen während der NS-Zeit mit Dr. Monika Wittig.",
     "url": "https://jewish-cemetery-weissensee.org/entdecken/fuehrungen/",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
@@ -164,7 +164,7 @@
     "date_start": "2026-10-18",
     "date_end": null,
     "location": "Jüdischer Friedhof Berlin-Weißensee",
-    "description": "Zweistündiger Rundgang zu bedeutenden Grabstätten und zur Geschichte des Jüdischen Friedhofs Weißensee mit Anja Pick.",
+    "description": "Zweistündige Führung über den Friedhof Weißensee zu bedeutenden Gräbern und zur Historie der Anlage mit Anja Pick.",
     "url": "https://jewish-cemetery-weissensee.org/entdecken/fuehrungen/",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
@@ -174,7 +174,7 @@
     "date_start": "2026-11-15",
     "date_end": null,
     "location": "Jüdischer Friedhof Berlin-Weißensee",
-    "description": "Gedenkführung zum Volkstrauertag entlang des Hauptwegs bis zum Ehrenhain der jüdischen Soldaten des Ersten Weltkriegs.",
+    "description": "Führung anlässlich des Volkstrauertags entlang des Hauptwegs zum Ehrenhain der jüdischen Gefallenen des Ersten Weltkriegs mit Anja Pick.",
     "url": "https://jewish-cemetery-weissensee.org/entdecken/fuehrungen/",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
@@ -204,7 +204,7 @@
     "date_start": "2026-09-05",
     "date_end": null,
     "location": "Südwestkirchhof Stahnsdorf",
-    "description": "Ein Spätsommer-Nachmittag voller Musik, Performance, Kunst und Poesie auf dem Südwestkirchhof Stahnsdorf.",
+    "description": "Ein Spätsommer-Nachmittag voller Musik, Performance, Kunst und Poesie auf dem Friedhofsgelände.",
     "url": "https://www.suedwestkirchhof.de/veranstaltungen.html",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
@@ -214,7 +214,7 @@
     "date_start": "2026-09-20",
     "date_end": null,
     "location": "Südwestkirchhof Stahnsdorf",
-    "description": "Führung zu den Grabstätten bedeutender Frauenpersönlichkeiten auf dem Südwestkirchhof.",
+    "description": "Themenführung zu den Grabstätten bedeutender und bemerkenswerter Frauen auf dem Südwestkirchhof.",
     "url": "https://www.suedwestkirchhof.de/veranstaltungen.html",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
@@ -224,7 +224,7 @@
     "date_start": "2026-09-27",
     "date_end": null,
     "location": "Südwestkirchhof Stahnsdorf",
-    "description": "Thematische Führung über Bäume als Wegbegleiter und Symbole im Lebensraum Friedhof.",
+    "description": "Sonderführung über die Natur und die Rolle von Bäumen im Lebensraum Friedhof.",
     "url": "https://www.suedwestkirchhof.de/veranstaltungen.html",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
@@ -234,7 +234,7 @@
     "date_start": "2026-10-03",
     "date_end": null,
     "location": "Südwestkirchhof Stahnsdorf",
-    "description": "Geführter Rundgang über den historischen Südwestkirchhof.",
+    "description": "Öffentliche Führung über den historischen Südwestkirchhof Stahnsdorf.",
     "url": "https://www.suedwestkirchhof.de/veranstaltungen.html",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
@@ -244,7 +244,7 @@
     "date_start": "2026-10-03",
     "date_end": null,
     "location": "Südwestkirchhof Stahnsdorf",
-    "description": "Führung über den Südwestkirchhof Stahnsdorf unter Leitung von Olaf Ihlefeldt.",
+    "description": "Führung über den Südwestkirchhof unter der Leitung von Olaf Ihlefeldt.",
     "url": "https://www.suedwestkirchhof.de/veranstaltungen.html",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
@@ -254,7 +254,7 @@
     "date_start": "2026-10-10",
     "date_end": null,
     "location": "Südwestkirchhof Stahnsdorf",
-    "description": "Sonderführung durch den historischen Bereich der 'Alten Umbettung' auf dem Friedhof.",
+    "description": "Historische Sonderführung durch das Areal der 'Alten Umbettung' mit Thomas Marin.",
     "url": "https://www.suedwestkirchhof.de/veranstaltungen.html",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
@@ -274,7 +274,7 @@
     "date_start": "2026-11-07",
     "date_end": null,
     "location": "Südwestkirchhof Stahnsdorf",
-    "description": "Herbstliche Friedhofsführung über das Stahnsdorfer Areal.",
+    "description": "Herbstlicher Rundgang und Führung über das Geländes des Südwestkirchhofs.",
     "url": "https://www.suedwestkirchhof.de/veranstaltungen.html",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
@@ -284,7 +284,7 @@
     "date_start": "2026-11-07",
     "date_end": null,
     "location": "Südwestkirchhof Stahnsdorf",
-    "description": "Führung zum Thema Friedhofsbrauchtum und Gedenkkultur mit Olaf Ihlefeldt.",
+    "description": "Führung zum Thema Friedhofsbrauchtum und Traditionen geleitet von Olaf Ihlefeldt.",
     "url": "https://www.suedwestkirchhof.de/veranstaltungen.html",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
@@ -294,7 +294,7 @@
     "date_start": "2026-11-08",
     "date_end": null,
     "location": "Südwestkirchhof Stahnsdorf",
-    "description": "Gedenkveranstaltung zum Remembrance Sunday auf dem Südwestkirchhof.",
+    "description": "Gedenkveranstaltung zum Remembrance Sunday auf dem Friedhof.",
     "url": "https://www.suedwestkirchhof.de/veranstaltungen.html",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
@@ -304,7 +304,7 @@
     "date_start": "2026-11-08",
     "date_end": null,
     "location": "Südwestkirchhof Stahnsdorf",
-    "description": "Feierliches Gedenken an verstorbene Menschen ohne Angehörige.",
+    "description": "Gedenkstunde für Menschen, die ohne Angehörige verstorben sind.",
     "url": "https://www.suedwestkirchhof.de/veranstaltungen.html",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
@@ -314,7 +314,7 @@
     "date_start": "2026-11-15",
     "date_end": null,
     "location": "Südwestkirchhof Stahnsdorf",
-    "description": "Gedenkveranstaltung zum Volkstrauertag inklusive feierlicher Kranzniederlegung.",
+    "description": "Feierliches Gedenken zum Volkstrauertag inklusive Kranzniederlegung.",
     "url": "https://www.suedwestkirchhof.de/veranstaltungen.html",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
@@ -324,7 +324,7 @@
     "date_start": "2026-11-22",
     "date_end": null,
     "location": "Südwestkirchhof Stahnsdorf",
-    "description": "Gedenktag für die Verstorbenen auf dem Südwestkirchhof Stahnsdorf.",
+    "description": "Gedenktag für die Entschlafenen am Ewigkeitssonntag auf dem Südwestkirchhof.",
     "url": "https://www.suedwestkirchhof.de/veranstaltungen.html",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
@@ -334,7 +334,7 @@
     "date_start": "2026-11-22",
     "date_end": null,
     "location": "Südwestkirchhof Stahnsdorf",
-    "description": "Andacht zum Ewigkeitssonntag mit Verlesung der Namen der Verstorbenen und Orgelmusik.",
+    "description": "Andacht zum Ewigkeitssonntag mit Verlesung der Namen der Verstorbenen und Orgelbegleitung.",
     "url": "https://www.suedwestkirchhof.de/veranstaltungen.html",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
@@ -344,7 +344,7 @@
     "date_start": "2026-12-05",
     "date_end": null,
     "location": "Südwestkirchhof Stahnsdorf",
-    "description": "Winterlicher Rundgang über den Friedhof unter Leitung von Thomas Marin.",
+    "description": "Winterlicher Führung und Spaziergang über den Südwestkirchhof mit Thomas Marin.",
     "url": "https://www.suedwestkirchhof.de/veranstaltungen.html",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
@@ -354,7 +354,7 @@
     "date_start": "2026-12-05",
     "date_end": null,
     "location": "Südwestkirchhof Stahnsdorf",
-    "description": "Winterliche Friedhofsführung über den Südwestkirchhof Stahnsdorf.",
+    "description": "Winterlicher Rundgang über den Südwestkirchhof geleitet von Olaf Ihlefeldt.",
     "url": "https://www.suedwestkirchhof.de/veranstaltungen.html",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
@@ -364,7 +364,7 @@
     "date_start": "2027-01-01",
     "date_end": null,
     "location": "Südwestkirchhof Stahnsdorf",
-    "description": "Traditioneller Neujahrsspaziergang über das historische Friedhofsgelände.",
+    "description": "Traditioneller Neujahrsspaziergang über die Friedhofsanlage.",
     "url": "https://www.suedwestkirchhof.de/veranstaltungen.html",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
@@ -374,7 +374,7 @@
     "date_start": "2026-08-25",
     "date_end": "2026-11-23",
     "location": "Ricam Hospiz, Berlin",
-    "description": "Ausstellung mit Collagen der Künstlerinnen Bettina Schilling und Ilse Winckler im Ricam Hospiz.",
+    "description": "Ausstellung mit Kunst-Collagen der Künstlerinnen Bettina Schilling und Ilse Winckler im Ricam Hospiz.",
     "url": "https://www.ricam-hospiz.de/events/",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
@@ -383,8 +383,8 @@
     "title": "Kurs: Ambulante ehrenamtliche Sterbebegleitung",
     "date_start": "2027-01-25",
     "date_end": "2027-06-14",
-    "location": "Warthestraße 14, Berlin",
-    "description": "Vorbereitungskurs zur Befähigung für die Mitarbeit in der ambulanten ehrenamtlichen Sterbebegleitung.",
+    "location": "Warthestraße 14, 12051 Berlin",
+    "description": "Vorbereitungskurs für die ehrenamtliche Mitarbeit im ambulanten Hospizdienst über 20 Module.",
     "url": "https://www.ricam-hospiz.de/events/",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
@@ -394,7 +394,7 @@
     "date_start": "2026-08-26",
     "date_end": null,
     "location": "Sammlung Scharf-Gerstenberg, Berlin",
-    "description": "Vorführung des Stummfilm-Klassikers 'Der müde Tod' im Rahmen der Filmreihe Cinema Surreal.",
+    "description": "Filmvorführung des Stummfilmklassikers 'Der müde Tod' im Rahmen der Reihe Cinema Surreal.",
     "url": "https://www.smb.museum/veranstaltungen/",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
@@ -403,8 +403,8 @@
     "title": "Von Hetepheres bis Tutanchamun: Enthüllung von 4.600 Jahren königlicher Schätze im Grand Egyptian Museum",
     "date_start": "2026-09-27",
     "date_end": null,
-    "location": "James-Simon-Galerie, Museumsinsel Berlin",
-    "description": "Vortrag und Podiumsdiskussion über bedeutende altägyptische Grabfunde und königliche Schätze.",
+    "location": "James-Simon-Galerie, Museumsinsel Berlin, Neues Museum",
+    "description": "Ein Vortrag mit Podiumsdiskussion über 4.600 Jahre königliche Grabschätze und Beigaben aus dem Alten Ägypten im Grand Egyptian Museum.",
     "url": "https://www.smb.museum/museen-einrichtungen/aegyptisches-museum-und-papyrussammlung/veranstaltungen/",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
@@ -424,7 +424,7 @@
     "date_start": "2026-08-29",
     "date_end": null,
     "location": "Kölner Dom",
-    "description": "Gedenkgottesdienst im Rahmen der Heiligen Messe zur Erinnerung an den verstorbenen ehemaligen Kölner Oberbürgermeister Fritz Schramma.",
+    "description": "Heilige Messe im Kölner Dom im Gedenken an den verstorbenen ehemaligen Oberbürgermeister Fritz Schramma.",
     "url": "https://www.koelner-dom.de/aktuelles",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
@@ -434,7 +434,7 @@
     "date_start": "2026-09-01",
     "date_end": null,
     "location": "Dom zu Magdeburg",
-    "description": "Ökumenischer Gottesdienst und feierlicher Festakt im Magdeburger Dom anlässlich der Wiederbeisetzung von Kaiser Otto.",
+    "description": "Ökumenischer Gottesdienst und Festakt im Magdeburger Dom anlässlich der Wiederbeisetzung von Kaiser Otto.",
     "url": "https://www.magdeburgerdom.de/",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
@@ -444,7 +444,7 @@
     "date_start": "2026-09-05",
     "date_end": null,
     "location": "Alter Johannisfriedhof, Leipzig",
-    "description": "Führung von Experten über die bedeutende Kultur- und Kunstgeschichte des Alten Johannisfriedhofs in Leipzig.",
+    "description": "Expertenführung über die mehr als 600-jährige Geschichte, Grabkunst und bedeutenden Persönlichkeiten des Alten Johannisfriedhofs.",
     "url": "https://paul-benndorf-gesellschaft.de/fuehrungen.html",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
@@ -453,8 +453,8 @@
     "title": "Traditionelle Führung zum Tag der Deutschen Einheit",
     "date_start": "2026-10-03",
     "date_end": null,
-    "location": "Südfriedhof, Leipzig",
-    "description": "Kunst- und kulturhistorische Führung über den Leipziger Südfriedhof, eines der bedeutendsten Flächendenkmale Europas.",
+    "location": "Südfriedhof Leipzig",
+    "description": "Kunst- und kulturhistorische Führung über den Leipziger Südfriedhof und seine bedeutenden Bau- und Grabdenkmäler.",
     "url": "https://paul-benndorf-gesellschaft.de/fuehrungen.html",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
@@ -463,8 +463,8 @@
     "title": "Traditionelle Führung zum Reformationstag",
     "date_start": "2026-10-31",
     "date_end": null,
-    "location": "Südfriedhof, Leipzig",
-    "description": "Sonderführung durch die Parkschöpfung und zu den historischen Grabstätten des Leipziger Südfriedhofs.",
+    "location": "Südfriedhof Leipzig",
+    "description": "Führung zur Kulturgeschichte des Leipziger Südfriedhofs und seinen historischen Grabstätten.",
     "url": "https://paul-benndorf-gesellschaft.de/fuehrungen.html",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
@@ -473,8 +473,8 @@
     "title": "Traditionelle Führung zum Buß- und Bettag",
     "date_start": "2026-11-18",
     "date_end": null,
-    "location": "Südfriedhof, Leipzig",
-    "description": "Führung über die Friedhofsanlage und zu den Gräbern bedeutender Persönlichkeiten auf dem Südfriedhof.",
+    "location": "Südfriedhof Leipzig",
+    "description": "Sonderführung über das Flächendenkmal des Leipziger Südfriedhofs.",
     "url": "https://paul-benndorf-gesellschaft.de/fuehrungen.html",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
@@ -483,8 +483,8 @@
     "title": "Führung zum 2. Weihnachtsfeiertag",
     "date_start": "2026-12-26",
     "date_end": null,
-    "location": "Südfriedhof, Leipzig",
-    "description": "Weihnachtlicher Rundgang zur Geschichte und Kunst des Leipziger Südfriedhofs.",
+    "location": "Südfriedhof Leipzig",
+    "description": "Kulturhistorische Führung zu den Kunstwerken und Ruhestätten bekannter Persönlichkeiten auf dem Südfriedhof.",
     "url": "https://paul-benndorf-gesellschaft.de/fuehrungen.html",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
@@ -493,8 +493,8 @@
     "title": "Führung zu den Weihnachtstagen",
     "date_start": "2026-12-27",
     "date_end": null,
-    "location": "Südfriedhof, Leipzig",
-    "description": "Exkursion über den kunstgeschichtlich bedeutenden Leipziger Südfriedhof.",
+    "location": "Südfriedhof Leipzig",
+    "description": "Rundgang über den Leipziger Südfriedhof zur Entdeckung seiner parkartigen Friedhofsarchitektur.",
     "url": "https://paul-benndorf-gesellschaft.de/fuehrungen.html",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
@@ -504,7 +504,7 @@
     "date_start": "2026-08-29",
     "date_end": null,
     "location": "Eliasfriedhof, Dresden",
-    "description": "Lesung über die weitgehend vergessene Schriftstellerin Adelheid Reinbold, die auf dem Eliasfriedhof ihre letzte Ruhe fand.",
+    "description": "Lesung über das Leben und Werk der weitgehend vergessen auf dem Eliasfriedhof bestatteten Schriftstellerin Adelheid Reinbold.",
     "url": "https://eliasfriedhof.de/category/veranstaltungen/",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
@@ -514,7 +514,7 @@
     "date_start": "2026-09-19",
     "date_end": null,
     "location": "Nordfriedhof, Halle (Saale)",
-    "description": "90-minütige Führung über den Nordfriedhof, veranstaltet vom Verein für Friedhofskultur in Halle.",
+    "description": "90-minütige Führung über den Nordfriedhof Halle zu den Themen Friedhofskultur und Grabmalgestaltung.",
     "url": "http://www.friedhofskultur-halle.de/terminefuehrungen/",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
@@ -524,7 +524,7 @@
     "date_start": "2026-09-20",
     "date_end": null,
     "location": "Südfriedhof, Halle (Saale)",
-    "description": "Aktionstag zur Friedhofskultur und Gestaltung auf dem Südfriedhof in Halle.",
+    "description": "Veranstaltungs- und Aktionstag rund um Friedhofskultur und Grabstätten auf dem Südfriedhof in Halle.",
     "url": "http://www.friedhofskultur-halle.de/terminefuehrungen/",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
@@ -534,7 +534,7 @@
     "date_start": "2026-10-25",
     "date_end": null,
     "location": "Südfriedhof und Gertraudenfriedhof, Halle (Saale)",
-    "description": "Führungen über den Südfriedhof (10:00 Uhr) sowie den Gertraudenfriedhof (14:00 Uhr) in Halle.",
+    "description": "Führungen über den Südfriedhof und den Gertraudenfriedhof mit Einblicken in die regionale Sepulkralkultur.",
     "url": "http://www.friedhofskultur-halle.de/terminefuehrungen/",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
@@ -544,7 +544,7 @@
     "date_start": "2026-08-29",
     "date_end": null,
     "location": "Parkfriedhof Ohlsdorf, Hamburg",
-    "description": "Spaziergang über den Friedhof Ohlsdorf rund um den Dichterhügel mit Geschichten aus der Literatur.",
+    "description": "Ein Spaziergang rund um den Dichterhügel des Ohlsdorfer Friedhofs, der Literatur und besondere Geschichten verbindet.",
     "url": "https://www.friedhof-hamburg.de/besucher/veranstaltungen/",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
@@ -654,7 +654,7 @@
     "date_start": "2026-09-24",
     "date_end": "2026-09-25",
     "location": "Köln",
-    "description": "Fundierte Ausbildung zur individuellen und würdevollen Gestaltung von Trauerfeiern.",
+    "description": "Fundierter Ausbildungskurs für angehende Trauerrednerinnen und Trauerredner zur würdevollen Gestaltung individueller Trauerfeiern.",
     "url": "https://aufdasleben.de/event/",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
@@ -664,7 +664,7 @@
     "date_start": "2026-10-07",
     "date_end": null,
     "location": "Online",
-    "description": "Workshop für Trauerrednerinnen und Trauerredner zur professionellen Gestaltung zweisprachiger Abschiedszeremonien.",
+    "description": "Praktischer Workshop für Trauerredner zur professionellen Konzeption und Durchführung zweisprachiger Trauerfeiern.",
     "url": "https://aufdasleben.de/event/",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
@@ -674,7 +674,7 @@
     "date_start": "2026-10-08",
     "date_end": null,
     "location": "Online",
-    "description": "Fachworkshop zum sensiblen Umgang und der Gestaltung von Trauerfeiern bei besonderen Sterbefällen.",
+    "description": "Workshop für Trauerredner über den sensiblen Umgang und die Gestaltung von Abschiedsfeiern bei besonderen Sterbefällen.",
     "url": "https://aufdasleben.de/event/",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
@@ -684,7 +684,7 @@
     "date_start": "2026-10-16",
     "date_end": null,
     "location": "Online",
-    "description": "Praxisorientierter Workshop zur Positionierung und Vermarktung der eigenen Arbeit als Trauerredner.",
+    "description": "Ein Workshop zur beruflichen Positionierung, Sichtbarkeit und Selbstvermarktung im Bereich der Trauerredner.",
     "url": "https://aufdasleben.de/event/",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
@@ -694,7 +694,7 @@
     "date_start": "2026-10-26",
     "date_end": "2026-11-01",
     "location": "Bundesweit",
-    "description": "Bundesweite Themenwoche mit Veranstaltungen rund um Trauer, Abschied und moderne Gedenkkultur.",
+    "description": "Eine deutschlandweite Aktionswoche mit verschiedenen Formaten rund um die Themen Trauer, Abschied und Trauerbewältigung.",
     "url": "https://aufdasleben.de/event/",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
@@ -703,8 +703,8 @@
     "title": "happy END – Dein Leben verdient ein happy End!",
     "date_start": "2026-11-08",
     "date_end": null,
-    "location": "Hamburg",
-    "description": "Veranstaltung zu Themen rund um Abschied, Erinnerung und einen zeitgemäßen Umgang mit der Endlichkeit.",
+    "location": "MIX concepts, Hamburg",
+    "description": "Eine Veranstaltung zu den Themen Lebensende, Vorsorge und moderne Erinnerungskultur.",
     "url": "https://aufdasleben.de/event/",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
@@ -714,7 +714,7 @@
     "date_start": "2026-11-12",
     "date_end": null,
     "location": "Zentrum für Palliativmedizin, Köln",
-    "description": "Kursangebot mit praktischen Tipps zur Begleitung von Menschen in ihren letzten Lebenstagen.",
+    "description": "Ein Schulungskurs, der Grundlagen zur Begleitung Schwerstkranker und Sterbender in ihrer letzten Lebensphase vermittelt.",
     "url": "https://aufdasleben.de/event/",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
@@ -724,8 +724,138 @@
     "date_start": "2026-11-19",
     "date_end": "2026-11-20",
     "location": "Köln",
-    "description": "Qualifizierende Schulung für die Tätigkeit als Trauerredner zur Gestaltung persönlicher Abschiede.",
+    "description": "Ausbildungsseminar zur Vorbereitung auf die Tätigkeit als freie Trauerrednerin oder freier Trauerredner.",
     "url": "https://aufdasleben.de/event/",
+    "first_seen": "2026-08-24",
+    "last_seen": "2026-08-24"
+  },
+  "8d7f02339c7271e5a002186c0fd0dc21": {
+    "title": "Abendempfindung - Konzert zum Trost in Trauer mit dem Ensemble Die Goldvögel",
+    "date_start": "2026-09-06",
+    "date_end": null,
+    "location": "Friedhofskapelle Friedrichswerderscher Friedhof, Berlin",
+    "description": "Konzert zum Trost in Trauer mit französischen Chansons in der Friedhofskapelle.",
+    "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
+    "first_seen": "2026-08-24",
+    "last_seen": "2026-08-24"
+  },
+  "af4d6cc1cd13df676e3ff8261549dbeb": {
+    "title": "Der Friedhof der Märzgefallenen von 1848 bis heute",
+    "date_start": "2026-09-12",
+    "date_end": null,
+    "location": "Friedhof der Märzgefallenen, Berlin",
+    "description": "Führung über die Geschichte des Friedhofs der Märzgefallenen anlässlich des Tags des offenen Denkmals.",
+    "url": "https://forum1848.de/veranstaltungen/",
+    "first_seen": "2026-08-24",
+    "last_seen": "2026-08-24"
+  },
+  "7da9030eafeddb480f67e7b988a01a45": {
+    "title": "Der Friedhof der Märzgefallenen von 1848 bis heute",
+    "date_start": "2026-09-13",
+    "date_end": null,
+    "location": "Friedhof der Märzgefallenen, Berlin",
+    "description": "Historische Führung über den Friedhof der Märzgefallenen anlässlich des Tags des offenen Denkmals.",
+    "url": "https://forum1848.de/veranstaltungen/",
+    "first_seen": "2026-08-24",
+    "last_seen": "2026-08-24"
+  },
+  "9d258806b0b435be35eca7e36cd7fd13": {
+    "title": "Führungen am Museumstag in Potsdam-Mittelmark",
+    "date_start": "2026-10-31",
+    "date_end": null,
+    "location": "Südwestkirchhof Stahnsdorf",
+    "description": "Führungen über den Südwestkirchhof anlässlich des Museumstags im Landkreis Potsdam-Mittelmark.",
+    "url": "https://www.suedwestkirchhof.de/veranstaltungen.html",
+    "first_seen": "2026-08-24",
+    "last_seen": "2026-08-24"
+  },
+  "5a5e1f2d2d15840df4162ffed75848fd": {
+    "title": "Aktuelle Untersuchungen am Goldschatz der Amanishakheto",
+    "date_start": "2026-10-01",
+    "date_end": null,
+    "location": "Online",
+    "description": "Vortrag von Restaurator*innen über neue wissenschaftliche Erkenntnisse zum berühmten antiken Grabschatz der nubischen Königin Amanishakheto.",
+    "url": "https://www.smb.museum/museen-einrichtungen/aegyptisches-museum-und-papyrussammlung/veranstaltungen/",
+    "first_seen": "2026-08-24",
+    "last_seen": "2026-08-24"
+  },
+  "4eef9f430670ba6b0a2af6480ba1d027": {
+    "title": "Ausstellung im Bremer Bleikeller: Acht Mumien aus mehreren Jahrhunderten",
+    "date_start": "2026-07-23",
+    "date_end": "2026-12-23",
+    "location": "St. Petri Dom, Bremen",
+    "description": "Die Ausstellung im Bleikeller präsentiert acht Mumien aus dem 17. und 18. Jahrhundert sowie Kunstwerke, die sich mit der menschlichen Vergänglichkeit und der Endlichkeit des Lebens auseinandersetzen.",
+    "url": "https://stpetridom.de/der-dom/besucher-info/bleikeller/",
+    "first_seen": "2026-08-24",
+    "last_seen": "2026-08-24"
+  },
+  "056111b00bd6b89784dbcdedf11dff57": {
+    "title": "Aufwind an KapelleDREI - Hamburgs Chor für trauernde Menschen",
+    "date_start": "2026-08-26",
+    "date_end": null,
+    "location": "KapelleDREI, Parkfriedhof Ohlsdorf, Hamburg",
+    "description": "Chorprojekt für trauernde Menschen auf dem Ohlsdorfer Friedhof zur gemeinsamen Bewältigung von Verlusterfahrungen.",
+    "url": "https://www.friedhof-hamburg.de/besucher/veranstaltungen/",
+    "first_seen": "2026-08-24",
+    "last_seen": "2026-08-24"
+  },
+  "6c5af23ed9fda007adf8d5e8d46aa84b": {
+    "title": "Netzwerk Trauerkultur: Moderierter Austausch zu Verlusten",
+    "date_start": "2026-08-27",
+    "date_end": null,
+    "location": "KapelleDREI, Parkfriedhof Ohlsdorf, Hamburg",
+    "description": "Moderierter Austausch des Netzwerks Trauerkultur über den persönlichen Umgang mit Trauer und Verlusten.",
+    "url": "https://www.friedhof-hamburg.de/besucher/veranstaltungen/",
+    "first_seen": "2026-08-24",
+    "last_seen": "2026-08-24"
+  },
+  "30560a60837a33bd4fbac1ae5f5f4bbe": {
+    "title": "Kiez trifft Ewigkeit – Eine Fahrradtour zu St. Paulis Persönlichkeiten",
+    "date_start": "2026-08-29",
+    "date_end": null,
+    "location": "Parkfriedhof Ohlsdorf, Hamburg",
+    "description": "Fahrradtour über den Parkfriedhof Ohlsdorf zu den Grabstätten prägender Persönlichkeiten des Hamburger Kiez.",
+    "url": "https://www.friedhof-hamburg.de/besucher/veranstaltungen/",
+    "first_seen": "2026-08-24",
+    "last_seen": "2026-08-24"
+  },
+  "349044410cc56a2cd1e9d1cca8d22a18": {
+    "title": "Garten der Frauen - Sonntagsführung",
+    "date_start": "2026-08-30",
+    "date_end": null,
+    "location": "Garten der Frauen, Parkfriedhof Ohlsdorf, Hamburg",
+    "description": "Thematische Führung durch den Garten der Frauen zum Gedenken an bedeutende weibliche Persönlichkeiten.",
+    "url": "https://www.friedhof-hamburg.de/besucher/veranstaltungen/",
+    "first_seen": "2026-08-24",
+    "last_seen": "2026-08-24"
+  },
+  "9716fcb9e3d08189df797c6328c17a0f": {
+    "title": "Führung: Engel im grünen Paradies",
+    "date_start": "2026-09-04",
+    "date_end": null,
+    "location": "Parkfriedhof Ohlsdorf, Hamburg",
+    "description": "Führung über den Parkfriedhof Ohlsdorf zur Symbolik von Engeln und Grabkunstwerken.",
+    "url": "https://www.friedhof-hamburg.de/besucher/veranstaltungen/",
+    "first_seen": "2026-08-24",
+    "last_seen": "2026-08-24"
+  },
+  "97de363a88376fecc462658397be7baa": {
+    "title": "Ohlsdorfer Busrundfahrt",
+    "date_start": "2026-09-10",
+    "date_end": null,
+    "location": "Parkfriedhof Ohlsdorf, Hamburg",
+    "description": "Informative Busrundfahrt über den Parkfriedhof Ohlsdorf zur Präsentation des vielfältigen Grabstätten-Angebots.",
+    "url": "https://www.friedhof-hamburg.de/besucher/veranstaltungen/",
+    "first_seen": "2026-08-24",
+    "last_seen": "2026-08-24"
+  },
+  "46dbcb6654d4711138b2ad95d778be88": {
+    "title": "Führung über Melaten",
+    "date_start": "2026-10-25",
+    "date_end": null,
+    "location": "Melaten Friedhof, Köln",
+    "description": "Ein Spaziergang über den historischen Melatenfriedhof zu den Grabstätten bekannter Kölner Persönlichkeiten und Originale mit Anekdoten zur Kölner Geschichte.",
+    "url": "https://theatergemeinde-koeln.org/Kulturkompass/werk/25725/M04/stadtfuhrungen-koln/fuehrung-uber-melaten",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
   }
