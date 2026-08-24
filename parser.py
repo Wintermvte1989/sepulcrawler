@@ -161,6 +161,21 @@ DATE_PATTERN = re.compile(
     re.IGNORECASE,
 )
 
+MONTH_MAP = {
+    "jan": 1, "januar": 1,
+    "feb": 2, "februar": 2,
+    "mär": 3, "mrz": 3, "märz": 3, "maerz": 3,
+    "apr": 4, "april": 4,
+    "mai": 5,
+    "jun": 6, "juni": 6,
+    "jul": 7, "juli": 7,
+    "aug": 8, "august": 8,
+    "sep": 9, "sept": 9, "september": 9,
+    "okt": 10, "oktober": 10,
+    "nov": 11, "november": 11,
+    "dez": 12, "dezember": 12,
+}
+
 client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
 
 
@@ -186,23 +201,47 @@ class EventList(BaseModel):
 
 # ---------------------------------------------------------------- Datum
 
-def normalize_date(date_str: str) -> str:
-    date_str = str(date_str or "").strip()
-    if re.match(r"^\d{4}-\d{2}-\d{2}$", date_str):
-        return date_str
-    match = re.match(r"^(\d{1,2})\.(\d{1,2})\.(\d{4})$", date_str)
-    if match:
-        day, month, year = match.groups()
-        return f"{year}-{int(month):02d}-{int(day):02d}"
-    return date_str
-
-
 def parse_date(date_str: str) -> str | None:
-    normalized = normalize_date(date_str)
-    try:
-        return datetime.strptime(normalized, "%Y-%m-%d").date().isoformat()
-    except (ValueError, TypeError):
+    if not date_str:
         return None
+    s = str(date_str).strip().lower()
+
+    # 1. ISO-Format: YYYY-MM-DD
+    match_iso = re.search(r"\b(\d{4})-(\d{1,2})-(\d{1,2})\b", s)
+    if match_iso:
+        y, m, d = map(int, match_iso.groups())
+        try:
+            return date(y, m, d).isoformat()
+        except ValueError:
+            pass
+
+    # 2. Numerisch: DD.MM.YYYY, DD/MM/YY, D.M.YYYY
+    match_num = re.search(r"\b(\d{1,2})[\.\/](\d{1,2})[\.\/](\d{2,4})\b", s)
+    if match_num:
+        d, m, y = map(int, match_num.groups())
+        if y < 100:
+            y += 2000
+        try:
+            return date(y, m, d).isoformat()
+        except ValueError:
+            pass
+
+    # 3. Textuell: "15. September 2026", "15 Sept 2026", "15. Sept. 26"
+    match_text = re.search(r"\b(\d{1,2})\.?\s+([a-zäöü]+)\.?\s+(\d{2,4})\b", s)
+    if match_text:
+        d_str, month_str, y_str = match_text.groups()
+        d = int(d_str)
+        y = int(y_str)
+        if y < 100:
+            y += 2000
+        month_num = MONTH_MAP.get(month_str)
+        if month_num:
+            try:
+                return date(y, month_num, d).isoformat()
+            except ValueError:
+                pass
+
+    return None
 
 
 # ---------------------------------------------------------------- Datenbank
