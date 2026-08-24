@@ -29,7 +29,6 @@ TARGET_URLS = [
     "https://jewish-cemetery-weissensee.org/entdecken/fuehrungen/",
     "https://www.invalidenfriedhof-berlin.de/",
     "https://www.evfbs.de/",
-    "https://forum1848.de/veranstaltungen/",
     "https://marienkirche-berlin.de/",
     "https://www.hedwigs-kathedrale.de/",
 
@@ -63,9 +62,10 @@ TARGET_URLS = [
     "https://www.jewishmuseum.cz/en/info/visit/",
     "https://www.nm.cz/en/program/events",
 
-    # Beinhäuser, Mumien, Grüfte & Sakralbauten (Deutschland)
+    # Beinhäuser, Mumien, Grüfte & Sakralbauten (Verifizierte URLs)
     "https://stpetridom.de/der-dom/besucher-info/bleikeller/",
     "https://www.stadt-oppenheim.de/",
+    "https://www.katharinenkirche-oppenheim.de/",
     "https://www.muenster-doberan.de/",
     "https://www.pfarrei-chammuenster.de/",
     "https://www.koelner-dom.de/aktuelles",
@@ -73,19 +73,27 @@ TARGET_URLS = [
     "https://www.hallstatt.net/",
     "https://www.magdeburgerdom.de/",
     "https://www.naumburger-dom.de/",
-    "https://www.katharinen-kirche-oppenheim.de/",
-    "https://www.abtei-waldsassen.de/",
-    "https://www.dom-speyer.de/",
-    "https://www.wuerzburger-dom.de/",
+    "https://www.kaisergruft.com/",
+    "https://www.stephansdom.at/",
+    "https://www.stift-stpeter.at/de/kloster/index.asp?dat=Friedhof-Katakomben",
+    "https://www.stiftadmont.at/",
+    "https://bamberger-dom.de/gotteshaus/besucherpastoral/Veranstaltungen/index.html",
+    "https://www.bamberger-dommusik.de/",
+    "https://www.bistum-passau.de/dom-kultur/dom-st-stephan-passau",
+    "https://www.dom-erfurt.de/",
+    "https://www.dom-zu-speyer.de/",
+    "https://www.dom-wuerzburg.de/",
+    "https://www.dommuseum-mainz.de/programm/kalender/aktuelle-termine-kalender/",
+    "https://www.freiburger-muenster.de/",
+    "https://www.st-marien-luebeck.de/",
+    "https://www.welterbe-quedlinburg.de/",
 
-    # NRW & Überregional Deutschland: Archäologie, Sepulkralmuseum & Sakralbauten
-    "https://www.duesseldorf.de/stadtgruen/friedhoefe/veranstaltungen",
+    # NRW & Überregional Deutschland: Archäologie & Friedhöfe (Verifizierte URLs)
+    "https://www.duesseldorf.de/stadtgruen/freizeit/fuehrungen1",
+    "https://www.stadt-muenster.de/gruen/friedhoefe",
+    "https://www.zentralfriedhof-muenster.de/",
     "https://www.stiftsmuseum-xanten.de/",
     "https://www.ruhrmuseum.de/veranstaltungen/",
-    "https://www.muenster.de/friedhoefe/veranstaltungen.html",
-    "https://www.duesseldorf.de/stadtmuseum/veranstaltungen",
-    "https://www.rem-mannheim.de/ausstellungen/veranstaltungen/",
-    "https://www.archaeologie-online.de/termine/",
     "https://www.archaeologie-bayern.de/de/termine/",
     "https://www.landesmuseum-vorgeschichte.de/veranstaltungen/familiennachmittage",
     "https://www.leiza.de/aktuelles",
@@ -93,12 +101,12 @@ TARGET_URLS = [
     "https://www.archaeologisches-museum-frankfurt.de/",
     "https://www.landesmuseum-trier.de/",
     "https://schloss-gottorf.de/",
+    "https://www.archaeologie-online.de/nachrichten/",
 
-    # Überregional Deutschland: Friedhofskultur, Vereine & Vorträge
+    # Überregional Deutschland: Friedhofskultur, Vereine & Vorträge (Verifizierte URLs)
     "https://www.sepulkralmuseum.de/veranstaltungen/",
-    "https://blog.sepulkralmuseum.de/",
     "https://paul-benndorf-gesellschaft.de/fuehrungen.html",
-    "https://eliasfriedhof.de/category/veranstaltungen/",
+    "https://eliasfriedhof.de/termine/",
     "http://www.friedhofskultur-halle.de/terminefuehrungen/",
     "https://www.friedhof-hamburg.de/besucher/veranstaltungen/",
     "https://www.ohlsdorf-derpark.de/termine-ohlsdorf/",
@@ -108,50 +116,30 @@ TARGET_URLS = [
     "https://www.friedhofsverwalter.de/fachveranstaltung-der-arbeitsgemeinschaft-friedhof-und-denkmal-e-v/",
     "https://aufdasleben.de/event/",
     "https://www.totentanz-online.de/veranstaltungen.php",
-    "https://www.benecke.com/termine/",
+    "https://home.benecke.com/",
+    "https://www.krfrm.de/venue/hauptfriedhof-frankfurt-am-main/",
+    "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
 
-    # Blogs & Magazinseiten (Langtextsuche nach Terminen)
+    # Nischen-Blogs
     "https://friedhofsfreunde.blogspot.com/",
-    "https://postmortal.de/",
-    "https://bestatter-weblog.de/",
-    "https://friedhofsgefluester.de/",
 
-    # ÖSTERREICH: Katakomben, Stifte, Grüfte & Friedhöfe
-    "https://www.stephansdom.at/visit_tours_catacombs.php",
-    "https://www.petersfriedhof.at/",
-    "https://www.stift-admont.at/museum/",
-    "https://www.innsbruck.gv.at/kultur/friedhoefe/veranstaltungen",
-    "https://www.stadt-salzburg.at/friedhoefe/veranstaltungen",
-    "https://www.kaisergruft.com/",
-
-    # SCHWEIZ: Friedhofsforum, Beinhäuser & Sakralbauten
-    "https://www.stadt-zuerich.ch/gued/de/index/friedhoefe/friedhofforum/veranstaltungen.html",
+    # Schweiz & Regionalverwaltung Friedhöfe (Verifizierte URLs)
+    "https://www.stadt-zuerich.ch/friedhofforum/de/veranstaltungen.html",
     "https://www.stadtgaertnerei.bs.ch/friedhoefe/veranstaltungen.html",
-    "https://www.bernermuenster.ch/de/kalender",
+    "https://www.bernermuenster.ch/",
     "https://www.stiftsbezirk.ch/de/veranstaltungen",
     "https://www.museum-aargau.ch/schloss-lenzburg/event-kalender",
-
-    # DEUTSCHLAND ERWEITERT: Süd, Südwest & Mitte
-    "https://www.alter-friedhof-freiburg.de/",
-    "https://www.freiburger-muenster.de/kalender",
-    "https://www.karlsruhe.de/freizeit-und-sport/friedhoefe/veranstaltungen",
-    "https://www.domberg-bamberg.de/veranstaltungen",
-    "https://www.augsburg.de/umwelt/umweltthemen/friedhoefe/termine",
-    "https://www.passauer-dom.de/",
-    "https://www.frankfurter-hauptfriedhof.de/termine.htm",
-    "https://www.mainzer-dom.de/aktuelles/termine/",
-    "https://www.darmstadt.de/leben-in-darmstadt/umwelt/friedhoefe/veranstaltungen",
-    "https://www.saarbruecken.de/leben_in_saarbruecken/planen_bauen_wohnen/friedhoefe/veranstaltungen",
-
-    # DEUTSCHLAND ERWEITERT: Ost & Nord
-    "https://www.erfurter-dom.de/",
+    "https://www.innsbruck.gv.at/leben/friedhoefe",
+    "https://www.stadt-salzburg.at/friedhoefe",
+    "https://www.karlsruhe.de/freizeit-und-sport/friedhoefe",
+    "https://www.augsburg.de/umwelt/umweltthemen/friedhoefe",
+    "https://www.darmstadt.de/leben-in-darmstadt/umwelt/friedhoefe",
+    "https://www.saarbruecken.de/leben_in_saarbruecken/planen_bauen_wohnen/friedhoefe",
+    "https://striesener-friedhof-dresden.de/vorschau-veranstaltungen/",
+    "https://www.braunschweig.de/leben/umwelt_naturschutz/stadtgruen/friedhoefe/",
+    "https://www.kiel.de/de/umwelt_verkehr/friedhoefe/",
     "https://www.augustinerkloster.de/veranstaltungen/",
-    "https://www.dresden.de/de/leben/umwelt/stadtgruen/friedhoefe/veranstaltungen.php",
-    "https://www.chemnitz.de/chemnitz/de/unsere-stadt/friedhoefe/veranstaltungen.html",
-    "https://www.stiftskirche-quedlinburg.de/",
-    "https://www.st-marien-luebeck.de/kalender",
-    "https://www.braunschweig.de/leben/umwelt_naturschutz/stadtgruen/friedhoefe/veranstaltungen.php",
-    "https://www.kiel.de/de/umwelt_verkehr/friedhoefe/veranstaltungen.php"
+    "https://www.chemnitz.de/chemnitz/de/unsere-stadt/friedhoefe/veranstaltungen.html"
 ]
 
 DB_FILE = "events_db.json"
@@ -260,32 +248,45 @@ def is_worth_sending(url: str, text: str) -> bool:
     return True
 
 
-# ---------------------------------------------------------------- Abruf
+# ---------------------------------------------------------------- Abruf & Fallback
 
 def fetch_page_text(url: str) -> str:
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
         "Accept-Language": "de-DE,de;q=0.9,en-US;q=0.8,en;q=0.7",
-        "Sec-Ch-Ua": '"Chromium";v="124", "Google Chrome";v="124"',
-        "Sec-Ch-Ua-Mobile": "?0",
-        "Sec-Ch-Ua-Platform": '"Windows"',
-        "Sec-Fetch-Dest": "document",
-        "Sec-Fetch-Mode": "navigate",
-        "Sec-Fetch-Site": "none",
-        "Sec-Fetch-User": "?1",
-        "Upgrade-Insecure-Requests": "1",
     }
-    with httpx.Client(headers=headers, follow_redirects=True, timeout=25.0, verify=False) as client_http:
-        response = client_http.get(url)
-        response.raise_for_status()
+    
+    urls_to_try = [url]
+    parsed = urlparse(url)
+    if parsed.path and parsed.path != "/":
+        urls_to_try.append(f"{parsed.scheme}://{parsed.netloc}/")
 
-    soup = BeautifulSoup(response.text, "html.parser")
-    for tag in soup(["script", "style", "nav", "footer", "header", "aside", "form", "noscript"]):
-        tag.decompose()
+    last_exception = None
+    for current_url in urls_to_try:
+        try:
+            with httpx.Client(headers=headers, follow_redirects=True, timeout=25.0, verify=False) as client_http:
+                response = client_http.get(current_url)
+                response.raise_for_status()
 
-    main = soup.find("main") or soup.find("article") or soup
-    return main.get_text(separator=" ", strip=True)
+                soup = BeautifulSoup(response.text, "html.parser")
+                for tag in soup(["script", "style", "nav", "footer", "header", "aside", "form", "noscript"]):
+                    tag.decompose()
+
+                main = soup.find("main") or soup.find("article") or soup
+                text = main.get_text(separator=" ", strip=True)
+                if len(text) >= MIN_TEXT_LENGTH or current_url != url:
+                    return text
+        except httpx.HTTPStatusError as e:
+            last_exception = e
+            if e.response.status_code == 404:
+                print(f"  404 auf {current_url} -> versuche Fallback...")
+                continue
+        except Exception as e:
+            last_exception = e
+            break
+
+    raise last_exception if last_exception else Exception("Unbekannter Ladefehler")
 
 
 # ---------------------------------------------------------------- Extraktion
@@ -412,7 +413,7 @@ def render_html(events: list[dict], today: date):
         <div class="timestamp">Stand: {timestamp} | Zeige <span id="visibleCount">{len(sorted_events)}</span> von {len(sorted_events)} Events</div>
 
         <div class="filter-container">
-            <input type="text" id="searchInput" class="search-input" placeholder="Events durchsuchen (z. B. Beinhaus, Wien, Zürich, Benecke, Köln)..." onkeyup="filterEvents()">
+            <input type="text" id="searchInput" class="search-input" placeholder="Events durchsuchen (z. B. Beinhaus, Köln, Leipzig, Stahnsdorf)..." onkeyup="filterEvents()">
             <div class="filter-tags">
                 <button class="tag-btn active" data-filter="" onclick="setTagFilter(this)">Alle</button>
                 <button class="tag-btn" data-filter="berlin" onclick="setTagFilter(this)">Berlin</button>
