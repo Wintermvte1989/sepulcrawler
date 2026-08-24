@@ -3,10 +3,14 @@ import html
 import json
 import os
 import re
+import tempfile
 import time
 import httpx
 import urllib3
-from datetime import datetime
+from collections import Counter
+from datetime import datetime, date
+from urllib.parse import urlparse
+from zoneinfo import ZoneInfo
 from bs4 import BeautifulSoup
 from google import genai
 from google.genai import types
@@ -126,21 +130,60 @@ TARGET_URLS = [
     "https://www.friedhoefewien.at/friedhofsfuehrungen"
 ]
 
+# Quellen, die bei JEDEM Lauf gecrawlt werden (grosse Kalender mit hoher Aenderungsrate).
+# Liste bewusst klein halten - jeder Eintrag kostet Budget. Nach ein paar Wochen
+# anhand der Logs anpassen.
+DAILY_SOURCES = {
+    "https://www.smb.museum/veranstaltungen/",
+    "https://www.dhm.de/programm/veranstaltungskalender/",
+    "https://www.stadtmuseum.de/programm",
+    "https://www.friedhoefewien.at/veranstaltungen",
+}
+
 DB_FILE = "events_db.json"
 HTML_OUTPUT_FILE = "index.html"
-BATCH_SIZE = 8
+
+BATCH_SIZE = 8          # nicht erhoehen - Output-Limit der API
+TEXT_LIMIT = 9000       # Zeichen pro Seite, die an die API gehen
+MIN_TEXT_LENGTH = 1500  # darunter: vermutlich JS-gerenderte Seite ohne Inhalt
+STALE_AFTER_DAYS = 10   # ab hier "nicht mehr bestaetigt" im HTML
+API_ATTEMPTS = 3        # Achtung: jeder Versuch zaehlt gegen das RPD-Limit (20)
+
+BERLIN = ZoneInfo("Europe/Berlin")
+
+DATE_PATTERN = re.compile(
+    r"\b\d{1,2}\.\s*\d{1,2}\.\s*\d{2,4}\b"
+    r"|\b\d{1,2}\.\s*(Januar|Februar|M\u00e4rz|April|Mai|Juni|Juli|"
+    r"August|September|Oktober|November|Dezember)\b"
+    r"|\b\d{4}-\d{2}-\d{2}\b",
+    re.IGNORECASE,
+)
 
 client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
 
+
+class TruncatedResponseError(Exception):
+    """Antwort der API war kein gueltiges JSON - meist abgeschnitten wegen
+    Output-Limit. Ein Retry wuerde dasselbe Ergebnis liefern, deshalb eigener Typ."""
+
+
 class Event(BaseModel):
+    source_id: int = Field(description="Nummer der QUELLE, aus der dieses Event stammt")
     title: str = Field(description="Titel der Veranstaltung")
     date_start: str = Field(description="Startdatum im Format YYYY-MM-DD")
+    date_end: str | None = Field(
+        default=None,
+        description="Enddatum YYYY-MM-DD, nur bei mehrtaegigen Veranstaltungen, sonst null",
+    )
     location: str = Field(description="Ort oder Institution der Veranstaltung")
-    description: str = Field(description="Kurze Zusammenfassung in 1-2 Sätzen")
-    url: str = Field(description="Direkter Link zur Veranstaltung oder Quell-URL")
+    description: str = Field(description="Kurze Zusammenfassung in 1-2 Saetzen")
+
 
 class EventList(BaseModel):
     events: list[Event]
+
+
+# ---------------------------------------------------------------- Datum
 
 def normalize_date(date_str: str) -> str:
     date_str = str(date_str or "").strip()
@@ -152,26 +195,177 @@ def normalize_date(date_str: str) -> str:
         return f"{year}-{int(month):02d}-{int(day):02d}"
     return date_str
 
+
+def parse_date(date_str: str) -> str | None:
+    """Gibt ein valides YYYY-MM-DD zurueck oder None. Prueft echte
+    Kalendergueltigkeit - '2026-13-31' oder 'Fruehjahr 2026' fallen durch."""
+    normalized = normalize_date(date_str)
+    try:
+        return datetime.strptime(normalized, "%Y-%m-%d").date().isoformat()
+    except (ValueError, TypeError):
+        return None
+
+
+# ---------------------------------------------------------------- Datenbank
+
 def load_events_db() -> dict:
-    if os.path.exists(DB_FILE):
-        try:
-            with open(DB_FILE, "r", encoding="utf-8") as f:
-                return json.load(f)
-        except Exception:
-            return {}
-    return {}
+    """Bewusst ohne try/except: eine kaputte DB darf NICHT zu einem leeren
+    Dict fuehren, sonst ueberschreibt der Lauf am Ende den gesamten Bestand."""
+    if not os.path.exists(DB_FILE):
+        return {}
+    with open(DB_FILE, "r", encoding="utf-8") as f:
+        return json.load(f)
+
 
 def save_events_db(db: dict):
-    with open(DB_FILE, "w", encoding="utf-8") as f:
-        json.dump(db, f, ensure_ascii=False, indent=2)
+    """Atomar: erst vollstaendig in eine Temp-Datei im selben Verzeichnis,
+    dann per os.replace umbenennen. Ein Abbruch hinterlaesst nie eine
+    halb geschriebene events_db.json."""
+    directory = os.path.dirname(os.path.abspath(DB_FILE)) or "."
+    fd, tmp_path = tempfile.mkstemp(dir=directory, suffix=".tmp")
+    try:
+        with os.fdopen(fd, "w", encoding="utf-8") as f:
+            json.dump(db, f, ensure_ascii=False, indent=2)
+            f.flush()
+            os.fsync(f.fileno())
+        os.replace(tmp_path, DB_FILE)
+    except Exception:
+        if os.path.exists(tmp_path):
+            os.remove(tmp_path)
+        raise
+
 
 def generate_event_id(event: dict) -> str:
-    raw = f"{event.get('title', '')}_{event.get('date_start', '')}"
+    """Host mit in die ID: sonst kollidieren gleichnamige Fuehrungen am
+    gleichen Tag auf verschiedenen Friedhoefen."""
+    title = re.sub(r"\s+", " ", str(event.get("title") or "")).strip().lower()
+    host = urlparse(event.get("url") or "").netloc
+    raw = f"{title}|{event.get('date_start', '')}|{host}"
     return hashlib.md5(raw.encode("utf-8")).hexdigest()
 
-def render_html(events: list[dict]):
-    timestamp = datetime.now().strftime("%d.%m.%Y um %H:%M Uhr")
+
+# ---------------------------------------------------------------- Auswahl
+
+def due_today(url: str, weekday: int) -> bool:
+    """Rotation: jede URL bekommt einen festen Wochentag. Verteilt ~100 Quellen
+    auf 7 Tage und haelt den Verbrauch unter dem RPD-Limit."""
+    if url in DAILY_SOURCES:
+        return True
+    return int(hashlib.md5(url.encode("utf-8")).hexdigest(), 16) % 7 == weekday
+
+
+def is_worth_sending(url: str, text: str) -> bool:
+    if len(text) < MIN_TEXT_LENGTH:
+        print(f"  uebersprungen (nur {len(text)} Zeichen, evtl. JS-gerendert): {url}")
+        return False
+    if not DATE_PATTERN.search(text):
+        print(f"  uebersprungen (kein Datumsmuster gefunden): {url}")
+        return False
+    return True
+
+
+# ---------------------------------------------------------------- Abruf
+
+def fetch_page_text(url: str) -> str:
+    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
+    response = httpx.get(url, headers=headers, follow_redirects=True, timeout=15.0, verify=False)
+    response.raise_for_status()
+
+    soup = BeautifulSoup(response.text, "html.parser")
+    for tag in soup(["script", "style", "nav", "footer", "header", "aside", "form", "noscript"]):
+        tag.decompose()
+
+    main = soup.find("main") or soup.find("article") or soup
+    return main.get_text(separator=" ", strip=True)
+
+
+# ---------------------------------------------------------------- Extraktion
+
+def extract_events_batch(batch_sources: list[tuple[str, str]], today_str: str) -> list[dict]:
+    combined_text = ""
+    for idx, (url, text) in enumerate(batch_sources, start=1):
+        combined_text += (
+            f"\n=== QUELLE {idx} ===\n{text[:TEXT_LIMIT]}\n=== ENDE QUELLE {idx} ===\n"
+        )
+
+    prompt = f"""
+    Das heutige Datum ist {today_str}.
+    Analysiere die folgenden Webseiten-Texte auf Veranstaltungen im Bereich Sepulkralkultur,
+    Friedhofsfuehrungen, Bestattungswesen, Totenkult, Gedenkkultur, Grabkunst oder
+    historische Ausstellungen zum Thema Tod/Sterben.
+
+    WICHTIG:
+    - Extrahiere AUSSCHLIESSLICH Veranstaltungen, deren Datum am oder nach dem heutigen Datum ({today_str}) liegt.
+    - date_start MUSS strikt YYYY-MM-DD sein.
+    - date_end nur bei mehrtaegigen Veranstaltungen (Ausstellungen, Aktionstage) setzen, sonst null.
+    - Ignoriere alle vergangenen Veranstaltungen strikt.
+    - Trage in 'source_id' die Nummer der QUELLE ein, in deren Block das Event stand.
+    - MEHRSPRACHIGE TEXTE: Falls der Quelltext auf Englisch, Tschechisch oder einer anderen
+      Sprache verfasst ist, uebersetze title, location und description praezise ins Deutsche.
+
+    Webseiten-Daten:
+    {combined_text}
+    """
+
+    response = client.models.generate_content(
+        model="gemini-3.6-flash",
+        contents=prompt,
+        config=types.GenerateContentConfig(
+            response_mime_type="application/json",
+            response_schema=EventList,
+            temperature=0.1,
+        ),
+    )
+
+    raw_text = (response.text or "").strip()
+    if raw_text.startswith("```"):
+        raw_text = re.sub(r"^```[a-z]*\n?", "", raw_text)
+        raw_text = re.sub(r"\n?```$", "", raw_text)
+
+    try:
+        result = json.loads(raw_text)
+    except json.JSONDecodeError as e:
+        print(f"  JSON-Fehler: {e}")
+        print(f"  Antwortlaenge: {len(raw_text)} Zeichen")
+        print(f"  Ende der Antwort: ...{raw_text[-200:]}")
+        raise TruncatedResponseError(str(e))
+
+    # URL wird hier zugeordnet, nicht vom Modell geliefert.
+    valid = []
+    for ev in result.get("events", []):
+        sid = ev.pop("source_id", None)
+        if isinstance(sid, int) and 1 <= sid <= len(batch_sources):
+            ev["url"] = batch_sources[sid - 1][0]
+            valid.append(ev)
+        else:
+            print(f"  verworfen (ungueltige source_id={sid}): {ev.get('title')}")
+    return valid
+
+
+def call_with_retry(batch_sources, today_str) -> list[dict]:
+    for attempt in range(API_ATTEMPTS):
+        try:
+            return extract_events_batch(batch_sources, today_str)
+        except TruncatedResponseError:
+            # Retry sinnlos - dieselbe Anfrage liefert dieselbe abgeschnittene
+            # Antwort. Stattdessen BATCH_SIZE oder TEXT_LIMIT reduzieren.
+            print("  Antwort abgeschnitten - kein Retry, BATCH_SIZE pruefen")
+            return []
+        except Exception as e:
+            wait = 5 * (2 ** attempt)
+            print(f"  Versuch {attempt + 1}/{API_ATTEMPTS} fehlgeschlagen ({e}), warte {wait}s")
+            if attempt < API_ATTEMPTS - 1:
+                time.sleep(wait)
+    print("  endgueltig aufgegeben")
+    return []
+
+
+# ---------------------------------------------------------------- HTML
+
+def render_html(events: list[dict], today: date):
+    timestamp = datetime.now(BERLIN).strftime("%d.%m.%Y um %H:%M Uhr")
     sorted_events = sorted(events, key=lambda x: x.get("date_start", ""))
+    today_str = today.isoformat()
 
     html_content = f"""<!DOCTYPE html>
 <html lang="de">
@@ -184,7 +378,7 @@ def render_html(events: list[dict]):
         h1 {{ color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; margin-bottom: 10px; }}
         .container {{ background: white; border-radius: 8px; padding: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }}
         .timestamp {{ font-size: 0.85em; color: #7f8c8d; margin-bottom: 20px; }}
-        
+
         .filter-container {{ display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; align-items: center; background: #f8f9fa; padding: 15px; border-radius: 6px; border: 1px solid #e9ecef; }}
         .search-input {{ flex: 1; min-width: 250px; padding: 8px 12px; border: 1px solid #ced4da; border-radius: 4px; font-size: 0.95em; }}
         .filter-tags {{ display: flex; gap: 5px; flex-wrap: wrap; }}
@@ -197,7 +391,10 @@ def render_html(events: list[dict]):
         td {{ padding: 12px 10px; border-bottom: 1px solid #ecf0f1; vertical-align: top; font-size: 0.95em; }}
         tr:hover {{ background-color: #f8f9fa; }}
         .date-badge {{ background-color: #3498db; color: white; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 0.85em; white-space: nowrap; }}
+        .date-end {{ display: block; margin-top: 4px; font-size: 0.8em; color: #7f8c8d; white-space: nowrap; }}
         .location {{ font-weight: bold; color: #34495e; }}
+        .badge-new {{ background: #27ae60; color: white; padding: 2px 6px; border-radius: 3px; font-size: 0.7em; margin-left: 6px; vertical-align: middle; }}
+        .badge-stale {{ background: #f39c12; color: white; padding: 2px 6px; border-radius: 3px; font-size: 0.7em; margin-left: 6px; vertical-align: middle; }}
         a.btn {{ display: inline-block; background-color: #27ae60; color: white; text-decoration: none; padding: 5px 10px; border-radius: 4px; font-size: 0.85em; }}
         a.btn:hover {{ background-color: #219150; }}
         .no-results {{ display: none; padding: 20px; text-align: center; color: #7f8c8d; font-style: italic; }}
@@ -205,21 +402,21 @@ def render_html(events: list[dict]):
 </head>
 <body>
     <div class="container">
-        <h1>Sepulkralkultur & Friedhofskultur – Termine</h1>
+        <h1>Sepulkralkultur &amp; Friedhofskultur &ndash; Termine</h1>
         <div class="timestamp">Stand: {timestamp} | Zeige <span id="visibleCount">{len(sorted_events)}</span> von {len(sorted_events)} Events</div>
 
         <div class="filter-container">
-            <input type="text" id="searchInput" class="search-input" placeholder="Events durchsuchen (z. B. Führung, Berlin, Beinhaus)..." onkeyup="filterEvents()">
+            <input type="text" id="searchInput" class="search-input" placeholder="Events durchsuchen (z. B. F&uuml;hrung, Berlin, Beinhaus)..." onkeyup="filterEvents()">
             <div class="filter-tags">
                 <button class="tag-btn active" data-filter="" onclick="setTagFilter(this)">Alle</button>
                 <button class="tag-btn" data-filter="berlin" onclick="setTagFilter(this)">Berlin</button>
                 <button class="tag-btn" data-filter="brandenburg" onclick="setTagFilter(this)">Brandenburg</button>
                 <button class="tag-btn" data-filter="prag" onclick="setTagFilter(this)">Prag / Tschechien</button>
-                <button class="tag-btn" data-filter="gruft" onclick="setTagFilter(this)">Grüfte / Beinhäuser</button>
+                <button class="tag-btn" data-filter="gruft" onclick="setTagFilter(this)">Gr&uuml;fte / Beinh&auml;user</button>
             </div>
         </div>
 
-        <div id="noResults" class="no-results">Keine passenden Veranstaltungen für die Suchkriterien gefunden.</div>
+        <div id="noResults" class="no-results">Keine passenden Veranstaltungen f&uuml;r die Suchkriterien gefunden.</div>
 """
 
     if sorted_events:
@@ -237,19 +434,38 @@ def render_html(events: list[dict]):
             <tbody>
 """
         for event in sorted_events:
-            date_s = html.escape(event.get('date_start', ''))
-            title_s = html.escape(event.get('title', ''))
-            loc_s = html.escape(event.get('location', ''))
-            desc_s = html.escape(event.get('description', ''))
-            url_s = html.escape(event.get('url', '#'))
+            date_s = html.escape(event.get("date_start", ""))
+            title_s = html.escape(event.get("title", ""))
+            loc_s = html.escape(event.get("location", ""))
+            desc_s = html.escape(event.get("description", ""))
+
+            # Nur http/https zulassen - html.escape verhindert kein javascript:
+            raw_url = str(event.get("url") or "")
+            url_s = html.escape(raw_url) if raw_url.startswith(("http://", "https://")) else "#"
+
+            end_html = ""
+            if event.get("date_end"):
+                end_html = f'<span class="date-end">bis {html.escape(event["date_end"])}</span>'
+
+            badges = ""
+            if event.get("first_seen") == today_str:
+                badges += '<span class="badge-new">neu</span>'
+            last_seen = event.get("last_seen")
+            if last_seen:
+                try:
+                    age = (today - date.fromisoformat(last_seen)).days
+                    if age > STALE_AFTER_DAYS:
+                        badges += f'<span class="badge-stale">seit {age} Tagen nicht best&auml;tigt</span>'
+                except ValueError:
+                    pass
 
             html_content += f"""
                 <tr>
-                    <td><span class="date-badge">{date_s}</span></td>
-                    <td><strong>{title_s}</strong></td>
+                    <td><span class="date-badge">{date_s}</span>{end_html}</td>
+                    <td><strong>{title_s}</strong>{badges}</td>
                     <td class="location">{loc_s}</td>
                     <td>{desc_s}</td>
-                    <td><a href="{url_s}" target="_blank" rel="noopener noreferrer" class="btn">Link öffnen</a></td>
+                    <td><a href="{url_s}" target="_blank" rel="noopener noreferrer" class="btn">Link &ouml;ffnen</a></td>
                 </tr>
 """
         html_content += """
@@ -301,102 +517,89 @@ def render_html(events: list[dict]):
     with open(HTML_OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write(html_content)
 
-def fetch_page_text(url: str) -> str:
-    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
-    response = httpx.get(url, headers=headers, follow_redirects=True, timeout=15.0, verify=False)
-    response.raise_for_status()
-    
-    soup = BeautifulSoup(response.text, "html.parser")
-    for script in soup(["script", "style", "nav", "footer"]):
-        script.decompose()
-        
-    return soup.get_text(separator=" ", strip=True)
 
-def extract_events_batch(batch_sources: list[tuple[str, str]], today_str: str) -> list[dict]:
-    combined_text = ""
-    for url, text in batch_sources:
-        combined_text += f"\n--- QUELL-URL: {url} ---\n{text[:6000]}\n"
-
-    prompt = f"""
-    Das heutige Datum ist {today_str}.
-    Analysiere die folgenden Webseiten-Texte auf Veranstaltungen im Bereich Sepulkralkultur, 
-    Friedhofsführungen, Bestattungswesen, Totenkult, Gedenkkultur, Grabkunst oder historische Ausstellungen zum Thema Tod/Sterben. 
-    
-    WICHTIG:
-    - Extrahiere AUSSCHLIESSLICH Veranstaltungen, deren Datum (date_start) am oder nach dem heutigen Datum ({today_str}) liegt.
-    - Formatierung für date_start MUSS strikt YYYY-MM-DD sein.
-    - Ignoriere alle vergangenen Veranstaltungen strikt.
-    - Trage in das Feld 'url' jeweils die zugehörige QUELL-URL ein.
-    - WICHTIG FÜR MEHRSPRACHIGE TEXTE: Falls der Quelltext auf Englisch, Tschechisch oder einer anderen Sprache verfasst ist, übersetze Titel (title), Ort (location) und Beschreibung (description) präzise ins Deutsche.
-    
-    Webseiten-Daten:
-    {combined_text}
-    """
-
-    response = client.models.generate_content(
-        model='gemini-3.6-flash',
-        contents=prompt,
-        config=types.GenerateContentConfig(
-            response_mime_type="application/json",
-            response_schema=EventList,
-            temperature=0.1,
-        ),
-    )
-    
-    raw_text = (response.text or "").strip()
-    if raw_text.startswith("```"):
-        raw_text = re.sub(r"^```[a-z]*\n?", "", raw_text)
-        raw_text = re.sub(r"\n?```$", "", raw_text)
-
-    try:
-        result = json.loads(raw_text)
-        return result.get("events", [])
-    except json.JSONDecodeError as e:
-        print(f"Fehler beim Parsen der API-Antwort: {e}")
-        return []
+# ---------------------------------------------------------------- Hauptlauf
 
 if __name__ == "__main__":
-    today_str = datetime.now().strftime("%Y-%m-%d")
+    today = datetime.now(BERLIN).date()
+    today_str = today.isoformat()
+    weekday = today.weekday()
+
     events_db = load_events_db()
-    
-    # Phase 1: Webseiten laden
+    print(f"Bestand geladen: {len(events_db)} Events")
+
+    # Phase 0: Rotation
+    due_urls = [u for u in TARGET_URLS if due_today(u, weekday)]
+    print(f"\n--- Phase 0: {len(due_urls)} von {len(TARGET_URLS)} Quellen heute faellig ---")
+
+    # Phase 1: Webseiten laden und filtern
+    print("\n--- Phase 1: Webseiten laden ---")
     fetched_pages = []
-    print("--- Phase 1: Webseiten laden ---")
-    for url in TARGET_URLS:
+    for url in due_urls:
         try:
             page_text = fetch_page_text(url)
-            if page_text:
-                fetched_pages.append((url, page_text))
-                print(f"Erfolgreich geladen: {url}")
         except Exception as e:
-            print(f"Fehler beim Laden von {url}: {e}")
+            print(f"  Fehler beim Laden: {url} - {e}")
+            continue
+
+        print(f"  {len(page_text):>6} Zeichen  {url}")
+        if is_worth_sending(url, page_text):
+            fetched_pages.append((url, page_text))
+
+    print(f"\n{len(fetched_pages)} Seiten gehen an die API "
+          f"({(len(fetched_pages) + BATCH_SIZE - 1) // BATCH_SIZE} Requests)")
 
     # Phase 2: KI-Analyse
     print(f"\n--- Phase 2: KI-Analyse in {BATCH_SIZE}er-Paketen ---")
+    stats = Counter()
     for i in range(0, len(fetched_pages), BATCH_SIZE):
         batch = fetched_pages[i:i + BATCH_SIZE]
-        print(f"\nSende Paket {i//BATCH_SIZE + 1} ({len(batch)} Seiten) an Gemini API...")
-        
-        try:
-            events = extract_events_batch(batch, today_str)
-            for event in events:
-                event["date_start"] = normalize_date(event.get("date_start", ""))
-                if event["date_start"] >= today_str:
-                    event_id = generate_event_id(event)
-                    events_db[event_id] = event
-        except Exception as e:
-            print(f"Fehler bei API-Anfrage für Paket {i//BATCH_SIZE + 1}: {e}")
-        
+        print(f"\nPaket {i // BATCH_SIZE + 1} ({len(batch)} Seiten)")
+
+        events = call_with_retry(batch, today_str)
+        print(f"  {len(events)} Events extrahiert")
+
+        for event in events:
+            parsed_start = parse_date(event.get("date_start", ""))
+            if parsed_start is None:
+                print(f"  verworfen (Datum unlesbar '{event.get('date_start')}'): {event.get('title')}")
+                stats["datum_ungueltig"] += 1
+                continue
+            event["date_start"] = parsed_start
+            event["date_end"] = parse_date(event.get("date_end") or "")
+
+            relevant = event["date_end"] or event["date_start"]
+            if relevant < today_str:
+                stats["vergangen"] += 1
+                continue
+
+            event_id = generate_event_id(event)
+            if event_id in events_db:
+                event["first_seen"] = events_db[event_id].get("first_seen", today_str)
+                stats["aktualisiert"] += 1
+            else:
+                event["first_seen"] = today_str
+                stats["neu"] += 1
+            event["last_seen"] = today_str
+            events_db[event_id] = event
+
         time.sleep(4)
 
-    # Phase 3: Bereinigung vergangener Events aus der Datenbank
+    # Phase 3: Bereinigung vergangener Events
     cleaned_db = {}
     for event_id, event in events_db.items():
-        if event.get("date_start", "") >= today_str:
+        relevant = event.get("date_end") or event.get("date_start", "")
+        if relevant >= today_str:
             cleaned_db[event_id] = event
+    stats["entfernt"] = len(events_db) - len(cleaned_db)
 
-    # Speichern & HTML neu bauen
     save_events_db(cleaned_db)
-    render_html(list(cleaned_db.values()))
-    
-    print(f"\nVerarbeitung abgeschlossen. {len(cleaned_db)} aktive Zukunfts-Events in '{HTML_OUTPUT_FILE}' geschrieben.")
+    render_html(list(cleaned_db.values()), today)
+
+    print("\n--- Zusammenfassung ---")
+    print(f"  neu:            {stats['neu']}")
+    print(f"  aktualisiert:   {stats['aktualisiert']}")
+    print(f"  Datum ungueltig:{stats['datum_ungueltig']}")
+    print(f"  vergangen:      {stats['vergangen']}")
+    print(f"  DB bereinigt:   {stats['entfernt']} entfernt")
+    print(f"\n{len(cleaned_db)} aktive Events in '{HTML_OUTPUT_FILE}' geschrieben.")

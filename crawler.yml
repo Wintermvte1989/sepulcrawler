@@ -1,0 +1,116 @@
+name: Sepulkral Event Crawler
+
+on:
+  schedule:
+    # 08:23 UTC - krumme Minute, weil Laeufe zur vollen Stunde bei GitHub
+    # regelmaessig verzoegert werden oder ganz ausfallen.
+    # Hinweis: Cron kennt keine Zeitzonen. 08:23 UTC = 10:23 MESZ (Sommer)
+    # bzw. 09:23 MEZ (Winter).
+    - cron: '23 8 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# Verhindert, dass ein manueller Lauf parallel zum Cron-Lauf startet und
+# beide gleichzeitig in events_db.json schreiben.
+concurrency:
+  group: sepulkral-crawler
+  cancel-in-progress: false
+
+jobs:
+  run-crawler:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+        with:
+          # Voller Klon: ein Rebase auf einem Shallow-Clone ist fragil.
+          fetch-depth: 0
+
+      - name: Python einrichten
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Abhaengigkeiten installieren
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Bestand vor dem Lauf zaehlen
+        id: before
+        run: |
+          if [ -f events_db.json ]; then
+            COUNT=$(python -c "import json;print(len(json.load(open('events_db.json'))))")
+          else
+            COUNT=0
+          fi
+          echo "count=$COUNT" >> "$GITHUB_OUTPUT"
+          echo "Events vor dem Lauf: $COUNT"
+
+      - name: Crawler ausfuehren
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python parser.py
+
+      - name: Plausibilitaetspruefung
+        run: |
+          BEFORE=${{ steps.before.outputs.count }}
+          AFTER=$(python -c "import json;print(len(json.load(open('events_db.json'))))")
+          echo "Events nach dem Lauf: $AFTER (vorher: $BEFORE)"
+
+          if [ "$AFTER" -eq 0 ] && [ "$BEFORE" -gt 0 ]; then
+            echo "::error::DB ist leer, war aber vorher gefuellt - Abbruch ohne Commit"
+            exit 1
+          fi
+
+          # Bei Rotation entfernt ein Lauf nur vergangene Termine.
+          # Ein Einbruch um mehr als die Haelfte deutet auf einen Fehler hin.
+          if [ "$BEFORE" -gt 20 ]; then
+            HALF=$((BEFORE / 2))
+            if [ "$AFTER" -lt "$HALF" ]; then
+              echo "::error::Bestand von $BEFORE auf $AFTER eingebrochen - Abbruch ohne Commit"
+              exit 1
+            fi
+          fi
+
+      - name: Aenderungen speichern
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Nur die generierten Dateien, kein 'git add -A'.
+          git add events_db.json index.html
+
+          # index.html enthaelt immer einen frischen Zeitstempel und aendert
+          # sich daher bei jedem Lauf. Massgeblich ist die DB: hat sie sich
+          # nicht geaendert, gibt es nichts zu committen.
+          if git diff --staged --quiet -- events_db.json; then
+            echo "Keine inhaltlichen Aenderungen - kein Commit"
+            git reset
+            exit 0
+          fi
+
+          git commit -m "Automatisches Event-Update ($(date -u +%Y-%m-%d))"
+
+          for i in 1 2 3; do
+            git pull --rebase -X ours origin main && git push && exit 0
+            echo "Push-Versuch $i fehlgeschlagen, neuer Versuch in 5s"
+            sleep 5
+          done
+          echo "::error::Push nach 3 Versuchen fehlgeschlagen"
+          exit 1
+
+      - name: Lauf-Protokoll sichern
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: crawler-log-${{ github.run_number }}
+          path: |
+            events_db.json
+          retention-days: 14
+          if-no-files-found: ignore

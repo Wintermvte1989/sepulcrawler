@@ -1,0 +1,11 @@
+# Versionen aus dem erfolgreichen Actions-Lauf vom 24.08.2026.
+# Aktualisieren nur bewusst und mit Test - nicht automatisch.
+
+google-genai==2.19.0
+beautifulsoup4==4.15.0
+httpx==0.28.1
+pydantic==2.13.4
+
+# Wird in parser.py direkt importiert (urllib3.disable_warnings),
+# kam bisher nur transitiv ueber requests mit.
+urllib3==2.7.0
