@@ -19,55 +19,40 @@ from pydantic import BaseModel, Field
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 TARGET_URLS = [
-    # Aktionstage & Gedenktage
+    # Aktionstage, Festtage & Lange Nächte
     "https://www.tag-des-offenen-denkmals.de/",
-    "https://denkmaltag.berlin.de/",
+    "https://www.berlin.de/landesdenkmalamt/tag-des-offenen-denkmals/",
+    "https://www.lange-nacht-der-museen.de/",
+    "https://www.langenachtderwissenschaften.de/",
     "https://www.meinkiez-meinfriedhof.berlin.de/tag-des-friedhofs",
 
     # Berlin: Friedhöfe, Verbände & Grüfte
     "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
-    "https://www.kkbs.de/veranstaltungen/veranstaltungen-auf-friedhofen",
-    "https://berlin.volksbund.de/aktuell/termine",
-    "https://www.stiftung-historische-friedhoefe.de/",
-    "https://www.efeu-ev.com/",
     "https://jewish-cemetery-weissensee.org/entdecken/fuehrungen/",
-    "https://www.zwoelf-apostel-berlin.de/alle-termine-der-zwolf-apostel-kirchengemeinde-und-der-kirchhofe",
     "https://www.invalidenfriedhof-berlin.de/",
     "https://www.evfbs.de/",
     "https://forum1848.de/veranstaltungen/",
-    "https://www.garnisonfriedhof-berlin.de/",
     "https://marienkirche-berlin.de/",
-    "https://stpetri-stmarien.de/",
+    "https://st-petri-stmarien.de/",
     "https://www.hedwigs-kathedrale.de/",
-    "https://www.berlinerdom.de/termine/",
 
     # Brandenburg & Preußische Schlösser/Krypten
     "https://www.suedwestkirchhof.de/veranstaltungen.html",
-    "https://www.bornstedter-friedhof.de/bornstedter-friedhof/historische-graeber/fuehrungen/termine-fuer-fuehrungen/",
     "https://www.spsg.de/aktuelles/veranstaltungen",
-    "https://www.friedhof-in-potsdam.de/allgemeines/aktuelles",
     "https://kriegsgraeberstaetten.volksbund.de/friedhof/halbe",
-    "https://www.goerlitz.de/",
-    "https://www.stift-neuzelle.de/",
 
     # Berlin & Brandenburg: Bestattungskultur, Hospize & Private
     "https://www.ahorn-gruppe.de/",
     "https://www.sarggeschichten.de/",
     "https://www.ricam-hospiz.de/events/",
-    "https://bjoern-schulz-stiftung.de/akademie/",
 
-    # Berlin & Sachsen: Staatliche & Bezirksmuseen
+    # Berlin & Sachsen: Staatliche & Regionalmuseen
     "https://www.smb.museum/veranstaltungen/",
     "https://www.smb.museum/museen-einrichtungen/aegyptisches-museum-und-papyrussammlung/veranstaltungen/",
     "https://www.smb.museum/museen-einrichtungen/museum-fuer-vor-und-fruehgeschichte/veranstaltungen/",
     "https://www.stadtmuseum.de/programm",
-    "https://www.dhm.de/programm/veranstaltungskalender/",
     "https://www.humboldtforum.org/de/programm/",
     "https://www.jmberlin.de/",
-    "https://tickets.jmberlin.de/events/",
-    "https://www.berlin.de/museum-pankow/aktuelles/veranstaltungen/",
-    "https://www.villa-oppenheim-berlin.de/",
-    "https://www.zitadelle-berlin.de/en/education/events/",
     "https://www.dhmd.de/ausstellungen/",
 
     # Brandenburg: Stadtmuseen & Regionalgeschichte
@@ -78,9 +63,7 @@ TARGET_URLS = [
 
     # Prag & Tschechien: Beinhäuser, Jüdischer Friedhof & Museen
     "https://www.sedlec.info/",
-    "https://www.brnenskepodzemi.cz/",
     "https://www.jewishmuseum.cz/en/info/visit/",
-    "https://praha-vysehrad.cz/en/",
     "https://www.nm.cz/en/program/events",
 
     # Beinhäuser, Mumien, Grüfte & Sakralbauten (Deutschland & Österreich)
@@ -88,25 +71,20 @@ TARGET_URLS = [
     "https://www.stadt-oppenheim.de/",
     "https://www.muenster-doberan.de/",
     "https://www.pfarrei-chammuenster.de/",
-    "https://www.frauenkirche-dresden.de/kalender/",
     "https://www.koelner-dom.de/aktuelles",
     "https://www.st-michaelis.de/veranstaltungen-am-michel",
     "https://www.kaisergruft.com/",
     "https://www.hallstatt.net/",
     "https://www.magdeburgerdom.de/",
     "https://www.naumburger-dom.de/",
-    "https://www.michaelerkirche.at/",
 
     # Überregional Deutschland: Archäologische Landesmuseen & Fachmuseen
     "https://www.landesmuseum-vorgeschichte.de/veranstaltungen/familiennachmittage",
     "https://www.leiza.de/aktuelles",
     "https://www.lwl-landesmuseum-herne.de/de/veranstaltungen/",
-    "https://landesmuseum-bonn.lvr.de/",
     "https://www.archaeologisches-museum-frankfurt.de/",
     "https://www.landesmuseum-trier.de/",
-    "https://www.alm-bw.de/",
     "https://schloss-gottorf.de/",
-    "https://roemisch-germanisches-museum.de/",
 
     # Überregional Deutschland: Friedhofskultur & Vereine
     "https://www.sepulkralmuseum.de/veranstaltungen/",
@@ -121,13 +99,10 @@ TARGET_URLS = [
     "https://www.friedhofsverwalter.de/fachveranstaltung-der-arbeitsgemeinschaft-friedhof-und-denkmal-e-v/",
     "https://aufdasleben.de/event/",
     "https://www.totentanz-online.de/veranstaltungen.php",
-    "https://www.hannover.de/Kultur-Freizeit/Naherholung/G%C3%A4rten-und-Parks/Friedh%C3%B6fe-in-Hannover/F%C3%BChrungen-%C3%BCber-Hannovers-Friedh%C3%B6fe",
 
     # Schweiz & Österreich
-    "https://www.stadt-zuerich.ch/friedhofforum/de/veranstaltungen.html",
     "https://www.bestattungsmuseum.at/besucherinfo/auf-einen-blick",
-    "https://www.friedhoefewien.at/veranstaltungen",
-    "https://www.friedhoefewien.at/friedhofsfuehrungen"
+    "https://www.friedhoefewien.at/veranstaltungen"
 ]
 
 DB_FILE = "events_db.json"
@@ -153,8 +128,7 @@ client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
 
 
 class TruncatedResponseError(Exception):
-    """Antwort der API war kein gueltiges JSON - meist abgeschnitten wegen
-    Output-Limit. Ein Retry wuerde dasselbe Ergebnis liefern, deshalb eigener Typ."""
+    """Antwort der API war kein gueltiges JSON - meist abgeschnitten wegen Output-Limit."""
 
 
 class Event(BaseModel):
@@ -187,8 +161,6 @@ def normalize_date(date_str: str) -> str:
 
 
 def parse_date(date_str: str) -> str | None:
-    """Gibt ein valides YYYY-MM-DD zurueck oder None. Prueft echte
-    Kalendergueltigkeit - '2026-13-31' oder 'Fruehjahr 2026' fallen durch."""
     normalized = normalize_date(date_str)
     try:
         return datetime.strptime(normalized, "%Y-%m-%d").date().isoformat()
@@ -199,8 +171,6 @@ def parse_date(date_str: str) -> str | None:
 # ---------------------------------------------------------------- Datenbank
 
 def load_events_db() -> dict:
-    """Bewusst ohne try/except: eine kaputte DB darf NICHT zu einem leeren
-    Dict fuehren, sonst ueberschreibt der Lauf am Ende den gesamten Bestand."""
     if not os.path.exists(DB_FILE):
         return {}
     with open(DB_FILE, "r", encoding="utf-8") as f:
@@ -208,9 +178,6 @@ def load_events_db() -> dict:
 
 
 def save_events_db(db: dict):
-    """Atomar: erst vollstaendig in eine Temp-Datei im selben Verzeichnis,
-    dann per os.replace umbenennen. Ein Abbruch hinterlaesst nie eine
-    halb geschriebene events_db.json."""
     directory = os.path.dirname(os.path.abspath(DB_FILE)) or "."
     fd, tmp_path = tempfile.mkstemp(dir=directory, suffix=".tmp")
     try:
@@ -226,8 +193,6 @@ def save_events_db(db: dict):
 
 
 def generate_event_id(event: dict) -> str:
-    """Host mit in die ID: sonst kollidieren gleichnamige Fuehrungen am
-    gleichen Tag auf verschiedenen Friedhoefen."""
     title = re.sub(r"\s+", " ", str(event.get("title") or "")).strip().lower()
     host = urlparse(event.get("url") or "").netloc
     raw = f"{title}|{event.get('date_start', '')}|{host}"
@@ -249,9 +214,16 @@ def is_worth_sending(url: str, text: str) -> bool:
 # ---------------------------------------------------------------- Abruf
 
 def fetch_page_text(url: str) -> str:
-    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
-    response = httpx.get(url, headers=headers, follow_redirects=True, timeout=15.0, verify=False)
-    response.raise_for_status()
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+        "Accept-Language": "de-DE,de;q=0.9,en-US;q=0.8,en;q=0.7",
+    }
+    # local_address="0.0.0.0" erzwingt IPv4 und behebt Errno 101 im GitHub-Runner
+    transport = httpx.HTTPTransport(local_address="0.0.0.0", verify=False)
+    with httpx.Client(transport=transport, headers=headers, follow_redirects=True, timeout=15.0) as client_http:
+        response = client_http.get(url)
+        response.raise_for_status()
 
     soup = BeautifulSoup(response.text, "html.parser")
     for tag in soup(["script", "style", "nav", "footer", "header", "aside", "form", "noscript"]):
@@ -312,7 +284,6 @@ def extract_events_batch(batch_sources: list[tuple[str, str]], today_str: str) -
         print(f"  Ende der Antwort: ...{raw_text[-200:]}")
         raise TruncatedResponseError(str(e))
 
-    # URL wird hier zugeordnet, nicht vom Modell geliefert.
     valid = []
     for ev in result.get("events", []):
         sid = ev.pop("source_id", None)
@@ -506,7 +477,7 @@ if __name__ == "__main__":
     events_db = load_events_db()
     print(f"Bestand geladen: {len(events_db)} Events")
 
-    # Phase 1: Webseiten laden und filtern (Alle Quellen täglich)
+    # Phase 1: Webseiten laden und filtern
     print(f"\n--- Phase 1: Webseiten laden ({len(TARGET_URLS)} Quellen) ---")
     fetched_pages = []
     for url in TARGET_URLS:
