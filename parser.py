@@ -108,6 +108,48 @@ TARGET_URLS = [
     "https://www.friedhofsverwalter.de/fachveranstaltung-der-arbeitsgemeinschaft-friedhof-und-denkmal-e-v/",
     "https://aufdasleben.de/event/",
     "https://www.totentanz-online.de/veranstaltungen.php"
+
+# --- ÖSTERREICH: Grüfte, Katakomben, Beinhäuser & Friedhofskultur ---
+    "https://www.stephansdom.at/visit_tours_catacombs.php",           # Katakomben Stephansdom Wien
+    "https://www.petersfriedhof.at/",                                 # Petersfriedhof & Katakomben Salzburg
+    "https://www.stift-admont.at/museum/",                            # Stift Admont (Museum & Tod-Thematik)
+    "https://www.innsbruck.gv.at/kultur/friedhoefe/veranstaltungen",   # Stadtfriedhöfe Innsbruck
+    "https://www.stadt-salzburg.at/friedhoefe/veranstaltungen",       # Kommunalfriedhof Salzburg
+
+    # --- SCHWEIZ: Friedhofsforum, Beinhäuser & Sakralbauten ---
+    "https://www.stadt-zuerich.ch/gued/de/index/friedhoefe/friedhofforum/veranstaltungen.html", # Friedhof Forum Zürich
+    "https://www.stadtgaertnerei.bs.ch/friedhoefe/veranstaltungen.html",                       # Friedhof Hörnli & Wolfgottesacker Basel
+    "https://www.bernermuenster.ch/de/kalender",                                                # Berner Münster (Krypta & Totentanz)
+    "https://www.stiftsbezirk.ch/de/veranstaltungen",                                           # Stiftsbezirk St. Gallen (Stiftsbibliothek & Reliquien)
+    "https://www.museum-aargau.ch/schloss-lenzburg/event-kalender",                            # Schloss Lenzburg (Ritterkultur & Grabfunde)
+
+    # --- DEUTSCHLAND: Bayern & Baden-Württemberg ---
+    "https://www.alter-friedhof-freiburg.de/",                        # Alter Friedhof Freiburg i. Br.
+    "https://www.freiburger-muenster.de/kalender",                    # Freiburger Münster (Krypta & Grabdenkmäler)
+    "https://www.karlsruhe.de/freizeit-und-sport/friedhoefe/veranstaltungen", # Hauptfriedhof Karlsruhe
+    "https://www.domberg-bamberg.de/veranstaltungen",                 # Bamberger Dom (Kaisergrab Heinrich II.)
+    "https://www.augsburg.de/umwelt/umweltthemen/friedhoefe/termine", # Alter Ostfriedhof & Hauptfriedhof Augsburg
+    "https://www.passauer-dom.de/",                                   # Passauer Dom & Bischofsgruft
+
+    # --- DEUTSCHLAND: Hessen, Rheinland-Pfalz & Saarland ---
+    "https://www.frankfurter-hauptfriedhof.de/termine.htm",            # Hauptfriedhof Frankfurt a. M. (Verein)
+    "https://www.mainzer-dom.de/aktuelles/termine/",                  # Mainzer Dom (Bischofsgrüfte & Denkmäler)
+    "https://www.darmstadt.de/leben-in-darmstadt/umwelt/friedhoefe/veranstaltungen", # Waldfriedhof & Alter Friedhof Darmstadt
+    "https://www.saarbruecken.de/leben_in_saarbruecken/planen_bauen_wohnen/friedhoefe/veranstaltungen", # Hauptfriedhof Saarbrücken
+
+    # --- DEUTSCHLAND: Sachsen, Thüringen & Sachsen-Anhalt ---
+    "https://www.erfurter-dom.de/",                                   # Erfurter Dom (Mariendom Krypta)
+    "https://www.augustinerkloster.de/veranstaltungen/",             # Evangelisches Augustinerkloster Erfurt
+    "https://www.dresden.de/de/leben/umwelt/stadtgruen/friedhoefe/veranstaltungen.php", # Städtische Friedhöfe Dresden
+    "https://www.chemnitz.de/chemnitz/de/unsere-stadt/friedhoefe/veranstaltungen.html", # Städtische Friedhöfe Chemnitz
+    "https://www.stiftskirche-quedlinburg.de/",                       # Stiftskirche Quedlinburg (Krypta & Domschatz)
+
+    # --- DEUTSCHLAND: Norddeutschland ---
+    "https://www.st-marien-luebeck.de/kalender",                      # St. Marien zu Lübeck (Totentanz-Kapelle)
+    "https://www.braunschweig.de/leben/umwelt_naturschutz/stadtgruen/friedhoefe/veranstaltungen.php", # Hauptfriedhof Braunschweig
+    "https://www.kiel.de/de/umwelt_verkehr/friedhoefe/veranstaltungen.php" # Städtische Friedhöfe Kiel
+
+
 ]
 
 DB_FILE = "events_db.json"
