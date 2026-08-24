@@ -249,9 +249,8 @@ def clean_text_for_comparison(text: str) -> str:
     if not text:
         return ""
     s = str(text).lower()
-    # Ersetze Sonderzeichen, Gedankenstriche und Anfuehrungszeichen durch Leerzeichen
-    s = re.sub(r'[\–\—\-\:\,\"\''\n\r\`«»„“\(\)\[\]]', ' ', s)
-    # Entferne typische Praefixe / Suffixe
+    s = re.sub(r'[–—:\,\"`«»„“\(\)\[\]\-\n\r]', ' ', s)
+    s = s.replace("'", ' ').replace('"', ' ')
     s = re.sub(r'^(führung|sonderführung|ausstellung|vortrag|konzert|rundgang|spaziergang)\s+(über|durch|zu|an)?\s*', '', s)
     s = re.sub(r'\s+(führung|sonderführung|ausstellung|vortrag|konzert|rundgang|spaziergang)$', '', s)
     s = re.sub(r'\s+', ' ', s).strip()
@@ -259,7 +258,6 @@ def clean_text_for_comparison(text: str) -> str:
 
 
 def are_events_duplicate(ev1: dict, ev2: dict) -> bool:
-    # 1. Startdatum muss exakt übereinstimmen
     if ev1.get("date_start") != ev2.get("date_start"):
         return False
 
@@ -269,21 +267,17 @@ def are_events_duplicate(ev1: dict, ev2: dict) -> bool:
     if not t1 or not t2:
         return False
 
-    # Exakte Übereinstimmung nach Bereinigung
     if t1 == t2:
         return True
 
-    # Eine Zeichenkette ist Teil der anderen (bei ausreichender Länge)
     if len(t1) > 8 and len(t2) > 8:
         if t1 in t2 or t2 in t1:
             return True
 
-    # Ähnlichkeitsvergleich der Titel
     ratio = difflib.SequenceMatcher(None, t1, t2).ratio()
     if ratio >= 0.78:
         return True
 
-    # Bei moderater Ähnlichkeit im Titel zusätzlich den Ort vergleichen
     if ratio >= 0.60:
         loc1 = clean_text_for_comparison(ev1.get("location", ""))
         loc2 = clean_text_for_comparison(ev2.get("location", ""))
@@ -327,11 +321,9 @@ def deduplicate_db(db: dict) -> dict:
         found_dup = False
         for existing in merged_events:
             if are_events_duplicate(ev, existing):
-                # Zeitstempel abgleichen
                 existing["first_seen"] = min(existing.get("first_seen", "9999"), ev.get("first_seen", "9999"))
                 existing["last_seen"] = max(existing.get("last_seen", ""), ev.get("last_seen", ""))
                 
-                # Ausführlichere Felder bevorzugen
                 if len(ev.get("title", "")) > len(existing.get("title", "")):
                     existing["title"] = ev["title"]
                 if len(ev.get("description", "")) > len(existing.get("description", "")):
@@ -347,7 +339,6 @@ def deduplicate_db(db: dict) -> dict:
         if not found_dup:
             merged_events.append(ev)
 
-    # Re-Keying mit deterministischem Hash basierend auf bereinigtem Titel + Startdatum
     cleaned_db = {}
     for ev in merged_events:
         norm_t = clean_text_for_comparison(ev.get("title", ""))
@@ -792,7 +783,6 @@ if __name__ == "__main__":
                 stats["vergangen"] += 1
                 continue
 
-            # Abgleich gegen bestehende Events per Fuzzy-Match
             found_duplicate_key = None
             for existing_id, existing_ev in events_db.items():
                 if are_events_duplicate(event, existing_ev):
