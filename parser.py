@@ -368,10 +368,14 @@ def render_html(events: list[dict], today: date):
         <div class="timestamp">Stand: {timestamp} | Zeige <span id="visibleCount">{len(sorted_events)}</span> von {len(sorted_events)} Events</div>
 
         <div class="filter-container">
-            <input type="text" id="searchInput" class="search-input" placeholder="Events durchsuchen (z. B. Beinhaus, Führung, Köln, Prag)..." onkeyup="filterEvents()">
+            <input type="text" id="searchInput" class="search-input" placeholder="Events durchsuchen (z. B. Beinhaus, Köln, Leipzig, Stahnsdorf)..." onkeyup="filterEvents()">
             <div class="filter-tags">
                 <button class="tag-btn active" data-filter="" onclick="setTagFilter(this)">Alle</button>
                 <button class="tag-btn" data-filter="berlin" onclick="setTagFilter(this)">Berlin</button>
+                <button class="tag-btn" data-filter="führung|rundgang|spaziergang" onclick="setTagFilter(this)">Führungen</button>
+                <button class="tag-btn" data-filter="konzert|musik|kunst|lesung|film" onclick="setTagFilter(this)">Konzerte &amp; Kunst</button>
+                <button class="tag-btn" data-filter="ausstellung|vortrag|museum" onclick="setTagFilter(this)">Ausstellungen</button>
+                <button class="tag-btn" data-filter="trauer|hospiz|kurs|workshop" onclick="setTagFilter(this)">Trauer &amp; Praxis</button>
             </div>
         </div>
 
@@ -437,12 +441,12 @@ def render_html(events: list[dict], today: date):
     </div>
 
     <script>
-        let currentTag = '';
+        let currentTagPattern = '';
 
         function setTagFilter(btn) {
             document.querySelectorAll('.tag-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-            currentTag = btn.getAttribute('data-filter').toLowerCase();
+            currentTagPattern = btn.getAttribute('data-filter').toLowerCase();
             filterEvents();
         }
 
@@ -451,10 +455,16 @@ def render_html(events: list[dict], today: date):
             const rows = document.querySelectorAll('#eventsTable tbody tr');
             let visibleCount = 0;
 
+            const keywords = currentTagPattern ? currentTagPattern.split('|') : [];
+
             rows.forEach(row => {
                 const text = row.innerText.toLowerCase();
                 const matchesSearch = text.includes(searchValue);
-                const matchesTag = currentTag === '' || text.includes(currentTag);
+                
+                let matchesTag = true;
+                if (keywords.length > 0) {
+                    matchesTag = keywords.some(kw => text.includes(kw));
+                }
 
                 if (matchesSearch && matchesTag) {
                     row.style.display = '';
