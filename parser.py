@@ -62,7 +62,7 @@ TARGET_URLS = [
     "https://www.jewishmuseum.cz/en/info/visit/",
     "https://www.nm.cz/en/program/events",
 
-    # Beinhäuser, Mumien, Grüfte & Sakralbauten (Verifizierte URLs)
+    # Beinhäuser, Mumien, Grüfte & Sakralbauten
     "https://stpetridom.de/der-dom/besucher-info/bleikeller/",
     "https://www.stadt-oppenheim.de/",
     "https://www.katharinenkirche-oppenheim.de/",
@@ -88,7 +88,7 @@ TARGET_URLS = [
     "https://www.st-marien-luebeck.de/",
     "https://www.welterbe-quedlinburg.de/",
 
-    # NRW & Überregional Deutschland: Archäologie & Friedhöfe (Verifizierte URLs)
+    # NRW & Überregional Deutschland: Archäologie & Friedhöfe
     "https://www.duesseldorf.de/stadtgruen/freizeit/fuehrungen1",
     "https://www.stadt-muenster.de/gruen/friedhoefe",
     "https://www.zentralfriedhof-muenster.de/",
@@ -103,7 +103,7 @@ TARGET_URLS = [
     "https://schloss-gottorf.de/",
     "https://www.archaeologie-online.de/nachrichten/",
 
-    # Überregional Deutschland: Friedhofskultur, Vereine & Vorträge (Verifizierte URLs)
+    # Überregional Deutschland: Friedhofskultur, Vereine & Vorträge
     "https://www.sepulkralmuseum.de/veranstaltungen/",
     "https://paul-benndorf-gesellschaft.de/fuehrungen.html",
     "https://eliasfriedhof.de/termine/",
@@ -123,7 +123,7 @@ TARGET_URLS = [
     # Nischen-Blogs
     "https://friedhofsfreunde.blogspot.com/",
 
-    # Schweiz & Regionalverwaltung Friedhöfe (Verifizierte URLs)
+    # Schweiz & Regionalverwaltung Friedhöfe
     "https://www.stadt-zuerich.ch/friedhofforum/de/veranstaltungen.html",
     "https://www.stadtgaertnerei.bs.ch/friedhoefe/veranstaltungen.html",
     "https://www.bernermuenster.ch/",
@@ -381,35 +381,94 @@ def render_html(events: list[dict], today: date):
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sepulkralkultur Event-Feed</title>
     <style>
-        body {{ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f6f8; color: #333; margin: 20px; }}
-        h1 {{ color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; margin-bottom: 10px; }}
-        .container {{ background: white; border-radius: 8px; padding: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }}
-        .timestamp {{ font-size: 0.85em; color: #7f8c8d; margin-bottom: 20px; }}
+        :root {{
+            --bg-body: #f4f6f8;
+            --bg-container: #ffffff;
+            --text-main: #333333;
+            --text-muted: #7f8c8d;
+            --heading-color: #2c3e50;
+            --border-color: #ecf0f1;
+            --filter-bg: #f8f9fa;
+            --filter-border: #e9ecef;
+            --tag-bg: #e9ecef;
+            --tag-text: #495057;
+            --tag-active-bg: #3498db;
+            --tag-active-text: #ffffff;
+            --th-bg: #2c3e50;
+            --th-text: #ffffff;
+            --tr-hover: #f8f9fa;
+            --location-color: #34495e;
+            --btn-bg: #27ae60;
+            --btn-hover: #219150;
+            --input-border: #ced4da;
+            --input-bg: #ffffff;
+            --toggle-bg: #e9ecef;
+        }}
 
-        .filter-container {{ display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; align-items: center; background: #f8f9fa; padding: 15px; border-radius: 6px; border: 1px solid #e9ecef; }}
-        .search-input {{ flex: 1; min-width: 250px; padding: 8px 12px; border: 1px solid #ced4da; border-radius: 4px; font-size: 0.95em; }}
+        [data-theme="dark"] {{
+            --bg-body: #121417;
+            --bg-container: #1e2227;
+            --text-main: #e1e6eb;
+            --text-muted: #8b99a8;
+            --heading-color: #8fa0b3;
+            --border-color: #2d353e;
+            --filter-bg: #181b1f;
+            --filter-border: #2d353e;
+            --tag-bg: #2d353e;
+            --tag-text: #c0caf5;
+            --tag-active-bg: #3498db;
+            --tag-active-text: #ffffff;
+            --th-bg: #2a323d;
+            --th-text: #e1e6eb;
+            --tr-hover: #252a30;
+            --location-color: #a0b2c6;
+            --btn-bg: #27ae60;
+            --btn-hover: #219150;
+            --input-border: #3d4652;
+            --input-bg: #181b1f;
+            --toggle-bg: #2d353e;
+        }}
+
+        body {{ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--bg-body); color: var(--text-main); margin: 20px; transition: background-color 0.2s, color 0.2s; }}
+        
+        .header-bar {{ display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--tag-active-bg); padding-bottom: 10px; margin-bottom: 10px; }}
+        h1 {{ color: var(--heading-color); margin: 0; font-size: 1.8em; }}
+        
+        .theme-toggle-btn {{ background: var(--toggle-bg); border: 1px solid var(--filter-border); color: var(--text-main); padding: 8px 14px; border-radius: 20px; cursor: pointer; font-size: 1em; display: flex; align-items: center; gap: 6px; font-weight: 600; transition: all 0.2s; }}
+        .theme-toggle-btn:hover {{ opacity: 0.85; }}
+
+        .container {{ background: var(--bg-container); border-radius: 8px; padding: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); transition: background-color 0.2s; }}
+        .timestamp {{ font-size: 0.85em; color: var(--text-muted); margin-bottom: 20px; }}
+
+        .filter-container {{ display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; align-items: center; background: var(--filter-bg); padding: 15px; border-radius: 6px; border: 1px solid var(--filter-border); }}
+        .search-input {{ flex: 1; min-width: 250px; padding: 8px 12px; border: 1px solid var(--input-border); background-color: var(--input-bg); color: var(--text-main); border-radius: 4px; font-size: 0.95em; }}
         .filter-tags {{ display: flex; gap: 5px; flex-wrap: wrap; }}
-        .tag-btn {{ background: #e9ecef; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 0.85em; color: #495057; font-weight: 600; transition: all 0.2s; }}
-        .tag-btn:hover {{ background: #dee2e6; }}
-        .tag-btn.active {{ background: #3498db; color: white; }}
+        .tag-btn {{ background: var(--tag-bg); border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 0.85em; color: var(--tag-text); font-weight: 600; transition: all 0.2s; }}
+        .tag-btn:hover {{ opacity: 0.85; }}
+        .tag-btn.active {{ background: var(--tag-active-bg); color: var(--tag-active-text); }}
 
         table {{ width: 100%; border-collapse: collapse; margin-top: 10px; }}
-        th {{ background-color: #2c3e50; color: white; text-align: left; padding: 10px; font-size: 0.9em; }}
-        td {{ padding: 12px 10px; border-bottom: 1px solid #ecf0f1; vertical-align: top; font-size: 0.95em; }}
-        tr:hover {{ background-color: #f8f9fa; }}
-        .date-badge {{ background-color: #3498db; color: white; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 0.85em; white-space: nowrap; }}
-        .date-end {{ display: block; margin-top: 4px; font-size: 0.8em; color: #7f8c8d; white-space: nowrap; }}
-        .location {{ font-weight: bold; color: #34495e; }}
+        th {{ background-color: var(--th-bg); color: var(--th-text); text-align: left; padding: 10px; font-size: 0.9em; }}
+        td {{ padding: 12px 10px; border-bottom: 1px solid var(--border-color); vertical-align: top; font-size: 0.95em; }}
+        tr:hover {{ background-color: var(--tr-hover); }}
+        .date-badge {{ background-color: var(--tag-active-bg); color: white; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 0.85em; white-space: nowrap; }}
+        .date-end {{ display: block; margin-top: 4px; font-size: 0.8em; color: var(--text-muted); white-space: nowrap; }}
+        .location {{ font-weight: bold; color: var(--location-color); }}
         .badge-new {{ background: #27ae60; color: white; padding: 2px 6px; border-radius: 3px; font-size: 0.7em; margin-left: 6px; vertical-align: middle; }}
         .badge-stale {{ background: #f39c12; color: white; padding: 2px 6px; border-radius: 3px; font-size: 0.7em; margin-left: 6px; vertical-align: middle; }}
-        a.btn {{ display: inline-block; background-color: #27ae60; color: white; text-decoration: none; padding: 5px 10px; border-radius: 4px; font-size: 0.85em; }}
-        a.btn:hover {{ background-color: #219150; }}
-        .no-results {{ display: none; padding: 20px; text-align: center; color: #7f8c8d; font-style: italic; }}
+        a.btn {{ display: inline-block; background-color: var(--btn-bg); color: white; text-decoration: none; padding: 5px 10px; border-radius: 4px; font-size: 0.85em; }}
+        a.btn:hover {{ background-color: var(--btn-hover); }}
+        .no-results {{ display: none; padding: 20px; text-align: center; color: var(--text-muted); font-style: italic; }}
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Sepulkralkultur &amp; Friedhofskultur &ndash; Termine</h1>
+        <div class="header-bar">
+            <h1>Sepulkralkultur &amp; Friedhofskultur &ndash; Termine</h1>
+            <button id="themeToggleBtn" class="theme-toggle-btn" onclick="toggleTheme()">
+                <span id="themeIcon">🌙</span> <span id="themeLabel">Dunkel</span>
+            </button>
+        </div>
         <div class="timestamp">Stand: {timestamp} | Zeige <span id="visibleCount">{len(sorted_events)}</span> von {len(sorted_events)} Events</div>
 
         <div class="filter-container">
@@ -488,6 +547,30 @@ def render_html(events: list[dict], today: date):
     <script>
         let currentTagPattern = '';
 
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                document.getElementById('themeIcon').innerText = '☀️';
+                document.getElementById('themeLabel').innerText = 'Hell';
+            }
+        }
+
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            if (currentTheme === 'dark') {
+                document.documentElement.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'light');
+                document.getElementById('themeIcon').innerText = '🌙';
+                document.getElementById('themeLabel').innerText = 'Dunkel';
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                document.getElementById('themeIcon').innerText = '☀️';
+                document.getElementById('themeLabel').innerText = 'Hell';
+            }
+        }
+
         function setTagFilter(btn) {
             document.querySelectorAll('.tag-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
@@ -522,6 +605,8 @@ def render_html(events: list[dict], today: date):
             document.getElementById('visibleCount').innerText = visibleCount;
             document.getElementById('noResults').style.display = (visibleCount === 0 && rows.length > 0) ? 'block' : 'none';
         }
+
+        initTheme();
     </script>
 </body>
 </html>
