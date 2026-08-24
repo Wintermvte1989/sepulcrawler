@@ -74,8 +74,20 @@ TARGET_URLS = [
     "https://www.hallstatt.net/",
     "https://www.magdeburgerdom.de/",
     "https://www.naumburger-dom.de/",
+    "https://www.katharinen-kirche-oppenheim.de/",
+    "https://www.abtei-waldsassen.de/",
+    "https://www.dom-speyer.de/",
+    "https://www.wuerzburger-dom.de/",
 
-    # Überregional Deutschland: Archäologische Landesmuseen & Fachmuseen
+    # NRW & Überregional Deutschland: Archäologie, Sepulkralmuseum & Sakralbauten
+    "https://www.duesseldorf.de/stadtgruen/friedhoefe/veranstaltungen",
+    "https://www.stiftsmuseum-xanten.de/",
+    "https://www.ruhrmuseum.de/veranstaltungen/",
+    "https://www.muenster.de/friedhoefe/veranstaltungen.html",
+    "https://www.duesseldorf.de/stadtmuseum/veranstaltungen",
+    "https://www.rem-mannheim.de/ausstellungen/veranstaltungen/",
+    "https://www.archaeologie-online.de/termine/",
+    "https://www.archaeologie-bayern.de/de/termine/",
     "https://www.landesmuseum-vorgeschichte.de/veranstaltungen/familiennachmittage",
     "https://www.leiza.de/aktuelles",
     "https://www.lwl-landesmuseum-herne.de/de/veranstaltungen/",
@@ -356,13 +368,10 @@ def render_html(events: list[dict], today: date):
         <div class="timestamp">Stand: {timestamp} | Zeige <span id="visibleCount">{len(sorted_events)}</span> von {len(sorted_events)} Events</div>
 
         <div class="filter-container">
-            <input type="text" id="searchInput" class="search-input" placeholder="Events durchsuchen (z. B. F&uuml;hrung, Berlin, Beinhaus)..." onkeyup="filterEvents()">
+            <input type="text" id="searchInput" class="search-input" placeholder="Events durchsuchen (z. B. Beinhaus, Führung, Köln, Prag)..." onkeyup="filterEvents()">
             <div class="filter-tags">
                 <button class="tag-btn active" data-filter="" onclick="setTagFilter(this)">Alle</button>
                 <button class="tag-btn" data-filter="berlin" onclick="setTagFilter(this)">Berlin</button>
-                <button class="tag-btn" data-filter="brandenburg" onclick="setTagFilter(this)">Brandenburg</button>
-                <button class="tag-btn" data-filter="prag" onclick="setTagFilter(this)">Prag / Tschechien</button>
-                <button class="tag-btn" data-filter="gruft" onclick="setTagFilter(this)">Gr&uuml;fte / Beinh&auml;user</button>
             </div>
         </div>
 
