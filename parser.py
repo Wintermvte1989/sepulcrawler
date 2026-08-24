@@ -21,9 +21,7 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 TARGET_URLS = [
     # Aktionstage, Festtage & Lange Nächte
     "https://www.tag-des-offenen-denkmals.de/",
-    "https://www.berlin.de/landesdenkmalamt/tag-des-offenen-denkmals/",
     "https://www.lange-nacht-der-museen.de/",
-    "https://www.langenachtderwissenschaften.de/",
     "https://www.meinkiez-meinfriedhof.berlin.de/tag-des-friedhofs",
 
     # Berlin: Friedhöfe, Verbände & Grüfte
@@ -33,7 +31,6 @@ TARGET_URLS = [
     "https://www.evfbs.de/",
     "https://forum1848.de/veranstaltungen/",
     "https://marienkirche-berlin.de/",
-    "https://st-petri-stmarien.de/",
     "https://www.hedwigs-kathedrale.de/",
 
     # Brandenburg & Preußische Schlösser/Krypten
@@ -98,11 +95,7 @@ TARGET_URLS = [
     "https://theatergemeinde-koeln.org/Kulturkompass/werk/25725/M04/stadtfuhrungen-koln/fuehrung-uber-melaten",
     "https://www.friedhofsverwalter.de/fachveranstaltung-der-arbeitsgemeinschaft-friedhof-und-denkmal-e-v/",
     "https://aufdasleben.de/event/",
-    "https://www.totentanz-online.de/veranstaltungen.php",
-
-    # Schweiz & Österreich
-    "https://www.bestattungsmuseum.at/besucherinfo/auf-einen-blick",
-    "https://www.friedhoefewien.at/veranstaltungen"
+    "https://www.totentanz-online.de/veranstaltungen.php"
 ]
 
 DB_FILE = "events_db.json"
@@ -218,10 +211,16 @@ def fetch_page_text(url: str) -> str:
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
         "Accept-Language": "de-DE,de;q=0.9,en-US;q=0.8,en;q=0.7",
+        "Sec-Ch-Ua": '"Chromium";v="124", "Google Chrome";v="124"',
+        "Sec-Ch-Ua-Mobile": "?0",
+        "Sec-Ch-Ua-Platform": '"Windows"',
+        "Sec-Fetch-Dest": "document",
+        "Sec-Fetch-Mode": "navigate",
+        "Sec-Fetch-Site": "none",
+        "Sec-Fetch-User": "?1",
+        "Upgrade-Insecure-Requests": "1",
     }
-    # local_address="0.0.0.0" erzwingt IPv4 und behebt Errno 101 im GitHub-Runner
-    transport = httpx.HTTPTransport(local_address="0.0.0.0", verify=False)
-    with httpx.Client(transport=transport, headers=headers, follow_redirects=True, timeout=15.0) as client_http:
+    with httpx.Client(headers=headers, follow_redirects=True, timeout=25.0, verify=False) as client_http:
         response = client_http.get(url)
         response.raise_for_status()
 
