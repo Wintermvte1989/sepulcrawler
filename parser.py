@@ -110,6 +110,12 @@ TARGET_URLS = [
     "https://www.totentanz-online.de/veranstaltungen.php",
     "https://www.benecke.com/termine/",
 
+    # Blogs & Magazinseiten (Langtextsuche nach Terminen)
+    "https://friedhofsfreunde.blogspot.com/",
+    "https://postmortal.de/",
+    "https://bestatter-weblog.de/",
+    "https://friedhofsgefluester.de/",
+
     # ÖSTERREICH: Katakomben, Stifte, Grüfte & Friedhöfe
     "https://www.stephansdom.at/visit_tours_catacombs.php",
     "https://www.petersfriedhof.at/",
