@@ -9,7 +9,7 @@
         h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; margin-bottom: 10px; }
         .container { background: white; border-radius: 8px; padding: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
         .timestamp { font-size: 0.85em; color: #7f8c8d; margin-bottom: 20px; }
-        
+
         .filter-container { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; align-items: center; background: #f8f9fa; padding: 15px; border-radius: 6px; border: 1px solid #e9ecef; }
         .search-input { flex: 1; min-width: 250px; padding: 8px 12px; border: 1px solid #ced4da; border-radius: 4px; font-size: 0.95em; }
         .filter-tags { display: flex; gap: 5px; flex-wrap: wrap; }
@@ -22,7 +22,10 @@
         td { padding: 12px 10px; border-bottom: 1px solid #ecf0f1; vertical-align: top; font-size: 0.95em; }
         tr:hover { background-color: #f8f9fa; }
         .date-badge { background-color: #3498db; color: white; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 0.85em; white-space: nowrap; }
+        .date-end { display: block; margin-top: 4px; font-size: 0.8em; color: #7f8c8d; white-space: nowrap; }
         .location { font-weight: bold; color: #34495e; }
+        .badge-new { background: #27ae60; color: white; padding: 2px 6px; border-radius: 3px; font-size: 0.7em; margin-left: 6px; vertical-align: middle; }
+        .badge-stale { background: #f39c12; color: white; padding: 2px 6px; border-radius: 3px; font-size: 0.7em; margin-left: 6px; vertical-align: middle; }
         a.btn { display: inline-block; background-color: #27ae60; color: white; text-decoration: none; padding: 5px 10px; border-radius: 4px; font-size: 0.85em; }
         a.btn:hover { background-color: #219150; }
         .no-results { display: none; padding: 20px; text-align: center; color: #7f8c8d; font-style: italic; }
@@ -30,205 +33,22 @@
 </head>
 <body>
     <div class="container">
-        <h1>Sepulkralkultur & Friedhofskultur – Termine</h1>
-        <div class="timestamp">Stand: 23.08.2026 um 21:20 Uhr | Zeige <span id="visibleCount">21</span> von 21 Events</div>
+        <h1>Sepulkralkultur &amp; Friedhofskultur &ndash; Termine</h1>
+        <div class="timestamp">Stand: 24.08.2026 um 18:31 Uhr | Zeige <span id="visibleCount">0</span> von 0 Events</div>
 
         <div class="filter-container">
-            <input type="text" id="searchInput" class="search-input" placeholder="Events durchsuchen (z. B. Führung, Berlin, Beinhaus)..." onkeyup="filterEvents()">
+            <input type="text" id="searchInput" class="search-input" placeholder="Events durchsuchen (z. B. F&uuml;hrung, Berlin, Beinhaus)..." onkeyup="filterEvents()">
             <div class="filter-tags">
                 <button class="tag-btn active" data-filter="" onclick="setTagFilter(this)">Alle</button>
                 <button class="tag-btn" data-filter="berlin" onclick="setTagFilter(this)">Berlin</button>
                 <button class="tag-btn" data-filter="brandenburg" onclick="setTagFilter(this)">Brandenburg</button>
                 <button class="tag-btn" data-filter="prag" onclick="setTagFilter(this)">Prag / Tschechien</button>
-                <button class="tag-btn" data-filter="gruft" onclick="setTagFilter(this)">Grüfte / Beinhäuser</button>
+                <button class="tag-btn" data-filter="gruft" onclick="setTagFilter(this)">Gr&uuml;fte / Beinh&auml;user</button>
             </div>
         </div>
 
-        <div id="noResults" class="no-results">Keine passenden Veranstaltungen für die Suchkriterien gefunden.</div>
-
-        <table id="eventsTable">
-            <thead>
-                <tr>
-                    <th>Datum</th>
-                    <th>Titel</th>
-                    <th>Ort</th>
-                    <th>Beschreibung</th>
-                    <th>Aktion</th>
-                </tr>
-            </thead>
-            <tbody>
-
-                <tr>
-                    <td><span class="date-badge">2026-08-26</span></td>
-                    <td><strong>Führung über den Alten St.-Matthäus-Friedhof</strong></td>
-                    <td class="location">Haupteingang des Alten St.-Matthäus-Friedhofs, Berlin</td>
-                    <td>Historische Führung über den Alten St.-Matthäus-Friedhof mit Ralf Illauer.</td>
-                    <td><a href="https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen" target="_blank" rel="noopener noreferrer" class="btn">Link öffnen</a></td>
-                </tr>
-
-                <tr>
-                    <td><span class="date-badge">2026-08-26</span></td>
-                    <td><strong>Führung über den Dorotheenstädtischen Friedhof I</strong></td>
-                    <td class="location">Dorotheenstädtischer Friedhof I, Berlin</td>
-                    <td>Führung über den Dorotheenstädtischen Friedhof I zum Thema Berühmte Frauen.</td>
-                    <td><a href="https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen" target="_blank" rel="noopener noreferrer" class="btn">Link öffnen</a></td>
-                </tr>
-
-                <tr>
-                    <td><span class="date-badge">2026-08-27</span></td>
-                    <td><strong>Führung über den Selbstmörderfriedhof Grunewald Forst</strong></td>
-                    <td class="location">Grunewald Forst, Berlin</td>
-                    <td>Führung über den historischen Friedhof Grunewald Forst, bekannt als Selbstmörderfriedhof.</td>
-                    <td><a href="https://berlin.volksbund.de/aktuell/termine" target="_blank" rel="noopener noreferrer" class="btn">Link öffnen</a></td>
-                </tr>
-
-                <tr>
-                    <td><span class="date-badge">2026-08-28</span></td>
-                    <td><strong>Friedhofsnacht 2026</strong></td>
-                    <td class="location">Friedhof Dreifaltigkeit II, Berlin</td>
-                    <td>Abendliche Veranstaltung auf dem Friedhof Dreifaltigkeit II an der Bergmannstraße.</td>
-                    <td><a href="https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen" target="_blank" rel="noopener noreferrer" class="btn">Link öffnen</a></td>
-                </tr>
-
-                <tr>
-                    <td><span class="date-badge">2026-08-30</span></td>
-                    <td><strong>Rundgang über den Friedhof Heerstraße</strong></td>
-                    <td class="location">Friedhof Heerstraße, Berlin</td>
-                    <td>Friedhofsrundgang mit Ulrich Thom über den Friedhof Heerstraße.</td>
-                    <td><a href="https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen" target="_blank" rel="noopener noreferrer" class="btn">Link öffnen</a></td>
-                </tr>
-
-                <tr>
-                    <td><span class="date-badge">2026-09-05</span></td>
-                    <td><strong>Kulturnacht auf dem Südwestkirchhof Stahnsdorf</strong></td>
-                    <td class="location">Südwestkirchhof Stahnsdorf</td>
-                    <td>Ein Spätsommer-Nachmittag voller Musik, Performance, Kunst und Poesie auf dem Südwestkirchhof.</td>
-                    <td><a href="https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen" target="_blank" rel="noopener noreferrer" class="btn">Link öffnen</a></td>
-                </tr>
-
-                <tr>
-                    <td><span class="date-badge">2026-09-06</span></td>
-                    <td><strong>Abendempfindung - Konzert zum Trost in Trauer</strong></td>
-                    <td class="location">Friedhofskapelle Friedrichswerderscher Friedhof, Berlin</td>
-                    <td>Konzert zum Trost in Trauer mit dem Ensemble Die Goldvögel und französischen Chansons.</td>
-                    <td><a href="https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen" target="_blank" rel="noopener noreferrer" class="btn">Link öffnen</a></td>
-                </tr>
-
-                <tr>
-                    <td><span class="date-badge">2026-09-06</span></td>
-                    <td><strong>Führung zu Grabstätten von Frauen im Widerstand in der NS-Zeit</strong></td>
-                    <td class="location">Jüdischer Friedhof Berlin-Weißensee</td>
-                    <td>Führung zu Grabstätten von Widerstandskämpferinnen während der NS-Zeit mit Dr. Monika Wittig.</td>
-                    <td><a href="https://jewish-cemetery-weissensee.org/entdecken/fuehrungen/" target="_blank" rel="noopener noreferrer" class="btn">Link öffnen</a></td>
-                </tr>
-
-                <tr>
-                    <td><span class="date-badge">2026-09-09</span></td>
-                    <td><strong>Führung über den Alten St.-Matthäus-Friedhof</strong></td>
-                    <td class="location">Haupteingang des Alten St.-Matthäus-Friedhofs, Berlin</td>
-                    <td>Rundgang über den historischen Kirchhof mit Ralf Illauer.</td>
-                    <td><a href="https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen" target="_blank" rel="noopener noreferrer" class="btn">Link öffnen</a></td>
-                </tr>
-
-                <tr>
-                    <td><span class="date-badge">2026-09-13</span></td>
-                    <td><strong>Tag des Friedhofs 2026</strong></td>
-                    <td class="location">Ev. Domfriedhof in der Liesenstraße 6, Berlin</td>
-                    <td>Zentrale Berliner Veranstaltung zum Tag des Friedhofs mit Ausstellungen, Führungen, Vorträgen und Kulturprogramm.</td>
-                    <td><a href="https://www.meinkiez-meinfriedhof.berlin.de/tag-des-friedhofs" target="_blank" rel="noopener noreferrer" class="btn">Link öffnen</a></td>
-                </tr>
-
-                <tr>
-                    <td><span class="date-badge">2026-09-13</span></td>
-                    <td><strong>Konzert zum Tag des Denkmals auf dem Südwestkirchhof Stahnsdorf</strong></td>
-                    <td class="location">Südwestkirchhof Stahnsdorf</td>
-                    <td>Konzert mit Harfe und Poesie zum Tag des Denkmals auf dem Südwestkirchhof.</td>
-                    <td><a href="https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen" target="_blank" rel="noopener noreferrer" class="btn">Link öffnen</a></td>
-                </tr>
-
-                <tr>
-                    <td><span class="date-badge">2026-09-16</span></td>
-                    <td><strong>Informationstafel-Einweihung auf dem St.-Thomas-Friedhof</strong></td>
-                    <td class="location">St.-Thomas-Friedhof, Berlin</td>
-                    <td>Gedenkveranstaltung und Einweihung einer Informationstafel auf dem St.-Thomas-Friedhof.</td>
-                    <td><a href="https://berlin.volksbund.de/aktuell/termine" target="_blank" rel="noopener noreferrer" class="btn">Link öffnen</a></td>
-                </tr>
-
-                <tr>
-                    <td><span class="date-badge">2026-09-17</span></td>
-                    <td><strong>Führung über den Luisenfriedhof III und den Kaiser-Wilhelm-Gedächtnis-Friedhof</strong></td>
-                    <td class="location">Luisenfriedhof III und Kaiser-Wilhelm-Gedächtnis-Friedhof, Berlin</td>
-                    <td>Führung über zwei historische Friedhöfe in Berlin mit dem Volksbund.</td>
-                    <td><a href="https://berlin.volksbund.de/aktuell/termine" target="_blank" rel="noopener noreferrer" class="btn">Link öffnen</a></td>
-                </tr>
-
-                <tr>
-                    <td><span class="date-badge">2026-09-23</span></td>
-                    <td><strong>Führung über den Alten St.-Matthäus-Friedhof</strong></td>
-                    <td class="location">Haupteingang des Alten St.-Matthäus-Friedhofs, Berlin</td>
-                    <td>Führung über den Alten St.-Matthäus-Friedhof mit Ralf Illauer.</td>
-                    <td><a href="https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen" target="_blank" rel="noopener noreferrer" class="btn">Link öffnen</a></td>
-                </tr>
-
-                <tr>
-                    <td><span class="date-badge">2026-09-27</span></td>
-                    <td><strong>Sonderführung - Der Baum als Freund und Begleiter im Lebensraum Friedhof</strong></td>
-                    <td class="location">Südwestkirchhof Stahnsdorf</td>
-                    <td>Besondere Führung über Flora und Baumbestand im Lebensraum Friedhof mit Thomas Specht.</td>
-                    <td><a href="https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen" target="_blank" rel="noopener noreferrer" class="btn">Link öffnen</a></td>
-                </tr>
-
-                <tr>
-                    <td><span class="date-badge">2026-10-07</span></td>
-                    <td><strong>Führung über den Alten St.-Matthäus-Friedhof</strong></td>
-                    <td class="location">Haupteingang des Alten St.-Matthäus-Friedhofs, Berlin</td>
-                    <td>Rundgang über den Kirchhof mit Ralf Illauer.</td>
-                    <td><a href="https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen" target="_blank" rel="noopener noreferrer" class="btn">Link öffnen</a></td>
-                </tr>
-
-                <tr>
-                    <td><span class="date-badge">2026-10-16</span></td>
-                    <td><strong>Führung über die Friedhöfe am Halleschen Tor zu Verwandten und Freunden der Mendelssohn-Familie</strong></td>
-                    <td class="location">Friedhöfe am Halleschen Tor, Berlin</td>
-                    <td>Themenführung zu Verwandten und Freunden der Mendelssohn-Familie mit Eva Gosh und Karin Maaß.</td>
-                    <td><a href="https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen" target="_blank" rel="noopener noreferrer" class="btn">Link öffnen</a></td>
-                </tr>
-
-                <tr>
-                    <td><span class="date-badge">2026-10-18</span></td>
-                    <td><strong>Führung zu den Grabstätten wichtiger Berlinerinnen und Berliner</strong></td>
-                    <td class="location">Jüdischer Friedhof Berlin-Weißensee</td>
-                    <td>Führung zu bedeutenden Grabstätten und zur Geschichte des Friedhofs mit Anja Pick.</td>
-                    <td><a href="https://jewish-cemetery-weissensee.org/entdecken/fuehrungen/" target="_blank" rel="noopener noreferrer" class="btn">Link öffnen</a></td>
-                </tr>
-
-                <tr>
-                    <td><span class="date-badge">2026-10-28</span></td>
-                    <td><strong>Führung über den Alten St.-Matthäus-Friedhof</strong></td>
-                    <td class="location">Haupteingang des Alten St.-Matthäus-Friedhofs, Berlin</td>
-                    <td>Historischer Spaziergang und Führung mit Ralf Illauer.</td>
-                    <td><a href="https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen" target="_blank" rel="noopener noreferrer" class="btn">Link öffnen</a></td>
-                </tr>
-
-                <tr>
-                    <td><span class="date-badge">2026-11-15</span></td>
-                    <td><strong>Zum Volkstrauertag: Führung auf dem Jüdischen Friedhof Weißensee</strong></td>
-                    <td class="location">Jüdischer Friedhof Berlin-Weißensee</td>
-                    <td>Führung entlang des Hauptwegs bis zum Ehrenhain für die jüdischen Soldaten des Ersten Weltkriegs.</td>
-                    <td><a href="https://jewish-cemetery-weissensee.org/entdecken/fuehrungen/" target="_blank" rel="noopener noreferrer" class="btn">Link öffnen</a></td>
-                </tr>
-
-                <tr>
-                    <td><span class="date-badge">2026-11-18</span></td>
-                    <td><strong>Führung über den Alten St.-Matthäus-Friedhof</strong></td>
-                    <td class="location">Haupteingang des Alten St.-Matthäus-Friedhofs, Berlin</td>
-                    <td>Führung über den Alten St.-Matthäus-Friedhof mit Ralf Illauer.</td>
-                    <td><a href="https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen" target="_blank" rel="noopener noreferrer" class="btn">Link öffnen</a></td>
-                </tr>
-
-            </tbody>
-        </table>
-
+        <div id="noResults" class="no-results">Keine passenden Veranstaltungen f&uuml;r die Suchkriterien gefunden.</div>
+<p>Derzeit keine bevorstehenden Termine in der Datenbank.</p>
     </div>
 
     <script>
