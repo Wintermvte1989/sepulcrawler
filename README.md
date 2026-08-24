@@ -28,17 +28,3 @@ Die Ergebnisse werden atomar in einer Datenbank (`events_db.json`) gespeichert u
 * **LLM Engine:** `google-genai` (`gemini-3.6-flash`)
 * **Data Validation:** `pydantic`
 * **Automation:** GitHub Actions
-
-## Lokale Einrichtung
-
-### Voraussetzungen
-
-* Python 3.11 oder höher
-* Google Gemini API Key (Pay-as-you-go im Google AI Studio aktiviert)
-
-### Installation & Start
-
-1. Repository klonen:
-   ```bash
-   git clone [https://github.com/Wintermvte1989/sepulkral-crawler.git](https://github.com/Wintermvte1989/sepulkral-crawler.git)
-   cd sepulkral-crawler
