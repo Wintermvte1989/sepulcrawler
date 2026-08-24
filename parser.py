@@ -5,6 +5,7 @@ import os
 import re
 import tempfile
 import time
+import difflib
 import httpx
 import urllib3
 from collections import Counter
@@ -199,7 +200,7 @@ class EventList(BaseModel):
     events: list[Event]
 
 
-# ---------------------------------------------------------------- Datum
+# ---------------------------------------------------------------- Datum & Text-Normalisierung
 
 def parse_date(date_str: str) -> str | None:
     if not date_str:
@@ -244,7 +245,57 @@ def parse_date(date_str: str) -> str | None:
     return None
 
 
-# ---------------------------------------------------------------- Datenbank
+def clean_text_for_comparison(text: str) -> str:
+    if not text:
+        return ""
+    s = str(text).lower()
+    # Ersetze Sonderzeichen, Gedankenstriche und Anfuehrungszeichen durch Leerzeichen
+    s = re.sub(r'[\–\—\-\:\,\"\''\n\r\`«»„“\(\)\[\]]', ' ', s)
+    # Entferne typische Praefixe / Suffixe
+    s = re.sub(r'^(führung|sonderführung|ausstellung|vortrag|konzert|rundgang|spaziergang)\s+(über|durch|zu|an)?\s*', '', s)
+    s = re.sub(r'\s+(führung|sonderführung|ausstellung|vortrag|konzert|rundgang|spaziergang)$', '', s)
+    s = re.sub(r'\s+', ' ', s).strip()
+    return s
+
+
+def are_events_duplicate(ev1: dict, ev2: dict) -> bool:
+    # 1. Startdatum muss exakt übereinstimmen
+    if ev1.get("date_start") != ev2.get("date_start"):
+        return False
+
+    t1 = clean_text_for_comparison(ev1.get("title", ""))
+    t2 = clean_text_for_comparison(ev2.get("title", ""))
+
+    if not t1 or not t2:
+        return False
+
+    # Exakte Übereinstimmung nach Bereinigung
+    if t1 == t2:
+        return True
+
+    # Eine Zeichenkette ist Teil der anderen (bei ausreichender Länge)
+    if len(t1) > 8 and len(t2) > 8:
+        if t1 in t2 or t2 in t1:
+            return True
+
+    # Ähnlichkeitsvergleich der Titel
+    ratio = difflib.SequenceMatcher(None, t1, t2).ratio()
+    if ratio >= 0.78:
+        return True
+
+    # Bei moderater Ähnlichkeit im Titel zusätzlich den Ort vergleichen
+    if ratio >= 0.60:
+        loc1 = clean_text_for_comparison(ev1.get("location", ""))
+        loc2 = clean_text_for_comparison(ev2.get("location", ""))
+        if loc1 and loc2:
+            loc_ratio = difflib.SequenceMatcher(None, loc1, loc2).ratio()
+            if loc_ratio >= 0.55 or loc1 in loc2 or loc2 in loc1:
+                return True
+
+    return False
+
+
+# ---------------------------------------------------------------- Datenbank & Deduplizierung
 
 def load_events_db() -> dict:
     if not os.path.exists(DB_FILE):
@@ -268,11 +319,43 @@ def save_events_db(db: dict):
         raise
 
 
-def generate_event_id(event: dict) -> str:
-    title = re.sub(r"\s+", " ", str(event.get("title") or "")).strip().lower()
-    host = urlparse(event.get("url") or "").netloc
-    raw = f"{title}|{event.get('date_start', '')}|{host}"
-    return hashlib.md5(raw.encode("utf-8")).hexdigest()
+def deduplicate_db(db: dict) -> dict:
+    events = list(db.values())
+    merged_events = []
+
+    for ev in events:
+        found_dup = False
+        for existing in merged_events:
+            if are_events_duplicate(ev, existing):
+                # Zeitstempel abgleichen
+                existing["first_seen"] = min(existing.get("first_seen", "9999"), ev.get("first_seen", "9999"))
+                existing["last_seen"] = max(existing.get("last_seen", ""), ev.get("last_seen", ""))
+                
+                # Ausführlichere Felder bevorzugen
+                if len(ev.get("title", "")) > len(existing.get("title", "")):
+                    existing["title"] = ev["title"]
+                if len(ev.get("description", "")) > len(existing.get("description", "")):
+                    existing["description"] = ev["description"]
+                if len(ev.get("location", "")) > len(existing.get("location", "")):
+                    existing["location"] = ev["location"]
+                if not existing.get("date_end") and ev.get("date_end"):
+                    existing["date_end"] = ev["date_end"]
+                
+                found_dup = True
+                break
+        
+        if not found_dup:
+            merged_events.append(ev)
+
+    # Re-Keying mit deterministischem Hash basierend auf bereinigtem Titel + Startdatum
+    cleaned_db = {}
+    for ev in merged_events:
+        norm_t = clean_text_for_comparison(ev.get("title", ""))
+        raw = f"{norm_t}|{ev.get('date_start', '')}"
+        event_id = hashlib.md5(raw.encode("utf-8")).hexdigest()
+        cleaned_db[event_id] = ev
+
+    return cleaned_db
 
 
 # ---------------------------------------------------------------- Auswahl
@@ -661,8 +744,12 @@ if __name__ == "__main__":
     today = datetime.now(BERLIN).date()
     today_str = today.isoformat()
 
-    events_db = load_events_db()
-    print(f"Bestand geladen: {len(events_db)} Events")
+    raw_db = load_events_db()
+    print(f"Bestand geladen: {len(raw_db)} Roh-Events")
+
+    # Sofortige Bereinigung bestehender Duplikate in der geladenen DB
+    events_db = deduplicate_db(raw_db)
+    print(f"Nach Initial-Deduplizierung: {len(events_db)} eindeutige Events")
 
     # Phase 1: Webseiten laden und filtern
     print(f"\n--- Phase 1: Webseiten laden ({len(TARGET_URLS)} Quellen) ---")
@@ -705,19 +792,39 @@ if __name__ == "__main__":
                 stats["vergangen"] += 1
                 continue
 
-            event_id = generate_event_id(event)
-            if event_id in events_db:
-                event["first_seen"] = events_db[event_id].get("first_seen", today_str)
+            # Abgleich gegen bestehende Events per Fuzzy-Match
+            found_duplicate_key = None
+            for existing_id, existing_ev in events_db.items():
+                if are_events_duplicate(event, existing_ev):
+                    found_duplicate_key = existing_id
+                    break
+
+            if found_duplicate_key:
+                existing = events_db[found_duplicate_key]
+                existing["first_seen"] = min(existing.get("first_seen", today_str), today_str)
+                existing["last_seen"] = today_str
+                if len(event.get("title", "")) > len(existing.get("title", "")):
+                    existing["title"] = event["title"]
+                if len(event.get("description", "")) > len(existing.get("description", "")):
+                    existing["description"] = event["description"]
+                if len(event.get("location", "")) > len(existing.get("location", "")):
+                    existing["location"] = event["location"]
+                if not existing.get("date_end") and event.get("date_end"):
+                    existing["date_end"] = event["date_end"]
                 stats["aktualisiert"] += 1
             else:
                 event["first_seen"] = today_str
+                event["last_seen"] = today_str
+                norm_t = clean_text_for_comparison(event.get("title", ""))
+                raw_id = f"{norm_t}|{event.get('date_start', '')}"
+                new_id = hashlib.md5(raw_id.encode("utf-8")).hexdigest()
+                events_db[new_id] = event
                 stats["neu"] += 1
-            event["last_seen"] = today_str
-            events_db[event_id] = event
 
         time.sleep(4)
 
-    # Phase 3: Bereinigung vergangener Events
+    # Phase 3: Finale Deduplizierung & Bereinigung vergangener Events
+    events_db = deduplicate_db(events_db)
     cleaned_db = {}
     for event_id, event in events_db.items():
         relevant = event.get("date_end") or event.get("date_start", "")
