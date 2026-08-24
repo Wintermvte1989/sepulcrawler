@@ -63,14 +63,13 @@ TARGET_URLS = [
     "https://www.jewishmuseum.cz/en/info/visit/",
     "https://www.nm.cz/en/program/events",
 
-    # Beinhäuser, Mumien, Grüfte & Sakralbauten (Deutschland & Österreich)
+    # Beinhäuser, Mumien, Grüfte & Sakralbauten (Deutschland)
     "https://stpetridom.de/der-dom/besucher-info/bleikeller/",
     "https://www.stadt-oppenheim.de/",
     "https://www.muenster-doberan.de/",
     "https://www.pfarrei-chammuenster.de/",
     "https://www.koelner-dom.de/aktuelles",
     "https://www.st-michaelis.de/veranstaltungen-am-michel",
-    "https://www.kaisergruft.com/",
     "https://www.hallstatt.net/",
     "https://www.magdeburgerdom.de/",
     "https://www.naumburger-dom.de/",
@@ -95,8 +94,9 @@ TARGET_URLS = [
     "https://www.landesmuseum-trier.de/",
     "https://schloss-gottorf.de/",
 
-    # Überregional Deutschland: Friedhofskultur & Vereine
+    # Überregional Deutschland: Friedhofskultur, Vereine & Vorträge
     "https://www.sepulkralmuseum.de/veranstaltungen/",
+    "https://blog.sepulkralmuseum.de/",
     "https://paul-benndorf-gesellschaft.de/fuehrungen.html",
     "https://eliasfriedhof.de/category/veranstaltungen/",
     "http://www.friedhofskultur-halle.de/terminefuehrungen/",
@@ -107,49 +107,45 @@ TARGET_URLS = [
     "https://theatergemeinde-koeln.org/Kulturkompass/werk/25725/M04/stadtfuhrungen-koln/fuehrung-uber-melaten",
     "https://www.friedhofsverwalter.de/fachveranstaltung-der-arbeitsgemeinschaft-friedhof-und-denkmal-e-v/",
     "https://aufdasleben.de/event/",
-    "https://www.totentanz-online.de/veranstaltungen.php"
+    "https://www.totentanz-online.de/veranstaltungen.php",
+    "https://www.benecke.com/termine/",
 
-# --- ÖSTERREICH: Grüfte, Katakomben, Beinhäuser & Friedhofskultur ---
-    "https://www.stephansdom.at/visit_tours_catacombs.php",           # Katakomben Stephansdom Wien
-    "https://www.petersfriedhof.at/",                                 # Petersfriedhof & Katakomben Salzburg
-    "https://www.stift-admont.at/museum/",                            # Stift Admont (Museum & Tod-Thematik)
-    "https://www.innsbruck.gv.at/kultur/friedhoefe/veranstaltungen",   # Stadtfriedhöfe Innsbruck
-    "https://www.stadt-salzburg.at/friedhoefe/veranstaltungen",       # Kommunalfriedhof Salzburg
+    # ÖSTERREICH: Katakomben, Stifte, Grüfte & Friedhöfe
+    "https://www.stephansdom.at/visit_tours_catacombs.php",
+    "https://www.petersfriedhof.at/",
+    "https://www.stift-admont.at/museum/",
+    "https://www.innsbruck.gv.at/kultur/friedhoefe/veranstaltungen",
+    "https://www.stadt-salzburg.at/friedhoefe/veranstaltungen",
+    "https://www.kaisergruft.com/",
 
-    # --- SCHWEIZ: Friedhofsforum, Beinhäuser & Sakralbauten ---
-    "https://www.stadt-zuerich.ch/gued/de/index/friedhoefe/friedhofforum/veranstaltungen.html", # Friedhof Forum Zürich
-    "https://www.stadtgaertnerei.bs.ch/friedhoefe/veranstaltungen.html",                       # Friedhof Hörnli & Wolfgottesacker Basel
-    "https://www.bernermuenster.ch/de/kalender",                                                # Berner Münster (Krypta & Totentanz)
-    "https://www.stiftsbezirk.ch/de/veranstaltungen",                                           # Stiftsbezirk St. Gallen (Stiftsbibliothek & Reliquien)
-    "https://www.museum-aargau.ch/schloss-lenzburg/event-kalender",                            # Schloss Lenzburg (Ritterkultur & Grabfunde)
+    # SCHWEIZ: Friedhofsforum, Beinhäuser & Sakralbauten
+    "https://www.stadt-zuerich.ch/gued/de/index/friedhoefe/friedhofforum/veranstaltungen.html",
+    "https://www.stadtgaertnerei.bs.ch/friedhoefe/veranstaltungen.html",
+    "https://www.bernermuenster.ch/de/kalender",
+    "https://www.stiftsbezirk.ch/de/veranstaltungen",
+    "https://www.museum-aargau.ch/schloss-lenzburg/event-kalender",
 
-    # --- DEUTSCHLAND: Bayern & Baden-Württemberg ---
-    "https://www.alter-friedhof-freiburg.de/",                        # Alter Friedhof Freiburg i. Br.
-    "https://www.freiburger-muenster.de/kalender",                    # Freiburger Münster (Krypta & Grabdenkmäler)
-    "https://www.karlsruhe.de/freizeit-und-sport/friedhoefe/veranstaltungen", # Hauptfriedhof Karlsruhe
-    "https://www.domberg-bamberg.de/veranstaltungen",                 # Bamberger Dom (Kaisergrab Heinrich II.)
-    "https://www.augsburg.de/umwelt/umweltthemen/friedhoefe/termine", # Alter Ostfriedhof & Hauptfriedhof Augsburg
-    "https://www.passauer-dom.de/",                                   # Passauer Dom & Bischofsgruft
+    # DEUTSCHLAND ERWEITERT: Süd, Südwest & Mitte
+    "https://www.alter-friedhof-freiburg.de/",
+    "https://www.freiburger-muenster.de/kalender",
+    "https://www.karlsruhe.de/freizeit-und-sport/friedhoefe/veranstaltungen",
+    "https://www.domberg-bamberg.de/veranstaltungen",
+    "https://www.augsburg.de/umwelt/umweltthemen/friedhoefe/termine",
+    "https://www.passauer-dom.de/",
+    "https://www.frankfurter-hauptfriedhof.de/termine.htm",
+    "https://www.mainzer-dom.de/aktuelles/termine/",
+    "https://www.darmstadt.de/leben-in-darmstadt/umwelt/friedhoefe/veranstaltungen",
+    "https://www.saarbruecken.de/leben_in_saarbruecken/planen_bauen_wohnen/friedhoefe/veranstaltungen",
 
-    # --- DEUTSCHLAND: Hessen, Rheinland-Pfalz & Saarland ---
-    "https://www.frankfurter-hauptfriedhof.de/termine.htm",            # Hauptfriedhof Frankfurt a. M. (Verein)
-    "https://www.mainzer-dom.de/aktuelles/termine/",                  # Mainzer Dom (Bischofsgrüfte & Denkmäler)
-    "https://www.darmstadt.de/leben-in-darmstadt/umwelt/friedhoefe/veranstaltungen", # Waldfriedhof & Alter Friedhof Darmstadt
-    "https://www.saarbruecken.de/leben_in_saarbruecken/planen_bauen_wohnen/friedhoefe/veranstaltungen", # Hauptfriedhof Saarbrücken
-
-    # --- DEUTSCHLAND: Sachsen, Thüringen & Sachsen-Anhalt ---
-    "https://www.erfurter-dom.de/",                                   # Erfurter Dom (Mariendom Krypta)
-    "https://www.augustinerkloster.de/veranstaltungen/",             # Evangelisches Augustinerkloster Erfurt
-    "https://www.dresden.de/de/leben/umwelt/stadtgruen/friedhoefe/veranstaltungen.php", # Städtische Friedhöfe Dresden
-    "https://www.chemnitz.de/chemnitz/de/unsere-stadt/friedhoefe/veranstaltungen.html", # Städtische Friedhöfe Chemnitz
-    "https://www.stiftskirche-quedlinburg.de/",                       # Stiftskirche Quedlinburg (Krypta & Domschatz)
-
-    # --- DEUTSCHLAND: Norddeutschland ---
-    "https://www.st-marien-luebeck.de/kalender",                      # St. Marien zu Lübeck (Totentanz-Kapelle)
-    "https://www.braunschweig.de/leben/umwelt_naturschutz/stadtgruen/friedhoefe/veranstaltungen.php", # Hauptfriedhof Braunschweig
-    "https://www.kiel.de/de/umwelt_verkehr/friedhoefe/veranstaltungen.php" # Städtische Friedhöfe Kiel
-
-
+    # DEUTSCHLAND ERWEITERT: Ost & Nord
+    "https://www.erfurter-dom.de/",
+    "https://www.augustinerkloster.de/veranstaltungen/",
+    "https://www.dresden.de/de/leben/umwelt/stadtgruen/friedhoefe/veranstaltungen.php",
+    "https://www.chemnitz.de/chemnitz/de/unsere-stadt/friedhoefe/veranstaltungen.html",
+    "https://www.stiftskirche-quedlinburg.de/",
+    "https://www.st-marien-luebeck.de/kalender",
+    "https://www.braunschweig.de/leben/umwelt_naturschutz/stadtgruen/friedhoefe/veranstaltungen.php",
+    "https://www.kiel.de/de/umwelt_verkehr/friedhoefe/veranstaltungen.php"
 ]
 
 DB_FILE = "events_db.json"
@@ -410,7 +406,7 @@ def render_html(events: list[dict], today: date):
         <div class="timestamp">Stand: {timestamp} | Zeige <span id="visibleCount">{len(sorted_events)}</span> von {len(sorted_events)} Events</div>
 
         <div class="filter-container">
-            <input type="text" id="searchInput" class="search-input" placeholder="Events durchsuchen (z. B. Beinhaus, Köln, Leipzig, Stahnsdorf)..." onkeyup="filterEvents()">
+            <input type="text" id="searchInput" class="search-input" placeholder="Events durchsuchen (z. B. Beinhaus, Wien, Zürich, Benecke, Köln)..." onkeyup="filterEvents()">
             <div class="filter-tags">
                 <button class="tag-btn active" data-filter="" onclick="setTagFilter(this)">Alle</button>
                 <button class="tag-btn" data-filter="berlin" onclick="setTagFilter(this)">Berlin</button>
