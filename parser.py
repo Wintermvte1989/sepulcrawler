@@ -130,24 +130,14 @@ TARGET_URLS = [
     "https://www.friedhoefewien.at/friedhofsfuehrungen"
 ]
 
-# Quellen, die bei JEDEM Lauf gecrawlt werden (grosse Kalender mit hoher Aenderungsrate).
-# Liste bewusst klein halten - jeder Eintrag kostet Budget. Nach ein paar Wochen
-# anhand der Logs anpassen.
-DAILY_SOURCES = {
-    "https://www.smb.museum/veranstaltungen/",
-    "https://www.dhm.de/programm/veranstaltungskalender/",
-    "https://www.stadtmuseum.de/programm",
-    "https://www.friedhoefewien.at/veranstaltungen",
-}
-
 DB_FILE = "events_db.json"
 HTML_OUTPUT_FILE = "index.html"
 
-BATCH_SIZE = 8          # nicht erhoehen - Output-Limit der API
+BATCH_SIZE = 8          # nicht erhoehen - Output-Limit der API beachten
 TEXT_LIMIT = 9000       # Zeichen pro Seite, die an die API gehen
 MIN_TEXT_LENGTH = 1500  # darunter: vermutlich JS-gerenderte Seite ohne Inhalt
 STALE_AFTER_DAYS = 10   # ab hier "nicht mehr bestaetigt" im HTML
-API_ATTEMPTS = 3        # Achtung: jeder Versuch zaehlt gegen das RPD-Limit (20)
+API_ATTEMPTS = 3
 
 BERLIN = ZoneInfo("Europe/Berlin")
 
@@ -246,14 +236,6 @@ def generate_event_id(event: dict) -> str:
 
 # ---------------------------------------------------------------- Auswahl
 
-def due_today(url: str, weekday: int) -> bool:
-    """Rotation: jede URL bekommt einen festen Wochentag. Verteilt ~100 Quellen
-    auf 7 Tage und haelt den Verbrauch unter dem RPD-Limit."""
-    if url in DAILY_SOURCES:
-        return True
-    return int(hashlib.md5(url.encode("utf-8")).hexdigest(), 16) % 7 == weekday
-
-
 def is_worth_sending(url: str, text: str) -> bool:
     if len(text) < MIN_TEXT_LENGTH:
         print(f"  uebersprungen (nur {len(text)} Zeichen, evtl. JS-gerendert): {url}")
@@ -347,8 +329,6 @@ def call_with_retry(batch_sources, today_str) -> list[dict]:
         try:
             return extract_events_batch(batch_sources, today_str)
         except TruncatedResponseError:
-            # Retry sinnlos - dieselbe Anfrage liefert dieselbe abgeschnittene
-            # Antwort. Stattdessen BATCH_SIZE oder TEXT_LIMIT reduzieren.
             print("  Antwort abgeschnitten - kein Retry, BATCH_SIZE pruefen")
             return []
         except Exception as e:
@@ -439,7 +419,6 @@ def render_html(events: list[dict], today: date):
             loc_s = html.escape(event.get("location", ""))
             desc_s = html.escape(event.get("description", ""))
 
-            # Nur http/https zulassen - html.escape verhindert kein javascript:
             raw_url = str(event.get("url") or "")
             url_s = html.escape(raw_url) if raw_url.startswith(("http://", "https://")) else "#"
 
@@ -523,19 +502,14 @@ def render_html(events: list[dict], today: date):
 if __name__ == "__main__":
     today = datetime.now(BERLIN).date()
     today_str = today.isoformat()
-    weekday = today.weekday()
 
     events_db = load_events_db()
     print(f"Bestand geladen: {len(events_db)} Events")
 
-    # Phase 0: Rotation
-    due_urls = [u for u in TARGET_URLS if due_today(u, weekday)]
-    print(f"\n--- Phase 0: {len(due_urls)} von {len(TARGET_URLS)} Quellen heute faellig ---")
-
-    # Phase 1: Webseiten laden und filtern
-    print("\n--- Phase 1: Webseiten laden ---")
+    # Phase 1: Webseiten laden und filtern (Alle Quellen täglich)
+    print(f"\n--- Phase 1: Webseiten laden ({len(TARGET_URLS)} Quellen) ---")
     fetched_pages = []
-    for url in due_urls:
+    for url in TARGET_URLS:
         try:
             page_text = fetch_page_text(url)
         except Exception as e:
