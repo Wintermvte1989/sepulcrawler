@@ -177,6 +177,14 @@ MONTH_MAP = {
     "dez": 12, "dezember": 12,
 }
 
+STOP_WORDS = {
+    "führung", "sonderführung", "ausstellung", "vortrag", "konzert",
+    "rundgang", "spaziergang", "lesung", "filmvorführung", "museum",
+    "tag", "tage", "über", "durch", "nach", "beim", "eines", "einer",
+    "einen", "einem", "mit", "und", "oder", "für", "vom", "auf", "dem",
+    "den", "der", "die", "das", "des", "aus", "zum", "zur", "von", "im", "in"
+}
+
 client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
 
 
@@ -207,7 +215,6 @@ def parse_date(date_str: str) -> str | None:
         return None
     s = str(date_str).strip().lower()
 
-    # 1. ISO-Format: YYYY-MM-DD
     match_iso = re.search(r"\b(\d{4})-(\d{1,2})-(\d{1,2})\b", s)
     if match_iso:
         y, m, d = map(int, match_iso.groups())
@@ -216,7 +223,6 @@ def parse_date(date_str: str) -> str | None:
         except ValueError:
             pass
 
-    # 2. Numerisch: DD.MM.YYYY, DD/MM/YY, D.M.YYYY
     match_num = re.search(r"\b(\d{1,2})[\.\/](\d{1,2})[\.\/](\d{2,4})\b", s)
     if match_num:
         d, m, y = map(int, match_num.groups())
@@ -227,7 +233,6 @@ def parse_date(date_str: str) -> str | None:
         except ValueError:
             pass
 
-    # 3. Textuell: "15. September 2026", "15 Sept 2026", "15. Sept. 26"
     match_text = re.search(r"\b(\d{1,2})\.?\s+([a-zäöü]+)\.?\s+(\d{2,4})\b", s)
     if match_text:
         d_str, month_str, y_str = match_text.groups()
@@ -251,13 +256,20 @@ def clean_text_for_comparison(text: str) -> str:
     s = str(text).lower()
     s = re.sub(r'[–—:\,\"`«»„“\(\)\[\]\-\n\r]', ' ', s)
     s = s.replace("'", ' ').replace('"', ' ')
-    s = re.sub(r'^(führung|sonderführung|ausstellung|vortrag|konzert|rundgang|spaziergang)\s+(über|durch|zu|an)?\s*', '', s)
-    s = re.sub(r'\s+(führung|sonderführung|ausstellung|vortrag|konzert|rundgang|spaziergang)$', '', s)
     s = re.sub(r'\s+', ' ', s).strip()
     return s
 
 
+def extract_tokens(text: str) -> set[str]:
+    if not text:
+        return set()
+    cleaned = clean_text_for_comparison(text)
+    words = set(re.findall(r'\b\w{3,}\b', cleaned))
+    return words - STOP_WORDS
+
+
 def are_events_duplicate(ev1: dict, ev2: dict) -> bool:
+    # 1. Startdatum muss exakt übereinstimmen
     if ev1.get("date_start") != ev2.get("date_start"):
         return False
 
@@ -270,21 +282,34 @@ def are_events_duplicate(ev1: dict, ev2: dict) -> bool:
     if t1 == t2:
         return True
 
-    if len(t1) > 8 and len(t2) > 8:
-        if t1 in t2 or t2 in t1:
-            return True
-
+    # Ähnlichkeitsvergleich der Titel
     ratio = difflib.SequenceMatcher(None, t1, t2).ratio()
-    if ratio >= 0.78:
+    if ratio >= 0.72:
         return True
 
-    if ratio >= 0.60:
-        loc1 = clean_text_for_comparison(ev1.get("location", ""))
-        loc2 = clean_text_for_comparison(ev2.get("location", ""))
-        if loc1 and loc2:
-            loc_ratio = difflib.SequenceMatcher(None, loc1, loc2).ratio()
-            if loc_ratio >= 0.55 or loc1 in loc2 or loc2 in loc1:
-                return True
+    # Token-Analyse von Ort & Titel
+    tok1 = extract_tokens(ev1.get("title", ""))
+    tok2 = extract_tokens(ev2.get("title", ""))
+    loc1 = extract_tokens(ev1.get("location", ""))
+    loc2 = extract_tokens(ev2.get("location", ""))
+
+    same_loc = len(loc1 & loc2) > 0 or not loc1 or not loc2
+
+    if same_loc:
+        common_tokens = tok1 & tok2
+        # Wenn mindestens 2 signifikante Wörter im Titel übereinstimmen
+        if len(common_tokens) >= 2:
+            return True
+
+        # Substring-Matching bei ausreichend langen Einzellokationen (z.B. Melaten)
+        if (t1 in t2 or t2 in t1) and min(len(t1), len(t2)) >= 5:
+            return True
+
+        # Auswertung der Beschreibung bei abweichenden Titeln
+        desc1 = extract_tokens(ev1.get("description", ""))
+        desc2 = extract_tokens(ev2.get("description", ""))
+        if len(desc1 & desc2) >= 4:
+            return True
 
     return False
 
@@ -738,11 +763,9 @@ if __name__ == "__main__":
     raw_db = load_events_db()
     print(f"Bestand geladen: {len(raw_db)} Roh-Events")
 
-    # Sofortige Bereinigung bestehender Duplikate in der geladenen DB
     events_db = deduplicate_db(raw_db)
     print(f"Nach Initial-Deduplizierung: {len(events_db)} eindeutige Events")
 
-    # Phase 1: Webseiten laden und filtern
     print(f"\n--- Phase 1: Webseiten laden ({len(TARGET_URLS)} Quellen) ---")
     fetched_pages = []
     for url in TARGET_URLS:
@@ -759,7 +782,6 @@ if __name__ == "__main__":
     print(f"\n{len(fetched_pages)} Seiten gehen an die API "
           f"({(len(fetched_pages) + BATCH_SIZE - 1) // BATCH_SIZE} Requests)")
 
-    # Phase 2: KI-Analyse
     print(f"\n--- Phase 2: KI-Analyse in {BATCH_SIZE}er-Paketen ---")
     stats = Counter()
     for i in range(0, len(fetched_pages), BATCH_SIZE):
@@ -813,7 +835,6 @@ if __name__ == "__main__":
 
         time.sleep(4)
 
-    # Phase 3: Finale Deduplizierung & Bereinigung vergangener Events
     events_db = deduplicate_db(events_db)
     cleaned_db = {}
     for event_id, event in events_db.items():
