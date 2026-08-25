@@ -24,7 +24,7 @@
     "date_start": "2026-09-13",
     "date_end": null,
     "location": "Gedenkstätte Friedhof der Märzgefallenen, Berlin",
-    "description": "Führung über den historischen Friedhof der Märzgefallenen im Rahmen des Tags des offenen Denkmals.",
+    "description": "Führung über den historischen Friedhof der Märzgefallenen von 1848 bis in die Gegenwart anlässlich des Tags des offenen Denkmals.",
     "url": "https://forum1848.de/veranstaltungen/",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-25"
@@ -54,7 +54,7 @@
     "date_start": "2026-09-13",
     "date_end": null,
     "location": "Hauptfriedhof, Frankfurt am Main",
-    "description": "Führung durch die denkmalgeschützte Parklandschaft und Sepulkralkultur des Frankfurter Hauptfriedhofs.",
+    "description": "Führung durch die parkartige Friedhofsanlage des Frankfurter Hauptfriedhofs im Rahmen von GartenRheinMain.",
     "url": "https://www.krfrm.de/venue/hauptfriedhof-frankfurt-am-main/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
@@ -64,7 +64,7 @@
     "date_start": "2026-09-13",
     "date_end": null,
     "location": "Hauptfriedhof, Frankfurt am Main",
-    "description": "Führung über den 1828 angelegten Frankfurter Hauptfriedhof, bei der Mausoleen, Grabkunst und die Biografien bedeutender Persönlichkeiten vorgestellt werden.",
+    "description": "Führung über den Frankfurter Hauptfriedhof, bei der imposante Grabstätten, Mausoleen und die Lebensgeschichten bedeutender Frankfurter Persönlichkeiten vorgestellt werden.",
     "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
@@ -136,6 +136,16 @@
     "location": "Hauptfriedhof, Frankfurt am Main",
     "description": "Nachmittagsveranstaltung auf dem Frankfurter Hauptfriedhof im Rahmen der Initiative GartenRheinMain.",
     "url": "https://www.krfrm.de/venue/hauptfriedhof-frankfurt-am-main/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "eee69b882dc2b948e8be75749b41278f": {
+    "title": "Tag des Friedhofs in Berlin",
+    "date_start": "2026-09-13",
+    "date_end": null,
+    "location": "Evangelischer Domfriedhof Liesenstraße, Berlin",
+    "description": "Ein Aktionstag rund um die Friedhofs- und Bestattungskultur mit Führungen zu Opfer- und Ehrengräbern, Vorträgen zu Bestattungsvorsorge und Hospizarbeit sowie kulturellem Programm.",
+    "url": "https://www.meinkiez-meinfriedhof.berlin.de/tag-des-friedhofs",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
   },
@@ -234,7 +244,7 @@
     "date_start": "2026-08-28",
     "date_end": null,
     "location": "Friedhof Dreifaltigkeit II, Berlin",
-    "description": "Abendliche Kulturveranstaltung auf dem Friedhof Dreifaltigkeit II an der Bergmannstraße.",
+    "description": "Veranstaltung im Rahmen der Friedhofsnacht 2026 auf dem Friedhof Dreifaltigkeit II an der Bergmannstraße.",
     "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-25"
@@ -264,7 +274,7 @@
     "date_start": "2026-08-30",
     "date_end": null,
     "location": "Garten der Frauen, Parkfriedhof Ohlsdorf",
-    "description": "Themenbezogene Führung durch den Garten der Frauen auf dem Ohlsdorfer Friedhof.",
+    "description": "Führung zu historischen Frauenpersönlichkeiten und Grabstätten im Garten der Frauen.",
     "url": "https://www.ohlsdorf-derpark.de/termine-ohlsdorf/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
@@ -334,7 +344,7 @@
     "date_start": "2026-09-05",
     "date_end": null,
     "location": "Hauptfriedhof, Frankfurt am Main",
-    "description": "Führung über den 1828 angelegten Frankfurter Hauptfriedhof, bei der Mausoleen, Grabkunst und die Biografien bedeutender Persönlichkeiten vorgestellt werden.",
+    "description": "Führung über den Frankfurter Hauptfriedhof, bei der imposante Grabstätten, Mausoleen und die Lebensgeschichten bedeutender Frankfurter Persönlichkeiten vorgestellt werden.",
     "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
@@ -354,8 +364,18 @@
     "date_start": "2026-09-05",
     "date_end": null,
     "location": "Südwestkirchhof Stahnsdorf",
-    "description": "Ein Spätsommer-Nachmittag voller Musik, Performance, Kunst und Poesie auf dem Friedhofsgelände.",
+    "description": "Ein Spätsommer-Nachmittag voller Musik, Performance, Kunst und Poesie auf dem Südwestkirchhof Stahnsdorf.",
     "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "f9ee9b41ca92fef8bc275287f5e37fda": {
+    "title": "Kasseler Museumsnacht 2026",
+    "date_start": "2026-09-05",
+    "date_end": null,
+    "location": "Museum für Sepulkralkultur",
+    "description": "Abendprogramm zur Museumsnacht im Museum für Sepulkralkultur mit Livemusik, Mitmach-Aktionen und Mitternachtsführung.",
+    "url": "https://www.sepulkralmuseum.de/veranstaltungen/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
   },
@@ -374,7 +394,7 @@
     "date_start": "2026-09-06",
     "date_end": null,
     "location": "Jüdischer Friedhof Berlin-Weißensee",
-    "description": "Ein Rundgang zu den Grabstätten von Widerstandskämpferinnen gegen den Nationalsozialismus auf dem Jüdischen Friedhof Weißensee.",
+    "description": "Öffentlicher Rundgang zu den Grabstätten von Widerstandskämpferinnen während der NS-Zeit auf dem Jüdischen Friedhof Berlin-Weißensee.",
     "url": "https://jewish-cemetery-weissensee.org/entdecken/fuehrungen/",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-25"
@@ -419,12 +439,22 @@
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
   },
+  "8c7b77947847ffea7c192f671d1a1b46": {
+    "title": "Der Alte Südliche Friedhof – Kultur im Grünen",
+    "date_start": "2026-09-06",
+    "date_end": null,
+    "location": "Alter Südlicher Friedhof, München",
+    "description": "Ein kulturhistorischer Friedhofspaziergang zur Begräbniskultur und zu bedeutenden Persönlichkeiten der Münchner Stadtgeschichte.",
+    "url": "https://www.stattreisen-muenchen.de/fuehrungen/der-alte-sudliche-friedhof",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
   "82d73628604f4da8f8b2576a140ee612": {
     "title": "Führung über den Alten St.-Matthäus-Friedhof",
     "date_start": "2026-09-09",
     "date_end": null,
     "location": "Haupteingang des Alten St.-Matthäus-Friedhofs, Berlin",
-    "description": "Historische Führung über den Alten St.-Matthäus-Friedhof mit Ralf Illauer.",
+    "description": "Mittwochstermin und Führung über den Alten St.-Matthäus-Friedhof mit Ralf Illauer.",
     "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-25"
@@ -444,7 +474,7 @@
     "date_start": "2026-09-23",
     "date_end": null,
     "location": "Haupteingang des Alten St.-Matthäus-Friedhofs, Berlin",
-    "description": "Führung von Ralf Illauer über den historischen Alten St.-Matthäus-Friedhof.",
+    "description": "Mittwochstermin und Führung über den Alten St.-Matthäus-Friedhof mit Ralf Illauer.",
     "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-25"
@@ -484,7 +514,7 @@
     "date_start": "2026-10-07",
     "date_end": null,
     "location": "Haupteingang des Alten St.-Matthäus-Friedhofs, Berlin",
-    "description": "Rundgang über den Alten St.-Matthäus-Friedhof unter Leitung von Ralf Illauer.",
+    "description": "Mittwochstermin und Führung über den Alten St.-Matthäus-Friedhof mit Ralf Illauer.",
     "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-25"
@@ -524,7 +554,7 @@
     "date_start": "2026-10-28",
     "date_end": null,
     "location": "Haupteingang des Alten St.-Matthäus-Friedhofs, Berlin",
-    "description": "Historische Führung über den Alten St.-Matthäus-Friedhof mit Ralf Illauer.",
+    "description": "Mittwochstermin und Führung über den Alten St.-Matthäus-Friedhof mit Ralf Illauer.",
     "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-25"
@@ -534,7 +564,7 @@
     "date_start": "2026-11-18",
     "date_end": null,
     "location": "Haupteingang des Alten St.-Matthäus-Friedhofs, Berlin",
-    "description": "Historische Führung über den Alten St.-Matthäus-Friedhof mit Ralf Illauer.",
+    "description": "Mittwochstermin und Führung über den Alten St.-Matthäus-Friedhof mit Ralf Illauer.",
     "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-25"
@@ -564,7 +594,7 @@
     "date_start": "2026-10-18",
     "date_end": null,
     "location": "Jüdischer Friedhof Berlin-Weißensee",
-    "description": "Ein etwa zweistündiger Rundgang über die Geschichte des Friedhofs und zu Grabstätten bedeutender Berliner Persönlichkeiten.",
+    "description": "Führung über den Jüdischen Friedhof Berlin-Weißensee zur Geschichte des Ortes sowie zu den Grabstätten bedeutender Berliner Persönlichkeiten.",
     "url": "https://jewish-cemetery-weissensee.org/entdecken/fuehrungen/",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-25"
@@ -594,7 +624,7 @@
     "date_start": "2026-09-12",
     "date_end": null,
     "location": "Gedenkstätte Friedhof der Märzgefallenen, Berlin",
-    "description": "Führung zur historischen Entwicklung und Gedenkkultur des Friedhofs der Märzgefallenen im Rahmen des Tag des offenen Denkmals.",
+    "description": "Führung über den historischen Friedhof der Märzgefallenen von 1848 bis in die Gegenwart anlässlich des Tags des offenen Denkmals.",
     "url": "https://forum1848.de/veranstaltungen/",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-25"
@@ -634,7 +664,7 @@
     "date_start": "2026-09-20",
     "date_end": null,
     "location": "Südfriedhof, Halle (Saale)",
-    "description": "Sonderveranstaltung zum Tag des Friedhofs auf dem Südfriedhof in Halle.",
+    "description": "Sonderveranstaltung zum Tag des Friedhofs auf dem Südfriedhof Halle, gestaltet vom Verein für Friedhofskultur.",
     "url": "http://www.friedhofskultur-halle.de/terminefuehrungen/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
@@ -704,7 +734,7 @@
     "date_start": "2026-10-31",
     "date_end": null,
     "location": "Hauptfriedhof, Frankfurt am Main",
-    "description": "Führung über den 1828 angelegten Frankfurter Hauptfriedhof, bei der Mausoleen, Grabkunst und die Biografien bedeutender Persönlichkeiten vorgestellt werden.",
+    "description": "Führung über den Frankfurter Hauptfriedhof, bei der imposante Grabstätten, Mausoleen und die Lebensgeschichten bedeutender Frankfurter Persönlichkeiten vorgestellt werden.",
     "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
@@ -744,7 +774,7 @@
     "date_start": "2026-11-08",
     "date_end": null,
     "location": "Südwestkirchhof Stahnsdorf",
-    "description": "Gedenkveranstaltung zum Remembrance Sunday auf dem Südwestkirchhof Stahnsdorf.",
+    "description": "Gedenkveranstaltung anlässlich des Remembrance Sunday auf dem Südwestkirchhof Stahnsdorf.",
     "url": "https://www.suedwestkirchhof.de/veranstaltungen.html",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-25"
@@ -794,7 +824,7 @@
     "date_start": "2026-11-22",
     "date_end": null,
     "location": "Südwestkirchhof Stahnsdorf",
-    "description": "Gedenktag für die Entschlafenen auf dem Südwestkirchhof Stahnsdorf.",
+    "description": "Veranstaltung und Gedenktag zum Ewigkeitssonntag / Tag der Entschlafenen.",
     "url": "https://www.suedwestkirchhof.de/veranstaltungen.html",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
@@ -939,6 +969,26 @@
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
   },
+  "d532dbd220ae6778d1d4f131010a2519": {
+    "title": "Workshop 'Auszeit im Grünen'",
+    "date_start": "2026-08-29",
+    "date_end": null,
+    "location": "KapelleDREI, Parkfriedhof Ohlsdorf",
+    "description": "Ein Workshop für Bewegung und innere Einkehr auf dem Ohlsdorfer Friedhof.",
+    "url": "https://www.friedhof-hamburg.de/besucher/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "89b7f833634123760ea2da9f644aef87": {
+    "title": "Workshop 'Auszeit im Grünen'",
+    "date_start": "2026-08-29",
+    "date_end": null,
+    "location": "KapelleDREI, Parkfriedhof Ohlsdorf",
+    "description": "Workshop für Achtsamkeit und Bewegung auf dem Friedhof Ohlsdorf.",
+    "url": "https://www.ohlsdorf-derpark.de/termine-ohlsdorf/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
   "a309b5d2d03b0fa6ab3a018800bb8dc1": {
     "title": "Ökumenischer Gottesdienst und Festakt zur Wiederbeisetzung von Kaiser Otto",
     "date_start": "2026-09-01",
@@ -984,7 +1034,7 @@
     "date_start": "2026-12-27",
     "date_end": null,
     "location": "Hauptfriedhof, Frankfurt am Main",
-    "description": "Führung über den 1828 angelegten Frankfurter Hauptfriedhof, bei der Mausoleen, Grabkunst und die Biografien bedeutender Persönlichkeiten vorgestellt werden.",
+    "description": "Führung über den Frankfurter Hauptfriedhof, bei der imposante Grabstätten, Mausoleen und die Lebensgeschichten bedeutender Frankfurter Persönlichkeiten vorgestellt werden.",
     "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
@@ -1004,7 +1054,7 @@
     "date_start": "2026-09-19",
     "date_end": null,
     "location": "Nordfriedhof, Halle (Saale)",
-    "description": "Eine 90-minütige Führung über den Nordfriedhof Halle, veranstaltet vom Verein für Friedhofskultur in Halle und dem Umland e.V.",
+    "description": "Eine 90-minütige Führung über den Nordfriedhof in Halle, veranstaltet vom Verein für Friedhofskultur in Halle und dem Umland e.V.",
     "url": "http://www.friedhofskultur-halle.de/terminefuehrungen/",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-25"
@@ -1064,7 +1114,7 @@
     "date_start": "2026-10-25",
     "date_end": null,
     "location": "Hauptfriedhof, Frankfurt am Main",
-    "description": "Führung über den 1828 angelegten Frankfurter Hauptfriedhof, bei der Mausoleen, Grabkunst und die Biografien bedeutender Persönlichkeiten vorgestellt werden.",
+    "description": "Führung über den Frankfurter Hauptfriedhof, bei der imposante Grabstätten, Mausoleen und die Lebensgeschichten bedeutender Frankfurter Persönlichkeiten vorgestellt werden.",
     "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
@@ -1314,7 +1364,7 @@
     "date_start": "2026-10-04",
     "date_end": null,
     "location": "Hauptfriedhof, Frankfurt am Main",
-    "description": "Führung über den 1828 angelegten Frankfurter Hauptfriedhof, bei der Mausoleen, Grabkunst und die Biografien bedeutender Persönlichkeiten vorgestellt werden.",
+    "description": "Führung über den Frankfurter Hauptfriedhof, bei der imposante Grabstätten, Mausoleen und die Lebensgeschichten bedeutender Frankfurter Persönlichkeiten vorgestellt werden.",
     "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
@@ -1414,7 +1464,7 @@
     "date_start": "2026-09-26",
     "date_end": null,
     "location": "Hauptfriedhof, Frankfurt am Main",
-    "description": "Führung über den 1828 angelegten Frankfurter Hauptfriedhof, bei der Mausoleen, Grabkunst und die Biografien bedeutender Persönlichkeiten vorgestellt werden.",
+    "description": "Führung über den Frankfurter Hauptfriedhof, bei der imposante Grabstätten, Mausoleen und die Lebensgeschichten bedeutender Frankfurter Persönlichkeiten vorgestellt werden.",
     "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
@@ -1424,7 +1474,7 @@
     "date_start": "2026-10-17",
     "date_end": null,
     "location": "Hauptfriedhof, Frankfurt am Main",
-    "description": "Führung über den 1828 angelegten Frankfurter Hauptfriedhof, bei der Mausoleen, Grabkunst und die Biografien bedeutender Persönlichkeiten vorgestellt werden.",
+    "description": "Führung über den Frankfurter Hauptfriedhof, bei der imposante Grabstätten, Mausoleen und die Lebensgeschichten bedeutender Frankfurter Persönlichkeiten vorgestellt werden.",
     "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
@@ -1434,7 +1484,7 @@
     "date_start": "2026-11-01",
     "date_end": null,
     "location": "Hauptfriedhof, Frankfurt am Main",
-    "description": "Führung über den 1828 angelegten Frankfurter Hauptfriedhof, bei der Mausoleen, Grabkunst und die Biografien bedeutender Persönlichkeiten vorgestellt werden.",
+    "description": "Führung über den Frankfurter Hauptfriedhof, bei der imposante Grabstätten, Mausoleen und die Lebensgeschichten bedeutender Frankfurter Persönlichkeiten vorgestellt werden.",
     "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
@@ -1444,7 +1494,7 @@
     "date_start": "2026-11-14",
     "date_end": null,
     "location": "Hauptfriedhof, Frankfurt am Main",
-    "description": "Führung über den 1828 angelegten Frankfurter Hauptfriedhof, bei der Mausoleen, Grabkunst und die Biografien bedeutender Persönlichkeiten vorgestellt werden.",
+    "description": "Führung über den Frankfurter Hauptfriedhof, bei der imposante Grabstätten, Mausoleen und die Lebensgeschichten bedeutender Frankfurter Persönlichkeiten vorgestellt werden.",
     "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
@@ -1454,7 +1504,7 @@
     "date_start": "2026-11-21",
     "date_end": null,
     "location": "Hauptfriedhof, Frankfurt am Main",
-    "description": "Führung über den 1828 angelegten Frankfurter Hauptfriedhof, bei der Mausoleen, Grabkunst und die Biografien bedeutender Persönlichkeiten vorgestellt werden.",
+    "description": "Führung über den Frankfurter Hauptfriedhof, bei der imposante Grabstätten, Mausoleen und die Lebensgeschichten bedeutender Frankfurter Persönlichkeiten vorgestellt werden.",
     "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
