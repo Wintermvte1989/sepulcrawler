@@ -3,6 +3,7 @@ import html
 import json
 import os
 import re
+import ssl
 import tempfile
 import time
 import difflib
@@ -50,16 +51,14 @@ TARGET_URLS = [
     "https://www.bamberger-dommusik.de/",
     "https://www.bistum-passau.de/dom-kultur/dom-st-stephan-passau",
     "https://www.dom-wuerzburg.de/",
-    "https://www.augsburg.de/umwelt/umweltthemen/friedhoefe",
-    "https://www.nuernberg.de/internet/stadtportal/veranstaltungskalender.html",
-    "https://www.domspatzen.de/konzerte/termine.html",
+    "https://www.evangelisch-stulrich.de/protestantischer-friedhof",
+    "https://www.vhs-augsburg.de/programm/gesellschaft/augsburg-stadtfuehrungen-und-fahrten/fuehrungen",
+    "https://domspatzen.de/veranstaltungen/",
 
     # --- Landeshauptstadt Stuttgart & Baden-Württemberg ---
-    "https://www.stuttgart.de/leben/meta/veranstaltungskalender.php",
     "https://www.landesmuseum-stuttgart.de/veranstaltungen/",
     "https://www.freiburger-muenster.de/",
     "https://www.karlsruhe.de/freizeit-und-sport/friedhoefe",
-    "https://www.ulmer-muenster.de/kultur-veranstaltungen",
 
     # --- Landeshauptstadt Düsseldorf & NRW ---
     "https://www.duesseldorf.de/stadtgruen/freizeit/fuehrungen1",
@@ -71,40 +70,31 @@ TARGET_URLS = [
     "https://www.lwl-landesmuseum-herne.de/de/veranstaltungen/",
     "https://theatergemeinde-koeln.org/Kulturkompass/werk/25725/M04/stadtfuhrungen-koln/fuehrung-uber-melaten",
     "https://www.koelner-dom.de/aktuelles",
-    "https://www.aachen.de/DE/stadt_buerger/politik_verwaltung/pressemitteilungen/veranstaltungen.html",
     "https://www.bonn.de/veranstaltungskalender/",
 
     # --- Landeshauptstadt Dresden & Sachsen ---
     "https://striesener-friedhof-dresden.de/vorschau-veranstaltungen/",
-    "https://www.dresden.de/de/kultur/veranstaltungen/veranstaltungskalender.php",
-    "https://www.stadtmuseum-dresden.de/veranstaltungen",
     "https://www.kreuzkirche-dresden.de/kalender/",
     "https://www.dhmd.de/ausstellungen/",
     "https://www.chemnitz.de/chemnitz/de/unsere-stadt/friedhoefe/veranstaltungen.html",
-    "https://www.stadtgeschichtliches-museum-leipzig.de/besuch/kalender/",
+    "https://www.stadtgeschichtliches-museum-leipzig.de/besuch/veranstaltungen/",
     "https://paul-benndorf-gesellschaft.de/fuehrungen.html",
 
     # --- Landeshauptstadt Hannover & Niedersachsen ---
-    "https://www.hannover.de/Kultur-Freizeit/Event-Highlights/Veranstaltungskalender",
     "https://stpetridom.de/der-dom/besucher-info/bleikeller/",
-    "https://www.braunschweig.de/leben/umwelt_naturschutz/stadtgruen/friedhoefe/",
 
     # --- Landeshauptstadt Wiesbaden & Hessen ---
-    "https://www.wiesbaden.de/kultur/veranstaltungskalender/index.php",
     "https://www.krfrm.de/venue/hauptfriedhof-frankfurt-am-main/",
     "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
     "https://www.archaeologisches-museum-frankfurt.de/",
-    "https://www.darmstadt.de/leben-in-darmstadt/umwelt/friedhoefe",
     "https://www.sepulkralmuseum.de/veranstaltungen/",
 
     # --- Landeshauptstadt Mainz & Rheinland-Pfalz ---
     "https://www.dommuseum-mainz.de/programm/kalender/aktuelle-termine-kalender/",
     "https://www.mainz.de/freizeit-und-sport/feste-und-veranstaltungen/veranstaltungskalender.php",
     "https://www.stadt-oppenheim.de/",
-    "https://www.katharinenkirche-oppenheim.de/",
     "https://www.dom-zu-speyer.de/",
     "https://www.landesmuseum-trier.de/",
-    "https://www.worms.de/neu-de/kultur-und-tourismus/veranstaltungskalender/",
 
     # --- Landeshauptstadt Magdeburg & Sachsen-Anhalt ---
     "https://www.magdeburg.de/Start/Kultur-Sport/Veranstaltungskalender",
@@ -112,7 +102,6 @@ TARGET_URLS = [
     "https://www.naumburger-dom.de/",
     "https://www.landesmuseum-vorgeschichte.de/veranstaltungen/familiennachmittage",
     "http://www.friedhofskultur-halle.de/terminefuehrungen/",
-    "https://www.welterbe-quedlinburg.de/",
 
     # --- Landeshauptstadt Erfurt & Thüringen ---
     "https://www.erfurt.de/ef/de/erleben/veranstaltungen/kalender/index.html",
@@ -133,13 +122,10 @@ TARGET_URLS = [
 
     # --- Landeshauptstadt Kiel & Schleswig-Holstein ---
     "https://www.kiel.de/de/umwelt_verkehr/friedhoefe/",
-    "https://www.kiel.de/de/kultur_freizeit/veranstaltungskalender/",
     "https://www.st-marien-luebeck.de/",
     "https://schloss-gottorf.de/",
 
     # --- Landeshauptstadt Saarbrücken (Saarland) ---
-    "https://www.saarbruecken.de/leben_in_saarbruecken/planen_bauen_wohnen/friedhoefe",
-    "https://www.saarbruecken.de/kultur/veranstaltungskalender",
 
     # --- Staatliche Museen, Forschung & Vereine (Überregional) ---
     "https://www.smb.museum/veranstaltungen/",
@@ -156,7 +142,6 @@ TARGET_URLS = [
     "https://aufdasleben.de/event/",
     "https://www.totentanz-online.de/veranstaltungen.php",
     "https://home.benecke.com/",
-    "https://friedhofsfreunde.blogspot.com/",
 
     # --- Tschechien & Österreich & Schweiz ---
     "https://www.sedlec.info/",
@@ -167,14 +152,37 @@ TARGET_URLS = [
     "https://www.stift-stpeter.at/de/kloster/index.asp?dat=Friedhof-Katakomben",
     "https://www.stiftadmont.at/",
     "https://www.hallstatt.net/",
-    "https://www.stadt-zuerich.ch/friedhofforum/de/veranstaltungen.html",
+    "https://kulturzueri.ch/db/veranstalter/veranstalter-profile/friedhof-forum/",
     "https://www.stadtgaertnerei.bs.ch/friedhoefe/veranstaltungen.html",
     "https://www.bernermuenster.ch/",
     "https://www.stiftsbezirk.ch/de/veranstaltungen",
     "https://www.museum-aargau.ch/schloss-lenzburg/event-kalender",
-    "https://www.innsbruck.gv.at/leben/friedhoefe",
-    "https://www.stadt-salzburg.at/friedhoefe"
 ]
+
+# Am 24.08.2026 fehlgeschlagen und deshalb deaktiviert. Die korrekten
+# Adressen sind nicht verifiziert - vor dem Wiedereinhaengen im Browser
+# pruefen und dann oben eintragen.
+DISABLED_URLS = {
+    "https://www.aachen.de/DE/stadt_buerger/politik_verwaltung/pressemitteilungen/veranstaltungen.html": "404",
+    "https://www.braunschweig.de/leben/umwelt_naturschutz/stadtgruen/friedhoefe/": "404",
+    "https://www.darmstadt.de/leben-in-darmstadt/umwelt/friedhoefe": "404",
+    "https://www.dresden.de/de/kultur/veranstaltungen/veranstaltungskalender.php": "404",
+    "https://www.hannover.de/Kultur-Freizeit/Event-Highlights/Veranstaltungskalender": "404",
+    "https://www.innsbruck.gv.at/leben/friedhoefe": "404",
+    "https://www.kiel.de/de/kultur_freizeit/veranstaltungskalender/": "404",
+    "https://www.nuernberg.de/internet/stadtportal/veranstaltungskalender.html": "404",
+    "https://www.saarbruecken.de/kultur/veranstaltungskalender": "404",
+    "https://www.saarbruecken.de/leben_in_saarbruecken/planen_bauen_wohnen/friedhoefe": "404",
+    "https://www.stadt-salzburg.at/friedhoefe": "404",
+    "https://www.stadtmuseum-dresden.de/veranstaltungen": "404",
+    "https://www.stuttgart.de/leben/meta/veranstaltungskalender.php": "404",
+    "https://www.ulmer-muenster.de/kultur-veranstaltungen": "404",
+    "https://www.wiesbaden.de/kultur/veranstaltungskalender/index.php": "404",
+    "https://www.worms.de/neu-de/kultur-und-tourismus/veranstaltungskalender/": "404",
+    "https://friedhofsfreunde.blogspot.com/": "Bot-Sperre (429 ueber Google)",
+    "https://www.katharinenkirche-oppenheim.de/": "DNS unbekannt",
+    "https://www.welterbe-quedlinburg.de/": "DNS unbekannt",
+}
 
 DB_FILE = "events_db.json"
 HTML_OUTPUT_FILE = "index.html"
@@ -183,16 +191,22 @@ BATCH_SIZE = 8          # nicht erhoehen - Output-Limit der API beachten
 TEXT_LIMIT = 9000       # Zeichen pro Seite, die an die API gehen
 MIN_TEXT_LENGTH = 1500  # darunter: vermutlich JS-gerenderte Seite ohne Inhalt
 STALE_AFTER_DAYS = 10   # ab hier "nicht mehr bestaetigt" im HTML
-API_ATTEMPTS = 3
+API_ATTEMPTS = 3        # Achtung: jeder Versuch zaehlt gegen das RPD-Limit
+FETCH_ATTEMPTS = 3      # Wiederholungen beim Laden einer Webseite (kostenlos)
 
 BERLIN = ZoneInfo("Europe/Berlin")
 
+# Erkennt deutsche und ISO-Datumsangaben. Auch Kurzformen ohne Jahr
+# ("Sa, 12.09.") und abgekuerzte Monatsnamen ("12. Sept."), weil viele
+# Terminlisten das Jahr weglassen - sonst werden gueltige Seiten verworfen.
 DATE_PATTERN = re.compile(
-    r"\b\d{1,2}\.\s*\d{1,2}\.\s*\d{2,4}\b"
-    r"|\b\d{1,2}\.\s*(Januar|Februar|M\u00e4rz|April|Mai|Juni|Juli|"
-    r"August|September|Oktober|November|Dezember)\b"
-    r"|\b\d{4}-\d{2}-\d{2}\b",
-    re.IGNORECASE,
+    r"\b\d{1,2}\.\s*\d{1,2}\.\s*\d{2,4}\b"          # 12.09.2026
+    r"|\b\d{1,2}\.\s*\d{1,2}\.(?!\d)"                   # 12.09.
+    r"|\b\d{1,2}\.?\s*(Jan|Feb|M\u00e4r|Mrz|Apr|Mai|Jun|Jul|Aug|"
+    r"Sep|Sept|Okt|Nov|Dez)[a-z\u00e4\u00f6\u00fc]*\.?"     # 12. Sept. / 12. September
+    r"|\b\d{4}-\d{2}-\d{2}\b"                           # 2026-09-12
+    r"|\b(Mo|Di|Mi|Do|Fr|Sa|So)\.?,\s*\d{1,2}\."          # Sa, 12.
+    , re.IGNORECASE,
 )
 
 MONTH_MAP = {
@@ -492,45 +506,119 @@ def is_worth_sending(url: str, text: str) -> bool:
     return True
 
 
-# ---------------------------------------------------------------- Abruf & Fallback
+# ---------------------------------------------------------------- Abruf
 
-def fetch_page_text(url: str) -> str:
-    headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
-        "Accept-Language": "de-DE,de;q=0.9,en-US;q=0.8,en;q=0.7",
-    }
-    
-    urls_to_try = [url]
-    parsed = urlparse(url)
-    if parsed.path and parsed.path != "/":
-        urls_to_try.append(f"{parsed.scheme}://{parsed.netloc}/")
+BROWSER_HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+        "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+    ),
+    "Accept": (
+        "text/html,application/xhtml+xml,application/xml;q=0.9,"
+        "image/avif,image/webp,*/*;q=0.8"
+    ),
+    "Accept-Language": "de-DE,de;q=0.9,en-US;q=0.8,en;q=0.7",
+    "Accept-Encoding": "gzip, deflate",
+}
 
-    last_exception = None
-    for current_url in urls_to_try:
+
+def make_ssl_context() -> ssl.SSLContext:
+    """Toleranter TLS-Kontext. Einige Kirchen- und Vereinsserver bieten nur
+    alte Cipher-Suites an und brechen sonst mit HANDSHAKE_FAILURE ab.
+    Zertifikatspruefung ist ohnehin aus (nur oeffentliche Seiten, keine
+    Credentials), daher kostet die Lockerung hier nichts zusaetzlich."""
+    ctx = ssl.create_default_context()
+    ctx.check_hostname = False
+    ctx.verify_mode = ssl.CERT_NONE
+    try:
+        ctx.minimum_version = ssl.TLSVersion.TLSv1
+    except (AttributeError, ValueError):
+        pass
+    for ciphers in ("DEFAULT@SECLEVEL=1", "ALL:@SECLEVEL=1"):
         try:
-            with httpx.Client(headers=headers, follow_redirects=True, timeout=25.0, verify=False) as client_http:
-                response = client_http.get(current_url)
-                response.raise_for_status()
+            ctx.set_ciphers(ciphers)
+            break
+        except ssl.SSLError:
+            continue
+    return ctx
 
-                soup = BeautifulSoup(response.text, "html.parser")
-                for tag in soup(["script", "style", "nav", "footer", "header", "aside", "form", "noscript"]):
-                    tag.decompose()
 
-                main = soup.find("main") or soup.find("article") or soup
-                text = main.get_text(separator=" ", strip=True)
-                if len(text) >= MIN_TEXT_LENGTH or current_url != url:
-                    return text
-        except httpx.HTTPStatusError as e:
-            last_exception = e
-            if e.response.status_code == 404:
-                print(f"  404 auf {current_url} -> versuche Fallback...")
-                continue
-        except Exception as e:
-            last_exception = e
+def make_http_client() -> httpx.Client:
+    """Ein Client fuer alle Anfragen: wiederverwendete Verbindungen,
+    getrennte Timeouts fuer Verbindungsaufbau und Antwort."""
+    return httpx.Client(
+        headers=BROWSER_HEADERS,
+        follow_redirects=True,
+        verify=make_ssl_context(),
+        timeout=httpx.Timeout(connect=15.0, read=40.0, write=15.0, pool=15.0),
+        limits=httpx.Limits(max_keepalive_connections=5, max_connections=10),
+    )
+
+
+def html_to_text(raw_html: str) -> str:
+    soup = BeautifulSoup(raw_html, "html.parser")
+    for tag in soup(["script", "style", "nav", "footer", "header",
+                     "aside", "form", "noscript"]):
+        tag.decompose()
+    main = soup.find("main") or soup.find("article") or soup
+    return main.get_text(separator=" ", strip=True)
+
+
+def classify_error(exc: Exception) -> str:
+    """Grobe Fehlerklasse fuer die Auswertung am Ende des Laufs."""
+    if isinstance(exc, httpx.HTTPStatusError):
+        return f"HTTP {exc.response.status_code}"
+    if isinstance(exc, (httpx.ConnectTimeout, httpx.ReadTimeout, httpx.PoolTimeout)):
+        return "Timeout"
+    if isinstance(exc, httpx.ConnectError):
+        text = str(exc)
+        if "Name or service not known" in text or "nodename nor servname" in text:
+            return "DNS unbekannt"
+        if "SSL" in text or "HANDSHAKE" in text.upper():
+            return "TLS-Handshake"
+        return "Verbindung fehlgeschlagen"
+    if isinstance(exc, httpx.RemoteProtocolError):
+        return "Protokollfehler"
+    return type(exc).__name__
+
+
+# Fehlerklassen, bei denen ein erneuter Versuch sinnvoll ist. Ein 404 oder
+# ein DNS-Fehler wiederholt sich dagegen garantiert.
+RETRYABLE = (
+    httpx.ConnectTimeout, httpx.ReadTimeout, httpx.PoolTimeout,
+    httpx.RemoteProtocolError, httpx.ReadError, httpx.WriteError,
+)
+
+
+def fetch_page_text(client_http: httpx.Client, url: str) -> str:
+    """Laedt genau die angegebene URL. KEIN Fallback auf die Startseite:
+    der liefert Inhalte, die nicht zur URL gehoeren, und verbraucht
+    Batch-Plaetze fuer Muell.
+
+    Gibt immer den extrahierten Text zurueck (auch einen kurzen) oder wirft
+    eine Exception. Ob der Text brauchbar ist, entscheidet is_worth_sending."""
+    last_exc: Exception | None = None
+
+    for attempt in range(FETCH_ATTEMPTS):
+        try:
+            response = client_http.get(url)
+            response.raise_for_status()
+            return html_to_text(response.text)
+        except httpx.HTTPStatusError as exc:
+            # Verbindung stand, Server sagt nein. Kein Retry.
+            raise exc
+        except RETRYABLE as exc:
+            last_exc = exc
+            if attempt < FETCH_ATTEMPTS - 1:
+                wait = 3 * (attempt + 1)
+                print(f"  {classify_error(exc)}, Versuch "
+                      f"{attempt + 2}/{FETCH_ATTEMPTS} in {wait}s: {url}")
+                time.sleep(wait)
+        except Exception as exc:
+            last_exc = exc
             break
 
-    raise last_exception if last_exception else Exception("Unbekannter Ladefehler")
+    raise last_exc if last_exc else RuntimeError("Abruf ohne Ergebnis")
 
 
 # ---------------------------------------------------------------- Extraktion
@@ -873,17 +961,29 @@ if __name__ == "__main__":
     print(f"Nach Initial-Deduplizierung: {len(events_db)} eindeutige Events")
 
     print(f"\n--- Phase 1: Webseiten laden ({len(TARGET_URLS)} Quellen) ---")
-    fetched_pages = []
-    for url in TARGET_URLS:
-        try:
-            page_text = fetch_page_text(url)
-        except Exception as e:
-            print(f"  Fehler beim Laden: {url} - {e}")
-            continue
+    if DISABLED_URLS:
+        print(f"    ({len(DISABLED_URLS)} Quellen sind deaktiviert, siehe DISABLED_URLS)")
 
-        print(f"  {len(page_text):>6} Zeichen  {url}")
-        if is_worth_sending(url, page_text):
-            fetched_pages.append((url, page_text))
+    fetched_pages = []
+    problems: dict[str, list[str]] = defaultdict(list)
+
+    with make_http_client() as client_http:
+        for url in TARGET_URLS:
+            try:
+                page_text = fetch_page_text(client_http, url)
+            except Exception as e:
+                kind = classify_error(e)
+                problems[kind].append(url)
+                print(f"  FEHLER  {kind:<24} {url}")
+                continue
+
+            print(f"  {len(page_text):>6} Zeichen  {url}")
+            if is_worth_sending(url, page_text):
+                fetched_pages.append((url, page_text))
+            else:
+                reason = ("zu kurz" if len(page_text) < MIN_TEXT_LENGTH
+                          else "kein Datum")
+                problems[reason].append(url)
 
     print(f"\n{len(fetched_pages)} Seiten gehen an die API "
           f"({(len(fetched_pages) + BATCH_SIZE - 1) // BATCH_SIZE} Requests)")
@@ -944,3 +1044,13 @@ if __name__ == "__main__":
     print(f"  vergangen:      {stats['vergangen']}")
     print(f"  DB bereinigt:   {stats['entfernt']} entfernt")
     print(f"\n{len(cleaned_db)} aktive Events in '{HTML_OUTPUT_FILE}' geschrieben.")
+
+    if problems:
+        print("\n--- Quellen ohne Ertrag ---")
+        for kind in sorted(problems):
+            urls = problems[kind]
+            print(f"\n  {kind} ({len(urls)}):")
+            for url in urls:
+                print(f"    {url}")
+        total = sum(len(v) for v in problems.values())
+        print(f"\n  {total} von {len(TARGET_URLS)} Quellen haben nichts geliefert.")
