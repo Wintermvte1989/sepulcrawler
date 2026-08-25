@@ -1,3 +1,4 @@
+import json
 import time
 from collections import Counter, defaultdict
 from datetime import datetime
@@ -10,6 +11,8 @@ import renderer
 if __name__ == "__main__":
     today = datetime.now(config.BERLIN).date()
     today_str = today.isoformat()
+
+    rejected: list[dict] = []
 
     raw_db = database.load_events_db()
     print(f"Bestand geladen: {len(raw_db)} Roh-Events")
@@ -68,6 +71,10 @@ if __name__ == "__main__":
     for number, batch in enumerate(batches, start=1):
         print(f"\nPaket {number}/{len(batches)} ({len(batch)} Seiten, "
               f"{sum(len(t) for _, t in batch)} Zeichen)")
+        # URLs mitschreiben: ohne sie laesst sich nicht klaeren, warum ein
+        # Paket null Events liefert - korrekt gefiltert oder Quelle verpufft.
+        for batch_url, batch_text in batch:
+            print(f"      {len(batch_text):>6} Z.  {batch_url}")
 
         events = extractor.call_with_retry(batch, today_str)
         print(f"  {len(events)} Events extrahiert")
@@ -89,6 +96,7 @@ if __name__ == "__main__":
             on_topic, reason = database.is_topically_relevant(event)
             if not on_topic:
                 print(f"  verworfen (Thema): {event.get('title')[:70]}")
+                rejected.append({**event, "_grund": reason})
                 stats["thema_verfehlt"] += 1
                 continue
 
@@ -121,6 +129,14 @@ if __name__ == "__main__":
 
     database.save_events_db(cleaned_db)
     renderer.render_html(list(cleaned_db.values()), today)
+
+    # Verworfene Events mit vollem Kontext ablegen. Im Actions-Log steht nur
+    # der Titel; zum Justieren von TOPIC_PATTERN braucht man Ort und
+    # Beschreibung. Die Datei wird als Artefakt hochgeladen, nicht committet.
+    with open(config.REJECTED_FILE, "w", encoding="utf-8") as f:
+        json.dump(rejected, f, ensure_ascii=False, indent=2)
+    print(f"\n{len(rejected)} verworfene Events in "
+          f"'{config.REJECTED_FILE}' protokolliert.")
 
     print("\n--- Zusammenfassung ---")
     print(f"  neu:            {stats['neu']}")

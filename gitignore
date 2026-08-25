@@ -1,0 +1,6 @@
+# Diagnosedatei aus dem Crawler-Lauf. Wird als Actions-Artefakt
+# hochgeladen und gehoert nicht ins Repository.
+verworfen.json
+
+__pycache__/
+*.pyc

@@ -57,47 +57,61 @@ def extract_events_batch(batch_sources: list[tuple[str, str]], today_str: str) -
             f"\n=== QUELLE {idx} ===\n{text}\n=== ENDE QUELLE {idx} ===\n"
         )
 
-    # Themenkriterium, nicht Ortskriterium: "Kulturveranstaltung an einem
-    # Museum oder einer Kirche" liess jedes Orgelkonzert und jede
-    # Stadtfuehrung durch. Zusaetzlich prueft database.is_topically_relevant
-    # das Ergebnis deterministisch nach.
+    # Themenkriterium statt Ortskriterium - aber bewusst grosszuegig.
+    # Eine zu strenge Fassung hat die Filmvorfuehrung "Der muede Tod"
+    # verworfen, obwohl der Film genau zum Thema gehoert. Deshalb gilt jetzt:
+    # im Zweifel ERFASSEN. Was inhaltlich daneben liegt, faengt zusaetzlich
+    # database.is_topically_relevant deterministisch ab.
     prompt = f"""
     Das heutige Datum ist {today_str}.
-    Analysiere die folgenden Webseiten-Texte auf Veranstaltungen zur
-    SEPULKRALKULTUR - also zu Tod, Bestattung, Trauer und Totengedenken.
+    Analysiere die folgenden Webseiten-Texte auf Veranstaltungen mit Bezug zu
+    Tod, Bestattung, Trauer, Totengedenken und Friedhofskultur.
 
-    ENTSCHEIDENDE REGEL: Der Ort allein macht eine Veranstaltung NICHT
-    relevant. Ein Konzert in einer Kirche, eine Stadtfuehrung an einem Museum
-    oder ein Familiennachmittag im Landesmuseum gehoeren NICHT dazu, nur weil
-    sie an einem historischen Ort stattfinden. Entscheidend ist das THEMA.
+    GRUNDREGEL: Der Ort allein macht eine Veranstaltung nicht relevant, aber
+    er schliesst sie auch nicht aus. Entscheidend ist, ob das THEMA einen
+    Bezug hat. Bei Zweifel: ERFASSEN. Ein zu viel erfasstes Event ist
+    leichter zu verkraften als ein fehlendes.
 
-    ERFASSEN, wenn die Veranstaltung inhaltlich um mindestens eines dieser
-    Themen kreist:
-    - Friedhoefe, Grabkunst, Grabmale, Mausoleen, Gruefte, Beinhaeuser
-    - Bestattung, Begraebnis, Beisetzung, Feuerbestattung, Krematorien
-    - Trauer, Trauerbegleitung, Hospiz- und Palliativarbeit, Sterbebegleitung
-    - Totengedenken: Volkstrauertag, Ewigkeitssonntag, Allerheiligen,
-      Gedenkfeiern fuer Verstorbene, Kranzniederlegungen
+    ERFASSEN - inhaltlicher Bezug:
+    - Friedhoefe, Grabkunst, Grabmale, Mausoleen, Gruefte, Beinhaeuser,
+      Katakomben, Krematorien, Kolumbarien
+    - Bestattung, Begraebnis, Beisetzung, Feuerbestattung, Bestattungskultur
+    - Trauer, Trauerbegleitung, Trauerreden, Hospiz- und Palliativarbeit,
+      Sterbebegleitung, Letzte-Hilfe-Kurse
+    - Totengedenken: Volkstrauertag, Ewigkeitssonntag, Totensonntag,
+      Allerheiligen, Allerseelen, Gedenkfeiern fuer Verstorbene,
+      Kranzniederlegungen, Requien, Gedenkgottesdienste
     - Kulturgeschichte des Todes: Totentanz, Vanitas, Memento mori,
-      Mumien, Gebeine, Vergaenglichkeit in Kunst und Literatur
-    - Grabfunde und Bestattungssitten in Archaeologie und Aegyptologie
-    - Veranstaltungen, die AUF einem Friedhof, in einer Friedhofskapelle,
-      einem Hospiz oder Krematorium stattfinden - dort ist der Ort das Thema
+      Vergaenglichkeit, Mumien, Gebeine, Reliquien, Anatomie
+    - Grabfunde, Bestattungssitten und Totenkult in Archaeologie,
+      Aegyptologie und Anthropologie
+    - Erinnerungs- und Gedenkkultur an Opfer von Krieg, Verfolgung und
+      Gewalt, Kriegsgraeberstaetten, Mahnmale
 
-    NICHT ERFASSEN, auch wenn der Ort passend klingt:
-    - Orgelkonzerte, Chorkonzerte, Vespern, Gottesdienste ohne Totenbezug
-    - Kirchen-, Kloster- und Domfuehrungen zur Bau- oder Ordensgeschichte
-    - allgemeine Museums- und Stadtfuehrungen, Jubilaeumstouren
-    - Archaeologie ohne Grabbezug (Siedlungen, Werkzeuge, Felsbilder)
-    - Familiennachmittage, Bastel- und Mitmachangebote fuer Kinder
-    - Theater, Kabarett, Lesungen, Filmreihen ohne Themenbezug
-    - Ausstellungen zu Stadtgeschichte, Architektur, Politik, Fotografie
-    - Weinproben, Feste, Museumsnaechte, Wissenschaftsmaerkte
+    ERFASSEN - auch als Konzert, Film, Lesung, Theater oder Vortrag, wenn
+    das WERK oder THEMA um Tod, Trauer oder Vergaenglichkeit kreist.
+    Beispiele: eine Vorfuehrung des Films "Der muede Tod", ein Requiem,
+    ein Konzert "zum Trost in Trauer", eine Lesung ueber Sterbehilfe,
+    ein Vortrag ueber Kannibalismus in der Menschheitsgeschichte,
+    eine Theaterfuehrung ueber Wiedergaenger und Totenglauben.
+
+    ERFASSEN - jede Veranstaltung, die AUF einem Friedhof, in einer
+    Friedhofskapelle, einem Hospiz, einem Krematorium oder einem
+    Bestattungsmuseum stattfindet. Dort ist der Ort das Thema.
+
+    NICHT ERFASSEN - kein inhaltlicher Bezug, nur passender Ort:
+    - Orgel- und Chorkonzerte, Vespern, Gottesdienste ohne Totenbezug
+    - Kirchen-, Kloster- und Domfuehrungen zur Bau-, Kunst- oder
+      Ordensgeschichte
+    - allgemeine Museums- und Stadtfuehrungen, Jubilaeumstouren,
+      Ausstellungsfuehrungen ohne Themenbezug
+    - Archaeologie ohne Grab- oder Totenbezug (Siedlungen, Werkzeuge,
+      Felsbilder, Handel)
+    - Bastel- und Mitmachangebote fuer Kinder
+    - Ausstellungen zu Stadtgeschichte, Architektur, Fotografie, Politik
+    - Weinproben, Feste, Museumsnaechte, Wissenschaftsmaerkte, Kabarett
     - Sprachkurse, Yoga, Floh- und Weihnachtsmaerkte
     - reine Oeffnungszeiten, Eintrittspreise, Dauerangebote ohne Termin
-
-    Im Zweifel NICHT erfassen. Eine fehlende Veranstaltung ist besser als
-    eine thematisch falsche.
 
     FORMAT:
     - Nur Veranstaltungen am oder nach dem heutigen Datum ({today_str}).

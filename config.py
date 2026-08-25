@@ -32,18 +32,13 @@ TARGET_URLS = [
     "https://www.bamberger-dommusik.de/",
     "https://www.bistum-passau.de/dom-kultur/dom-st-stephan-passau",
     "https://www.dom-wuerzburg.de/",
-    "https://www.evangelisch-stulrich.de/protestantischer-friedhof",
-    "https://www.vhs-augsburg.de/programm/gesellschaft/augsburg-stadtfuehrungen-und-fahrten/fuehrungen",
     "https://domspatzen.de/veranstaltungen/",
 
     # --- Landeshauptstadt Stuttgart & Baden-Württemberg ---
-    "https://www.landesmuseum-stuttgart.de/veranstaltungen/",
     "https://www.freiburger-muenster.de/",
-    "https://www.karlsruhe.de/freizeit-und-sport/friedhoefe",
 
     # --- Landeshauptstadt Düsseldorf & NRW ---
     "https://www.duesseldorf.de/stadtgruen/freizeit/fuehrungen1",
-    "https://www.duesseldorf.de/stadtmuseum/veranstaltungen",
     "https://www.stadt-muenster.de/gruen/friedhoefe",
     "https://www.zentralfriedhof-muenster.de/",
     "https://www.stiftsmuseum-xanten.de/",
@@ -95,7 +90,6 @@ TARGET_URLS = [
     "https://www.ohlsdorf-derpark.de/termine-ohlsdorf/",
     "https://www.shmh.de/veranstaltungen/",
     "https://www.st-michaelis.de/veranstaltungen-am-michel",
-    "https://www.umweltbetrieb-bremen.de/friedhoefe/fuehrungen-und-veranstaltungen-11442",
 
     # --- Landeshauptstadt Schwerin & Mecklenburg-Vorpommern ---
     "https://www.schwerin.de/kultur-tourismus/veranstaltungen/veranstaltungskalender/",
@@ -133,38 +127,29 @@ TARGET_URLS = [
     "https://www.hallstatt.net/",
     "https://kulturzueri.ch/db/veranstalter/veranstalter-profile/friedhof-forum/",
     "https://www.stadtgaertnerei.bs.ch/friedhoefe/veranstaltungen.html",
-    "https://www.bernermuenster.ch/",
     "https://www.stiftsbezirk.ch/de/veranstaltungen",
     "https://www.museum-aargau.ch/schloss-lenzburg/event-kalender",
     "https://www.silent-green.net/programm/",
     "https://www.bestattungsmuseum.at/",
     "https://www.bestattungwien.at/veranstaltungen",
-    "http://www.wienfuehrungen.com/morbide-fuehrungen.html",
 
     # --- Medizin- und koerpergeschichtliche Sammlungen ---
     "https://bmm-charite.de/ausstellungen",
-    "https://www.josephinum.ac.at/veranstaltungen/",
 
     # --- Berlin & Brandenburg Ergänzungen ---
-    "https://denkmaltag.berlin.de/",
-    "https://www.kkbs.de/veranstaltungen/veranstaltungen-auf-friedhofen",
     "https://berlin.volksbund.de/aktuell/termine",
     "https://www.stiftung-historische-friedhoefe.de/",
     "https://www.efeu-ev.com/",
     "https://www.zwoelf-apostel-berlin.de/alle-termine-der-zwolf-apostel-kirchengemeinde-und-der-kirchhofe",
     "https://forum1848.de/veranstaltungen/",
     "https://www.garnisonfriedhof-berlin.de/",
-    "https://stpetri-stmarien.de/",
     "https://www.berlinerdom.de/termine/",
     "https://www.bornstedter-friedhof.de/bornstedter-friedhof/historische-graeber/fuehrungen/termine-fuer-fuehrungen/",
     "https://www.friedhof-in-potsdam.de/allgemeines/aktuelles",
     "https://www.stift-neuzelle.de/",
     "https://bjoern-schulz-stiftung.de/akademie/",
     "https://tickets.jmberlin.de/events/",
-    "https://www.berlin.de/museum-pankow/aktuelles/veranstaltungen/",
-    "https://www.villa-oppenheim-berlin.de/",
     "https://www.zitadelle-berlin.de/en/education/events/",
-    "https://www.dhm.de/programm/veranstaltungskalender/",
 
     # --- Deutschland übrige ---
     "https://landesmuseum-bonn.lvr.de/",
@@ -174,17 +159,12 @@ TARGET_URLS = [
     "https://www.florian-scheungraber.de/termine/",
     "https://www.leipzig-im.de/index.php?auswahl=Veranstaltungen&section=home",
     "https://www.stadtgeschichtliches-museum-leipzig.de/ausstellungen/aktuelle-ausstellungen/",
-    "https://jmaugsburg.de/fuehrungen/",
 
     # --- Tschechien, Österreich, Schweiz ---
-    "https://www.brnenskepodzemi.cz/",
     "https://praha-vysehrad.cz/en/",
-    "https://www.michaelerkirche.at/",
     "https://www.friedhoefewien.at/veranstaltungen",
     "https://www.friedhoefewien.at/friedhofsfuehrungen",
-    "https://www.bern.ch/politik-und-verwaltung/stadtverwaltung/tvs/stadtgrun-bern/friedhofe/friedhofkultur",
     "https://www.stadtluzern.ch/dienstleistungeninformation/159",
-    "https://www.vssg.ch/de/arbeitsgruppen/friedhoefe-alles/tag-des-friedhofs.html",
 ]
 
 DISABLED_URLS = {
@@ -207,10 +187,35 @@ DISABLED_URLS = {
     "https://friedhofsfreunde.blogspot.com/": "Bot-Sperre (429 ueber Google)",
     "https://www.katharinenkirche-oppenheim.de/": "DNS unbekannt",
     "https://www.welterbe-quedlinburg.de/": "DNS unbekannt",
+    # --- ergaenzt nach dem Lauf vom 25.08.2026 ---
+    "https://www.evangelisch-stulrich.de/protestantischer-friedhof": "keine Termine auf der Seite",
+    "https://www.vhs-augsburg.de/programm/gesellschaft/augsburg-stadtfuehrungen-und-fahrten/fuehrungen": "keine Termine im HTML",
+    "https://www.landesmuseum-stuttgart.de/veranstaltungen/": "38 Zeichen, JS-gerendert",
+    "https://www.karlsruhe.de/freizeit-und-sport/friedhoefe": "404 (25.08.2026)",
+    "https://www.duesseldorf.de/stadtmuseum/veranstaltungen": "110 Zeichen, JS-gerendert",
+    "https://www.umweltbetrieb-bremen.de/friedhoefe/fuehrungen-und-veranstaltungen-11442": "16 Zeichen, JS-gerendert",
+    "https://www.bernermuenster.ch/": "230 Zeichen, JS-gerendert",
+    "http://www.wienfuehrungen.com/morbide-fuehrungen.html": "Katalog ohne Termine; Terminseite verweist auf PDF von 2011",
+    "https://www.josephinum.ac.at/veranstaltungen/": "keine Termine im HTML",
+    "https://denkmaltag.berlin.de/": "145 Zeichen, JS-gerendert",
+    "https://www.kkbs.de/veranstaltungen/veranstaltungen-auf-friedhofen": "Termine per ChurchDesk-Widget, kein HTML",
+    "https://stpetri-stmarien.de/": "DNS unbekannt (25.08.2026)",
+    "https://www.berlin.de/museum-pankow/aktuelles/veranstaltungen/": "300 Zeichen, JS-gerendert",
+    "https://www.villa-oppenheim-berlin.de/": "147 Zeichen, JS-gerendert",
+    "https://www.dhm.de/programm/veranstaltungskalender/": "232 Zeichen, JS-gerendert",
+    "https://jmaugsburg.de/fuehrungen/": "keine Termine im HTML",
+    "https://www.brnenskepodzemi.cz/": "0 Zeichen, vollstaendig JS-gerendert",
+    "https://www.michaelerkirche.at/": "0 Zeichen, vollstaendig JS-gerendert",
+    "https://www.bern.ch/politik-und-verwaltung/stadtverwaltung/tvs/stadtgrun-bern/friedhofe/friedhofkultur": "404 (25.08.2026)",
+    "https://www.vssg.ch/de/arbeitsgruppen/friedhoefe-alles/tag-des-friedhofs.html": "404 (25.08.2026)",
 }
 
 DB_FILE = "events_db.json"
 HTML_OUTPUT_FILE = "index.html"
+
+# Diagnosedatei: alle thematisch verworfenen Events mit vollem Kontext.
+# Bewusst NICHT im Repository - wird im Workflow als Artefakt hochgeladen.
+REJECTED_FILE = "verworfen.json"
 
 BATCH_SIZE = 8
 TEXT_LIMIT = 12000
@@ -234,14 +239,24 @@ MAX_EVENTS_PER_BATCH = 55
 # und es passen weniger Seiten pro Paket.
 #
 # Gemessen mit 144 Quellen und MAX_REQUESTS_PER_RUN = 40:
-#   20 -> 33 Pakete, 100 % Abdeckung, 1582 Fundstellen
-#   25 -> 34 Pakete, 100 % Abdeckung, 1782 Fundstellen   <- aktuell
-#   32 -> 40 Pakete, 100 % Abdeckung, 2062 Fundstellen (kein Puffer)
-#   50 -> 54 Pakete,  79 % Abdeckung - Quellen werden verschoben
+# Simulation (zu pessimistisch, echte Seiten sind duenner):
+#   20 -> 33 Pakete | 25 -> 34 | 32 -> 40 | 50 -> 54 Pakete
+#
+# GEMESSEN im Lauf vom 25.08.2026: bei 25 wurden nur 22 von 40 Paketen
+# gebraucht, dabei waren ~22 Seiten am Deckel abgeschnitten - darunter
+# suedwestkirchhof.de (6422 -> 2349 Zeichen), friedhof-hamburg.de und
+# ohlsdorf-derpark.de. Der Deckel warf also Tiefe weg, ohne dass das
+# Budget knapp war.
+#
+# Mit den echten Seitengroessen nachgerechnet (Simulation liefert 32 Pakete,
+# wo real 22 gemessen wurden - sie ueberschaetzt um rund 45 %):
+#   25 -> 32 Pakete simuliert  |  30 -> 36  |  35 -> 39  |  45 -> 44 (reisst)
+# 35 liegt simuliert noch unter der Grenze, real also mit Reserve.
+# Erscheint im Log "Quellen passen nicht ins Request-Budget", auf 30 senken.
 #
 # Wer hoeher gehen will, muss MAX_REQUESTS_PER_RUN mit anheben; das Limit
 # von 50 Requests pro Lauf gilt inklusive Retries.
-MAX_HITS_PER_PAGE = 25
+MAX_HITS_PER_PAGE = 35
 MAX_REQUESTS_PER_RUN = 40
 
 BERLIN = ZoneInfo("Europe/Berlin")
@@ -347,6 +362,12 @@ TOPIC_PATTERN = re.compile(
       | vergänglichkeit | memento\s+mori | vanitas | jenseits
       | nachlass | kriegsgräber | \bgefallenen | mahnmal | ehrenmal
       | holocaust | schoah | \bleichen | aufbahrung | aussegnung
+      | totenkult | ruhestätte | ruhestätten | nekropol | katakombe
+      | sterblichkeit | endlichkeit | abschiednehmen | trauerrede
+      | grabrede | urnenhain | friedwald | ruheforst | gedenkstein
+      | \bwiedergänger | \breliquie | anatomisch | \banatomie
+      | seelenheil | fegefeuer | \bhinrichtung | \bmassengrab
+      | \bmassengräber | kannibal | einbalsam | leichnam
     )""",
     re.IGNORECASE | re.VERBOSE,
 )
