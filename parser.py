@@ -20,127 +20,160 @@ from pydantic import BaseModel, Field
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 TARGET_URLS = [
-    # Aktionstage, Festtage & Lange Nächte
+    # --- Aktionstage, Festtage & Lange Nächte ---
     "https://www.tag-des-offenen-denkmals.de/",
     "https://www.lange-nacht-der-museen.de/",
     "https://www.meinkiez-meinfriedhof.berlin.de/tag-des-friedhofs",
 
-    # Berlin: Friedhöfe, Verbände & Grüfte
+    # --- Landeshauptstadt Berlin & Brandenburg ---
     "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "https://jewish-cemetery-weissensee.org/entdecken/fuehrungen/",
     "https://www.invalidenfriedhof-berlin.de/",
     "https://www.evfbs.de/",
     "https://marienkirche-berlin.de/",
     "https://www.hedwigs-kathedrale.de/",
-
-    # Brandenburg & Preußische Schlösser/Krypten
     "https://www.suedwestkirchhof.de/veranstaltungen.html",
     "https://www.spsg.de/aktuelles/veranstaltungen",
     "https://kriegsgraeberstaetten.volksbund.de/friedhof/halbe",
-
-    # Berlin & Brandenburg: Bestattungskultur, Hospize & Private
-    "https://www.ahorn-gruppe.de/",
-    "https://www.sarggeschichten.de/",
-    "https://www.ricam-hospiz.de/events/",
-
-    # Berlin & Sachsen: Staatliche & Regionalmuseen
-    "https://www.smb.museum/veranstaltungen/",
-    "https://www.smb.museum/museen-einrichtungen/aegyptisches-museum-und-papyrussammlung/veranstaltungen/",
-    "https://www.smb.museum/museen-einrichtungen/museum-fuer-vor-und-fruehgeschichte/veranstaltungen/",
-    "https://www.stadtmuseum.de/programm",
-    "https://www.humboldtforum.org/de/programm/",
-    "https://www.jmberlin.de/",
-    "https://www.dhmd.de/ausstellungen/",
-
-    # Brandenburg: Stadtmuseen & Regionalgeschichte
     "https://www.potsdam-museum.de/de/veranstaltungen",
+    "https://www.potsdam.de/veranstaltungskalender",
     "https://stadtmuseum.stadt-brandenburg.de/stadtmuseum/termine",
     "https://www.museum-eberswalde.de/angebote/kalender",
     "https://www.brandenburg-preussen-museum.de/besuch-planen/veranstaltungen.html",
 
-    # Prag & Tschechien: Beinhäuser, Jüdischer Friedhof & Museen
-    "https://www.sedlec.info/",
-    "https://www.jewishmuseum.cz/en/info/visit/",
-    "https://www.nm.cz/en/program/events",
-
-    # Beinhäuser, Mumien, Grüfte & Sakralbauten
-    "https://stpetridom.de/der-dom/besucher-info/bleikeller/",
-    "https://www.stadt-oppenheim.de/",
-    "https://www.katharinenkirche-oppenheim.de/",
-    "https://www.muenster-doberan.de/",
+    # --- Landeshauptstadt München & Bayern ---
+    "https://www.stadtmuseum.de/programm",
+    "https://www.stattreisen-muenchen.de/fuehrungen/der-alte-sudliche-friedhof",
+    "https://www.archaeologie-bayern.de/de/termine/",
     "https://www.pfarrei-chammuenster.de/",
-    "https://www.koelner-dom.de/aktuelles",
-    "https://www.st-michaelis.de/veranstaltungen-am-michel",
-    "https://www.hallstatt.net/",
-    "https://www.magdeburgerdom.de/",
-    "https://www.naumburger-dom.de/",
-    "https://www.kaisergruft.com/",
-    "https://www.stephansdom.at/",
-    "https://www.stift-stpeter.at/de/kloster/index.asp?dat=Friedhof-Katakomben",
-    "https://www.stiftadmont.at/",
     "https://bamberger-dom.de/gotteshaus/besucherpastoral/Veranstaltungen/index.html",
     "https://www.bamberger-dommusik.de/",
     "https://www.bistum-passau.de/dom-kultur/dom-st-stephan-passau",
-    "https://www.dom-erfurt.de/",
-    "https://www.dom-zu-speyer.de/",
     "https://www.dom-wuerzburg.de/",
-    "https://www.dommuseum-mainz.de/programm/kalender/aktuelle-termine-kalender/",
-    "https://www.freiburger-muenster.de/",
-    "https://www.st-marien-luebeck.de/",
-    "https://www.welterbe-quedlinburg.de/",
+    "https://www.augsburg.de/umwelt/umweltthemen/friedhoefe",
+    "https://www.nuernberg.de/internet/stadtportal/veranstaltungskalender.html",
+    "https://www.domspatzen.de/konzerte/termine.html",
 
-    # NRW & Überregional Deutschland: Archäologie & Friedhöfe
+    # --- Landeshauptstadt Stuttgart & Baden-Württemberg ---
+    "https://www.stuttgart.de/leben/meta/veranstaltungskalender.php",
+    "https://www.landesmuseum-stuttgart.de/veranstaltungen/",
+    "https://www.freiburger-muenster.de/",
+    "https://www.karlsruhe.de/freizeit-und-sport/friedhoefe",
+    "https://www.ulmer-muenster.de/kultur-veranstaltungen",
+
+    # --- Landeshauptstadt Düsseldorf & NRW ---
     "https://www.duesseldorf.de/stadtgruen/freizeit/fuehrungen1",
+    "https://www.duesseldorf.de/stadtmuseum/veranstaltungen",
     "https://www.stadt-muenster.de/gruen/friedhoefe",
     "https://www.zentralfriedhof-muenster.de/",
     "https://www.stiftsmuseum-xanten.de/",
     "https://www.ruhrmuseum.de/veranstaltungen/",
-    "https://www.archaeologie-bayern.de/de/termine/",
-    "https://www.landesmuseum-vorgeschichte.de/veranstaltungen/familiennachmittage",
-    "https://www.leiza.de/aktuelles",
     "https://www.lwl-landesmuseum-herne.de/de/veranstaltungen/",
-    "https://www.archaeologisches-museum-frankfurt.de/",
-    "https://www.landesmuseum-trier.de/",
-    "https://schloss-gottorf.de/",
-    "https://www.archaeologie-online.de/nachrichten/",
+    "https://theatergemeinde-koeln.org/Kulturkompass/werk/25725/M04/stadtfuhrungen-koln/fuehrung-uber-melaten",
+    "https://www.koelner-dom.de/aktuelles",
+    "https://www.aachen.de/DE/stadt_buerger/politik_verwaltung/pressemitteilungen/veranstaltungen.html",
+    "https://www.bonn.de/veranstaltungskalender/",
 
-    # Überregional Deutschland: Friedhofskultur, Vereine & Vorträge
-    "https://www.sepulkralmuseum.de/veranstaltungen/",
+    # --- Landeshauptstadt Dresden & Sachsen ---
+    "https://striesener-friedhof-dresden.de/vorschau-veranstaltungen/",
+    "https://www.dresden.de/de/kultur/veranstaltungen/veranstaltungskalender.php",
+    "https://www.stadtmuseum-dresden.de/veranstaltungen",
+    "https://www.kreuzkirche-dresden.de/kalender/",
+    "https://www.dhmd.de/ausstellungen/",
+    "https://www.chemnitz.de/chemnitz/de/unsere-stadt/friedhoefe/veranstaltungen.html",
+    "https://www.stadtgeschichtliches-museum-leipzig.de/besuch/kalender/",
     "https://paul-benndorf-gesellschaft.de/fuehrungen.html",
-    "https://eliasfriedhof.de/termine/",
+
+    # --- Landeshauptstadt Hannover & Niedersachsen ---
+    "https://www.hannover.de/Kultur-Freizeit/Event-Highlights/Veranstaltungskalender",
+    "https://stpetridom.de/der-dom/besucher-info/bleikeller/",
+    "https://www.braunschweig.de/leben/umwelt_naturschutz/stadtgruen/friedhoefe/",
+
+    # --- Landeshauptstadt Wiesbaden & Hessen ---
+    "https://www.wiesbaden.de/kultur/veranstaltungskalender/index.php",
+    "https://www.krfrm.de/venue/hauptfriedhof-frankfurt-am-main/",
+    "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
+    "https://www.archaeologisches-museum-frankfurt.de/",
+    "https://www.darmstadt.de/leben-in-darmstadt/umwelt/friedhoefe",
+    "https://www.sepulkralmuseum.de/veranstaltungen/",
+
+    # --- Landeshauptstadt Mainz & Rheinland-Pfalz ---
+    "https://www.dommuseum-mainz.de/programm/kalender/aktuelle-termine-kalender/",
+    "https://www.mainz.de/freizeit-und-sport/feste-und-veranstaltungen/veranstaltungskalender.php",
+    "https://www.stadt-oppenheim.de/",
+    "https://www.katharinenkirche-oppenheim.de/",
+    "https://www.dom-zu-speyer.de/",
+    "https://www.landesmuseum-trier.de/",
+    "https://www.worms.de/neu-de/kultur-und-tourismus/veranstaltungskalender/",
+
+    # --- Landeshauptstadt Magdeburg & Sachsen-Anhalt ---
+    "https://www.magdeburg.de/Start/Kultur-Sport/Veranstaltungskalender",
+    "https://www.magdeburgerdom.de/",
+    "https://www.naumburger-dom.de/",
+    "https://www.landesmuseum-vorgeschichte.de/veranstaltungen/familiennachmittage",
     "http://www.friedhofskultur-halle.de/terminefuehrungen/",
+    "https://www.welterbe-quedlinburg.de/",
+
+    # --- Landeshauptstadt Erfurt & Thüringen ---
+    "https://www.erfurt.de/ef/de/erleben/veranstaltungen/kalender/index.html",
+    "https://www.dom-erfurt.de/",
+    "https://www.augustinerkloster.de/veranstaltungen/",
+    "https://eliasfriedhof.de/termine/",
+
+    # --- Stadtstaaten Hamburg & Bremen ---
     "https://www.friedhof-hamburg.de/besucher/veranstaltungen/",
     "https://www.ohlsdorf-derpark.de/termine-ohlsdorf/",
-    "https://www.stattreisen-muenchen.de/fuehrungen/der-alte-sudliche-friedhof",
-    "https://www.florian-scheungraber.de/termine/",
-    "https://theatergemeinde-koeln.org/Kulturkompass/werk/25725/M04/stadtfuhrungen-koln/fuehrung-uber-melaten",
+    "https://www.shmh.de/veranstaltungen/",
+    "https://www.st-michaelis.de/veranstaltungen-am-michel",
+    "https://www.umweltbetrieb-bremen.de/friedhoefe/fuehrungen-und-veranstaltungen-11442",
+
+    # --- Landeshauptstadt Schwerin & Mecklenburg-Vorpommern ---
+    "https://www.schwerin.de/kultur-tourismus/veranstaltungen/veranstaltungskalender/",
+    "https://www.muenster-doberan.de/",
+
+    # --- Landeshauptstadt Kiel & Schleswig-Holstein ---
+    "https://www.kiel.de/de/umwelt_verkehr/friedhoefe/",
+    "https://www.kiel.de/de/kultur_freizeit/veranstaltungskalender/",
+    "https://www.st-marien-luebeck.de/",
+    "https://schloss-gottorf.de/",
+
+    # --- Landeshauptstadt Saarbrücken (Saarland) ---
+    "https://www.saarbruecken.de/leben_in_saarbruecken/planen_bauen_wohnen/friedhoefe",
+    "https://www.saarbruecken.de/kultur/veranstaltungskalender",
+
+    # --- Staatliche Museen, Forschung & Vereine (Überregional) ---
+    "https://www.smb.museum/veranstaltungen/",
+    "https://www.smb.museum/museen-einrichtungen/aegyptisches-museum-und-papyrussammlung/veranstaltungen/",
+    "https://www.smb.museum/museen-einrichtungen/museum-fuer-vor-und-fruehgeschichte/veranstaltungen/",
+    "https://www.humboldtforum.org/de/programm/",
+    "https://www.jmberlin.de/",
+    "https://www.ahorn-gruppe.de/",
+    "https://www.sarggeschichten.de/",
+    "https://www.ricam-hospiz.de/events/",
+    "https://www.leiza.de/aktuelles",
+    "https://www.archaeologie-online.de/nachrichten/",
     "https://www.friedhofsverwalter.de/fachveranstaltung-der-arbeitsgemeinschaft-friedhof-und-denkmal-e-v/",
     "https://aufdasleben.de/event/",
     "https://www.totentanz-online.de/veranstaltungen.php",
     "https://home.benecke.com/",
-    "https://www.krfrm.de/venue/hauptfriedhof-frankfurt-am-main/",
-    "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
-
-    # Nischen-Blogs
     "https://friedhofsfreunde.blogspot.com/",
 
-    # Schweiz & Regionalverwaltung Friedhöfe
+    # --- Tschechien & Österreich & Schweiz ---
+    "https://www.sedlec.info/",
+    "https://www.jewishmuseum.cz/en/info/visit/",
+    "https://www.nm.cz/en/program/events",
+    "https://www.kaisergruft.com/",
+    "https://www.stephansdom.at/",
+    "https://www.stift-stpeter.at/de/kloster/index.asp?dat=Friedhof-Katakomben",
+    "https://www.stiftadmont.at/",
+    "https://www.hallstatt.net/",
     "https://www.stadt-zuerich.ch/friedhofforum/de/veranstaltungen.html",
     "https://www.stadtgaertnerei.bs.ch/friedhoefe/veranstaltungen.html",
     "https://www.bernermuenster.ch/",
     "https://www.stiftsbezirk.ch/de/veranstaltungen",
     "https://www.museum-aargau.ch/schloss-lenzburg/event-kalender",
     "https://www.innsbruck.gv.at/leben/friedhoefe",
-    "https://www.stadt-salzburg.at/friedhoefe",
-    "https://www.karlsruhe.de/freizeit-und-sport/friedhoefe",
-    "https://www.augsburg.de/umwelt/umweltthemen/friedhoefe",
-    "https://www.darmstadt.de/leben-in-darmstadt/umwelt/friedhoefe",
-    "https://www.saarbruecken.de/leben_in_saarbruecken/planen_bauen_wohnen/friedhoefe",
-    "https://striesener-friedhof-dresden.de/vorschau-veranstaltungen/",
-    "https://www.braunschweig.de/leben/umwelt_naturschutz/stadtgruen/friedhoefe/",
-    "https://www.kiel.de/de/umwelt_verkehr/friedhoefe/",
-    "https://www.augustinerkloster.de/veranstaltungen/",
-    "https://www.chemnitz.de/chemnitz/de/unsere-stadt/friedhoefe/veranstaltungen.html"
+    "https://www.stadt-salzburg.at/friedhoefe"
 ]
 
 DB_FILE = "events_db.json"
