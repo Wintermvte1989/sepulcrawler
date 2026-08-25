@@ -111,5 +111,6 @@ jobs:
           name: crawler-log-${{ github.run_number }}
           path: |
             events_db.json
+            verworfen.json
           retention-days: 14
           if-no-files-found: ignore
