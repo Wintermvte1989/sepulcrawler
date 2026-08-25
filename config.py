@@ -214,7 +214,7 @@ HTML_OUTPUT_FILE = "index.html"
 
 BATCH_SIZE = 8
 TEXT_LIMIT = 12000
-MIN_TEXT_LENGTH = 1500
+MIN_TEXT_LENGTH = 350  # Gesenkt von 1500, damit JS-/Kompaktsammlungen nicht rausfliegen
 STALE_AFTER_DAYS = 10
 API_ATTEMPTS = 3
 FETCH_ATTEMPTS = 3
@@ -229,11 +229,11 @@ MAX_REQUESTS_PER_RUN = 40
 
 BERLIN = ZoneInfo("Europe/Berlin")
 
+# Datums-Regex erweitert um ausgeschriebene Monatsnamen
 DATE_PATTERN = re.compile(
     r"\b\d{1,2}\.\s*\d{1,2}\.\s*\d{2,4}\b"
     r"|\b\d{1,2}\.\s*\d{1,2}\.(?!\d)"
-    r"|\b\d{1,2}\.?\s*(Jan|Feb|M\u00e4r|Mrz|Apr|Mai|Jun|Jul|Aug|"
-    r"Sep|Sept|Okt|Nov|Dez)[a-z\u00e4\u00f6\u00fc]*\.?"
+    r"|\b\d{1,2}\.?\s*(Jan|Feb|M\u00e4r|Mrz|Apr|Mai|Jun|Jul|Aug|Sep|Sept|Okt|Nov|Dez|Januar|Februar|M\u00e4rz|April|Juni|Juli|August|September|Oktober|November|Dezember)[a-z\u00e4\u00f6\u00fc]*\.?"
     r"|\b\d{4}-\d{2}-\d{2}\b"
     r"|\b(Mo|Di|Mi|Do|Fr|Sa|So)\.?,\s*\d{1,2}\."
     , re.IGNORECASE,

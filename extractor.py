@@ -55,20 +55,23 @@ def extract_events_batch(batch_sources: list[tuple[str, str]], today_str: str) -
             f"\n=== QUELLE {idx} ===\n{text}\n=== ENDE QUELLE {idx} ===\n"
         )
 
+    # Prompt gelockert: Erfasst auch Kultur-, Kunst- und Filmveranstaltungen an Friedhöfen, Museen und Kirchen
     prompt = f"""
     Das heutige Datum ist {today_str}.
-    Analysiere die folgenden Webseiten-Texte auf Veranstaltungen im Bereich Sepulkralkultur,
-    Friedhofsfuehrungen, Bestattungswesen, Totenkult, Gedenkkultur, Grabkunst oder
-    historische Ausstellungen zum Thema Tod/Sterben.
+    Analysiere die folgenden Webseiten-Texte auf Veranstaltungen. 
+
+    Ziel-Veranstaltungen:
+    - Friedhofsführungen, Sepulkralkultur, Grabkunst, Bestattungswesen, Gedenkkultur
+    - Ausstellungen zu Tod, Sterben, Archäologie, Antike, Geschichte
+    - Kulturveranstaltungen (Konzerte, Lesungen, Filmreihen/Kino, Vorträge, Führungen) an Museen, Kirchen, Gedenkstätten oder Friedhöfen
 
     WICHTIG:
     - Extrahiere AUSSCHLIESSLICH Veranstaltungen, deren Datum am oder nach dem heutigen Datum ({today_str}) liegt.
     - date_start MUSS strikt YYYY-MM-DD sein.
-    - date_end nur bei mehrtaegigen Veranstaltungen (Ausstellungen, Aktionstage) setzen, sonst null.
-    - Ignoriere alle vergangenen Veranstaltungen strikt.
+    - date_end nur bei mehrtägigen Veranstaltungen (Ausstellungen, Aktionstage) setzen, sonst null.
+    - Ignoriere vergangene Veranstaltungen strikt.
     - Trage in 'source_id' die Nummer der QUELLE ein, in deren Block das Event stand.
-    - MEHRSPRACHIGE TEXTE: Falls der Quelltext auf Englisch, Tschechisch oder einer anderen
-      Sprache verfasst ist, uebersetze title, location und description praezise ins Deutsche.
+    - MEHRSPRACHIGE TEXTE: Falls der Quelltext auf Englisch, Tschechisch oder einer anderen Sprach verfasst ist, übersetze title, location und description präzise ins Deutsche.
 
     Webseiten-Daten:
     {combined_text}
