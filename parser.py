@@ -194,6 +194,20 @@ STALE_AFTER_DAYS = 10   # ab hier "nicht mehr bestaetigt" im HTML
 API_ATTEMPTS = 3        # Achtung: jeder Versuch zaehlt gegen das RPD-Limit
 FETCH_ATTEMPTS = 3      # Wiederholungen beim Laden einer Webseite (kostenlos)
 
+# Verdichtung langer Seiten: Fenster um jede gefundene Datumsangabe.
+# Ein Termineintrag (Datum + Titel + Ort + Kurztext) passt meist in ~600 Zeichen.
+SNIPPET_BEFORE = 200
+SNIPPET_AFTER = 400
+
+# Obergrenze fuer die geschaetzte Zahl Events pro Request. Die Antwort der API
+# ist auf ~8000 Output-Tokens begrenzt, ein Event kostet ~100 - darueber bricht
+# das JSON ab und der Request ist verloren. Bewusst mit Reserve gesetzt.
+MAX_EVENTS_PER_BATCH = 55
+
+# Harte Obergrenze der Requests pro Lauf. Das Tageslimit liegt bei 20; der
+# Rest ist Reserve fuer Retries und manuelle Testlaeufe.
+MAX_REQUESTS_PER_RUN = 15
+
 BERLIN = ZoneInfo("Europe/Berlin")
 
 # Erkennt deutsche und ISO-Datumsangaben. Auch Kurzformen ohne Jahr
@@ -621,13 +635,96 @@ def fetch_page_text(client_http: httpx.Client, url: str) -> str:
     raise last_exc if last_exc else RuntimeError("Abruf ohne Ergebnis")
 
 
+# ---------------------------------------------------------------- Verdichtung
+
+def condense_text(text: str, limit: int) -> tuple[str, int]:
+    """Reduziert eine lange Seite auf die Textstellen um Datumsangaben herum.
+
+    Stumpfes text[:limit] verschenkt bei grossen Kalendern fast alles: die
+    ersten Zeichen sind Navigation und Einleitung, die Terminliste beginnt
+    weiter unten. Hier wird stattdessen um jedes Datum ein Fenster gelegt,
+    ueberlappende Fenster werden verschmolzen.
+
+    Rueckgabe: (Text fuer die API, Anzahl der Fundstellen darin).
+    Die Anzahl dient als Schaetzung, wie viele Events die Seite liefert.
+    """
+    if len(text) <= limit:
+        return text, len(DATE_PATTERN.findall(text))
+
+    spans: list[list[int]] = []
+    # Hinweis: Bei dichten Terminlisten ueberlappen die Fenster durchgehend und
+    # verschmelzen zu einem einzigen Bereich. Das ist gewollt - er beginnt dann
+    # genau am ersten Termin, statt bei der Navigation.
+    for match in DATE_PATTERN.finditer(text):
+        start = max(0, match.start() - SNIPPET_BEFORE)
+        stop = min(len(text), match.end() + SNIPPET_AFTER)
+        if spans and start <= spans[-1][1]:
+            spans[-1][1] = max(spans[-1][1], stop)
+        else:
+            spans.append([start, stop])
+
+    if not spans:
+        # Kein Datum gefunden - is_worth_sending haette die Seite ohnehin
+        # verworfen. Vorne abschneiden als letzter Rueckfall.
+        return text[:limit], 0
+
+    separator = " [...] "
+    parts: list[str] = []
+    used = 0
+    for start, stop in spans:
+        chunk = text[start:stop]
+        if used + len(chunk) + len(separator) > limit:
+            break
+        parts.append(chunk)
+        used += len(chunk) + len(separator)
+
+    if not parts:
+        # Ein einzelner (verschmolzener) Bereich ist groesser als das Limit.
+        # Vom Anfang nehmen: dort stehen die zeitlich naechsten Termine.
+        # Weiter entfernte ruecken in spaeteren Laeufen nach vorne.
+        result = text[spans[0][0]:spans[0][0] + limit]
+    else:
+        result = separator.join(parts)
+
+    # Schaetzung immer aus dem tatsaechlichen Ergebnistext, nicht aus der
+    # Zahl der Fenster - sonst wird eine dichte Seite als "1 Event" gewertet.
+    return result, len(DATE_PATTERN.findall(result))
+
+
+def pack_batches(pages: list[tuple[str, str, int]]) -> list[list[tuple[str, str]]]:
+    """Verteilt Seiten auf Pakete, ohne die geschaetzte Event-Obergrenze
+    pro Request zu reissen.
+
+    Vorher landeten eine 224.000-Zeichen-Kalenderseite und sieben kleine
+    Vereinsseiten im gleichen Paket - die grosse dominierte die Antwort und
+    riskierte ein abgeschnittenes JSON. First-Fit-Decreasing: dichte Seiten
+    zuerst, kleine fuellen die Luecken.
+    """
+    ordered = sorted(pages, key=lambda page: page[2], reverse=True)
+    batches: list[list[tuple[str, str, int]]] = []
+
+    for page in ordered:
+        for batch in batches:
+            crowded = len(batch) >= BATCH_SIZE
+            too_many = sum(p[2] for p in batch) + page[2] > MAX_EVENTS_PER_BATCH
+            if not crowded and not too_many:
+                batch.append(page)
+                break
+        else:
+            batches.append([page])
+
+    return [[(url, text) for url, text, _ in batch] for batch in batches]
+
+
 # ---------------------------------------------------------------- Extraktion
 
 def extract_events_batch(batch_sources: list[tuple[str, str]], today_str: str) -> list[dict]:
+    # Der Text ist bereits verdichtet und auf TEXT_LIMIT begrenzt
+    # (siehe condense_text in Phase 1) - hier nicht erneut abschneiden.
     combined_text = ""
     for idx, (url, text) in enumerate(batch_sources, start=1):
         combined_text += (
-            f"\n=== QUELLE {idx} ===\n{text[:TEXT_LIMIT]}\n=== ENDE QUELLE {idx} ===\n"
+            f"\n=== QUELLE {idx} ===\n{text}\n=== ENDE QUELLE {idx} ===\n"
         )
 
     prompt = f"""
@@ -977,22 +1074,40 @@ if __name__ == "__main__":
                 print(f"  FEHLER  {kind:<24} {url}")
                 continue
 
-            print(f"  {len(page_text):>6} Zeichen  {url}")
-            if is_worth_sending(url, page_text):
-                fetched_pages.append((url, page_text))
-            else:
+            if not is_worth_sending(url, page_text):
                 reason = ("zu kurz" if len(page_text) < MIN_TEXT_LENGTH
                           else "kein Datum")
                 problems[reason].append(url)
+                print(f"  {len(page_text):>7} Zeichen  {url}")
+                continue
 
-    print(f"\n{len(fetched_pages)} Seiten gehen an die API "
-          f"({(len(fetched_pages) + BATCH_SIZE - 1) // BATCH_SIZE} Requests)")
+            condensed, hits = condense_text(page_text, TEXT_LIMIT)
+            if len(condensed) < len(page_text):
+                print(f"  {len(page_text):>7} -> {len(condensed):>5} Zeichen, "
+                      f"~{hits} Fundstellen  {url}")
+            else:
+                print(f"  {len(page_text):>7} Zeichen, ~{hits} Fundstellen  {url}")
+            fetched_pages.append((url, condensed, hits))
 
-    print(f"\n--- Phase 2: KI-Analyse in {BATCH_SIZE}er-Paketen ---")
+    batches = pack_batches(fetched_pages)
+
+    if len(batches) > MAX_REQUESTS_PER_RUN:
+        dropped = batches[MAX_REQUESTS_PER_RUN:]
+        batches = batches[:MAX_REQUESTS_PER_RUN]
+        print(f"\n  ACHTUNG: {len(dropped)} Pakete ueberschreiten das "
+              f"Request-Budget ({MAX_REQUESTS_PER_RUN}) und werden verworfen.")
+        for batch in dropped:
+            for url, _ in batch:
+                problems["Budget erschoepft"].append(url)
+
+    print(f"\n{len(fetched_pages)} Seiten gehen an die API in "
+          f"{len(batches)} Paketen (Tageslimit: 20 Requests)")
+
+    print("\n--- Phase 2: KI-Analyse ---")
     stats = Counter()
-    for i in range(0, len(fetched_pages), BATCH_SIZE):
-        batch = fetched_pages[i:i + BATCH_SIZE]
-        print(f"\nPaket {i // BATCH_SIZE + 1} ({len(batch)} Seiten)")
+    for number, batch in enumerate(batches, start=1):
+        print(f"\nPaket {number}/{len(batches)} ({len(batch)} Seiten, "
+              f"{sum(len(t) for _, t in batch)} Zeichen)")
 
         events = call_with_retry(batch, today_str)
         print(f"  {len(events)} Events extrahiert")
