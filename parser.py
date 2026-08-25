@@ -517,8 +517,13 @@ def generate_event_id(event: dict) -> str:
 def merge_into(target: dict, source: dict) -> None:
     """Fuehrt source in target zusammen - nur ergaenzend. Vorhandene Werte
     werden hoechstens durch laengere, informativere ersetzt."""
+    # Laenge am normalisierten Text messen: sonst gewinnt die Variante mit
+    # Doppelleerzeichen und Komma am Ende, obwohl sie keinen Inhalt mehr hat.
+    # Bei Gleichstand bleibt der Bestand - er wurde zuerst gesehen.
     for key in ("title", "description", "location"):
-        if len(str(source.get(key) or "")) > len(str(target.get(key) or "")):
+        new_len = len(clean_text_for_comparison(source.get(key)))
+        old_len = len(clean_text_for_comparison(target.get(key)))
+        if new_len > old_len:
             target[key] = source[key]
     if not target.get("date_end") and source.get("date_end"):
         target["date_end"] = source["date_end"]
@@ -1194,10 +1199,10 @@ if __name__ == "__main__":
                 continue
 
             if not is_worth_sending(url, page_text):
+                # is_worth_sending protokolliert den Grund bereits selbst
                 reason = ("zu kurz" if len(page_text) < MIN_TEXT_LENGTH
                           else "kein Datum")
                 problems[reason].append(url)
-                print(f"  {len(page_text):>7} Zeichen  {url}")
                 continue
 
             condensed, hits = condense_text(page_text, TEXT_LIMIT)
@@ -1221,7 +1226,7 @@ if __name__ == "__main__":
             print(f"    {url}")
 
     print(f"\n{len(selected)} von {len(fetched_pages)} Seiten gehen an die API "
-          f"in {len(batches)} Paketen (Tageslimit: 20 Requests)")
+          f"in {len(batches)} Paketen (Budget: {MAX_REQUESTS_PER_RUN})")
 
     print("\n--- Phase 2: KI-Analyse ---")
     stats = Counter()
@@ -1259,9 +1264,16 @@ if __name__ == "__main__":
                 events_db[generate_event_id(event)] = event
                 stats["neu"] += 1
 
-        time.sleep(API_PAUSE_SECONDS)
+        if number < len(batches):
+            time.sleep(API_PAUSE_SECONDS)
 
+    # Zweite Deduplizierung als Sicherheitsnetz: innerhalb EINES Laufs koennen
+    # zwei Pakete dasselbe Event liefern (z. B. Dachseite und Einzelfriedhof),
+    # ohne dass find_duplicate_key das beim Eintragen schon sehen konnte.
+    before_dedup = len(events_db)
     events_db = deduplicate_db(events_db)
+    stats["zusammengefuehrt"] = before_dedup - len(events_db)
+
     cleaned_db = {}
     for event_id, event in events_db.items():
         relevant = event.get("date_end") or event.get("date_start", "")
@@ -1277,6 +1289,7 @@ if __name__ == "__main__":
     print(f"  aktualisiert:   {stats['aktualisiert']}")
     print(f"  Datum ungueltig:{stats['datum_ungueltig']}")
     print(f"  vergangen:      {stats['vergangen']}")
+    print(f"  zusammengefuehrt:{stats['zusammengefuehrt']}")
     print(f"  DB bereinigt:   {stats['entfernt']} entfernt")
     print(f"\n{len(cleaned_db)} aktive Events in '{HTML_OUTPUT_FILE}' geschrieben.")
 
