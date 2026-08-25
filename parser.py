@@ -269,7 +269,6 @@ def extract_tokens(text: str) -> set[str]:
 
 
 def are_events_duplicate(ev1: dict, ev2: dict) -> bool:
-    # 1. Startdatum muss exakt übereinstimmen
     if ev1.get("date_start") != ev2.get("date_start"):
         return False
 
@@ -282,12 +281,10 @@ def are_events_duplicate(ev1: dict, ev2: dict) -> bool:
     if t1 == t2:
         return True
 
-    # Ähnlichkeitsvergleich der Titel
     ratio = difflib.SequenceMatcher(None, t1, t2).ratio()
     if ratio >= 0.72:
         return True
 
-    # Token-Analyse von Ort & Titel
     tok1 = extract_tokens(ev1.get("title", ""))
     tok2 = extract_tokens(ev2.get("title", ""))
     loc1 = extract_tokens(ev1.get("location", ""))
@@ -297,15 +294,12 @@ def are_events_duplicate(ev1: dict, ev2: dict) -> bool:
 
     if same_loc:
         common_tokens = tok1 & tok2
-        # Wenn mindestens 2 signifikante Wörter im Titel übereinstimmen
         if len(common_tokens) >= 2:
             return True
 
-        # Substring-Matching bei ausreichend langen Einzellokationen (z.B. Melaten)
         if (t1 in t2 or t2 in t1) and min(len(t1), len(t2)) >= 5:
             return True
 
-        # Auswertung der Beschreibung bei abweichenden Titeln
         desc1 = extract_tokens(ev1.get("description", ""))
         desc2 = extract_tokens(ev2.get("description", ""))
         if len(desc1 & desc2) >= 4:
@@ -456,7 +450,7 @@ def extract_events_batch(batch_sources: list[tuple[str, str]], today_str: str) -
     """
 
     response = client.models.generate_content(
-        model="gemini-3.6-flash",
+        model="gemini-3.7-flash",
         contents=prompt,
         config=types.GenerateContentConfig(
             response_mime_type="application/json",
