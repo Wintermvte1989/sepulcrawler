@@ -8,7 +8,7 @@ import time
 import difflib
 import httpx
 import urllib3
-from collections import Counter
+from collections import Counter, defaultdict
 from datetime import datetime, date
 from urllib.parse import urlparse
 from zoneinfo import ZoneInfo
@@ -210,13 +210,38 @@ MONTH_MAP = {
     "dez": 12, "dezember": 12,
 }
 
+# Nur echte Funktionswoerter. Veranstaltungsarten ("Fuehrung", "Vortrag")
+# gehoeren NICHT hierher - sie unterscheiden Termine voneinander und werden
+# unten ueber EVENT_TYPES ausgewertet.
 STOP_WORDS = {
-    "führung", "sonderführung", "ausstellung", "vortrag", "konzert",
-    "rundgang", "spaziergang", "lesung", "filmvorführung", "museum",
-    "tag", "tage", "über", "durch", "nach", "beim", "eines", "einer",
-    "einen", "einem", "mit", "und", "oder", "für", "vom", "auf", "dem",
-    "den", "der", "die", "das", "des", "aus", "zum", "zur", "von", "im", "in"
+    "über", "durch", "nach", "beim", "eines", "einer", "einen", "einem",
+    "mit", "und", "oder", "für", "vom", "auf", "dem", "den", "der", "die",
+    "das", "des", "aus", "zum", "zur", "von", "im", "in", "am", "an", "bei",
+    "sowie", "wird", "wie", "als", "auch", "sich", "ist", "sind", "uhr",
 }
+
+# Veranstaltungsart. Zwei Termine unterschiedlicher Art am selben Tag und Ort
+# sind verschiedene Veranstaltungen, auch wenn die Titel einander aehneln.
+EVENT_TYPES = {
+    "fuehrung": (
+        "führung", "fuehrung", "sonderführung", "themenführung",
+        "friedhofsführung", "rundgang", "spaziergang", "rundfahrt", "tour",
+    ),
+    "vortrag": ("vortrag", "referat", "podium", "gespräch", "diskussion"),
+    "lesung": ("lesung", "buchvorstellung"),
+    "konzert": ("konzert", "orgelkonzert", "chorkonzert", "andacht", "requiem"),
+    "ausstellung": ("ausstellung", "sonderausstellung", "vernissage"),
+    "workshop": ("workshop", "seminar", "kurs", "fortbildung", "tagung"),
+    "gottesdienst": ("gottesdienst", "messe", "gedenkfeier", "trauerfeier"),
+    "film": ("film", "filmvorführung", "kino"),
+}
+
+_TYPE_LOOKUP = {word: name for name, words in EVENT_TYPES.items() for word in words}
+
+# Bewusst konservativ: ein uebersehenes Duplikat ist sichtbar und harmlos,
+# eine falsche Zusammenfuehrung loescht ein echtes Event.
+TITLE_RATIO_THRESHOLD = 0.88
+TOKEN_JACCARD_THRESHOLD = 0.60
 
 client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
 
@@ -287,58 +312,118 @@ def clean_text_for_comparison(text: str) -> str:
     if not text:
         return ""
     s = str(text).lower()
-    s = re.sub(r'[–—:\,\"`«»„“\(\)\[\]\-\n\r]', ' ', s)
-    s = s.replace("'", ' ').replace('"', ' ')
-    s = re.sub(r'\s+', ' ', s).strip()
+    s = re.sub(r"[–—:,\"`«»„“'()\[\]\-\n\r/|]", " ", s)
+    s = re.sub(r"\s+", " ", s).strip()
     return s
 
 
 def extract_tokens(text: str) -> set[str]:
     if not text:
         return set()
-    cleaned = clean_text_for_comparison(text)
-    words = set(re.findall(r'\b\w{3,}\b', cleaned))
+    words = set(re.findall(r"\b\w{3,}\b", clean_text_for_comparison(text)))
     return words - STOP_WORDS
 
 
+def event_type(title: str) -> str | None:
+    """Grobe Kategorie der Veranstaltungsart, oder None wenn nicht erkennbar."""
+    for word in re.findall(r"\b\w{3,}\b", clean_text_for_comparison(title)):
+        if word in _TYPE_LOOKUP:
+            return _TYPE_LOOKUP[word]
+    return None
+
+
+def event_host(event: dict) -> str:
+    return urlparse(str(event.get("url") or "")).netloc.lower()
+
+
+def _locations_compatible(ev1: dict, ev2: dict) -> bool:
+    """Verschiedene Orte schliessen ein Duplikat aus. Eine fehlende
+    Ortsangabe gilt als vereinbar - fehlende Information darf nicht trennen."""
+    loc1 = extract_tokens(ev1.get("location", ""))
+    loc2 = extract_tokens(ev2.get("location", ""))
+    if not loc1 or not loc2:
+        return True
+    return bool(loc1 & loc2)
+
+
+def _types_compatible(ev1: dict, ev2: dict) -> bool:
+    t1 = event_type(ev1.get("title", ""))
+    t2 = event_type(ev2.get("title", ""))
+    if t1 is None or t2 is None:
+        return True
+    return t1 == t2
+
+
+def _jaccard(a: set, b: set) -> float:
+    if not a or not b:
+        return 0.0
+    return len(a & b) / len(a | b)
+
+
 def are_events_duplicate(ev1: dict, ev2: dict) -> bool:
+    """Konservativ: nur zusammenfuehren, wenn mehrere unabhaengige Merkmale
+    uebereinstimmen. Im Zweifel getrennt lassen."""
+    # 1. Datum muss identisch sein.
     if ev1.get("date_start") != ev2.get("date_start"):
         return False
 
-    t1 = clean_text_for_comparison(ev1.get("title", ""))
-    t2 = clean_text_for_comparison(ev2.get("title", ""))
-
-    if not t1 or not t2:
+    # 2. Verschiedene Quell-Domains trennen. Dasselbe Event auf zwei Seiten
+    #    ist moeglich, aber selten - ein sichtbares Duplikat ist billiger
+    #    als ein geloeschtes Event.
+    host1, host2 = event_host(ev1), event_host(ev2)
+    if host1 and host2 and host1 != host2:
         return False
 
-    if t1 == t2:
+    # 3. Verschiedene Orte trennen. Wichtig bei Dachseiten, die Termine
+    #    mehrerer Friedhoefe unter einer Domain listen (z. B. Verbaende).
+    if not _locations_compatible(ev1, ev2):
+        return False
+
+    title1 = clean_text_for_comparison(ev1.get("title", ""))
+    title2 = clean_text_for_comparison(ev2.get("title", ""))
+    if not title1 or not title2:
+        return False
+
+    # 4. Identischer normalisierter Titel: Duplikat.
+    if title1 == title2:
         return True
 
-    ratio = difflib.SequenceMatcher(None, t1, t2).ratio()
-    if ratio >= 0.72:
-        return True
+    # 5. Unscharfer Fall - nur bei hoher Aehnlichkeit UND gleicher
+    #    Veranstaltungsart UND ueberwiegend gleichen Inhaltswoertern.
+    if not _types_compatible(ev1, ev2):
+        return False
+
+    ratio = difflib.SequenceMatcher(None, title1, title2).ratio()
+    if ratio < TITLE_RATIO_THRESHOLD:
+        return False
 
     tok1 = extract_tokens(ev1.get("title", ""))
     tok2 = extract_tokens(ev2.get("title", ""))
-    loc1 = extract_tokens(ev1.get("location", ""))
-    loc2 = extract_tokens(ev2.get("location", ""))
+    return _jaccard(tok1, tok2) >= TOKEN_JACCARD_THRESHOLD
 
-    same_loc = len(loc1 & loc2) > 0 or not loc1 or not loc2
 
-    if same_loc:
-        common_tokens = tok1 & tok2
-        if len(common_tokens) >= 2:
-            return True
+def generate_event_id(event: dict) -> str:
+    """Host gehoert in die ID: sonst kollidieren gleichnamige Termine
+    verschiedener Institutionen am selben Tag."""
+    title = clean_text_for_comparison(event.get("title", ""))
+    raw = f"{title}|{event.get('date_start', '')}|{event_host(event)}"
+    return hashlib.md5(raw.encode("utf-8")).hexdigest()
 
-        if (t1 in t2 or t2 in t1) and min(len(t1), len(t2)) >= 5:
-            return True
 
-        desc1 = extract_tokens(ev1.get("description", ""))
-        desc2 = extract_tokens(ev2.get("description", ""))
-        if len(desc1 & desc2) >= 4:
-            return True
-
-    return False
+def merge_into(target: dict, source: dict) -> None:
+    """Fuehrt source in target zusammen - nur ergaenzend. Vorhandene Werte
+    werden hoechstens durch laengere, informativere ersetzt."""
+    for key in ("title", "description", "location"):
+        if len(str(source.get(key) or "")) > len(str(target.get(key) or "")):
+            target[key] = source[key]
+    if not target.get("date_end") and source.get("date_end"):
+        target["date_end"] = source["date_end"]
+    if source.get("first_seen"):
+        target["first_seen"] = min(
+            target.get("first_seen") or source["first_seen"], source["first_seen"]
+        )
+    if source.get("last_seen"):
+        target["last_seen"] = max(target.get("last_seen") or "", source["last_seen"])
 
 
 # ---------------------------------------------------------------- Datenbank & Deduplizierung
@@ -366,39 +451,33 @@ def save_events_db(db: dict):
 
 
 def deduplicate_db(db: dict) -> dict:
-    events = list(db.values())
-    merged_events = []
+    """Gruppiert nach Datum und vergleicht nur innerhalb der Gruppe - Events
+    an verschiedenen Tagen koennen nie Duplikate sein."""
+    by_date = defaultdict(list)
+    for event in db.values():
+        by_date[event.get("date_start", "")].append(event)
 
-    for ev in events:
-        found_dup = False
-        for existing in merged_events:
-            if are_events_duplicate(ev, existing):
-                existing["first_seen"] = min(existing.get("first_seen", "9999"), ev.get("first_seen", "9999"))
-                existing["last_seen"] = max(existing.get("last_seen", ""), ev.get("last_seen", ""))
-                
-                if len(ev.get("title", "")) > len(existing.get("title", "")):
-                    existing["title"] = ev["title"]
-                if len(ev.get("description", "")) > len(existing.get("description", "")):
-                    existing["description"] = ev["description"]
-                if len(ev.get("location", "")) > len(existing.get("location", "")):
-                    existing["location"] = ev["location"]
-                if not existing.get("date_end") and ev.get("date_end"):
-                    existing["date_end"] = ev["date_end"]
-                
-                found_dup = True
-                break
-        
-        if not found_dup:
-            merged_events.append(ev)
+    merged = []
+    for group in by_date.values():
+        kept = []
+        for event in group:
+            for existing in kept:
+                if are_events_duplicate(event, existing):
+                    merge_into(existing, event)
+                    break
+            else:
+                kept.append(event)
+        merged.extend(kept)
 
-    cleaned_db = {}
-    for ev in merged_events:
-        norm_t = clean_text_for_comparison(ev.get("title", ""))
-        raw = f"{norm_t}|{ev.get('date_start', '')}"
-        event_id = hashlib.md5(raw.encode("utf-8")).hexdigest()
-        cleaned_db[event_id] = ev
+    return {generate_event_id(ev): ev for ev in merged}
 
-    return cleaned_db
+
+def find_duplicate_key(event: dict, db: dict) -> str | None:
+    """Sucht im Bestand einen Eintrag, der dasselbe Event bezeichnet."""
+    for key, existing in db.items():
+        if are_events_duplicate(event, existing):
+            return key
+    return None
 
 
 # ---------------------------------------------------------------- Auswahl
@@ -832,32 +911,17 @@ if __name__ == "__main__":
                 stats["vergangen"] += 1
                 continue
 
-            found_duplicate_key = None
-            for existing_id, existing_ev in events_db.items():
-                if are_events_duplicate(event, existing_ev):
-                    found_duplicate_key = existing_id
-                    break
-
-            if found_duplicate_key:
-                existing = events_db[found_duplicate_key]
-                existing["first_seen"] = min(existing.get("first_seen", today_str), today_str)
-                existing["last_seen"] = today_str
-                if len(event.get("title", "")) > len(existing.get("title", "")):
-                    existing["title"] = event["title"]
-                if len(event.get("description", "")) > len(existing.get("description", "")):
-                    existing["description"] = event["description"]
-                if len(event.get("location", "")) > len(existing.get("location", "")):
-                    existing["location"] = event["location"]
-                if not existing.get("date_end") and event.get("date_end"):
-                    existing["date_end"] = event["date_end"]
+            duplicate_key = find_duplicate_key(event, events_db)
+            if duplicate_key:
+                event["first_seen"] = today_str
+                event["last_seen"] = today_str
+                merge_into(events_db[duplicate_key], event)
+                events_db[duplicate_key]["last_seen"] = today_str
                 stats["aktualisiert"] += 1
             else:
                 event["first_seen"] = today_str
                 event["last_seen"] = today_str
-                norm_t = clean_text_for_comparison(event.get("title", ""))
-                raw_id = f"{norm_t}|{event.get('date_start', '')}"
-                new_id = hashlib.md5(raw_id.encode("utf-8")).hexdigest()
-                events_db[new_id] = event
+                events_db[generate_event_id(event)] = event
                 stats["neu"] += 1
 
         time.sleep(4)
