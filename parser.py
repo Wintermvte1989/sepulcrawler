@@ -326,21 +326,40 @@ STOP_WORDS = {
 
 # Veranstaltungsart. Zwei Termine unterschiedlicher Art am selben Tag und Ort
 # sind verschiedene Veranstaltungen, auch wenn die Titel einander aehneln.
-EVENT_TYPES = {
-    "fuehrung": (
-        "führung", "fuehrung", "sonderführung", "themenführung",
-        "friedhofsführung", "rundgang", "spaziergang", "rundfahrt", "tour",
-    ),
-    "vortrag": ("vortrag", "referat", "podium", "gespräch", "diskussion"),
-    "lesung": ("lesung", "buchvorstellung"),
-    "konzert": ("konzert", "orgelkonzert", "chorkonzert", "andacht", "requiem"),
-    "ausstellung": ("ausstellung", "sonderausstellung", "vernissage"),
-    "workshop": ("workshop", "seminar", "kurs", "fortbildung", "tagung"),
-    "gottesdienst": ("gottesdienst", "messe", "gedenkfeier", "trauerfeier"),
-    "film": ("film", "filmvorführung", "kino"),
-}
+#
+# Reihenfolge ist Pruefreihenfolge - der erste Treffer gewinnt. Wichtig:
+#  - "film" vor "fuehrung": "Filmvorfuehrung" ist ein Film.
+#  - "gottesdienst" vor "lesung": "Andacht mit Verlesung" ist eine Andacht,
+#    sonst greift das "lesung" in "Verlesung".
+#  - "fuehrung" vor "aktionstag": "Fuehrungen am Museumstag" ist eine Fuehrung.
+#  - "workshop" vor "gottesdienst": ein "Redner-Workshop: Trauerfeiern"
+#    ist eine Fortbildung, keine Trauerfeier.
+#  - "aktionstag" zuletzt: faengt nur, was kein eigenes Format nennt.
+EVENT_TYPES = (
+    ("film", ("filmvorführung", "filmvorfuehrung", "filmabend", "kino", "film")),
+    ("ausstellung", ("ausstellung", "vernissage", "finissage")),
+    ("workshop", ("workshop", "seminar", "fortbildung", "modellier",
+                  "ausbildung", "kurs")),
+    ("gottesdienst", ("gottesdienst", "messfeier", "trauerfeier", "gedenkfeier",
+                      "gedenkveranstaltung", "kranzniederlegung", "gedenken",
+                      "andacht", "requiem", "messe")),
+    ("konzert", ("konzert", "musik", "chor", "orgel")),
+    ("lesung", ("lesung", "buchvorstellung")),
+    ("vortrag", ("vortrag", "referat", "podium", "diskussion", "kolloquium",
+                 "symposium", "tagung")),
+    ("begleitung", ("sterbebegleitung", "trauerbegleitung", "trauercafé",
+                    "trauercafe", "letzte hilfe", "hospiz", "austausch",
+                    "gesprächstisch", "gespraechstisch")),
+    ("fuehrung", ("führung", "fuehrung", "rundgang", "spaziergang", "rundfahrt",
+                  "busrundfahrt", "fahrradtour", "exkursion", "tour")),
+    ("aktionstag", ("tag des friedhofs", "tag des offenen denkmals",
+                    "tag des denkmals", "museumsnacht", "lange nacht",
+                    "museumstag", "aktionstag", "aktionswoche", "sommerfest")),
+)
 
-_TYPE_LOOKUP = {word: name for name, words in EVENT_TYPES.items() for word in words}
+# Substring-Suche erst ab dieser Laenge, sonst exakter Wortvergleich.
+# Verhindert Treffer wie "kurs" in "Diskurs" oder "tour" in "Kontour".
+_TYPE_MIN_SUBSTRING = 6
 
 # Bewusst konservativ: ein uebersehenes Duplikat ist sichtbar und harmlos,
 # eine falsche Zusammenfuehrung loescht ein echtes Event.
@@ -429,10 +448,25 @@ def extract_tokens(text: str) -> set[str]:
 
 
 def event_type(title: str) -> str | None:
-    """Grobe Kategorie der Veranstaltungsart, oder None wenn nicht erkennbar."""
-    for word in re.findall(r"\b\w{3,}\b", clean_text_for_comparison(title)):
-        if word in _TYPE_LOOKUP:
-            return _TYPE_LOOKUP[word]
+    """Grobe Kategorie der Veranstaltungsart, oder None wenn nicht erkennbar.
+
+    Deutsche Veranstaltungstitel sind Komposita: "Sonntagsfuehrung",
+    "Kurator*innenfuehrung", "Busrundfahrten", "Gedenkmessfeier". Ein exakter
+    Wortvergleich findet davon nichts, deshalb Substring-Suche fuer lange
+    Stichworte und exakter Vergleich fuer kurze.
+    """
+    text = clean_text_for_comparison(title)
+    if not text:
+        return None
+    words = set(re.findall(r"\b\w{3,}\b", text))
+
+    for name, keywords in EVENT_TYPES:
+        for keyword in keywords:
+            if len(keyword) >= _TYPE_MIN_SUBSTRING or " " in keyword:
+                if keyword in text:
+                    return name
+            elif keyword in words:
+                return name
     return None
 
 
@@ -920,12 +954,156 @@ def call_with_retry(batch_sources, today_str) -> list[dict]:
     return []
 
 
+# ---------------------------------------------------------------- Verschlagwortung
+
+# Region aus dem location-Feld. Reihenfolge in der Liste = Pruefreihenfolge,
+# der erste Treffer gewinnt. Stichworte in Kleinschreibung.
+REGIONS = (
+    ("berlin-brandenburg", (
+        "berlin", "stahnsdorf", "potsdam", "brandenburg", "weißensee",
+        "weissensee", "liesenstraße", "liesenstrasse", "neukölln", "pankow",
+        "hellersdorf", "spandau", "charlottenburg", "kreuzberg", "eberswalde",
+        "neuzelle", "halbe",
+    )),
+    ("nord", (
+        "hamburg", "ohlsdorf", "kiel", "bremen", "lübeck", "luebeck",
+        "schwerin", "hannover", "braunschweig", "doberan", "gottorf",
+        "schleswig", "flensburg", "rostock",
+    )),
+    ("west", (
+        "köln", "koeln", "melaten", "frankfurt", "herne", "bonn",
+        "düsseldorf", "duesseldorf", "münster", "muenster", "kassel",
+        "xanten", "essen", "aachen", "mainz", "wiesbaden", "darmstadt",
+        "trier", "speyer", "worms", "oppenheim", "saarbrücken",
+        "saarbruecken", "dortmund", "bochum",
+    )),
+    ("ost", (
+        "leipzig", "dresden", "halle", "erfurt", "magdeburg", "naumburg",
+        "chemnitz", "quedlinburg", "striesener", "eliasfriedhof", "görlitz",
+        "goerlitz", "weimar", "jena",
+    )),
+    ("sued", (
+        "münchen", "muenchen", "nürnberg", "nuernberg", "regensburg",
+        "augsburg", "stuttgart", "ulm", "bamberg", "würzburg", "wuerzburg",
+        "passau", "karlsruhe", "freiburg", "chammünster", "chammuenster",
+        "bayern", "schwaben",
+    )),
+    ("ausland", (
+        "wien", "salzburg", "innsbruck", "graz", "admont", "hallstatt",
+        "basel", "bern", "zürich", "zuerich", "st. gallen", "st.gallen",
+        "luzern", "genf", "prag", "praha", "kutná hora", "kutna hora",
+        "sedlec", "brno", "brünn", "bruenn", "österreich", "oesterreich",
+        "schweiz", "tschechien",
+    )),
+)
+
+# Anzeigenamen fuer die Filterknoepfe im HTML.
+REGION_LABELS = {
+    "berlin-brandenburg": "Berlin &amp; Brandenburg",
+    "nord": "Norden",
+    "west": "Westen",
+    "ost": "Osten",
+    "sued": "S&uuml;den",
+    "ausland": "AT / CH / CZ",
+    "online": "Online",
+}
+
+TYPE_LABELS = {
+    "fuehrung": "F&uuml;hrungen",
+    "aktionstag": "Aktionstage",
+    "konzert": "Konzerte &amp; Musik",
+    "ausstellung": "Ausstellungen",
+    "vortrag": "Vortr&auml;ge",
+    "lesung": "Lesungen",
+    "gottesdienst": "Gedenken",
+    "workshop": "Kurse &amp; Workshops",
+    "begleitung": "Trauer &amp; Begleitung",
+    "film": "Film",
+}
+
+
+def event_region(event: dict) -> str:
+    """Grobe geografische Einordnung. 'online' hat Vorrang: eine reine
+    Online-Veranstaltung gehoert in keine Ortsliste."""
+    location = clean_text_for_comparison(event.get("location"))
+    if not location or "online" in location or "bundesweit" in location:
+        return "online"
+    for name, keywords in REGIONS:
+        if any(word in location for word in keywords):
+            return name
+    return "sonstige"
+
+
+def event_tags(event: dict) -> list[str]:
+    """Tags werden hier vergeben, nicht im Browser gesucht.
+
+    Der frühere Filter suchte Substrings im gerenderten Zeilentext. Das leckt:
+    'kunst' fand 'Grabkunst' in Dutzenden Fuehrungsbeschreibungen, 'museum'
+    fand 'Museum fuer Sepulkralkultur' und machte jede Kasseler Fuehrung zur
+    Ausstellung. Feste Tags im data-Attribut vermeiden das.
+    """
+    tags = [f"region-{event_region(event)}"]
+
+    kind = event_type(event.get("title", ""))
+    if kind is None:
+        # Titel ohne Gattungswort - Beschreibung als zweite Chance nutzen.
+        kind = event_type(event.get("description", ""))
+    tags.append(f"art-{kind}" if kind else "art-sonstige")
+
+    if event.get("date_end"):
+        tags.append("laufend")
+
+    return tags
+
+
 # ---------------------------------------------------------------- HTML
+
+def _filter_buttons(group: str, counts: dict, labels: dict) -> str:
+    """Baut die Filterknoepfe einer Gruppe - nur fuer Tags, die es auch gibt.
+
+    Leere Filter sind schlimmer als fehlende: sie sehen aus wie ein Fehler.
+    """
+    parts = [f'<button class="tag-btn active" data-group="{group}" '
+             f'data-value="" onclick="setFilter(this)">Alle</button>']
+    ordered = sorted(counts.items(), key=lambda kv: (-kv[1], kv[0]))
+    for value, count in ordered:
+        label = labels.get(value, value.capitalize())
+        parts.append(
+            f'<button class="tag-btn" data-group="{group}" data-value="{value}" '
+            f'onclick="setFilter(this)">{label} <span style="opacity:.6">'
+            f'{count}</span></button>'
+        )
+    return "\n                ".join(parts)
+
 
 def render_html(events: list[dict], today: date):
     timestamp = datetime.now(BERLIN).strftime("%d.%m.%Y um %H:%M Uhr")
-    sorted_events = sorted(events, key=lambda x: x.get("date_start", ""))
     today_str = today.isoformat()
+
+    # Tags einmal vorberechnen und am Event mitfuehren.
+    enriched = []
+    region_counts: Counter = Counter()
+    type_counts: Counter = Counter()
+    for event in events:
+        tags = event_tags(event)
+        region = next(t[len("region-"):] for t in tags if t.startswith("region-"))
+        kind = next(t[len("art-"):] for t in tags if t.startswith("art-"))
+        region_counts[region] += 1
+        type_counts[kind] += 1
+        enriched.append((event, tags))
+
+    # Sortierschluessel ist max(Startdatum, heute): eine seit Juli laufende
+    # Ausstellung erscheint damit an der Position "heute" und nicht mehr weit
+    # oben bei ihrem Startdatum. Wer sie ganz ausblenden will, nutzt den
+    # Art-Filter - laufende Formate tragen zusaetzlich das Tag "laufend".
+    enriched.sort(key=lambda pair: (
+        max(pair[0].get("date_start", ""), today_str),
+        pair[0].get("date_start", ""),
+    ))
+
+    region_buttons = _filter_buttons("region", region_counts, REGION_LABELS)
+    type_buttons = _filter_buttons("art", type_counts, TYPE_LABELS)
+    total = len(enriched)
 
     html_content = f"""<!DOCTYPE html>
 <html lang="de">
@@ -1012,34 +1190,65 @@ def render_html(events: list[dict], today: date):
         a.btn {{ display: inline-block; background-color: var(--btn-bg); color: white; text-decoration: none; padding: 5px 10px; border-radius: 4px; font-size: 0.85em; }}
         a.btn:hover {{ background-color: var(--btn-hover); }}
         .no-results {{ display: none; padding: 20px; text-align: center; color: var(--text-muted); font-style: italic; }}
-    </style>
+    
+        .filter-group {{ display: flex; flex-direction: column; gap: 6px; }}
+        .filter-group-label {{ font-size: 0.72em; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); font-weight: 700; }}
+        .filter-row {{ display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; background: var(--filter-bg); padding: 15px; border-radius: 6px; border: 1px solid var(--filter-border); }}
+        .badge-laufend {{ background: #8e44ad; color: #fff; padding: 2px 6px; border-radius: 3px; font-size: 0.7em; margin-left: 6px; vertical-align: middle; }}
+        .reset-btn {{ background: none; border: 1px solid var(--input-border); color: var(--text-muted); padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 0.85em; }}
+        .reset-btn:hover {{ color: var(--text-main); }}
+</style>
 </head>
 <body>
     <div class="container">
         <div class="header-bar">
-            <h1>Sepulkralkultur &amp; Friedhofskultur &ndash; Termine</h1>
-            <button id="themeToggleBtn" class="theme-toggle-btn" onclick="toggleTheme()">
-                <span id="themeIcon">🌙</span> <span id="themeLabel">Dunkel</span>
+            <h1>Sepulkralkultur &amp; Friedhofskultur</h1>
+            <button class="theme-toggle-btn" onclick="toggleTheme()">
+                <span id="themeIcon">&#127769;</span>
+                <span id="themeLabel">Dunkel</span>
             </button>
         </div>
-        <div class="timestamp">Stand: {timestamp} | Zeige <span id="visibleCount">{len(sorted_events)}</span> von {len(sorted_events)} Events</div>
+        <div class="timestamp">Stand: {timestamp} &nbsp;|&nbsp;
+            <span id="visibleCount">{total}</span> von {total} Terminen</div>
 
-        <div class="filter-container">
-            <input type="text" id="searchInput" class="search-input" placeholder="Events durchsuchen (z. B. Beinhaus, Köln, Leipzig, Stahnsdorf)..." onkeyup="filterEvents()">
-            <div class="filter-tags">
-                <button class="tag-btn active" data-filter="" onclick="setTagFilter(this)">Alle</button>
-                <button class="tag-btn" data-filter="berlin" onclick="setTagFilter(this)">Berlin</button>
-                <button class="tag-btn" data-filter="führung|rundgang|spaziergang" onclick="setTagFilter(this)">Führungen</button>
-                <button class="tag-btn" data-filter="konzert|musik|kunst|lesung|film" onclick="setTagFilter(this)">Konzerte &amp; Kunst</button>
-                <button class="tag-btn" data-filter="ausstellung|vortrag|museum" onclick="setTagFilter(this)">Ausstellungen</button>
-                <button class="tag-btn" data-filter="trauer|hospiz|kurs|workshop" onclick="setTagFilter(this)">Trauer &amp; Praxis</button>
+        <div class="filter-row">
+            <input type="text" id="searchInput" class="search-input"
+                   placeholder="Suchen nach Ort, Titel, Stichwort &hellip;"
+                   onkeyup="applyFilters()">
+
+            <div class="filter-group">
+                <span class="filter-group-label">Zeitraum</span>
+                <div class="filter-tags">
+                    <button class="tag-btn active" data-group="zeit" data-value="" onclick="setFilter(this)">Alle</button>
+                    <button class="tag-btn" data-group="zeit" data-value="7" onclick="setFilter(this)">N&auml;chste 7 Tage</button>
+                    <button class="tag-btn" data-group="zeit" data-value="30" onclick="setFilter(this)">N&auml;chste 30 Tage</button>
+                    <button class="tag-btn" data-group="zeit" data-value="90" onclick="setFilter(this)">N&auml;chste 3 Monate</button>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <span class="filter-group-label">Region</span>
+                <div class="filter-tags">
+                {region_buttons}
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <span class="filter-group-label">Art</span>
+                <div class="filter-tags">
+                {type_buttons}
+                </div>
+            </div>
+
+            <div>
+                <button class="reset-btn" onclick="resetFilters()">Filter zur&uuml;cksetzen</button>
             </div>
         </div>
 
-        <div id="noResults" class="no-results">Keine passenden Veranstaltungen f&uuml;r die Suchkriterien gefunden.</div>
+        <div id="noResults" class="no-results">Keine Termine f&uuml;r diese Auswahl.</div>
 """
 
-    if sorted_events:
+    if enriched:
         html_content += """
         <table id="eventsTable">
             <thead>
@@ -1048,25 +1257,29 @@ def render_html(events: list[dict], today: date):
                     <th>Titel</th>
                     <th>Ort</th>
                     <th>Beschreibung</th>
-                    <th>Aktion</th>
+                    <th>Link</th>
                 </tr>
             </thead>
             <tbody>
 """
-        for event in sorted_events:
+        for event, tags in enriched:
             date_s = html.escape(event.get("date_start", ""))
+            end_raw = event.get("date_end") or ""
             title_s = html.escape(event.get("title", ""))
             loc_s = html.escape(event.get("location", ""))
             desc_s = html.escape(event.get("description", ""))
 
+            # Nur http/https ins href - html.escape verhindert kein javascript:
             raw_url = str(event.get("url") or "")
-            url_s = html.escape(raw_url) if raw_url.startswith(("http://", "https://")) else "#"
+            url_s = (html.escape(raw_url)
+                     if raw_url.startswith(("http://", "https://")) else "#")
 
-            end_html = ""
-            if event.get("date_end"):
-                end_html = f'<span class="date-end">bis {html.escape(event["date_end"])}</span>'
+            end_html = (f'<span class="date-end">bis {html.escape(end_raw)}</span>'
+                        if end_raw else "")
 
             badges = ""
+            if end_raw:
+                badges += '<span class="badge-laufend">l&auml;uft</span>'
             if event.get("first_seen") == today_str:
                 badges += '<span class="badge-new">neu</span>'
             last_seen = event.get("last_seen")
@@ -1074,17 +1287,18 @@ def render_html(events: list[dict], today: date):
                 try:
                     age = (today - date.fromisoformat(last_seen)).days
                     if age > STALE_AFTER_DAYS:
-                        badges += f'<span class="badge-stale">seit {age} Tagen nicht best&auml;tigt</span>'
+                        badges += ('<span class="badge-stale">seit '
+                                   f'{age} Tagen nicht best&auml;tigt</span>')
                 except ValueError:
                     pass
 
             html_content += f"""
-                <tr>
+                <tr data-tags="{' '.join(tags)}" data-start="{date_s}" data-end="{html.escape(end_raw)}">
                     <td><span class="date-badge">{date_s}</span>{end_html}</td>
                     <td><strong>{title_s}</strong>{badges}</td>
                     <td class="location">{loc_s}</td>
                     <td>{desc_s}</td>
-                    <td><a href="{url_s}" target="_blank" rel="noopener noreferrer" class="btn">Link &ouml;ffnen</a></td>
+                    <td><a href="{url_s}" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 """
         html_content += """
@@ -1098,65 +1312,82 @@ def render_html(events: list[dict], today: date):
     </div>
 
     <script>
-        let currentTagPattern = '';
+        const filters = { zeit: '', region: '', art: '' };
 
         function initTheme() {
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme === 'dark') {
+            if (localStorage.getItem('theme') === 'dark') {
                 document.documentElement.setAttribute('data-theme', 'dark');
-                document.getElementById('themeIcon').innerText = '☀️';
+                document.getElementById('themeIcon').innerText = '\\u2600\\ufe0f';
                 document.getElementById('themeLabel').innerText = 'Hell';
             }
         }
 
         function toggleTheme() {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            if (currentTheme === 'dark') {
+            const dark = document.documentElement.getAttribute('data-theme') === 'dark';
+            if (dark) {
                 document.documentElement.removeAttribute('data-theme');
                 localStorage.setItem('theme', 'light');
-                document.getElementById('themeIcon').innerText = '🌙';
+                document.getElementById('themeIcon').innerText = '\\ud83c\\udf19';
                 document.getElementById('themeLabel').innerText = 'Dunkel';
             } else {
                 document.documentElement.setAttribute('data-theme', 'dark');
                 localStorage.setItem('theme', 'dark');
-                document.getElementById('themeIcon').innerText = '☀️';
+                document.getElementById('themeIcon').innerText = '\\u2600\\ufe0f';
                 document.getElementById('themeLabel').innerText = 'Hell';
             }
         }
 
-        function setTagFilter(btn) {
-            document.querySelectorAll('.tag-btn').forEach(b => b.classList.remove('active'));
+        function setFilter(btn) {
+            const group = btn.getAttribute('data-group');
+            filters[group] = btn.getAttribute('data-value');
+            document.querySelectorAll('.tag-btn[data-group="' + group + '"]')
+                .forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-            currentTagPattern = btn.getAttribute('data-filter').toLowerCase();
-            filterEvents();
+            applyFilters();
         }
 
-        function filterEvents() {
-            const searchValue = document.getElementById('searchInput').value.toLowerCase();
-            const rows = document.querySelectorAll('#eventsTable tbody tr');
-            let visibleCount = 0;
+        function resetFilters() {
+            Object.keys(filters).forEach(k => filters[k] = '');
+            document.querySelectorAll('.tag-btn').forEach(b => {
+                b.classList.toggle('active', b.getAttribute('data-value') === '');
+            });
+            document.getElementById('searchInput').value = '';
+            applyFilters();
+        }
 
-            const keywords = currentTagPattern ? currentTagPattern.split('|') : [];
+        // Ein Termin liegt im Zeitfenster, wenn er es ueberlappt. Damit
+        // erscheinen laufende Ausstellungen auch in "Naechste 7 Tage", obwohl
+        // ihr Startdatum lange zurueckliegt.
+        function inWindow(row, days) {
+            if (!days) return true;
+            const start = row.getAttribute('data-start');
+            const end = row.getAttribute('data-end') || start;
+            const today = new Date();
+            const limit = new Date();
+            limit.setDate(limit.getDate() + parseInt(days, 10));
+            const iso = d => d.toISOString().slice(0, 10);
+            return start <= iso(limit) && end >= iso(today);
+        }
+
+        function applyFilters() {
+            const term = document.getElementById('searchInput').value.toLowerCase();
+            const rows = document.querySelectorAll('#eventsTable tbody tr');
+            let visible = 0;
 
             rows.forEach(row => {
-                const text = row.innerText.toLowerCase();
-                const matchesSearch = text.includes(searchValue);
-                
-                let matchesTag = true;
-                if (keywords.length > 0) {
-                    matchesTag = keywords.some(kw => text.includes(kw));
-                }
-
-                if (matchesSearch && matchesTag) {
-                    row.style.display = '';
-                    visibleCount++;
-                } else {
-                    row.style.display = 'none';
-                }
+                const tags = row.getAttribute('data-tags');
+                const ok =
+                    (!term || row.innerText.toLowerCase().includes(term)) &&
+                    (!filters.region || tags.includes('region-' + filters.region)) &&
+                    (!filters.art || tags.includes('art-' + filters.art)) &&
+                    inWindow(row, filters.zeit);
+                row.style.display = ok ? '' : 'none';
+                if (ok) visible++;
             });
 
-            document.getElementById('visibleCount').innerText = visibleCount;
-            document.getElementById('noResults').style.display = (visibleCount === 0 && rows.length > 0) ? 'block' : 'none';
+            document.getElementById('visibleCount').innerText = visible;
+            document.getElementById('noResults').style.display =
+                (visible === 0 && rows.length > 0) ? 'block' : 'none';
         }
 
         initTheme();
