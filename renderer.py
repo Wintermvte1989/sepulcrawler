@@ -197,6 +197,34 @@ def render_html(events: list[dict], today: date):
                 box-sizing: border-box;
                 padding: 8px 0;
             }}
+
+            /* Beschriftung in der Kartenansicht: ohne Tabellenkopf waeren
+               Ort und Beschreibung sonst unbeschriftet untereinander. */
+            #eventsTable td[data-label]::before {{
+                content: attr(data-label);
+                display: block;
+                font-size: 0.68em;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                color: var(--text-muted);
+                font-weight: 700;
+                margin-bottom: 1px;
+            }}
+            #eventsTable td[data-label] {{ margin-top: 6px; }}
+
+            /* Filter: eine Zeile pro Gruppe, horizontal wischbar. Umbrechend
+               brauchten die Knoepfe ueber 900 px Hoehe, bevor der erste
+               Termin sichtbar wurde. */
+            .filter-tags {{
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                padding-bottom: 4px;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+            }}
+            .filter-tags::-webkit-scrollbar {{ display: none; }}
+            .tag-btn {{ white-space: nowrap; flex: 0 0 auto; }}
+            .theme-toggle-btn {{ padding: 6px 10px; font-size: 0.85em; }}
         }}
 </style>
 </head>
@@ -294,11 +322,11 @@ def render_html(events: list[dict], today: date):
 
             html_content += f"""
                 <tr data-tags="{' '.join(tags)}" data-start="{date_s}" data-end="{html.escape(end_raw)}">
-                    <td><span class="date-badge">{date_s}</span>{end_html}</td>
-                    <td><strong>{title_s}</strong>{badges}</td>
-                    <td class="location">{loc_s}</td>
-                    <td>{desc_s}</td>
-                    <td><a href="{url_s}" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
+                    <td class="cell-plain"><span class="date-badge">{date_s}</span>{end_html}</td>
+                    <td class="cell-plain"><strong>{title_s}</strong>{badges}</td>
+                    <td class="location" data-label="Ort">{loc_s}</td>
+                    <td data-label="Beschreibung">{desc_s}</td>
+                    <td class="cell-plain"><a href="{url_s}" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 """
         html_content += """

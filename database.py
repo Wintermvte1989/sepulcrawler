@@ -59,11 +59,28 @@ def clean_text_for_comparison(text: str) -> str:
     return s
 
 
+# Haeufige deutsche Flexionsendungen. Nur fuer den Vergleich, nie fuer die
+# Anzeige: "Sonntagsfuehrung" und "Sonntagsfuehrungen" sollen als dasselbe
+# Wort gelten, sonst scheitert der Jaccard-Vergleich an einem Plural-n.
+_STEM_SUFFIXES = ("en", "er", "es", "n", "s", "e")
+
+
+def stem(word: str) -> str:
+    """Sehr grobe Endungsreduktion. Nur bei Woertern ab 6 Zeichen, damit
+    kurze Woerter nicht zu Stummeln werden."""
+    if len(word) < 6:
+        return word
+    for suffix in _STEM_SUFFIXES:
+        if word.endswith(suffix) and len(word) - len(suffix) >= 4:
+            return word[: -len(suffix)]
+    return word
+
+
 def extract_tokens(text: str) -> set[str]:
     if not text:
         return set()
     words = set(re.findall(r"\b\w{3,}\b", clean_text_for_comparison(text)))
-    return words - config.STOP_WORDS
+    return {stem(w) for w in words - config.STOP_WORDS}
 
 
 def event_type(title: str) -> str | None:
@@ -84,6 +101,25 @@ def event_type(title: str) -> str | None:
 
 def event_host(event: dict) -> str:
     return urlparse(str(event.get("url") or "")).netloc.lower()
+
+
+def _sources_compatible(ev1: dict, ev2: dict) -> bool:
+    """Regelt, ob zwei Eintraege aus verschiedenen Quellen zusammengefuehrt
+    werden duerfen.
+
+    Gleicher Host: unkritisch, dort ist Doppelerfassung der Normalfall.
+    Verschiedene Hosts: nur wenn BEIDE Ortsangaben gefuellt sind und sich
+    ueberlappen. Ohne diese Bedingung fuehrt eine fehlende Ortsangabe dazu,
+    dass "Fuehrung" auf dem Suedwestkirchhof und "Fuehrung" in Weissensee
+    am selben Tag verschmelzen - der Ort ist die einzige Absicherung, und
+    er kommt vom Modell, ist also nicht garantiert vorhanden.
+    """
+    host1, host2 = event_host(ev1), event_host(ev2)
+    if not host1 or not host2 or host1 == host2:
+        return True
+    loc1 = extract_tokens(ev1.get("location", ""))
+    loc2 = extract_tokens(ev2.get("location", ""))
+    return bool(loc1 and loc2 and (loc1 & loc2))
 
 
 def _locations_compatible(ev1: dict, ev2: dict) -> bool:
@@ -109,9 +145,19 @@ def _jaccard(a: set, b: set) -> float:
 
 
 def are_events_duplicate(ev1: dict, ev2: dict) -> bool:
+    """Konservativ: nur zusammenfuehren, wenn mehrere unabhaengige Merkmale
+    uebereinstimmen. Ein uebersehenes Duplikat ist sichtbar und harmlos,
+    eine falsche Zusammenfuehrung loescht ein echtes Event."""
+    # 1. Datum muss identisch sein.
     if ev1.get("date_start") != ev2.get("date_start"):
         return False
 
+    # 2. Quellenuebergreifend nur mit belastbarer Ortsangabe.
+    if not _sources_compatible(ev1, ev2):
+        return False
+
+    # 3. Verschiedene Orte trennen. Wichtig bei Dachseiten, die Termine
+    #    mehrerer Friedhoefe unter einer Domain listen.
     if not _locations_compatible(ev1, ev2):
         return False
 
@@ -120,19 +166,31 @@ def are_events_duplicate(ev1: dict, ev2: dict) -> bool:
     if not title1 or not title2:
         return False
 
+    # 4. Identischer normalisierter Titel: Duplikat.
     if title1 == title2:
         return True
 
+    # 5. Verschiedene Veranstaltungsart trennt immer.
     if not _types_compatible(ev1, ev2):
         return False
 
+    # 6. Hohe Zeichenaehnlichkeit UND ueberwiegend gleiche Inhaltswoerter.
     ratio = difflib.SequenceMatcher(None, title1, title2).ratio()
-    if ratio < config.TITLE_RATIO_THRESHOLD:
-        return False
-
     tok1 = extract_tokens(ev1.get("title", ""))
     tok2 = extract_tokens(ev2.get("title", ""))
-    return _jaccard(tok1, tok2) >= config.TOKEN_JACCARD_THRESHOLD
+    if (ratio >= config.TITLE_RATIO_THRESHOLD
+            and _jaccard(tok1, tok2) >= config.TOKEN_JACCARD_THRESHOLD):
+        return True
+
+    # 7. Ein Titel ist vollstaendig im anderen enthalten. Faengt Faelle wie
+    #    "Remembrance Sunday" / "Remembrance Sunday (Erinnerungssonntag)".
+    #    Mindestlaenge verhindert, dass ein generischer Titel wie "Fuehrung"
+    #    jeden laengeren Titel am selben Ort einsammelt.
+    shorter, longer = sorted((title1, title2), key=len)
+    if len(shorter) >= config.SUBSTRING_MIN_LENGTH and shorter in longer:
+        return True
+
+    return False
 
 
 def generate_event_id(event: dict) -> str:

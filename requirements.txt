@@ -6,6 +6,6 @@ beautifulsoup4==4.15.0
 httpx==0.28.1
 pydantic==2.13.4
 
-# Wird in parser.py direkt importiert (urllib3.disable_warnings),
+# Wird in fetcher.py direkt importiert (urllib3.disable_warnings),
 # kam bisher nur transitiv ueber requests mit.
 urllib3==2.7.0

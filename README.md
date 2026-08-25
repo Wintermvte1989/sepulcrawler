@@ -23,9 +23,12 @@ FUNKTIONSUMFANG
 - KI-Extraktion: Strukturierte Event-Erkennung über die Gemini API
   (gemini-3.6-flash) mit automatischer Übersetzung fremdsprachiger
   Quellen ins Deutsche.
-- Deduplizierung & Datenbank: Fuzzy-Matching-Logik (Levenshtein-Distanz
-  & Jaccard-Ähnlichkeit) zur quellübergreifenden Zusammenführung
-  doppelter Termine in events_db.json.
+- Deduplizierung & Datenbank: Fuzzy-Matching-Logik zur quellübergreifenden
+  Zusammenführung doppelter Termine in events_db.json. Verglichen werden
+  Datum, Quell-Domain, Ort, Veranstaltungsart, Zeichenähnlichkeit des Titels
+  (difflib.SequenceMatcher, Ratcliff/Obershelp) und Jaccard-Ähnlichkeit der
+  endungsreduzierten Inhaltswörter. Quellübergreifend wird nur zusammen-
+  geführt, wenn beide Einträge eine überlappende Ortsangabe haben.
 - Frontend-Generierung: Ausgabe einer eigenständigen HTML-Datei mit
   serverseitig generierten Tag-Filtern (Region, Veranstaltungsart,
   Zeitraum) und responsivem Karten-Layout für Mobilgeräte.
@@ -47,6 +50,9 @@ sepulkral-crawler/
 └── .github/
     └── workflows/
         └── crawler.yml # GitHub Actions Workflow
+
+Hinweis: Die frühere monolithische parser.py wurde durch die obigen Module
+ersetzt und kann aus dem Repository gelöscht werden.
 
 
 VORAUSSETZUNGEN & INSTALLATION

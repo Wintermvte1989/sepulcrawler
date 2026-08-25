@@ -49,6 +49,8 @@ def select_within_budget(
 
 
 def extract_events_batch(batch_sources: list[tuple[str, str]], today_str: str) -> list[dict]:
+    # Der Text ist bereits verdichtet und gekappt (fetcher.condense_text),
+    # hier nicht erneut abschneiden.
     combined_text = ""
     for idx, (url, text) in enumerate(batch_sources, start=1):
         combined_text += (
@@ -71,7 +73,13 @@ def extract_events_batch(batch_sources: list[tuple[str, str]], today_str: str) -
     - date_end nur bei mehrtägigen Veranstaltungen (Ausstellungen, Aktionstage) setzen, sonst null.
     - Ignoriere vergangene Veranstaltungen strikt.
     - Trage in 'source_id' die Nummer der QUELLE ein, in deren Block das Event stand.
-    - MEHRSPRACHIGE TEXTE: Falls der Quelltext auf Englisch, Tschechisch oder einer anderen Sprach verfasst ist, übersetze title, location und description präzise ins Deutsche.
+    - MEHRSPRACHIGE TEXTE: Falls der Quelltext auf Englisch, Tschechisch oder einer anderen Sprache verfasst ist, übersetze title, location und description präzise ins Deutsche.
+
+    NICHT erfassen (auch wenn sie am selben Ort stattfinden):
+    - Veranstaltungen ohne jeden Bezug zu Tod, Gedenken, Geschichte oder Archäologie,
+      z. B. Kinderbasteln, Yoga, Flohmärkte, Sprachkurse, Weihnachtsmärkte,
+      Tagungen zu unverbundenen Themen.
+    - Reine Öffnungszeiten, Eintrittspreise oder Dauerangebote ohne Termin.
 
     Webseiten-Daten:
     {combined_text}

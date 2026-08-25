@@ -214,7 +214,12 @@ HTML_OUTPUT_FILE = "index.html"
 
 BATCH_SIZE = 8
 TEXT_LIMIT = 12000
-MIN_TEXT_LENGTH = 350  # Gesenkt von 1500, damit JS-/Kompaktsammlungen nicht rausfliegen
+# Gesenkt von 1500, damit JS-/Kompaktsammlungen nicht rausfliegen. Im
+# bezahlten Tarif ist dieser Filter Kostenschutz, nicht mehr Budgetschutz:
+# jede durchgelassene Seite belegt einen Batch-Platz und kostet Geld.
+# Im Log pruefen, ob die kurzen Seiten tatsaechlich Events liefern
+# (Abschnitt "Quellen ohne Ertrag") - sonst wieder anheben.
+MIN_TEXT_LENGTH = 350
 STALE_AFTER_DAYS = 10
 API_ATTEMPTS = 3
 FETCH_ATTEMPTS = 3
@@ -224,7 +229,19 @@ SNIPPET_BEFORE = 200
 SNIPPET_AFTER = 400
 
 MAX_EVENTS_PER_BATCH = 55
-MAX_HITS_PER_PAGE = 50
+# Obergrenze der Fundstellen aus EINER Seite. Der Wert steuert indirekt die
+# Zahl der Requests: dichtere Seiten belegen mehr der MAX_EVENTS_PER_BATCH
+# und es passen weniger Seiten pro Paket.
+#
+# Gemessen mit 144 Quellen und MAX_REQUESTS_PER_RUN = 40:
+#   20 -> 33 Pakete, 100 % Abdeckung, 1582 Fundstellen
+#   25 -> 34 Pakete, 100 % Abdeckung, 1782 Fundstellen   <- aktuell
+#   32 -> 40 Pakete, 100 % Abdeckung, 2062 Fundstellen (kein Puffer)
+#   50 -> 54 Pakete,  79 % Abdeckung - Quellen werden verschoben
+#
+# Wer hoeher gehen will, muss MAX_REQUESTS_PER_RUN mit anheben; das Limit
+# von 50 Requests pro Lauf gilt inklusive Retries.
+MAX_HITS_PER_PAGE = 25
 MAX_REQUESTS_PER_RUN = 40
 
 BERLIN = ZoneInfo("Europe/Berlin")
@@ -286,6 +303,10 @@ EVENT_TYPES = (
 _TYPE_MIN_SUBSTRING = 6
 TITLE_RATIO_THRESHOLD = 0.88
 TOKEN_JACCARD_THRESHOLD = 0.60
+
+# Ab dieser Titellaenge gilt "ein Titel steckt im anderen" als Duplikat.
+# 12 Zeichen halten generische Titel wie "Fuehrung" (7) draussen.
+SUBSTRING_MIN_LENGTH = 12
 
 REGIONS = (
     ("berlin-brandenburg", (
