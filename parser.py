@@ -253,7 +253,7 @@ SNIPPET_BEFORE = 200
 SNIPPET_AFTER = 400
 
 MAX_EVENTS_PER_BATCH = 55
-MAX_HITS_PER_PAGE = 50  # Erhoeht auf 50 Termine pro Seite
+MAX_HITS_PER_PAGE = 50
 MAX_REQUESTS_PER_RUN = 40
 
 BERLIN = ZoneInfo("Europe/Berlin")
@@ -438,11 +438,9 @@ def _jaccard(a: set, b: set) -> float:
 
 
 def are_events_duplicate(ev1: dict, ev2: dict) -> bool:
-    # Datum muss identisch sein
     if ev1.get("date_start") != ev2.get("date_start"):
         return False
 
-    # Domain-Sperre entfernt, damit quelluebergreifende Duplikate zusammengefuehrt werden.
     if not _locations_compatible(ev1, ev2):
         return False
 
@@ -993,8 +991,7 @@ def render_html(events: list[dict], today: date):
         .container {{ background: var(--bg-container); border-radius: 8px; padding: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); transition: background-color 0.2s; }}
         .timestamp {{ font-size: 0.85em; color: var(--text-muted); margin-bottom: 20px; }}
 
-        .filter-container {{ display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; align-items: center; background: var(--filter-bg); padding: 15px; border-radius: 6px; border: 1px solid var(--filter-border); }}
-        .search-input {{ flex: 1; min-width: 250px; padding: 8px 12px; border: 1px solid var(--input-border); background-color: var(--input-bg); color: var(--text-main); border-radius: 4px; font-size: 0.95em; }}
+        .search-input {{ width: 100%; box-sizing: border-box; padding: 8px 12px; border: 1px solid var(--input-border); background-color: var(--input-bg); color: var(--text-main); border-radius: 4px; font-size: 0.95em; }}
         .filter-tags {{ display: flex; gap: 5px; flex-wrap: wrap; }}
         .tag-btn {{ background: var(--tag-bg); border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 0.85em; color: var(--tag-text); font-weight: 600; transition: all 0.2s; }}
         .tag-btn:hover {{ opacity: 0.85; }}
@@ -1019,6 +1016,47 @@ def render_html(events: list[dict], today: date):
         .badge-laufend {{ background: #8e44ad; color: #fff; padding: 2px 6px; border-radius: 3px; font-size: 0.7em; margin-left: 6px; vertical-align: middle; }}
         .reset-btn {{ background: none; border: 1px solid var(--input-border); color: var(--text-muted); padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 0.85em; }}
         .reset-btn:hover {{ color: var(--text-main); }}
+
+        @media (max-width: 768px) {{
+            body {{ margin: 8px; }}
+            .container {{ padding: 12px; }}
+            h1 {{ font-size: 1.3em; }}
+            .header-bar {{ flex-wrap: wrap; gap: 8px; }}
+            .filter-row {{ padding: 10px; gap: 10px; }}
+
+            /* Mobile-Karten-Layout fuer Tabellen-Zeilen */
+            #eventsTable, #eventsTable tbody, #eventsTable tr, #eventsTable td {{
+                display: block;
+                width: 100%;
+                box-sizing: border-box;
+            }}
+            #eventsTable thead {{
+                display: none;
+            }}
+            #eventsTable tbody tr {{
+                margin-bottom: 12px;
+                border: 1px solid var(--border-color);
+                border-radius: 8px;
+                padding: 12px;
+                background: var(--filter-bg);
+            }}
+            #eventsTable td {{
+                padding: 3px 0;
+                border-bottom: none;
+            }}
+            #eventsTable td:has(.btn) {{
+                margin-top: 6px;
+                padding-top: 6px;
+                border-top: 1px dashed var(--border-color);
+            }}
+            a.btn {{
+                display: block;
+                text-align: center;
+                width: 100%;
+                box-sizing: border-box;
+                padding: 8px 0;
+            }}
+        }}
 </style>
 </head>
 <body>
