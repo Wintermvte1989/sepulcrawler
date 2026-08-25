@@ -1,4 +1,5 @@
 import hashlib
+import html
 import json
 import os
 import re
@@ -153,6 +154,11 @@ def extract_events_batch(batch_sources: list[tuple[str, str]], today_str: str) -
         sid = ev.pop("source_id", None)
         if isinstance(sid, int) and 1 <= sid <= len(batch_sources):
             ev["url"] = batch_sources[sid - 1][0]
+            # Zweites Netz hinter fetcher.html_to_text: falls doch eine
+            # Entity durchkommt, darf sie nicht in die Datenbank gelangen.
+            for field in ("title", "location", "description"):
+                if isinstance(ev.get(field), str):
+                    ev[field] = html.unescape(ev[field]).strip()
             valid.append(ev)
         else:
             print(f"  verworfen (ungueltige source_id={sid}): {ev.get('title')}")

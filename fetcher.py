@@ -1,3 +1,4 @@
+import html
 import ssl
 import time
 import httpx
@@ -80,8 +81,11 @@ def html_to_text(raw_html: str) -> str:
     
     if json_ld_texts:
         extracted_text += " " + " ".join(json_ld_texts)
-        
-    return extracted_text
+
+    # BeautifulSoup dekodiert Entities im HTML-Text, nicht aber im rohen
+    # JSON-LD-Block. Dadurch gelangten "Gr&auml;ber" und "Gräber" parallel
+    # in die Datenbank - fuer die Deduplizierung zwei verschiedene Titel.
+    return html.unescape(extracted_text)
 
 
 def classify_error(exc: Exception) -> str:

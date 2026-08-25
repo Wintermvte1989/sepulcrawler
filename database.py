@@ -1,4 +1,5 @@
 import difflib
+import html as html_mod
 import hashlib
 import json
 import os
@@ -53,7 +54,9 @@ def parse_date(date_str: str) -> str | None:
 def clean_text_for_comparison(text: str) -> str:
     if not text:
         return ""
-    s = str(text).lower()
+    # Entities zuerst aufloesen, sonst gelten "Gr&auml;ber" und "Gräber"
+    # als verschiedene Titel und werden nicht zusammengefuehrt.
+    s = html_mod.unescape(str(text)).lower()
     s = re.sub(r"[–—:,\"`«»„“'()\[\]\-\n\r/|]", " ", s)
     s = re.sub(r"\s+", " ", s).strip()
     return s
@@ -267,10 +270,25 @@ def save_events_db(db: dict):
         raise
 
 
+def normalize_event(event: dict) -> dict:
+    """Repariert Anzeigefelder im Bestand.
+
+    Entities wie "Gr&auml;ber" wuerden im HTML als "Gr&amp;auml;ber"
+    erscheinen, weil html.escape das Ampersand erneut maskiert. Die Funktion
+    ist idempotent und laeuft bei jedem Lauf ueber die ganze Datenbank -
+    damit werden auch Altbestaende ohne Extraskript sauber.
+    """
+    for field in ("title", "location", "description"):
+        value = event.get(field)
+        if isinstance(value, str):
+            event[field] = html_mod.unescape(value).strip()
+    return event
+
+
 def deduplicate_db(db: dict) -> dict:
     by_date = defaultdict(list)
     for event in db.values():
-        by_date[event.get("date_start", "")].append(event)
+        by_date[normalize_event(event).get("date_start", "")].append(event)
 
     merged = []
     for group in by_date.values():
