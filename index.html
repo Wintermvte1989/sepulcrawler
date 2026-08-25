@@ -64,8 +64,7 @@
         .container { background: var(--bg-container); border-radius: 8px; padding: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); transition: background-color 0.2s; }
         .timestamp { font-size: 0.85em; color: var(--text-muted); margin-bottom: 20px; }
 
-        .filter-container { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; align-items: center; background: var(--filter-bg); padding: 15px; border-radius: 6px; border: 1px solid var(--filter-border); }
-        .search-input { flex: 1; min-width: 250px; padding: 8px 12px; border: 1px solid var(--input-border); background-color: var(--input-bg); color: var(--text-main); border-radius: 4px; font-size: 0.95em; }
+        .search-input { width: 100%; box-sizing: border-box; padding: 8px 12px; border: 1px solid var(--input-border); background-color: var(--input-bg); color: var(--text-main); border-radius: 4px; font-size: 0.95em; }
         .filter-tags { display: flex; gap: 5px; flex-wrap: wrap; }
         .tag-btn { background: var(--tag-bg); border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 0.85em; color: var(--tag-text); font-weight: 600; transition: all 0.2s; }
         .tag-btn:hover { opacity: 0.85; }
@@ -90,6 +89,47 @@
         .badge-laufend { background: #8e44ad; color: #fff; padding: 2px 6px; border-radius: 3px; font-size: 0.7em; margin-left: 6px; vertical-align: middle; }
         .reset-btn { background: none; border: 1px solid var(--input-border); color: var(--text-muted); padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 0.85em; }
         .reset-btn:hover { color: var(--text-main); }
+
+        @media (max-width: 768px) {
+            body { margin: 8px; }
+            .container { padding: 12px; }
+            h1 { font-size: 1.3em; }
+            .header-bar { flex-wrap: wrap; gap: 8px; }
+            .filter-row { padding: 10px; gap: 10px; }
+
+            /* Mobile-Karten-Layout fuer Tabellen-Zeilen */
+            #eventsTable, #eventsTable tbody, #eventsTable tr, #eventsTable td {
+                display: block;
+                width: 100%;
+                box-sizing: border-box;
+            }
+            #eventsTable thead {
+                display: none;
+            }
+            #eventsTable tbody tr {
+                margin-bottom: 12px;
+                border: 1px solid var(--border-color);
+                border-radius: 8px;
+                padding: 12px;
+                background: var(--filter-bg);
+            }
+            #eventsTable td {
+                padding: 3px 0;
+                border-bottom: none;
+            }
+            #eventsTable td:has(.btn) {
+                margin-top: 6px;
+                padding-top: 6px;
+                border-top: 1px dashed var(--border-color);
+            }
+            a.btn {
+                display: block;
+                text-align: center;
+                width: 100%;
+                box-sizing: border-box;
+                padding: 8px 0;
+            }
+        }
 </style>
 </head>
 <body>
@@ -101,8 +141,8 @@
                 <span id="themeLabel">Dunkel</span>
             </button>
         </div>
-        <div class="timestamp">Stand: 25.08.2026 um 13:27 Uhr &nbsp;|&nbsp;
-            <span id="visibleCount">155</span> von 155 Terminen</div>
+        <div class="timestamp">Stand: 25.08.2026 um 15:01 Uhr &nbsp;|&nbsp;
+            <span id="visibleCount">156</span> von 156 Terminen</div>
 
         <div class="filter-row">
             <input type="text" id="searchInput" class="search-input"
@@ -123,13 +163,13 @@
                 <span class="filter-group-label">Region</span>
                 <div class="filter-tags">
                 <button class="tag-btn active" data-group="region" data-value="" onclick="setFilter(this)">Alle</button>
-                <button class="tag-btn" data-group="region" data-value="berlin-brandenburg" onclick="setFilter(this)">Berlin &amp; Brandenburg <span style="opacity:.6">50</span></button>
-                <button class="tag-btn" data-group="region" data-value="nord" onclick="setFilter(this)">Norden <span style="opacity:.6">30</span></button>
-                <button class="tag-btn" data-group="region" data-value="west" onclick="setFilter(this)">Westen <span style="opacity:.6">29</span></button>
-                <button class="tag-btn" data-group="region" data-value="ost" onclick="setFilter(this)">Osten <span style="opacity:.6">26</span></button>
+                <button class="tag-btn" data-group="region" data-value="berlin-brandenburg" onclick="setFilter(this)">Berlin &amp; Brandenburg <span style="opacity:.6">51</span></button>
+                <button class="tag-btn" data-group="region" data-value="west" onclick="setFilter(this)">Westen <span style="opacity:.6">30</span></button>
+                <button class="tag-btn" data-group="region" data-value="ost" onclick="setFilter(this)">Osten <span style="opacity:.6">27</span></button>
+                <button class="tag-btn" data-group="region" data-value="nord" onclick="setFilter(this)">Norden <span style="opacity:.6">26</span></button>
+                <button class="tag-btn" data-group="region" data-value="sued" onclick="setFilter(this)">S&uuml;den <span style="opacity:.6">8</span></button>
                 <button class="tag-btn" data-group="region" data-value="online" onclick="setFilter(this)">Online <span style="opacity:.6">7</span></button>
                 <button class="tag-btn" data-group="region" data-value="ausland" onclick="setFilter(this)">AT / CH / CZ <span style="opacity:.6">6</span></button>
-                <button class="tag-btn" data-group="region" data-value="sued" onclick="setFilter(this)">S&uuml;den <span style="opacity:.6">6</span></button>
                 <button class="tag-btn" data-group="region" data-value="sonstige" onclick="setFilter(this)">Sonstige <span style="opacity:.6">1</span></button>
                 </div>
             </div>
@@ -138,14 +178,14 @@
                 <span class="filter-group-label">Art</span>
                 <div class="filter-tags">
                 <button class="tag-btn active" data-group="art" data-value="" onclick="setFilter(this)">Alle</button>
-                <button class="tag-btn" data-group="art" data-value="fuehrung" onclick="setFilter(this)">F&uuml;hrungen <span style="opacity:.6">85</span></button>
-                <button class="tag-btn" data-group="art" data-value="konzert" onclick="setFilter(this)">Konzerte &amp; Musik <span style="opacity:.6">13</span></button>
-                <button class="tag-btn" data-group="art" data-value="workshop" onclick="setFilter(this)">Kurse &amp; Workshops <span style="opacity:.6">12</span></button>
+                <button class="tag-btn" data-group="art" data-value="fuehrung" onclick="setFilter(this)">F&uuml;hrungen <span style="opacity:.6">87</span></button>
                 <button class="tag-btn" data-group="art" data-value="aktionstag" onclick="setFilter(this)">Aktionstage <span style="opacity:.6">11</span></button>
+                <button class="tag-btn" data-group="art" data-value="konzert" onclick="setFilter(this)">Konzerte &amp; Musik <span style="opacity:.6">11</span></button>
+                <button class="tag-btn" data-group="art" data-value="workshop" onclick="setFilter(this)">Kurse &amp; Workshops <span style="opacity:.6">11</span></button>
                 <button class="tag-btn" data-group="art" data-value="gottesdienst" onclick="setFilter(this)">Gedenken <span style="opacity:.6">10</span></button>
-                <button class="tag-btn" data-group="art" data-value="ausstellung" onclick="setFilter(this)">Ausstellungen <span style="opacity:.6">8</span></button>
+                <button class="tag-btn" data-group="art" data-value="ausstellung" onclick="setFilter(this)">Ausstellungen <span style="opacity:.6">9</span></button>
                 <button class="tag-btn" data-group="art" data-value="vortrag" onclick="setFilter(this)">Vortr&auml;ge <span style="opacity:.6">6</span></button>
-                <button class="tag-btn" data-group="art" data-value="sonstige" onclick="setFilter(this)">Sonstige <span style="opacity:.6">4</span></button>
+                <button class="tag-btn" data-group="art" data-value="sonstige" onclick="setFilter(this)">Sonstige <span style="opacity:.6">5</span></button>
                 <button class="tag-btn" data-group="art" data-value="lesung" onclick="setFilter(this)">Lesungen <span style="opacity:.6">3</span></button>
                 <button class="tag-btn" data-group="art" data-value="begleitung" onclick="setFilter(this)">Trauer &amp; Begleitung <span style="opacity:.6">2</span></button>
                 <button class="tag-btn" data-group="art" data-value="film" onclick="setFilter(this)">Film <span style="opacity:.6">1</span></button>
@@ -195,6 +235,22 @@
                     <td><a href="https://stpetridom.de/der-dom/besucher-info/bleikeller/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
+                <tr data-tags="region-nord art-ausstellung laufend" data-start="2026-07-23" data-end="2026-12-23">
+                    <td><span class="date-badge">2026-07-23</span><span class="date-end">bis 2026-12-23</span></td>
+                    <td><strong>Der Bleikeller – Mumien und Vergänglichkeit</strong><span class="badge-laufend">l&auml;uft</span><span class="badge-new">neu</span></td>
+                    <td class="location">St. Petri Dom Bremen</td>
+                    <td>Ausstellung von acht historischen Mumien sowie Kunstwerken, die sich mit der Vergänglichkeit und der Endlichkeit des menschlichen Lebens befassen.</td>
+                    <td><a href="https://stpetridom.de/der-dom/besucher-info/bleikeller/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
+                </tr>
+
+                <tr data-tags="region-ost art-fuehrung laufend" data-start="2026-08-09" data-end="2026-10-31">
+                    <td><span class="date-badge">2026-08-09</span><span class="date-end">bis 2026-10-31</span></td>
+                    <td><strong>Führung über die Friedhöfe vor dem Halleschen Tor</strong><span class="badge-laufend">l&auml;uft</span><span class="badge-new">neu</span></td>
+                    <td class="location">Friedhöfe am Halleschen Tor</td>
+                    <td>Führung über die Friedhöfe am Halleschen Tor mit Norbert Haag.</td>
+                    <td><a href="https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
+                </tr>
+
                 <tr data-tags="region-ausland art-ausstellung laufend" data-start="2026-08-24" data-end="2026-11-30">
                     <td><span class="date-badge">2026-08-24</span><span class="date-end">bis 2026-11-30</span></td>
                     <td><strong>Ausstellung «Auf immer und ewig» auf dem Wolfgottesacker</strong><span class="badge-laufend">l&auml;uft</span></td>
@@ -222,7 +278,7 @@
                 <tr data-tags="region-ausland art-ausstellung laufend" data-start="2026-08-25" data-end="2026-11-30">
                     <td><span class="date-badge">2026-08-25</span><span class="date-end">bis 2026-11-30</span></td>
                     <td><strong>Ausstellung «Auf immer und ewig»</strong><span class="badge-laufend">l&auml;uft</span><span class="badge-new">neu</span></td>
-                    <td class="location">Wolfgottesacker, Basel</td>
+                    <td class="location">Friedhof Wolfgottesacker, Basel</td>
                     <td>Mehrmonatige Ausstellung auf dem Friedhof Wolfgottesacker rund um Fragen von Erinnerung, Vergänglichkeit und Friedhofskultur.</td>
                     <td><a href="https://www.stadtgaertnerei.bs.ch/friedhoefe/veranstaltungen.html" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
@@ -231,7 +287,7 @@
                     <td><span class="date-badge">2026-08-26</span></td>
                     <td><strong>Führung über den Alten St.-Matthäus-Friedhof</strong></td>
                     <td class="location">Haupteingang des Alten St.-Matthäus-Friedhofs, Berlin</td>
-                    <td>Regelmäßige Friedhofsführung über den Alten St.-Matthäus-Friedhof mit Ralf Illauer.</td>
+                    <td>Führung über den Alten St.-Matthäus-Friedhof im Rahmen der Mittwochstermine mit Ralf Illauer.</td>
                     <td><a href="https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
@@ -255,7 +311,7 @@
                     <td><span class="date-badge">2026-08-26</span></td>
                     <td><strong>Aufwind an KapelleDREI - Hamburgs Chor für trauernde Menschen</strong></td>
                     <td class="location">KapelleDREI, Parkfriedhof Ohlsdorf, Hamburg</td>
-                    <td>Ein musikalisches Angebot für trauernde Menschen sowie Personen mit biologischen oder sonstigen Verlusterfahrungen.</td>
+                    <td>Ein musikalisches Angebot für trauernde Menschen, die mit Verlusten durch Todesfälle, Krankheit oder biographische Brüche umgehen.</td>
                     <td><a href="https://www.ohlsdorf-derpark.de/termine-ohlsdorf/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
@@ -291,14 +347,6 @@
                     <td><a href="https://www.kiel.de/de/umwelt_verkehr/friedhoefe/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
-                <tr data-tags="region-nord art-konzert" data-start="2026-08-26" data-end="">
-                    <td><span class="date-badge">2026-08-26</span></td>
-                    <td><strong>Aufwind an KapelleDREI - Hamburgs Chor für trauernde Menschen</strong><span class="badge-new">neu</span></td>
-                    <td class="location">KapelleDREI, Parkfriedhof Ohlsdorf</td>
-                    <td>Ein Chorangebot für trauernde Menschen sowie Personen mit Verlusterfahrungen durch biographische Brüche oder Krankheit.</td>
-                    <td><a href="https://www.friedhof-hamburg.de/besucher/veranstaltungen/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
-                </tr>
-
                 <tr data-tags="region-nord art-begleitung" data-start="2026-08-27" data-end="">
                     <td><span class="date-badge">2026-08-27</span></td>
                     <td><strong>KapelleDREI: Netzwerk Trauerkultur lädt ein zum moderierten Austausch</strong></td>
@@ -309,10 +357,10 @@
 
                 <tr data-tags="region-nord art-begleitung" data-start="2026-08-27" data-end="">
                     <td><span class="date-badge">2026-08-27</span></td>
-                    <td><strong>KapelleDREI: Netzwerk Trauerkultur lädt ein zum moderierten Austausch</strong><span class="badge-new">neu</span></td>
+                    <td><strong>Netzwerk Trauerkultur: Moderierter Austausch zu Verlusten</strong><span class="badge-new">neu</span></td>
                     <td class="location">KapelleDREI, Parkfriedhof Ohlsdorf</td>
-                    <td>Ein moderierter Austausch im Rahmen des Netzwerks Trauerkultur zu persönlichen Verlusterfahrungen.</td>
-                    <td><a href="https://www.friedhof-hamburg.de/besucher/veranstaltungen/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
+                    <td>Das Netzwerk Trauerkultur lädt zu einem moderierten Gesprächskreis über den persönlichen Umgang mit Verlusten ein.</td>
+                    <td><a href="https://www.ohlsdorf-derpark.de/termine-ohlsdorf/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
                 <tr data-tags="region-berlin-brandenburg art-sonstige" data-start="2026-08-28" data-end="">
@@ -371,14 +419,6 @@
                     <td><a href="https://www.friedhof-hamburg.de/besucher/veranstaltungen/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
-                <tr data-tags="region-nord art-workshop" data-start="2026-08-29" data-end="">
-                    <td><span class="date-badge">2026-08-29</span></td>
-                    <td><strong>Workshop &#x27;Auszeit im Grünen&#x27;</strong><span class="badge-new">neu</span></td>
-                    <td class="location">KapelleDREI, Parkfriedhof Ohlsdorf</td>
-                    <td>Workshop für Achtsamkeit und Bewegung auf dem Friedhof Ohlsdorf.</td>
-                    <td><a href="https://www.ohlsdorf-derpark.de/termine-ohlsdorf/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
-                </tr>
-
                 <tr data-tags="region-berlin-brandenburg art-fuehrung" data-start="2026-08-30" data-end="">
                     <td><span class="date-badge">2026-08-30</span></td>
                     <td><strong>Rundgang über den Friedhof Heerstraße</strong></td>
@@ -393,14 +433,6 @@
                     <td class="location">Garten der Frauen, Parkfriedhof Ohlsdorf, Hamburg</td>
                     <td>Thematische Führung zu den Grab- und Gedenkstätten bedeutender Frauen auf dem Ohlsdorfer Friedhof.</td>
                     <td><a href="https://www.friedhof-hamburg.de/besucher/veranstaltungen/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
-                </tr>
-
-                <tr data-tags="region-nord art-fuehrung" data-start="2026-08-30" data-end="">
-                    <td><span class="date-badge">2026-08-30</span></td>
-                    <td><strong>Garten der Frauen - Sonntagsführungen</strong><span class="badge-new">neu</span></td>
-                    <td class="location">Garten der Frauen, Parkfriedhof Ohlsdorf</td>
-                    <td>Führung zu historischen Frauenpersönlichkeiten und Grabstätten im Garten der Frauen.</td>
-                    <td><a href="https://www.ohlsdorf-derpark.de/termine-ohlsdorf/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
                 <tr data-tags="region-nord art-fuehrung" data-start="2026-08-30" data-end="">
@@ -423,7 +455,7 @@
                     <td><span class="date-badge">2026-09-02</span></td>
                     <td><strong>Aufwind an KapelleDREI - Hamburgs Chor für trauernde Menschen</strong></td>
                     <td class="location">KapelleDREI, Parkfriedhof Ohlsdorf, Hamburg</td>
-                    <td>Chorangebot für trauernde Menschen und Personen mit Verlusterfahrungen.</td>
+                    <td>Chorangebot für trauernde Menschen sowie Personen mit biographischen Bründen, Krankheiten oder anderen Verlusterfahrungen.</td>
                     <td><a href="https://www.friedhof-hamburg.de/besucher/veranstaltungen/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
@@ -431,16 +463,8 @@
                     <td><span class="date-badge">2026-09-04</span></td>
                     <td><strong>Führung: Engel im grünen Paradies</strong></td>
                     <td class="location">Parkfriedhof Ohlsdorf, Hamburg</td>
-                    <td>Führung zu Engelsdarstellungen und besonderer Grabkunst auf dem Ohlsdorfer Parkfriedhof.</td>
+                    <td>Rundgang zu den Engelsfiguren und historischen Grabdenkmälern auf dem Parkfriedhof Ohlsdorf.</td>
                     <td><a href="https://www.friedhof-hamburg.de/besucher/veranstaltungen/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
-                </tr>
-
-                <tr data-tags="region-nord art-fuehrung" data-start="2026-09-04" data-end="">
-                    <td><span class="date-badge">2026-09-04</span></td>
-                    <td><strong>Führung: Engel im grünen Paradies</strong><span class="badge-new">neu</span></td>
-                    <td class="location">Parkfriedhof Ohlsdorf</td>
-                    <td>Rundgang zu den Engelsdarstellungen und der Grabkunst auf dem Parkfriedhof Ohlsdorf.</td>
-                    <td><a href="https://www.ohlsdorf-derpark.de/termine-ohlsdorf/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
                 <tr data-tags="region-berlin-brandenburg art-konzert" data-start="2026-09-05" data-end="">
@@ -479,24 +503,16 @@
                     <td><span class="date-badge">2026-09-05</span></td>
                     <td><strong>Tage der Industriekultur: Frankfurter Hauptfriedhof – Auf den Spuren berühmter Köpfe aus Industrie, Politik und Wirtschaft</strong><span class="badge-new">neu</span></td>
                     <td class="location">Hauptfriedhof, Frankfurt am Main</td>
-                    <td>Führung über den Frankfurter Hauptfriedhof auf den Spuren bedeutender Persönlichkeiten im Rahmen der Tage der Industriekultur.</td>
+                    <td>Führung über den Frankfurter Hauptfriedhof auf den Spuren bedeutender Persönlichkeiten aus Industrie, Politik und Wirtschaft im Rahmen der Tage der Industriekultur.</td>
                     <td><a href="https://www.krfrm.de/venue/hauptfriedhof-frankfurt-am-main/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
                 <tr data-tags="region-west art-fuehrung" data-start="2026-09-05" data-end="">
                     <td><span class="date-badge">2026-09-05</span></td>
                     <td><strong>Hauptfriedhof Frankfurt – Gräber erzählen Geschichte</strong><span class="badge-new">neu</span></td>
-                    <td class="location">Hauptfriedhof, Frankfurt am Main</td>
+                    <td class="location">Hauptfriedhof Frankfurt, Haupteingang (Neues Portal), Eckenheimer Landstraße 194, Frankfurt am Main</td>
                     <td>Führung über den Frankfurter Hauptfriedhof, bei der imposante Grabstätten, Mausoleen und die Lebensgeschichten bedeutender Frankfurter Persönlichkeiten vorgestellt werden.</td>
                     <td><a href="https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
-                </tr>
-
-                <tr data-tags="region-berlin-brandenburg art-konzert" data-start="2026-09-05" data-end="">
-                    <td><span class="date-badge">2026-09-05</span></td>
-                    <td><strong>Lebendige Kunst am stillen Ort – Kultur auf dem Südwestkirchhof</strong><span class="badge-new">neu</span></td>
-                    <td class="location">Südwestkirchhof Stahnsdorf</td>
-                    <td>Ein Spätsommer-Nachmittag voller Musik, Performance, Kunst und Poesie auf dem Südwestkirchhof.</td>
-                    <td><a href="https://www.suedwestkirchhof.de/veranstaltungen.html" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
                 <tr data-tags="region-berlin-brandenburg art-konzert" data-start="2026-09-05" data-end="">
@@ -517,7 +533,7 @@
 
                 <tr data-tags="region-berlin-brandenburg art-konzert" data-start="2026-09-06" data-end="">
                     <td><span class="date-badge">2026-09-06</span></td>
-                    <td><strong>Abendempfindung - Konzert zum Trost in Trauer mit dem Ensemble &quot;Die Goldvögel&quot;</strong></td>
+                    <td><strong>Abendempfindung - Konzert zum Trost in Trauer mit dem Ensemble “Die Goldvögel”</strong></td>
                     <td class="location">Friedhofskapelle Friedrichswerderscher Friedhof, Berlin</td>
                     <td>Konzert in der Friedhofskapelle mit französischen Chansons, konzipiert als Trost in der Trauer.</td>
                     <td><a href="https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
@@ -527,7 +543,7 @@
                     <td><span class="date-badge">2026-09-06</span></td>
                     <td><strong>Führung zu Grabstätten von Frauen im Widerstand in der NS-Zeit</strong></td>
                     <td class="location">Jüdischer Friedhof Berlin-Weißensee</td>
-                    <td>Öffentlicher Rundgang zu den Grabstätten von Widerstandskämpferinnen während der NS-Zeit auf dem Jüdischen Friedhof Berlin-Weißensee.</td>
+                    <td>Führung von Dr. Monika Wittig über den Jüdischen Friedhof Weißensee zu den Grabstätten von Frauen, die in der NS-Zeit Widerstand leisteten.</td>
                     <td><a href="https://jewish-cemetery-weissensee.org/entdecken/fuehrungen/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
@@ -571,11 +587,19 @@
                     <td><a href="https://www.stattreisen-muenchen.de/fuehrungen/der-alte-sudliche-friedhof" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
+                <tr data-tags="region-sued art-fuehrung" data-start="2026-09-06" data-end="">
+                    <td><span class="date-badge">2026-09-06</span></td>
+                    <td><strong>Führung: Der Alte Südliche Friedhof</strong><span class="badge-new">neu</span></td>
+                    <td class="location">Alter Südlicher Friedhof, München</td>
+                    <td>Historischer Rundgang über Münchens ehemaligen Zentralfriedhof zur vergangen Begräbniskultur und bedeutenden Grabmälern.</td>
+                    <td><a href="https://www.stattreisen-muenchen.de/fuehrungen/der-alte-sudliche-friedhof" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
+                </tr>
+
                 <tr data-tags="region-berlin-brandenburg art-fuehrung" data-start="2026-09-09" data-end="">
                     <td><span class="date-badge">2026-09-09</span></td>
                     <td><strong>Führung über den Alten St.-Matthäus-Friedhof</strong></td>
                     <td class="location">Haupteingang des Alten St.-Matthäus-Friedhofs, Berlin</td>
-                    <td>Mittwochstermin und Führung über den Alten St.-Matthäus-Friedhof mit Ralf Illauer.</td>
+                    <td>Führung über den Alten St.-Matthäus-Friedhof im Rahmen der Mittwochstermine mit Ralf Illauer.</td>
                     <td><a href="https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
@@ -583,7 +607,7 @@
                     <td><span class="date-badge">2026-09-09</span></td>
                     <td><strong>Aufwind an KapelleDREI - Hamburgs Chor für trauernde Menschen</strong><span class="badge-new">neu</span></td>
                     <td class="location">KapelleDREI, Parkfriedhof Ohlsdorf</td>
-                    <td>Chorangebot für trauernde Menschen zur gemeinsamen Trauerbewältigung durch Musik.</td>
+                    <td>Chorangebot für trauernde Menschen sowie Personen mit biographischen Bründen, Krankheiten oder anderen Verlusterfahrungen.</td>
                     <td><a href="https://www.friedhof-hamburg.de/besucher/veranstaltungen/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
@@ -597,9 +621,9 @@
 
                 <tr data-tags="region-nord art-fuehrung" data-start="2026-09-10" data-end="">
                     <td><span class="date-badge">2026-09-10</span></td>
-                    <td><strong>Ohlsdorfer Busrundfahrten</strong><span class="badge-new">neu</span></td>
+                    <td><strong>Ohlsdorfer Busrundfahrt</strong><span class="badge-new">neu</span></td>
                     <td class="location">Parkfriedhof Ohlsdorf</td>
-                    <td>Busrundfahrt über den größten Parkfriedhof der Welt zur Präsentation der verschiedenen Grabstätten-Angebote.</td>
+                    <td>Informationsfahrt per Bus über den Parkfriedhof Ohlsdorf zur Erkundung des vielfältigen Grabstätten-Angebots.</td>
                     <td><a href="https://www.ohlsdorf-derpark.de/termine-ohlsdorf/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
@@ -670,7 +694,7 @@
                 <tr data-tags="region-west art-fuehrung" data-start="2026-09-13" data-end="">
                     <td><span class="date-badge">2026-09-13</span></td>
                     <td><strong>Hauptfriedhof Frankfurt – Gräber erzählen Geschichte</strong><span class="badge-new">neu</span></td>
-                    <td class="location">Hauptfriedhof, Frankfurt am Main</td>
+                    <td class="location">Hauptfriedhof Frankfurt, Haupteingang (Neues Portal), Eckenheimer Landstraße 194, Frankfurt am Main</td>
                     <td>Führung über den Frankfurter Hauptfriedhof, bei der imposante Grabstätten, Mausoleen und die Lebensgeschichten bedeutender Frankfurter Persönlichkeiten vorgestellt werden.</td>
                     <td><a href="https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
@@ -707,14 +731,6 @@
                     <td><a href="https://www.friedhof-hamburg.de/besucher/veranstaltungen/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
-                <tr data-tags="region-nord art-fuehrung" data-start="2026-09-13" data-end="">
-                    <td><span class="date-badge">2026-09-13</span></td>
-                    <td><strong>Garten der Frauen - Sonntagsführung</strong><span class="badge-new">neu</span></td>
-                    <td class="location">Garten der Frauen, Parkfriedhof Ohlsdorf</td>
-                    <td>Themenbezogene Rundführung durch den Garten der Frauen.</td>
-                    <td><a href="https://www.friedhof-hamburg.de/besucher/veranstaltungen/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
-                </tr>
-
                 <tr data-tags="region-berlin-brandenburg art-aktionstag" data-start="2026-09-13" data-end="">
                     <td><span class="date-badge">2026-09-13</span></td>
                     <td><strong>Tag des Friedhofs</strong><span class="badge-new">neu</span></td>
@@ -737,6 +753,14 @@
                     <td class="location">Evangelischer Domfriedhof Liesenstraße, Berlin</td>
                     <td>Ein Aktionstag rund um die Friedhofs- und Bestattungskultur mit Führungen zu Opfer- und Ehrengräbern, Vorträgen zu Bestattungsvorsorge und Hospizarbeit sowie kulturellem Programm.</td>
                     <td><a href="https://www.meinkiez-meinfriedhof.berlin.de/tag-des-friedhofs" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
+                </tr>
+
+                <tr data-tags="region-west art-sonstige" data-start="2026-09-13" data-end="">
+                    <td><span class="date-badge">2026-09-13</span></td>
+                    <td><strong>GartenRheinMain: Hauptfriedhof Frankfurt am Main</strong><span class="badge-new">neu</span></td>
+                    <td class="location">Hauptfriedhof, Frankfurt am Main</td>
+                    <td>Veranstaltung auf dem Frankfurter Hauptfriedhof im Rahmen des Projekts GartenRheinMain zur Erkundung der denkmalgeschützten Friedhofs- und Parkanlage.</td>
+                    <td><a href="https://www.krfrm.de/venue/hauptfriedhof-frankfurt-am-main/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
                 <tr data-tags="region-ost art-vortrag" data-start="2026-09-15" data-end="">
@@ -767,7 +791,7 @@
                     <td><span class="date-badge">2026-09-18</span><span class="date-end">bis 2027-08-29</span></td>
                     <td><strong>STONEHENGE. Uralte Geheimnisse, neue Entdeckungen</strong><span class="badge-laufend">l&auml;uft</span><span class="badge-new">neu</span></td>
                     <td class="location">Archäologische Staatssammlung München</td>
-                    <td>Sonderausstellung über Stonehenge, eine der bedeutendsten prähistorischen Kult- und Begräbnisstätten.</td>
+                    <td>Sonderausstellung über die prähistorische Kult- und Begräbnisstätte Stonehenge sowie neue archäologische Erkenntnisse.</td>
                     <td><a href="https://www.archaeologie-bayern.de/de/termine/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
@@ -783,7 +807,7 @@
                     <td><span class="date-badge">2026-09-19</span><span class="date-end">bis 2026-09-20</span></td>
                     <td><strong>Tag des Friedhofs</strong><span class="badge-laufend">l&auml;uft</span><span class="badge-new">neu</span></td>
                     <td class="location">Striesener Friedhof, Dresden</td>
-                    <td>Aktionstage im Rahmen des bundesweiten Tags des Friedhofs mit verschiedenen Einblicken und Angeboten auf dem Striesener Friedhof.</td>
+                    <td>Aktionstag auf dem Striesener Friedhof mit verschiedenen Veranstaltungen und Informationsangeboten rund um die Friedhofs- und Bestattungskultur.</td>
                     <td><a href="https://striesener-friedhof-dresden.de/vorschau-veranstaltungen/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
@@ -815,7 +839,7 @@
                     <td><span class="date-badge">2026-09-20</span></td>
                     <td><strong>Tag des Friedhofs</strong></td>
                     <td class="location">Südfriedhof, Halle (Saale)</td>
-                    <td>Aktionstag rund um Friedhofskultur und Erinnerung, gestaltet vom Verein für Friedhofskultur.</td>
+                    <td>Sonderveranstaltung zum Tag des Friedhofs auf dem Südfriedhof Halle, gestaltet vom Verein für Friedhofskultur.</td>
                     <td><a href="http://www.friedhofskultur-halle.de/terminefuehrungen/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
@@ -831,7 +855,7 @@
                     <td><span class="date-badge">2026-09-23</span></td>
                     <td><strong>Führung über den Alten St.-Matthäus-Friedhof</strong></td>
                     <td class="location">Haupteingang des Alten St.-Matthäus-Friedhofs, Berlin</td>
-                    <td>Mittwochstermin und Führung über den Alten St.-Matthäus-Friedhof mit Ralf Illauer.</td>
+                    <td>Führung über den Alten St.-Matthäus-Friedhof im Rahmen der Mittwochstermine mit Ralf Illauer.</td>
                     <td><a href="https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
@@ -847,14 +871,14 @@
                     <td><span class="date-badge">2026-09-24</span></td>
                     <td><strong>Bilderbuch-Lesung und Workshop „Die unglaublich alte Katze“</strong></td>
                     <td class="location">Museum für Sepulkralkultur, Kassel</td>
-                    <td>Illustratorin Nele Palmtag liest aus ihrem Bilderbuch und veranstaltet im Anschluss einen Workshop zum Basteln von Wunsch-Haustieren.</td>
+                    <td>Illustratorin Nele Palmtag erzählt die Geschichte einer alten Katze mit verschiedenen Leben und bastelt anschließend mit den Teilnehmern.</td>
                     <td><a href="https://www.sepulkralmuseum.de/veranstaltungen/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
                 <tr data-tags="region-west art-fuehrung" data-start="2026-09-26" data-end="">
                     <td><span class="date-badge">2026-09-26</span></td>
                     <td><strong>Hauptfriedhof Frankfurt – Gräber erzählen Geschichte</strong><span class="badge-new">neu</span></td>
-                    <td class="location">Hauptfriedhof, Frankfurt am Main</td>
+                    <td class="location">Hauptfriedhof Frankfurt, Haupteingang (Neues Portal), Eckenheimer Landstraße 194, Frankfurt am Main</td>
                     <td>Führung über den Frankfurter Hauptfriedhof, bei der imposante Grabstätten, Mausoleen und die Lebensgeschichten bedeutender Frankfurter Persönlichkeiten vorgestellt werden.</td>
                     <td><a href="https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
@@ -873,14 +897,6 @@
                     <td class="location">James-Simon-Galerie, Museumsinsel Berlin, Neues Museum</td>
                     <td>Vortrag und Podiumsdiskussion über die königlichen Grabschätze und Funde Ägyptens von der Entdeckung der Königin Hetepheres bis hin zu Tutanchamun.</td>
                     <td><a href="https://www.smb.museum/museen-einrichtungen/aegyptisches-museum-und-papyrussammlung/veranstaltungen/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
-                </tr>
-
-                <tr data-tags="region-berlin-brandenburg art-fuehrung" data-start="2026-09-27" data-end="">
-                    <td><span class="date-badge">2026-09-27</span></td>
-                    <td><strong>Sonderführung - Der Baum als Freund und Begleiter im Lebensraum Friedhof</strong><span class="badge-new">neu</span></td>
-                    <td class="location">Südwestkirchhof Stahnsdorf</td>
-                    <td>Themenführung über die Bedeutung von Bäumen als Natur- und Symbolraum auf dem Friedhof.</td>
-                    <td><a href="https://www.suedwestkirchhof.de/veranstaltungen.html" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
                 <tr data-tags="region-west art-fuehrung" data-start="2026-09-30" data-end="">
@@ -927,7 +943,15 @@
                     <td><span class="date-badge">2026-10-03</span></td>
                     <td><strong>Friedhofsführung mit Olaf Ihlefeldt</strong><span class="badge-new">neu</span></td>
                     <td class="location">Südwestkirchhof Stahnsdorf</td>
-                    <td>Historische Führung über den Südwestkirchhof Stahnsdorf.</td>
+                    <td>Friedhofsführung über das Gelände des Südwestkirchhofs Stahnsdorf unter Leitung von Olaf Ihlefeldt.</td>
+                    <td><a href="https://www.suedwestkirchhof.de/veranstaltungen.html" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
+                </tr>
+
+                <tr data-tags="region-berlin-brandenburg art-fuehrung" data-start="2026-10-03" data-end="">
+                    <td><span class="date-badge">2026-10-03</span></td>
+                    <td><strong>Friedhofsführung</strong><span class="badge-new">neu</span></td>
+                    <td class="location">Südwestkirchhof Stahnsdorf</td>
+                    <td>Geführter Rundgang über den historischen Südwestkirchhof Stahnsdorf.</td>
                     <td><a href="https://www.suedwestkirchhof.de/veranstaltungen.html" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
@@ -935,7 +959,7 @@
                     <td><span class="date-badge">2026-10-04</span></td>
                     <td><strong>Kurzführung und Modellierworkshop mit Rana Matloub</strong></td>
                     <td class="location">Museum für Sepulkralkultur, Kassel</td>
-                    <td>Finissage der Ausstellung „Grabe keine Löcher neben die Gräber“ mit Führung und praktischem Modellierworkshop mit der Künstlerin.</td>
+                    <td>Veranstaltung am letzten Tag der Ausstellung „Grabe keine Löcher neben die Gräber“ mit Kurzführung der Künstlerin und anschließendem Workshop.</td>
                     <td><a href="https://www.sepulkralmuseum.de/veranstaltungen/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
@@ -950,7 +974,7 @@
                 <tr data-tags="region-west art-fuehrung" data-start="2026-10-04" data-end="">
                     <td><span class="date-badge">2026-10-04</span></td>
                     <td><strong>Hauptfriedhof Frankfurt – Gräber erzählen Geschichte</strong><span class="badge-new">neu</span></td>
-                    <td class="location">Hauptfriedhof, Frankfurt am Main</td>
+                    <td class="location">Hauptfriedhof Frankfurt, Haupteingang (Neues Portal), Eckenheimer Landstraße 194, Frankfurt am Main</td>
                     <td>Führung über den Frankfurter Hauptfriedhof, bei der imposante Grabstätten, Mausoleen und die Lebensgeschichten bedeutender Frankfurter Persönlichkeiten vorgestellt werden.</td>
                     <td><a href="https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
@@ -971,11 +995,19 @@
                     <td><a href="https://www.stattreisen-muenchen.de/fuehrungen/der-alte-sudliche-friedhof" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
+                <tr data-tags="region-sued art-fuehrung" data-start="2026-10-04" data-end="">
+                    <td><span class="date-badge">2026-10-04</span></td>
+                    <td><strong>Führung: Der Alte Südliche Friedhof</strong><span class="badge-new">neu</span></td>
+                    <td class="location">Alter Südlicher Friedhof, München</td>
+                    <td>Historischer Rundgang über Münchens ehemaligen Zentralfriedhof zur vergangen Begräbniskultur und bedeutenden Grabmälern.</td>
+                    <td><a href="https://www.stattreisen-muenchen.de/fuehrungen/der-alte-sudliche-friedhof" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
+                </tr>
+
                 <tr data-tags="region-berlin-brandenburg art-fuehrung" data-start="2026-10-07" data-end="">
                     <td><span class="date-badge">2026-10-07</span></td>
                     <td><strong>Führung über den Alten St.-Matthäus-Friedhof</strong></td>
                     <td class="location">Haupteingang des Alten St.-Matthäus-Friedhofs, Berlin</td>
-                    <td>Mittwochstermin und Führung über den Alten St.-Matthäus-Friedhof mit Ralf Illauer.</td>
+                    <td>Führung über den Alten St.-Matthäus-Friedhof im Rahmen der Mittwochstermine mit Ralf Illauer.</td>
                     <td><a href="https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
@@ -983,7 +1015,7 @@
                     <td><span class="date-badge">2026-10-07</span></td>
                     <td><strong>Redner-Workshop: Zweisprachige Trauerfeiern</strong></td>
                     <td class="location">Online</td>
-                    <td>Ein Praxisseminar für Trauerredner zur professionellen und feinfühligen Gestaltung zweisprachiger Trauerfeiern.</td>
+                    <td>Online-Workshop für Trauerrednerinnen und Trauerredner zur Konzeption und Durchführung zweisprachiger Trauerfeiern.</td>
                     <td><a href="https://aufdasleben.de/event/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
@@ -999,7 +1031,7 @@
                     <td><span class="date-badge">2026-10-10</span></td>
                     <td><strong>Sonderführung durch die &#x27;Alte Umbettung&#x27; mit Thomas Marin</strong></td>
                     <td class="location">Südwestkirchhof Stahnsdorf</td>
-                    <td>Historische Sonderführung mit Thomas Marin durch den Friedhofsbereich der &#x27;Alten Umbettung&#x27;.</td>
+                    <td>Thematische Sonderführung durch das Areal der &#x27;Alten Umbettung&#x27; auf dem Südwestkirchhof Stahnsdorf.</td>
                     <td><a href="https://www.suedwestkirchhof.de/veranstaltungen.html" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
@@ -1030,7 +1062,7 @@
                 <tr data-tags="region-west art-fuehrung" data-start="2026-10-17" data-end="">
                     <td><span class="date-badge">2026-10-17</span></td>
                     <td><strong>Hauptfriedhof Frankfurt – Gräber erzählen Geschichte</strong><span class="badge-new">neu</span></td>
-                    <td class="location">Hauptfriedhof, Frankfurt am Main</td>
+                    <td class="location">Hauptfriedhof Frankfurt, Haupteingang (Neues Portal), Eckenheimer Landstraße 194, Frankfurt am Main</td>
                     <td>Führung über den Frankfurter Hauptfriedhof, bei der imposante Grabstätten, Mausoleen und die Lebensgeschichten bedeutender Frankfurter Persönlichkeiten vorgestellt werden.</td>
                     <td><a href="https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
@@ -1039,7 +1071,7 @@
                     <td><span class="date-badge">2026-10-18</span></td>
                     <td><strong>Führung zu den Grabstätten wichtiger Berlinerinnen und Berliner und zur Geschichte des Friedhofs</strong></td>
                     <td class="location">Jüdischer Friedhof Berlin-Weißensee</td>
-                    <td>Führung über den Jüdischen Friedhof Berlin-Weißensee zur Geschichte des Ortes sowie zu den Grabstätten bedeutender Berliner Persönlichkeiten.</td>
+                    <td>Ein etwa zweistündiger Rundgang mit Anja Pick über die Geschichte des Jüdischen Friedhofs Weißensee und die Grabstätten bedeutender Berliner Persönlichkeiten.</td>
                     <td><a href="https://jewish-cemetery-weissensee.org/entdecken/fuehrungen/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
@@ -1062,7 +1094,7 @@
                 <tr data-tags="region-west art-fuehrung" data-start="2026-10-25" data-end="">
                     <td><span class="date-badge">2026-10-25</span></td>
                     <td><strong>Hauptfriedhof Frankfurt – Gräber erzählen Geschichte</strong><span class="badge-new">neu</span></td>
-                    <td class="location">Hauptfriedhof, Frankfurt am Main</td>
+                    <td class="location">Hauptfriedhof Frankfurt, Haupteingang (Neues Portal), Eckenheimer Landstraße 194, Frankfurt am Main</td>
                     <td>Führung über den Frankfurter Hauptfriedhof, bei der imposante Grabstätten, Mausoleen und die Lebensgeschichten bedeutender Frankfurter Persönlichkeiten vorgestellt werden.</td>
                     <td><a href="https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
@@ -1095,7 +1127,7 @@
                     <td><span class="date-badge">2026-10-28</span></td>
                     <td><strong>Führung über den Alten St.-Matthäus-Friedhof</strong></td>
                     <td class="location">Haupteingang des Alten St.-Matthäus-Friedhofs, Berlin</td>
-                    <td>Mittwochstermin und Führung über den Alten St.-Matthäus-Friedhof mit Ralf Illauer.</td>
+                    <td>Führung über den Alten St.-Matthäus-Friedhof im Rahmen der Mittwochstermine mit Ralf Illauer.</td>
                     <td><a href="https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
@@ -1134,7 +1166,7 @@
                 <tr data-tags="region-west art-fuehrung" data-start="2026-10-31" data-end="">
                     <td><span class="date-badge">2026-10-31</span></td>
                     <td><strong>Hauptfriedhof Frankfurt – Gräber erzählen Geschichte</strong><span class="badge-new">neu</span></td>
-                    <td class="location">Hauptfriedhof, Frankfurt am Main</td>
+                    <td class="location">Hauptfriedhof Frankfurt, Haupteingang (Neues Portal), Eckenheimer Landstraße 194, Frankfurt am Main</td>
                     <td>Führung über den Frankfurter Hauptfriedhof, bei der imposante Grabstätten, Mausoleen und die Lebensgeschichten bedeutender Frankfurter Persönlichkeiten vorgestellt werden.</td>
                     <td><a href="https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
@@ -1150,7 +1182,7 @@
                 <tr data-tags="region-west art-fuehrung" data-start="2026-11-01" data-end="">
                     <td><span class="date-badge">2026-11-01</span></td>
                     <td><strong>Hauptfriedhof Frankfurt – Gräber erzählen Geschichte</strong><span class="badge-new">neu</span></td>
-                    <td class="location">Hauptfriedhof, Frankfurt am Main</td>
+                    <td class="location">Hauptfriedhof Frankfurt, Haupteingang (Neues Portal), Eckenheimer Landstraße 194, Frankfurt am Main</td>
                     <td>Führung über den Frankfurter Hauptfriedhof, bei der imposante Grabstätten, Mausoleen und die Lebensgeschichten bedeutender Frankfurter Persönlichkeiten vorgestellt werden.</td>
                     <td><a href="https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
@@ -1171,6 +1203,14 @@
                     <td><a href="https://www.suedwestkirchhof.de/veranstaltungen.html" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
+                <tr data-tags="region-berlin-brandenburg art-fuehrung" data-start="2026-11-07" data-end="">
+                    <td><span class="date-badge">2026-11-07</span></td>
+                    <td><strong>Novemberführung</strong><span class="badge-new">neu</span></td>
+                    <td class="location">Südwestkirchhof Stahnsdorf</td>
+                    <td>Herbstliche Führung über den Südwestkirchhof Stahnsdorf.</td>
+                    <td><a href="https://www.suedwestkirchhof.de/veranstaltungen.html" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
+                </tr>
+
                 <tr data-tags="region-berlin-brandenburg art-gottesdienst" data-start="2026-11-08" data-end="">
                     <td><span class="date-badge">2026-11-08</span></td>
                     <td><strong>Remembrance Sunday</strong></td>
@@ -1183,7 +1223,7 @@
                     <td><span class="date-badge">2026-11-08</span></td>
                     <td><strong>Gedenkfeier für einsam Verstorbene</strong></td>
                     <td class="location">Südwestkirchhof Stahnsdorf</td>
-                    <td>Feierliche Gedenkveranstaltung für im Laufe des Jahres verstorbene Menschen ohne Angehörige.</td>
+                    <td>Feierliche Gedenkveranstaltung für einsam verstorbene Menschen auf dem Südwestkirchhof Stahnsdorf.</td>
                     <td><a href="https://www.suedwestkirchhof.de/veranstaltungen.html" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
@@ -1214,7 +1254,7 @@
                 <tr data-tags="region-west art-fuehrung" data-start="2026-11-14" data-end="">
                     <td><span class="date-badge">2026-11-14</span></td>
                     <td><strong>Hauptfriedhof Frankfurt – Gräber erzählen Geschichte</strong><span class="badge-new">neu</span></td>
-                    <td class="location">Hauptfriedhof, Frankfurt am Main</td>
+                    <td class="location">Hauptfriedhof Frankfurt, Haupteingang (Neues Portal), Eckenheimer Landstraße 194, Frankfurt am Main</td>
                     <td>Führung über den Frankfurter Hauptfriedhof, bei der imposante Grabstätten, Mausoleen und die Lebensgeschichten bedeutender Frankfurter Persönlichkeiten vorgestellt werden.</td>
                     <td><a href="https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
@@ -1223,7 +1263,7 @@
                     <td><span class="date-badge">2026-11-15</span></td>
                     <td><strong>Zum Volkstrauertag: Führung entlang des Hauptwegs bis zum Ehrenhain für die Jüdischen Soldaten des 1. Weltkriegs</strong></td>
                     <td class="location">Jüdischer Friedhof Berlin-Weißensee</td>
-                    <td>Eine zweistündige Führung anlässlich des Volkstrauertags entlang des Hauptwegs zum Ehrenhain für jüdische Soldaten des Ersten Weltkriegs.</td>
+                    <td>Thematische Führung zum Volkstrauertag mit Anja Pick entlang des Hauptwegs bis zum Ehrenhain für die jüdischen Gefallenen des Ersten Weltkriegs.</td>
                     <td><a href="https://jewish-cemetery-weissensee.org/entdecken/fuehrungen/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
@@ -1239,7 +1279,7 @@
                     <td><span class="date-badge">2026-11-18</span></td>
                     <td><strong>Führung über den Alten St.-Matthäus-Friedhof</strong></td>
                     <td class="location">Haupteingang des Alten St.-Matthäus-Friedhofs, Berlin</td>
-                    <td>Mittwochstermin und Führung über den Alten St.-Matthäus-Friedhof mit Ralf Illauer.</td>
+                    <td>Führung über den Alten St.-Matthäus-Friedhof im Rahmen der Mittwochstermine mit Ralf Illauer.</td>
                     <td><a href="https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
@@ -1278,7 +1318,7 @@
                 <tr data-tags="region-west art-fuehrung" data-start="2026-11-21" data-end="">
                     <td><span class="date-badge">2026-11-21</span></td>
                     <td><strong>Hauptfriedhof Frankfurt – Gräber erzählen Geschichte</strong><span class="badge-new">neu</span></td>
-                    <td class="location">Hauptfriedhof, Frankfurt am Main</td>
+                    <td class="location">Hauptfriedhof Frankfurt, Haupteingang (Neues Portal), Eckenheimer Landstraße 194, Frankfurt am Main</td>
                     <td>Führung über den Frankfurter Hauptfriedhof, bei der imposante Grabstätten, Mausoleen und die Lebensgeschichten bedeutender Frankfurter Persönlichkeiten vorgestellt werden.</td>
                     <td><a href="https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
@@ -1339,6 +1379,14 @@
                     <td><a href="https://www.suedwestkirchhof.de/veranstaltungen.html" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
+                <tr data-tags="region-berlin-brandenburg art-fuehrung" data-start="2026-12-05" data-end="">
+                    <td><span class="date-badge">2026-12-05</span></td>
+                    <td><strong>Winterlicher Friedhofsspaziergang mit Thomas Marin</strong><span class="badge-new">neu</span></td>
+                    <td class="location">Südwestkirchhof Stahnsdorf</td>
+                    <td>Winterlicher Führung spaziergang über den Südwestkirchhof Stahnsdorf mit Thomas Marin.</td>
+                    <td><a href="https://www.suedwestkirchhof.de/veranstaltungen.html" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
+                </tr>
+
                 <tr data-tags="region-berlin-brandenburg art-konzert" data-start="2026-12-12" data-end="">
                     <td><span class="date-badge">2026-12-12</span></td>
                     <td><strong>Adventsmusik bei Kerzenschein mit dem Rupenhorner Kammerchor</strong></td>
@@ -1367,7 +1415,7 @@
                     <td><span class="date-badge">2026-12-26</span></td>
                     <td><strong>Führung zum 2. Weihnachtsfeiertag</strong><span class="badge-new">neu</span></td>
                     <td class="location">Südfriedhof Leipzig</td>
-                    <td>Sonderführung über den Leipziger Südfriedhof am zweiten Weihnachtsfeiertag.</td>
+                    <td>Eine weihnachtliche Führung über den Leipziger Südfriedhof am zweiten Weihnachtsfeiertag.</td>
                     <td><a href="https://paul-benndorf-gesellschaft.de/fuehrungen.html" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
@@ -1382,7 +1430,7 @@
                 <tr data-tags="region-west art-fuehrung" data-start="2026-12-27" data-end="">
                     <td><span class="date-badge">2026-12-27</span></td>
                     <td><strong>Hauptfriedhof Frankfurt – Gräber erzählen Geschichte</strong><span class="badge-new">neu</span></td>
-                    <td class="location">Hauptfriedhof, Frankfurt am Main</td>
+                    <td class="location">Hauptfriedhof Frankfurt, Haupteingang (Neues Portal), Eckenheimer Landstraße 194, Frankfurt am Main</td>
                     <td>Führung über den Frankfurter Hauptfriedhof, bei der imposante Grabstätten, Mausoleen und die Lebensgeschichten bedeutender Frankfurter Persönlichkeiten vorgestellt werden.</td>
                     <td><a href="https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
@@ -1391,7 +1439,7 @@
                     <td><span class="date-badge">2026-12-27</span></td>
                     <td><strong>Führung zu den Weihnachtstagen</strong><span class="badge-new">neu</span></td>
                     <td class="location">Südfriedhof Leipzig</td>
-                    <td>Sonderführung über den Leipziger Südfriedhof während der Weihnachtstage.</td>
+                    <td>Eine Sonderführung über den Südfriedhof Leipzig während der Weihnachtstage.</td>
                     <td><a href="https://paul-benndorf-gesellschaft.de/fuehrungen.html" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
@@ -1460,9 +1508,6 @@
             applyFilters();
         }
 
-        // Ein Termin liegt im Zeitfenster, wenn er es ueberlappt. Damit
-        // erscheinen laufende Ausstellungen auch in "Naechste 7 Tage", obwohl
-        // ihr Startdatum lange zurueckliegt.
         function inWindow(row, days) {
             if (!days) return true;
             const start = row.getAttribute('data-start');
