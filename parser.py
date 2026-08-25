@@ -157,6 +157,67 @@ TARGET_URLS = [
     "https://www.bernermuenster.ch/",
     "https://www.stiftsbezirk.ch/de/veranstaltungen",
     "https://www.museum-aargau.ch/schloss-lenzburg/event-kalender",
+    # --- Sepulkralkultur im engeren Sinn: Krematorien, Bestattungsmuseen ---
+    # silent green: ehemaliges Krematorium Wedding (1912-2002), heute
+    # Kulturquartier mit eigener Ausstellung zur Feuerbestattung.
+    "https://www.silent-green.net/programm/",
+    "https://www.bestattungsmuseum.at/",
+    "https://www.bestattungwien.at/veranstaltungen",
+    "http://www.wienfuehrungen.com/morbide-fuehrungen.html",
+
+    # --- Medizin- und koerpergeschichtliche Sammlungen ---
+    # Anatomie, Praeparate, Moulagen - thematisch nah an Tod und Koerper.
+    "https://bmm-charite.de/ausstellungen",
+    "https://www.josephinum.ac.at/veranstaltungen/",
+
+    # --- Berlin & Brandenburg (aus der ersten Liste zurueckgeholt) ---
+    "https://denkmaltag.berlin.de/",
+    "https://www.kkbs.de/veranstaltungen/veranstaltungen-auf-friedhofen",
+    "https://berlin.volksbund.de/aktuell/termine",
+    "https://www.stiftung-historische-friedhoefe.de/",
+    "https://www.efeu-ev.com/",
+    "https://www.zwoelf-apostel-berlin.de/alle-termine-der-zwolf-apostel-kirchengemeinde-und-der-kirchhofe",
+    "https://forum1848.de/veranstaltungen/",
+    "https://www.garnisonfriedhof-berlin.de/",
+    "https://stpetri-stmarien.de/",
+    "https://www.berlinerdom.de/termine/",
+    "https://www.bornstedter-friedhof.de/bornstedter-friedhof/historische-graeber/fuehrungen/termine-fuer-fuehrungen/",
+    "https://www.friedhof-in-potsdam.de/allgemeines/aktuelles",
+    "https://www.stift-neuzelle.de/",
+    "https://bjoern-schulz-stiftung.de/akademie/",
+    "https://tickets.jmberlin.de/events/",
+    "https://www.berlin.de/museum-pankow/aktuelles/veranstaltungen/",
+    "https://www.villa-oppenheim-berlin.de/",
+    "https://www.zitadelle-berlin.de/en/education/events/",
+    "https://www.dhm.de/programm/veranstaltungskalender/",
+
+    # --- Deutschland uebrige (aus der ersten Liste zurueckgeholt) ---
+    "https://landesmuseum-bonn.lvr.de/",
+    "https://www.alm-bw.de/",
+    "https://roemisch-germanisches-museum.de/",
+    "https://www.frauenkirche-dresden.de/kalender/",
+    "https://www.florian-scheungraber.de/termine/",
+
+    # --- Leipzig: serverseitig gerenderte Kalender ---
+    "https://www.leipzig-im.de/index.php?auswahl=Veranstaltungen&section=home",
+    "https://www.stadtgeschichtliches-museum-leipzig.de/ausstellungen/aktuelle-ausstellungen/",
+
+    # --- Augsburg: Traeger mit Friedhofsfuehrungen ---
+    "https://jmaugsburg.de/fuehrungen/",
+
+    # --- Tschechien (aus der ersten Liste zurueckgeholt) ---
+    "https://www.brnenskepodzemi.cz/",
+    "https://praha-vysehrad.cz/en/",
+
+    # --- Oesterreich (aus der ersten Liste zurueckgeholt) ---
+    "https://www.michaelerkirche.at/",
+    "https://www.friedhoefewien.at/veranstaltungen",
+    "https://www.friedhoefewien.at/friedhofsfuehrungen",
+
+    # --- Schweiz: Friedhofskultur ---
+    "https://www.bern.ch/politik-und-verwaltung/stadtverwaltung/tvs/stadtgrun-bern/friedhofe/friedhofskultur",
+    "https://www.stadtluzern.ch/dienstleistungeninformation/159",
+    "https://www.vssg.ch/de/arbeitsgruppen/friedhoefe-alles/tag-des-friedhofs.html",
 ]
 
 # Am 24.08.2026 fehlgeschlagen und deshalb deaktiviert. Die korrekten
@@ -203,6 +264,13 @@ SNIPPET_AFTER = 400
 # ist auf ~8000 Output-Tokens begrenzt, ein Event kostet ~100 - darueber bricht
 # das JSON ab und der Request ist verloren. Bewusst mit Reserve gesetzt.
 MAX_EVENTS_PER_BATCH = 55
+
+# Obergrenze der Fundstellen, die aus EINER Seite mitgenommen werden.
+# Ohne diese Grenze kann eine dichte Kalenderseite das Output-Limit allein
+# reissen - und die Paketierung kann sie dann nicht mehr abfangen, weil eine
+# Seite nicht teilbar ist. Grosse Kalender liefern ihre restlichen Termine
+# in den Folgelaeufen nach; der Bestand in events_db.json waechst dabei.
+MAX_HITS_PER_PAGE = 18
 
 # Harte Obergrenze der Requests pro Lauf. Das Tageslimit liegt bei 20; der
 # Rest ist Reserve fuer Retries und manuelle Testlaeufe.
@@ -671,12 +739,16 @@ def condense_text(text: str, limit: int) -> tuple[str, int]:
     separator = " [...] "
     parts: list[str] = []
     used = 0
+    hits = 0
     for start, stop in spans:
         chunk = text[start:stop]
         if used + len(chunk) + len(separator) > limit:
             break
         parts.append(chunk)
         used += len(chunk) + len(separator)
+        hits += len(DATE_PATTERN.findall(chunk))
+        if hits >= MAX_HITS_PER_PAGE:
+            break
 
     if not parts:
         # Ein einzelner (verschmolzener) Bereich ist groesser als das Limit.
@@ -685,6 +757,14 @@ def condense_text(text: str, limit: int) -> tuple[str, int]:
         result = text[spans[0][0]:spans[0][0] + limit]
     else:
         result = separator.join(parts)
+
+    # Auch hier hart auf MAX_HITS_PER_PAGE kappen: nach der n-ten Fundstelle
+    # abschneiden, damit eine einzelne Seite die Paketgrenze nicht sprengt.
+    # Direkt vor der (n+1)-ten Fundstelle abschneiden. Der Text der n-ten
+    # Veranstaltung reicht bis dorthin und bleibt damit vollstaendig.
+    found = list(DATE_PATTERN.finditer(result))
+    if len(found) > MAX_HITS_PER_PAGE:
+        result = result[:found[MAX_HITS_PER_PAGE].start()]
 
     # Schaetzung immer aus dem tatsaechlichen Ergebnistext, nicht aus der
     # Zahl der Fenster - sonst wird eine dichte Seite als "1 Event" gewertet.
@@ -711,9 +791,39 @@ def pack_batches(pages: list[tuple[str, str, int]]) -> list[list[tuple[str, str]
                 batch.append(page)
                 break
         else:
+            if page[2] > MAX_EVENTS_PER_BATCH:
+                print(f"  Hinweis: Seite allein ueber der Paketgrenze "
+                      f"(~{page[2]} Events): {page[0]}")
             batches.append([page])
 
     return [[(url, text) for url, text, _ in batch] for batch in batches]
+
+
+def rotation_key(url: str, period: int) -> int:
+    """Stabile, aber pro Lauf wechselnde Reihenfolge einer URL."""
+    return int(hashlib.md5(f"{url}|{period}".encode("utf-8")).hexdigest(), 16)
+
+
+def select_within_budget(
+    pages: list[tuple[str, str, int]], period: int, max_requests: int
+) -> tuple[list[tuple[str, str, int]], list[tuple[str, str, int]]]:
+    """Waehlt Seiten aus, wenn nicht alle ins Request-Budget passen.
+
+    Ein einfaches Abschneiden der letzten Pakete waere unfair: pack_batches
+    sortiert nach Dichte, also landeten immer dieselben duennen Quellen hinten
+    und kaemen nie zum Zug. Die Auswahl rotiert daher pro Lauf.
+    """
+    if not pages or len(pack_batches(pages)) <= max_requests:
+        return pages, []
+
+    kept: list[tuple[str, str, int]] = []
+    for page in sorted(pages, key=lambda pg: rotation_key(pg[0], period)):
+        if len(pack_batches(kept + [page])) <= max_requests:
+            kept.append(page)
+
+    kept_urls = {url for url, _, _ in kept}
+    skipped = [pg for pg in pages if pg[0] not in kept_urls]
+    return kept, skipped
 
 
 # ---------------------------------------------------------------- Extraktion
@@ -1089,19 +1199,20 @@ if __name__ == "__main__":
                 print(f"  {len(page_text):>7} Zeichen, ~{hits} Fundstellen  {url}")
             fetched_pages.append((url, condensed, hits))
 
-    batches = pack_batches(fetched_pages)
+    selected, deferred = select_within_budget(
+        fetched_pages, today.toordinal(), MAX_REQUESTS_PER_RUN
+    )
+    batches = pack_batches(selected)
 
-    if len(batches) > MAX_REQUESTS_PER_RUN:
-        dropped = batches[MAX_REQUESTS_PER_RUN:]
-        batches = batches[:MAX_REQUESTS_PER_RUN]
-        print(f"\n  ACHTUNG: {len(dropped)} Pakete ueberschreiten das "
-              f"Request-Budget ({MAX_REQUESTS_PER_RUN}) und werden verworfen.")
-        for batch in dropped:
-            for url, _ in batch:
-                problems["Budget erschoepft"].append(url)
+    if deferred:
+        print(f"\n  {len(deferred)} Quellen passen nicht ins Request-Budget "
+              f"({MAX_REQUESTS_PER_RUN}) und kommen in einem spaeteren Lauf dran:")
+        for url, _, _ in deferred:
+            problems["auf spaeteren Lauf verschoben"].append(url)
+            print(f"    {url}")
 
-    print(f"\n{len(fetched_pages)} Seiten gehen an die API in "
-          f"{len(batches)} Paketen (Tageslimit: 20 Requests)")
+    print(f"\n{len(selected)} von {len(fetched_pages)} Seiten gehen an die API "
+          f"in {len(batches)} Paketen (Tageslimit: 20 Requests)")
 
     print("\n--- Phase 2: KI-Analyse ---")
     stats = Counter()
