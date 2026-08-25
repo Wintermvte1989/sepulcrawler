@@ -249,11 +249,12 @@ DB_FILE = "events_db.json"
 HTML_OUTPUT_FILE = "index.html"
 
 BATCH_SIZE = 8          # nicht erhoehen - Output-Limit der API beachten
-TEXT_LIMIT = 9000       # Zeichen pro Seite, die an die API gehen
+TEXT_LIMIT = 12000      # Zeichen pro Seite, die an die API gehen
 MIN_TEXT_LENGTH = 1500  # darunter: vermutlich JS-gerenderte Seite ohne Inhalt
 STALE_AFTER_DAYS = 10   # ab hier "nicht mehr bestaetigt" im HTML
 API_ATTEMPTS = 3        # Achtung: jeder Versuch zaehlt gegen das RPD-Limit
 FETCH_ATTEMPTS = 3      # Wiederholungen beim Laden einer Webseite (kostenlos)
+API_PAUSE_SECONDS = 0.5 # Pause zwischen API-Requests (RPM-Limit: 1000)
 
 # Verdichtung langer Seiten: Fenster um jede gefundene Datumsangabe.
 # Ein Termineintrag (Datum + Titel + Ort + Kurztext) passt meist in ~600 Zeichen.
@@ -270,11 +271,18 @@ MAX_EVENTS_PER_BATCH = 55
 # reissen - und die Paketierung kann sie dann nicht mehr abfangen, weil eine
 # Seite nicht teilbar ist. Grosse Kalender liefern ihre restlichen Termine
 # in den Folgelaeufen nach; der Bestand in events_db.json waechst dabei.
-MAX_HITS_PER_PAGE = 18
+#
+# Hoeher = mehr Termine pro Lauf, aber weniger Seiten pro Paket und damit
+# mehr Requests. Gemessen mit 144 Quellen:
+#   18 / TEXT_LIMIT  9000 -> 33 Requests
+#   25 / TEXT_LIMIT 12000 -> 36 Requests   <- aktuell
+#   35 / TEXT_LIMIT 16000 -> 44 Requests
+MAX_HITS_PER_PAGE = 25
 
-# Harte Obergrenze der Requests pro Lauf. Das Tageslimit liegt bei 20; der
-# Rest ist Reserve fuer Retries und manuelle Testlaeufe.
-MAX_REQUESTS_PER_RUN = 15
+# Harte Obergrenze der Pakete pro Lauf. Der bezahlte Tarif erlaubt 50
+# Requests pro Lauf; die Differenz ist Reserve fuer Retries (jeder
+# Wiederholungsversuch in call_with_retry zaehlt als eigener Request).
+MAX_REQUESTS_PER_RUN = 40
 
 BERLIN = ZoneInfo("Europe/Berlin")
 
@@ -705,31 +713,45 @@ def fetch_page_text(client_http: httpx.Client, url: str) -> str:
 
 # ---------------------------------------------------------------- Verdichtung
 
+def cap_hits(text: str, max_hits: int) -> tuple[str, int]:
+    """Schneidet vor der (max_hits+1)-ten Datumsangabe ab.
+
+    Gilt bewusst fuer JEDE Seite, nicht nur fuer lange: eine kompakte
+    Terminliste kann auf 6000 Zeichen 80 Termine enthalten und wuerde sonst
+    das Output-Limit allein reissen. Der Text der letzten mitgenommenen
+    Veranstaltung reicht bis zur naechsten Datumsangabe und bleibt vollstaendig.
+    """
+    found = list(DATE_PATTERN.finditer(text))
+    if len(found) <= max_hits:
+        return text, len(found)
+    return text[:found[max_hits].start()], max_hits
+
+
 def condense_text(text: str, limit: int) -> tuple[str, int]:
-    """Reduziert eine lange Seite auf die Textstellen um Datumsangaben herum.
+    """Reduziert eine Seite auf die Textstellen um Datumsangaben herum.
 
     Stumpfes text[:limit] verschenkt bei grossen Kalendern fast alles: die
     ersten Zeichen sind Navigation und Einleitung, die Terminliste beginnt
     weiter unten. Hier wird stattdessen um jedes Datum ein Fenster gelegt,
     ueberlappende Fenster werden verschmolzen.
 
-    Rueckgabe: (Text fuer die API, Anzahl der Fundstellen darin).
-    Die Anzahl dient als Schaetzung, wie viele Events die Seite liefert.
+    Rueckgabe: (Text fuer die API, Anzahl Datumsangaben darin). Die Anzahl
+    dient als Schaetzung, wie viele Events die Seite liefert.
     """
     if len(text) <= limit:
-        return text, len(DATE_PATTERN.findall(text))
+        return cap_hits(text, MAX_HITS_PER_PAGE)
 
     spans: list[list[int]] = []
     # Hinweis: Bei dichten Terminlisten ueberlappen die Fenster durchgehend und
     # verschmelzen zu einem einzigen Bereich. Das ist gewollt - er beginnt dann
     # genau am ersten Termin, statt bei der Navigation.
     for match in DATE_PATTERN.finditer(text):
-        start = max(0, match.start() - SNIPPET_BEFORE)
-        stop = min(len(text), match.end() + SNIPPET_AFTER)
-        if spans and start <= spans[-1][1]:
-            spans[-1][1] = max(spans[-1][1], stop)
+        window_start = max(0, match.start() - SNIPPET_BEFORE)
+        window_stop = min(len(text), match.end() + SNIPPET_AFTER)
+        if spans and window_start <= spans[-1][1]:
+            spans[-1][1] = max(spans[-1][1], window_stop)
         else:
-            spans.append([start, stop])
+            spans.append([window_start, window_stop])
 
     if not spans:
         # Kein Datum gefunden - is_worth_sending haette die Seite ohnehin
@@ -740,8 +762,8 @@ def condense_text(text: str, limit: int) -> tuple[str, int]:
     parts: list[str] = []
     used = 0
     hits = 0
-    for start, stop in spans:
-        chunk = text[start:stop]
+    for window_start, window_stop in spans:
+        chunk = text[window_start:window_stop]
         if used + len(chunk) + len(separator) > limit:
             break
         parts.append(chunk)
@@ -758,24 +780,14 @@ def condense_text(text: str, limit: int) -> tuple[str, int]:
     else:
         result = separator.join(parts)
 
-    # Auch hier hart auf MAX_HITS_PER_PAGE kappen: nach der n-ten Fundstelle
-    # abschneiden, damit eine einzelne Seite die Paketgrenze nicht sprengt.
-    # Direkt vor der (n+1)-ten Fundstelle abschneiden. Der Text der n-ten
-    # Veranstaltung reicht bis dorthin und bleibt damit vollstaendig.
-    found = list(DATE_PATTERN.finditer(result))
-    if len(found) > MAX_HITS_PER_PAGE:
-        result = result[:found[MAX_HITS_PER_PAGE].start()]
-
-    # Schaetzung immer aus dem tatsaechlichen Ergebnistext, nicht aus der
-    # Zahl der Fenster - sonst wird eine dichte Seite als "1 Event" gewertet.
-    return result, len(DATE_PATTERN.findall(result))
+    return cap_hits(result, MAX_HITS_PER_PAGE)
 
 
 def pack_batches(pages: list[tuple[str, str, int]]) -> list[list[tuple[str, str]]]:
     """Verteilt Seiten auf Pakete, ohne die geschaetzte Event-Obergrenze
     pro Request zu reissen.
 
-    Vorher landeten eine 224.000-Zeichen-Kalenderseite und sieben kleine
+    Ohne das landeten eine dichte Kalenderseite und sieben kleine
     Vereinsseiten im gleichen Paket - die grosse dominierte die Antwort und
     riskierte ein abgeschnittenes JSON. First-Fit-Decreasing: dichte Seiten
     zuerst, kleine fuellen die Luecken.
@@ -791,9 +803,6 @@ def pack_batches(pages: list[tuple[str, str, int]]) -> list[list[tuple[str, str]
                 batch.append(page)
                 break
         else:
-            if page[2] > MAX_EVENTS_PER_BATCH:
-                print(f"  Hinweis: Seite allein ueber der Paketgrenze "
-                      f"(~{page[2]} Events): {page[0]}")
             batches.append([page])
 
     return [[(url, text) for url, text, _ in batch] for batch in batches]
@@ -1250,7 +1259,7 @@ if __name__ == "__main__":
                 events_db[generate_event_id(event)] = event
                 stats["neu"] += 1
 
-        time.sleep(4)
+        time.sleep(API_PAUSE_SECONDS)
 
     events_db = deduplicate_db(events_db)
     cleaned_db = {}
