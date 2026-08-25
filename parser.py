@@ -157,20 +157,16 @@ TARGET_URLS = [
     "https://www.bernermuenster.ch/",
     "https://www.stiftsbezirk.ch/de/veranstaltungen",
     "https://www.museum-aargau.ch/schloss-lenzburg/event-kalender",
-    # --- Sepulkralkultur im engeren Sinn: Krematorien, Bestattungsmuseen ---
-    # silent green: ehemaliges Krematorium Wedding (1912-2002), heute
-    # Kulturquartier mit eigener Ausstellung zur Feuerbestattung.
     "https://www.silent-green.net/programm/",
     "https://www.bestattungsmuseum.at/",
     "https://www.bestattungwien.at/veranstaltungen",
     "http://www.wienfuehrungen.com/morbide-fuehrungen.html",
 
     # --- Medizin- und koerpergeschichtliche Sammlungen ---
-    # Anatomie, Praeparate, Moulagen - thematisch nah an Tod und Koerper.
     "https://bmm-charite.de/ausstellungen",
     "https://www.josephinum.ac.at/veranstaltungen/",
 
-    # --- Berlin & Brandenburg (aus der ersten Liste zurueckgeholt) ---
+    # --- Berlin & Brandenburg ---
     "https://denkmaltag.berlin.de/",
     "https://www.kkbs.de/veranstaltungen/veranstaltungen-auf-friedhofen",
     "https://berlin.volksbund.de/aktuell/termine",
@@ -191,38 +187,35 @@ TARGET_URLS = [
     "https://www.zitadelle-berlin.de/en/education/events/",
     "https://www.dhm.de/programm/veranstaltungskalender/",
 
-    # --- Deutschland uebrige (aus der ersten Liste zurueckgeholt) ---
+    # --- Deutschland uebrige ---
     "https://landesmuseum-bonn.lvr.de/",
     "https://www.alm-bw.de/",
     "https://roemisch-germanisches-museum.de/",
     "https://www.frauenkirche-dresden.de/kalender/",
     "https://www.florian-scheungraber.de/termine/",
 
-    # --- Leipzig: serverseitig gerenderte Kalender ---
+    # --- Leipzig ---
     "https://www.leipzig-im.de/index.php?auswahl=Veranstaltungen&section=home",
     "https://www.stadtgeschichtliches-museum-leipzig.de/ausstellungen/aktuelle-ausstellungen/",
 
-    # --- Augsburg: Traeger mit Friedhofsfuehrungen ---
+    # --- Augsburg ---
     "https://jmaugsburg.de/fuehrungen/",
 
-    # --- Tschechien (aus der ersten Liste zurueckgeholt) ---
+    # --- Tschechien ---
     "https://www.brnenskepodzemi.cz/",
     "https://praha-vysehrad.cz/en/",
 
-    # --- Oesterreich (aus der ersten Liste zurueckgeholt) ---
+    # --- Oesterreich ---
     "https://www.michaelerkirche.at/",
     "https://www.friedhoefewien.at/veranstaltungen",
     "https://www.friedhoefewien.at/friedhofsfuehrungen",
 
-    # --- Schweiz: Friedhofskultur ---
-    "https://www.bern.ch/politik-und-verwaltung/stadtverwaltung/tvs/stadtgrun-bern/friedhofe/friedhofskultur",
+    # --- Schweiz ---
+    "https://www.bern.ch/politik-und-verwaltung/stadtverwaltung/tvs/stadtgrun-bern/friedhofe/friedhofkultur",
     "https://www.stadtluzern.ch/dienstleistungeninformation/159",
     "https://www.vssg.ch/de/arbeitsgruppen/friedhoefe-alles/tag-des-friedhofs.html",
 ]
 
-# Am 24.08.2026 fehlgeschlagen und deshalb deaktiviert. Die korrekten
-# Adressen sind nicht verifiziert - vor dem Wiedereinhaengen im Browser
-# pruefen und dann oben eintragen.
 DISABLED_URLS = {
     "https://www.aachen.de/DE/stadt_buerger/politik_verwaltung/pressemitteilungen/veranstaltungen.html": "404",
     "https://www.braunschweig.de/leben/umwelt_naturschutz/stadtgruen/friedhoefe/": "404",
@@ -248,54 +241,30 @@ DISABLED_URLS = {
 DB_FILE = "events_db.json"
 HTML_OUTPUT_FILE = "index.html"
 
-BATCH_SIZE = 8          # nicht erhoehen - Output-Limit der API beachten
-TEXT_LIMIT = 12000      # Zeichen pro Seite, die an die API gehen
-MIN_TEXT_LENGTH = 1500  # darunter: vermutlich JS-gerenderte Seite ohne Inhalt
-STALE_AFTER_DAYS = 10   # ab hier "nicht mehr bestaetigt" im HTML
-API_ATTEMPTS = 3        # Achtung: jeder Versuch zaehlt gegen das RPD-Limit
-FETCH_ATTEMPTS = 3      # Wiederholungen beim Laden einer Webseite (kostenlos)
-API_PAUSE_SECONDS = 0.5 # Pause zwischen API-Requests (RPM-Limit: 1000)
+BATCH_SIZE = 8
+TEXT_LIMIT = 12000
+MIN_TEXT_LENGTH = 1500
+STALE_AFTER_DAYS = 10
+API_ATTEMPTS = 3
+FETCH_ATTEMPTS = 3
+API_PAUSE_SECONDS = 0.5
 
-# Verdichtung langer Seiten: Fenster um jede gefundene Datumsangabe.
-# Ein Termineintrag (Datum + Titel + Ort + Kurztext) passt meist in ~600 Zeichen.
 SNIPPET_BEFORE = 200
 SNIPPET_AFTER = 400
 
-# Obergrenze fuer die geschaetzte Zahl Events pro Request. Die Antwort der API
-# ist auf ~8000 Output-Tokens begrenzt, ein Event kostet ~100 - darueber bricht
-# das JSON ab und der Request ist verloren. Bewusst mit Reserve gesetzt.
 MAX_EVENTS_PER_BATCH = 55
-
-# Obergrenze der Fundstellen, die aus EINER Seite mitgenommen werden.
-# Ohne diese Grenze kann eine dichte Kalenderseite das Output-Limit allein
-# reissen - und die Paketierung kann sie dann nicht mehr abfangen, weil eine
-# Seite nicht teilbar ist. Grosse Kalender liefern ihre restlichen Termine
-# in den Folgelaeufen nach; der Bestand in events_db.json waechst dabei.
-#
-# Hoeher = mehr Termine pro Lauf, aber weniger Seiten pro Paket und damit
-# mehr Requests. Gemessen mit 144 Quellen:
-#   18 / TEXT_LIMIT  9000 -> 33 Requests
-#   25 / TEXT_LIMIT 12000 -> 36 Requests   <- aktuell
-#   35 / TEXT_LIMIT 16000 -> 44 Requests
-MAX_HITS_PER_PAGE = 25
-
-# Harte Obergrenze der Pakete pro Lauf. Der bezahlte Tarif erlaubt 50
-# Requests pro Lauf; die Differenz ist Reserve fuer Retries (jeder
-# Wiederholungsversuch in call_with_retry zaehlt als eigener Request).
+MAX_HITS_PER_PAGE = 50  # Erhoeht auf 50 Termine pro Seite
 MAX_REQUESTS_PER_RUN = 40
 
 BERLIN = ZoneInfo("Europe/Berlin")
 
-# Erkennt deutsche und ISO-Datumsangaben. Auch Kurzformen ohne Jahr
-# ("Sa, 12.09.") und abgekuerzte Monatsnamen ("12. Sept."), weil viele
-# Terminlisten das Jahr weglassen - sonst werden gueltige Seiten verworfen.
 DATE_PATTERN = re.compile(
-    r"\b\d{1,2}\.\s*\d{1,2}\.\s*\d{2,4}\b"          # 12.09.2026
-    r"|\b\d{1,2}\.\s*\d{1,2}\.(?!\d)"                   # 12.09.
+    r"\b\d{1,2}\.\s*\d{1,2}\.\s*\d{2,4}\b"
+    r"|\b\d{1,2}\.\s*\d{1,2}\.(?!\d)"
     r"|\b\d{1,2}\.?\s*(Jan|Feb|M\u00e4r|Mrz|Apr|Mai|Jun|Jul|Aug|"
-    r"Sep|Sept|Okt|Nov|Dez)[a-z\u00e4\u00f6\u00fc]*\.?"     # 12. Sept. / 12. September
-    r"|\b\d{4}-\d{2}-\d{2}\b"                           # 2026-09-12
-    r"|\b(Mo|Di|Mi|Do|Fr|Sa|So)\.?,\s*\d{1,2}\."          # Sa, 12.
+    r"Sep|Sept|Okt|Nov|Dez)[a-z\u00e4\u00f6\u00fc]*\.?"
+    r"|\b\d{4}-\d{2}-\d{2}\b"
+    r"|\b(Mo|Di|Mi|Do|Fr|Sa|So)\.?,\s*\d{1,2}\."
     , re.IGNORECASE,
 )
 
@@ -314,9 +283,6 @@ MONTH_MAP = {
     "dez": 12, "dezember": 12,
 }
 
-# Nur echte Funktionswoerter. Veranstaltungsarten ("Fuehrung", "Vortrag")
-# gehoeren NICHT hierher - sie unterscheiden Termine voneinander und werden
-# unten ueber EVENT_TYPES ausgewertet.
 STOP_WORDS = {
     "über", "durch", "nach", "beim", "eines", "einer", "einen", "einem",
     "mit", "und", "oder", "für", "vom", "auf", "dem", "den", "der", "die",
@@ -324,17 +290,6 @@ STOP_WORDS = {
     "sowie", "wird", "wie", "als", "auch", "sich", "ist", "sind", "uhr",
 }
 
-# Veranstaltungsart. Zwei Termine unterschiedlicher Art am selben Tag und Ort
-# sind verschiedene Veranstaltungen, auch wenn die Titel einander aehneln.
-#
-# Reihenfolge ist Pruefreihenfolge - der erste Treffer gewinnt. Wichtig:
-#  - "film" vor "fuehrung": "Filmvorfuehrung" ist ein Film.
-#  - "gottesdienst" vor "lesung": "Andacht mit Verlesung" ist eine Andacht,
-#    sonst greift das "lesung" in "Verlesung".
-#  - "fuehrung" vor "aktionstag": "Fuehrungen am Museumstag" ist eine Fuehrung.
-#  - "workshop" vor "gottesdienst": ein "Redner-Workshop: Trauerfeiern"
-#    ist eine Fortbildung, keine Trauerfeier.
-#  - "aktionstag" zuletzt: faengt nur, was kein eigenes Format nennt.
 EVENT_TYPES = (
     ("film", ("filmvorführung", "filmvorfuehrung", "filmabend", "kino", "film")),
     ("ausstellung", ("ausstellung", "vernissage", "finissage")),
@@ -357,12 +312,7 @@ EVENT_TYPES = (
                     "museumstag", "aktionstag", "aktionswoche", "sommerfest")),
 )
 
-# Substring-Suche erst ab dieser Laenge, sonst exakter Wortvergleich.
-# Verhindert Treffer wie "kurs" in "Diskurs" oder "tour" in "Kontour".
 _TYPE_MIN_SUBSTRING = 6
-
-# Bewusst konservativ: ein uebersehenes Duplikat ist sichtbar und harmlos,
-# eine falsche Zusammenfuehrung loescht ein echtes Event.
 TITLE_RATIO_THRESHOLD = 0.88
 TOKEN_JACCARD_THRESHOLD = 0.60
 
@@ -388,8 +338,6 @@ class Event(BaseModel):
 class EventList(BaseModel):
     events: list[Event]
 
-
-# ---------------------------------------------------------------- Datum & Text-Normalisierung
 
 def parse_date(date_str: str) -> str | None:
     if not date_str:
@@ -448,13 +396,6 @@ def extract_tokens(text: str) -> set[str]:
 
 
 def event_type(title: str) -> str | None:
-    """Grobe Kategorie der Veranstaltungsart, oder None wenn nicht erkennbar.
-
-    Deutsche Veranstaltungstitel sind Komposita: "Sonntagsfuehrung",
-    "Kurator*innenfuehrung", "Busrundfahrten", "Gedenkmessfeier". Ein exakter
-    Wortvergleich findet davon nichts, deshalb Substring-Suche fuer lange
-    Stichworte und exakter Vergleich fuer kurze.
-    """
     text = clean_text_for_comparison(title)
     if not text:
         return None
@@ -475,8 +416,6 @@ def event_host(event: dict) -> str:
 
 
 def _locations_compatible(ev1: dict, ev2: dict) -> bool:
-    """Verschiedene Orte schliessen ein Duplikat aus. Eine fehlende
-    Ortsangabe gilt als vereinbar - fehlende Information darf nicht trennen."""
     loc1 = extract_tokens(ev1.get("location", ""))
     loc2 = extract_tokens(ev2.get("location", ""))
     if not loc1 or not loc2:
@@ -499,21 +438,11 @@ def _jaccard(a: set, b: set) -> float:
 
 
 def are_events_duplicate(ev1: dict, ev2: dict) -> bool:
-    """Konservativ: nur zusammenfuehren, wenn mehrere unabhaengige Merkmale
-    uebereinstimmen. Im Zweifel getrennt lassen."""
-    # 1. Datum muss identisch sein.
+    # Datum muss identisch sein
     if ev1.get("date_start") != ev2.get("date_start"):
         return False
 
-    # 2. Verschiedene Quell-Domains trennen. Dasselbe Event auf zwei Seiten
-    #    ist moeglich, aber selten - ein sichtbares Duplikat ist billiger
-    #    als ein geloeschtes Event.
-    host1, host2 = event_host(ev1), event_host(ev2)
-    if host1 and host2 and host1 != host2:
-        return False
-
-    # 3. Verschiedene Orte trennen. Wichtig bei Dachseiten, die Termine
-    #    mehrerer Friedhoefe unter einer Domain listen (z. B. Verbaende).
+    # Domain-Sperre entfernt, damit quelluebergreifende Duplikate zusammengefuehrt werden.
     if not _locations_compatible(ev1, ev2):
         return False
 
@@ -522,12 +451,9 @@ def are_events_duplicate(ev1: dict, ev2: dict) -> bool:
     if not title1 or not title2:
         return False
 
-    # 4. Identischer normalisierter Titel: Duplikat.
     if title1 == title2:
         return True
 
-    # 5. Unscharfer Fall - nur bei hoher Aehnlichkeit UND gleicher
-    #    Veranstaltungsart UND ueberwiegend gleichen Inhaltswoertern.
     if not _types_compatible(ev1, ev2):
         return False
 
@@ -541,19 +467,12 @@ def are_events_duplicate(ev1: dict, ev2: dict) -> bool:
 
 
 def generate_event_id(event: dict) -> str:
-    """Host gehoert in die ID: sonst kollidieren gleichnamige Termine
-    verschiedener Institutionen am selben Tag."""
     title = clean_text_for_comparison(event.get("title", ""))
     raw = f"{title}|{event.get('date_start', '')}|{event_host(event)}"
     return hashlib.md5(raw.encode("utf-8")).hexdigest()
 
 
 def merge_into(target: dict, source: dict) -> None:
-    """Fuehrt source in target zusammen - nur ergaenzend. Vorhandene Werte
-    werden hoechstens durch laengere, informativere ersetzt."""
-    # Laenge am normalisierten Text messen: sonst gewinnt die Variante mit
-    # Doppelleerzeichen und Komma am Ende, obwohl sie keinen Inhalt mehr hat.
-    # Bei Gleichstand bleibt der Bestand - er wurde zuerst gesehen.
     for key in ("title", "description", "location"):
         new_len = len(clean_text_for_comparison(source.get(key)))
         old_len = len(clean_text_for_comparison(target.get(key)))
@@ -568,8 +487,6 @@ def merge_into(target: dict, source: dict) -> None:
     if source.get("last_seen"):
         target["last_seen"] = max(target.get("last_seen") or "", source["last_seen"])
 
-
-# ---------------------------------------------------------------- Datenbank & Deduplizierung
 
 def load_events_db() -> dict:
     if not os.path.exists(DB_FILE):
@@ -594,8 +511,6 @@ def save_events_db(db: dict):
 
 
 def deduplicate_db(db: dict) -> dict:
-    """Gruppiert nach Datum und vergleicht nur innerhalb der Gruppe - Events
-    an verschiedenen Tagen koennen nie Duplikate sein."""
     by_date = defaultdict(list)
     for event in db.values():
         by_date[event.get("date_start", "")].append(event)
@@ -616,14 +531,11 @@ def deduplicate_db(db: dict) -> dict:
 
 
 def find_duplicate_key(event: dict, db: dict) -> str | None:
-    """Sucht im Bestand einen Eintrag, der dasselbe Event bezeichnet."""
     for key, existing in db.items():
         if are_events_duplicate(event, existing):
             return key
     return None
 
-
-# ---------------------------------------------------------------- Auswahl
 
 def is_worth_sending(url: str, text: str) -> bool:
     if len(text) < MIN_TEXT_LENGTH:
@@ -634,8 +546,6 @@ def is_worth_sending(url: str, text: str) -> bool:
         return False
     return True
 
-
-# ---------------------------------------------------------------- Abruf
 
 BROWSER_HEADERS = {
     "User-Agent": (
@@ -652,10 +562,6 @@ BROWSER_HEADERS = {
 
 
 def make_ssl_context() -> ssl.SSLContext:
-    """Toleranter TLS-Kontext. Einige Kirchen- und Vereinsserver bieten nur
-    alte Cipher-Suites an und brechen sonst mit HANDSHAKE_FAILURE ab.
-    Zertifikatspruefung ist ohnehin aus (nur oeffentliche Seiten, keine
-    Credentials), daher kostet die Lockerung hier nichts zusaetzlich."""
     ctx = ssl.create_default_context()
     ctx.check_hostname = False
     ctx.verify_mode = ssl.CERT_NONE
@@ -673,8 +579,6 @@ def make_ssl_context() -> ssl.SSLContext:
 
 
 def make_http_client() -> httpx.Client:
-    """Ein Client fuer alle Anfragen: wiederverwendete Verbindungen,
-    getrennte Timeouts fuer Verbindungsaufbau und Antwort."""
     return httpx.Client(
         headers=BROWSER_HEADERS,
         follow_redirects=True,
@@ -694,7 +598,6 @@ def html_to_text(raw_html: str) -> str:
 
 
 def classify_error(exc: Exception) -> str:
-    """Grobe Fehlerklasse fuer die Auswertung am Ende des Laufs."""
     if isinstance(exc, httpx.HTTPStatusError):
         return f"HTTP {exc.response.status_code}"
     if isinstance(exc, (httpx.ConnectTimeout, httpx.ReadTimeout, httpx.PoolTimeout)):
@@ -711,8 +614,6 @@ def classify_error(exc: Exception) -> str:
     return type(exc).__name__
 
 
-# Fehlerklassen, bei denen ein erneuter Versuch sinnvoll ist. Ein 404 oder
-# ein DNS-Fehler wiederholt sich dagegen garantiert.
 RETRYABLE = (
     httpx.ConnectTimeout, httpx.ReadTimeout, httpx.PoolTimeout,
     httpx.RemoteProtocolError, httpx.ReadError, httpx.WriteError,
@@ -720,12 +621,6 @@ RETRYABLE = (
 
 
 def fetch_page_text(client_http: httpx.Client, url: str) -> str:
-    """Laedt genau die angegebene URL. KEIN Fallback auf die Startseite:
-    der liefert Inhalte, die nicht zur URL gehoeren, und verbraucht
-    Batch-Plaetze fuer Muell.
-
-    Gibt immer den extrahierten Text zurueck (auch einen kurzen) oder wirft
-    eine Exception. Ob der Text brauchbar ist, entscheidet is_worth_sending."""
     last_exc: Exception | None = None
 
     for attempt in range(FETCH_ATTEMPTS):
@@ -734,7 +629,6 @@ def fetch_page_text(client_http: httpx.Client, url: str) -> str:
             response.raise_for_status()
             return html_to_text(response.text)
         except httpx.HTTPStatusError as exc:
-            # Verbindung stand, Server sagt nein. Kein Retry.
             raise exc
         except RETRYABLE as exc:
             last_exc = exc
@@ -750,16 +644,7 @@ def fetch_page_text(client_http: httpx.Client, url: str) -> str:
     raise last_exc if last_exc else RuntimeError("Abruf ohne Ergebnis")
 
 
-# ---------------------------------------------------------------- Verdichtung
-
 def cap_hits(text: str, max_hits: int) -> tuple[str, int]:
-    """Schneidet vor der (max_hits+1)-ten Datumsangabe ab.
-
-    Gilt bewusst fuer JEDE Seite, nicht nur fuer lange: eine kompakte
-    Terminliste kann auf 6000 Zeichen 80 Termine enthalten und wuerde sonst
-    das Output-Limit allein reissen. Der Text der letzten mitgenommenen
-    Veranstaltung reicht bis zur naechsten Datumsangabe und bleibt vollstaendig.
-    """
     found = list(DATE_PATTERN.finditer(text))
     if len(found) <= max_hits:
         return text, len(found)
@@ -767,23 +652,10 @@ def cap_hits(text: str, max_hits: int) -> tuple[str, int]:
 
 
 def condense_text(text: str, limit: int) -> tuple[str, int]:
-    """Reduziert eine Seite auf die Textstellen um Datumsangaben herum.
-
-    Stumpfes text[:limit] verschenkt bei grossen Kalendern fast alles: die
-    ersten Zeichen sind Navigation und Einleitung, die Terminliste beginnt
-    weiter unten. Hier wird stattdessen um jedes Datum ein Fenster gelegt,
-    ueberlappende Fenster werden verschmolzen.
-
-    Rueckgabe: (Text fuer die API, Anzahl Datumsangaben darin). Die Anzahl
-    dient als Schaetzung, wie viele Events die Seite liefert.
-    """
     if len(text) <= limit:
         return cap_hits(text, MAX_HITS_PER_PAGE)
 
     spans: list[list[int]] = []
-    # Hinweis: Bei dichten Terminlisten ueberlappen die Fenster durchgehend und
-    # verschmelzen zu einem einzigen Bereich. Das ist gewollt - er beginnt dann
-    # genau am ersten Termin, statt bei der Navigation.
     for match in DATE_PATTERN.finditer(text):
         window_start = max(0, match.start() - SNIPPET_BEFORE)
         window_stop = min(len(text), match.end() + SNIPPET_AFTER)
@@ -793,8 +665,6 @@ def condense_text(text: str, limit: int) -> tuple[str, int]:
             spans.append([window_start, window_stop])
 
     if not spans:
-        # Kein Datum gefunden - is_worth_sending haette die Seite ohnehin
-        # verworfen. Vorne abschneiden als letzter Rueckfall.
         return text[:limit], 0
 
     separator = " [...] "
@@ -812,9 +682,6 @@ def condense_text(text: str, limit: int) -> tuple[str, int]:
             break
 
     if not parts:
-        # Ein einzelner (verschmolzener) Bereich ist groesser als das Limit.
-        # Vom Anfang nehmen: dort stehen die zeitlich naechsten Termine.
-        # Weiter entfernte ruecken in spaeteren Laeufen nach vorne.
         result = text[spans[0][0]:spans[0][0] + limit]
     else:
         result = separator.join(parts)
@@ -823,14 +690,6 @@ def condense_text(text: str, limit: int) -> tuple[str, int]:
 
 
 def pack_batches(pages: list[tuple[str, str, int]]) -> list[list[tuple[str, str]]]:
-    """Verteilt Seiten auf Pakete, ohne die geschaetzte Event-Obergrenze
-    pro Request zu reissen.
-
-    Ohne das landeten eine dichte Kalenderseite und sieben kleine
-    Vereinsseiten im gleichen Paket - die grosse dominierte die Antwort und
-    riskierte ein abgeschnittenes JSON. First-Fit-Decreasing: dichte Seiten
-    zuerst, kleine fuellen die Luecken.
-    """
     ordered = sorted(pages, key=lambda page: page[2], reverse=True)
     batches: list[list[tuple[str, str, int]]] = []
 
@@ -848,19 +707,12 @@ def pack_batches(pages: list[tuple[str, str, int]]) -> list[list[tuple[str, str]
 
 
 def rotation_key(url: str, period: int) -> int:
-    """Stabile, aber pro Lauf wechselnde Reihenfolge einer URL."""
     return int(hashlib.md5(f"{url}|{period}".encode("utf-8")).hexdigest(), 16)
 
 
 def select_within_budget(
     pages: list[tuple[str, str, int]], period: int, max_requests: int
 ) -> tuple[list[tuple[str, str, int]], list[tuple[str, str, int]]]:
-    """Waehlt Seiten aus, wenn nicht alle ins Request-Budget passen.
-
-    Ein einfaches Abschneiden der letzten Pakete waere unfair: pack_batches
-    sortiert nach Dichte, also landeten immer dieselben duennen Quellen hinten
-    und kaemen nie zum Zug. Die Auswahl rotiert daher pro Lauf.
-    """
     if not pages or len(pack_batches(pages)) <= max_requests:
         return pages, []
 
@@ -874,11 +726,7 @@ def select_within_budget(
     return kept, skipped
 
 
-# ---------------------------------------------------------------- Extraktion
-
 def extract_events_batch(batch_sources: list[tuple[str, str]], today_str: str) -> list[dict]:
-    # Der Text ist bereits verdichtet und auf TEXT_LIMIT begrenzt
-    # (siehe condense_text in Phase 1) - hier nicht erneut abschneiden.
     combined_text = ""
     for idx, (url, text) in enumerate(batch_sources, start=1):
         combined_text += (
@@ -954,10 +802,6 @@ def call_with_retry(batch_sources, today_str) -> list[dict]:
     return []
 
 
-# ---------------------------------------------------------------- Verschlagwortung
-
-# Region aus dem location-Feld. Reihenfolge in der Liste = Pruefreihenfolge,
-# der erste Treffer gewinnt. Stichworte in Kleinschreibung.
 REGIONS = (
     ("berlin-brandenburg", (
         "berlin", "stahnsdorf", "potsdam", "brandenburg", "weißensee",
@@ -997,7 +841,6 @@ REGIONS = (
     )),
 )
 
-# Anzeigenamen fuer die Filterknoepfe im HTML.
 REGION_LABELS = {
     "berlin-brandenburg": "Berlin &amp; Brandenburg",
     "nord": "Norden",
@@ -1023,8 +866,6 @@ TYPE_LABELS = {
 
 
 def event_region(event: dict) -> str:
-    """Grobe geografische Einordnung. 'online' hat Vorrang: eine reine
-    Online-Veranstaltung gehoert in keine Ortsliste."""
     location = clean_text_for_comparison(event.get("location"))
     if not location or "online" in location or "bundesweit" in location:
         return "online"
@@ -1035,18 +876,10 @@ def event_region(event: dict) -> str:
 
 
 def event_tags(event: dict) -> list[str]:
-    """Tags werden hier vergeben, nicht im Browser gesucht.
-
-    Der frühere Filter suchte Substrings im gerenderten Zeilentext. Das leckt:
-    'kunst' fand 'Grabkunst' in Dutzenden Fuehrungsbeschreibungen, 'museum'
-    fand 'Museum fuer Sepulkralkultur' und machte jede Kasseler Fuehrung zur
-    Ausstellung. Feste Tags im data-Attribut vermeiden das.
-    """
     tags = [f"region-{event_region(event)}"]
 
     kind = event_type(event.get("title", ""))
     if kind is None:
-        # Titel ohne Gattungswort - Beschreibung als zweite Chance nutzen.
         kind = event_type(event.get("description", ""))
     tags.append(f"art-{kind}" if kind else "art-sonstige")
 
@@ -1056,13 +889,7 @@ def event_tags(event: dict) -> list[str]:
     return tags
 
 
-# ---------------------------------------------------------------- HTML
-
 def _filter_buttons(group: str, counts: dict, labels: dict) -> str:
-    """Baut die Filterknoepfe einer Gruppe - nur fuer Tags, die es auch gibt.
-
-    Leere Filter sind schlimmer als fehlende: sie sehen aus wie ein Fehler.
-    """
     parts = [f'<button class="tag-btn active" data-group="{group}" '
              f'data-value="" onclick="setFilter(this)">Alle</button>']
     ordered = sorted(counts.items(), key=lambda kv: (-kv[1], kv[0]))
@@ -1080,7 +907,6 @@ def render_html(events: list[dict], today: date):
     timestamp = datetime.now(BERLIN).strftime("%d.%m.%Y um %H:%M Uhr")
     today_str = today.isoformat()
 
-    # Tags einmal vorberechnen und am Event mitfuehren.
     enriched = []
     region_counts: Counter = Counter()
     type_counts: Counter = Counter()
@@ -1092,10 +918,6 @@ def render_html(events: list[dict], today: date):
         type_counts[kind] += 1
         enriched.append((event, tags))
 
-    # Sortierschluessel ist max(Startdatum, heute): eine seit Juli laufende
-    # Ausstellung erscheint damit an der Position "heute" und nicht mehr weit
-    # oben bei ihrem Startdatum. Wer sie ganz ausblenden will, nutzt den
-    # Art-Filter - laufende Formate tragen zusaetzlich das Tag "laufend".
     enriched.sort(key=lambda pair: (
         max(pair[0].get("date_start", ""), today_str),
         pair[0].get("date_start", ""),
@@ -1269,7 +1091,6 @@ def render_html(events: list[dict], today: date):
             loc_s = html.escape(event.get("location", ""))
             desc_s = html.escape(event.get("description", ""))
 
-            # Nur http/https ins href - html.escape verhindert kein javascript:
             raw_url = str(event.get("url") or "")
             url_s = (html.escape(raw_url)
                      if raw_url.startswith(("http://", "https://")) else "#")
@@ -1355,9 +1176,6 @@ def render_html(events: list[dict], today: date):
             applyFilters();
         }
 
-        // Ein Termin liegt im Zeitfenster, wenn er es ueberlappt. Damit
-        // erscheinen laufende Ausstellungen auch in "Naechste 7 Tage", obwohl
-        // ihr Startdatum lange zurueckliegt.
         function inWindow(row, days) {
             if (!days) return true;
             const start = row.getAttribute('data-start');
@@ -1400,8 +1218,6 @@ def render_html(events: list[dict], today: date):
         f.write(html_content)
 
 
-# ---------------------------------------------------------------- Hauptlauf
-
 if __name__ == "__main__":
     today = datetime.now(BERLIN).date()
     today_str = today.isoformat()
@@ -1430,7 +1246,6 @@ if __name__ == "__main__":
                 continue
 
             if not is_worth_sending(url, page_text):
-                # is_worth_sending protokolliert den Grund bereits selbst
                 reason = ("zu kurz" if len(page_text) < MIN_TEXT_LENGTH
                           else "kein Datum")
                 problems[reason].append(url)
@@ -1498,9 +1313,6 @@ if __name__ == "__main__":
         if number < len(batches):
             time.sleep(API_PAUSE_SECONDS)
 
-    # Zweite Deduplizierung als Sicherheitsnetz: innerhalb EINES Laufs koennen
-    # zwei Pakete dasselbe Event liefern (z. B. Dachseite und Einzelfriedhof),
-    # ohne dass find_duplicate_key das beim Eintragen schon sehen konnte.
     before_dedup = len(events_db)
     events_db = deduplicate_db(events_db)
     stats["zusammengefuehrt"] = before_dedup - len(events_db)
