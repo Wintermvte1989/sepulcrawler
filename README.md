@@ -51,9 +51,6 @@ sepulkral-crawler/
     └── workflows/
         └── crawler.yml # GitHub Actions Workflow
 
-Hinweis: Die frühere monolithische parser.py wurde durch die obigen Module
-ersetzt und kann aus dem Repository gelöscht werden.
-
 
 VORAUSSETZUNGEN & INSTALLATION
 ----------------------------------------------------------------------
