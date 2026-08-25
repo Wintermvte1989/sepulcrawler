@@ -1,10 +1,10 @@
 {
-  "8532227c5a9120d7e4b8e948dd1e58c8": {
-    "title": "Tag des Friedhofs 2026",
+  "34cb6bbea681309ece06511f5263a6a4": {
+    "title": "Tag des Friedhofs 2026 in Berlin",
     "date_start": "2026-09-13",
     "date_end": null,
-    "location": "Evangelischer Domfriedhof Liesenstraße, Berlin",
-    "description": "Aktionstag rund um Friedhofs- und Bestattungskultur mit Führungen zu Opfer- und Ehrengräbern, Ausstellungen, Musik sowie Vorträgen zu Hospizarbeit und Bestattungsvorsorge.",
+    "location": "Ev. Domfriedhof und Friedhöfe an der Liesenstraße, Berlin",
+    "description": "Ein Aktionstag rund um die Friedhofs- und Bestattungskultur mit Führungen zu Opfer- und Ehrengräbern, Vorträgen zu Bestattungsvorsorge und Hospizarbeit sowie kulturellem Programm.",
     "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-25"
@@ -29,8 +29,8 @@
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-25"
   },
-  "619d99267b363e65058b1ca7359b8910": {
-    "title": "Garten der Frauen - Sonntagsführung",
+  "eb90e92de5e6ed3a63b9168815d5877f": {
+    "title": "Garten der Frauen - Sonntagsführungen",
     "date_start": "2026-09-13",
     "date_end": null,
     "location": "Garten der Frauen, Parkfriedhof Ohlsdorf, Hamburg",
@@ -49,8 +49,8 @@
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
   },
-  "375f9f1c222fa65b026e310544ca7659": {
-    "title": "GartenRheinMain Hauptfriedhof",
+  "5faf24e10f8fe9c9098a5767e6edd5f7": {
+    "title": "GartenRheinMain: Hauptfriedhof Frankfurt am Main",
     "date_start": "2026-09-13",
     "date_end": null,
     "location": "Hauptfriedhof, Frankfurt am Main",
@@ -69,8 +69,8 @@
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
   },
-  "ec5f4570e60032f6e7d46db53c656e80": {
-    "title": "Führung über den Hauptfriedhof",
+  "2aba69e043930dac892d7bb4ed42a6be": {
+    "title": "Führung über den Hauptfriedhof Frankfurt",
     "date_start": "2026-09-13",
     "date_end": null,
     "location": "Hauptfriedhof, Frankfurt am Main",
@@ -89,16 +89,6 @@
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
   },
-  "eb90e92de5e6ed3a63b9168815d5877f": {
-    "title": "Garten der Frauen - Sonntagsführungen",
-    "date_start": "2026-09-13",
-    "date_end": null,
-    "location": "Garten der Frauen, Parkfriedhof Ohlsdorf",
-    "description": "Themenbezogene Führung durch den Garten der Frauen auf dem Ohlsdorfer Friedhof.",
-    "url": "https://www.ohlsdorf-derpark.de/termine-ohlsdorf/",
-    "first_seen": "2026-08-25",
-    "last_seen": "2026-08-25"
-  },
   "14fa85cc6b4be417bb238f5f4c423069": {
     "title": "Führung „Tag des offenen Denkmals“",
     "date_start": "2026-09-13",
@@ -106,16 +96,6 @@
     "location": "Parkfriedhof Ohlsdorf",
     "description": "Themenführung zum Zusammenspiel von Grabkunst, Architektur und Gartenlandschaft auf dem Parkfriedhof Ohlsdorf.",
     "url": "https://www.friedhof-hamburg.de/besucher/veranstaltungen/",
-    "first_seen": "2026-08-25",
-    "last_seen": "2026-08-25"
-  },
-  "59052abe1112381effe6aaf5e3d080e7": {
-    "title": "Tag des Friedhofs",
-    "date_start": "2026-09-13",
-    "date_end": null,
-    "location": "Evangelischer Domfriedhof Liesenstraße, Berlin",
-    "description": "Aktionstag zur Friedhofs- und Bestattungskultur mit Führungen, Vorträgen, Musik und Ausstellungen auf den historischen Friedhöfen an der Liesenstraße.",
-    "url": "https://www.meinkiez-meinfriedhof.berlin.de/tag-des-friedhofs",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
   },
@@ -129,23 +109,103 @@
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
   },
-  "eee69b882dc2b948e8be75749b41278f": {
-    "title": "Tag des Friedhofs in Berlin",
+  "664472fe128755257948563096d8a361": {
+    "title": "Tag des offenen Denkmals & Eröffnung VR-Station Die Isenburg",
     "date_start": "2026-09-13",
     "date_end": null,
-    "location": "Evangelischer Domfriedhof Liesenstraße, Berlin",
-    "description": "Ein Aktionstag rund um die Friedhofs- und Bestattungskultur mit Führungen zu Opfer- und Ehrengräbern, Vorträgen zu Bestattungsvorsorge und Hospizarbeit sowie kulturellem Programm.",
-    "url": "https://www.meinkiez-meinfriedhof.berlin.de/tag-des-friedhofs",
+    "location": "LWL-Museum für Archäologie Herne",
+    "description": "Aktionstag zum Tag des offenen Denkmals mit freiem Eintritt und der Neueröffnung einer Virtual-Reality-Station zur Isenburg in der Dauerausstellung.",
+    "url": "https://www.lwl-landesmuseum-herne.de/de/veranstaltungen/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
   },
-  "5faf24e10f8fe9c9098a5767e6edd5f7": {
-    "title": "GartenRheinMain: Hauptfriedhof Frankfurt am Main",
+  "ec075731bd336cd087258c15efa837b7": {
+    "title": "gesucht. gefunden. ausgegraben. Führung durch die Dauerausstellung",
     "date_start": "2026-09-13",
     "date_end": null,
-    "location": "Hauptfriedhof, Frankfurt am Main",
-    "description": "Veranstaltung auf dem Frankfurter Hauptfriedhof im Rahmen des Projekts GartenRheinMain zur Erkundung der denkmalgeschützten Friedhofs- und Parkanlage.",
-    "url": "https://www.krfrm.de/venue/hauptfriedhof-frankfurt-am-main/",
+    "location": "LWL-Museum für Archäologie Herne",
+    "description": "Führung für Erwachsene durch die archäologische Dauerausstellung zur Geschichte der Menschheit in Westfalen.",
+    "url": "https://www.lwl-landesmuseum-herne.de/de/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "07265f7bba12a8f68a076a29ec46dcb9": {
+    "title": "Tag des offenen Denkmals",
+    "date_start": "2026-09-13",
+    "date_end": null,
+    "location": "Friedhof",
+    "description": "Veranstaltung und Führungen zum Tag des offenen Denkmals auf dem Friedhofsgelände.",
+    "url": "https://striesener-friedhof-dresden.de/vorschau-veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "9608f17712a6875e0ab000316b75e9e1": {
+    "title": "Junge Künstlerinnen und Künstler im Gespräch",
+    "date_start": "2026-09-13",
+    "date_end": null,
+    "location": "Bischöfliches Dom- und Diözesanmuseum Mainz",
+    "description": "Gespräch am Tag des offenen Denkmals zur Sonderausstellung SILIKAT 1746 und der Entstehung der Porzellaninstallation.",
+    "url": "https://www.dommuseum-mainz.de/programm/kalender/aktuelle-termine-kalender/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "164652f3de82ef36349494250338a85a": {
+    "title": "Tag des offenen Denkmals im Augustinerkloster",
+    "date_start": "2026-09-13",
+    "date_end": null,
+    "location": "Augustinerkloster, Erfurt",
+    "description": "Aktionstag zum Tag des offenen Denkmals mit Programm und Einblicken in die Geschichte des Klosters.",
+    "url": "https://www.augustinerkloster.de/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "06443f31c7517f5532dcdd0936a113a8": {
+    "title": "Tag des offenen Denkmals im PETRI Berlin",
+    "date_start": "2026-09-13",
+    "date_end": null,
+    "location": "PETRI Berlin",
+    "description": "Öffentliche Denkmaltags-Führungen zur Berliner Stadtgeschichte und Archäologie.",
+    "url": "https://www.smb.museum/museen-einrichtungen/museum-fuer-vor-und-fruehgeschichte/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "c8c803ae1756b494f23654d7d6c1a77d": {
+    "title": "Sagen und Mythen aus dem Nikolaiviertel",
+    "date_start": "2026-09-13",
+    "date_end": null,
+    "location": "Nikolaikirche, Berlin",
+    "description": "Historische Führung rund um die Nikolaikirche zu den Sagen, Mythen und der Entstehung des Berliner Wappenbären.",
+    "url": "https://www.stadtmuseum.de/programm",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "dc72fd4cdce27f1d320137f842d3e4a1": {
+    "title": "Konzert: Klangbrücken für Potsdamer Friedenscarillon – Tag des offenen Denkmals",
+    "date_start": "2026-09-13",
+    "date_end": null,
+    "location": "Neuer Friedhof Potsdam",
+    "description": "Carillon-Konzert des Teams der Klingenden Stele auf dem Neuen Friedhof Potsdam am Tag des offenen Denkmals.",
+    "url": "https://www.friedhof-in-potsdam.de/allgemeines/aktuelles",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "00cf17547a1790cdb2e6958540b4ca41": {
+    "title": "Tag des offenen Denkmals 2026",
+    "date_start": "2026-09-13",
+    "date_end": null,
+    "location": "bundesweit (Eröffnungsstadt Bamberg)",
+    "description": "Bundesweiter Aktionstag mit zahlreichen Führungen, Vorträgen und Konzerten an historischen Denkmälern, Kirchen und Gedenkstätten.",
+    "url": "https://www.tag-des-offenen-denkmals.de/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "b98fbfc0fd5a3e0a6f1130fd918a0a2c": {
+    "title": "Tag des offenen Denkmals / Türmetag 2026",
+    "date_start": "2026-09-13",
+    "date_end": null,
+    "location": "Frey-Haus und Steintorturm, Brandenburg an der Havel",
+    "description": "Aktionstag zum Tag des offenen Denkmals mit Programm und Stempelstationen im Frey-Haus und Steintorturm.",
+    "url": "https://stadtmuseum.stadt-brandenburg.de/stadtmuseum/termine",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
   },
@@ -229,6 +289,96 @@
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
   },
+  "b4a7c28a925a50c6bcd02d4fbe7bcbb6": {
+    "title": "Pop-up Treppenkino: Hütten sind für alle da",
+    "date_start": "2026-08-26",
+    "date_end": null,
+    "location": "Völkerschlachtdenkmal, Leipzig",
+    "description": "Filmvorführung im Rahmen des Pop-up Treppenkinos am Völkerschlachtdenkmal.",
+    "url": "https://www.stadtgeschichtliches-museum-leipzig.de/besuch/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "d01411dccef87741870988852319b961": {
+    "title": "Blickwechsel: Kurzführungen in der Mittagspause – Erfahrungswissen und Erfindergeist",
+    "date_start": "2026-08-26",
+    "date_end": null,
+    "location": "Dommuseum Mainz",
+    "description": "Kurzführung in der Mittagspause im Bischöflichen Dom- und Diözesanmuseum Mainz mit Dr. Sonja Petersen.",
+    "url": "https://www.dommuseum-mainz.de/programm/kalender/aktuelle-termine-kalender/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "602c939c2b309bdb58466f9841f5c9da": {
+    "title": "Aufwind – Hamburgs Chor für trauernde Menschen",
+    "date_start": "2026-08-26",
+    "date_end": null,
+    "location": "KapelleDREI, Friedhof Ohlsdorf, Hamburg",
+    "description": "Ein musikalisches Angebot für trauernde Menschen sowie Personen, die mit Verlusterfahrungen durch Krankheit oder biographische Brüche umgehen.",
+    "url": "https://www.ohlsdorf-derpark.de/termine-ohlsdorf/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "141a42f2cbfd429d1c76be1ea7509397": {
+    "title": "Vortrag „Wer Ohren hat, der höre …“ – O(h)rientierung in herausfordernden Zeiten",
+    "date_start": "2026-08-26",
+    "date_end": null,
+    "location": "Hauptkirche St. Michaelis, Gemeindehaus (Bach-Saal), Hamburg",
+    "description": "Vortrag von Pastor Georg Knauer, Kandidat für die Hauptpastorenstelle an St. Michaelis.",
+    "url": "https://www.st-michaelis.de/veranstaltungen-am-michel",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "be6a19522ff8eb70b9af63fb91b954f4": {
+    "title": "Orgelkonzert | Christian Weiherer",
+    "date_start": "2026-08-26",
+    "date_end": null,
+    "location": "Hauptkirche St. Michaelis, Hamburg",
+    "description": "Orgelkonzert im Rahmen des Hamburger Orgelsommers 2026 mit Werken von Takle, Gras, Roger-Ducasse und Hakim.",
+    "url": "https://www.st-michaelis.de/veranstaltungen-am-michel",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "6504468ae8e3821956c7e773fa2186ae": {
+    "title": "Geschichte(n) Tansanias – Einblicke und Ausblicke",
+    "date_start": "2026-08-26",
+    "date_end": null,
+    "location": "Humboldt Forum, Berlin",
+    "description": "Öffentliche Führung zur Geschichte Tansanias.",
+    "url": "https://www.smb.museum/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "0bfe115aa6ac4043485a854dd8b1788e": {
+    "title": "Provenienzforschung und Quellen: Was können Quellen (nicht)? – Wie wir NS-Raubgut heute erforschen und vermitteln",
+    "date_start": "2026-08-26",
+    "date_end": null,
+    "location": "Haus Bastian – Zentrum für kulturelle Bildung, Museumsinsel Berlin",
+    "description": "Vortrag zur Erforschung und Vermittlung von NS-Raubgut in Museen.",
+    "url": "https://www.smb.museum/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "4321e9932ec878e285247453a4ebcc58": {
+    "title": "Kuratorenführung 100 Jahre Wörterbuch",
+    "date_start": "2026-08-26",
+    "date_end": null,
+    "location": "Neues Museum, Museumsinsel Berlin",
+    "description": "Kuratorenführung in der Ägyptischen Sammlung des Neuen Museums.",
+    "url": "https://www.smb.museum/museen-einrichtungen/aegyptisches-museum-und-papyrussammlung/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "c07d7b12ee755ac07720b8968430d227": {
+    "title": "12. Admonter Lautenherbst",
+    "date_start": "2026-08-26",
+    "date_end": "2026-08-30",
+    "location": "Benediktinerstift Admont",
+    "description": "Fünftägiges Kulturfestival für Alte Musik im Stift Admont mit Konzerten, Meisterkursen und Workshops.",
+    "url": "https://www.stiftadmont.at/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
   "a554fce890097f3eb991b0a880c0488a": {
     "title": "Friedhofsnacht 2026",
     "date_start": "2026-08-28",
@@ -237,6 +387,106 @@
     "description": "Veranstaltung im Rahmen der Friedhofsnacht 2026 auf dem Friedhof Dreifaltigkeit II an der Bergmannstraße.",
     "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "first_seen": "2026-08-24",
+    "last_seen": "2026-08-25"
+  },
+  "4d89ef12e794a4802dbe7fbd836917ce": {
+    "title": "Heinrichs Salon: Apoll und seine Gefährten",
+    "date_start": "2026-08-28",
+    "date_end": null,
+    "location": "Rheinsberg, Lustgarten Rheinsberg",
+    "description": "Expert:innenführung mit Skulpturenkustodin Dr. Silke Kiesant und Skulpturenrestaurator Roland Will.",
+    "url": "https://www.spsg.de/aktuelles/veranstaltungen",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "c8ffd8c4a0ce5af395b57a65f03a6c2a": {
+    "title": "„Für Prinzenmusik fast zu gut…“ – Führung und Konzert",
+    "date_start": "2026-08-28",
+    "date_end": null,
+    "location": "Königs Wusterhausen, Schloss Königs Wusterhausen / Evangelische Kreuzkirche",
+    "description": "Führung mit Schlossleiterin Dr. Margrit Schulze und anschließendes Konzert in der Evangelischen Kreuzkirche.",
+    "url": "https://www.spsg.de/aktuelles/veranstaltungen",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "b486f7f2197fff306d0bb8d12df07e5c": {
+    "title": "Orlando – Filmreihe AugenBlicke im Schloss",
+    "date_start": "2026-08-28",
+    "date_end": null,
+    "location": "Potsdam, Schloss Sacrow",
+    "description": "Filmvorführung im Schloss Sacrow im Rahmen der Filmreihe des Ars Sacrow e.V.",
+    "url": "https://www.spsg.de/aktuelles/veranstaltungen",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "6c54866a918a27284647b2f18e551d24": {
+    "title": "Improfieber",
+    "date_start": "2026-08-28",
+    "date_end": null,
+    "location": "Schillerhaus, Leipzig",
+    "description": "Improvisationstheater im historischen Ambiente des Schillerhauses.",
+    "url": "https://www.stadtgeschichtliches-museum-leipzig.de/besuch/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "be3aeb232095a319d872c12e5fa76963": {
+    "title": "Für Sachsen-Anhalt in Bonn – Werdegänge und Erfahrungen der ersten ostdeutschen Bundestagsabgeordneten",
+    "date_start": "2026-08-28",
+    "date_end": null,
+    "location": "Landesarchiv Sachsen-Anhalt, Magdeburg",
+    "description": "Veranstaltung im Landesarchiv Sachsen-Anhalt zur Geschichte des politischen Umbaus Ostdeutschlands und den Werdegängen der ersten ostdeutschen Bundestagsabgeordneten ab 1990.",
+    "url": "https://www.magdeburg.de/Start/Kultur-Sport/Veranstaltungskalender",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "f66ca6fff11e3fa9443e858dfb314fc1": {
+    "title": "Sonderführung „Hoch hinaus im Abendrot! Domtürme bei Sonnenuntergang“",
+    "date_start": "2026-08-28",
+    "date_end": null,
+    "location": "Naumburger Dom",
+    "description": "Abendliche Sonderführung auf die Türme des historischen Naumburger Doms zum Sonnenuntergang.",
+    "url": "https://www.naumburger-dom.de/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "85b287e54cc0aa23193db5462913d666": {
+    "title": "Klosterführung „Luthers schlaflose Nächte in Erfurt“",
+    "date_start": "2026-08-28",
+    "date_end": null,
+    "location": "Augustinerkloster, Erfurt",
+    "description": "Abendliche Führung durch das historische Augustinerkloster auf den Spuren Martin Luthers.",
+    "url": "https://www.augustinerkloster.de/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "8294536b8dd7960c9284667be5042298": {
+    "title": "Geistliche Abendmusik: Duo der tiefen Stimmen",
+    "date_start": "2026-08-28",
+    "date_end": null,
+    "location": "Doberaner Münster, Bad Doberan",
+    "description": "Konzert mit Gesängen über Glauben, Liebe und Leben aus vier Jahrhunderten mit Werken u. a. von Schütz, Bach und Mendelssohn.",
+    "url": "https://www.muenster-doberan.de/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "cfc17f731a46d0ed6bcc0558d2e547f2": {
+    "title": "Den Alten Markt lesen – ein Gedankenspaziergang",
+    "date_start": "2026-08-28",
+    "date_end": null,
+    "location": "Potsdam Museum - Forum für Kunst und Geschichte",
+    "description": "Gedankenspaziergang zur Skulpturensammlung und zur Geschichte des Alten Marktes mit Saskia Hüneke und Robert Leichsenring.",
+    "url": "https://www.potsdam-museum.de/de/veranstaltungen",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "fccac8806331435fea00b8605f82f15b": {
+    "title": "Museumsuferfest 2026",
+    "date_start": "2026-08-28",
+    "date_end": "2026-08-30",
+    "location": "Archäologisches Museum Frankfurt",
+    "description": "Kultur- und Museumsfest im Archäologischen Museum Frankfurt mit Programm zur Geschichte und Archäologie.",
+    "url": "https://www.archaeologisches-museum-frankfurt.de/",
+    "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
   },
   "eb21f4e79eb965bbf74b93f9d40656b7": {
@@ -259,13 +509,113 @@
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-25"
   },
-  "01bcb81de60559984e2416a59cc59693": {
-    "title": "Garten der Frauen - Sonntagsführung",
+  "85ca13271b7511ed030a9ebcde2f762b": {
+    "title": "gesucht. gefunden. ausgegraben. Führung durch die Dauerausstellung",
     "date_start": "2026-08-30",
     "date_end": null,
-    "location": "Garten der Frauen, Parkfriedhof Ohlsdorf",
-    "description": "Themenbezogene Führung durch den Garten der Frauen auf dem Parkfriedhof Ohlsdorf.",
-    "url": "https://www.friedhof-hamburg.de/besucher/veranstaltungen/",
+    "location": "LWL-Museum für Archäologie Herne",
+    "description": "Ein Rundgang durch die archäologische Dauerausstellung, der anhand einer nachgestalteten Ausgrabung den Spuren der Menschen in Westfalen folgt.",
+    "url": "https://www.lwl-landesmuseum-herne.de/de/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "c1f097c69beb8ec4b0ac788c6024e24d": {
+    "title": "Jüdinnen und Juden, Deutschland und Israel – Führung durch die Dauerausstellung",
+    "date_start": "2026-08-30",
+    "date_end": null,
+    "location": "Jüdisches Museum Berlin",
+    "description": "Führung durch die Dauerausstellung zur jüdischen Geschichte und der Beziehung zwischen Deutschland und Israel.",
+    "url": "https://www.jmberlin.de/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "5af01569bc462e52a2abcc595e8ff8d2": {
+    "title": "Sonntagsführung im Garten der Frauen",
+    "date_start": "2026-08-30",
+    "date_end": null,
+    "location": "Garten der Frauen, Friedhof Ohlsdorf, Hamburg",
+    "description": "Themenbezogene Führung durch den historischen Garten der Frauen auf dem Ohlsdorfer Friedhof.",
+    "url": "https://www.ohlsdorf-derpark.de/termine-ohlsdorf/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "d3f6e36e892815d5cf260951be4f8e57": {
+    "title": "Schicksal in den Sternen – die Anfänge des Tierkreises",
+    "date_start": "2026-08-30",
+    "date_end": null,
+    "location": "Neues Museum, Museumsinsel Berlin",
+    "description": "Öffentliche Führung zur Geschichte und Entstehung des Tierkreises in der Antike.",
+    "url": "https://www.smb.museum/museen-einrichtungen/aegyptisches-museum-und-papyrussammlung/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "67d16d894648aa59cbe1ab3a7ee360ea": {
+    "title": "Jubiläumstour: 200 Jahre Museumsinsel",
+    "date_start": "2026-08-30",
+    "date_end": null,
+    "location": "Museumsinsel Berlin",
+    "description": "Eine Jubiläumstour mit neuem Blick auf die Museen und Geschichte der Berliner Museumsinsel.",
+    "url": "https://www.smb.museum/museen-einrichtungen/museum-fuer-vor-und-fruehgeschichte/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "a74b48cb21da1228762bc5dcecaa0b40": {
+    "title": "Ein Spaziergang durch die Zeit(en): Archäologie in Berlin-Mitte",
+    "date_start": "2026-08-30",
+    "date_end": null,
+    "location": "Museumsinsel Berlin, Neues Museum, PETRI Berlin",
+    "description": "Englischsprachige archäologische Führung durch das historische Zentrum von Berlin.",
+    "url": "https://www.smb.museum/museen-einrichtungen/museum-fuer-vor-und-fruehgeschichte/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "4dcf6c2865c11c5dd3b6fd3fff194268": {
+    "title": "Sonntagsführung durch die Dauerausstellung",
+    "date_start": "2026-08-30",
+    "date_end": null,
+    "location": "Archäologische Staatssammlung, München",
+    "description": "Überblicksführung durch die archäologische Dauerausstellung in Zusammenarbeit mit der Münchner Volkshochschule.",
+    "url": "https://www.archaeologie-bayern.de/de/termine/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "1f95b6e67bef9e4daca41e1c083483cd": {
+    "title": "Spaziergang: Die Margarethenhöhe – Gartenstadt und Gesamtkunstwerk",
+    "date_start": "2026-08-30",
+    "date_end": null,
+    "location": "Margarethenhöhe, Essen",
+    "description": "Historischer Stadtteilrundgang zur Architektur und Geschichte der Gartenstadt Margarethenhöhe.",
+    "url": "https://www.ruhrmuseum.de/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "8d4404453d0f086dfe6d18d02edf52a1": {
+    "title": "Ausstellungsmacher:innen führen: überLeben in der Eiszeit",
+    "date_start": "2026-08-30",
+    "date_end": null,
+    "location": "Ruhr Museum, Essen",
+    "description": "Führung durch die Kuratoren der archäologischen Sonderausstellung über das Leben in der Eiszeit.",
+    "url": "https://www.ruhrmuseum.de/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "129d87bba154e444afaab4e65740a542": {
+    "title": "Der Alte Markt von Potsdam – in der Historie und der Kunst",
+    "date_start": "2026-08-30",
+    "date_end": null,
+    "location": "Potsdam Museum - Forum für Kunst und Geschichte",
+    "description": "Doppelführung durch die Ausstellung zur historischen und städtebaulichen Entwicklung des Alten Markts von 1945 bis 2025.",
+    "url": "https://www.potsdam-museum.de/de/veranstaltungen",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "6ac212ad5da4f8bf7d2040ec264e6877": {
+    "title": "Familiennachmittag: Rock Art",
+    "date_start": "2026-08-30",
+    "date_end": null,
+    "location": "Landesmuseum für Vorgeschichte Halle",
+    "description": "Führung und Aktionsprogramm zu Felsbildern der Alt- und Mittelsteinzeit im Rahmen der archäologischen Sonderausstellung ›Die Schamanin‹.",
+    "url": "https://www.landesmuseum-vorgeschichte.de/veranstaltungen/familiennachmittage",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
   },
@@ -339,13 +689,123 @@
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
   },
-  "f9ee9b41ca92fef8bc275287f5e37fda": {
-    "title": "Kasseler Museumsnacht 2026",
+  "19e665fc5e8f6ccd70fcaa8789fcea9d": {
+    "title": "Auf den Spuren des Fotoateliers Mittelmann am Peterssteinweg",
     "date_start": "2026-09-05",
     "date_end": null,
-    "location": "Museum für Sepulkralkultur, Kassel",
-    "description": "Das Museum für Sepulkralkultur bietet im Rahmen der Museumsnacht ein Programm mit Spezialführungen, Mitternachtsführung, Livemusik und Aktionen an.",
-    "url": "https://www.sepulkralmuseum.de/veranstaltungen/",
+    "location": "Haus Böttchergäßchen, Leipzig",
+    "description": "Historischer Stadtrundgang auf den Spuren des Fotoateliers Mittelmann.",
+    "url": "https://www.stadtgeschichtliches-museum-leipzig.de/besuch/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "c003bf4b8706d6d00ecb761d2d405316": {
+    "title": "Genie versus KI",
+    "date_start": "2026-09-05",
+    "date_end": null,
+    "location": "Schillerhaus, Leipzig",
+    "description": "Dialogführung im Schillerhaus zur Frage Genie versus Künstliche Intelligenz.",
+    "url": "https://www.stadtgeschichtliches-museum-leipzig.de/besuch/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "7f020d2f5e98aa2e59514256a3729e43": {
+    "title": "Nacht der Kunst",
+    "date_start": "2026-09-05",
+    "date_end": null,
+    "location": "Schillerhaus, Leipzig",
+    "description": "Kulturveranstaltung im Schillerhaus im Rahmen der Nacht der Kunst.",
+    "url": "https://www.stadtgeschichtliches-museum-leipzig.de/besuch/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "68789de4a3d4948b9020f1de8b3cb57a": {
+    "title": "Sonderführung „Domstiftsarchiv“",
+    "date_start": "2026-09-05",
+    "date_end": null,
+    "location": "Naumburger Dom",
+    "description": "Exklusive Führung durch die historischen Bestände und Räumlichkeiten des Domstiftsarchivs am Naumburger Dom.",
+    "url": "https://www.naumburger-dom.de/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "789f87dd31412bf0c1b4de83b5309ec0": {
+    "title": "Oratorienkonzert ELIAS",
+    "date_start": "2026-09-05",
+    "date_end": null,
+    "location": "Naumburger Dom",
+    "description": "Aufführung des Oratoriums Elias im Naumburger Dom als musikalische Kulturveranstaltung in der historischen Kirche.",
+    "url": "https://www.naumburger-dom.de/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "b9006bfa6abead5d7833163edc08a0c7": {
+    "title": "Lebenslust und Seelenqualen – Luther in Erfurt",
+    "date_start": "2026-09-05",
+    "date_end": null,
+    "location": "Augustinerkloster und weitere Luther-Orte, Erfurt",
+    "description": "Sinnliche Führung durch das Augustinerkloster sowie zu weiteren historischen Luther-Stätten.",
+    "url": "https://www.augustinerkloster.de/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "bfb95cb7adbd56ba131412bfcc97d7f1": {
+    "title": "Orgelpunkt – Orgelmusik mit geistlicher Kirchenführung",
+    "date_start": "2026-09-05",
+    "date_end": null,
+    "location": "Hauptkirche St. Michaelis, Hamburg",
+    "description": "40-minütige Orgelmusik zusammen mit einer geistlichen Kirchenführung in St. Michaelis.",
+    "url": "https://www.st-michaelis.de/veranstaltungen-am-michel",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "66ca21716bce7b5ac859e163da49a5ac": {
+    "title": "200 Jahre Museumsinsel",
+    "date_start": "2026-09-05",
+    "date_end": null,
+    "location": "Altes Museum, James-Simon-Galerie, Museumsinsel Berlin, Neues Museum",
+    "description": "Öffentliche Führung anlässlich des 200-jährigen Jubiläums des Museumsensembles.",
+    "url": "https://www.smb.museum/museen-einrichtungen/museum-fuer-vor-und-fruehgeschichte/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "5876f95519987f9c89842d7e37956e56": {
+    "title": "Berlin archäoLogisch!",
+    "date_start": "2026-09-05",
+    "date_end": null,
+    "location": "Museumsinsel Berlin, Neues Museum, PETRI Berlin",
+    "description": "Ein Ausstellungsgespräch für Familien rund um archäologische Entdeckungen in Berlin.",
+    "url": "https://www.smb.museum/museen-einrichtungen/museum-fuer-vor-und-fruehgeschichte/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "c19cdced107d0ba36a346147ee12e2a6": {
+    "title": "Samstagskonzert im Bamberger Kaiserdom",
+    "date_start": "2026-09-05",
+    "date_end": null,
+    "location": "Kaiserdom Bamberg",
+    "description": "Orgelkonzert im Bamberger Kaiserdom, gespielt von Francesco Bernasconi aus Hannover.",
+    "url": "https://www.bamberger-dommusik.de/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "b6563d60e6720224bb53a600dfaaa600": {
+    "title": "Führung: Von der Grube Pfau zum Goldenen Apfel",
+    "date_start": "2026-09-05",
+    "date_end": null,
+    "location": "Archäologisches Museum Frankfurt",
+    "description": "Themenführung zur Archäologie und Stadtgeschichte im Archäologischen Museum Frankfurt.",
+    "url": "https://www.archaeologisches-museum-frankfurt.de/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "79edfe16aa0314180acd0668beec224d": {
+    "title": "Führung: Von Bettelmönchen, Stiftern und Klostermauern",
+    "date_start": "2026-09-05",
+    "date_end": null,
+    "location": "Archäologisches Museum Frankfurt",
+    "description": "Führung zur mittelalterlichen Geschichte des ehemaligen Karmeliterklosters und seiner Bewohner.",
+    "url": "https://www.archaeologisches-museum-frankfurt.de/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
   },
@@ -369,8 +829,8 @@
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-25"
   },
-  "fcafa04776ab97cf5e739932a80b61d6": {
-    "title": "Garten der Frauen - Sonntagsführung",
+  "9e464668b513edc4fa1c2f378ddbddd8": {
+    "title": "Garten der Frauen - Sonntagsführungen",
     "date_start": "2026-09-06",
     "date_end": null,
     "location": "Garten der Frauen, Parkfriedhof Ohlsdorf, Hamburg",
@@ -396,16 +856,6 @@
     "location": "Eliasfriedhof, Dresden",
     "description": "Führung über das Friedhofsgelände mit dem Fokus auf oft übergangene oder vergessene Lebensgeschichten von Frauen und Kindern.",
     "url": "https://eliasfriedhof.de/termine/",
-    "first_seen": "2026-08-25",
-    "last_seen": "2026-08-25"
-  },
-  "d5e1bf9c144285caa55320b9f811e842": {
-    "title": "Garten der Frauen - Sonntagsführungen",
-    "date_start": "2026-09-06",
-    "date_end": null,
-    "location": "Garten der Frauen, Parkfriedhof Ohlsdorf",
-    "description": "Themenbezogene Führung durch den Garten der Frauen auf dem Ohlsdorfer Friedhof.",
-    "url": "https://www.ohlsdorf-derpark.de/termine-ohlsdorf/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
   },
@@ -439,6 +889,96 @@
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
   },
+  "ca0b5245487e19ea083ed5d6b1cb2156": {
+    "title": "Auf den Spuren des Fotoateliers Mittelmann am Peterssteinweg",
+    "date_start": "2026-09-06",
+    "date_end": null,
+    "location": "Haus Böttchergäßchen, Leipzig",
+    "description": "Historischer Stadtrundgang auf den Spuren des Fotoateliers Mittelmann.",
+    "url": "https://www.stadtgeschichtliches-museum-leipzig.de/besuch/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "34d1e176ca479b038522f04c7061fde9": {
+    "title": "Sommertheater mit der freien Theatergruppe Kulturbeutel",
+    "date_start": "2026-09-06",
+    "date_end": null,
+    "location": "Schillerhaus, Leipzig",
+    "description": "Theateraufführung der freien Gruppe Kulturbeutel im Schillerhaus.",
+    "url": "https://www.stadtgeschichtliches-museum-leipzig.de/besuch/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "4d89187da57c8007306bb224e2f4b6ec": {
+    "title": "1000 Jahre in 60 Minuten – Highlights der Schausammlung",
+    "date_start": "2026-09-06",
+    "date_end": null,
+    "location": "Bischöfliches Dom- und Diözesanmuseum Mainz",
+    "description": "Rundgang durch die hoch- und spätmittelalterlichen Ausstellungsräume des Dommuseums Mainz.",
+    "url": "https://www.dommuseum-mainz.de/programm/kalender/aktuelle-termine-kalender/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "d1329b9894fa50aae67ca5799c0d65e5": {
+    "title": "Die Welt der wahren Schätze – Führungen durch den Domschatz",
+    "date_start": "2026-09-06",
+    "date_end": null,
+    "location": "Bischöfliches Dom- und Diözesanmuseum Mainz",
+    "description": "Entdeckungsreise durch den Mainzer Domschatz mit Exponaten aus Gold, Silber und Textil aus über 1000 Jahren.",
+    "url": "https://www.dommuseum-mainz.de/programm/kalender/aktuelle-termine-kalender/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "0bb8b7bc4ee7d1c31a246e9d2b33b22b": {
+    "title": "Der Alte Südliche Friedhof – Es lebe der Centralfriedhof",
+    "date_start": "2026-09-06",
+    "date_end": null,
+    "location": "Alter Südlicher Friedhof, München",
+    "description": "Spaziergang über Münchens historischen Friedhof zur Vermittlung vergangener Begräbniskultur und bedeutender Persönlichkeiten.",
+    "url": "https://www.stattreisen-muenchen.de/fuehrungen/der-alte-sudliche-friedhof",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "ddb1d02c011b534d6ae55695ba626430": {
+    "title": "Jubiläumstour: 200 Jahre Museumsinsel",
+    "date_start": "2026-09-06",
+    "date_end": null,
+    "location": "Museumsinsel Berlin",
+    "description": "Führung durch das Welterbe Museumsinsel mit historischen Einblicken.",
+    "url": "https://www.smb.museum/museen-einrichtungen/museum-fuer-vor-und-fruehgeschichte/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "6e0f5651889a347b49021f30bae079db": {
+    "title": "Spaziergang durch die Zeit(en): Archäologie in Berlin-Mitte",
+    "date_start": "2026-09-06",
+    "date_end": null,
+    "location": "Museumsinsel Berlin, Neues Museum, PETRI Berlin",
+    "description": "Öffentliche Führung zu den archäologischen Wurzeln Berlins.",
+    "url": "https://www.smb.museum/museen-einrichtungen/museum-fuer-vor-und-fruehgeschichte/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "d2815af3389f302ee6d18cf58ac302e2": {
+    "title": "Sonntagsführung durch die Dauerausstellung",
+    "date_start": "2026-09-06",
+    "date_end": null,
+    "location": "Archäologische Staatssammlung, München",
+    "description": "Überblicksführung durch die Vielfalt der Archäologie in der Dauerausstellung der Archäologischen Staatssammlung.",
+    "url": "https://www.archaeologie-bayern.de/de/termine/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "53b9920c5cf57c363d9af96b9ac2c5db": {
+    "title": "Der Atlas erzählt",
+    "date_start": "2026-09-06",
+    "date_end": null,
+    "location": "Potsdam Museum - Forum für Kunst und Geschichte",
+    "description": "Familienführung ab 6 Jahren mit Geschichten rund um historische Gegenstände aus Potsdams Vergangenheit.",
+    "url": "https://www.potsdam-museum.de/de/veranstaltungen",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
   "82d73628604f4da8f8b2576a140ee612": {
     "title": "Führung über den Alten St.-Matthäus-Friedhof",
     "date_start": "2026-09-09",
@@ -459,6 +999,46 @@
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
   },
+  "119408516b852107c5305a5c3ec3b9d3": {
+    "title": "100+ Synagogen in Deutschland",
+    "date_start": "2026-09-09",
+    "date_end": null,
+    "location": "Capa-Haus, Leipzig",
+    "description": "Eröffnung der historischen Ausstellung über Synagogen in Deutschland im Capa-Haus.",
+    "url": "https://www.stadtgeschichtliches-museum-leipzig.de/besuch/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "86f4104c72e1189d6fce84ecae7d2702": {
+    "title": "30 Minuten Kunst! Schätze aus dem Depot",
+    "date_start": "2026-09-09",
+    "date_end": null,
+    "location": "Bischöfliches Dom- und Diözesanmuseum Mainz",
+    "description": "Exklusive Vorstellung eines bislang unbekannten Kunstwerks aus den Depots des Dommuseums.",
+    "url": "https://www.dommuseum-mainz.de/programm/kalender/aktuelle-termine-kalender/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "c3c0a3c6872abd6e0146a7466a5edb85": {
+    "title": "Ježeks Zimmer erwacht zu Musik",
+    "date_start": "2026-09-09",
+    "date_end": "2026-09-23",
+    "location": "Jaroslav-Ježek-Gedenkstätte (Das Blaue Zimmer)",
+    "description": "Musikalische Veranstaltung in der Gedenkstätte mit Klängen des Klaviers im Blauen Zimmer.",
+    "url": "https://www.nm.cz/en/program/events",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "0914475285f2d99b1f5ee01be5ccc9eb": {
+    "title": "Silver Salon: Vorstellung der Sonderausstellung zu Christopher Lehmpfuhl",
+    "date_start": "2026-09-09",
+    "date_end": null,
+    "location": "Potsdam Museum - Forum für Kunst und Geschichte",
+    "description": "Vortrag und Gespräch für die ältere Generation über die Sonderausstellung mit Markus Wicke.",
+    "url": "https://www.potsdam-museum.de/de/veranstaltungen",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
   "b9d40498ce967cabfce140b76c86a9af": {
     "title": "Führung über den Alten St.-Matthäus-Friedhof",
     "date_start": "2026-09-23",
@@ -467,6 +1047,36 @@
     "description": "Führung über den Alten St.-Matthäus-Friedhof im Rahmen der Mittwochstermine mit Ralf Illauer.",
     "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "first_seen": "2026-08-24",
+    "last_seen": "2026-08-25"
+  },
+  "32b542069bd88a431d4866934efc8d04": {
+    "title": "11 bruckner FENSTER – Hansjörg Albrecht Orgelkonzert",
+    "date_start": "2026-09-23",
+    "date_end": null,
+    "location": "Berlin, Sankt Hedwigs-Kathedrale",
+    "description": "Orgelkonzert mit Hansjörg Albrecht in der Sankt Hedwigs-Kathedrale.",
+    "url": "https://www.hedwigs-kathedrale.de/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "b613110376565c1a8ac0bf8d4ae8e53f": {
+    "title": "Gespräch mit Musik: Bach trifft Dana Grigorcea",
+    "date_start": "2026-09-23",
+    "date_end": null,
+    "location": "Barocksaal der Stiftsbibliothek, St. Gallen",
+    "description": "Kulturveranstaltung im Barocksaal der Stiftsbibliothek mit Gespräch und musikalischer Begleitung.",
+    "url": "https://www.stiftsbezirk.ch/de/veranstaltungen",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "2eac3baa471f33aed756bf1cf7371255": {
+    "title": "Salon Dvořák: Leggiero Quartet",
+    "date_start": "2026-09-23",
+    "date_end": null,
+    "location": "Antonín-Dvořák-Museum",
+    "description": "Kammermusikkonzert mit Werken von W. A. Mozart, B. Kovács, A. Dvořák und F. Mendelssohn.",
+    "url": "https://www.nm.cz/en/program/events",
+    "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
   },
   "2dfaeae55097b41bfeda03e7b2e3dcb0": {
@@ -489,6 +1099,36 @@
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-25"
   },
+  "fc16d64afae9369ca26855666c73ebcf": {
+    "title": "gesucht. gefunden. ausgegraben. Führung durch die Dauerausstellung",
+    "date_start": "2026-09-27",
+    "date_end": null,
+    "location": "LWL-Museum für Archäologie Herne",
+    "description": "Archäologische Führung durch die Dauerausstellung zu den Spuren der Vergangenheit in Westfalen.",
+    "url": "https://www.lwl-landesmuseum-herne.de/de/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "90f929a6336b9b79ca495c2c649dc513": {
+    "title": "Ein Spaziergang durch die Zeit(en): Archäologie in Berlin-Mitte",
+    "date_start": "2026-09-27",
+    "date_end": null,
+    "location": "Museumsinsel Berlin, Neues Museum, PETRI Berlin",
+    "description": "Archäologische Führung in englischer Sprache durch das historische Berlin.",
+    "url": "https://www.smb.museum/museen-einrichtungen/museum-fuer-vor-und-fruehgeschichte/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "a6fde98052dd15a619cb28de1df1a1dc": {
+    "title": "Familiennachmittag: Schmuck der Mittelsteinzeit",
+    "date_start": "2026-09-27",
+    "date_end": null,
+    "location": "Landesmuseum für Vorgeschichte Halle",
+    "description": "Familiennachmittag mit Führung durch die Sonderausstellung ›Die Schamanin‹ und der Herstellung eines Bernsteinanhängers.",
+    "url": "https://www.landesmuseum-vorgeschichte.de/veranstaltungen/familiennachmittage",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
   "98edd54c694cadb1251dca1d3cf35db1": {
     "title": "Führung über den Alten St.-Matthäus-Friedhof",
     "date_start": "2026-10-07",
@@ -503,7 +1143,7 @@
     "title": "Redner-Workshop: Zweisprachige Trauerfeiern",
     "date_start": "2026-10-07",
     "date_end": null,
-    "location": "Online",
+    "location": "online (AUF DAS LEBEN)",
     "description": "Online-Workshop für Trauerrednerinnen und Trauerredner zur Konzeption und Durchführung zweisprachiger Trauerfeiern.",
     "url": "https://aufdasleben.de/event/",
     "first_seen": "2026-08-24",
@@ -523,7 +1163,7 @@
     "title": "Redner-Workshop: Erfolgreiche Selbstvermarktung",
     "date_start": "2026-10-16",
     "date_end": null,
-    "location": "Online",
+    "location": "online (AUF DAS LEBEN)",
     "description": "Workshop für Selbstständige in der Trauerbegleitung und Rednerbranche zur effektiven Positionierung und Selbstvermarktung.",
     "url": "https://aufdasleben.de/event/",
     "first_seen": "2026-08-24",
@@ -554,19 +1194,9 @@
     "date_start": "2026-11-18",
     "date_end": null,
     "location": "Südfriedhof, Leipzig",
-    "description": "Thematische Führung zu den Grabstätten und der Architektur des Leipziger Südfriedhofs.",
-    "url": "https://paul-benndorf-gesellschaft.de/fuehrungen.html",
-    "first_seen": "2026-08-24",
-    "last_seen": "2026-08-25"
-  },
-  "6591fd4a1d87ad5cb5ccf96a8befb28f": {
-    "title": "Traditionelle Führung zum Buß- und Bettag",
-    "date_start": "2026-11-18",
-    "date_end": null,
-    "location": "Südfriedhof Leipzig",
     "description": "Führung über den Leipziger Südfriedhof mit Einblicken in die stadt- und kunstgeschichtliche Bedeutsamkeit der Grabstätten.",
     "url": "https://paul-benndorf-gesellschaft.de/fuehrungen.html",
-    "first_seen": "2026-08-25",
+    "first_seen": "2026-08-24",
     "last_seen": "2026-08-25"
   },
   "5defe92cb6c8478e7f53212131e78332": {
@@ -577,6 +1207,16 @@
     "description": "Ein etwa zweistündiger Rundgang mit Anja Pick über die Geschichte des Jüdischen Friedhofs Weißensee und die Grabstätten bedeutender Berliner Persönlichkeiten.",
     "url": "https://jewish-cemetery-weissensee.org/entdecken/fuehrungen/",
     "first_seen": "2026-08-24",
+    "last_seen": "2026-08-25"
+  },
+  "f908405146ffaf7bdac71b0866d4b1fb": {
+    "title": "Benefizkonzert zugunsten der Restaurierung des Hauptportals",
+    "date_start": "2026-10-18",
+    "date_end": null,
+    "location": "Doberaner Münster, Bad Doberan",
+    "description": "Konzert für Orgel, Trompete und Horn zur Unterstützung der Restaurierungsarbeiten am Hauptportal des Doberaner Münsters.",
+    "url": "https://www.muenster-doberan.de/",
+    "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
   },
   "e8ec9c158ea71492f2b6aa0e937f68b9": {
@@ -619,6 +1259,116 @@
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-25"
   },
+  "4c0bd06d365312adb9f6ff7c9d75a29d": {
+    "title": "Führungen durch das Bernhard-Lichtenberg-Haus zum Tag des offenen Denkmals",
+    "date_start": "2026-09-12",
+    "date_end": "2026-09-13",
+    "location": "Berlin, Bernhard-Lichtenberg-Haus",
+    "description": "Sonderführungen im Rahmen des Tages des offenen Denkmals.",
+    "url": "https://www.hedwigs-kathedrale.de/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "2b4962f65c1c0fab71bdda6ffd988ecf": {
+    "title": "Klosterführung „Mit Gaumenfreuden durchs Kloster“",
+    "date_start": "2026-09-12",
+    "date_end": null,
+    "location": "Augustinerkloster, Erfurt",
+    "description": "Kultur- und Genussführung durch die historischen Räume des Klosters.",
+    "url": "https://www.augustinerkloster.de/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "1e643dba7d7fc016e302ddd0bd047ba3": {
+    "title": "Tag des offenen Denkmals im PETRI Berlin",
+    "date_start": "2026-09-12",
+    "date_end": null,
+    "location": "PETRI Berlin",
+    "description": "Führungen am Tag des offenen Denkmals im archäologischen Besucher- und Forschungszentrum PETRI Berlin.",
+    "url": "https://www.smb.museum/museen-einrichtungen/museum-fuer-vor-und-fruehgeschichte/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "19f2648f0e0948735c8c4079cff957b6": {
+    "title": "Das LEIZA auf dem Mainzer Wissenschaftsmarkt",
+    "date_start": "2026-09-12",
+    "date_end": null,
+    "location": "Mainzer Wissenschaftsmarkt, Mainz",
+    "description": "Das Leibniz-Zentrum für Archäologie (LEIZA) gibt auf dem Mainzer Wissenschaftsmarkt erste Einblicke in seine neue Dauerausstellung 'Auf zu neuen Ufern'.",
+    "url": "https://www.leiza.de/aktuelles",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "e95b590067b95799aba1a4043db580c2": {
+    "title": "Con Spirito – Das Leipziger Kammermusikfestival",
+    "date_start": "2026-09-12",
+    "date_end": "2026-09-20",
+    "location": "Verschiedene Veranstaltungsorte, Leipzig",
+    "description": "Kammermusikfestival an Leipziger Komponistenhäusern, Museen und Kirchen, das sich 2026 jüdischen Einflüssen in der Musik widmet.",
+    "url": "https://www.leipzig-im.de/index.php?auswahl=Veranstaltungen&section=home",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "58669bd89f6fd9a16bc7c2598968f5d1": {
+    "title": "Museumsnacht strahlt",
+    "date_start": "2026-09-12",
+    "date_end": null,
+    "location": "Stiftsbibliothek und Stiftsarchiv, St. Gallen",
+    "description": "Museumsnacht mit Beleuchtungskonzept, Führungen zur Mittelalter-Ausstellung «Frauen» und Einblicken in jahrhundertealte Handschriften des Stiftsarchivs.",
+    "url": "https://www.stiftsbezirk.ch/de/veranstaltungen",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "fa8de4513a8c809a323286df2ee9e54e": {
+    "title": "Mit den Augen der Vergangenheit",
+    "date_start": "2026-09-12",
+    "date_end": null,
+    "location": "Museumsdorf Düppel, Berlin",
+    "description": "Szenische Erlebnisführung über den ländlichen Alltag im Berliner Umland während des Mittelalters.",
+    "url": "https://www.stadtmuseum.de/programm",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "7cbe9aac14e7685033c3b97d0f588d97": {
+    "title": "Samstagskonzert im Bamberger Kaiserdom",
+    "date_start": "2026-09-12",
+    "date_end": null,
+    "location": "Kaiserdom Bamberg",
+    "description": "Orgelkonzert im Bamberger Kaiserdom, gespielt von Julia Landau aus Berlin.",
+    "url": "https://www.bamberger-dommusik.de/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "5f3b5ca04da2c7d780b6110415b0d0b7": {
+    "title": "Christopher Lehmpfuhl ALTER MARKT POTSDAM",
+    "date_start": "2026-09-12",
+    "date_end": null,
+    "location": "Potsdam Museum - Forum für Kunst und Geschichte",
+    "description": "Ausstellungsführung mit Einblicken in die Entstehung der Kunstwerke rund um den Alten Markt.",
+    "url": "https://www.potsdam-museum.de/de/veranstaltungen",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "4d9241ffc125aafc76ab2e53e5b0f924": {
+    "title": "Der Alte Markt 1945 bis in die Gegenwart",
+    "date_start": "2026-09-12",
+    "date_end": null,
+    "location": "Potsdam Museum - Forum für Kunst und Geschichte",
+    "description": "Überblicksführung über Zerstörung, Umgestaltung und städtebauliche Veränderungen des Alten Marktes seit 1945.",
+    "url": "https://www.potsdam-museum.de/de/veranstaltungen",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "d96bf1c2b82b705b95fd55d870e662fa": {
+    "title": "Öffentliche Führung in der Kaiserpfalz franconofurd",
+    "date_start": "2026-09-12",
+    "date_end": null,
+    "location": "Archäologisches Museum Frankfurt - Kaiserpfalz franconofurd",
+    "description": "Führung durch 2000 Jahre Stadtgeschichte anhand archäologischer Ausgrabungen in Frankfurt.",
+    "url": "https://www.archaeologisches-museum-frankfurt.de/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
   "52bc410cb086ee35e9492f71a528c956": {
     "title": "Führung zu Gräbern bemerkenswerter Frauen",
     "date_start": "2026-09-20",
@@ -629,8 +1379,8 @@
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-25"
   },
-  "b44349ac6b732e5759ae7ecfe2108c71": {
-    "title": "Tag des Friedhofs",
+  "0f9e590d151c556a329540cb2b84ea65": {
+    "title": "Tag des Friedhofs auf dem Südfriedhof",
     "date_start": "2026-09-20",
     "date_end": null,
     "location": "Südfriedhof, Halle (Saale)",
@@ -639,13 +1389,23 @@
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-25"
   },
-  "0f9e590d151c556a329540cb2b84ea65": {
-    "title": "Tag des Friedhofs auf dem Südfriedhof",
+  "580b51eae4b9b138c86da896a9f0a195": {
+    "title": "gesucht. gefunden. ausgegraben. Führung durch die Dauerausstellung",
     "date_start": "2026-09-20",
     "date_end": null,
-    "location": "Südfriedhof, Halle (Saale)",
-    "description": "Sonderveranstaltung zum Tag des Friedhofs auf dem Südfriedhof Halle, gestaltet vom Verein für Friedhofskultur.",
-    "url": "http://www.friedhofskultur-halle.de/terminefuehrungen/",
+    "location": "LWL-Museum für Archäologie Herne",
+    "description": "Geführter Rundgang für Erwachsene durch die Dauerausstellung des Archäologiemuseums.",
+    "url": "https://www.lwl-landesmuseum-herne.de/de/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "f45bdece4ed9099eadcf0c8442c86324": {
+    "title": "Mehr als Artefakte: Ägyptische Objekte erzählen ihre Geschichte",
+    "date_start": "2026-09-20",
+    "date_end": null,
+    "location": "James-Simon-Galerie / Neues Museum, Museumsinsel Berlin",
+    "description": "Vortrag und Podiumsdiskussion über den historischen Kontext altägyptischer Sammlungsstücke.",
+    "url": "https://www.smb.museum/museen-einrichtungen/aegyptisches-museum-und-papyrussammlung/veranstaltungen/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
   },
@@ -654,7 +1414,7 @@
     "date_start": "2026-10-03",
     "date_end": null,
     "location": "Südwestkirchhof Stahnsdorf",
-    "description": "Geführter Rundgang über den Südwestkirchhof Stahnsdorf mit Einblicken in Geschichte und Grabkunst.",
+    "description": "Friedhofsführung über das Gelände des Südwestkirchhofs Stahnsdorf unter Leitung von Olaf Ihlefeldt.",
     "url": "https://www.suedwestkirchhof.de/veranstaltungen.html",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-25"
@@ -669,23 +1429,13 @@
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-25"
   },
-  "8beb2c401dd7e9d14160ed6e272ec8e2": {
-    "title": "Friedhofsführung mit Olaf Ihlefeldt",
+  "3130b663da67475156cd24349655e487": {
+    "title": "gesucht. gefunden. ausgegraben. Führung durch die Dauerausstellung",
     "date_start": "2026-10-03",
     "date_end": null,
-    "location": "Südwestkirchhof Stahnsdorf",
-    "description": "Friedhofsführung über das Gelände des Südwestkirchhofs Stahnsdorf unter Leitung von Olaf Ihlefeldt.",
-    "url": "https://www.suedwestkirchhof.de/veranstaltungen.html",
-    "first_seen": "2026-08-25",
-    "last_seen": "2026-08-25"
-  },
-  "c57395e2a9c4face9e2eb0a87d0ec4be": {
-    "title": "Friedhofsführung",
-    "date_start": "2026-10-03",
-    "date_end": null,
-    "location": "Südwestkirchhof Stahnsdorf",
-    "description": "Geführter Spaziergang über den historischen Südwestkirchhof Stahnsdorf.",
-    "url": "https://www.suedwestkirchhof.de/veranstaltungen.html",
+    "location": "LWL-Museum für Archäologie Herne",
+    "description": "Führung für Erwachsene durch die archäologische Dauerausstellung über die Geschichte der Region.",
+    "url": "https://www.lwl-landesmuseum-herne.de/de/veranstaltungen/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
   },
@@ -697,6 +1447,26 @@
     "description": "Thematische Sonderführung durch das Areal der 'Alten Umbettung' auf dem Südwestkirchhof Stahnsdorf.",
     "url": "https://www.suedwestkirchhof.de/veranstaltungen.html",
     "first_seen": "2026-08-24",
+    "last_seen": "2026-08-25"
+  },
+  "babf77699ee3fa1314d8a4bfb26ef229": {
+    "title": "Konzert der Regensburger Domspatzen: einKlang",
+    "date_start": "2026-10-10",
+    "date_end": null,
+    "location": "Gößweinstein, Basilika Gößweinstein",
+    "description": "Geistliches Konzert des weltberühmten Knabenchors in der Basilika Gößweinstein.",
+    "url": "https://domspatzen.de/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "a53211aca110b5c63066653463d04ca7": {
+    "title": "Konzert: Klangbrücken für Potsdamer Friedenscarillon",
+    "date_start": "2026-10-10",
+    "date_end": null,
+    "location": "Neuer Friedhof Potsdam",
+    "description": "Carillon-Konzert der Veranstaltungsreihe Klangbrücken auf dem Neuen Friedhof Potsdam mit Dr. Hans-Joachim Müller.",
+    "url": "https://www.friedhof-in-potsdam.de/allgemeines/aktuelles",
+    "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
   },
   "e142224f88d9e06388098f60408e249f": {
@@ -729,16 +1499,6 @@
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
   },
-  "5884b763d36df15e7aae922c29c729a1": {
-    "title": "Traditionelle Führung zum Reformationstag",
-    "date_start": "2026-10-31",
-    "date_end": null,
-    "location": "Südfriedhof Leipzig",
-    "description": "Kulturhistorische Sonderführung auf dem Südfriedhof Leipzig anlässlich des Reformationstages.",
-    "url": "https://paul-benndorf-gesellschaft.de/fuehrungen.html",
-    "first_seen": "2026-08-25",
-    "last_seen": "2026-08-25"
-  },
   "e3ccfd1e9cbd6aea8e0c00af145b5383": {
     "title": "Novemberführung zum Brauchtum auf Friedhöfen mit Olaf Ihlefeldt",
     "date_start": "2026-11-07",
@@ -759,18 +1519,8 @@
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24"
   },
-  "493af506256507edc2badd480c58c0ae": {
-    "title": "Novemberführung",
-    "date_start": "2026-11-07",
-    "date_end": null,
-    "location": "Südwestkirchhof Stahnsdorf",
-    "description": "Geführter Friedhofsrundgang durch die Herbstlandschaft des Südwestkirchhofs.",
-    "url": "https://www.suedwestkirchhof.de/veranstaltungen.html",
-    "first_seen": "2026-08-25",
-    "last_seen": "2026-08-25"
-  },
-  "808bb3a655c78c80df92974c4ea211c8": {
-    "title": "Remembrance Sunday",
+  "9d99054f4e6526fee5b9de787bb78a10": {
+    "title": "Remembrance Sunday (Erinnerungssonntag)",
     "date_start": "2026-11-08",
     "date_end": null,
     "location": "Südwestkirchhof Stahnsdorf",
@@ -799,16 +1549,6 @@
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-25"
   },
-  "9d99054f4e6526fee5b9de787bb78a10": {
-    "title": "Remembrance Sunday (Erinnerungssonntag)",
-    "date_start": "2026-11-08",
-    "date_end": null,
-    "location": "Südwestkirchhof Stahnsdorf",
-    "description": "Gedenkveranstaltung anlässlich des internationalen Gedenktags Remembrance Sunday.",
-    "url": "https://www.suedwestkirchhof.de/veranstaltungen.html",
-    "first_seen": "2026-08-25",
-    "last_seen": "2026-08-25"
-  },
   "379536d9756f69f5c21f52b6c4c6a782": {
     "title": "Andacht zum Ewigkeitssonntag mit Verlesung der Verstorbenen und Orgelbegleitung",
     "date_start": "2026-11-22",
@@ -817,16 +1557,6 @@
     "description": "Musikalisch begleitete Andacht zum Ewigkeitssonntag mit Verlesung der Namen der im vergangenen Jahr Verstorbenen.",
     "url": "https://www.suedwestkirchhof.de/veranstaltungen.html",
     "first_seen": "2026-08-24",
-    "last_seen": "2026-08-25"
-  },
-  "14bdd04cf40a6f2ba62184bd998e3ac2": {
-    "title": "Ewigkeitssonntag - Tag der Entschlafenen",
-    "date_start": "2026-11-22",
-    "date_end": null,
-    "location": "Südwestkirchhof Stahnsdorf",
-    "description": "Veranstaltung und Gedenktag zum Ewigkeitssonntag / Tag der Entschlafenen.",
-    "url": "https://www.suedwestkirchhof.de/veranstaltungen.html",
-    "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
   },
   "2a227d331936e264d72f09f050ff10f6": {
@@ -839,6 +1569,16 @@
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
   },
+  "61400b4200b31230c1fd0bc9bf82887d": {
+    "title": "Konzert zum Totensonntag: Klangbrücken für Potsdamer Friedenscarillon",
+    "date_start": "2026-11-22",
+    "date_end": null,
+    "location": "Neuer Friedhof Potsdam",
+    "description": "Carillon-Konzert zum Totensonntag auf dem Neuen Friedhof Potsdam mit Andreas Gottschald.",
+    "url": "https://www.friedhof-in-potsdam.de/allgemeines/aktuelles",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
   "715da9f26752d1ccf0e7bc4390e80519": {
     "title": "Winterlicher Friedhofsspaziergang mit Olaf Ihlefeldt",
     "date_start": "2026-12-05",
@@ -847,16 +1587,6 @@
     "description": "Winterlicher Rundgang über den Südwestkirchhof Stahnsdorf unter der Leitung von Olaf Ihlefeldt.",
     "url": "https://www.suedwestkirchhof.de/veranstaltungen.html",
     "first_seen": "2026-08-24",
-    "last_seen": "2026-08-25"
-  },
-  "82aafbfdda03b97efff178edcdb75c68": {
-    "title": "Winterlicher Friedhofsspaziergang",
-    "date_start": "2026-12-05",
-    "date_end": null,
-    "location": "Südwestkirchhof Stahnsdorf",
-    "description": "Geführter Rundgang über den winterlichen Südwestkirchhof.",
-    "url": "https://www.suedwestkirchhof.de/veranstaltungen.html",
-    "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
   },
   "7bfff8a732017faf64994b312b0094d6": {
@@ -899,23 +1629,73 @@
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
   },
-  "60d8556f2e1385e80fa793b3015499dd": {
-    "title": "Ausstellung «Auf immer und ewig»",
+  "197c2400075a927df579398561e0d221": {
+    "title": "Ausstellung «Auf immer und ewig» auf dem Wolfgottesacker",
     "date_start": "2026-08-25",
     "date_end": "2026-11-30",
     "location": "Friedhof Wolfgottesacker, Basel",
-    "description": "Mehrmonatige Ausstellung auf dem Friedhof Wolfgottesacker rund um Fragen von Erinnerung, Vergänglichkeit und Friedhofskultur.",
+    "description": "Eine Fortlaufende Ausstellung auf dem Basler Friedhof Wolfgottesacker im Rahmen der Veranstaltungen der Stadtgärtnerei Basel.",
     "url": "https://www.stadtgaertnerei.bs.ch/friedhoefe/veranstaltungen.html",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
   },
-  "197c2400075a927df579398561e0d221": {
-    "title": "Ausstellung «Auf immer und ewig» auf dem Wolfgottesacker",
+  "6d0d03c5d98fc44d800713fc1ead126a": {
+    "title": "Nowa Huta und die DDR-Trabantenstädte. Großwohnsiedlungen im Vergleich",
     "date_start": "2026-08-25",
     "date_end": null,
-    "location": "Wolfgottesacker, Basel",
-    "description": "Eine Fortlaufende Ausstellung auf dem Basler Friedhof Wolfgottesacker im Rahmen der Veranstaltungen der Stadtgärtnerei Basel.",
-    "url": "https://www.stadtgaertnerei.bs.ch/friedhoefe/veranstaltungen.html",
+    "location": "Altes Rathaus, Leipzig",
+    "description": "Ein historischer Vortrag im Alten Rathaus Leipzig über Großwohnsiedlungen im Vergleich am Beispiel von Nowa Huta und DDR-Trabantenstädten.",
+    "url": "https://www.stadtgeschichtliches-museum-leipzig.de/besuch/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "f3d59a04cf224561f505c9c974d99982": {
+    "title": "Bilder machen Leute – Führung für Menschen mit Demenz und ihre Begleitung",
+    "date_start": "2026-08-25",
+    "date_end": null,
+    "location": "Jüdisches Museum Berlin",
+    "description": "Thematische Führung für Menschen mit Demenz und deren Begleitpersonen im Jüdischen Museum.",
+    "url": "https://www.jmberlin.de/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "f4841a3f1d0a2189016ecf3ba981e007": {
+    "title": "Platz____für Neues? Fotografien des Alten Marktes 1945–2025",
+    "date_start": "2026-08-25",
+    "date_end": "2026-08-26",
+    "location": "Bahnhofspassagen Potsdam",
+    "description": "Fotoausstellung zu den historischen Veränderungen des Alten Marktes in Potsdam über die letzten 80 Jahre.",
+    "url": "https://www.potsdam.de/veranstaltungskalender",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "baae8f4387ef2820b8524b4e61009677": {
+    "title": "Land an sich",
+    "date_start": "2026-08-25",
+    "date_end": null,
+    "location": "Landtag Brandenburg",
+    "description": "Ausstellung über den Brandenburger Landschaftsraum als Ort kontinuierlicher Veränderungen zwischen Tradition und Transformation.",
+    "url": "https://www.potsdam.de/veranstaltungskalender",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "827682dd3a2d0e09300904b5716a9a7e": {
+    "title": "Alles Wissen Wollen. Die Stasi und ihre Dokumente",
+    "date_start": "2026-08-25",
+    "date_end": null,
+    "location": "Landtag Brandenburg",
+    "description": "Ausstellung über die Diktatur der SED und die Rolle des Ministeriums für Staatssicherheit als Machtstütze in der DDR.",
+    "url": "https://www.potsdam.de/veranstaltungskalender",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "eaf8a612f29fbad8dcaa44b39ee2fa5b": {
+    "title": "Sonderführung: Die Franziskaner in St. Marien",
+    "date_start": "2026-08-25",
+    "date_end": null,
+    "location": "St. Marienkirche, Berlin-Mitte",
+    "description": "Thematische Kirchenführung mit Olaf Albrecht über die Spuren und Geschichte der Franziskaner in der St. Marienkirche.",
+    "url": "https://marienkirche-berlin.de/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
   },
@@ -999,6 +1779,316 @@
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
   },
+  "fcc424d72b28469e1752d7e132bcd20a": {
+    "title": "Der Damenflügel von Schloss Sanssouci",
+    "date_start": "2026-08-29",
+    "date_end": null,
+    "location": "Potsdam, Damenflügel Schloss Sanssouci",
+    "description": "Sonderführung durch den Damenflügel des Schlosses Sanssouci.",
+    "url": "https://www.spsg.de/aktuelles/veranstaltungen",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "a0014f05fed5324bdef042cf48af288e": {
+    "title": "Zwischen Königsträumen, Großmächten und Berliner Mauer – eine Zeitreise durch das grüne Welterbe Neuer Garten",
+    "date_start": "2026-08-29",
+    "date_end": null,
+    "location": "Potsdam, Neuer Garten",
+    "description": "Gartenführung vom Marmorpalais zum Schloss Cecilienhof über die Geschichte des Gartens und der Berliner Mauer.",
+    "url": "https://www.spsg.de/aktuelles/veranstaltungen",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "6530a461a3292af4cf9156aa93ab27c8": {
+    "title": "Schloss Babelsberg: Zeit(ge)schichten",
+    "date_start": "2026-08-29",
+    "date_end": null,
+    "location": "Potsdam, Schloss Babelsberg",
+    "description": "Sonderführung zur Geschichte von Schloss Babelsberg mit Schlossleiter Jens Straßburger-Asbeck.",
+    "url": "https://www.spsg.de/aktuelles/veranstaltungen",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "cd821d73d17dcc704c7ffa75187a53d2": {
+    "title": "Schlossnacht mit Illumination und Jazz",
+    "date_start": "2026-08-29",
+    "date_end": null,
+    "location": "Potsdam, Jagdschloss Stern",
+    "description": "Jazzkonzert mit der Gruppe Just M und Illumination am Jagdschloss Stern.",
+    "url": "https://www.spsg.de/aktuelles/veranstaltungen",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "9b51310ca52f7b8a15fc4069f24ae6d2": {
+    "title": "BOHAI – Schlosshofkonzert",
+    "date_start": "2026-08-29",
+    "date_end": null,
+    "location": "Berlin, Jagdschloss Grunewald",
+    "description": "Klezmer- und Weltmusikkonzert im Schlosshof des Jagdschlosses Grunewald.",
+    "url": "https://www.spsg.de/aktuelles/veranstaltungen",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "387358599bf468b8494f29a2f995a05b": {
+    "title": "Lange Nacht der Museen: Crime in Berlin",
+    "date_start": "2026-08-29",
+    "date_end": null,
+    "location": "Berlin, Schloss Charlottenburg – Neuer Flügel",
+    "description": "Veranstaltungen mit Führungen, Workshops und Konzerten zur Archäologie im Rahmen der Langen Nacht der Museen.",
+    "url": "https://www.spsg.de/aktuelles/veranstaltungen",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "b2aba8687b212a969eae90cdb22180a0": {
+    "title": "Architektur im Wandel – Vom Dorf zur Stadt",
+    "date_start": "2026-08-29",
+    "date_end": null,
+    "location": "Schillerhaus, Leipzig",
+    "description": "Stadtrundgang zur Architekturgeschichte und städtischen Entwicklung.",
+    "url": "https://www.stadtgeschichtliches-museum-leipzig.de/besuch/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "16567d0a678218e0ba4313a2b1df9a73": {
+    "title": "Familie Schiller und der Weinbau – Eine Spurensuche im Glas",
+    "date_start": "2026-08-29",
+    "date_end": null,
+    "location": "Schillerhaus, Leipzig",
+    "description": "Weinprobe auf den historischen Spuren der Familie Schiller.",
+    "url": "https://www.stadtgeschichtliches-museum-leipzig.de/besuch/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "a469e4ab4ce2dd3829fb3a4f25ed7db9": {
+    "title": "Mackie Messer und der Leibwächter von Al Capone (Lange Nacht der Museen)",
+    "date_start": "2026-08-29",
+    "date_end": null,
+    "location": "Jüdisches Museum Berlin",
+    "description": "Kurzführungen und Filmscreenings im Rahmen der Langen Nacht der Museen im Jüdischen Museum.",
+    "url": "https://www.jmberlin.de/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "f8bae6a78c25d39c11e51444d9156434": {
+    "title": "Öffentliche Domführung für Erwachsene",
+    "date_start": "2026-08-29",
+    "date_end": null,
+    "location": "Dommuseum Mainz",
+    "description": "Führung zur Geschichte und tausendjährigen Ausstattung des Mainzer Doms.",
+    "url": "https://www.dommuseum-mainz.de/programm/kalender/aktuelle-termine-kalender/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "f6de6625fc882fdd5f07647c651777b7": {
+    "title": "Abends um Acht in der Augustinerkirche | 30 Minuten Kirchenmusik",
+    "date_start": "2026-08-29",
+    "date_end": null,
+    "location": "Augustinerkirche, Erfurt",
+    "description": "Halbstündige kirchenmusikalische Aufführung in der Augustinerkirche.",
+    "url": "https://www.augustinerkloster.de/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "b6afbc6c68834e62616d1fbf3c1b420e": {
+    "title": "Klosterführung „Mit Gaumenfreuden durchs Kloster“",
+    "date_start": "2026-08-29",
+    "date_end": null,
+    "location": "Augustinerkloster, Erfurt",
+    "description": "Erlebnisführung durch das Augustinerkloster in Erfurt mit kulinarischen Akzenten.",
+    "url": "https://www.augustinerkloster.de/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "cf23e59a0dc65e0928488d0ddc9b35cd": {
+    "title": "Miss Sonderbar – Lesung und Talk",
+    "date_start": "2026-08-29",
+    "date_end": null,
+    "location": "Kapelle 6, Friedhof Ohlsdorf, Hamburg",
+    "description": "Lesung und Gespräch über das Zusammenleben mit psychisch kranken Menschen in der Kapelle 6 des Friedhofs Ohlsdorf.",
+    "url": "https://www.ohlsdorf-derpark.de/termine-ohlsdorf/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "e3527f249e61d91578afb0288f688a50": {
+    "title": "Orgelpunkt – Orgelmusik mit geistlicher Kirchenführung",
+    "date_start": "2026-08-29",
+    "date_end": null,
+    "location": "Hauptkirche St. Michaelis, Hamburg",
+    "description": "Geistliche Kirchenführung kombiniert mit Orgelmusik von Mendelssohn Bartholdy, Præstholm und Gárdonyi.",
+    "url": "https://www.st-michaelis.de/veranstaltungen-am-michel",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "29a8e60dfb7db95d610c23a4a694195e": {
+    "title": "Lange Nacht der Museen Berlin 2026",
+    "date_start": "2026-08-29",
+    "date_end": null,
+    "location": "Verschiedene Museen, Berlin",
+    "description": "Kulturelles Großevent mit zahlreichen Ausstellungen, Führungen und Sonderveranstaltungen in 75 Berliner Museen.",
+    "url": "https://www.lange-nacht-der-museen.de/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "a67a47528f604f7ac01904e5e2a9c4ac": {
+    "title": "Bodies in Motion – Constanza Macras / Dorky Park",
+    "date_start": "2026-08-29",
+    "date_end": null,
+    "location": "Medizinhistorisches Museum, Berlin",
+    "description": "Performance in der Hörsaalruine des Medizinhistorischen Museums über den Körper als Archiv von Erinnerungen und Emotionen.",
+    "url": "https://www.lange-nacht-der-museen.de/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "bb576eda64e55d72278cda2aa7558d0c": {
+    "title": "Szenische Lesung: Raubmord an Geldbriefträgern",
+    "date_start": "2026-08-29",
+    "date_end": null,
+    "location": "Polizeihistorische Sammlung, Berlin",
+    "description": "Szenische Lesung über die historische Aufklärung der Serienmorde an Geldbriefträgern durch Kommissar Ernst Gennat.",
+    "url": "https://www.lange-nacht-der-museen.de/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "42aed4b1d801519c3c3d23fc2e5f5ba9": {
+    "title": "Stationentheater »Hugenotten. Bienvenue à Brandebourg«",
+    "date_start": "2026-08-29",
+    "date_end": null,
+    "location": "Hugenottenmuseum / Französischer Dom, Berlin",
+    "description": "Immersives Theatererlebnis rund um den Französischen Dom auf den historischen Spuren der Hugenotten.",
+    "url": "https://www.lange-nacht-der-museen.de/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "1232292b676ea0c3f1fefed4ac8dcdb7": {
+    "title": "200 Jahre Museumsinsel",
+    "date_start": "2026-08-29",
+    "date_end": null,
+    "location": "Altes Museum, James-Simon-Galerie, Museumsinsel Berlin, Neues Museum",
+    "description": "Eine öffentliche Führung zur Geschichte und Bedeutung des UNESCO-Welterbes Museumsinsel Berlin.",
+    "url": "https://www.smb.museum/museen-einrichtungen/museum-fuer-vor-und-fruehgeschichte/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "5b8361536d394d7e8398b4a43a5d9b29": {
+    "title": "Spaziergang durch die Zeit(en): Archäologie in Berlin-Mitte",
+    "date_start": "2026-08-29",
+    "date_end": null,
+    "location": "Museumsinsel Berlin, Neues Museum, PETRI Berlin",
+    "description": "Eine öffentliche Führung zu den archäologischen Spuren und der historischen Entwicklung in Berlin-Mitte.",
+    "url": "https://www.smb.museum/museen-einrichtungen/museum-fuer-vor-und-fruehgeschichte/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "8fd30720a05714aee386564b4df1acf2": {
+    "title": "SakrAMENte DER LIEBE",
+    "date_start": "2026-08-29",
+    "date_end": "2026-11-29",
+    "location": "Katholische Propstei St. Trinitatis, Leipzig",
+    "description": "Ausstellung der Rostmalerei von Zdenka Migaš Goril’ová in der Katholischen Propstei St. Trinitatis Leipzig.",
+    "url": "https://www.leipzig-im.de/index.php?auswahl=Veranstaltungen&section=home",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "cc394713e95b45d031c7813a99c3640f": {
+    "title": "Führung: Die Geschichte des Ruhrgebiets hören und ertasten",
+    "date_start": "2026-08-29",
+    "date_end": null,
+    "location": "Ruhr Museum, Essen",
+    "description": "Inklusive Führung zur Regionalgeschichte des Ruhrgebiets für blinde Menschen und Menschen mit Sehbehinderung.",
+    "url": "https://www.ruhrmuseum.de/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "7e566cefbe844e5899dbbf6fc4eb7843": {
+    "title": "Öffentliche Führung: Geschichte des Ruhrgebiets",
+    "date_start": "2026-08-29",
+    "date_end": null,
+    "location": "Ruhr Museum, Essen",
+    "description": "Öffentliche Museumsführung für Erwachsene zur historischen Entwicklung der Ruhrregion.",
+    "url": "https://www.ruhrmuseum.de/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "9532d1ec87c4f360a1c970b1a7487e96": {
+    "title": "ChorVesper mit dem Magdeburger Domchor",
+    "date_start": "2026-08-29",
+    "date_end": null,
+    "location": "Dom zu Magdeburg",
+    "description": "Musikalische Chorvesper im Magdeburger Dom unter Mitwirkung von Christian Otto.",
+    "url": "https://www.magdeburgerdom.de/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "9b4358ab684d035d082d7566be26e499": {
+    "title": "Lange Nacht der Museen bei BERLIN GLOBAL",
+    "date_start": "2026-08-29",
+    "date_end": null,
+    "location": "BERLIN GLOBAL im Humboldt Forum, Berlin",
+    "description": "Abendliches Kulturprogramm mit Live-Speaker*innen in der Berlin Ausstellung des Humboldt Forums.",
+    "url": "https://www.stadtmuseum.de/programm",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "c08bd5db0ea697f78ccd16508133dabb": {
+    "title": "Lange Nacht der Museen im Ephraim-Palais",
+    "date_start": "2026-08-29",
+    "date_end": null,
+    "location": "Ephraim-Palais, Berlin",
+    "description": "Kulturveranstaltung unter dem Motto 'Crime in Berlin' mit Musik und Einblicken in Berliner Kriminalfälle.",
+    "url": "https://www.stadtmuseum.de/programm",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "82cc0742be281faaeb09bb0bc6b02b8c": {
+    "title": "Lange Nacht der Museen in der Nikolaikirche",
+    "date_start": "2026-08-29",
+    "date_end": null,
+    "location": "Nikolaikirche, Berlin",
+    "description": "Sommerlicher Kulturabend in der historischen Nikolaikirche zum Thema Berliner Kriminalfälle und Musik.",
+    "url": "https://www.stadtmuseum.de/programm",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "4a71eb5626ec44e9d638c5565c02df85": {
+    "title": "Lange Nacht der Museen im Knoblauchhaus",
+    "date_start": "2026-08-29",
+    "date_end": null,
+    "location": "Knoblauchhaus, Berlin",
+    "description": "Kulturprogramm im Museum Knoblauchhaus mit Kriminalfällen und Musik.",
+    "url": "https://www.stadtmuseum.de/programm",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "56d78bc519c3ca5d26f28089eef4ea2d": {
+    "title": "Leben im Mittelalter",
+    "date_start": "2026-08-29",
+    "date_end": null,
+    "location": "Museumsdorf Düppel, Berlin",
+    "description": "Eine historische Führung durch das Museumsdorf zu Kultur, Landwirtschaft und Handwerk des Mittelalters.",
+    "url": "https://www.stadtmuseum.de/programm",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "83893d3a378f2efe903dae3233776063": {
+    "title": "Samstagskonzert im Bamberger Kaiserdom",
+    "date_start": "2026-08-29",
+    "date_end": null,
+    "location": "Kaiserdom Bamberg",
+    "description": "Orgelkonzert im Bamberger Kaiserdom, gespielt von Young-Keum Chung aus Würzburg.",
+    "url": "https://www.bamberger-dommusik.de/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "f111b3f2eff6aed9e73ea2a9b0c7aa1e": {
+    "title": "Führung: 300 Jahre Medizingeschichte",
+    "date_start": "2026-08-29",
+    "date_end": null,
+    "location": "Deutsches Medizinhistorisches Museum",
+    "description": "Thematische Führung durch 300 Jahre Geschichte der Medizin.",
+    "url": "https://bmm-charite.de/ausstellungen",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
   "a309b5d2d03b0fa6ab3a018800bb8dc1": {
     "title": "Ökumenischer Gottesdienst und Festakt zur Wiederbeisetzung von Kaiser Otto",
     "date_start": "2026-09-01",
@@ -1009,6 +2099,46 @@
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-25"
   },
+  "eef0f5f760dfa6b64640fc575064511c": {
+    "title": "Öffentliche Führung im Museum Zum Arabischen Coffe Baum",
+    "date_start": "2026-09-01",
+    "date_end": null,
+    "location": "Museum Zum Arabischen Coffe Baum, Leipzig",
+    "description": "Führung durch das historische Kaffeemuseum.",
+    "url": "https://www.stadtgeschichtliches-museum-leipzig.de/besuch/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "0df20b1aaf7fd35aa41373fd9697b5d6": {
+    "title": "BESTELLTE ERINNERUNG",
+    "date_start": "2026-09-01",
+    "date_end": null,
+    "location": "Altes Rathaus, Leipzig",
+    "description": "Gesprächsveranstaltung zum Thema Erinnerungskultur im Alten Rathaus.",
+    "url": "https://www.stadtgeschichtliches-museum-leipzig.de/besuch/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "f9bbf83b8f6071abed02cf31794e551b": {
+    "title": "Gemischte Gefühle in kriegerischen Zeiten – Eine künstlerische Intervention",
+    "date_start": "2026-09-01",
+    "date_end": null,
+    "location": "Völkerschlachtdenkmal, Leipzig",
+    "description": "Eröffnung einer künstlerischen Intervention am Völkerschlachtdenkmal in Kooperation mit krudebude e.V.",
+    "url": "https://www.stadtgeschichtliches-museum-leipzig.de/besuch/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "847380edb42bb4a54cc160d0233195f3": {
+    "title": "Wissen durch Bilder: Der Tierkreis in Griechenland und Rom",
+    "date_start": "2026-09-01",
+    "date_end": null,
+    "location": "Archäologisches Zentrum / Neues Museum, Berlin",
+    "description": "Vortrag von Fabio Spadini über die Darstellung und Bedeutung des Tierkreises in der griechischen und römischen Antike.",
+    "url": "https://www.smb.museum/museen-einrichtungen/aegyptisches-museum-und-papyrussammlung/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
   "7fd249e546d76202fb827fa2ff135180": {
     "title": "Südfriedhof - Führung zum 2. Weihnachtsfeiertag",
     "date_start": "2026-12-26",
@@ -1017,16 +2147,6 @@
     "description": "Festtagsexkursion über die historische Park- und Friedhofsanlage des Leipziger Südfriedhofs.",
     "url": "https://paul-benndorf-gesellschaft.de/fuehrungen.html",
     "first_seen": "2026-08-24",
-    "last_seen": "2026-08-25"
-  },
-  "df3cb342ff2ce5ea648a21d188bd9aa8": {
-    "title": "Führung zum 2. Weihnachtsfeiertag",
-    "date_start": "2026-12-26",
-    "date_end": null,
-    "location": "Südfriedhof Leipzig",
-    "description": "Eine weihnachtliche Führung über den Leipziger Südfriedhof am zweiten Weihnachtsfeiertag.",
-    "url": "https://paul-benndorf-gesellschaft.de/fuehrungen.html",
-    "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
   },
   "0c3852996a765cc6a5950fa82f029d21": {
@@ -1049,16 +2169,6 @@
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
   },
-  "df2d44b00867532b6d279d38c014f3ed": {
-    "title": "Führung zu den Weihnachtstagen",
-    "date_start": "2026-12-27",
-    "date_end": null,
-    "location": "Südfriedhof Leipzig",
-    "description": "Kulturhistorische Führung über den Leipziger Südfriedhof zu den Weihnachtstagen.",
-    "url": "https://paul-benndorf-gesellschaft.de/fuehrungen.html",
-    "first_seen": "2026-08-25",
-    "last_seen": "2026-08-25"
-  },
   "e241e872336a70be7b066b84ee3c1068": {
     "title": "Friedhofsführung über den Nordfriedhof",
     "date_start": "2026-09-19",
@@ -1069,12 +2179,12 @@
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-25"
   },
-  "8e3169731158d34e43f7ff2cae2afc88": {
-    "title": "Tag des Friedhofs",
+  "507935db10445776770a6736069105be": {
+    "title": "Tag des Friedhofs 2026: Friedhof – früher und heute",
     "date_start": "2026-09-19",
     "date_end": "2026-09-20",
     "location": "Striesener Friedhof, Dresden",
-    "description": "Aktionstag auf dem Striesener Friedhof mit verschiedenen Veranstaltungen und Informationsangeboten rund um die Friedhofs- und Bestattungskultur.",
+    "description": "Veranstaltung mit zwei Führungen zur Geschichte des Friedhofs Bümpliz, dem Wandel der Bestattungskultur sowie Informationen zu modernen Bestattungsformen.",
     "url": "https://striesener-friedhof-dresden.de/vorschau-veranstaltungen/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
@@ -1089,13 +2199,23 @@
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
   },
-  "1f2a88cbd319a767e7bd8f58fb772a8e": {
-    "title": "Tag des Friedhofs 2026: Friedhof – früher und heute",
+  "6e94cc6f65a09e4e1a57a4489d1c6367": {
+    "title": "Berlin archäoLogisch!",
     "date_start": "2026-09-19",
     "date_end": null,
-    "location": "Friedhof Bümpliz, Bern",
-    "description": "Veranstaltung mit zwei Führungen zur Geschichte des Friedhofs Bümpliz, dem Wandel der Bestattungskultur sowie Informationen zu modernen Bestattungsformen.",
-    "url": "https://www.bern.ch/politik-und-verwaltung/stadtverwaltung/tvs/stadtgrun-bern/friedhofe/friedhofskultur",
+    "location": "Museumsinsel Berlin, Neues Museum, PETRI Berlin",
+    "description": "Ausstellungsgespräch für Familien über die Archäologie Berlins.",
+    "url": "https://www.smb.museum/museen-einrichtungen/museum-fuer-vor-und-fruehgeschichte/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "f98292ed0c5cddc7658f01fff2f8a2d4": {
+    "title": "Samstagskonzert im Bamberger Kaiserdom",
+    "date_start": "2026-09-19",
+    "date_end": null,
+    "location": "Kaiserdom Bamberg",
+    "description": "Orgelkonzert im Bamberger Kaiserdom, gespielt von Karl-Heinz Böhm aus Bamberg.",
+    "url": "https://www.bamberger-dommusik.de/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
   },
@@ -1139,13 +2259,33 @@
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
   },
-  "ecc0269d17131f7253cd20d673c9948d": {
-    "title": "Friedhofsführung auf dem Gertraudenfriedhof",
+  "7a97e1c023ccec594d4410ec2a3c3274": {
+    "title": "Friedhofsführung über den Gertraudenfriedhof",
     "date_start": "2026-10-25",
     "date_end": null,
     "location": "Gertraudenfriedhof, Halle (Saale)",
     "description": "Eine 90-minütige Führung über den Gertraudenfriedhof in Halle, organisiert vom Verein für Friedhofskultur.",
     "url": "http://www.friedhofskultur-halle.de/terminefuehrungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "c561b7c5f5bf60c58f19ef974d176c73": {
+    "title": "Friedhofsführung über den Südfriedhof",
+    "date_start": "2026-10-25",
+    "date_end": null,
+    "location": "Südfriedhof, Halle (Saale)",
+    "description": "90-minütige Führung über den Südfriedhof in Halle.",
+    "url": "http://www.friedhofskultur-halle.de/terminefuehrungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "f3a20f32de74ca1a050769a2450058c8": {
+    "title": "Familiennachmittag: Naturmaterialien der Mittelsteinzeit",
+    "date_start": "2026-10-25",
+    "date_end": null,
+    "location": "Landesmuseum für Vorgeschichte Halle",
+    "description": "Führung im Rahmen der Sonderausstellung ›Die Schamanin‹ mit anschließendem Flechten von Körben aus Naturmaterialien.",
+    "url": "https://www.landesmuseum-vorgeschichte.de/veranstaltungen/familiennachmittage",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
   },
@@ -1159,6 +2299,66 @@
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-25"
   },
+  "2854accd29473cae2ee5e585c70aaa04": {
+    "title": "Klangpause",
+    "date_start": "2026-09-04",
+    "date_end": null,
+    "location": "Altes Rathaus, Leipzig",
+    "description": "Konzertveranstaltung im Alten Rathaus.",
+    "url": "https://www.stadtgeschichtliches-museum-leipzig.de/besuch/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "3c4781d12af2558fd4f277b220f833c6": {
+    "title": "Sommertheater mit der freien Theatergruppe Kulturbeutel",
+    "date_start": "2026-09-04",
+    "date_end": null,
+    "location": "Schillerhaus, Leipzig",
+    "description": "Theateraufführung der freien Gruppe Kulturbeutel im Schillerhaus.",
+    "url": "https://www.stadtgeschichtliches-museum-leipzig.de/besuch/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "e247d3f8785d44fea2912c57c866f432": {
+    "title": "Sonderführung „Über das Pilgern in Naumburg“",
+    "date_start": "2026-09-04",
+    "date_end": null,
+    "location": "Naumburger Dom",
+    "description": "Thematische Sonderführung im Naumburger Dom über die Geschichte und Tradition des Pilgerns.",
+    "url": "https://www.naumburger-dom.de/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "73442e97692f44ef57d1361122f447b3": {
+    "title": "Klosterführung „Luthers schlaflose Nächte in Erfurt“",
+    "date_start": "2026-09-04",
+    "date_end": null,
+    "location": "Augustinerkloster, Erfurt",
+    "description": "Nächtliche Führung durch das Kloster zu den Erfurter Jahren Martin Luthers.",
+    "url": "https://www.augustinerkloster.de/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "2fa35d9acacceb87ec4d39cc408c4c02": {
+    "title": "DomMusik in der Stiftsbibliothek: Variation und Virtuosität",
+    "date_start": "2026-09-04",
+    "date_end": null,
+    "location": "Barocksaal der Stiftsbibliothek, St. Gallen",
+    "description": "Konzert mit barocker Musik für Violine, Violoncello, Cembalo und Truhenorgel aus dem 17. Jahrhundert.",
+    "url": "https://www.stiftsbezirk.ch/de/veranstaltungen",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "e9b4eda0d312bd873f94b59bffbad81c": {
+    "title": "Turmbesteigung – (fast) auf Augenhöhe mit dem Atlas",
+    "date_start": "2026-09-04",
+    "date_end": null,
+    "location": "Potsdam Museum - Forum für Kunst und Geschichte",
+    "description": "Führung mit Turmbesteigung und Ausblick auf den Alten Markt sowie Informationen zur Potsdamer Geschichte.",
+    "url": "https://www.potsdam-museum.de/de/veranstaltungen",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
   "d04cc177fd22999cfe8b9f5324ddc417": {
     "title": "Ohlsdorfer Busrundfahrten",
     "date_start": "2026-09-10",
@@ -1169,13 +2369,23 @@
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-25"
   },
-  "f3016dab3bc2db5586ca1b63dc7e0fdb": {
-    "title": "Ohlsdorfer Busrundfahrt",
+  "427b9c72ecbe3d512148e80d900ed9c4": {
+    "title": "Das Völkerschlachtdenkmal zum Kennenlernen",
     "date_start": "2026-09-10",
     "date_end": null,
-    "location": "Parkfriedhof Ohlsdorf",
-    "description": "Informationsfahrt per Bus über den Parkfriedhof Ohlsdorf zur Erkundung des vielfältigen Grabstätten-Angebots.",
-    "url": "https://www.ohlsdorf-derpark.de/termine-ohlsdorf/",
+    "location": "Völkerschlachtdenkmal, Leipzig",
+    "description": "Führung zur Geschichte und Architektur des Völkerschlachtdenkmals.",
+    "url": "https://www.stadtgeschichtliches-museum-leipzig.de/besuch/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "8fa946edfe4455304edb11c952d8e477": {
+    "title": "Die Entwicklungen rund um den Alten Markt",
+    "date_start": "2026-09-10",
+    "date_end": null,
+    "location": "Potsdam Museum - Forum für Kunst und Geschichte",
+    "description": "Führung über den Alten Markt zur Geschichte und städtebaulichen Entwicklung des historischen Potsdamer Zentrums.",
+    "url": "https://www.potsdam-museum.de/de/veranstaltungen",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
   },
@@ -1193,9 +2403,119 @@
     "title": "Netzwerk Trauerkultur: Moderierter Austausch zu Verlusten",
     "date_start": "2026-08-27",
     "date_end": null,
-    "location": "KapelleDREI, Parkfriedhof Ohlsdorf",
-    "description": "Das Netzwerk Trauerkultur lädt zu einem moderierten Gesprächskreis über den persönlichen Umgang mit Verlusten ein.",
+    "location": "KapelleDREI, Friedhof Ohlsdorf, Hamburg",
+    "description": "Das Netzwerk Trauerkultur lädt zu einem moderierten Gesprächs- und Austauschabend über den persönlichen Umgang mit Verlusten ein.",
     "url": "https://www.ohlsdorf-derpark.de/termine-ohlsdorf/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "673ef8e322c00f3dd87d8ebb572209db": {
+    "title": "Kaiserslauterer Trilogie – Lesung mit Christian Baron und Knut Elstermann",
+    "date_start": "2026-08-27",
+    "date_end": null,
+    "location": "Berlin, Schloss Schönhausen",
+    "description": "Lesung mit Christian Baron und Knut Elstermann im Schloss Schönhausen.",
+    "url": "https://www.spsg.de/aktuelles/veranstaltungen",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "ce8031bc541d07493bf4f6447d29035f": {
+    "title": "Das Völkerschlachtdenkmal zum Kennenlernen",
+    "date_start": "2026-08-27",
+    "date_end": null,
+    "location": "Völkerschlachtdenkmal, Leipzig",
+    "description": "Führung zur Geschichte und Architektur des Völkerschlachtdenkmals.",
+    "url": "https://www.stadtgeschichtliches-museum-leipzig.de/besuch/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "543baa42a71c64463cfc1ef9ca05b57c": {
+    "title": "Pop-up Treppenkino: Hütten sind für alle da",
+    "date_start": "2026-08-27",
+    "date_end": null,
+    "location": "Völkerschlachtdenkmal, Leipzig",
+    "description": "Filmvorführung im Rahmen des Pop-up Treppenkinos am Völkerschlachtdenkmal.",
+    "url": "https://www.stadtgeschichtliches-museum-leipzig.de/besuch/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "329bc2de52613a5c8b67b8e8948f33ab": {
+    "title": "SCHINKEL LECTURE: „Leuchttürme“ des Fortschritts. Berliner Unternehmer im Umfeld Karl Friedrich Schinkels",
+    "date_start": "2026-08-27",
+    "date_end": null,
+    "location": "Friedrichswerdersche Kirche, Museumsinsel Berlin",
+    "description": "Historischer Vortrag über Berliner Unternehmer im Umfeld von Karl Friedrich Schinkel.",
+    "url": "https://www.smb.museum/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "e9912028fa1ffda336e9fb79f99c01ce": {
+    "title": "KulturSalon+ - ein Angebot für die Generation Plus",
+    "date_start": "2026-08-27",
+    "date_end": null,
+    "location": "Archäologische Staatssammlung, München",
+    "description": "Führungs- und Kulturangebot für ältere Menschen in der Archäologischen Staatssammlung München zur Förderung der kulturellen Teilhabe.",
+    "url": "https://www.archaeologie-bayern.de/de/termine/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "513ecc9db99fb88dec8ff08f8c4d2654": {
+    "title": "Öffentliche Führung: Einladung zum Bilderhängen",
+    "date_start": "2026-08-27",
+    "date_end": null,
+    "location": "Ruhr Museum, Essen",
+    "description": "Öffentliche Führung für Erwachsene auf der 24-Meter-Ebene des Ruhr Museums.",
+    "url": "https://www.ruhrmuseum.de/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "2e0282126e4b0246bd699c7eb23d3c9e": {
+    "title": "Vortrag und Diskussion: Brigitte Kraemer zeigt neue Fotografien",
+    "date_start": "2026-08-27",
+    "date_end": null,
+    "location": "Ruhr Museum, Galerie 21-Meter-Ebene, Essen",
+    "description": "Vortrags- und Diskussionsveranstaltung für Erwachsene zu neuen Fotografiearbeiten von Brigitte Kraemer.",
+    "url": "https://www.ruhrmuseum.de/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "745b2b64a954cf4afe675ee805140a72": {
+    "title": "Führung: Für Freiheit und Republik! Das Reichsbanner Schwarz-Rot-Gold im Kampf für die Demokratie 1924 bis 1933",
+    "date_start": "2026-08-27",
+    "date_end": null,
+    "location": "Gedenkstätte Friedhof der Märzgefallenen, Berlin",
+    "description": "Historische Führung über die Rolle des Reichsbanners Schwarz-Rot-Gold im Kampf für die Demokratie in der Weimarer Republik.",
+    "url": "https://forum1848.de/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "aab6562552369636fefbdbd81dcd7d47": {
+    "title": "Demokratie und Diktatur. Geschichte und Gegenwart einer Grenzziehung mit Claudia Gatzka",
+    "date_start": "2026-08-27",
+    "date_end": null,
+    "location": "Gedenkstätte Friedhof der Märzgefallenen, Berlin",
+    "description": "Diskussion und Lesung mit Claudia Gatzka über historische und aktuelle Perspektiven der Grenzziehung zwischen Demokratie und Diktatur.",
+    "url": "https://forum1848.de/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "b12400e8e07fc6849e225a86fe79b93b": {
+    "title": "Sax Royal: Schöne Höhen, fiese Tiefen",
+    "date_start": "2026-08-27",
+    "date_end": null,
+    "location": "Deutsches Hygiene-Museum, Dresden",
+    "description": "Open-Air-Lesung der Dresdner Lesebühne im Rahmen des Kultursommers am Deutschen Hygiene-Museum.",
+    "url": "https://www.dhmd.de/ausstellungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "24c6fed13121ecb7004b07110086f3d8": {
+    "title": "Orgelführung",
+    "date_start": "2026-08-27",
+    "date_end": null,
+    "location": "St. Marienkirche, Berlin-Mitte",
+    "description": "Führung zur Geschichte und Funktionsweise der Orgel in der St. Marienkirche.",
+    "url": "https://marienkirche-berlin.de/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
   },
@@ -1203,7 +2523,7 @@
     "title": "Trauerredner-Ausbildung",
     "date_start": "2026-09-24",
     "date_end": "2026-09-25",
-    "location": "Köln",
+    "location": "Köln (AUF DAS LEBEN)",
     "description": "Eine zweitägige fundierte Ausbildung zur individuellen und würdevollen Gestaltung von Abschieds- und Trauerfeiern.",
     "url": "https://aufdasleben.de/event/",
     "first_seen": "2026-08-24",
@@ -1223,7 +2543,7 @@
     "title": "Redner-Workshop: Besondere Sterbefälle",
     "date_start": "2026-10-08",
     "date_end": null,
-    "location": "Online",
+    "location": "online (AUF DAS LEBEN)",
     "description": "Fortbildungsworkshop zum Sensiblen Umgang und der Gestaltung von Trauerfeiern bei komplexen oder besonderen Sterbefällen.",
     "url": "https://aufdasleben.de/event/",
     "first_seen": "2026-08-24",
@@ -1237,6 +2557,16 @@
     "description": "Aktionswoche mit verschiedenen Impulsen und Formaten rund um die Themen Trauer, Abschied und zeitgemäße Gedenkkultur.",
     "url": "https://aufdasleben.de/event/",
     "first_seen": "2026-08-24",
+    "last_seen": "2026-08-25"
+  },
+  "3470096e7fe27e8e72f6d16ce6a3d0b5": {
+    "title": "Trauerwoche",
+    "date_start": "2026-10-26",
+    "date_end": "2026-11-01",
+    "location": "bundesweit (TRAUER TASKFORCE)",
+    "description": "Aktions- und Themenwoche mit Beiträgen zur Auseinandersetzung mit Abschied, Tod und Trauer.",
+    "url": "https://aufdasleben.de/event/",
+    "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
   },
   "a98dc8efbacaacfa5dc3f384a1a0ae81": {
@@ -1253,7 +2583,7 @@
     "title": "Trauerredner-Ausbildung",
     "date_start": "2026-11-19",
     "date_end": "2026-11-20",
-    "location": "Köln",
+    "location": "Köln (AUF DAS LEBEN)",
     "description": "Praxisnahe Qualifizierung für angehende Trauerrednerinnen und Trauerredner zur professionellen Abschiedsgestaltung.",
     "url": "https://aufdasleben.de/event/",
     "first_seen": "2026-08-24",
@@ -1264,19 +2594,9 @@
     "date_start": "2026-10-01",
     "date_end": null,
     "location": "Online",
-    "description": "Vortrag von Restauratorinnen über aktuelle wissenschaftliche Untersuchungen am Goldschatz aus dem Pyramidengrab der nubischen Königin Amanishakheto.",
-    "url": "https://www.smb.museum/museen-einrichtungen/aegyptisches-museum-und-papyrussammlung/veranstaltungen/",
-    "first_seen": "2026-08-24",
-    "last_seen": "2026-08-25"
-  },
-  "5a5e1f2d2d15840df4162ffed75848fd": {
-    "title": "Aktuelle Untersuchungen am Goldschatz der Amanishakheto",
-    "date_start": "2026-10-01",
-    "date_end": null,
-    "location": "Online",
     "description": "Vortrag von Restauratorinnen über wissenschaftliche und restauratorische Untersuchungen des berühmten Goldschatzes aus dem Pyramidengrab der meroitischen Königin Amanishakheto.",
     "url": "https://www.smb.museum/museen-einrichtungen/aegyptisches-museum-und-papyrussammlung/veranstaltungen/",
-    "first_seen": "2026-08-25",
+    "first_seen": "2026-08-24",
     "last_seen": "2026-08-25"
   },
   "45eb3ecd791d4599a9849bcca5d3e558": {
@@ -1384,7 +2704,7 @@
     "date_start": "2026-10-04",
     "date_end": null,
     "location": "Alter Südlicher Friedhof, München",
-    "description": "Kulturgeschichtliche Führung über den Denkmalfriedhof und seine Grabstätten.",
+    "description": "Historischer Rundgang zur Geschichte des früheren Zentralfriedhofs und seinen Grabstätten berühmter Bürger.",
     "url": "https://www.stattreisen-muenchen.de/fuehrungen/der-alte-sudliche-friedhof",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
@@ -1409,13 +2729,23 @@
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
   },
-  "dc07d330e5eef236fea42b9f572c5292": {
-    "title": "Der Alte Südliche Friedhof – Führung",
+  "30e9f3c22d78eeef26795512d9631553": {
+    "title": "Der Alte Südliche Friedhof – Es lebe der Centralfriedhof",
     "date_start": "2026-10-04",
     "date_end": null,
     "location": "Alter Südlicher Friedhof, München",
-    "description": "Historischer Rundgang zur Geschichte des früheren Zentralfriedhofs und seinen Grabstätten berühmter Bürger.",
+    "description": "Spaziergang über Münchens historischen Friedhof zur Vermittlung vergangener Begräbniskultur und bedeutender Persönlichkeiten.",
     "url": "https://www.stattreisen-muenchen.de/fuehrungen/der-alte-sudliche-friedhof",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "9967da16a9e5720161d022da09dbcfba": {
+    "title": "Choralkonzert: Die heilige Wiborada in St.Galler Choralhandschriften",
+    "date_start": "2026-10-04",
+    "date_end": null,
+    "location": "Kathedrale St. Gallen",
+    "description": "Konzert der Capella Choralis St.Gallen im Chor der Kathedrale mit historischen Gesängen über die heilige Wiborada.",
+    "url": "https://www.stiftsbezirk.ch/de/veranstaltungen",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
   },
@@ -1429,6 +2759,46 @@
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-25"
   },
+  "74f6f0dcec491929f3eb9be6a1706ff8": {
+    "title": "4. Andacht der Andachtsreihe „Lass uns reden, lieber Gott …“",
+    "date_start": "2026-09-02",
+    "date_end": null,
+    "location": "Aussegnungshalle / Friedhof",
+    "description": "Vierte Andacht im Rahmen der Andachtsreihe in der Aussegnungshalle.",
+    "url": "https://striesener-friedhof-dresden.de/vorschau-veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "49995c426918d61839a95e9e850edb2b": {
+    "title": "Sonne. Satt. Sommer in Leipzig",
+    "date_start": "2026-09-02",
+    "date_end": null,
+    "location": "Haus Böttchergäßchen, Leipzig",
+    "description": "Führung durch die aktuelle Sonderausstellung im Haus Böttchergäßchen.",
+    "url": "https://www.stadtgeschichtliches-museum-leipzig.de/besuch/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "2100cd63817d2813853e9164bdde1055": {
+    "title": "Leipzig verstehen! Eine Zeitreise durch die Geschichte",
+    "date_start": "2026-09-02",
+    "date_end": null,
+    "location": "Altes Rathaus, Leipzig",
+    "description": "Historische Führung durch das Alte Rathaus zur Stadtgeschichte Leipzigs.",
+    "url": "https://www.stadtgeschichtliches-museum-leipzig.de/besuch/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "5f8c90200240644833e55761cce02653": {
+    "title": "Orgelkonzert | Niklas Jahn",
+    "date_start": "2026-09-02",
+    "date_end": null,
+    "location": "Hauptkirche St. Michaelis, Hamburg",
+    "description": "Orgelkonzert im Rahmen des Hamburger Orgelsommers 2026 mit Werken von J. S. Bach, C. P. E. Bach, Debussy und Escaich.",
+    "url": "https://www.st-michaelis.de/veranstaltungen-am-michel",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
   "eb15c3f5b5fa1af959f76667095319ea": {
     "title": "Between the Lines – Daniel Libeskind und das Jüdische Museum Berlin",
     "date_start": "2026-05-07",
@@ -1437,7 +2807,7 @@
     "description": "Ausstellung über die Architektur des Jüdischen Museums Berlin von Daniel Libeskind, dessen Raumkonzept mit Elementen wie dem Holocaust-Turm als architektonische Gedenkkultur wirkt.",
     "url": "https://www.jmberlin.de/",
     "first_seen": "2026-08-24",
-    "last_seen": "2026-08-24"
+    "last_seen": "2026-08-25"
   },
   "e39e8164165f56e2c890cbe62fa68854": {
     "title": "Ausstellung «Auf immer und ewig» auf dem Wolfgottesacker",
@@ -1499,6 +2869,36 @@
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
   },
+  "803d97b19e56409db32fe36c311b67fd": {
+    "title": "Heilkunst am Nil – Medizin im Alten Ägypten",
+    "date_start": "2026-09-26",
+    "date_end": null,
+    "location": "Neues Museum, Museumsinsel Berlin",
+    "description": "Inklusive Tastführung über die Geschichte der Medizin und Heilkunst im Alten Ägypten.",
+    "url": "https://www.smb.museum/museen-einrichtungen/aegyptisches-museum-und-papyrussammlung/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "40ff3ba6c7b2034e81614cb1aa7f2531": {
+    "title": "Entdecke die Archäologie: vom Fund bis zur Ausstellung im PETRI Berlin",
+    "date_start": "2026-09-26",
+    "date_end": null,
+    "location": "PETRI Berlin",
+    "description": "Öffentliche Führung über den Weg archäologischer Fundstücke von der Ausgrabung bis ins Museum.",
+    "url": "https://www.smb.museum/museen-einrichtungen/museum-fuer-vor-und-fruehgeschichte/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "417510b45db6a39799c76ceef46f3a6d": {
+    "title": "OrgelVesper mit der Paradiesorgel",
+    "date_start": "2026-09-26",
+    "date_end": null,
+    "location": "Dom zu Magdeburg",
+    "description": "Orgelvesper im Dom zu Magdeburg mit Domorganist Christian Otto an der Paradiesorgel.",
+    "url": "https://www.magdeburgerdom.de/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
   "c95307b93feab97998603adfa42a7105": {
     "title": "Hauptfriedhof Frankfurt – Gräber erzählen Geschichte",
     "date_start": "2026-10-17",
@@ -1554,8 +2954,18 @@
     "date_start": "2026-09-18",
     "date_end": "2027-08-29",
     "location": "Archäologische Staatssammlung München",
-    "description": "Sonderausstellung über die prähistorische Kult- und Begräbnisstätte Stonehenge sowie neue archäologische Erkenntnisse.",
+    "description": "Große Sonderausstellung über die Geheimnisse, archäologischen Forschungen und neuen Entdeckungen rund um das Monument Stonehenge.",
     "url": "https://www.archaeologie-bayern.de/de/termine/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "e0a820250506562199535affd2c1ed84": {
+    "title": "Familienkonzert des Domchores",
+    "date_start": "2026-09-18",
+    "date_end": null,
+    "location": "Dom zu Magdeburg",
+    "description": "Familienkonzert des Domchores mit der Domsingschule und dem Jungen Ökumenischen Chor zum Internationalen Chorfest Magdeburg.",
+    "url": "https://www.magdeburgerdom.de/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
   },
@@ -1579,6 +2989,16 @@
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
   },
+  "7d24eb1334489e7d3ee4f12323c49d55": {
+    "title": "Musikalische Handschriftenpräsentation: Gregorianische Gesänge aus St.Galler Quellen",
+    "date_start": "2026-09-15",
+    "date_end": null,
+    "location": "Stiftsbibliothek / Kathedrale St. Gallen",
+    "description": "Präsentation historischer Gesangshandschriften im Versammlungsraum und anschließende Domvesper mit Gregorianischem Choral.",
+    "url": "https://www.stiftsbezirk.ch/de/veranstaltungen",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
   "065c65f3758b0744a151ffb51a75e330": {
     "title": "Führung über die Friedhöfe vor dem Halleschen Tor",
     "date_start": "2026-08-09",
@@ -1586,6 +3006,386 @@
     "location": "Friedhöfe am Halleschen Tor",
     "description": "Führung über die Friedhöfe am Halleschen Tor mit Norbert Haag.",
     "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "ec16bedd5a1ec3b43796b5fa80747941": {
+    "title": "Kammeroper Schloss Rheinsberg 2026 – Auf Entdeckungsreise mit Heinrich und Wilhelmine",
+    "date_start": "2026-06-30",
+    "date_end": "2026-09-06",
+    "location": "Rheinsberg, Schloss Rheinsberg",
+    "description": "Internationales Festival junger Opernsänger:innen auf Schloss Rheinsberg.",
+    "url": "https://www.spsg.de/aktuelles/veranstaltungen",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "14851a8279141d62e0678b32ea487de2": {
+    "title": "Konzert der Regensburger Domspatzen: Fly my soul – Musik, die gut tut",
+    "date_start": "2026-10-23",
+    "date_end": null,
+    "location": "Stuttgart",
+    "description": "Auftakt der Herbsttournee des Knabenchors der Regensburger Domspatzen.",
+    "url": "https://domspatzen.de/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "3eaeb617ea5a63fcb9ca60ee89ec103b": {
+    "title": "Veranstaltung zum 225. Todestag des Komponisten Johann Gottlieb Naumann",
+    "date_start": "2026-10-23",
+    "date_end": null,
+    "location": "Eliasfriedhof Dresden",
+    "description": "Gedenken am Grabmal des Komponisten und Hofkapellmeisters Johann Gottlieb Naumann anlässlich seines 225. Todestages mit anschließendem Friedhofsrundgang.",
+    "url": "https://eliasfriedhof.de/termine/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "eb35808cf13659307db0986faae795ba": {
+    "title": "Konzert der Regensburger Domspatzen: Fly my soul – Musik, die gut tut",
+    "date_start": "2026-10-24",
+    "date_end": null,
+    "location": "Ketsch, Kirche St. Sebastian",
+    "description": "Geistliches Konzert des Knabenchors Regensburger Domspatzen in der Kirche St. Sebastian.",
+    "url": "https://domspatzen.de/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "1df696801179b5ea50386a8b6aa50a1e": {
+    "title": "Sherlock Holmes und das Wasser des Lebens – Lesung mit Dr. Alexander Berner",
+    "date_start": "2026-09-03",
+    "date_end": null,
+    "location": "LWL-Museum für Archäologie Herne",
+    "description": "Lesung über den englischen Meisterdetektiv Sherlock Holmes und seinen Freund und Chronisten John H. Watson.",
+    "url": "https://www.lwl-landesmuseum-herne.de/de/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "8efb9e33b64953f2e29f1595449de1ae": {
+    "title": "Das Völkerschlachtdenkmal zum Kennenlernen",
+    "date_start": "2026-09-03",
+    "date_end": null,
+    "location": "Völkerschlachtdenkmal, Leipzig",
+    "description": "Führung durch das Völkerschlachtdenkmal zur Geschichte des Denkmals.",
+    "url": "https://www.stadtgeschichtliches-museum-leipzig.de/besuch/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "01787af572d811e65ce4850efd705c5d": {
+    "title": "Sommertheater mit der freien Theatergruppe Kulturbeutel",
+    "date_start": "2026-09-03",
+    "date_end": null,
+    "location": "Schillerhaus, Leipzig",
+    "description": "Theateraufführung der freien Gruppe Kulturbeutel im Garten des Schillerhauses.",
+    "url": "https://www.stadtgeschichtliches-museum-leipzig.de/besuch/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "1937960192954532bad715267a1dafe5": {
+    "title": "Führung zur Ausstellungseröffnung – Neukaledonien: Ein Archipel am Scheideweg",
+    "date_start": "2026-09-03",
+    "date_end": null,
+    "location": "Náprstek-Museum für asiatische, afrikanische und amerikanische Kulturen",
+    "description": "Geführter Rundgang anlässlich der Eröffnung der neuen Sonderausstellung über Neukaledonien.",
+    "url": "https://www.nm.cz/en/program/events",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "a6ec19c37b02cb32e847f892494045ac": {
+    "title": "Visionen für den Alten Markt 1945–2025",
+    "date_start": "2026-09-03",
+    "date_end": null,
+    "location": "Potsdam Museum - Forum für Kunst und Geschichte",
+    "description": "Kuratorinnen-Führung über den Wiederaufbau, die DDR-Moderne und städtebauliche Planungskonzepte am Alten Markt.",
+    "url": "https://www.potsdam-museum.de/de/veranstaltungen",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "ea69f40e087041fa64938834299c74d7": {
+    "title": "Vortrag: Westfalen in der Jungsteinzeit",
+    "date_start": "2026-09-17",
+    "date_end": null,
+    "location": "LWL-Museum für Archäologie Herne",
+    "description": "Öffentlicher Vortrag von Experten der LWL-Archäologie zum aktuellen Forschungsstand bezüglich des Neolithikums in Westfalen-Lippe.",
+    "url": "https://www.lwl-landesmuseum-herne.de/de/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "a2349562bce8ac08d486f1d20518e317": {
+    "title": "Augustinerdiskurs | „Konservative Revolution – Grundmythos der neuen Rechten“",
+    "date_start": "2026-09-17",
+    "date_end": null,
+    "location": "Raum Staupitz/Lang, Augustinerkloster, Erfurt",
+    "description": "Vortrags- und Diskussionsabend im Rahmen der Augustinerdiskurse.",
+    "url": "https://www.augustinerkloster.de/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "c712314d113cae2370853230a381152f": {
+    "title": "Vortrag: Erfurt in südwestdeutschen Theologenbriefwechseln des 16. Jahrhunderts",
+    "date_start": "2026-09-17",
+    "date_end": null,
+    "location": "Bibliothekssaal, Augustinerkloster, Erfurt",
+    "description": "Historischer Vortrag über die Rolle Erfurts in theologischen Briefwechseln der Reformationszeit.",
+    "url": "https://www.augustinerkloster.de/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "382c3997c17b9af0a78b046edf7194f0": {
+    "title": "5. Andacht der Andachtsreihe „Lass uns reden, lieber Gott …“",
+    "date_start": "2026-10-14",
+    "date_end": null,
+    "location": "Aussegnungshalle / Friedhof",
+    "description": "Fünfte Andacht im Rahmen der Andachtsreihe auf dem Friedhof.",
+    "url": "https://striesener-friedhof-dresden.de/vorschau-veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "31a1a9108b3167d014db48e991e3b5f3": {
+    "title": "Klosterführung „Luthers schlaflose Nächte in Erfurt“",
+    "date_start": "2026-09-11",
+    "date_end": null,
+    "location": "Augustinerkloster, Erfurt",
+    "description": "Späte Führung durch das Augustinerkloster rund um Luthers Wirken und Gedanken in Erfurt.",
+    "url": "https://www.augustinerkloster.de/veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "ad562d804755d5dd630eebcea8bf45f7": {
+    "title": "Vortrag: Baukunst in Brandenburg – eine historische Betrachtung mit KI-generierten Ansichten um 1920",
+    "date_start": "2026-09-11",
+    "date_end": null,
+    "location": "Gotisches Haus, Brandenburg an der Havel",
+    "description": "Vortragsveranstaltung von Dr. Jörg Blobel über das historische Erbe, Geschichte und Backsteinbaukunst in Brandenburg an der Havel.",
+    "url": "https://stadtmuseum.stadt-brandenburg.de/stadtmuseum/termine",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "cb1df3f761098db6c68fcf0bd658daa7": {
+    "title": "Orgel aus der Nähe – Orgelpräsentationskonzert",
+    "date_start": "2026-09-08",
+    "date_end": null,
+    "location": "Hauptkirche St. Michaelis, Hamburg",
+    "description": "Musikalische Hommage an die Pariser Kirche Sacré-Cœur mit Werken von Henri Mulet, dargeboten von Jörg Endebrock.",
+    "url": "https://www.st-michaelis.de/veranstaltungen-am-michel",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "bcf19867eb4289fd11af2276ccf7f256": {
+    "title": "Fokus Ausstellung 3: Die Mächtigen",
+    "date_start": "2026-08-31",
+    "date_end": null,
+    "location": "Barocksaal der Stiftsbibliothek, St. Gallen",
+    "description": "Führung aus erster Hand durch die Ausstellung «Frauen – Weibliche Lebenswelten im Mittelalter» mit Dr. Franziska Schnoor.",
+    "url": "https://www.stiftsbezirk.ch/de/veranstaltungen",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "54015bdac6b5f9ad17f938f8101d1c2b": {
+    "title": "Fokus Ausstellung 4: Die Dienerinnen",
+    "date_start": "2026-09-07",
+    "date_end": null,
+    "location": "Barocksaal der Stiftsbibliothek, St. Gallen",
+    "description": "Expertenführung durch die Ausstellung «Frauen – Weibliche Lebenswelten im Mittelalter» im Barocksaal der Stiftsbibliothek.",
+    "url": "https://www.stiftsbezirk.ch/de/veranstaltungen",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "facfd520d1ac0d91c6a05b0d18688e32": {
+    "title": "Fokus Ausstellung 5: Die Produzentinnen",
+    "date_start": "2026-09-14",
+    "date_end": null,
+    "location": "Barocksaal der Stiftsbibliothek, St. Gallen",
+    "description": "Führung zur Ausstellung «Frauen – Weibliche Lebenswelten im Mittelalter» durch die wissenschaftliche Mitarbeiterin Dr. Ruth Wiederkehr.",
+    "url": "https://www.stiftsbezirk.ch/de/veranstaltungen",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "6ef88f8006b230569ba5708ac412425f": {
+    "title": "Fokus Ausstellung 6: Die Mütter",
+    "date_start": "2026-09-21",
+    "date_end": null,
+    "location": "Barocksaal der Stiftsbibliothek, St. Gallen",
+    "description": "Führung durch die mittelalterliche Themenausstellung «Frauen» mit Schwerpunkt auf die Rolle der Mütter.",
+    "url": "https://www.stiftsbezirk.ch/de/veranstaltungen",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "e1c3ca47e8b1d73815052995fd291640": {
+    "title": "Fokus Ausstellung 7: Die Widerständigen",
+    "date_start": "2026-09-28",
+    "date_end": null,
+    "location": "Barocksaal der Stiftsbibliothek, St. Gallen",
+    "description": "Führung durch die Sonderausstellung «Frauen – Weibliche Lebenswelten im Mittelalter» mit Blick auf widerständige Frauen.",
+    "url": "https://www.stiftsbezirk.ch/de/veranstaltungen",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "1f20978f04484e1ac34d7069030884b4": {
+    "title": "Traumfabrik. 100 Jahre Film in Babelsberg",
+    "date_start": "2025-10-21",
+    "date_end": "2026-12-22",
+    "location": "Filmmuseum Potsdam",
+    "description": "Ausstellung zur Geschichte der Filmfabrikation in Babelsberg, bei der mehr als 3000 Kinofilme entstanden.",
+    "url": "https://www.potsdam.de/veranstaltungskalender",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "5a0f2158d7ca348a524d726f10a03188": {
+    "title": "Das graue Elend von Potsdam – Sowjetischer Haft- und Tribunalort Lindenstraße 1945–1952",
+    "date_start": "2026-01-20",
+    "date_end": "2026-10-31",
+    "location": "Gedenkstätte Lindenstraße",
+    "description": "Ausstellung über die Geschichte und Unmenschlichkeit der Untersuchungshaft des sowjetischen Geheimdienstes in Potsdam.",
+    "url": "https://www.potsdam.de/veranstaltungskalender",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "d813bdcd582781bdbd6279269a6dfaeb": {
+    "title": "Platz____ für Neues? Visionen für den Alten Markt 1945–2025",
+    "date_start": "2026-05-30",
+    "date_end": "2026-10-25",
+    "location": "Potsdam Museum - Forum für Kunst und Geschichte",
+    "description": "Historische Ausstellung über den Alten Markt in Potsdam, seine Zerstörung 1945 und spätere Neugestaltungsvisionen.",
+    "url": "https://www.potsdam.de/veranstaltungskalender",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "408cea67d4f099846889e123dc0459d2": {
+    "title": "Christopher Lehmpfuhl | Alter Markt Potsdam",
+    "date_start": "2026-05-30",
+    "date_end": "2026-10-25",
+    "location": "Potsdam Museum - Forum für Kunst und Geschichte",
+    "description": "Eine künstlerische Annäherung des Berliner Malers Christopher Lehmpfuhl an die neu erstandene Mitte der Stadt Potsdam.",
+    "url": "https://www.potsdam.de/veranstaltungskalender",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "d15d488d1be3ad4d1a030afd90f3c694": {
+    "title": "Orgelnacht",
+    "date_start": "2026-10-02",
+    "date_end": null,
+    "location": "Dom zu Magdeburg",
+    "description": "Nächtliches Konzorterlebnis an allen drei Orgeln des Doms mit stimmungsvoller Beleuchtung.",
+    "url": "https://www.magdeburgerdom.de/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "7b6fb92d1dce96fa0ab8d296e2cf1676": {
+    "title": "Horizontal — Das Krankenbett und die Welt im Liegen",
+    "date_start": "2026-05-29",
+    "date_end": "2027-05-02",
+    "location": "Deutsches Medizinhistorisches Museum",
+    "description": "Sonderausstellung zur Kultur- und Medizingeschichte des Krankenbetts und des Liegens.",
+    "url": "https://bmm-charite.de/ausstellungen",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "2b1b196ebe01000e0d32e0127dc2d875": {
+    "title": "MOMENTAUFNAHME Das Fotoarchiv Mittelmann",
+    "date_start": "2026-06-03",
+    "date_end": "2027-04-04",
+    "location": "Stadtgeschichtliches Museum Leipzig, Haus Böttchergäßchen",
+    "description": "Sonderausstellung zur Leipziger Stadtgeschichte anhand von historischen Fotografien aus dem Archiv Mittelmann.",
+    "url": "https://www.stadtgeschichtliches-museum-leipzig.de/ausstellungen/aktuelle-ausstellungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "9192e0ca085818f769ae00d7737f4e6d": {
+    "title": "Aus der Kuchengartenstraße nach Grünau. Eine fotografische Dokumentation von Karla Voigt",
+    "date_start": "2026-06-03",
+    "date_end": "2026-09-22",
+    "location": "Stadtgeschichtliches Museum Leipzig, Stadtteilladen Grünau",
+    "description": "Fotografische Dokumentation und Sonderausstellung zur jüngeren Stadtentwicklung und Geschichte Leipzigs.",
+    "url": "https://www.stadtgeschichtliches-museum-leipzig.de/ausstellungen/aktuelle-ausstellungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "0a4eb1cea3a08167f5c23f1ef03f90d9": {
+    "title": "Sonne. Satt. Sommer in Leipzig",
+    "date_start": "2026-04-29",
+    "date_end": "2026-10-25",
+    "location": "Stadtgeschichtliches Museum Leipzig, Haus Böttchergäßchen",
+    "description": "Kultur- und sporthistorische Sonderausstellung zur Geschichte der Leipziger Sommerkultur.",
+    "url": "https://www.stadtgeschichtliches-museum-leipzig.de/ausstellungen/aktuelle-ausstellungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "b4da6f2f5d3a96f01c3031817cc3fb8a": {
+    "title": "Sonderausstellung Adler-Perspektiven. Erinnern. Entdecken. Weiterdenken",
+    "date_start": "2026-09-25",
+    "date_end": null,
+    "location": "Museum Eberswalde",
+    "description": "Eröffnungstag der Sonderausstellung zur Geschichte und Zukunft der Museumsarbeit mit Kurzführungen, Kollegenaustausch und Musik.",
+    "url": "https://www.museum-eberswalde.de/angebote/kalender",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "1b2dbb8065f7a97f9d31c6cbfe0dcc00": {
+    "title": "Beratung zur Einsichtnahme in Stasi-Akten und zu SED-Unrecht",
+    "date_start": "2026-11-03",
+    "date_end": null,
+    "location": "Museum Eberswalde",
+    "description": "Kostenloses Beratungsangebot des Teams der Brandenburgischen Aufarbeitungsbeauftragten zur politischen Verfolgung in SBZ und DDR.",
+    "url": "https://www.museum-eberswalde.de/angebote/kalender",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "0d2a15f158dd6e2545f5966bb60955e0": {
+    "title": "Lange Museumsnacht 2026",
+    "date_start": "2026-11-13",
+    "date_end": null,
+    "location": "Museum Eberswalde",
+    "description": "Abendliche Museumsnacht mit faszinierenden Taschenlampenführungen durch die Ausstellungen des Museums Eberswalde.",
+    "url": "https://www.museum-eberswalde.de/angebote/kalender",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "5939ae85cc85561bfaafcebb14c725cb": {
+    "title": "Ausstellung: Freiheit für Kunst",
+    "date_start": "2026-05-08",
+    "date_end": "2026-09-20",
+    "location": "StiftsMuseum Xanten",
+    "description": "Kunstausstellung im Rahmen der NiederrheinTour von Bananensprayer Thomas Baumgärtel zum 40-jährigen Jubiläum seiner Spraybanane.",
+    "url": "https://www.stiftsmuseum-xanten.de/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "ea648fe3130b72622797071088961ff5": {
+    "title": "Ausstellung NEU AUFGESCHLAGEN: Sonne, Mond und Sterne",
+    "date_start": "2026-04-25",
+    "date_end": "2027-06-28",
+    "location": "StiftsMuseum Xanten (StiftsBibliothek)",
+    "description": "Präsentation historischer Werke bedeutender Astronomen zur Entwicklung des astronomischen Wissens von der Antike bis ins Mittelalter.",
+    "url": "https://www.stiftsmuseum-xanten.de/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "a72e54babb6c51ac0dfbab65b2a9ac2e": {
+    "title": "Familiennachmittag: Steinzeitliche Klänge",
+    "date_start": "2026-11-29",
+    "date_end": null,
+    "location": "Landesmuseum für Vorgeschichte Halle",
+    "description": "Familiennachmittag zur Sonderausstellung ›Die Schamanin‹ mit Führung und Fertigung steinzeitlicher Musikinstrumente.",
+    "url": "https://www.landesmuseum-vorgeschichte.de/veranstaltungen/familiennachmittage",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "78ae31cb73e852845f7ca7383f09f487": {
+    "title": "Familiennachmittag: Tracht und Schmuck der Schamanin",
+    "date_start": "2026-12-20",
+    "date_end": null,
+    "location": "Landesmuseum für Vorgeschichte Halle",
+    "description": "Führung durch die archäologische Sonderausstellung ›Die Schamanin‹ mit anschließender Gestaltung einer Schamanenkappe.",
+    "url": "https://www.landesmuseum-vorgeschichte.de/veranstaltungen/familiennachmittage",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "aa688d2580888735ba0288eeb38678f7": {
+    "title": "Familiennachmittag: Von Hilfsgeistern und Schamanen",
+    "date_start": "2027-01-31",
+    "date_end": null,
+    "location": "Landesmuseum für Vorgeschichte Halle",
+    "description": "Familiennachmittag im Rahmen der Sonderausstellung ›Die Schamanin‹ mit Führung und der Herstellung von Hilfsgeistern aus Blech.",
+    "url": "https://www.landesmuseum-vorgeschichte.de/veranstaltungen/familiennachmittage",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
   }
