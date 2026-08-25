@@ -1,30 +1,83 @@
-# Sepulkral-Kultur Event Crawler
+======================================================================
+SEPULKRAL EVENT CRAWLER - README
+======================================================================
 
-Automatisierter Python-Crawler zur Erfassung von Veranstaltungen im Bereich Sepulkralkultur, Friedhofsführungen, Bestattungswesen, Totenkult und historische Ausstellungen. Das Skript lädt Zielseiten, filtert irrelevanten Content vor und nutzt die Gemini API zur strukturierten Extraktion von Terminen.
+BESCHREIBUNG
+----------------------------------------------------------------------
+Automatisierter Web-Crawler und KI-gestützter Extraktor für
+Veranstaltungen im Bereich Sepulkralkultur, Friedhofsführungen,
+Bestattungswesen, Gedenkkultur und Grabkunst in Deutschland,
+Österreich, der Schweiz und Tschechien.
 
-Die Ergebnisse werden atomar in einer Datenbank (`events_db.json`) gespeichert und als statische, durchsuchbare HTML-Seite (`index.html`) aufbereitet.
+Das System liest vordefinierte Webseiten aus, verdichtet die Inhalte,
+analysiert diese mittels der Gemini API (Gemini 3.6 Flash), führt
+quellübergreifende Deduplizierungen durch und generiert eine statische,
+responsive Webansicht (index.html) inklusive Dunkelmodus und
+Filterfunktionen.
 
-## Features
 
-* **Semantische KI-Extraktion:** Nutzung von `gemini-3.6-flash` mit Pydantic Structured Outputs (`EventList`) zur präzisen Erkennung von Datumsangaben, Titeln, Orten und Beschreibungen – auch bei mehrsprachigen Quellen (z. B. Tschechisch, Englisch).
-* **Ressourcenschonend:** Vorfilterung von JS-gerenderten Seiten (< 1.500 Zeichen) und Datumsmustern via Regex vor API-Aufrufen.
-* **Batch-Verarbeitung:** Bündelung von bis zu 8 Webseiten pro API-Request zur Optimierung von Request-Limits und Token-Verbrauch.
-* **Netzwerk-Optimierung:** Erzwingen von IPv4-Transport zur Vermeidung von `Errno 101`-Blockaden in Cloud-Umgebungen (z. B. GitHub Actions).
-* **Atomare Datenverarbeitung:** Sicherer Schreibprozess der JSON-Datenbank via Temporärdateien gegen Datenverlust bei Abbrüchen.
-* **Vollautomatisierter Ablauf:** Tägliche Ausführung via GitHub Actions inkl. automatischer Veröffentlichung und Bereinigung vergangener Events.
+FUNKTIONSUMFANG
+----------------------------------------------------------------------
+- Web Scraper: Toleranter HTTP-Client (TLS-Fallbacks, Custom User-Agents)
+  zur Extraktion relevanter Textabschnitte.
+- Text-Kondensierung: Intelligentes Parsing von Datumsmustern zur
+  Reduzierung des Token-Verbrauchs vor der Übertragung an die API.
+- KI-Extraktion: Strukturierte Event-Erkennung über die Gemini API
+  (gemini-3.6-flash) mit automatischer Übersetzung fremdsprachiger
+  Quellen ins Deutsche.
+- Deduplizierung & Datenbank: Fuzzy-Matching-Logik (Levenshtein-Distanz
+  & Jaccard-Ähnlichkeit) zur quellübergreifenden Zusammenführung
+  doppelter Termine in events_db.json.
+- Frontend-Generierung: Ausgabe einer eigenständigen HTML-Datei mit
+  serverseitig generierten Tag-Filtern (Region, Veranstaltungsart,
+  Zeitraum) und responsivem Karten-Layout für Mobilgeräte.
+- CI/CD Pipeline: Vollautomatische Ausführung per GitHub Actions
+  via Cron-Schedule.
 
-## Architektur & Ablauf
 
-1. **Phase 1 (Fetch & Filter):** Lädt den Content aller definierten Ziel-URLs via `httpx` (mit IPv4-Zwang & Custom Header) und extrahiert den Haupttext via `BeautifulSoup`.
-2. **Phase 2 (KI-Analyse):** Sendet valide Textblöcke gebündelt an die Gemini API.
-3. **Phase 3 (DB-Sync & Cleanup):** Generiert eindeutige MD5-Hashes pro Event, aktualisiert `first_seen`/`last_seen`-Zeitstempel und entfernt abgelaufene Termine.
-4. **Phase 4 (Rendering):** Erstellt die interaktive `index.html` inklusive Freitextsuche und Tag-Filtern (Berlin, Brandenburg, Prag, Grüfte/Beinhäuser).
+ARCHITEKTUR & MODULSTRUKTUR
+----------------------------------------------------------------------
+sepulkral-crawler/
+├── config.py         # Ziel-URLs, Deaktivierte URLs, Schwellenwerte
+├── models.py         # Pydantic-Datenmodelle & Custom Exceptions
+├── fetcher.py        # HTTP-Client, SSL-Kontext, HTML-Parsing
+├── database.py       # JSON-DB, Hashing & Fuzzy-Deduplizierung
+├── extractor.py      # Gemini API-Anbindung & Batch-Optimierung
+├── renderer.py       # HTML/CSS/JS-Generierung (Responsive, Dark Mode)
+├── main.py           # Haupt-Orchestrator für den Crawler-Ablauf
+├── requirements.txt  # Python-Abhängigkeiten
+└── .github/
+    └── workflows/
+        └── crawler.yml # GitHub Actions Workflow
 
-## Tech-Stack
 
-* **Sprache:** Python 3.11+
-* **HTTP Client:** `httpx`
-* **HTML Parser:** `BeautifulSoup4`
-* **LLM Engine:** `google-genai` (`gemini-3.6-flash`)
-* **Data Validation:** `pydantic`
-* **Automation:** GitHub Actions
+VORAUSSETZUNGEN & INSTALLATION
+----------------------------------------------------------------------
+Voraussetzungen:
+- Python 3.12+
+- Gemini API Key von Google AI Studio
+
+Lokale Einrichtung:
+1. Repository klonen:
+   git clone https://github.com/DEIN-USERNAME/sepulkral-crawler.git
+   cd sepulkral-crawler
+
+2. Abhängigkeiten installieren:
+   pip install -r requirements.txt
+
+3. API-Schlüssel setzen:
+   - Linux/macOS:          export GEMINI_API_KEY="dein-api-key"
+   - Windows (PowerShell): $env:GEMINI_API_KEY="dein-api-key"
+
+4. Crawler ausführen:
+   python main.py
+
+
+AUTOMATISIERUNG (GITHUB ACTIONS)
+----------------------------------------------------------------------
+Der Crawler wird automatisch über die Pipeline .github/workflows/crawler.yml
+ausgeführt (montags und freitags per Cron-Job oder manuell via
+workflow_dispatch).
+
+Für die Ausführung im Repository muss das GitHub Secret GEMINI_API_KEY
+unter Settings > Secrets and variables > Actions hinterlegt sein.
