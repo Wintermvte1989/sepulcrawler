@@ -97,7 +97,6 @@
             .header-bar { flex-wrap: wrap; gap: 8px; }
             .filter-row { padding: 10px; gap: 10px; }
 
-            /* Mobile-Karten-Layout fuer Tabellen-Zeilen */
             #eventsTable, #eventsTable tbody, #eventsTable tr, #eventsTable td {
                 display: block;
                 width: 100%;
@@ -141,8 +140,8 @@
                 <span id="themeLabel">Dunkel</span>
             </button>
         </div>
-        <div class="timestamp">Stand: 25.08.2026 um 15:01 Uhr &nbsp;|&nbsp;
-            <span id="visibleCount">156</span> von 156 Terminen</div>
+        <div class="timestamp">Stand: 25.08.2026 um 15:34 Uhr &nbsp;|&nbsp;
+            <span id="visibleCount">159</span> von 159 Terminen</div>
 
         <div class="filter-row">
             <input type="text" id="searchInput" class="search-input"
@@ -164,13 +163,12 @@
                 <div class="filter-tags">
                 <button class="tag-btn active" data-group="region" data-value="" onclick="setFilter(this)">Alle</button>
                 <button class="tag-btn" data-group="region" data-value="berlin-brandenburg" onclick="setFilter(this)">Berlin &amp; Brandenburg <span style="opacity:.6">51</span></button>
-                <button class="tag-btn" data-group="region" data-value="west" onclick="setFilter(this)">Westen <span style="opacity:.6">30</span></button>
+                <button class="tag-btn" data-group="region" data-value="west" onclick="setFilter(this)">Westen <span style="opacity:.6">31</span></button>
                 <button class="tag-btn" data-group="region" data-value="ost" onclick="setFilter(this)">Osten <span style="opacity:.6">27</span></button>
                 <button class="tag-btn" data-group="region" data-value="nord" onclick="setFilter(this)">Norden <span style="opacity:.6">26</span></button>
-                <button class="tag-btn" data-group="region" data-value="sued" onclick="setFilter(this)">S&uuml;den <span style="opacity:.6">8</span></button>
+                <button class="tag-btn" data-group="region" data-value="sued" onclick="setFilter(this)">S&uuml;den <span style="opacity:.6">10</span></button>
+                <button class="tag-btn" data-group="region" data-value="ausland" onclick="setFilter(this)">AT / CH / CZ <span style="opacity:.6">7</span></button>
                 <button class="tag-btn" data-group="region" data-value="online" onclick="setFilter(this)">Online <span style="opacity:.6">7</span></button>
-                <button class="tag-btn" data-group="region" data-value="ausland" onclick="setFilter(this)">AT / CH / CZ <span style="opacity:.6">6</span></button>
-                <button class="tag-btn" data-group="region" data-value="sonstige" onclick="setFilter(this)">Sonstige <span style="opacity:.6">1</span></button>
                 </div>
             </div>
 
@@ -178,14 +176,14 @@
                 <span class="filter-group-label">Art</span>
                 <div class="filter-tags">
                 <button class="tag-btn active" data-group="art" data-value="" onclick="setFilter(this)">Alle</button>
-                <button class="tag-btn" data-group="art" data-value="fuehrung" onclick="setFilter(this)">F&uuml;hrungen <span style="opacity:.6">87</span></button>
+                <button class="tag-btn" data-group="art" data-value="fuehrung" onclick="setFilter(this)">F&uuml;hrungen <span style="opacity:.6">89</span></button>
                 <button class="tag-btn" data-group="art" data-value="aktionstag" onclick="setFilter(this)">Aktionstage <span style="opacity:.6">11</span></button>
+                <button class="tag-btn" data-group="art" data-value="gottesdienst" onclick="setFilter(this)">Gedenken <span style="opacity:.6">11</span></button>
                 <button class="tag-btn" data-group="art" data-value="konzert" onclick="setFilter(this)">Konzerte &amp; Musik <span style="opacity:.6">11</span></button>
                 <button class="tag-btn" data-group="art" data-value="workshop" onclick="setFilter(this)">Kurse &amp; Workshops <span style="opacity:.6">11</span></button>
-                <button class="tag-btn" data-group="art" data-value="gottesdienst" onclick="setFilter(this)">Gedenken <span style="opacity:.6">10</span></button>
-                <button class="tag-btn" data-group="art" data-value="ausstellung" onclick="setFilter(this)">Ausstellungen <span style="opacity:.6">9</span></button>
-                <button class="tag-btn" data-group="art" data-value="vortrag" onclick="setFilter(this)">Vortr&auml;ge <span style="opacity:.6">6</span></button>
+                <button class="tag-btn" data-group="art" data-value="ausstellung" onclick="setFilter(this)">Ausstellungen <span style="opacity:.6">10</span></button>
                 <button class="tag-btn" data-group="art" data-value="sonstige" onclick="setFilter(this)">Sonstige <span style="opacity:.6">5</span></button>
+                <button class="tag-btn" data-group="art" data-value="vortrag" onclick="setFilter(this)">Vortr&auml;ge <span style="opacity:.6">5</span></button>
                 <button class="tag-btn" data-group="art" data-value="lesung" onclick="setFilter(this)">Lesungen <span style="opacity:.6">3</span></button>
                 <button class="tag-btn" data-group="art" data-value="begleitung" onclick="setFilter(this)">Trauer &amp; Begleitung <span style="opacity:.6">2</span></button>
                 <button class="tag-btn" data-group="art" data-value="film" onclick="setFilter(this)">Film <span style="opacity:.6">1</span></button>
@@ -263,7 +261,7 @@
                     <td><span class="date-badge">2026-08-25</span><span class="date-end">bis 2026-11-23</span></td>
                     <td><strong>Ausstellung: DAS LEBEN IST EINE COLLAGE</strong><span class="badge-laufend">l&auml;uft</span></td>
                     <td class="location">Ricam Hospiz, Delbrückstraße 22, 12051 Berlin Neukölln</td>
-                    <td>Kunstausstellung mit Collagen der Künstlerinnen Bettina Schilling und Ilse Winckler in den Räumlichkeiten des Ricam Hospizes.</td>
+                    <td>Eine Kunstausstellung mit Collagen der Künstlerinnen Bettina Schilling und Ilse Winckler in den Räumlichkeiten des Ricam Hospizes.</td>
                     <td><a href="https://www.ricam-hospiz.de/events/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
@@ -280,6 +278,14 @@
                     <td><strong>Ausstellung «Auf immer und ewig»</strong><span class="badge-laufend">l&auml;uft</span><span class="badge-new">neu</span></td>
                     <td class="location">Friedhof Wolfgottesacker, Basel</td>
                     <td>Mehrmonatige Ausstellung auf dem Friedhof Wolfgottesacker rund um Fragen von Erinnerung, Vergänglichkeit und Friedhofskultur.</td>
+                    <td><a href="https://www.stadtgaertnerei.bs.ch/friedhoefe/veranstaltungen.html" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
+                </tr>
+
+                <tr data-tags="region-ausland art-ausstellung" data-start="2026-08-25" data-end="">
+                    <td><span class="date-badge">2026-08-25</span></td>
+                    <td><strong>Ausstellung «Auf immer und ewig» auf dem Wolfgottesacker</strong><span class="badge-new">neu</span></td>
+                    <td class="location">Wolfgottesacker, Basel</td>
+                    <td>Eine Fortlaufende Ausstellung auf dem Basler Friedhof Wolfgottesacker im Rahmen der Veranstaltungen der Stadtgärtnerei Basel.</td>
                     <td><a href="https://www.stadtgaertnerei.bs.ch/friedhoefe/veranstaltungen.html" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
@@ -311,7 +317,7 @@
                     <td><span class="date-badge">2026-08-26</span></td>
                     <td><strong>Aufwind an KapelleDREI - Hamburgs Chor für trauernde Menschen</strong></td>
                     <td class="location">KapelleDREI, Parkfriedhof Ohlsdorf, Hamburg</td>
-                    <td>Ein musikalisches Angebot für trauernde Menschen, die mit Verlusten durch Todesfälle, Krankheit oder biographische Brüche umgehen.</td>
+                    <td>Ein Chorangebot für trauernde Menschen und Personen, die mit Verlusterfahrungen durch Krankheit oder biographische Brüche umgehen.</td>
                     <td><a href="https://www.ohlsdorf-derpark.de/termine-ohlsdorf/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
@@ -406,7 +412,7 @@
                 <tr data-tags="region-west art-gottesdienst" data-start="2026-08-29" data-end="">
                     <td><span class="date-badge">2026-08-29</span></td>
                     <td><strong>Gedenken an Fritz Schramma</strong><span class="badge-new">neu</span></td>
-                    <td class="location">Kölner Dom</td>
+                    <td class="location">Kölner Dom, Köln</td>
                     <td>In der Heiligen Messe im Kölner Dom wird in besonderer Weise an den im August 2026 verstorbenen früheren Kölner Oberbürgermeister Fritz Schramma erinnert.</td>
                     <td><a href="https://www.koelner-dom.de/aktuelles" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
@@ -463,7 +469,7 @@
                     <td><span class="date-badge">2026-09-04</span></td>
                     <td><strong>Führung: Engel im grünen Paradies</strong></td>
                     <td class="location">Parkfriedhof Ohlsdorf, Hamburg</td>
-                    <td>Rundgang zu den Engelsfiguren und historischen Grabdenkmälern auf dem Parkfriedhof Ohlsdorf.</td>
+                    <td>Friedhofsführung zu Engelsskulpturen und sepulchraler Grabkunst auf dem Parkfriedhof Ohlsdorf.</td>
                     <td><a href="https://www.friedhof-hamburg.de/besucher/veranstaltungen/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
@@ -503,7 +509,7 @@
                     <td><span class="date-badge">2026-09-05</span></td>
                     <td><strong>Tage der Industriekultur: Frankfurter Hauptfriedhof – Auf den Spuren berühmter Köpfe aus Industrie, Politik und Wirtschaft</strong><span class="badge-new">neu</span></td>
                     <td class="location">Hauptfriedhof, Frankfurt am Main</td>
-                    <td>Führung über den Frankfurter Hauptfriedhof auf den Spuren bedeutender Persönlichkeiten aus Industrie, Politik und Wirtschaft im Rahmen der Tage der Industriekultur.</td>
+                    <td>Führung über den Frankfurter Hauptfriedhof im Rahmen der Tage der Industriekultur, bei der Grabstätten bedeutender Persönlichkeiten aus Wirtschaft und Politik erkundet werden.</td>
                     <td><a href="https://www.krfrm.de/venue/hauptfriedhof-frankfurt-am-main/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
@@ -523,11 +529,11 @@
                     <td><a href="https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
-                <tr data-tags="region-sonstige art-aktionstag" data-start="2026-09-05" data-end="">
+                <tr data-tags="region-west art-aktionstag" data-start="2026-09-05" data-end="">
                     <td><span class="date-badge">2026-09-05</span></td>
                     <td><strong>Kasseler Museumsnacht 2026</strong><span class="badge-new">neu</span></td>
-                    <td class="location">Museum für Sepulkralkultur</td>
-                    <td>Abendprogramm zur Museumsnacht im Museum für Sepulkralkultur mit Livemusik, Mitmach-Aktionen und Mitternachtsführung.</td>
+                    <td class="location">Museum für Sepulkralkultur, Kassel</td>
+                    <td>Das Museum für Sepulkralkultur bietet im Rahmen der Museumsnacht ein Programm mit Spezialführungen, Mitternachtsführung, Livemusik und Aktionen an.</td>
                     <td><a href="https://www.sepulkralmuseum.de/veranstaltungen/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
@@ -595,6 +601,14 @@
                     <td><a href="https://www.stattreisen-muenchen.de/fuehrungen/der-alte-sudliche-friedhof" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
+                <tr data-tags="region-sued art-fuehrung" data-start="2026-09-06" data-end="">
+                    <td><span class="date-badge">2026-09-06</span></td>
+                    <td><strong>Der Alte Südliche Friedhof – Führung</strong><span class="badge-new">neu</span></td>
+                    <td class="location">Alter Südlicher Friedhof, München</td>
+                    <td>Ein historischer Spaziergang über den Friedhof, der vergangene Begräbniskultur näherbringt und bedeutende Münchner Persönlichkeiten vorstellt.</td>
+                    <td><a href="https://www.stattreisen-muenchen.de/fuehrungen/der-alte-sudliche-friedhof" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
+                </tr>
+
                 <tr data-tags="region-berlin-brandenburg art-fuehrung" data-start="2026-09-09" data-end="">
                     <td><span class="date-badge">2026-09-09</span></td>
                     <td><strong>Führung über den Alten St.-Matthäus-Friedhof</strong></td>
@@ -615,7 +629,7 @@
                     <td><span class="date-badge">2026-09-10</span></td>
                     <td><strong>Ohlsdorfer Busrundfahrten</strong></td>
                     <td class="location">Parkfriedhof Ohlsdorf, Hamburg</td>
-                    <td>Informative Rundfahrt zur Vorstellung des vielfältigen Grabstätten-Angebots auf dem größten Parkfriedhof der Welt.</td>
+                    <td>Informativ geführte Rundfahrt über den Parkfriedhof Ohlsdorf mit Einblicken in das vielfältige Grabstätten-Angebot.</td>
                     <td><a href="https://www.friedhof-hamburg.de/besucher/veranstaltungen/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
@@ -687,7 +701,7 @@
                     <td><span class="date-badge">2026-09-13</span></td>
                     <td><strong>GartenRheinMain Hauptfriedhof</strong><span class="badge-new">neu</span></td>
                     <td class="location">Hauptfriedhof, Frankfurt am Main</td>
-                    <td>Führung durch die parkartige Friedhofsanlage des Frankfurter Hauptfriedhofs im Rahmen von GartenRheinMain.</td>
+                    <td>Führung und Veranstaltung auf dem Frankfurter Hauptfriedhof im Rahmen der Reihe GartenRheinMain zur Erkundung der parkartigen Anlage und ihrer Denkmäler.</td>
                     <td><a href="https://www.krfrm.de/venue/hauptfriedhof-frankfurt-am-main/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
@@ -711,7 +725,7 @@
                     <td><span class="date-badge">2026-09-13</span></td>
                     <td><strong>Konzert zum Tag des Denkmals mit Harfe und Poesie</strong><span class="badge-new">neu</span></td>
                     <td class="location">Südwestkirchhof Stahnsdorf</td>
-                    <td>Stimmungsvolles Konzert mit Harfenmusik und Poesie anlässlich des Tag des Denkmals.</td>
+                    <td>Festliches Konzert mit Harfe und Poesie anlässlich des Tages des Denkmals auf dem Südwestkirchhof.</td>
                     <td><a href="https://www.suedwestkirchhof.de/veranstaltungen.html" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
@@ -763,11 +777,11 @@
                     <td><a href="https://www.krfrm.de/venue/hauptfriedhof-frankfurt-am-main/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
-                <tr data-tags="region-ost art-vortrag" data-start="2026-09-15" data-end="">
+                <tr data-tags="region-ost art-gottesdienst" data-start="2026-09-15" data-end="">
                     <td><span class="date-badge">2026-09-15</span></td>
                     <td><strong>Die verschwiegenen Toten. Todesopfer rechter Gewalt seit 1990 in Leipzig</strong><span class="badge-new">neu</span></td>
                     <td class="location">Altes Rathaus, Leipzig</td>
-                    <td>Eine Podiumsdiskussion über den Umgang und die Gedenkkultur bezüglich der Todesopfer rechter Gewalt in Leipzig seit 1990.</td>
+                    <td>Eine Podiumsdiskussion über das Gedenken an die Todesopfer rechter Gewalt in Leipzig seit 1990 und den gesellschaftlichen Umgang mit diesen Fällen.</td>
                     <td><a href="https://www.stadtgeschichtliches-museum-leipzig.de/besuch/veranstaltungen/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
@@ -775,7 +789,7 @@
                     <td><span class="date-badge">2026-09-16</span></td>
                     <td><strong>Lesung: Hanna Heim liest aus „Hofsommer“</strong></td>
                     <td class="location">Museum für Sepulkralkultur, Kassel</td>
-                    <td>Lesung aus dem Debütroman über zwei Großeltern, die den freiverantwortlichen Entschluss fassen, gemeinsam aus dem Leben zu scheiden.</td>
+                    <td>Lesung aus dem Debütroman von Hanna Heim über eine Enkelin, die den gemeinsamen freiwilligen Freitod ihrer Großeltern verhindern möchte.</td>
                     <td><a href="https://www.sepulkralmuseum.de/veranstaltungen/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
@@ -871,7 +885,7 @@
                     <td><span class="date-badge">2026-09-24</span></td>
                     <td><strong>Bilderbuch-Lesung und Workshop „Die unglaublich alte Katze“</strong></td>
                     <td class="location">Museum für Sepulkralkultur, Kassel</td>
-                    <td>Illustratorin Nele Palmtag erzählt die Geschichte einer alten Katze mit verschiedenen Leben und bastelt anschließend mit den Teilnehmern.</td>
+                    <td>Illustratorin Nele Palmtag liest aus ihrem Bilderbuch vor und leitet anschließend einen kreativen Bastel-Workshop für Wunsch-Haustiere an.</td>
                     <td><a href="https://www.sepulkralmuseum.de/veranstaltungen/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
@@ -951,7 +965,7 @@
                     <td><span class="date-badge">2026-10-03</span></td>
                     <td><strong>Friedhofsführung</strong><span class="badge-new">neu</span></td>
                     <td class="location">Südwestkirchhof Stahnsdorf</td>
-                    <td>Geführter Rundgang über den historischen Südwestkirchhof Stahnsdorf.</td>
+                    <td>Geführter Spaziergang über den historischen Südwestkirchhof Stahnsdorf.</td>
                     <td><a href="https://www.suedwestkirchhof.de/veranstaltungen.html" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
@@ -959,7 +973,7 @@
                     <td><span class="date-badge">2026-10-04</span></td>
                     <td><strong>Kurzführung und Modellierworkshop mit Rana Matloub</strong></td>
                     <td class="location">Museum für Sepulkralkultur, Kassel</td>
-                    <td>Veranstaltung am letzten Tag der Ausstellung „Grabe keine Löcher neben die Gräber“ mit Kurzführung der Künstlerin und anschließendem Workshop.</td>
+                    <td>Veranstaltung am Finissage-Tag der Ausstellung „Grabe keine Löcher neben die Gräber“ mit Führung durch die Künstlerin und anschließendem Workshop.</td>
                     <td><a href="https://www.sepulkralmuseum.de/veranstaltungen/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
@@ -1003,6 +1017,14 @@
                     <td><a href="https://www.stattreisen-muenchen.de/fuehrungen/der-alte-sudliche-friedhof" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
+                <tr data-tags="region-sued art-fuehrung" data-start="2026-10-04" data-end="">
+                    <td><span class="date-badge">2026-10-04</span></td>
+                    <td><strong>Der Alte Südliche Friedhof – Führung</strong><span class="badge-new">neu</span></td>
+                    <td class="location">Alter Südlicher Friedhof, München</td>
+                    <td>Historischer Rundgang zur Geschichte des früheren Zentralfriedhofs und seinen Grabstätten berühmter Bürger.</td>
+                    <td><a href="https://www.stattreisen-muenchen.de/fuehrungen/der-alte-sudliche-friedhof" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
+                </tr>
+
                 <tr data-tags="region-berlin-brandenburg art-fuehrung" data-start="2026-10-07" data-end="">
                     <td><span class="date-badge">2026-10-07</span></td>
                     <td><strong>Führung über den Alten St.-Matthäus-Friedhof</strong></td>
@@ -1039,7 +1061,7 @@
                     <td><span class="date-badge">2026-10-15</span></td>
                     <td><strong>Vortrag Kannibalismus</strong><span class="badge-new">neu</span></td>
                     <td class="location">LWL-Museum für Archäologie Herne</td>
-                    <td>Öffentlicher Vortrag über das Thema Kannibalismus in der Menschheitsgeschichte.</td>
+                    <td>Ein öffentlicher Vortrag von Tabea Doll, Kai G. Bernhardt und Tom C. Winter beleuchtet das Phänomen Kannibalismus aus den Blickwinkeln von Archäologie, Pop-Kultur und Psychologie.</td>
                     <td><a href="https://www.lwl-landesmuseum-herne.de/de/veranstaltungen/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
@@ -1103,7 +1125,7 @@
                     <td><span class="date-badge">2026-10-25</span></td>
                     <td><strong>Friedhofsführung auf dem Südfriedhof</strong><span class="badge-new">neu</span></td>
                     <td class="location">Südfriedhof, Halle (Saale)</td>
-                    <td>Eine 90-minütige Führung über den Südfriedhof in Halle, organisiert vom Verein für Friedhofskultur.</td>
+                    <td>90-minütiger Rundgang über den Südfriedhof zur Geschichte und sepulktralen Kunst der Grabdenkmäler.</td>
                     <td><a href="http://www.friedhofskultur-halle.de/terminefuehrungen/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
@@ -1207,7 +1229,7 @@
                     <td><span class="date-badge">2026-11-07</span></td>
                     <td><strong>Novemberführung</strong><span class="badge-new">neu</span></td>
                     <td class="location">Südwestkirchhof Stahnsdorf</td>
-                    <td>Herbstliche Führung über den Südwestkirchhof Stahnsdorf.</td>
+                    <td>Geführter Friedhofsrundgang durch die Herbstlandschaft des Südwestkirchhofs.</td>
                     <td><a href="https://www.suedwestkirchhof.de/veranstaltungen.html" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
@@ -1263,7 +1285,7 @@
                     <td><span class="date-badge">2026-11-15</span></td>
                     <td><strong>Zum Volkstrauertag: Führung entlang des Hauptwegs bis zum Ehrenhain für die Jüdischen Soldaten des 1. Weltkriegs</strong></td>
                     <td class="location">Jüdischer Friedhof Berlin-Weißensee</td>
-                    <td>Thematische Führung zum Volkstrauertag mit Anja Pick entlang des Hauptwegs bis zum Ehrenhain für die jüdischen Gefallenen des Ersten Weltkriegs.</td>
+                    <td>Thematischer Rundgang zum Volkstrauertag mit Anja Pick entlang des Hauptwegs bis zum Ehrenhain für die jüdischen Gefallenen des Ersten Weltkriegs.</td>
                     <td><a href="https://jewish-cemetery-weissensee.org/entdecken/fuehrungen/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
@@ -1271,7 +1293,7 @@
                     <td><span class="date-badge">2026-11-15</span></td>
                     <td><strong>Gedenken zum Volkstrauertag und Kranzniederlegung</strong></td>
                     <td class="location">Südwestkirchhof Stahnsdorf</td>
-                    <td>Gedenkveranstaltung zum Volkstrauertag mit anschließender Kranzniederlegung.</td>
+                    <td>Gedenkstunde mit feierlicher Kranzniederlegung anlässlich des Volkstrauertags.</td>
                     <td><a href="https://www.suedwestkirchhof.de/veranstaltungen.html" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
@@ -1383,7 +1405,7 @@
                     <td><span class="date-badge">2026-12-05</span></td>
                     <td><strong>Winterlicher Friedhofsspaziergang mit Thomas Marin</strong><span class="badge-new">neu</span></td>
                     <td class="location">Südwestkirchhof Stahnsdorf</td>
-                    <td>Winterlicher Führung spaziergang über den Südwestkirchhof Stahnsdorf mit Thomas Marin.</td>
+                    <td>Winterlicher Rundgang über den Friedhof mit historischen Erläuterungen von Thomas Marin.</td>
                     <td><a href="https://www.suedwestkirchhof.de/veranstaltungen.html" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
@@ -1439,7 +1461,7 @@
                     <td><span class="date-badge">2026-12-27</span></td>
                     <td><strong>Führung zu den Weihnachtstagen</strong><span class="badge-new">neu</span></td>
                     <td class="location">Südfriedhof Leipzig</td>
-                    <td>Eine Sonderführung über den Südfriedhof Leipzig während der Weihnachtstage.</td>
+                    <td>Kulturhistorische Führung über den Leipziger Südfriedhof zu den Weihnachtstagen.</td>
                     <td><a href="https://paul-benndorf-gesellschaft.de/fuehrungen.html" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 

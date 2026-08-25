@@ -54,7 +54,7 @@
     "date_start": "2026-09-13",
     "date_end": null,
     "location": "Hauptfriedhof, Frankfurt am Main",
-    "description": "Führung durch die parkartige Friedhofsanlage des Frankfurter Hauptfriedhofs im Rahmen von GartenRheinMain.",
+    "description": "Führung und Veranstaltung auf dem Frankfurter Hauptfriedhof im Rahmen der Reihe GartenRheinMain zur Erkundung der parkartigen Anlage und ihrer Denkmäler.",
     "url": "https://www.krfrm.de/venue/hauptfriedhof-frankfurt-am-main/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
@@ -84,7 +84,7 @@
     "date_start": "2026-09-13",
     "date_end": null,
     "location": "Südwestkirchhof Stahnsdorf",
-    "description": "Stimmungsvolles Konzert mit Harfenmusik und Poesie anlässlich des Tag des Denkmals.",
+    "description": "Festliches Konzert mit Harfe und Poesie anlässlich des Tages des Denkmals auf dem Südwestkirchhof.",
     "url": "https://www.suedwestkirchhof.de/veranstaltungen.html",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
@@ -184,7 +184,7 @@
     "date_start": "2026-08-26",
     "date_end": null,
     "location": "KapelleDREI, Parkfriedhof Ohlsdorf, Hamburg",
-    "description": "Ein musikalisches Angebot für trauernde Menschen, die mit Verlusten durch Todesfälle, Krankheit oder biographische Brüche umgehen.",
+    "description": "Ein Chorangebot für trauernde Menschen und Personen, die mit Verlusterfahrungen durch Krankheit oder biographische Brüche umgehen.",
     "url": "https://www.ohlsdorf-derpark.de/termine-ohlsdorf/",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-25"
@@ -314,7 +314,7 @@
     "date_start": "2026-09-05",
     "date_end": null,
     "location": "Hauptfriedhof, Frankfurt am Main",
-    "description": "Führung über den Frankfurter Hauptfriedhof auf den Spuren bedeutender Persönlichkeiten aus Industrie, Politik und Wirtschaft im Rahmen der Tage der Industriekultur.",
+    "description": "Führung über den Frankfurter Hauptfriedhof im Rahmen der Tage der Industriekultur, bei der Grabstätten bedeutender Persönlichkeiten aus Wirtschaft und Politik erkundet werden.",
     "url": "https://www.krfrm.de/venue/hauptfriedhof-frankfurt-am-main/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
@@ -343,8 +343,8 @@
     "title": "Kasseler Museumsnacht 2026",
     "date_start": "2026-09-05",
     "date_end": null,
-    "location": "Museum für Sepulkralkultur",
-    "description": "Abendprogramm zur Museumsnacht im Museum für Sepulkralkultur mit Livemusik, Mitmach-Aktionen und Mitternachtsführung.",
+    "location": "Museum für Sepulkralkultur, Kassel",
+    "description": "Das Museum für Sepulkralkultur bietet im Rahmen der Museumsnacht ein Programm mit Spezialführungen, Mitternachtsführung, Livemusik und Aktionen an.",
     "url": "https://www.sepulkralmuseum.de/veranstaltungen/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
@@ -425,6 +425,16 @@
     "date_end": null,
     "location": "Alter Südlicher Friedhof, München",
     "description": "Historischer Rundgang über Münchens ehemaligen Zentralfriedhof zur vergangen Begräbniskultur und bedeutenden Grabmälern.",
+    "url": "https://www.stattreisen-muenchen.de/fuehrungen/der-alte-sudliche-friedhof",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "8da1acc20193135e05de87bf3de2435d": {
+    "title": "Der Alte Südliche Friedhof – Führung",
+    "date_start": "2026-09-06",
+    "date_end": null,
+    "location": "Alter Südlicher Friedhof, München",
+    "description": "Ein historischer Spaziergang über den Friedhof, der vergangene Begräbniskultur näherbringt und bedeutende Münchner Persönlichkeiten vorstellt.",
     "url": "https://www.stattreisen-muenchen.de/fuehrungen/der-alte-sudliche-friedhof",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
@@ -574,7 +584,7 @@
     "date_start": "2026-11-15",
     "date_end": null,
     "location": "Jüdischer Friedhof Berlin-Weißensee",
-    "description": "Thematische Führung zum Volkstrauertag mit Anja Pick entlang des Hauptwegs bis zum Ehrenhain für die jüdischen Gefallenen des Ersten Weltkriegs.",
+    "description": "Thematischer Rundgang zum Volkstrauertag mit Anja Pick entlang des Hauptwegs bis zum Ehrenhain für die jüdischen Gefallenen des Ersten Weltkriegs.",
     "url": "https://jewish-cemetery-weissensee.org/entdecken/fuehrungen/",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-25"
@@ -584,7 +594,7 @@
     "date_start": "2026-11-15",
     "date_end": null,
     "location": "Südwestkirchhof Stahnsdorf",
-    "description": "Gedenkveranstaltung zum Volkstrauertag mit anschließender Kranzniederlegung.",
+    "description": "Gedenkstunde mit feierlicher Kranzniederlegung anlässlich des Volkstrauertags.",
     "url": "https://www.suedwestkirchhof.de/veranstaltungen.html",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-25"
@@ -674,7 +684,7 @@
     "date_start": "2026-10-03",
     "date_end": null,
     "location": "Südwestkirchhof Stahnsdorf",
-    "description": "Geführter Rundgang über den historischen Südwestkirchhof Stahnsdorf.",
+    "description": "Geführter Spaziergang über den historischen Südwestkirchhof Stahnsdorf.",
     "url": "https://www.suedwestkirchhof.de/veranstaltungen.html",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
@@ -754,7 +764,7 @@
     "date_start": "2026-11-07",
     "date_end": null,
     "location": "Südwestkirchhof Stahnsdorf",
-    "description": "Herbstliche Führung über den Südwestkirchhof Stahnsdorf.",
+    "description": "Geführter Friedhofsrundgang durch die Herbstlandschaft des Südwestkirchhofs.",
     "url": "https://www.suedwestkirchhof.de/veranstaltungen.html",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
@@ -854,7 +864,7 @@
     "date_start": "2026-12-05",
     "date_end": null,
     "location": "Südwestkirchhof Stahnsdorf",
-    "description": "Winterlicher Führung spaziergang über den Südwestkirchhof Stahnsdorf mit Thomas Marin.",
+    "description": "Winterlicher Rundgang über den Friedhof mit historischen Erläuterungen von Thomas Marin.",
     "url": "https://www.suedwestkirchhof.de/veranstaltungen.html",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
@@ -874,7 +884,7 @@
     "date_start": "2026-08-25",
     "date_end": "2026-11-23",
     "location": "Ricam Hospiz, Delbrückstraße 22, 12051 Berlin Neukölln",
-    "description": "Kunstausstellung mit Collagen der Künstlerinnen Bettina Schilling und Ilse Winckler in den Räumlichkeiten des Ricam Hospizes.",
+    "description": "Eine Kunstausstellung mit Collagen der Künstlerinnen Bettina Schilling und Ilse Winckler in den Räumlichkeiten des Ricam Hospizes.",
     "url": "https://www.ricam-hospiz.de/events/",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-25"
@@ -895,6 +905,16 @@
     "date_end": "2026-11-30",
     "location": "Friedhof Wolfgottesacker, Basel",
     "description": "Mehrmonatige Ausstellung auf dem Friedhof Wolfgottesacker rund um Fragen von Erinnerung, Vergänglichkeit und Friedhofskultur.",
+    "url": "https://www.stadtgaertnerei.bs.ch/friedhoefe/veranstaltungen.html",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "197c2400075a927df579398561e0d221": {
+    "title": "Ausstellung «Auf immer und ewig» auf dem Wolfgottesacker",
+    "date_start": "2026-08-25",
+    "date_end": null,
+    "location": "Wolfgottesacker, Basel",
+    "description": "Eine Fortlaufende Ausstellung auf dem Basler Friedhof Wolfgottesacker im Rahmen der Veranstaltungen der Stadtgärtnerei Basel.",
     "url": "https://www.stadtgaertnerei.bs.ch/friedhoefe/veranstaltungen.html",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
@@ -963,7 +983,7 @@
     "title": "Gedenken an Fritz Schramma",
     "date_start": "2026-08-29",
     "date_end": null,
-    "location": "Kölner Dom",
+    "location": "Kölner Dom, Köln",
     "description": "In der Heiligen Messe im Kölner Dom wird in besonderer Weise an den im August 2026 verstorbenen früheren Kölner Oberbürgermeister Fritz Schramma erinnert.",
     "url": "https://www.koelner-dom.de/aktuelles",
     "first_seen": "2026-08-25",
@@ -1034,7 +1054,7 @@
     "date_start": "2026-12-27",
     "date_end": null,
     "location": "Südfriedhof Leipzig",
-    "description": "Eine Sonderführung über den Südfriedhof Leipzig während der Weihnachtstage.",
+    "description": "Kulturhistorische Führung über den Leipziger Südfriedhof zu den Weihnachtstagen.",
     "url": "https://paul-benndorf-gesellschaft.de/fuehrungen.html",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
@@ -1114,7 +1134,7 @@
     "date_start": "2026-10-25",
     "date_end": null,
     "location": "Südfriedhof, Halle (Saale)",
-    "description": "Eine 90-minütige Führung über den Südfriedhof in Halle, organisiert vom Verein für Friedhofskultur.",
+    "description": "90-minütiger Rundgang über den Südfriedhof zur Geschichte und sepulktralen Kunst der Grabdenkmäler.",
     "url": "http://www.friedhofskultur-halle.de/terminefuehrungen/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
@@ -1134,7 +1154,7 @@
     "date_start": "2026-09-04",
     "date_end": null,
     "location": "Parkfriedhof Ohlsdorf, Hamburg",
-    "description": "Rundgang zu den Engelsfiguren und historischen Grabdenkmälern auf dem Parkfriedhof Ohlsdorf.",
+    "description": "Friedhofsführung zu Engelsskulpturen und sepulchraler Grabkunst auf dem Parkfriedhof Ohlsdorf.",
     "url": "https://www.friedhof-hamburg.de/besucher/veranstaltungen/",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-25"
@@ -1144,7 +1164,7 @@
     "date_start": "2026-09-10",
     "date_end": null,
     "location": "Parkfriedhof Ohlsdorf, Hamburg",
-    "description": "Informative Rundfahrt zur Vorstellung des vielfältigen Grabstätten-Angebots auf dem größten Parkfriedhof der Welt.",
+    "description": "Informativ geführte Rundfahrt über den Parkfriedhof Ohlsdorf mit Einblicken in das vielfältige Grabstätten-Angebot.",
     "url": "https://www.friedhof-hamburg.de/besucher/veranstaltungen/",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-25"
@@ -1194,7 +1214,7 @@
     "date_start": "2026-09-24",
     "date_end": null,
     "location": "Museum für Sepulkralkultur, Kassel",
-    "description": "Illustratorin Nele Palmtag erzählt die Geschichte einer alten Katze mit verschiedenen Leben und bastelt anschließend mit den Teilnehmern.",
+    "description": "Illustratorin Nele Palmtag liest aus ihrem Bilderbuch vor und leitet anschließend einen kreativen Bastel-Workshop für Wunsch-Haustiere an.",
     "url": "https://www.sepulkralmuseum.de/veranstaltungen/",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-25"
@@ -1304,7 +1324,7 @@
     "date_start": "2026-09-16",
     "date_end": null,
     "location": "Museum für Sepulkralkultur, Kassel",
-    "description": "Lesung aus dem Debütroman über zwei Großeltern, die den freiverantwortlichen Entschluss fassen, gemeinsam aus dem Leben zu scheiden.",
+    "description": "Lesung aus dem Debütroman von Hanna Heim über eine Enkelin, die den gemeinsamen freiwilligen Freitod ihrer Großeltern verhindern möchte.",
     "url": "https://www.sepulkralmuseum.de/veranstaltungen/",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-25"
@@ -1334,7 +1354,7 @@
     "date_start": "2026-10-04",
     "date_end": null,
     "location": "Museum für Sepulkralkultur, Kassel",
-    "description": "Veranstaltung am letzten Tag der Ausstellung „Grabe keine Löcher neben die Gräber“ mit Kurzführung der Künstlerin und anschließendem Workshop.",
+    "description": "Veranstaltung am Finissage-Tag der Ausstellung „Grabe keine Löcher neben die Gräber“ mit Führung durch die Künstlerin und anschließendem Workshop.",
     "url": "https://www.sepulkralmuseum.de/veranstaltungen/",
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-25"
@@ -1385,6 +1405,16 @@
     "date_end": null,
     "location": "Alter Südlicher Friedhof, München",
     "description": "Historischer Rundgang über Münchens ehemaligen Zentralfriedhof zur vergangen Begräbniskultur und bedeutenden Grabmälern.",
+    "url": "https://www.stattreisen-muenchen.de/fuehrungen/der-alte-sudliche-friedhof",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25"
+  },
+  "dc07d330e5eef236fea42b9f572c5292": {
+    "title": "Der Alte Südliche Friedhof – Führung",
+    "date_start": "2026-10-04",
+    "date_end": null,
+    "location": "Alter Südlicher Friedhof, München",
+    "description": "Historischer Rundgang zur Geschichte des früheren Zentralfriedhofs und seinen Grabstätten berühmter Bürger.",
     "url": "https://www.stattreisen-muenchen.de/fuehrungen/der-alte-sudliche-friedhof",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
@@ -1534,7 +1564,7 @@
     "date_start": "2026-10-15",
     "date_end": null,
     "location": "LWL-Museum für Archäologie Herne",
-    "description": "Öffentlicher Vortrag über das Thema Kannibalismus in der Menschheitsgeschichte.",
+    "description": "Ein öffentlicher Vortrag von Tabea Doll, Kai G. Bernhardt und Tom C. Winter beleuchtet das Phänomen Kannibalismus aus den Blickwinkeln von Archäologie, Pop-Kultur und Psychologie.",
     "url": "https://www.lwl-landesmuseum-herne.de/de/veranstaltungen/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
@@ -1544,7 +1574,7 @@
     "date_start": "2026-09-15",
     "date_end": null,
     "location": "Altes Rathaus, Leipzig",
-    "description": "Eine Podiumsdiskussion über den Umgang und die Gedenkkultur bezüglich der Todesopfer rechter Gewalt in Leipzig seit 1990.",
+    "description": "Eine Podiumsdiskussion über das Gedenken an die Todesopfer rechter Gewalt in Leipzig seit 1990 und den gesellschaftlichen Umgang mit diesen Fällen.",
     "url": "https://www.stadtgeschichtliches-museum-leipzig.de/besuch/veranstaltungen/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
