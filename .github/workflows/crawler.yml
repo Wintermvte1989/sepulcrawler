@@ -54,7 +54,7 @@ jobs:
       - name: Crawler ausfuehren
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: python parser.py
+        run: python main.py
 
       - name: Plausibilitaetspruefung
         run: |
