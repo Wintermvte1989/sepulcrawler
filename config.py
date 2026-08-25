@@ -308,6 +308,62 @@ TOKEN_JACCARD_THRESHOLD = 0.60
 # 12 Zeichen halten generische Titel wie "Fuehrung" (7) draussen.
 SUBSTRING_MIN_LENGTH = 12
 
+# ---------------------------------------------------------------- Themenfilter
+#
+# Zweite Verteidigungslinie hinter dem Prompt. Der Prompt allein reicht nicht:
+# ein Ortskriterium ("Veranstaltung an einem Museum oder einer Kirche") laesst
+# jedes Orgelkonzert und jede Stadtfuehrung durch. Hier wird geprueft, ob
+# Titel, Beschreibung ODER Ort einen echten sepulkralen Bezug haben.
+#
+# Regel: entweder ein Themenwort (TOPIC_PATTERN) oder ein Ort, der schon
+# durch seine Art zum Thema gehoert (VENUE_PATTERN).
+#
+# Vorsicht bei kurzen Staemmen:
+#  - "grab" als Substring trifft "Ausgrabung"/"ausgegraben" - deshalb nur
+#    ausgeschriebene Komposita und Wortanfaenge (\b).
+#  - "tot" als Wortanfang trifft "total" - deshalb "tote", "toten", "tod".
+#  - "gedenk" allein trifft jede Gedenkstaette, auch politische - deshalb nur
+#    die konkreten Formen (gedenkfeier, gedenkkultur, totengedenken ...).
+TOPIC_PATTERN = re.compile(
+    r"""(?:
+        friedhof | friedhöf | kirchhof | kirchhöf
+      | grabstätte | grabmal | grabkunst | grabstein | grabdenkmal
+      | grabanlage | grabkammer | grabschatz | grabschätze | grabes
+      | grabfund | grablege | ehrengrab | ehrengräb
+      | \bgrab\b | \bgräber | \bgrabe\b | \bgräbern
+      | gruft | grüfte | mausoleum | mausoleen | beinhaus | ossuar
+      | kolumbarium | urnen | \bsarg | \bsärge | \bsarko
+      | bestattung | begräbnis | beisetzung | sepulkral | sepulchral
+      | epitaph | krematorium | feuerbestattung | erdbestattung
+      | einäscherung
+      | trauer | hinterbliebene | kondolenz | beileid
+      | sterbebegleitung | sterbende | \bsterben | \bsterbe
+      | hospiz | palliativ | \bverstorben | \bverstarb
+      | \btod | \btote | \btoten | \btotes | totengedenk | totentanz
+      | volkstrauertag | ewigkeitssonntag | totensonntag | allerheiligen
+      | allerseelen | requiem | seelenmesse | gedenkkultur
+      | gedenkfeier | gedenkveranstaltung | kranzniederlegung
+      | mumie | mumien | skelett | gebeine | \bknochen
+      | vergänglichkeit | memento\s+mori | vanitas | jenseits
+      | nachlass | kriegsgräber | \bgefallenen | mahnmal | ehrenmal
+      | holocaust | schoah | \bleichen | aufbahrung | aussegnung
+    )""",
+    re.IGNORECASE | re.VERBOSE,
+)
+
+# Orte, die durch ihre Art zum Thema gehoeren. Eine Veranstaltung in einer
+# Friedhofskapelle ist relevant, auch wenn der Titel es nicht verraet
+# (z. B. "Aufwind - Chor fuer trauernde Menschen" an der KapelleDREI).
+VENUE_PATTERN = re.compile(
+    r"""(?:
+        friedhof | friedhöf | kirchhof | kirchhöf | beinhaus
+      | krematorium | hospiz | kolumbarium | gruft | grüfte
+      | aussegnungshalle | trauerhalle | palliativ | katakombe
+      | sepulkralmuseum | bestattungsmuseum
+    )""",
+    re.IGNORECASE | re.VERBOSE,
+)
+
 REGIONS = (
     ("berlin-brandenburg", (
         "berlin", "stahnsdorf", "potsdam", "brandenburg", "weißensee",

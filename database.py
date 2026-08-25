@@ -99,6 +99,36 @@ def event_type(title: str) -> str | None:
     return None
 
 
+def is_topically_relevant(event: dict) -> tuple[bool, str]:
+    """Prueft, ob ein Event ueberhaupt zum Thema gehoert.
+
+    Der Prompt allein genuegt nicht: ein Ortskriterium wie "Veranstaltung an
+    einem Museum oder einer Kirche" laesst jedes Orgelkonzert, jede
+    Stadtfuehrung und jeden Familiennachmittag durch. Hier wird deterministisch
+    nachgeprueft.
+
+    Rueckgabe: (relevant, Begruendung) - die Begruendung dient dem Log.
+    """
+    title = str(event.get("title") or "")
+    description = str(event.get("description") or "")
+    location = str(event.get("location") or "")
+
+    # 1. Ort gehoert schon durch seine Art zum Thema (Friedhofskapelle,
+    #    Hospiz, Krematorium ...). Deckt Titel ab, die das Thema verschweigen.
+    venue_hit = config.VENUE_PATTERN.search(location)
+    if venue_hit:
+        return True, f"Ort: {venue_hit.group(0)}"
+
+    # 2. Themenwort in Titel, Beschreibung oder Ortsangabe.
+    for field_name, text in (("Titel", title), ("Beschreibung", description),
+                             ("Ort", location)):
+        hit = config.TOPIC_PATTERN.search(text)
+        if hit:
+            return True, f"{field_name}: {hit.group(0)}"
+
+    return False, "kein sepulkraler Bezug"
+
+
 def event_host(event: dict) -> str:
     return urlparse(str(event.get("url") or "")).netloc.lower()
 

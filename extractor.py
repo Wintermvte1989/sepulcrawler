@@ -57,29 +57,55 @@ def extract_events_batch(batch_sources: list[tuple[str, str]], today_str: str) -
             f"\n=== QUELLE {idx} ===\n{text}\n=== ENDE QUELLE {idx} ===\n"
         )
 
-    # Prompt gelockert: Erfasst auch Kultur-, Kunst- und Filmveranstaltungen an Friedhöfen, Museen und Kirchen
+    # Themenkriterium, nicht Ortskriterium: "Kulturveranstaltung an einem
+    # Museum oder einer Kirche" liess jedes Orgelkonzert und jede
+    # Stadtfuehrung durch. Zusaetzlich prueft database.is_topically_relevant
+    # das Ergebnis deterministisch nach.
     prompt = f"""
     Das heutige Datum ist {today_str}.
-    Analysiere die folgenden Webseiten-Texte auf Veranstaltungen. 
+    Analysiere die folgenden Webseiten-Texte auf Veranstaltungen zur
+    SEPULKRALKULTUR - also zu Tod, Bestattung, Trauer und Totengedenken.
 
-    Ziel-Veranstaltungen:
-    - Friedhofsführungen, Sepulkralkultur, Grabkunst, Bestattungswesen, Gedenkkultur
-    - Ausstellungen zu Tod, Sterben, Archäologie, Antike, Geschichte
-    - Kulturveranstaltungen (Konzerte, Lesungen, Filmreihen/Kino, Vorträge, Führungen) an Museen, Kirchen, Gedenkstätten oder Friedhöfen
+    ENTSCHEIDENDE REGEL: Der Ort allein macht eine Veranstaltung NICHT
+    relevant. Ein Konzert in einer Kirche, eine Stadtfuehrung an einem Museum
+    oder ein Familiennachmittag im Landesmuseum gehoeren NICHT dazu, nur weil
+    sie an einem historischen Ort stattfinden. Entscheidend ist das THEMA.
 
-    WICHTIG:
-    - Extrahiere AUSSCHLIESSLICH Veranstaltungen, deren Datum am oder nach dem heutigen Datum ({today_str}) liegt.
-    - date_start MUSS strikt YYYY-MM-DD sein.
-    - date_end nur bei mehrtägigen Veranstaltungen (Ausstellungen, Aktionstage) setzen, sonst null.
-    - Ignoriere vergangene Veranstaltungen strikt.
-    - Trage in 'source_id' die Nummer der QUELLE ein, in deren Block das Event stand.
-    - MEHRSPRACHIGE TEXTE: Falls der Quelltext auf Englisch, Tschechisch oder einer anderen Sprache verfasst ist, übersetze title, location und description präzise ins Deutsche.
+    ERFASSEN, wenn die Veranstaltung inhaltlich um mindestens eines dieser
+    Themen kreist:
+    - Friedhoefe, Grabkunst, Grabmale, Mausoleen, Gruefte, Beinhaeuser
+    - Bestattung, Begraebnis, Beisetzung, Feuerbestattung, Krematorien
+    - Trauer, Trauerbegleitung, Hospiz- und Palliativarbeit, Sterbebegleitung
+    - Totengedenken: Volkstrauertag, Ewigkeitssonntag, Allerheiligen,
+      Gedenkfeiern fuer Verstorbene, Kranzniederlegungen
+    - Kulturgeschichte des Todes: Totentanz, Vanitas, Memento mori,
+      Mumien, Gebeine, Vergaenglichkeit in Kunst und Literatur
+    - Grabfunde und Bestattungssitten in Archaeologie und Aegyptologie
+    - Veranstaltungen, die AUF einem Friedhof, in einer Friedhofskapelle,
+      einem Hospiz oder Krematorium stattfinden - dort ist der Ort das Thema
 
-    NICHT erfassen (auch wenn sie am selben Ort stattfinden):
-    - Veranstaltungen ohne jeden Bezug zu Tod, Gedenken, Geschichte oder Archäologie,
-      z. B. Kinderbasteln, Yoga, Flohmärkte, Sprachkurse, Weihnachtsmärkte,
-      Tagungen zu unverbundenen Themen.
-    - Reine Öffnungszeiten, Eintrittspreise oder Dauerangebote ohne Termin.
+    NICHT ERFASSEN, auch wenn der Ort passend klingt:
+    - Orgelkonzerte, Chorkonzerte, Vespern, Gottesdienste ohne Totenbezug
+    - Kirchen-, Kloster- und Domfuehrungen zur Bau- oder Ordensgeschichte
+    - allgemeine Museums- und Stadtfuehrungen, Jubilaeumstouren
+    - Archaeologie ohne Grabbezug (Siedlungen, Werkzeuge, Felsbilder)
+    - Familiennachmittage, Bastel- und Mitmachangebote fuer Kinder
+    - Theater, Kabarett, Lesungen, Filmreihen ohne Themenbezug
+    - Ausstellungen zu Stadtgeschichte, Architektur, Politik, Fotografie
+    - Weinproben, Feste, Museumsnaechte, Wissenschaftsmaerkte
+    - Sprachkurse, Yoga, Floh- und Weihnachtsmaerkte
+    - reine Oeffnungszeiten, Eintrittspreise, Dauerangebote ohne Termin
+
+    Im Zweifel NICHT erfassen. Eine fehlende Veranstaltung ist besser als
+    eine thematisch falsche.
+
+    FORMAT:
+    - Nur Veranstaltungen am oder nach dem heutigen Datum ({today_str}).
+    - date_start strikt YYYY-MM-DD.
+    - date_end nur bei mehrtaegigen Veranstaltungen, sonst null.
+    - 'source_id': Nummer der QUELLE, in deren Block das Event stand.
+    - Fremdsprachige Texte (Englisch, Tschechisch u. a.): title, location
+      und description praezise ins Deutsche uebersetzen.
 
     Webseiten-Daten:
     {combined_text}

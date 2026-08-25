@@ -86,6 +86,12 @@ if __name__ == "__main__":
                 stats["vergangen"] += 1
                 continue
 
+            on_topic, reason = database.is_topically_relevant(event)
+            if not on_topic:
+                print(f"  verworfen (Thema): {event.get('title')[:70]}")
+                stats["thema_verfehlt"] += 1
+                continue
+
             duplicate_key = database.find_duplicate_key(event, events_db)
             if duplicate_key:
                 event["first_seen"] = today_str
@@ -121,6 +127,7 @@ if __name__ == "__main__":
     print(f"  aktualisiert:   {stats['aktualisiert']}")
     print(f"  Datum ungueltig:{stats['datum_ungueltig']}")
     print(f"  vergangen:      {stats['vergangen']}")
+    print(f"  Thema verfehlt: {stats['thema_verfehlt']}")
     print(f"  zusammengefuehrt:{stats['zusammengefuehrt']}")
     print(f"  DB bereinigt:   {stats['entfernt']} entfernt")
     print(f"\n{len(cleaned_db)} aktive Events in '{config.HTML_OUTPUT_FILE}' geschrieben.")
