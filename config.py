@@ -197,6 +197,18 @@ TARGET_URLS = [
     "https://www.barbarafriedhof.at/service-info/aktuelles/rueckblick/kulturgeschichtliche-friedhofsfuehrungen-2026",
     "https://www.linzag.at/portal/de/privatkunden/trauer/veranstaltungen",
     "https://www.kulturfuchs.at/friedhof/",
+    # --- Themenportale mit eigenem Veranstaltungskalender ---
+    # Aggregatoren: sie sammeln Termine ueber viele Veranstalter hinweg und
+    # sind damit ergiebiger als eine einzelne Einrichtung.
+    "https://bv-trauerbegleitung.de/veranstaltungskalender/",
+    "https://trauergestalt.de/events/",
+    "https://trauertaskforce.de/trauerwoche/",
+    "https://blauerfalter.de/termine",
+
+    # --- Medizin- und Koerpergeschichte ---
+    # Deutsches Medizinhistorisches Museum Ingolstadt, Jahresausstellung 2026
+    # "ALLES MUSS RAUS! Koerperliche Hinterlassenschaften".
+    "https://www.dmm-ingolstadt.de/",
 ]
 
 DISABLED_URLS = {
@@ -395,6 +407,8 @@ TOPIC_PATTERN = re.compile(
       | nachlass | kriegsgräber | \bgefallenen | mahnmal | ehrenmal
       | holocaust | schoah | \bleichen | aufbahrung | aussegnung
       | totenkult | ruhestätte | ruhestätten | nekropol | katakombe
+      | hinterlassenschaft | präparat | praeparat | obduktion
+      | pathologisch | \bsezier | einbalsamier | moulage
       | sterblichkeit | endlichkeit | abschiednehmen | trauerrede
       | grabrede | urnenhain | friedwald | ruheforst | gedenkstein
       | \bwiedergänger | \breliquie | anatomisch | \banatomie
@@ -414,6 +428,11 @@ VENUE_PATTERN = re.compile(
       | gruft | grüfte | gruefte
       | aussegnungshalle | trauerhalle | palliativ | katakombe
       | sepulkralmuseum | bestattungsmuseum | friedhofforum
+      # "trauer" wirkt vor allem auf Quell-Domains (bv-trauerbegleitung.de,
+      # trauergestalt.de, trauertaskforce.de) - solche Anbieter sind durch
+      # ihren Gegenstand einschlaegig. In Ortsangaben trifft es
+      # "Trauerhalle" und "Trauercafe", was ebenfalls passt.
+      | trauer
     )""",
     re.IGNORECASE | re.VERBOSE,
 )
@@ -459,6 +478,7 @@ REGIONS = (
         "augsburg", "stuttgart", "ulm", "bamberg", "würzburg", "wuerzburg",
         "passau", "karlsruhe", "freiburg", "chammünster", "chammuenster",
         "bayern", "schwaben", "heidelberg", "tübingen", "tuebingen",
+        "ingolstadt", "dmm-ingolstadt",
         "mannheim", "konstanz", "baden",
     )),
     ("ausland", (
