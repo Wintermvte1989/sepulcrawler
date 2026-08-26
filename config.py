@@ -391,6 +391,12 @@ REGIONS = (
         "weissensee", "liesenstraße", "liesenstrasse", "neukölln", "pankow",
         "hellersdorf", "spandau", "charlottenburg", "kreuzberg", "eberswalde",
         "neuzelle", "halbe",
+        # Berliner Friedhoefe, deren Ortsangabe die Stadt nicht nennt.
+        # "hallesch" steht bewusst VOR dem "halle saale" im Osten: das
+        # Hallesche Tor liegt in Kreuzberg, nicht in Sachsen-Anhalt.
+        "hallesch", "matthäus", "dorotheenstädtisch", "dreifaltigkeit",
+        "heerstraße", "friedrichswerdersch", "invalidenfriedhof",
+        "garnisonfriedhof", "südwestkirchhof", "stahnsdorf",
     )),
     ("nord", (
         "hamburg", "ohlsdorf", "kiel", "bremen", "lübeck", "luebeck",
@@ -405,7 +411,8 @@ REGIONS = (
         "saarbruecken", "dortmund", "bochum",
     )),
     ("ost", (
-        "leipzig", "dresden", "halle", "erfurt", "magdeburg", "naumburg",
+        # "halle" allein traf "Halleschen Tor" in Berlin - daher mit Zusatz.
+        "leipzig", "dresden", "halle saale", "erfurt", "magdeburg", "naumburg",
         "chemnitz", "quedlinburg", "striesener", "eliasfriedhof", "görlitz",
         "goerlitz", "weimar", "jena",
     )),

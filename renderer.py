@@ -1,4 +1,5 @@
 import html
+from urllib.parse import urlparse
 from collections import Counter
 from datetime import datetime, date
 import config
@@ -6,12 +7,32 @@ import database
 
 
 def event_region(event: dict) -> str:
+    """Grobe geografische Einordnung.
+
+    Die Ortsangabe kommt vom Modell und nennt die Stadt oft nicht: aus
+    "Alter St.-Matthaeus-Friedhof, Berlin" wird "Haupteingang des Alten
+    St.-Matthaeus-Friedhofs". Deshalb dient die Quell-Domain als Rueckfall -
+    sie ist nicht vom Modell erzeugt und daher verlaesslich.
+    """
     location = database.clean_text_for_comparison(event.get("location"))
+
+    # 'online' hat Vorrang: eine reine Online-Veranstaltung gehoert in keine
+    # Ortsliste, auch wenn die Domain eine Stadt nennt.
     if not location or "online" in location or "bundesweit" in location:
         return "online"
+
     for name, keywords in config.REGIONS:
         if any(word in location for word in keywords):
             return name
+
+    # Rueckfall: Stadt aus der Quell-Domain ableiten. Deckt die Berliner
+    # Friedhofsseiten ab, deren Ortsangaben ohne Stadtnamen auskommen.
+    host = database.clean_text_for_comparison(urlparse(str(event.get("url") or "")).netloc)
+    if host:
+        for name, keywords in config.REGIONS:
+            if any(word in host for word in keywords):
+                return name
+
     return "sonstige"
 
 
