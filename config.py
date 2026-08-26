@@ -222,6 +222,13 @@ TARGET_URLS = [
     # Mainzer Hauptfriedhof - Vorbild fuer den Pere-Lachaise in Paris,
     # Platz 3 der schoensten Friedhoefe Deutschlands.
     "http://www.nekropolis-moguntia.de/info.html",
+    # --- Weitere Foerdervereine (Runde 2 der Beiratsliste) ---
+    # Bonn, Platz 4 der schoensten Friedhoefe: Fuehrungen von Maerz bis
+    # Oktober an JEDEM Samstag und Sonntag - entsprechend viele Termine.
+    "https://alterfriedhofbonn.de/",
+    "https://www.alterfriedhofbonn.de/fuehrungen",
+    "https://www.alter-friedhof-freiburg.de/aktuelles-veranstaltungen/",
+    "https://www.friedhof-mannheim.de/graeber/foerderkreis/",
 ]
 
 DISABLED_URLS = {
