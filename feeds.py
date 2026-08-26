@@ -30,6 +30,17 @@ GENERATOR_FEEDS = (
 
 MAX_FEED_EVENTS = 60
 
+# Ein Feed wird nur genutzt, wenn er mindestens so viele Termine liefert.
+# Grund: Viele Kalender bieten pro Termin einen eigenen .ics-Download an
+# ("20260826140000_9c03...ics"). Ein solcher Einzelexport wuerde die ganze
+# Kalenderseite ersetzen - im Lauf vom 26.08.2026 sind so drei SMB-Quellen
+# von je ~25 Terminen auf je einen geschrumpft.
+MIN_FEED_EVENTS = 3
+
+# Ab so vielen .ics-Links auf einer Seite handelt es sich um Einzelexporte
+# pro Termin, nicht um einen Kalenderfeed.
+MAX_ICS_LINKS = 3
+
 
 def find_feed_urls(raw_html: str, page_url: str) -> list[str]:
     """Sucht Kalenderfeeds im HTML. Reihenfolge = Vertrauensreihenfolge."""
@@ -50,10 +61,15 @@ def find_feed_urls(raw_html: str, page_url: str) -> list[str]:
         if "text/calendar" in mime or (rel and "alternate" in rel and "ical" in mime):
             add(link["href"])
 
-    # 2. Verlinkte .ics-Dateien im Seiteninhalt.
-    for anchor in soup.find_all("a", href=True):
-        href = anchor["href"]
-        if href.lower().split("?")[0].endswith(".ics"):
+    # 2. Verlinkte .ics-Dateien im Seiteninhalt - aber nur, wenn es wenige
+    #    sind. Viele Links bedeuten "ein Export pro Termin", und ein
+    #    Einzeltermin darf die Kalenderseite nicht ersetzen.
+    ics_links = [a["href"] for a in soup.find_all("a", href=True)
+                 if a["href"].lower().split("?")[0].endswith(".ics")]
+    if len(ics_links) > MAX_ICS_LINKS:
+        print(f"      {len(ics_links)} .ics-Links = Einzelexporte, ignoriert")
+    else:
+        for href in ics_links:
             add(href)
 
     # 3. Bekannte Plattform anhand des generator-Meta-Tags.
@@ -193,6 +209,8 @@ def fetch_feed_events(client_http, raw_html: str, page_url: str) -> tuple[list[d
     gefunden oder keine brauchbaren Termine - dann laeuft die Quelle wie
     bisher ueber die KI-Extraktion.
     """
+    best: tuple[list[dict], str] | None = None
+
     for feed_url in find_feed_urls(raw_html, page_url)[:2]:
         try:
             response = client_http.get(feed_url)
@@ -208,7 +226,11 @@ def fetch_feed_events(client_http, raw_html: str, page_url: str) -> tuple[list[d
             continue
 
         events = parse_ics(body, page_url)
-        if events:
-            return events, feed_url
+        if len(events) < MIN_FEED_EVENTS:
+            print(f"      Feed mit nur {len(events)} Terminen verworfen "
+                  f"(vermutlich Einzelexport): {feed_url}")
+            continue
+        if best is None or len(events) > len(best[0]):
+            best = (events, feed_url)
 
-    return [], None
+    return best if best else ([], None)
