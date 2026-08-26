@@ -59,12 +59,12 @@
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
   },
-  "f9b110642dea8d9d7400ebb9bb7fa1a9": {
-    "title": "Der müde Tod – Cinema Surreal",
+  "7e240fea880b934fac25684f8ef6d997": {
+    "title": "Filmvorführung: Der müde Tod – Cinema Surreal",
     "date_start": "2026-08-26",
     "date_end": null,
     "location": "Sammlung Scharf-Gerstenberg, Berlin",
-    "description": "Vorführung des Stummfilm-Klassikers 'Der müde Tod' im Rahmen der Filmreihe Cinema Surreal.",
+    "description": "Vorführung des Filmklassikers „Der müde Tod“ von Fritz Lang im Rahmen der Reihe Cinema Surreal.",
     "url": "https://www.smb.museum/veranstaltungen/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
@@ -114,8 +114,28 @@
     "date_start": "2026-08-26",
     "date_end": null,
     "location": "St. Peter Friedhof, Graz",
-    "description": "Führung mit dem Totengräber über den Friedhof zu Geschichte, Sterbekultur, Aberglauben und Schicksalen.",
+    "description": "Erlebnisführung über Sterbekultur, Aberglauben, Mythen um Wiedergänger und historische Bestattungsrituale.",
     "url": "https://www.kulturfuchs.at/friedhof/",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26"
+  },
+  "88006cfb9fe052758998cda279415a87": {
+    "title": "Mitmachprogramm: Alte Knochen neu besprochen",
+    "date_start": "2026-08-26",
+    "date_end": null,
+    "location": "LWL-Museum für Archäologie und Kultur, Herne",
+    "description": "Workshoptag für Jugendliche von 13 bis 16 Jahren im Rahmen des zdi-Feriencamps Licht & Erde mit osteologischem Schwerpunkt.",
+    "url": "https://www.lwl-landesmuseum-herne.de/de/veranstaltungen/",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26"
+  },
+  "b1fbf98265ff58643dc6d5f1fdc40c69": {
+    "title": "Zürcher Geschichte auf dem Friedhof Sihlfeld",
+    "date_start": "2026-08-26",
+    "date_end": "2027-07-15",
+    "location": "Friedhof Forum, Zürich",
+    "description": "Die Ausstellung beleuchtet die letzten 200 Jahre der Zürcher Geschichte anhand der Lebensgeschichten von zehn Menschen, die auf dem Friedhof Sihlfeld bestattet wurden.",
+    "url": "https://kulturzueri.ch/db/veranstalter/veranstalter-profile/friedhof-forum/",
     "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
   },
@@ -134,7 +154,7 @@
     "date_start": "2026-08-28",
     "date_end": null,
     "location": "Deutsches Medizinhistorisches Museum Ingolstadt",
-    "description": "Themenführung im Deutschen Medizinhistorischen Museum rund um Victor Frankenstein und die Anatomiegeschichte.",
+    "description": "Führung im Medizinhistorischen Museum zu den kultur- und medizinhistorischen Hintergründen von Victor Frankenstein und der Anatomie.",
     "url": "https://www.dmm-ingolstadt.de/",
     "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
@@ -194,7 +214,7 @@
     "date_start": "2026-09-05",
     "date_end": null,
     "location": "Hauptfriedhof, Frankfurt am Main",
-    "description": "Spaziergang über den Frankfurter Hauptfriedhof auf den Spuren bedeutender Persönlichkeiten aus Politik, Industrie und Wirtschaft.",
+    "description": "Führung auf dem Frankfurter Hauptfriedhof im Rahmen der Tage der Industriekultur zu den Grabstätten bedeutender Persönlichkeiten.",
     "url": "https://www.krfrm.de/venue/hauptfriedhof-frankfurt-am-main/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
@@ -314,7 +334,7 @@
     "date_start": "2026-09-09",
     "date_end": "2026-09-13",
     "location": "Wilder Kaiser / Hans-Berger-Haus",
-    "description": "Trauerreise und Auszeit für verwaiste Eltern, Großeltern, erwachsene Geschwister und andere Familienmitglieder.",
+    "description": "Wanderauszeit und Trauerreise für verwaiste Eltern, Großeltern, erwachsene Geschwister und weitere Familienangehörige.",
     "url": "https://blauerfalter.de/termine",
     "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
@@ -324,7 +344,7 @@
     "date_start": "2026-09-13",
     "date_end": null,
     "location": "Evangelischer Domfriedhof Liesenstraße, Berlin",
-    "description": "Veranstaltung zur Friedhofskultur und zur Geschichte der Friedhöfe an der Liesenstraße mit Führungen zu Opfer- und Ehrengräbern, Vorträgen zu Hospizarbeit und Bestattungsvorsorge sowie Ausstellungen und Musik.",
+    "description": "Aktionstag zur Friedhofs- und Bestattungskultur mit Führungen zu Opfer- und Ehrengräbern, Vorträgen zu Hospizarbeit und Bestattungsvorsorge sowie Ausstellungen und Kulturprogramm auf den Friedhöfen an der Liesenstraße.",
     "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
@@ -389,8 +409,8 @@
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
   },
-  "fad5ebc6c1a845f4b65997a2beda9c15": {
-    "title": "Tag des offenen Denkmals: Team der Klingenden Stele",
+  "6620c05986473c8d0dd4df9f5ee5102b": {
+    "title": "Tag des offenen Denkmals mit dem Team der Klingenden Stele",
     "date_start": "2026-09-13",
     "date_end": null,
     "location": "Neuer Friedhof Potsdam",
@@ -413,18 +433,18 @@
     "title": "Führung auf dem Hauptfriedhof",
     "date_start": "2026-09-13",
     "date_end": null,
-    "location": "Hauptfriedhof Dortmund",
-    "description": "Veranstaltung und Rundgang über den Dortmunder Hauptfriedhof.",
+    "location": "Hauptfriedhof, Frankfurt am Main",
+    "description": "Rundgang über den historischen Frankfurter Hauptfriedhof im Rahmen der Reihe GartenRheinMain.",
     "url": "https://www.dortmund.de/rathaus/verwaltung/friedhoefe-dortmund/",
     "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
   },
-  "e10fb916e46b69c5de7f55a8900ed8cd": {
-    "title": "Auferstehungskapelle, Leichenkammer und Waschraum auf dem Friedhof Norrenberg",
+  "be3196133ed36c8f78f26676930df6c2": {
+    "title": "Tag des offenen Denkmals: Auferstehungskapelle, Leichenkammer und Waschraum auf dem Friedhof Norrenberg",
     "date_start": "2026-09-13",
     "date_end": null,
     "location": "Friedhof Norrenberg, Wuppertal",
-    "description": "Führungen am Tag des offenen Denkmals durch die Kapelle, Leichenkammern und den Waschraum auf dem Friedhof Norrenberg.",
+    "description": "Führungen durch die Kapelle, Leichenkammern und den Waschraum auf dem Friedhof Norrenberg anlässlich des Tags des offenen Denkmals.",
     "url": "https://www.fvwuppertal.de/angebote-veranstaltungen/angebote/veranstaltungen.html",
     "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
@@ -436,6 +456,16 @@
     "location": "Alter Friedhof, Freiburg im Breisgau",
     "description": "Führungsprogramm auf dem Alten Friedhof mit Themen wie 'Die Universität und der Tod', der Michaelskapelle und ihrem Totentanz.",
     "url": "https://www.alter-friedhof-freiburg.de/aktuelles-veranstaltungen/",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26"
+  },
+  "469702f904c1ef3a2262e7844da689a5": {
+    "title": "Hauptfriedhof Führung",
+    "date_start": "2026-09-13",
+    "date_end": null,
+    "location": "Hauptfriedhof Dortmund",
+    "description": "Veranstaltung bzw. Führung auf dem Hauptfriedhof Dortmund.",
+    "url": "https://www.dortmund.de/rathaus/verwaltung/friedhoefe-dortmund/",
     "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
   },
@@ -464,7 +494,7 @@
     "date_start": "2026-09-23",
     "date_end": null,
     "location": "Zentralfriedhof Graz",
-    "description": "Atmosphärischer Rundgang über den Zentralfriedhof Graz rund um Sterbekultur, Aberglauben und Mythen.",
+    "description": "Erlebnisführung über Sterbekultur, Aberglauben, Mythen um Wiedergänger und historische Bestattungsrituale.",
     "url": "https://www.kulturfuchs.at/friedhof/",
     "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
@@ -504,7 +534,7 @@
     "date_start": "2026-09-27",
     "date_end": null,
     "location": "Friedhof Ehrenhainstraße, Wuppertal",
-    "description": "Märchen-Spaziergang über den Friedhof mit Geschichten über Leben und Tod, Musik und Erläuterungen zur Friedhofsgeschichte.",
+    "description": "Märchen-Spaziergang für Erwachsene über Lebens- und Todesthemen, musikalisch begleitet und ergänzt durch historische Informationen zu den Grabstätten.",
     "url": "https://www.fvwuppertal.de/angebote-veranstaltungen/angebote/veranstaltungen.html",
     "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
@@ -523,7 +553,7 @@
     "title": "Redner-Workshop: Zweisprachige Trauerfeiern",
     "date_start": "2026-10-07",
     "date_end": null,
-    "location": "Online",
+    "location": "AUF DAS LEBEN (online)",
     "description": "Ein Workshop für Trauerrednerinnen und Trauerredner zur professionellen Vorbereitung und Durchführung zweisprachiger Trauerfeiern.",
     "url": "https://aufdasleben.de/event/",
     "first_seen": "2026-08-25",
@@ -534,7 +564,7 @@
     "date_start": "2026-10-16",
     "date_end": null,
     "location": "Friedhöfe am Halleschen Tor",
-    "description": "Führung über die Friedhöfe am Halleschen Tor zu den Grabstätten von Verwandten und Freunden der Mendelssohn-Familie.",
+    "description": "Führung mit Eva Gosh und Karin Maaß über die Friedhöfe am Halleschen Tor zu Gräbern der Mendelssohn-Familie und deren Umfeld.",
     "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
@@ -543,7 +573,7 @@
     "title": "Redner-Workshop: Erfolgreiche Selbstvermarktung",
     "date_start": "2026-10-16",
     "date_end": null,
-    "location": "Online",
+    "location": "AUF DAS LEBEN (online)",
     "description": "Fortbildung für Trauerrednerinnen und Trauerredner zur erfolgreichen Positionierung und Vermarktung der eigenen Dienstleistung.",
     "url": "https://aufdasleben.de/event/",
     "first_seen": "2026-08-25",
@@ -554,7 +584,7 @@
     "date_start": "2026-10-16",
     "date_end": null,
     "location": "St. Barbara Friedhof, Linz",
-    "description": "Spaziergang zur Erinnerung an bedeutende Männer des wirtschaftlichen, politischen und künstlerischen Lebens sowie zur Entstehungsgeschichte des Friedhofs.",
+    "description": "Spaziergang auf dem St. Barbara Friedhof im Gedenken an Männer des wirtschaftlichen, politischen und künstlerischen Lebens sowie die Entstehungsgeschichte des Friedhofs.",
     "url": "https://www.barbarafriedhof.at/service-info/aktuelles/rueckblick/kulturgeschichtliche-friedhofsfuehrungen-2026",
     "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
@@ -694,7 +724,7 @@
     "date_start": "2026-11-15",
     "date_end": null,
     "location": "Bergfriedhof Heidelberg",
-    "description": "Führung entlang historischer Grabstätten zur Trauerkultur, Grabmalskunst und zu bedeutenden Heidelberger Persönlichkeiten.",
+    "description": "Rundgang entlang historischer Grabstätten mit Informationen zur Trauerkultur, Skulpturen und den dort ruhenden Persönlichkeiten.",
     "url": "https://www.heidelberg.de/HD/Rathaus/bergfriedhof_+fuehrungen+und+spaziergaenge.html",
     "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
@@ -784,7 +814,7 @@
     "date_start": "2026-09-19",
     "date_end": null,
     "location": "Alter Friedhof, Bonn",
-    "description": "Führung zur Geschichte und Umgestaltung des Alten Friedhofs Bonn zu einer Parkanlage.",
+    "description": "Kunsthistorische Themenführung über die Entwicklung des Alten Friedhofs Bonn und seine Konzeption als Parkanlage.",
     "url": "https://www.alterfriedhofbonn.de/fuehrungen",
     "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
@@ -794,7 +824,7 @@
     "date_start": "2026-09-19",
     "date_end": null,
     "location": "Hauptfriedhof Dortmund",
-    "description": "Veranstaltung im Rahmen der Museumsnacht mit Blick hinter die Kulissen des Friedhofs, Führungen durch das Krematorium und Chormusik.",
+    "description": "Veranstaltung im Rahmen der Museumsnacht mit Einblicken hinter die Kulissen des Hauptfriedhofs, Krematoriumsführungen zum Ablauf einer Einäscherung und Chormusik.",
     "url": "https://www.dortmund.de/rathaus/verwaltung/friedhoefe-dortmund/",
     "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
@@ -804,7 +834,7 @@
     "date_start": "2026-09-19",
     "date_end": "2026-09-20",
     "location": "St. Johannisfriedhof, Nürnberg",
-    "description": "Führung über den St. Johannisfriedhof, die Einblicke in die Nürnberger Stadtgeschichte von der Dürer-Zeit bis in die Gegenwart bietet.",
+    "description": "Führung von Sven Heublein über den St. Johannisfriedhof, die Einblicke in die Nürnberger Stadtgeschichte von der Dürer-Zeit bis zur Gegenwart bietet.",
     "url": "https://buergerverein-sankt-johannis.de/termine/",
     "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
@@ -954,7 +984,7 @@
     "date_start": "2026-08-27",
     "date_end": null,
     "location": "KapelleDREI, Parkfriedhof Ohlsdorf, Hamburg",
-    "description": "Veranstaltung zum Innehalten, zur Begegnung und zur Inspiration auf dem Friedhofsgelände.",
+    "description": "Veranstaltung für Inspiration, Begegnung und Innehalten an der KapelleDREI auf dem Ohlsdorfer Friedhof.",
     "url": "https://www.friedhof-hamburg.de/besucher/veranstaltungen/",
     "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
@@ -994,7 +1024,7 @@
     "date_start": "2026-08-29",
     "date_end": null,
     "location": "Kapelle 6, Parkfriedhof Ohlsdorf, Hamburg",
-    "description": "Lesung und Gespräch über das Zusammenleben mit psychisch kranken Menschen in der Friedhofskapelle 6.",
+    "description": "Lesung und Talk über das Zusammenleben mit psychisch Kranken in der Kapelle 6 auf dem Friedhof Ohlsdorf.",
     "url": "https://www.friedhof-hamburg.de/besucher/veranstaltungen/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
@@ -1019,11 +1049,11 @@
     "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
   },
-  "b733855437fc2780a2250c90fae603ef": {
-    "title": "Vom Toelleturm zum Friedhof Heckinghauser Straße",
+  "ea3edc8195506ef8946109f6f054f6bb": {
+    "title": "Vom Toelleturm zum Friedhof Heckinghauser Straße - Spaziergang mit Führung auf dem Friedhof",
     "date_start": "2026-08-29",
     "date_end": null,
-    "location": "Toelleturm, Wuppertal",
+    "location": "Toelleturm / Friedhof Heckinghauser Straße, Wuppertal",
     "description": "Spaziergang über den Barmer Ehrenfriedhof zum Friedhof Heckinghauser Straße mit Erläuterungen zu bekannten Wuppertaler Familien und der Geschichte des Bestattungswesens.",
     "url": "https://www.fvwuppertal.de/angebote-veranstaltungen/angebote/veranstaltungen.html",
     "first_seen": "2026-08-26",
@@ -1224,7 +1254,7 @@
     "date_start": "2026-09-12",
     "date_end": null,
     "location": "Hauptfriedhof Dortmund",
-    "description": "Der Volkschor 1867 e.V. präsentiert auf dem Hauptfriedhof Lieder von Frieden und Zuversicht.",
+    "description": "Der Volkschor 1867 e.V. gibt ein Konzert mit Liedern von Frieden und Zuversicht auf dem Hauptfriedhof.",
     "url": "https://www.dortmund.de/rathaus/verwaltung/friedhoefe-dortmund/",
     "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
@@ -1274,7 +1304,7 @@
     "date_start": "2026-10-17",
     "date_end": null,
     "location": "Alter Friedhof, Bonn",
-    "description": "Führung zu den im 19. Jahrhundert entstandenen britischen Grabstätten und deren Einfluss auf die Bonner Grabkultur.",
+    "description": "Führung über den Alten Friedhof Bonn zur britischen Grabkultur im 19. Jahrhundert und deren Einfluss auf die Grabgestaltung.",
     "url": "https://www.alterfriedhofbonn.de/fuehrungen",
     "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
@@ -1304,7 +1334,7 @@
     "date_start": "2026-11-01",
     "date_end": null,
     "location": "Nordfriedhof Dortmund",
-    "description": "Thematische Führung auf dem Nordfriedhof zum 'Totenhof des Nordens' und der Geschichte als Arbeiterfriedhof.",
+    "description": "Thematischer Spaziergang bzw. Führung auf dem Nordfriedhof zur Geschichte des sogenannten Arbeiterfriedhofs.",
     "url": "https://www.dortmund.de/rathaus/verwaltung/friedhoefe-dortmund/",
     "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
@@ -1384,7 +1414,7 @@
     "date_start": "2026-09-16",
     "date_end": null,
     "location": "Jüdischer Friedhof Dortmund",
-    "description": "Ein informativer Stadtspaziergang über den Jüdischen Friedhof.",
+    "description": "Ein informativer Stadtspaziergang über den Jüdischen Friedhof in Dortmund.",
     "url": "https://www.dortmund.de/rathaus/verwaltung/friedhoefe-dortmund/",
     "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
@@ -1424,7 +1454,7 @@
     "date_start": "2026-09-30",
     "date_end": null,
     "location": "St. Leonhard Friedhof, Graz",
-    "description": "Erlebnisführung mit dem Totengräber zur Sterbekultur, Grabzeichen und historischen Lebensgeschichten.",
+    "description": "Erlebnisführung über Sterbekultur, Aberglauben, Mythen um Wiedergänger und historische Bestattungsrituale.",
     "url": "https://www.kulturfuchs.at/friedhof/",
     "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
@@ -1433,7 +1463,7 @@
     "title": "Trauerredner-Ausbildung",
     "date_start": "2026-09-24",
     "date_end": "2026-09-25",
-    "location": "Köln",
+    "location": "AUF DAS LEBEN, Köln",
     "description": "Fundierte Ausbildung für angehende Trauerrednerinnen und Trauerredner zur individuellen und würdevollen Gestaltung von Abschiedsfeiern.",
     "url": "https://aufdasleben.de/event/",
     "first_seen": "2026-08-25",
@@ -1453,8 +1483,8 @@
     "title": "Redner-Workshop: Besondere Sterbefälle",
     "date_start": "2026-10-08",
     "date_end": null,
-    "location": "Online",
-    "description": "Workshop für Trauerredner zum sensiblen Umgang und der angemessenen Gestaltung von Trauerfeiern bei besonderen Sterbefällen.",
+    "location": "AUF DAS LEBEN (online)",
+    "description": "Workshop für Trauerrednerinnen und Trauerredner zur sensiblen Vorbereitung und Führung von Trauerfeiern bei besonderen Sterbefällen.",
     "url": "https://aufdasleben.de/event/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
@@ -1473,11 +1503,11 @@
     "title": "Trauerwoche",
     "date_start": "2026-10-26",
     "date_end": "2026-11-01",
-    "location": "Bundesweit",
-    "description": "Aktionswoche der Trauer Taskforce mit Impulsen und Veranstaltungen zum Thema Trauer und Abschied.",
+    "location": "TRAUER TASKFORCE, bundesweit",
+    "description": "Bundesweit stattfindende Trauerwoche mit Impulsen, Austausch und Formaten rund um Abschied, Sterben und Trauer.",
     "url": "https://aufdasleben.de/event/",
     "first_seen": "2026-08-25",
-    "last_seen": "2026-08-25"
+    "last_seen": "2026-08-26"
   },
   "a98dc8efbacaacfa5dc3f384a1a0ae81": {
     "title": "Letzte Hilfe Kurs für Erwachsene",
@@ -1493,18 +1523,18 @@
     "title": "Trauerredner-Ausbildung",
     "date_start": "2026-11-19",
     "date_end": "2026-11-20",
-    "location": "Köln",
+    "location": "AUF DAS LEBEN, Köln",
     "description": "Ausbildungsseminar für angehende Trauerrednerinnen und Trauerredner zur Vermittlung praxistauglicher Grundlagen der Abschiedsgestaltung.",
     "url": "https://aufdasleben.de/event/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
   },
-  "064643ac0037cbe6f12b7197c2905aa7": {
-    "title": "Tod im Spiegel",
+  "5b34add1513b377af03f564dce8198ed": {
+    "title": "Tod im Spiegel - Vortrag über den Tod im Spiegel unterschiedlicher Zeiten und Kulturen",
     "date_start": "2026-11-19",
     "date_end": null,
     "location": "Friedhofskapelle, Friedhof katholisch Hochstraße, Wuppertal",
-    "description": "Vortrag über den gesellschaftlichen und kulturellen Umgang mit dem Tod im Wandel der Zeiten.",
+    "description": "Vortrag von Klaus Saalmann über den gesellschaftlichen und kulturellen Umgang mit dem Tod im Wandel der Zeit.",
     "url": "https://www.fvwuppertal.de/angebote-veranstaltungen/angebote/veranstaltungen.html",
     "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
@@ -1514,7 +1544,7 @@
     "date_start": "2026-09-20",
     "date_end": null,
     "location": "Südfriedhof, Halle (Saale)",
-    "description": "Sonderveranstaltung zum Tag des Friedhofs auf dem Südfriedhof, gestaltet vom Verein für Friedhofskultur in Halle und dem Umland e.V.",
+    "description": "Sonderveranstaltung zum Tag des Friedhofs auf dem Südfriedhof in Halle, gestaltet vom Verein für Friedhofskultur in Halle und dem Umland e.V.",
     "url": "http://www.friedhofskultur-halle.de/terminefuehrungen/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
@@ -1539,12 +1569,12 @@
     "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
   },
-  "1faa02a7e412bdefe9e4a5bb6277374f": {
-    "title": "Stadtspaziergang: Nordfriedhof",
+  "b2136522b426dc3d55857bb2998dd80a": {
+    "title": "Stadtspaziergang: Nordfriedhof - Der Friedhof und seine Kunstwerke",
     "date_start": "2026-09-20",
     "date_end": null,
     "location": "Nordfriedhof Dortmund",
-    "description": "Stadtspaziergang über den Nordfriedhof mit Schwerpunkt auf dessen Kunstwerken.",
+    "description": "Stadtspaziergang über den Nordfriedhof mit Fokus auf die dortigen Kunstwerke und die Friedhofskultur.",
     "url": "https://www.dortmund.de/rathaus/verwaltung/friedhoefe-dortmund/",
     "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
@@ -1654,7 +1684,7 @@
     "date_start": "2026-10-14",
     "date_end": null,
     "location": "St. Peter Friedhof, Graz",
-    "description": "Führung über den St. Peter Friedhof mit Anekdoten und Einblicken in den Wandel der Bestattungskultur.",
+    "description": "Erlebnisführung über Sterbekultur, Aberglauben, Mythen um Wiedergänger und historische Bestattungsrituale.",
     "url": "https://www.kulturfuchs.at/friedhof/",
     "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
@@ -1719,12 +1749,22 @@
     "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
   },
+  "7018a078626e4f4691fa19cb6446deb7": {
+    "title": "Veranstaltung mit Dr. Hans-Joachim Müller",
+    "date_start": "2026-10-10",
+    "date_end": null,
+    "location": "Neuer Friedhof Potsdam",
+    "description": "Nachmittagsveranstaltung auf dem Neuen Friedhof Potsdam.",
+    "url": "https://www.friedhof-in-potsdam.de/allgemeines/aktuelles",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26"
+  },
   "df6172009e6007ce8392bebe871c2d0a": {
     "title": "Vortrag Kannibalismus",
     "date_start": "2026-10-15",
     "date_end": null,
     "location": "LWL-Museum für Archäologie und Kultur Herne",
-    "description": "Öffentlicher Vortrag über die Hintergründe und die Faszination von Kannibalismus aus archäologischer, popkultureller und psychologischer Perspektive.",
+    "description": "Öffentlicher Vortrag von Tabea Doll, Kai G. Bernhardt und Tom C. Winter über die Faszination für Kannibalismus aus Sicht der Archäologie, Popkultur und Psychologie.",
     "url": "https://www.lwl-landesmuseum-herne.de/de/veranstaltungen/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
@@ -1744,7 +1784,7 @@
     "date_start": "2026-10-01",
     "date_end": null,
     "location": "Friedhof Liebigstraße, Wuppertal",
-    "description": "Abendlicher Friedhofsspaziergang über Mythen und Bräuche rund um das Sterben und den Tod im Bergischen Land.",
+    "description": "Friedhofsspaziergang in der Dämmerung über historische Mythen und Bräuche rund um das Sterben und den Tod im Bergischen Land.",
     "url": "https://www.fvwuppertal.de/angebote-veranstaltungen/angebote/veranstaltungen.html",
     "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
@@ -1764,7 +1804,7 @@
     "date_start": "2026-09-18",
     "date_end": null,
     "location": "St. Johannisfriedhof, Nürnberg",
-    "description": "Im Rahmen der Nürnberger Stadt(ver)führungen erläutert Stadtheimatpflegerin Dr. Claudia Maué anhand ausgewählter Epitaphien auf dem St. Johannisfriedhof den Wandel der Medizin im Laufe der Jahrhunderte.",
+    "description": "Im Rahmen der Nürnberger Stadt(ver)führungen 2026 stellt Stadtheimatpflegerin Dr. Claudia Maué auf dem St. Johannisfriedhof historische Epitaphien für Ärzte sowie alte und moderne medizinische Geräte und Errungenschaften vor.",
     "url": "https://epitaphienkultur.de/veranstaltungen.html",
     "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
@@ -1814,7 +1854,7 @@
     "date_start": "2026-10-11",
     "date_end": null,
     "location": "Johannisfriedhof, Osnabrück",
-    "description": "Ehrenamtliche Gartenarbeit und Pflegeaktion auf dem historischen Johannisfriedhof.",
+    "description": "Gemeinsamer Aktionstag zur Gartenarbeit und Grünpflege auf dem historischen Johannisfriedhof in Osnabrück.",
     "url": "https://www.historische-friedhoefe-osnabrueck.de/",
     "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
@@ -1924,7 +1964,7 @@
     "date_start": "2026-11-05",
     "date_end": null,
     "location": "Brucknerhaus Linz",
-    "description": "Vortrags- und Informationsevent mit Trauerbegleiter Dr. August Höglinger über den Umgang mit Abschied, Tod und Trauerbewältigung.",
+    "description": "Veranstaltung der LINZ AG Bestattung mit Dr. August Höglinger zur Trauerbewältigung und zum Umgang mit dem Verlust geliebter Menschen.",
     "url": "https://www.linzag.at/portal/de/privatkunden/trauer/veranstaltungen",
     "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
@@ -1954,7 +1994,7 @@
     "date_start": "2026-12-06",
     "date_end": null,
     "location": "St. Barbara Friedhof, Linz",
-    "description": "Weihnachtliche Führung über den Friedhof mit Informationen zur Schutzpatronin der Sterbenden und Grabstätten bekannter Persönlichkeiten.",
+    "description": "Weihnachtliche Führung über den St. Barbara Friedhof zur Schutzpatronin der Sterbenden sowie zu historischen Grabstätten bekannter Persönlichkeiten.",
     "url": "https://www.barbarafriedhof.at/service-info/aktuelles/rueckblick/kulturgeschichtliche-friedhofsfuehrungen-2026",
     "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
@@ -1964,7 +2004,7 @@
     "date_start": "2026-11-13",
     "date_end": null,
     "location": "St. Barbara Friedhof, Linz",
-    "description": "Geführter Rundgang über den Linzer St. Barbara Friedhof zu dessen Geschichte, Kultur, Berühmtheiten und Natur.",
+    "description": "Kulturgeschichtlicher Rundgang über den Linzer St. Barbara Friedhof zu Geschichte, Berühmtheiten, Kultur und Natur.",
     "url": "https://www.barbarafriedhof.at/service-info/aktuelles/rueckblick/kulturgeschichtliche-friedhofsfuehrungen-2026",
     "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
@@ -2029,6 +2069,16 @@
     "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
   },
+  "54c4fdd22b20aeba741badf534b1c719": {
+    "title": "Die Trauerwoche 2026 – Sound of Grief",
+    "date_start": "2026-10-27",
+    "date_end": "2026-11-02",
+    "location": "Online",
+    "description": "Online-Themenwoche des Netzwerks Trauer Taskforce, die sich der Bedeutung und Kraft von Musik in der Trauer widmet.",
+    "url": "https://trauertaskforce.de/trauerwoche/",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26"
+  },
   "f379fdff76987453138fefd8f1237425": {
     "title": "GRIEFYARDS",
     "date_start": "2026-10-30",
@@ -2044,17 +2094,17 @@
     "date_start": "2026-11-30",
     "date_end": "2026-12-02",
     "location": "Kloster Bernried",
-    "description": "Heilsame Tage im Kloster für Eltern nach dem Verlust ihres einzigen Kindes.",
+    "description": "Heilsame Tage im Kloster Bernried für Eltern, deren einziges Kind gestorben ist.",
     "url": "https://blauerfalter.de/termine",
     "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
   },
-  "27f07193941cbf4fdc27f558d6f7fcbd": {
-    "title": "Friedhof der Zukunft",
+  "c3f66c27d70a880625875c9de4573627": {
+    "title": "Friedhof der Zukunft - Friedhofsspaziergang mit Vortrag",
     "date_start": "2026-09-10",
     "date_end": null,
     "location": "Friedhof Kohlenstraße, Wuppertal",
-    "description": "Friedhofsspaziergang mit Vortrag über die Entwicklung der Friedhofskultur, neue Grabarten und Orte der Trauer.",
+    "description": "Spaziergang und Vortrag über aktuelle Entwicklungen der Friedhofskultur, die Gestaltung von Trauerorten und neue Grabarten.",
     "url": "https://www.fvwuppertal.de/angebote-veranstaltungen/angebote/veranstaltungen.html",
     "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
