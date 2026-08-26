@@ -24,7 +24,7 @@
     "date_start": "2026-08-26",
     "date_end": null,
     "location": "KapelleDREI, Parkfriedhof Ohlsdorf, Hamburg",
-    "description": "Das Projekt 'ZuhörZeit' bietet in der KapelleDREI Raum für persönliche Gespräche und Austausch.",
+    "description": "Projekt ZuhörZeit in der KapelleDREI auf dem Ohlsdorfer Friedhof als Raum für vertrauliche Gespräche.",
     "url": "https://www.friedhof-hamburg.de/besucher/veranstaltungen/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
@@ -44,7 +44,7 @@
     "date_start": "2026-08-26",
     "date_end": null,
     "location": "Ostfriedhof, Klausdorfer Weg 277, Kiel (Treffpunkt an der Kapelle)",
-    "description": "Ein Rundgang mit Friedhofsleiter Jann Stürzel über den Ostfriedhof zur Entdeckung der beeindruckenden Baumvielfalt und deren ökologischer Rolle.",
+    "description": "Friedhofsleiter Jann Stürzel führt Interessierte über den Ostfriedhof und stellt die Baumvielfalt sowie die ökologische Bedeutung des Friedhofs vor.",
     "url": "https://www.kiel.de/de/umwelt_verkehr/friedhoefe/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
@@ -69,13 +69,33 @@
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
   },
-  "12986d483b64880330cd6b867fe29635": {
-    "title": "Ausstellung «Auf immer und ewig»",
+  "4cf283ca8378679b66227cb98a685f9b": {
+    "title": "Ausstellung «Auf immer und ewig» auf dem Wolfgottesacker",
     "date_start": "2026-08-26",
     "date_end": null,
-    "location": "Wolfgottesacker, Basel",
-    "description": "Ausstellung auf dem historischen Basler Friedhof Wolfgottesacker zu Themen der Friedhofs- und Erinnerungskultur.",
+    "location": "Friedhof Wolfgottesacker, Basel",
+    "description": "Eine Ausstellung auf dem historischen Basler Friedhof Wolfgottesacker zu Themen der Erinnerungs- und Friedhofskultur.",
     "url": "https://www.stadtgaertnerei.bs.ch/friedhoefe/veranstaltungen.html",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26"
+  },
+  "95258e5e9cbf95971af1f8176a4cac77": {
+    "title": "Ausstellung: DAS LEBEN IST EINE COLLAGE",
+    "date_start": "2026-08-26",
+    "date_end": "2026-11-23",
+    "location": "Ricam Hospiz, Delbrückstraße 22, 12051 Berlin",
+    "description": "Ausstellung mit Collagen der Künstlerinnen Bettina Schilling und Ilse Winckler im Ricam Hospiz.",
+    "url": "https://www.ricam-hospiz.de/events/",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26"
+  },
+  "e2a2e52ee477f83f038951be02f86466": {
+    "title": "Die Zürcher Geschichte – 200 Jahre anhand von zehn Leben auf dem Friedhof Sihlfeld",
+    "date_start": "2026-08-26",
+    "date_end": "2027-07-15",
+    "location": "Friedhof Forum, Zürich",
+    "description": "Die Ausstellung erzählt die vergangen 200 Jahre der Zürcher Stadtgeschichte anhand der Lebensgeschichten von zehn auf dem Friedhof Sihlfeld bestatteten Personen.",
+    "url": "https://kulturzueri.ch/db/veranstalter/veranstalter-profile/friedhof-forum/",
     "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
   },
@@ -84,7 +104,7 @@
     "date_start": "2026-08-28",
     "date_end": null,
     "location": "Friedhof Dreifaltigkeit II",
-    "description": "Veranstaltung im Rahmen der Friedhofsnacht auf dem Friedhof Dreifaltigkeit II an der Bergmannstraße.",
+    "description": "Veranstaltung im Rahmen der Friedhofsnacht 2026 auf dem Friedhof Dreifaltigkeit II an der Bergmannstraße.",
     "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
@@ -164,7 +184,7 @@
     "date_start": "2026-09-05",
     "date_end": null,
     "location": "KapelleDREI, Parkfriedhof Ohlsdorf, Hamburg",
-    "description": "Offenes Gesprächs- und Zuhörangebot in der KapelleDREI auf dem Friedhof.",
+    "description": "Gesprächs- und Zuhörangebot auf dem Friedhof Ohlsdorf in der KapelleDREI.",
     "url": "https://www.ohlsdorf-derpark.de/termine-ohlsdorf/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
@@ -174,7 +194,7 @@
     "date_start": "2026-09-05",
     "date_end": null,
     "location": "Museum für Sepulkralkultur, Kassel",
-    "description": "Sonderprogramm zur Museumsnacht mit Musik, Führungen und Mitternachtsführung im Museum für Sepulkralkultur.",
+    "description": "Das Museum für Sepulkralkultur bietet zur Kasseler Museumsnacht ein Programm mit Livemusik, Pantomime, Mitmach-Aktionen und Mitternachtsführung.",
     "url": "https://www.sepulkralmuseum.de/veranstaltungen/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
@@ -184,7 +204,7 @@
     "date_start": "2026-09-06",
     "date_end": null,
     "location": "Friedhofskapelle Friedrichswerderscher Friedhof",
-    "description": "Konzert mit französischen Chansons zum Trost in Trauer in der Friedhofskapelle.",
+    "description": "Konzert zum Trost in Trauer mit dem Ensemble Die Goldvögel unter dem Motto La vie en rose - französische Chansons.",
     "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
@@ -209,12 +229,32 @@
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
   },
+  "fb2615c621b867a2b9d0de5b875aa84f": {
+    "title": "Themenführung: Frauen und Kinder auf dem Eliasfriedhof – Übergangen, vergessen, neu gewürdigt",
+    "date_start": "2026-09-06",
+    "date_end": null,
+    "location": "Eliasfriedhof, Ziegelstraße 22, Dresden, Sachsen, 01069, Deutschland",
+    "description": "Im 18. und 19. Jahrhundert waren die Rechte und Möglichkeiten von Frauen stark eingeschränkt; dem bürgerlichen Ideal nach sollten sie fürsorgliche Ehefrauen und häusliche Mütter sein. Und so gibt es meist nur wenige oder gar keine Informationen zu den auf dem Eliasfriedhof beerdigten Frauen. Wider das Vergessen werden wir in der Führung die Lebensgeschichten und das Wirken von bürgerlichen und adl",
+    "url": "https://eliasfriedhof.de/termin/themenfuehrung-frauen-und-kinder-auf-dem-eliasfriedhof-uebergangen-vergessen-neu-gewuerdigt-2/",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26"
+  },
+  "0bb8b7bc4ee7d1c31a246e9d2b33b22b": {
+    "title": "Der Alte Südliche Friedhof – Es lebe der Centralfriedhof",
+    "date_start": "2026-09-06",
+    "date_end": null,
+    "location": "Alter Südlicher Friedhof, München",
+    "description": "Ein Spaziergang bringt vergangene Begräbniskultur nahe und stellt bedeutende Persönlichkeiten der Münchner Stadtgeschichte vor.",
+    "url": "https://www.stattreisen-muenchen.de/fuehrungen/der-alte-sudliche-friedhof",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26"
+  },
   "82d73628604f4da8f8b2576a140ee612": {
     "title": "Führung über den Alten St.-Matthäus-Friedhof",
     "date_start": "2026-09-09",
     "date_end": null,
     "location": "Haupteingang des Alten St.-Matthäus-Friedhofs",
-    "description": "Führung über den Alten St.-Matthäus-Friedhof mit Ralf Illauer.",
+    "description": "Führung über den Alten St.-Matthäus-Friedhof im Rahmen der Mittwochstermine mit Ralf Illauer.",
     "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
@@ -273,8 +313,8 @@
     "title": "Tag des offenen Denkmals mit dem Team der Klingenden Stele",
     "date_start": "2026-09-13",
     "date_end": null,
-    "location": "Striesener Friedhof, Dresden",
-    "description": "Veranstaltung am Potsdamer Friedenscarillon auf dem Neuen Friedhof im Rahmen des Tages des offenen Denkmals.",
+    "location": "Eliasfriedhof, Ziegelstraße 22, Dresden, Sachsen, 01069, Deutschland",
+    "description": "Der Förderverein öffnet von 10 bis 18 Uhr die ansonsten geschlossenen Tore des Eliasfriedhofs. Sie erwartet ein Programm mit Führungen zur Friedhofsgeschichte, ein Verkaufsstand mit Büchern, Postkarten und anderen Kleinigkeiten zum Thema Friedhof, eine Fotoausstellung, ein Quiz für Kinder und Erwachsene, Kaffee und Kuchen. Gern können Sie auch individuell den Friedhof erkunden und sich die kunstvo",
     "url": "https://striesener-friedhof-dresden.de/vorschau-veranstaltungen/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
@@ -289,12 +329,22 @@
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
   },
+  "fad5ebc6c1a845f4b65997a2beda9c15": {
+    "title": "Tag des offenen Denkmals: Team der Klingenden Stele",
+    "date_start": "2026-09-13",
+    "date_end": null,
+    "location": "Neuer Friedhof Potsdam",
+    "description": "Auftritt des Teams der Klingenden Stele auf dem Neuen Friedhof Potsdam im Rahmen des Tages des offenen Denkmals.",
+    "url": "https://www.friedhof-in-potsdam.de/allgemeines/aktuelles",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26"
+  },
   "b9d40498ce967cabfce140b76c86a9af": {
     "title": "Führung über den Alten St.-Matthäus-Friedhof",
     "date_start": "2026-09-23",
     "date_end": null,
     "location": "Haupteingang des Alten St.-Matthäus-Friedhofs",
-    "description": "Führung über den Alten St.-Matthäus-Friedhof mit Ralf Illauer.",
+    "description": "Führung über den Alten St.-Matthäus-Friedhof im Rahmen der Mittwochstermine mit Ralf Illauer.",
     "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
@@ -324,7 +374,7 @@
     "date_start": "2026-10-07",
     "date_end": null,
     "location": "Haupteingang des Alten St.-Matthäus-Friedhofs",
-    "description": "Führung über den Alten St.-Matthäus-Friedhof mit Ralf Illauer.",
+    "description": "Führung über den Alten St.-Matthäus-Friedhof im Rahmen der Mittwochstermine mit Ralf Illauer.",
     "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
@@ -364,7 +414,7 @@
     "date_start": "2026-10-28",
     "date_end": null,
     "location": "Haupteingang des Alten St.-Matthäus-Friedhofs",
-    "description": "Führung über den Alten St.-Matthäus-Friedhof mit Ralf Illauer.",
+    "description": "Führung über den Alten St.-Matthäus-Friedhof im Rahmen der Mittwochstermine mit Ralf Illauer.",
     "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
@@ -374,7 +424,7 @@
     "date_start": "2026-11-18",
     "date_end": null,
     "location": "Haupteingang des Alten St.-Matthäus-Friedhofs",
-    "description": "Führung über den Alten St.-Matthäus-Friedhof mit Ralf Illauer.",
+    "description": "Führung über den Alten St.-Matthäus-Friedhof im Rahmen der Mittwochstermine mit Ralf Illauer.",
     "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
@@ -384,7 +434,7 @@
     "date_start": "2026-11-18",
     "date_end": null,
     "location": "Südfriedhof Leipzig",
-    "description": "Kulturhistorische Sonderführung über den Leipziger Südfriedhof am Buß- und Bettag.",
+    "description": "Sonderführung zur Geschichte und Kunst auf dem Leipziger Südfriedhof zum Buß- und Bettag.",
     "url": "https://paul-benndorf-gesellschaft.de/fuehrungen.html",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
@@ -479,15 +529,15 @@
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
   },
-  "6e7215c1dedc79ed0439ba8f9936f11b": {
-    "title": "Totensonntag mit Andreas Gottschald",
+  "237f3786510dbb813b362cfe96efbbbb": {
+    "title": "Totensonntag-Konzert mit Andreas Gottschald",
     "date_start": "2026-11-22",
     "date_end": null,
     "location": "Neuer Friedhof Potsdam",
-    "description": "Gedenkveranstaltung und Carillon-Spiel zum Totensonntag auf dem Neuen Friedhof Potsdam.",
+    "description": "Konzert von Andreas Gottschald am Totensonntag im Rahmen der Reihe Klangbrücken für Potsdamer Friedenscarillon.",
     "url": "https://www.friedhof-in-potsdam.de/allgemeines/aktuelles",
     "first_seen": "2026-08-25",
-    "last_seen": "2026-08-25"
+    "last_seen": "2026-08-26"
   },
   "79904e99ddba35aa0f7753121e8db7e9": {
     "title": "Carillon-Konzert zum Totensonntag",
@@ -519,8 +569,8 @@
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
   },
-  "708094c9aaa15f2bfd052cc25e0d6bab": {
-    "title": "Friedhofsführung auf dem Nordfriedhof",
+  "e241e872336a70be7b066b84ee3c1068": {
+    "title": "Friedhofsführung über den Nordfriedhof",
     "date_start": "2026-09-19",
     "date_end": null,
     "location": "Nordfriedhof, Halle (Saale)",
@@ -534,7 +584,7 @@
     "date_start": "2026-11-21",
     "date_end": "2026-11-22",
     "location": "Striesener Friedhof, Dresden",
-    "description": "Gedenk- und Andachtsangebote auf dem Striesener Friedhof anlässlich des Ewigkeitssonntags.",
+    "description": "Gedenk- und Andachtsangebote auf dem Friedhof anlässlich des Ewigkeitssonntags zum Totengedenken.",
     "url": "https://striesener-friedhof-dresden.de/vorschau-veranstaltungen/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
@@ -557,6 +607,16 @@
     "description": "Eine kunst- und kulturhistorische Sonderführung über den Leipziger Südfriedhof zum Tag der Deutschen Einheit.",
     "url": "https://paul-benndorf-gesellschaft.de/fuehrungen.html",
     "first_seen": "2026-08-25",
+    "last_seen": "2026-08-26"
+  },
+  "f188d3c4d9b9c7a4df8c225c0adce452": {
+    "title": "Spuren der Zeit. Geführter Rundgang über den Eliasfriedhof",
+    "date_start": "2026-10-03",
+    "date_end": null,
+    "location": "Eliasfriedhof, Ziegelstraße 22, Dresden, Sachsen, 01069, Deutschland",
+    "description": "Mit dem Eliasfriedhof verwahrt Dresden einen der authentischsten historischen Friedhöfe Deutschlands. Seit der Friedhofsschließung 1876 wurden nahezu keine Änderungen vorgenommen, sodass hier die Zeit stehengeblieben zu sein scheint. Die in großer Formenvielfalt gestalteten Grabmale aus Elbsandstein erzählen von der Geschichte der Residenzstadt Dresden und ihrer Bewohnerinnen und Bewohner. Bei den",
+    "url": "https://eliasfriedhof.de/termin/spuren-der-zeit-gefuehrter-rundgang-ueber-den-eliasfriedhof-20/",
+    "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
   },
   "5884b763d36df15e7aae922c29c729a1": {
@@ -604,9 +664,19 @@
     "date_start": "2026-10-04",
     "date_end": null,
     "location": "Museum für Sepulkralkultur, Kassel",
-    "description": "Finissage-Führung zur Ausstellung „Grabe keine Löcher neben die Gräber“ mit anschließendem Modellierworkshop.",
+    "description": "Führung am letzten Tag der Ausstellung „Grabe keine Löcher neben die Gräber“ mit anschliessendem Modellierworkshop mit Modelliermasse.",
     "url": "https://www.sepulkralmuseum.de/veranstaltungen/",
     "first_seen": "2026-08-25",
+    "last_seen": "2026-08-26"
+  },
+  "30e9f3c22d78eeef26795512d9631553": {
+    "title": "Der Alte Südliche Friedhof – Es lebe der Centralfriedhof",
+    "date_start": "2026-10-04",
+    "date_end": null,
+    "location": "Alter Südlicher Friedhof, München",
+    "description": "Führung über Münchens historischen Alten Südlichen Friedhof mit Einblicken in die Begräbniskultur und die Gräber prominenter Bürger.",
+    "url": "https://www.stattreisen-muenchen.de/fuehrungen/der-alte-sudliche-friedhof",
+    "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
   },
   "197c2400075a927df579398561e0d221": {
@@ -649,6 +719,16 @@
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
   },
+  "d807c99c84066fd630134054bcd2abac": {
+    "title": "Begegnungszeit an KapelleDREI",
+    "date_start": "2026-08-27",
+    "date_end": null,
+    "location": "KapelleDREI, Parkfriedhof Ohlsdorf, Hamburg",
+    "description": "Veranstaltung mit Raum für Inspiration, Begegnung und Innehalten in der KapelleDREI.",
+    "url": "https://www.friedhof-hamburg.de/besucher/veranstaltungen/",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26"
+  },
   "06693861b78002236cda165d97efe332": {
     "title": "KapelleDREI: Workshop \"Auszeit im Grünen\"",
     "date_start": "2026-08-29",
@@ -664,7 +744,7 @@
     "date_start": "2026-08-29",
     "date_end": null,
     "location": "Parkfriedhof Ohlsdorf, Hamburg",
-    "description": "Ein Spaziergang über den Ohlsdorfer Friedhof rund um den Dichterhügel, der Literatur und besondere Geschichten verbindet.",
+    "description": "Ein außergewöhnlicher Spaziergang über den Friedhof Ohlsdorf rund um den Dichterhügel mit Verbindungen von Literatur, Humor und Geschichten.",
     "url": "https://www.friedhof-hamburg.de/besucher/veranstaltungen/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
@@ -674,7 +754,7 @@
     "date_start": "2026-08-29",
     "date_end": null,
     "location": "Parkfriedhof Ohlsdorf, Hamburg",
-    "description": "Fahrradtour über den Parkfriedhof zu den Grabstätten bekannter Kiez-Persönlichkeiten wie Domenica oder Angie Stardust.",
+    "description": "Fahrradtour über den Parkfriedhof Ohlsdorf zu den Gräbern bekannter St. Pauli-Persönlichkeiten wie Angie Stardust und Domenica.",
     "url": "https://www.friedhof-hamburg.de/besucher/veranstaltungen/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
@@ -697,6 +777,16 @@
     "description": "Gedenken an den am 17. August verstorbenen früheren Kölner Oberbürgermeister Fritz Schramma im Rahmen einer Heiligen Messe im Kölner Dom.",
     "url": "https://www.koelner-dom.de/aktuelles",
     "first_seen": "2026-08-25",
+    "last_seen": "2026-08-26"
+  },
+  "bc181107988e3663b69e031bfff5eb07": {
+    "title": "Biografische Lesung: \"Fräulein aus Hannover - das Übrige unbekannt\" - Die Wiederentdeckung der Schriftstellerin Adelheid Reinbold",
+    "date_start": "2026-08-29",
+    "date_end": null,
+    "location": "Eliasfriedhof, Ziegelstraße 22, Dresden, Sachsen, 01069, Deutschland",
+    "description": "Weitgehend vergessen liegt auf dem Eliasfriedhof die Schriftstellerin Adelheid Reinbold (1800-1839). Zu ihren Lebzeiten war sie im Dresdner Salon und Literaturkreis des berühmten Dichters Ludwig Tieck (1773-1853) eine vertraute und geschätzte Gesprächspartnerin. Aber auch in diesem illustren Kreis war ihr künstlerisches Schaffen nicht bekannt, da sie ihre Texte unter einem Pseudonym veröffentlicht",
+    "url": "https://eliasfriedhof.de/termin/biografische-lesung-fraeulein-aus-hannover-das-uebrige-unbekannt-die-wiederentdeckung-der-schriftstellerin-adelheid-reinhold/",
+    "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
   },
   "09418bfa6dbfc13617ff19b697326942": {
@@ -744,9 +834,19 @@
     "date_start": "2026-09-01",
     "date_end": null,
     "location": "KapelleDREI, Parkfriedhof Ohlsdorf, Hamburg",
-    "description": "Gemeinsames Singen bekannter Songs in der KapelleDREI auf dem Friedhof Ohlsdorf.",
+    "description": "Gemeinsames Singen bekannter Songs von Adele bis Rio Reiser in der KapelleDREI auf dem Friedhof Ohlsdorf.",
     "url": "https://www.friedhof-hamburg.de/besucher/veranstaltungen/",
     "first_seen": "2026-08-25",
+    "last_seen": "2026-08-26"
+  },
+  "5c82fb26946fae0d431fc516593ec22e": {
+    "title": "Begegnungszeit an KapelleDREI",
+    "date_start": "2026-09-01",
+    "date_end": null,
+    "location": "KapelleDREI, Parkfriedhof Ohlsdorf, Hamburg",
+    "description": "Offene Begegnungszeit für Innehalten und Austausch auf dem Ohlsdorfer Friedhof.",
+    "url": "https://www.friedhof-hamburg.de/besucher/veranstaltungen/",
+    "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
   },
   "5defe92cb6c8478e7f53212131e78332": {
@@ -757,6 +857,16 @@
     "description": "Ein etwa zweistündiger Rundgang mit Anja Pick zur Geschichte des Friedhofs sowie zu den Grabstätten bedeutender Berliner Persönlichkeiten.",
     "url": "https://jewish-cemetery-weissensee.org/entdecken/fuehrungen/",
     "first_seen": "2026-08-25",
+    "last_seen": "2026-08-26"
+  },
+  "50b24d5851cf0c493940d9e818fc8368": {
+    "title": "Spuren der Zeit. Geführter Rundgang über den Eliasfriedhof",
+    "date_start": "2026-10-18",
+    "date_end": null,
+    "location": "Eliasfriedhof, Ziegelstraße 22, Dresden, Sachsen, 01069, Deutschland",
+    "description": "Mit dem Eliasfriedhof verwahrt Dresden einen der authentischsten historischen Friedhöfe Deutschlands. Seit der Friedhofsschließung 1876 wurden nahezu keine Änderungen vorgenommen, sodass hier die Zeit stehengeblieben zu sein scheint. Die in großer Formenvielfalt gestalteten Grabmale aus Elbsandstein erzählen von der Geschichte der Residenzstadt Dresden und ihrer Bewohnerinnen und Bewohner. Bei den",
+    "url": "https://eliasfriedhof.de/termin/spuren-der-zeit-gefuehrter-rundgang-ueber-den-eliasfriedhof-11/",
+    "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
   },
   "ddbf48a4108cab771200f2c3692ee86d": {
@@ -789,8 +899,8 @@
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
   },
-  "ecc0269d17131f7253cd20d673c9948d": {
-    "title": "Friedhofsführung auf dem Gertraudenfriedhof",
+  "7a97e1c023ccec594d4410ec2a3c3274": {
+    "title": "Friedhofsführung über den Gertraudenfriedhof",
     "date_start": "2026-10-25",
     "date_end": null,
     "location": "Gertraudenfriedhof, Halle (Saale)",
@@ -799,8 +909,28 @@
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
   },
-  "d0e0673fc86e876f758f6316c64f05e2": {
-    "title": "Eröffnung Winterausstellung «Am Grab des Heiligen – St.Gallen im 7. Jahrhundert»",
+  "c561b7c5f5bf60c58f19ef974d176c73": {
+    "title": "Friedhofsführung über den Südfriedhof",
+    "date_start": "2026-10-25",
+    "date_end": null,
+    "location": "Südfriedhof, Halle (Saale)",
+    "description": "Eine 90-minütige Friedhofsführung des Vereins für Friedhofskultur über den Südfriedhof in Halle.",
+    "url": "http://www.friedhofskultur-halle.de/terminefuehrungen/",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26"
+  },
+  "bbc1f5e85ab1f87adf91ec723fa8687d": {
+    "title": "Führung über den Melatenfriedhof",
+    "date_start": "2026-10-25",
+    "date_end": null,
+    "location": "Melaten-Friedhof, Köln",
+    "description": "Ein Spaziergang über den Kölner Zentralfriedhof Melaten mit Einblicken in die Geschichte und zu den Grabstätten bekannter Kölner Persönlichkeiten.",
+    "url": "https://theatergemeinde-koeln.org/Kulturkompass/werk/25725/M04/stadtfuhrungen-koln/fuehrung-uber-melaten",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26"
+  },
+  "61f880771941f2d07e086ab5a73f70b0": {
+    "title": "Eröffnung der Winterausstellung «Am Grab des Heiligen – St.Gallen im 7. Jahrhundert»",
     "date_start": "2026-11-25",
     "date_end": null,
     "location": "Pfalzkeller, Stiftsbezirk St. Gallen",
@@ -884,13 +1014,13 @@
     "date_start": "2026-12-27",
     "date_end": null,
     "location": "Südfriedhof, Leipzig",
-    "description": "Kulturhistorischer Rundgang über den Leipziger Südfriedhof zum Jahresausklang.",
+    "description": "Kulturhistorischer Rundgang über den Leipziger Südfriedhof während der Weihnachtsfeiertage.",
     "url": "https://paul-benndorf-gesellschaft.de/fuehrungen.html",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
   },
-  "24610376dd236dc27cc0bc39ebac0186": {
-    "title": "Hanna Heim liest aus „Hofsommer“",
+  "951a7d9f9eba8410d8dcfd5086c28313": {
+    "title": "Lesung: Hanna Heim liest aus „Hofsommer“",
     "date_start": "2026-09-16",
     "date_end": null,
     "location": "Museum für Sepulkralkultur, Kassel",
@@ -914,7 +1044,7 @@
     "date_start": "2026-09-30",
     "date_end": null,
     "location": "Museum für Sepulkralkultur, Kassel",
-    "description": "Führung im Gespräch mit der Künstlerin Rana Matloub durch ihre Ausstellung „Grabe keine Löcher neben Gräber“.",
+    "description": "Führung durch die Ausstellung „Grabe keine Löcher neben Gräber“ im Gespräch zwischen Museumsdirektor Dr. Dirk Pörschmann und der Künstlerin Rana Matloub.",
     "url": "https://www.sepulkralmuseum.de/veranstaltungen/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
@@ -934,7 +1064,7 @@
     "date_start": "2026-09-24",
     "date_end": null,
     "location": "Museum für Sepulkralkultur, Kassel",
-    "description": "Lesung von Nele Palmtag aus ihrem Bilderbuch über das Alter und Abschiednehmen mit anschließendem Bastelworkshop.",
+    "description": "Illustratorin Nele Palmtag liest aus ihrem Buch über eine alte Katze und zeigt die Entstehung der Bilder mit anschließendem Bastelworkshop.",
     "url": "https://www.sepulkralmuseum.de/veranstaltungen/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
@@ -1009,12 +1139,22 @@
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
   },
-  "3eaeb617ea5a63fcb9ca60ee89ec103b": {
-    "title": "Veranstaltung zum 225. Todestag des Komponisten Johann Gottlieb Naumann",
+  "e2571c02a8b09766a0a9e4d09df2d062": {
+    "title": "Tag des Friedhofs",
+    "date_start": "2026-09-20",
+    "date_end": null,
+    "location": "Eliasfriedhof, Ziegelstraße 22, Dresden, Sachsen, 01069, Deutschland",
+    "description": "Der Förderverein öffnet von 10 bis 18 Uhr die ansonsten geschlossenen Tore des Eliasfriedhofs. Sie erwartet ein Programm mit Führungen zur Friedhofsgeschichte, ein Verkaufsstand mit Büchern, Postkarten und anderen Kleinigkeiten zum Thema Friedhof, eine Fotoausstellung, ein Quiz für Kinder und Erwachsene, Kaffee und Kuchen. Gern können Sie auch individuell den Friedhof erkunden und sich die kunstvo",
+    "url": "https://eliasfriedhof.de/termin/tag-des-friedhofs-2/",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26"
+  },
+  "07dc16e837e394722d03aecb87451c2f": {
+    "title": "Veranstaltung zum 225. Todestag des Komponisten Johann Gottlieb Naumannn",
     "date_start": "2026-10-23",
     "date_end": null,
-    "location": "Eliasfriedhof Dresden",
-    "description": "Gedenken am Grabmal des Komponisten Johann Gottlieb Naumann anlässlich seines 225. Todestages mit anschließendem Rundgang über den Friedhof.",
+    "location": "Eliasfriedhof, Ziegelstraße 22, Dresden, Sachsen, 01069, Deutschland",
+    "description": "Vor 225 Jahren verstarb am 23. Oktober im Großen Garten plötzlich und unerwartet der Komponist und Hofkapellmeister Johann Gottlieb Naumann. An seinem eindrucks￾vollen Grabmal gedenken wir des Musikvirtuosen, der mit seinem Wirken in seiner Zeit wesentliche Akzente für die Entwicklung der Musik der Romantik setzte. Anschließend laden wir zu einem Rundgang über den Friedhof ein, bei welchem Sie Int",
     "url": "https://eliasfriedhof.de/termine/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
@@ -1064,7 +1204,7 @@
     "date_start": "2026-09-02",
     "date_end": null,
     "location": "KapelleDREI, Parkfriedhof Ohlsdorf, Hamburg",
-    "description": "Regelmäßiges Chorangebot an der KapelleDREI für Menschen in Trauer- und Verlustsituationen.",
+    "description": "Chorangebot in der KapelleDREI für trauernde Menschen sowie Menschen mit Verlusterfahrungen.",
     "url": "https://www.friedhof-hamburg.de/besucher/veranstaltungen/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
@@ -1139,6 +1279,16 @@
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
   },
+  "5cb28726eebe6ad51fa16c750a4d1ffc": {
+    "title": "Konzert „Klangbrücken für Potsdamer Friedenscarillon“ mit Dr. Hans-Joachim Müller",
+    "date_start": "2026-10-10",
+    "date_end": null,
+    "location": "Neuer Friedhof Potsdam",
+    "description": "Carillon-Konzert der Reihe Klangbrücken für Potsdamer Friedenscarillon mit Dr. Hans-Joachim Müller.",
+    "url": "https://www.friedhof-in-potsdam.de/allgemeines/aktuelles",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26"
+  },
   "df6172009e6007ce8392bebe871c2d0a": {
     "title": "Vortrag Kannibalismus",
     "date_start": "2026-10-15",
@@ -1166,6 +1316,26 @@
     "location": "Archäologische Staatssammlung München",
     "description": "Sonderausstellung über die archäologischen Geheimnisse und Neuentdeckungen rund um die prähistorische Kult- und Grabstätte Stonehenge.",
     "url": "https://www.archaeologie-bayern.de/de/termine/",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26"
+  },
+  "e48effc2edddb0e819766711dc729c61": {
+    "title": "Friedhofsfreitag: Freitags von 14-18 Uhr geöffnet",
+    "date_start": "2026-04-10",
+    "date_end": "2026-10-30",
+    "location": "Eliasfriedhof, Ziegelstraße 22, Dresden, Sachsen, 01069, Deutschland",
+    "description": "Der Eliasfriedhof ist ab dem 10.4.2026 bis 30.10.2026 immer freitags von 14-18 Uhr für individuelle Rundgänge geöffnet. Mitglieder des Fördervereins stehen vor Ort für Fragen und kurze Rundgänge zur Verfügung. Einen Übersichtsplan des Friedhofs können Sie für 2 Euro erwerben. An ausgewählten Grabmalen finden Sie Schilder, die auf bedeutende Persönlichkeiten hinweisen. Über die darauf angebrachten",
+    "url": "https://eliasfriedhof.de/termin/friedhofsfreitag-ab-12-4-immer-freitags-von-14-18-uhr-geoeffnet/",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26"
+  },
+  "443ad2b25581abbf1b8c25907fb74b53": {
+    "title": "Themenführung: Dresdner Medizingeschichte(n) auf dem Eliasfriedhof",
+    "date_start": "2026-10-11",
+    "date_end": null,
+    "location": "Eliasfriedhof, Ziegelstraße 22, Dresden, Sachsen, 01069, Deutschland",
+    "description": "Um die medizinische Versorgung der Dresdner Stadtbevölkerung kümmerten sich in vergangenen Jahrhunderten nicht nur Ärzte, sondern auch Feldscher, Wundheiler und Bader. Doch erst mit der Gründung des Collegium medico-chirurgicum 1748 erfolgte die Ausbildung medizinischen Personals nach einheitlichen Lehrplänen. Hospitäler entwickelten sich zu Krankenhäusern, moderne Kliniken entstanden und prägen d",
+    "url": "https://eliasfriedhof.de/termin/themenfuehrung-dresdner-medizingeschichten-auf-dem-eliasfriedhof/",
     "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
   }
