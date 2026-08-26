@@ -49,11 +49,11 @@
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
   },
-  "20f01d47febdbd55bb34fb3c91b0a6d0": {
-    "title": "Kurator*innenführung: Wohin mit dem Hund?",
+  "193fcc944dc53a6eb4a2deb441554101": {
+    "title": "Kurator*innenfuehrung: Wohin mit dem Hund?",
     "date_start": "2026-08-26",
     "date_end": null,
-    "location": "Museum für Sepulkralkultur, Kassel",
+    "location": "Museum fuer Sepulkralkultur, Kassel",
     "description": "Führung durch die Sonderausstellung zum Thema Mensch-Tier-Beziehung und wie Menschen und Tiere voneinander Abschied nehmen.",
     "url": "https://www.sepulkralmuseum.de/veranstaltungen/",
     "first_seen": "2026-08-25",
@@ -74,7 +74,7 @@
     "date_start": "2026-08-26",
     "date_end": null,
     "location": "Friedhof Wolfgottesacker, Basel",
-    "description": "Eine Ausstellung auf dem historischen Basler Friedhof Wolfgottesacker zu Themen der Erinnerungs- und Friedhofskultur.",
+    "description": "Die Stadtgärtnerei Basel präsentiert von August bis November 2026 die Ausstellung «Auf immer und ewig» auf dem Friedhof Wolfgottesacker.",
     "url": "https://www.stadtgaertnerei.bs.ch/friedhoefe/veranstaltungen.html",
     "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
@@ -83,8 +83,8 @@
     "title": "Ausstellung: DAS LEBEN IST EINE COLLAGE",
     "date_start": "2026-08-26",
     "date_end": "2026-11-23",
-    "location": "Ricam Hospiz, Delbrückstraße 22, 12051 Berlin",
-    "description": "Ausstellung mit Collagen der Künstlerinnen Bettina Schilling und Ilse Winckler im Ricam Hospiz.",
+    "location": "Ricam Hospiz, Delbrückstraße 22, 12051 Berlin Neukölln",
+    "description": "Kunstausstellung mit Collagen der Künstlerinnen Bettina Schilling und Ilse Winckler im Ricam Hospiz.",
     "url": "https://www.ricam-hospiz.de/events/",
     "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
@@ -99,6 +99,16 @@
     "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
   },
+  "478b2366a38ad904d8312653f26d2047": {
+    "title": "Die Geheimnisse des Gottesackers: Sterbekultur & Grabgeflüster",
+    "date_start": "2026-08-26",
+    "date_end": null,
+    "location": "St. Peter Friedhof, Graz",
+    "description": "Ein atmosphärischer Rundgang mit dem Totengräber über den St. Peter Friedhof zu historischen Abschiedsritualen, Mythen und Grabzeichen.",
+    "url": "https://www.kulturfuchs.at/friedhof/",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26"
+  },
   "a554fce890097f3eb991b0a880c0488a": {
     "title": "Friedhofsnacht 2026",
     "date_start": "2026-08-28",
@@ -107,6 +117,16 @@
     "description": "Veranstaltung im Rahmen der Friedhofsnacht 2026 auf dem Friedhof Dreifaltigkeit II an der Bergmannstraße.",
     "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "first_seen": "2026-08-25",
+    "last_seen": "2026-08-26"
+  },
+  "21354c2c312d4b947ae2182f6b6a4f46": {
+    "title": "Führung: Victor Frankenstein und die Anatomie",
+    "date_start": "2026-08-28",
+    "date_end": null,
+    "location": "Deutsches Medizinhistorisches Museum Ingolstadt",
+    "description": "Führung im Deutschen Medizinhistorischen Museum über Victor Frankenstein und die Geschichte der Anatomie.",
+    "url": "https://www.dmm-ingolstadt.de/",
+    "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
   },
   "eb21f4e79eb965bbf74b93f9d40656b7": {
@@ -134,7 +154,7 @@
     "date_start": "2026-08-30",
     "date_end": null,
     "location": "Alter Luisenstädtischer Friedhof",
-    "description": "Führung über den Alten Luisenstädtischen Friedhof mit Jakob Preuss.",
+    "description": "Führung über den Alten Luisenstädtischen Friedhof unter Leitung von Jakob Preuss.",
     "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
@@ -154,7 +174,7 @@
     "date_start": "2026-09-05",
     "date_end": null,
     "location": "Hauptfriedhof Frankfurt, Haupteingang (Neues Portal), Eckenheimer Landstraße 194, Frankfurt am Main",
-    "description": "Führung über den 1828 angelegten Frankfurter Hauptfriedhof mit Erläuterungen zu architektonischen Moden der Grabmäler sowie Biografien bekannter Persönlichkeiten.",
+    "description": "Ein historischer Rundgang über den Frankfurter Hauptfriedhof, der anhand von Mausoleen und Grabsteinen die Lebensgeschichten bedeutender Persönlichkeiten vermittelt.",
     "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
@@ -174,7 +194,7 @@
     "date_start": "2026-09-05",
     "date_end": null,
     "location": "Alter Johannisfriedhof, Leipzig",
-    "description": "Kultur- und kunsthistorische Führung über den Alten Johannisfriedhof, den historischen Begräbnisplatz der Leipziger Bürger.",
+    "description": "Führung zur Kultur- und Kunstgeschichte des Alten Johannisfriedhofs, der über sechs Jahrhunderte als zentraler Begräbnisplatz Leipzigs diente.",
     "url": "https://paul-benndorf-gesellschaft.de/fuehrungen.html",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
@@ -193,10 +213,20 @@
     "title": "Kasseler Museumsnacht 2026",
     "date_start": "2026-09-05",
     "date_end": null,
-    "location": "Museum für Sepulkralkultur, Kassel",
+    "location": "Museum fuer Sepulkralkultur, Kassel",
     "description": "Das Museum für Sepulkralkultur bietet zur Kasseler Museumsnacht ein Programm mit Livemusik, Pantomime, Mitmach-Aktionen und Mitternachtsführung.",
     "url": "https://www.sepulkralmuseum.de/veranstaltungen/",
     "first_seen": "2026-08-25",
+    "last_seen": "2026-08-26"
+  },
+  "685944b297f1a6919f314b18b4fc01f4": {
+    "title": "Tage der Industriekultur: Auf den Spuren berühmter Köpfe aus Industrie, Politik und Wirtschaft",
+    "date_start": "2026-09-05",
+    "date_end": null,
+    "location": "Hauptfriedhof, Frankfurt am Main",
+    "description": "Führung auf dem Frankfurter Hauptfriedhof zu den Grabstätten bedeutender Persönlichkeiten aus Industrie, Politik und Wirtschaft.",
+    "url": "https://www.krfrm.de/venue/hauptfriedhof-frankfurt-am-main/",
+    "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
   },
   "8c543c1c905c80899ab424567274ea50": {
@@ -204,7 +234,7 @@
     "date_start": "2026-09-06",
     "date_end": null,
     "location": "Friedhofskapelle Friedrichswerderscher Friedhof",
-    "description": "Konzert zum Trost in Trauer mit dem Ensemble Die Goldvögel unter dem Motto La vie en rose - französische Chansons.",
+    "description": "Konzert zum Trost in Trauer mit französischen Chansons, dargeboten vom Ensemble Die Goldvögel in der Friedhofskapelle.",
     "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
@@ -259,6 +289,16 @@
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
   },
+  "dfd51b9b8f0d1a78f3f76171ed6df0fc": {
+    "title": "Wanderauszeit für Trauernde – Die Kraft der Berge spüren",
+    "date_start": "2026-09-09",
+    "date_end": "2026-09-13",
+    "location": "Wilder Kaiser / Hans-Berger-Haus",
+    "description": "Trauerreise und Auszeit für verwaiste Eltern, Großeltern, erwachsene Geschwister und andere Familienmitglieder.",
+    "url": "https://blauerfalter.de/termine",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26"
+  },
   "8532227c5a9120d7e4b8e948dd1e58c8": {
     "title": "Tag des Friedhofs 2026",
     "date_start": "2026-09-13",
@@ -274,7 +314,7 @@
     "date_start": "2026-09-13",
     "date_end": null,
     "location": "Südwestkirchhof Stahnsdorf",
-    "description": "Konzert mit Harfe und Poesie anlässlich des Tags des Denkmals auf dem Südwestkirchhof.",
+    "description": "Konzert mit Harfe und Poesie auf dem Südwestkirchhof Stahnsdorf anlässlich des Tages des Denkmals.",
     "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
@@ -294,7 +334,7 @@
     "date_start": "2026-09-13",
     "date_end": null,
     "location": "Hauptfriedhof Frankfurt, Haupteingang (Neues Portal), Eckenheimer Landstraße 194, Frankfurt am Main",
-    "description": "Führung über den 1828 angelegten Frankfurter Hauptfriedhof mit Erläuterungen zu architektonischen Moden der Grabmäler sowie Biografien bekannter Persönlichkeiten.",
+    "description": "Ein historischer Rundgang über den Frankfurter Hauptfriedhof, der anhand von Mausoleen und Grabsteinen die Lebensgeschichten bedeutender Persönlichkeiten vermittelt.",
     "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
@@ -339,6 +379,16 @@
     "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
   },
+  "a8c4f60014325730f22e7c507f883d54": {
+    "title": "Führung auf dem Frankfurter Hauptfriedhof",
+    "date_start": "2026-09-13",
+    "date_end": null,
+    "location": "Hauptfriedhof, Frankfurt am Main",
+    "description": "Rundgang über den Frankfurter Hauptfriedhof im Rahmen des Kulturprogramms GartenRheinMain.",
+    "url": "https://www.krfrm.de/venue/hauptfriedhof-frankfurt-am-main/",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26"
+  },
   "b9d40498ce967cabfce140b76c86a9af": {
     "title": "Führung über den Alten St.-Matthäus-Friedhof",
     "date_start": "2026-09-23",
@@ -349,12 +399,22 @@
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
   },
+  "b12749e919ab930690aecf32dd86f479": {
+    "title": "Die Geheimnisse des Gottesackers: Sterbekultur & Grabgeflüster",
+    "date_start": "2026-09-23",
+    "date_end": null,
+    "location": "Zentralfriedhof Graz",
+    "description": "Ein Abend-Rundgang mit dem Totengräber über den Grazer Zentralfriedhof zu den Geheimnissen der Sterbekultur und Vergänglichkeit.",
+    "url": "https://www.kulturfuchs.at/friedhof/",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26"
+  },
   "2dfaeae55097b41bfeda03e7b2e3dcb0": {
     "title": "Sonderführung - Der Baum als Freund und Begleiter im Lebensraum Friedhof",
     "date_start": "2026-09-27",
     "date_end": null,
     "location": "Südwestkirchhof Stahnsdorf",
-    "description": "Thematische Sonderführung mit Thomas Specht über den Baumbestand und die Natur im Lebensraum Friedhof.",
+    "description": "Eine besondere Führung über die Bäume im Lebensraum Friedhof mit Thomas Specht auf dem Südwestkirchhof Stahnsdorf.",
     "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
@@ -363,10 +423,20 @@
     "title": "Von Hetepheres bis Tutanchamun: Enthüllung von 4.600 Jahren königlicher Schätze im Großen Ägyptischen Museum",
     "date_start": "2026-09-27",
     "date_end": null,
-    "location": "James-Simon-Galerie, Museumsinsel Berlin",
+    "location": "James-Simon-Galerie, Neues Museum, Museumsinsel Berlin",
     "description": "Vortrag und Podiumsdiskussion über die königlichen Grabschätze von Hetepheres bis Tutanchamun und deren Präsentation im Großen Ägyptischen Museum.",
     "url": "https://www.smb.museum/museen-einrichtungen/aegyptisches-museum-und-papyrussammlung/veranstaltungen/",
     "first_seen": "2026-08-25",
+    "last_seen": "2026-08-26"
+  },
+  "f49f51474da9b795543009e54ad8a396": {
+    "title": "Friedhofsführung am Tag des Denkmals",
+    "date_start": "2026-09-27",
+    "date_end": null,
+    "location": "St. Barbara Friedhof, Linz",
+    "description": "Ein kulturgeschichtlicher Rundgang über den St. Barbara Friedhof mit einem besonderen Schwerpunkt auf interessante Frauen, alte Grabstätten und Kunst zum Thema Tod und Vergänglichkeit.",
+    "url": "https://www.barbarafriedhof.at/service-info/aktuelles/rueckblick/kulturgeschichtliche-friedhofsfuehrungen-2026",
+    "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
   },
   "98edd54c694cadb1251dca1d3cf35db1": {
@@ -394,7 +464,7 @@
     "date_start": "2026-10-16",
     "date_end": null,
     "location": "Friedhöfe am Halleschen Tor",
-    "description": "Führung mit Eva Gosh und Karin Maaß zu den Grabstätten von Verwandten und Freunden der Familie Mendelssohn.",
+    "description": "Führung über die Friedhöfe am Halleschen Tor zu den Grabstätten von Verwandten und Freunden der Mendelssohn-Familie.",
     "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
@@ -409,6 +479,16 @@
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
   },
+  "cc6b6848acfc966ad2ee5e6fba14c005": {
+    "title": "Spurensuche auf dem St. Barbara Friedhof – Bürgermeister und andere bedeutende Herren",
+    "date_start": "2026-10-16",
+    "date_end": null,
+    "location": "St. Barbara Friedhof, Linz",
+    "description": "Spaziergang zur Erinnerung an bedeutende Männer des wirtschaftlichen, politischen und künstlerischen Lebens sowie zur Entstehungsgeschichte des Friedhofs.",
+    "url": "https://www.barbarafriedhof.at/service-info/aktuelles/rueckblick/kulturgeschichtliche-friedhofsfuehrungen-2026",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26"
+  },
   "e89ca2a43f8d96aa03f5ec9801954fe5": {
     "title": "Führung über den Alten St.-Matthäus-Friedhof",
     "date_start": "2026-10-28",
@@ -417,6 +497,16 @@
     "description": "Führung über den Alten St.-Matthäus-Friedhof im Rahmen der Mittwochstermine mit Ralf Illauer.",
     "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "first_seen": "2026-08-25",
+    "last_seen": "2026-08-26"
+  },
+  "178cd39345b39cf4256a67e7c8f72e26": {
+    "title": "Die Geheimnisse des Gottesackers: Sterbekultur & Grabgeflüster",
+    "date_start": "2026-10-28",
+    "date_end": null,
+    "location": "St. Leonhard Friedhof, Graz",
+    "description": "Streifzug mit dem Totengräber über den St. Leonhard Friedhof zu Wandel der Bestattungskultur und vergessenen Seelen.",
+    "url": "https://www.kulturfuchs.at/friedhof/",
+    "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
   },
   "680265437348b5425b4df6fca4119edd": {
@@ -437,6 +527,16 @@
     "description": "Sonderführung zur Geschichte und Kunst auf dem Leipziger Südfriedhof zum Buß- und Bettag.",
     "url": "https://paul-benndorf-gesellschaft.de/fuehrungen.html",
     "first_seen": "2026-08-25",
+    "last_seen": "2026-08-26"
+  },
+  "27936f38d3542ecb44288bcdabcf21fc": {
+    "title": "Die Geheimnisse des Gottesackers: Sterbekultur & Grabgeflüster",
+    "date_start": "2026-11-18",
+    "date_end": null,
+    "location": "St. Peter Friedhof, Graz",
+    "description": "Führung über den Friedhof St. Peter in Graz über Aberglauben, Scheintod und historische Lebensgeschichten.",
+    "url": "https://www.kulturfuchs.at/friedhof/",
+    "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
   },
   "808bb3a655c78c80df92974c4ea211c8": {
@@ -499,6 +599,16 @@
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
   },
+  "e34e35cd2734461f7da31d9064837baa": {
+    "title": "Rundgang zu historischen Denkmälern",
+    "date_start": "2026-11-15",
+    "date_end": null,
+    "location": "Bergfriedhof Heidelberg",
+    "description": "Führung entlang historischer Grabstätten zur Trauerkultur, Grabmalskunst und zu bedeutenden Heidelberger Persönlichkeiten.",
+    "url": "https://www.heidelberg.de/HD/Rathaus/bergfriedhof_+fuehrungen+und+spaziergaenge.html",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26"
+  },
   "14bdd04cf40a6f2ba62184bd998e3ac2": {
     "title": "Ewigkeitssonntag - Tag der Entschlafenen",
     "date_start": "2026-11-22",
@@ -543,8 +653,8 @@
     "title": "Carillon-Konzert zum Totensonntag",
     "date_start": "2026-11-22",
     "date_end": null,
-    "location": "Neuer Friedhof, Potsdam",
-    "description": "Gedenkkonzert von Andreas Gottschald am Potsdamer Friedenscarillon anlässlich des Totensonntags.",
+    "location": "Potsdamer Friedenscarillon, Potsdam",
+    "description": "Konzert der Reihe Klangbruecken fuer Potsdamer Friedenscarillon anlaesslich des Totensonntags, gespielt von Andreas Gottschald.",
     "url": "https://www.friedhof-in-potsdam.de/allgemeines/aktuelles",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
@@ -594,7 +704,7 @@
     "date_start": "2026-11-21",
     "date_end": null,
     "location": "Hauptfriedhof Frankfurt, Haupteingang (Neues Portal), Eckenheimer Landstraße 194, Frankfurt am Main",
-    "description": "Führung über den 1828 angelegten Frankfurter Hauptfriedhof mit Erläuterungen zu architektonischen Moden der Grabmäler sowie Biografien bekannter Persönlichkeiten.",
+    "description": "Ein historischer Rundgang über den Frankfurter Hauptfriedhof, der anhand von Mausoleen und Grabsteinen die Lebensgeschichten bedeutender Persönlichkeiten vermittelt.",
     "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
@@ -604,7 +714,7 @@
     "date_start": "2026-10-03",
     "date_end": null,
     "location": "Südfriedhof Leipzig",
-    "description": "Eine kunst- und kulturhistorische Sonderführung über den Leipziger Südfriedhof zum Tag der Deutschen Einheit.",
+    "description": "Sonderführung zur Kunst- und Kulturgeschichte auf dem Leipziger Südfriedhof anlässlich des Tages der Deutschen Einheit.",
     "url": "https://paul-benndorf-gesellschaft.de/fuehrungen.html",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
@@ -634,7 +744,7 @@
     "date_start": "2026-10-31",
     "date_end": null,
     "location": "Hauptfriedhof Frankfurt, Haupteingang (Neues Portal), Eckenheimer Landstraße 194, Frankfurt am Main",
-    "description": "Führung über den 1828 angelegten Frankfurter Hauptfriedhof mit Erläuterungen zu architektonischen Moden der Grabmäler sowie Biografien bekannter Persönlichkeiten.",
+    "description": "Ein historischer Rundgang über den Frankfurter Hauptfriedhof, der anhand von Mausoleen und Grabsteinen die Lebensgeschichten bedeutender Persönlichkeiten vermittelt.",
     "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
@@ -654,17 +764,17 @@
     "date_start": "2026-10-04",
     "date_end": null,
     "location": "Hauptfriedhof Frankfurt, Haupteingang (Neues Portal), Eckenheimer Landstraße 194, Frankfurt am Main",
-    "description": "Führung über den 1828 angelegten Frankfurter Hauptfriedhof mit Erläuterungen zu architektonischen Moden der Grabmäler sowie Biografien bekannter Persönlichkeiten.",
+    "description": "Ein historischer Rundgang über den Frankfurter Hauptfriedhof, der anhand von Mausoleen und Grabsteinen die Lebensgeschichten bedeutender Persönlichkeiten vermittelt.",
     "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
   },
-  "39365945dedaa6ac476ea77445e8cd8b": {
-    "title": "Kurzführung und Modellierworkshop mit Rana Matloub",
+  "9facda80685d69ec7b5b77e4c860b90b": {
+    "title": "Kurzfuehrung und Modellierworkshop mit Rana Matloub",
     "date_start": "2026-10-04",
     "date_end": null,
-    "location": "Museum für Sepulkralkultur, Kassel",
-    "description": "Führung am letzten Tag der Ausstellung „Grabe keine Löcher neben die Gräber“ mit anschliessendem Modellierworkshop mit Modelliermasse.",
+    "location": "Museum fuer Sepulkralkultur, Kassel",
+    "description": "Kurzfuehrung und Modellierworkshop am letzten Tag der Ausstellung Grabe keine Loecher neben die Graeber mit der Kuenstlerin Rana Matloub.",
     "url": "https://www.sepulkralmuseum.de/veranstaltungen/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
@@ -764,7 +874,7 @@
     "date_start": "2026-08-29",
     "date_end": null,
     "location": "Kapelle 6, Parkfriedhof Ohlsdorf, Hamburg",
-    "description": "Lesung und Gespräch auf dem Ohlsdorfer Friedhof über das Zusammenleben mit psychisch Erkrankten.",
+    "description": "Lesung und Gespräch über das Zusammenleben mit psychisch kranken Menschen in der Friedhofskapelle 6.",
     "url": "https://www.friedhof-hamburg.de/besucher/veranstaltungen/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
@@ -794,7 +904,7 @@
     "date_start": "2026-08-31",
     "date_end": null,
     "location": "KapelleDREI, Parkfriedhof Ohlsdorf, Hamburg",
-    "description": "Workshop für innere Stärke und Zuversicht in der KapelleDREI auf dem Friedhof Ohlsdorf.",
+    "description": "Workshop zum Start in die Woche mit innerer Stärke und Zuversicht in der Friedhofskapelle.",
     "url": "https://www.friedhof-hamburg.de/besucher/veranstaltungen/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
@@ -814,7 +924,7 @@
     "date_start": "2026-09-01",
     "date_end": null,
     "location": "Dom St. Mauritius und Katharina zu Magdeburg",
-    "description": "Ökumenischer Gottesdienst und feierlicher Festakt im Magdeburger Dom anlässlich der Wiederbeisetzung von Kaiser Otto.",
+    "description": "Ökumenischer Gottesdienst und anschließender Festakt im Magdeburger Dom anlässlich der Wiederbeisetzung von Kaiser Otto.",
     "url": "https://www.magdeburgerdom.de/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
@@ -844,7 +954,7 @@
     "date_start": "2026-09-01",
     "date_end": null,
     "location": "KapelleDREI, Parkfriedhof Ohlsdorf, Hamburg",
-    "description": "Offene Begegnungszeit für Innehalten und Austausch auf dem Ohlsdorfer Friedhof.",
+    "description": "Begegnung, Innehalten und Inspiration in der KapelleDREI auf dem Friedhof Ohlsdorf.",
     "url": "https://www.friedhof-hamburg.de/besucher/veranstaltungen/",
     "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
@@ -869,6 +979,16 @@
     "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
   },
+  "52e629579d8d77def793e82a34766bc7": {
+    "title": "Rundgang zu historischen Denkmälern: Weitere Geschichten",
+    "date_start": "2026-10-18",
+    "date_end": null,
+    "location": "Bergfriedhof Heidelberg",
+    "description": "Themenrundgang zur Entwicklung der Trauerkultur seit 1844 von der Romantik bis zum Jugendstil sowie Familiengeschichten.",
+    "url": "https://www.heidelberg.de/HD/Rathaus/bergfriedhof_+fuehrungen+und+spaziergaenge.html",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26"
+  },
   "ddbf48a4108cab771200f2c3692ee86d": {
     "title": "Führung über Melaten – Letzte Ruhestätte von Kölner Originalen und Prominenten",
     "date_start": "2026-10-25",
@@ -884,7 +1004,7 @@
     "date_start": "2026-10-25",
     "date_end": null,
     "location": "Hauptfriedhof Frankfurt, Haupteingang (Neues Portal), Eckenheimer Landstraße 194, Frankfurt am Main",
-    "description": "Führung über den 1828 angelegten Frankfurter Hauptfriedhof mit Erläuterungen zu architektonischen Moden der Grabmäler sowie Biografien bekannter Persönlichkeiten.",
+    "description": "Ein historischer Rundgang über den Frankfurter Hauptfriedhof, der anhand von Mausoleen und Grabsteinen die Lebensgeschichten bedeutender Persönlichkeiten vermittelt.",
     "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
@@ -944,7 +1064,7 @@
     "date_start": "2026-09-12",
     "date_end": null,
     "location": "Friedhof der Märzgefallenen, Berlin",
-    "description": "Führung über die Geschichte des Friedhofs der Märzgefallenen von 1848 bis heute im Rahmen des Tags des offenen Denkmals.",
+    "description": "Führung über den historischen Friedhof der Märzgefallenen und dessen Gedenkkultur im Rahmen des Tags des offenen Denkmals.",
     "url": "https://forum1848.de/veranstaltungen/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
@@ -954,9 +1074,19 @@
     "date_start": "2026-09-26",
     "date_end": null,
     "location": "Hauptfriedhof Frankfurt, Haupteingang (Neues Portal), Eckenheimer Landstraße 194, Frankfurt am Main",
-    "description": "Führung über den 1828 angelegten Frankfurter Hauptfriedhof mit Erläuterungen zu architektonischen Moden der Grabmäler sowie Biografien bekannter Persönlichkeiten.",
+    "description": "Ein historischer Rundgang über den Frankfurter Hauptfriedhof, der anhand von Mausoleen und Grabsteinen die Lebensgeschichten bedeutender Persönlichkeiten vermittelt.",
     "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
     "first_seen": "2026-08-25",
+    "last_seen": "2026-08-26"
+  },
+  "c7c0efe7e082a74282d1413dc7a7b2c0": {
+    "title": "Hinter den Friedhofsmauern – Rund um den Steinmetz",
+    "date_start": "2026-09-26",
+    "date_end": null,
+    "location": "Hauptfriedhof Karlsruhe",
+    "description": "Ein Rundgang durch die Arbeitswelt der Friedhofsmitarbeiter und Steinmetze hinter den Kulissen des Friedhofs.",
+    "url": "https://www.friedhof-karlsruhe.de/programm/fuehrungen-und-angebote.html",
+    "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
   },
   "c95307b93feab97998603adfa42a7105": {
@@ -964,9 +1094,19 @@
     "date_start": "2026-10-17",
     "date_end": null,
     "location": "Hauptfriedhof Frankfurt, Haupteingang (Neues Portal), Eckenheimer Landstraße 194, Frankfurt am Main",
-    "description": "Führung über den 1828 angelegten Frankfurter Hauptfriedhof mit Erläuterungen zu architektonischen Moden der Grabmäler sowie Biografien bekannter Persönlichkeiten.",
+    "description": "Ein historischer Rundgang über den Frankfurter Hauptfriedhof, der anhand von Mausoleen und Grabsteinen die Lebensgeschichten bedeutender Persönlichkeiten vermittelt.",
     "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
     "first_seen": "2026-08-25",
+    "last_seen": "2026-08-26"
+  },
+  "ad64b7d28cc8ed484e60680d735cbd0a": {
+    "title": "Hinter den Friedhofsmauern – Rund um die Natur",
+    "date_start": "2026-10-17",
+    "date_end": null,
+    "location": "Hauptfriedhof Karlsruhe",
+    "description": "Ein Blick hinter die Kulissen des Friedhofs und in die Arbeitswelt der Friedhofsmitarbeiter im Wandel der Natur.",
+    "url": "https://www.friedhof-karlsruhe.de/programm/fuehrungen-und-angebote.html",
+    "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
   },
   "8910b48923c9385dd62bc0ecf0e033ce": {
@@ -974,9 +1114,19 @@
     "date_start": "2026-11-01",
     "date_end": null,
     "location": "Hauptfriedhof Frankfurt, Haupteingang (Neues Portal), Eckenheimer Landstraße 194, Frankfurt am Main",
-    "description": "Führung über den 1828 angelegten Frankfurter Hauptfriedhof mit Erläuterungen zu architektonischen Moden der Grabmäler sowie Biografien bekannter Persönlichkeiten.",
+    "description": "Ein historischer Rundgang über den Frankfurter Hauptfriedhof, der anhand von Mausoleen und Grabsteinen die Lebensgeschichten bedeutender Persönlichkeiten vermittelt.",
     "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
     "first_seen": "2026-08-25",
+    "last_seen": "2026-08-26"
+  },
+  "644d8538469ba2f3b30742e4749010f2": {
+    "title": "Gedenkveranstaltungen zu Allerheiligen",
+    "date_start": "2026-11-01",
+    "date_end": null,
+    "location": "LINZ AG Friedhöfe",
+    "description": "Momente des gemeinsamen Erinnerns und Gedenkens an verstorbene Angehörige zu Allerheiligen.",
+    "url": "https://www.linzag.at/portal/de/privatkunden/trauer/veranstaltungen",
+    "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
   },
   "084217b4931948ea9b6ac553f81823ef": {
@@ -984,7 +1134,7 @@
     "date_start": "2026-11-14",
     "date_end": null,
     "location": "Hauptfriedhof Frankfurt, Haupteingang (Neues Portal), Eckenheimer Landstraße 194, Frankfurt am Main",
-    "description": "Führung über den 1828 angelegten Frankfurter Hauptfriedhof mit Erläuterungen zu architektonischen Moden der Grabmäler sowie Biografien bekannter Persönlichkeiten.",
+    "description": "Ein historischer Rundgang über den Frankfurter Hauptfriedhof, der anhand von Mausoleen und Grabsteinen die Lebensgeschichten bedeutender Persönlichkeiten vermittelt.",
     "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
@@ -1004,7 +1154,7 @@
     "date_start": "2026-12-27",
     "date_end": null,
     "location": "Hauptfriedhof Frankfurt, Haupteingang (Neues Portal), Eckenheimer Landstraße 194, Frankfurt am Main",
-    "description": "Führung über den 1828 angelegten Frankfurter Hauptfriedhof mit Erläuterungen zu architektonischen Moden der Grabmäler sowie Biografien bekannter Persönlichkeiten.",
+    "description": "Ein historischer Rundgang über den Frankfurter Hauptfriedhof, der anhand von Mausoleen und Grabsteinen die Lebensgeschichten bedeutender Persönlichkeiten vermittelt.",
     "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
@@ -1014,7 +1164,7 @@
     "date_start": "2026-12-27",
     "date_end": null,
     "location": "Südfriedhof, Leipzig",
-    "description": "Kulturhistorischer Rundgang über den Leipziger Südfriedhof während der Weihnachtsfeiertage.",
+    "description": "Kulturhistorische Führung auf dem Südfriedhof Leipzig zum Abschluss der Weihnachtsfeiertage.",
     "url": "https://paul-benndorf-gesellschaft.de/fuehrungen.html",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
@@ -1023,8 +1173,8 @@
     "title": "Lesung: Hanna Heim liest aus „Hofsommer“",
     "date_start": "2026-09-16",
     "date_end": null,
-    "location": "Museum für Sepulkralkultur, Kassel",
-    "description": "Lesung aus dem Debütroman über zwei Großeltern, die den Entschluss fassen, gemeinsam und freiwillig aus dem Leben zu scheiden.",
+    "location": "Museum fuer Sepulkralkultur, Kassel",
+    "description": "Lesung aus dem Debuetroman ueber zwei Grosseltern, die freiwillig aus dem Leben scheiden moechten, und den Versuch ihrer Enkelin, dies zu verhindern.",
     "url": "https://www.sepulkralmuseum.de/veranstaltungen/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
@@ -1049,6 +1199,26 @@
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
   },
+  "c032a988eb945382ac8136c45b31179e": {
+    "title": "Kurator*innenfuehrung mit Kuenstlerin: Rana Matloub",
+    "date_start": "2026-09-30",
+    "date_end": null,
+    "location": "Museum fuer Sepulkralkultur, Kassel",
+    "description": "Fuehrung durch die Ausstellung Grabe keine Loecher neben Graeber im Gespraech zwischen Dr. Dirk Poerschmann und der Kuenstlerin Rana Matloub.",
+    "url": "https://www.sepulkralmuseum.de/veranstaltungen/",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26"
+  },
+  "e5b04dcf8060f45d952da6c562d4fef4": {
+    "title": "Die Geheimnisse des Gottesackers: Sterbekultur & Grabgeflüster",
+    "date_start": "2026-09-30",
+    "date_end": null,
+    "location": "St. Leonhard Friedhof, Graz",
+    "description": "Führung über den St. Leonhard Friedhof mit Geschichten über historische Bestattungssitten, Aberglauben und Schicksale.",
+    "url": "https://www.kulturfuchs.at/friedhof/",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26"
+  },
   "479b4c81f55a85a5e4845ea9bb6344a0": {
     "title": "Trauerredner-Ausbildung",
     "date_start": "2026-09-24",
@@ -1063,7 +1233,7 @@
     "title": "Bilderbuch-Lesung und Workshop „Die unglaublich alte Katze“",
     "date_start": "2026-09-24",
     "date_end": null,
-    "location": "Museum für Sepulkralkultur, Kassel",
+    "location": "Museum fuer Sepulkralkultur, Kassel",
     "description": "Illustratorin Nele Palmtag liest aus ihrem Buch über eine alte Katze und zeigt die Entstehung der Bilder mit anschließendem Bastelworkshop.",
     "url": "https://www.sepulkralmuseum.de/veranstaltungen/",
     "first_seen": "2026-08-25",
@@ -1074,7 +1244,7 @@
     "date_start": "2026-10-08",
     "date_end": null,
     "location": "Online",
-    "description": "Workshop über den sensiblen und professionellen Umgang mit besonderen und herausfordernden Sterbefällen in der Trauerrede.",
+    "description": "Workshop für Trauerredner zum sensiblen Umgang und der angemessenen Gestaltung von Trauerfeiern bei besonderen Sterbefällen.",
     "url": "https://aufdasleben.de/event/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
@@ -1084,7 +1254,7 @@
     "date_start": "2026-10-26",
     "date_end": "2026-11-01",
     "location": "Bundesweit",
-    "description": "Bundesweite Themenwoche mit Impulsen und Veranstaltungen rund um Abschied, Sterben, Trauer und Erinnerungskultur.",
+    "description": "Bundesweite Aktionswoche mit Impulsen und Veranstaltungen rund um die Themen Trauer, Sterben und Abschiedskultur.",
     "url": "https://aufdasleben.de/event/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
@@ -1104,7 +1274,7 @@
     "date_start": "2026-11-12",
     "date_end": null,
     "location": "Zentrum für Palliativmedizin, Köln",
-    "description": "Kurs zur Schulung von Bürgerinnen und Bürgern in der Begleitung Schwerstkranker und Sterbender in den letzten Lebensphasen.",
+    "description": "Kurs über die Begleitung schwerstkranker und sterbender Menschen in ihren letzten Lebensstagen sowie praktische Tipps für Angehörige.",
     "url": "https://aufdasleben.de/event/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-26"
@@ -1239,6 +1409,16 @@
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-25"
   },
+  "4ea90b34f2cbf6c8991a9b0d47c3c2bd": {
+    "title": "Die Geheimnisse des Gottesackers: Sterbekultur & Grabgeflüster",
+    "date_start": "2026-10-14",
+    "date_end": null,
+    "location": "St. Peter Friedhof, Graz",
+    "description": "Spaziergang über den St. Peter Friedhof rund um die Mystik der Vergänglichkeit, Schutz vor Wiedergängern und verwitterte Grabsteine.",
+    "url": "https://www.kulturfuchs.at/friedhof/",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26"
+  },
   "df3cb342ff2ce5ea648a21d188bd9aa8": {
     "title": "Führung zum 2. Weihnachtsfeiertag",
     "date_start": "2026-12-26",
@@ -1257,6 +1437,16 @@
     "description": "Mitmach-Aktion zur Gestaltung eines Begegnungs- und Kulturraums an KapelleDREI auf dem Friedhof.",
     "url": "https://www.friedhof-hamburg.de/besucher/veranstaltungen/",
     "first_seen": "2026-08-25",
+    "last_seen": "2026-08-26"
+  },
+  "9b8474604eb945e0c87265ed06e8c143": {
+    "title": "Zwischen Wald und Wiese – Naturnahe Gräber",
+    "date_start": "2026-09-03",
+    "date_end": null,
+    "location": "Hauptfriedhof Karlsruhe",
+    "description": "Ein Rundgang über den historischen Parkfriedhof zu den unterschiedlichen Formen und Schwerpunkten naturnaher Bestattungen.",
+    "url": "https://www.friedhof-karlsruhe.de/programm/fuehrungen-und-angebote.html",
+    "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
   },
   "aa783c010fbfded65e3fd1e9e66ac2e9": {
@@ -1336,6 +1526,236 @@
     "location": "Eliasfriedhof, Ziegelstraße 22, Dresden, Sachsen, 01069, Deutschland",
     "description": "Um die medizinische Versorgung der Dresdner Stadtbevölkerung kümmerten sich in vergangenen Jahrhunderten nicht nur Ärzte, sondern auch Feldscher, Wundheiler und Bader. Doch erst mit der Gründung des Collegium medico-chirurgicum 1748 erfolgte die Ausbildung medizinischen Personals nach einheitlichen Lehrplänen. Hospitäler entwickelten sich zu Krankenhäusern, moderne Kliniken entstanden und prägen d",
     "url": "https://eliasfriedhof.de/termin/themenfuehrung-dresdner-medizingeschichten-auf-dem-eliasfriedhof/",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26"
+  },
+  "ccf9c424f3ca7d5096cf03498811633b": {
+    "title": "Pilgertage in Südtirol – Wandern, Wandeln, Werden",
+    "date_start": "2026-10-11",
+    "date_end": "2026-10-16",
+    "location": "Hotel 3 Birken in Klobenstein/Ritten",
+    "description": "Trauerreise und Pilgertage auf dem Jakobsweg über den Ritten.",
+    "url": "https://blauerfalter.de/termine",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26"
+  },
+  "c64d0f17050dfae57c04da8a66a374d2": {
+    "title": "Ausstellung: Friedhof - ein Ort der Begegnung",
+    "date_start": "2026-09-07",
+    "date_end": "2026-09-27",
+    "location": "Regierungspräsidium Karlsruhe / Rondellplatz",
+    "description": "Ausstellung zur Vielfalt der Friedhofs- und Bestattungskultur, Trauer und Erinnerung sowie Gestaltung von Grabstätten.",
+    "url": "https://www.friedhof-karlsruhe.de/home/aktuelle-termine/",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26"
+  },
+  "ee46ac8d818aed7c3a9f8acdf2d2fffa": {
+    "title": "Geführter Spaziergang über den Bergfriedhof",
+    "date_start": "2026-09-15",
+    "date_end": null,
+    "location": "Bergfriedhof Heidelberg",
+    "description": "Kostenloser Spaziergang mit Einblicken in die Friedhofsgeschichte, Grabmalkultur des 19. Jahrhunderts und aktuelle Bestattungskultur.",
+    "url": "https://www.heidelberg.de/HD/Rathaus/bergfriedhof_+fuehrungen+und+spaziergaenge.html",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26"
+  },
+  "a83920ee45d275e5118efe46722c8fa4": {
+    "title": "Geführter Spaziergang über den Bergfriedhof",
+    "date_start": "2026-10-06",
+    "date_end": null,
+    "location": "Bergfriedhof Heidelberg",
+    "description": "Kostenloser Spaziergang mit Einblicken in die Friedhofsgeschichte, Grabmalkultur des 19. Jahrhunderts und aktuelle Bestattungskultur.",
+    "url": "https://www.heidelberg.de/HD/Rathaus/bergfriedhof_+fuehrungen+und+spaziergaenge.html",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26"
+  },
+  "bd36e8fe3d0cebf48e620ab6ab6e5575": {
+    "title": "Bauern, Bürgertum und Gottesacker – Führung über den Friedhof Beiertheim",
+    "date_start": "2026-10-06",
+    "date_end": null,
+    "location": "Friedhof Beiertheim, Karlsruhe",
+    "description": "Ein Spaziergang über den Stadtteilfriedhof Beiertheim zu dessen Geschichte, Besonderheiten und Bestattungsmöglichkeiten.",
+    "url": "https://www.friedhof-karlsruhe.de/programm/fuehrungen-und-angebote.html",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26"
+  },
+  "7afbaabf3fc7ccc81add3aad61194bb0": {
+    "title": "Führung im Heidelberger Krematorium",
+    "date_start": "2026-10-13",
+    "date_end": null,
+    "location": "Krematorium auf dem Bergfriedhof Heidelberg",
+    "description": "Führung durch das historische Krematorium mit Informationen zu Technik, Abläufen, Feuerbestattung und Abschiednehmen.",
+    "url": "https://www.heidelberg.de/HD/Rathaus/bergfriedhof_+fuehrungen+und+spaziergaenge.html",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26"
+  },
+  "6b976c5a624d48c5e86c9a093abd1472": {
+    "title": "Gräber im Dornröschenschlaf",
+    "date_start": "2026-10-13",
+    "date_end": null,
+    "location": "Hauptfriedhof Karlsruhe",
+    "description": "Führung zu historischen Grabzeichen und deren verborgenen Geschichten sowie Grabpatenschaften auf dem Hauptfriedhof.",
+    "url": "https://www.friedhof-karlsruhe.de/programm/fuehrungen-und-angebote.html",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26"
+  },
+  "cd7b36d0ed5a7ebeb98f000b236deb2d": {
+    "title": "Führung im Heidelberger Krematorium",
+    "date_start": "2026-11-03",
+    "date_end": null,
+    "location": "Krematorium auf dem Bergfriedhof Heidelberg",
+    "description": "Führung durch das historische Krematorium mit Informationen zu Technik, Abläufen, Feuerbestattung und Abschiednehmen.",
+    "url": "https://www.heidelberg.de/HD/Rathaus/bergfriedhof_+fuehrungen+und+spaziergaenge.html",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26"
+  },
+  "5a0f2158d7ca348a524d726f10a03188": {
+    "title": "Das graue Elend von Potsdam – Sowjetischer Haft- und Tribunalort Lindenstraße 1945–1952",
+    "date_start": "2026-01-20",
+    "date_end": "2026-10-31",
+    "location": "Gedenkstätte Lindenstraße, Potsdam",
+    "description": "Sonderausstellung zur Erinnerungs- und Gedenkkultur an die Opfer politischer Haft und Verfolgung am sowjetischen Tribunalort.",
+    "url": "https://www.potsdam.de/veranstaltungskalender",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26"
+  },
+  "17a81c6daf6bf197dec961ed4a16f9f1": {
+    "title": "Klosterauszeit für trauernde Großeltern nach dem Tod des Enkelkindes",
+    "date_start": "2026-11-02",
+    "date_end": "2026-11-04",
+    "location": "Kloster Bernried am Starnberger See",
+    "description": "Heilsame Tage im Kloster für Großeltern, die den schmerzhaften Verlust eines Enkelkindes verarbeiten.",
+    "url": "https://blauerfalter.de/termine",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26"
+  },
+  "e59cdcec0f72ef8540e4d65bc97c24ae": {
+    "title": "Dem Leben wieder Atem schenken - Klosterauszeit",
+    "date_start": "2026-11-05",
+    "date_end": "2026-11-08",
+    "location": "Kloster Bernried",
+    "description": "Ruhe finden im Kloster mit Trauer-Yoga, Qi Gong und achtsamem Atmen.",
+    "url": "https://blauerfalter.de/termine",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26"
+  },
+  "b667d47a0b434319252f2dcdd4c536c7": {
+    "title": "Loslassen, ohne zu vergessen",
+    "date_start": "2026-11-05",
+    "date_end": null,
+    "location": "Brucknerhaus Linz",
+    "description": "Veranstaltung zur Trauerverarbeitung mit Vortrag und Impulsen zum Umgang mit Abschied, Tod und Trauer von Dr. August Höglinger.",
+    "url": "https://www.linzag.at/portal/de/privatkunden/trauer/veranstaltungen",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26"
+  },
+  "030a7255a7ed6f7f568324ddfdd2c9ea": {
+    "title": "Winterliche Kloster-Auszeit nach dem Tod des geliebten Kindes",
+    "date_start": "2026-11-16",
+    "date_end": "2026-11-18",
+    "location": "Kloster Bernried am Starnberger See",
+    "description": "Heilsame Tage für verwaiste Eltern, Großeltern und erwachsene Geschwister zur Aufarbeitung der Trauer.",
+    "url": "https://blauerfalter.de/termine",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26"
+  },
+  "6adff635bb7989b23e1708ef24da7f95": {
+    "title": "Grundkurs \"Achtsamkeitsbasierte Trauerbegleitung\"",
+    "date_start": "2026-12-06",
+    "date_end": "2026-12-11",
+    "location": "Haus Domicilium Weyarn",
+    "description": "Fünftägige Fortbildung zur Qualifizierung als achtsamkeitsbasierte Trauerbegleitung.",
+    "url": "https://blauerfalter.de/termine",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26"
+  },
+  "58e2a4f2dee9b2fa0e7f0278f146f763": {
+    "title": "Die heilige Barbara und andere bemerkenswerte Menschen",
+    "date_start": "2026-12-06",
+    "date_end": null,
+    "location": "St. Barbara Friedhof, Linz",
+    "description": "Weihnachtliche Friedhofsführung über die Schutzpatronin der Sterbenden und Grabstätten bekannter Persönlichkeiten.",
+    "url": "https://www.barbarafriedhof.at/service-info/aktuelles/rueckblick/kulturgeschichtliche-friedhofsfuehrungen-2026",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26"
+  },
+  "b90fa23981a71b007b5d1799953218e1": {
+    "title": "Der klassische Rundgang – von Stifter bis Samhaber",
+    "date_start": "2026-11-13",
+    "date_end": null,
+    "location": "St. Barbara Friedhof, Linz",
+    "description": "Geführter Rundgang über den Linzer St. Barbara Friedhof zu Geschichte, Berühmtheiten, Kultur und Natur.",
+    "url": "https://www.barbarafriedhof.at/service-info/aktuelles/rueckblick/kulturgeschichtliche-friedhofsfuehrungen-2026",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26"
+  },
+  "cc8525759c1c343b11cfd75dc8a12762": {
+    "title": "Friedhofsverwalter*innentagung 2026: In Zukunft mehr Freiheit?",
+    "date_start": "2026-10-22",
+    "date_end": null,
+    "location": "Museum fuer Sepulkralkultur, Kassel",
+    "description": "Fachtagung zu den Auswirkungen neuer Bestattungsgesetze und zur Liberalisierung im Friedhofswesen mit Fachvortraegen und Praxisbeispielen.",
+    "url": "https://www.sepulkralmuseum.de/fortbildung/friedhofsverwalterinnentagung-2026/",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26"
+  },
+  "f79d64b9871bc5129e4d4aac84544ed7": {
+    "title": "Ehrwürdige Mauern",
+    "date_start": "2026-10-22",
+    "date_end": null,
+    "location": "Hauptfriedhof Karlsruhe",
+    "description": "Rundgang zur Architektur und Geschichte der Großen Kapelle, der Leichenhalle und der Gruftenhalle (Campo Santo).",
+    "url": "https://www.friedhof-karlsruhe.de/programm/fuehrungen-und-angebote.html",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26"
+  },
+  "3bf0d83ba0cb8c1106413f5e4af1a2c9": {
+    "title": "Weinrenners letzte Ruhestätte?",
+    "date_start": "2026-09-17",
+    "date_end": null,
+    "location": "Alter Friedhof Karlsruhe",
+    "description": "Ein Rundgang vom Alten Friedhof zur Ausstellung im Regierungspräsidium auf den Spuren des Grabes und des Erbes des Baumeisters Friedrich Weinbrenner.",
+    "url": "https://www.friedhof-karlsruhe.de/programm/fuehrungen-und-angebote.html",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26"
+  },
+  "3d1e1c7b0ac910a9e6cb5df5f34870fc": {
+    "title": "Der Lebensgarten – Führung durch den 'Symbolischen Trauerweg'",
+    "date_start": "2026-09-17",
+    "date_end": null,
+    "location": "Hauptfriedhof Karlsruhe",
+    "description": "Führung entlang des symbolischen Trauerwegs mit verschiedenen Stationen zur individuellen Trauerarbeit und zum Innehalten.",
+    "url": "https://www.friedhof-karlsruhe.de/programm/fuehrungen-und-angebote.html",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26"
+  },
+  "47225ab1cb74dd832fbc03e5305fb3ea": {
+    "title": "Die Vielfalt der Grabarten – ein Überblick",
+    "date_start": "2026-10-02",
+    "date_end": null,
+    "location": "Hauptfriedhof Karlsruhe",
+    "description": "Führung über den Hauptfriedhof zu verschiedenen Grabarten, Grabpflege, Bestattungsmöglichkeiten und Trauerritualen.",
+    "url": "https://www.friedhof-karlsruhe.de/programm/fuehrungen-und-angebote.html",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26"
+  },
+  "bc58e36cd61525af27331b748f00987f": {
+    "title": "Trauerwoche: Sound of Grief – Trauer trifft Töne",
+    "date_start": "2026-10-27",
+    "date_end": "2026-11-02",
+    "location": "TRAUER TASKFORCE",
+    "description": "Themenwoche, die sich der heilsamen Kraft von Musik in der Trauer widmet.",
+    "url": "https://trauertaskforce.de/trauerwoche/",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26"
+  },
+  "f379fdff76987453138fefd8f1237425": {
+    "title": "GRIEFYARDS",
+    "date_start": "2026-10-30",
+    "date_end": null,
+    "location": "TRAUER TASKFORCE",
+    "description": "Veranstaltung der Trauer Taskforce im Rahmen der Themenwoche 'Sound of Grief'.",
+    "url": "https://trauertaskforce.de/trauerwoche/",
     "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
   }
