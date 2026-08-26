@@ -203,6 +203,15 @@ TARGET_URLS = [
     # Deutsches Medizinhistorisches Museum Ingolstadt, Jahresausstellung 2026
     # "ALLES MUSS RAUS! Koerperliche Hinterlassenschaften".
     "https://www.dmm-ingolstadt.de/",
+    # --- NRW: bisher fehlten Dortmund, Wuppertal, Bochum, Duisburg ---
+    "https://www.fvwuppertal.de/angebote-veranstaltungen/angebote/veranstaltungen.html",
+    "https://www.dortmund.de/rathaus/verwaltung/friedhoefe-dortmund/",
+
+    # --- Nuernberg: eigener Verein fuer Epitaphienkultur, die Epitaphien der
+    # Friedhoefe St. Johannis und St. Rochus sind immaterielles Kulturerbe ---
+    "https://epitaphienkultur.de/veranstaltungen.html",
+    "https://st-johannisfriedhof-nuernberg.de/fuehrungen/",
+    "https://buergerverein-sankt-johannis.de/termine/",
 ]
 
 DISABLED_URLS = {
@@ -439,7 +448,7 @@ VENUE_PATTERN = re.compile(
       | beinhaus | krematorium | hospiz | kolumbarium
       | gruft | grüfte | gruefte
       | aussegnungshalle | trauerhalle | palliativ | katakombe
-      | sepulkralmuseum | bestattungsmuseum | friedhofforum
+      | sepulkralmuseum | bestattungsmuseum | friedhofforum | epitaph
       # "trauer" wirkt vor allem auf Quell-Domains (bv-trauerbegleitung.de,
       # trauergestalt.de, trauertaskforce.de) - solche Anbieter sind durch
       # ihren Gegenstand einschlaegig. In Ortsangaben trifft es
@@ -475,7 +484,9 @@ REGIONS = (
         "düsseldorf", "duesseldorf", "münster", "muenster", "kassel",
         "xanten", "essen", "aachen", "mainz", "wiesbaden", "darmstadt",
         "trier", "speyer", "worms", "oppenheim", "saarbrücken",
-        "saarbruecken", "dortmund", "bochum",
+        "saarbruecken", "dortmund", "bochum", "wuppertal", "duisburg",
+        "oberhausen", "gelsenkirchen", "krefeld", "hagen", "bielefeld",
+        "mönchengladbach", "moenchengladbach", "leverkusen", "solingen",
         # Domain nennt die Stadt nicht - Museum fuer Sepulkralkultur, Kassel.
         "sepulkralmuseum",
     )),
@@ -490,7 +501,8 @@ REGIONS = (
         "augsburg", "stuttgart", "ulm", "bamberg", "würzburg", "wuerzburg",
         "passau", "karlsruhe", "freiburg", "chammünster", "chammuenster",
         "bayern", "schwaben", "heidelberg", "tübingen", "tuebingen",
-        "ingolstadt", "dmm-ingolstadt",
+        "ingolstadt", "dmm-ingolstadt", "epitaphienkultur", "greding",
+        "fürth", "fuerth", "erlangen",
         "mannheim", "konstanz", "baden",
     )),
     ("ausland", (
