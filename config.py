@@ -209,26 +209,29 @@ TARGET_URLS = [
     # --- Nuernberg: eigener Verein fuer Epitaphienkultur, die Epitaphien der
     # Friedhoefe St. Johannis und St. Rochus sind immaterielles Kulturerbe ---
     "https://epitaphienkultur.de/veranstaltungen.html",
-    "https://st-johannisfriedhof-nuernberg.de/fuehrungen/",
     "https://buergerverein-sankt-johannis.de/termine/",
     # --- Foerdervereine mit eigener Domain ---
     # Das Sepulkralmuseum listet ueber 30 solcher Vereine; sie sind die
     # ergiebigste Quellenart, weil sie eigene Terminseiten pflegen, waehrend
     # die Friedhofsverwaltungen der Grossstaedte im Stadtportal haengen.
-    "https://stiftung-historische-friedhoefe.de/fuhrungen-und-veranstaltungen/",
-    "https://www.fof-ohlsdorf.de/",
     "https://www.historische-friedhoefe-osnabrueck.de/",
     "https://alterfriedhofschwerin.de/",
     # Mainzer Hauptfriedhof - Vorbild fuer den Pere-Lachaise in Paris,
     # Platz 3 der schoensten Friedhoefe Deutschlands.
-    "http://www.nekropolis-moguntia.de/info.html",
     # --- Weitere Foerdervereine (Runde 2 der Beiratsliste) ---
     # Bonn, Platz 4 der schoensten Friedhoefe: Fuehrungen von Maerz bis
     # Oktober an JEDEM Samstag und Sonntag - entsprechend viele Termine.
-    "https://alterfriedhofbonn.de/",
     "https://www.alterfriedhofbonn.de/fuehrungen",
     "https://www.alter-friedhof-freiburg.de/aktuelles-veranstaltungen/",
-    "https://www.friedhof-mannheim.de/graeber/foerderkreis/",
+    # --- ChurchDesk-Widget des Kirchlichen Friedhofsverbands Berlin ---
+    # kkbs.de laedt seine Termine per iframe von widget.churchdesk.com nach.
+    # Die Widget-Adresse selbst rendert SERVERSEITIG - der Umweg loest das
+    # JS-Problem ohne Browser-Engine. 333 ist die Organisations-ID des
+    # Verbands, evkd9VIgfKDV die Widget-Instanz, die Zahl dahinter die Seite
+    # (je 5 Termine). Deshalb mehrere Seiten eintragen.
+    "https://widget.churchdesk.com/w/333/event/evkd9VIgfKDV/0/1355280/-/-/-/-/-/or/list?frameId=evkd9VIgfKDV-1",
+    "https://widget.churchdesk.com/w/333/event/evkd9VIgfKDV/1/1355280/-/-/-/-/-/or/list?frameId=evkd9VIgfKDV-1",
+    "https://widget.churchdesk.com/w/333/event/evkd9VIgfKDV/2/1355280/-/-/-/-/-/or/list?frameId=evkd9VIgfKDV-1",
 ]
 
 DISABLED_URLS = {
@@ -279,6 +282,13 @@ DISABLED_URLS = {
     "https://frauenstadtrundgangzuerich.ch/locations/friedhof-sihlfeld-a-aemtlerstrasse-151-haupteingang/": "243 Zeichen, JS-gerendert",
     "https://kunstundreisen.com/friedhoffuhrungen-in-stuttgart/": "Leistungsbeschreibung ohne Termine",
     "https://bv-trauerbegleitung.de/veranstaltungskalender/": "Kalender JS-gerendert, keine Termine im HTML",
+    # --- ergaenzt nach dem Lauf vom 27.08.2026 ---
+    "https://st-johannisfriedhof-nuernberg.de/fuehrungen/": "0 Zeichen, vollstaendig JS-gerendert",
+    "https://stiftung-historische-friedhoefe.de/fuhrungen-und-veranstaltungen/": "HTTP 503 in zwei Laeufen",
+    "https://www.fof-ohlsdorf.de/": "HTTP 403 - Bot-Sperre (26.08.2026)",
+    "http://www.nekropolis-moguntia.de/info.html": "HTTP 404 - Seite existiert nicht mehr",
+    "https://alterfriedhofbonn.de/": "Startseite ohne Termine; /fuehrungen liefert 13 Fundstellen",
+    "https://www.friedhof-mannheim.de/graeber/foerderkreis/": "Vereinsseite ohne Termine",
 }
 
 DB_FILE = "events_db.json"
