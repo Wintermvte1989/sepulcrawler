@@ -120,7 +120,6 @@ TARGET_URLS = [
     "https://www.sedlec.info/",
     "https://www.jewishmuseum.cz/en/info/visit/",
     "https://www.nm.cz/en/program/events",
-    "https://www.kaisergruft.com/",
     "https://www.stephansdom.at/",
     "https://www.stift-stpeter.at/de/kloster/index.asp?dat=Friedhof-Katakomben",
     "https://www.stiftadmont.at/",
@@ -171,8 +170,6 @@ TARGET_URLS = [
 
     # Kapuzinergruft Wien. Die .com-Domain ist im Lauf zweimal in ein Timeout
     # gelaufen; .at ist die betriebene Domain mit datierten Fuehrungen.
-    "https://www.kaisergruft.at/site/de/home/familienfuehrungen",
-    "https://www.kaisergruft.com/fuehrungen",
 
     # Friedhof Forum Zuerich. Die Uebersichtsseite ist JS-gerendert und
     # deaktiviert; diese Unterseite listet die Rundgaenge mit Datum im HTML.
@@ -181,7 +178,6 @@ TARGET_URLS = [
     # Frauenstadtrundgang Zuerich, Ortsseite Friedhof Sihlfeld. Der Pfad
     # "/locations/" ist das Muster von "The Events Calendar" - dort greift
     # womoeglich die ICS-Erkennung aus feeds.py.
-    "https://frauenstadtrundgangzuerich.ch/locations/friedhof-sihlfeld-a-aemtlerstrasse-151-haupteingang/",
 
     # Friedhofsverwalter*innentagung des Museums fuer Sepulkralkultur.
     "https://www.sepulkralmuseum.de/fortbildung/friedhofsverwalterinnentagung-2026/",
@@ -191,7 +187,6 @@ TARGET_URLS = [
     "https://www.friedhof-karlsruhe.de/programm/fuehrungen-und-angebote.html",
     "https://www.friedhof-karlsruhe.de/home/aktuelle-termine/",
     "https://www.heidelberg.de/HD/Rathaus/bergfriedhof_+fuehrungen+und+spaziergaenge.html",
-    "https://kunstundreisen.com/friedhoffuhrungen-in-stuttgart/",
 
     # --- Oesterreich ausserhalb Wiens ---
     "https://www.barbarafriedhof.at/service-info/aktuelles/rueckblick/kulturgeschichtliche-friedhofsfuehrungen-2026",
@@ -200,7 +195,6 @@ TARGET_URLS = [
     # --- Themenportale mit eigenem Veranstaltungskalender ---
     # Aggregatoren: sie sammeln Termine ueber viele Veranstalter hinweg und
     # sind damit ergiebiger als eine einzelne Einrichtung.
-    "https://bv-trauerbegleitung.de/veranstaltungskalender/",
     "https://trauergestalt.de/events/",
     "https://trauertaskforce.de/trauerwoche/",
     "https://blauerfalter.de/termine",
@@ -252,6 +246,13 @@ DISABLED_URLS = {
     "https://www.michaelerkirche.at/": "0 Zeichen, vollstaendig JS-gerendert",
     "https://www.bern.ch/politik-und-verwaltung/stadtverwaltung/tvs/stadtgrun-bern/friedhofe/friedhofkultur": "404 (25.08.2026)",
     "https://www.vssg.ch/de/arbeitsgruppen/friedhoefe-alles/tag-des-friedhofs.html": "404 (25.08.2026)",
+    # --- ergaenzt nach dem Lauf vom 26.08.2026 ---
+    "https://www.kaisergruft.com/": "Timeout in zwei Laeufen (26.08.2026)",
+    "https://www.kaisergruft.at/site/de/home/familienfuehrungen": "Timeout, Domain vom Runner nicht erreichbar",
+    "https://www.kaisergruft.com/fuehrungen": "Timeout, Domain vom Runner nicht erreichbar",
+    "https://frauenstadtrundgangzuerich.ch/locations/friedhof-sihlfeld-a-aemtlerstrasse-151-haupteingang/": "243 Zeichen, JS-gerendert",
+    "https://kunstundreisen.com/friedhoffuhrungen-in-stuttgart/": "Leistungsbeschreibung ohne Termine",
+    "https://bv-trauerbegleitung.de/veranstaltungskalender/": "Kalender JS-gerendert, keine Termine im HTML",
 }
 
 DB_FILE = "events_db.json"
@@ -260,6 +261,15 @@ HTML_OUTPUT_FILE = "index.html"
 # Diagnosedatei: alle thematisch verworfenen Events mit vollem Kontext.
 # Bewusst NICHT im Repository - wird im Workflow als Artefakt hochgeladen.
 REJECTED_FILE = "verworfen.json"
+
+# Quellen, bei denen der ICS-Feed SCHLECHTER ist als die HTML-Seite.
+# Der Feed von stadt-oppenheim.de ist der komplette Gemeindekalender:
+# In zwei Laeufen lieferte er 30 bzw. 30 Termine, davon null brauchbare
+# (Stadtrat, Wochenmarkt, Buergersprechstunde, Einkaufsfahrt). Gleichzeitig
+# verdraengt er die HTML-Seite, die zuvor ~18 Datumsangaben hatte.
+FEED_BLOCKLIST = {
+    "www.stadt-oppenheim.de",
+}
 
 BATCH_SIZE = 8
 TEXT_LIMIT = 12000
@@ -407,6 +417,8 @@ TOPIC_PATTERN = re.compile(
       | nachlass | kriegsgräber | \bgefallenen | mahnmal | ehrenmal
       | holocaust | schoah | \bleichen | aufbahrung | aussegnung
       | totenkult | ruhestätte | ruhestätten | nekropol | katakombe
+      | \bgestorben | \bverwaist | \bwaisen | sternenkind
+      | totgeburt | fehlgeburt | \bverwitwet
       | hinterlassenschaft | präparat | praeparat | obduktion
       | pathologisch | \bsezier | einbalsamier | moulage
       | sterblichkeit | endlichkeit | abschiednehmen | trauerrede

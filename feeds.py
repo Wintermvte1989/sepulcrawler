@@ -209,6 +209,12 @@ def fetch_feed_events(client_http, raw_html: str, page_url: str) -> tuple[list[d
     gefunden oder keine brauchbaren Termine - dann laeuft die Quelle wie
     bisher ueber die KI-Extraktion.
     """
+    # Manche Feeds sind schlechter als die HTML-Seite - etwa ein kompletter
+    # Gemeindekalender, der die thematische Seite verdraengt.
+    if urlparse(page_url).netloc.lower() in config.FEED_BLOCKLIST:
+        print(f"      Feed gesperrt (FEED_BLOCKLIST), nutze HTML: {page_url}")
+        return [], None
+
     best: tuple[list[dict], str] | None = None
 
     for feed_url in find_feed_urls(raw_html, page_url)[:2]:
