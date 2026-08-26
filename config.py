@@ -137,7 +137,6 @@ TARGET_URLS = [
 
     # --- Berlin & Brandenburg Ergänzungen ---
     "https://berlin.volksbund.de/aktuell/termine",
-    "https://www.stiftung-historische-friedhoefe.de/",
     "https://www.efeu-ev.com/",
     "https://www.zwoelf-apostel-berlin.de/alle-termine-der-zwolf-apostel-kirchengemeinde-und-der-kirchhofe",
     "https://forum1848.de/veranstaltungen/",
@@ -212,6 +211,17 @@ TARGET_URLS = [
     "https://epitaphienkultur.de/veranstaltungen.html",
     "https://st-johannisfriedhof-nuernberg.de/fuehrungen/",
     "https://buergerverein-sankt-johannis.de/termine/",
+    # --- Foerdervereine mit eigener Domain ---
+    # Das Sepulkralmuseum listet ueber 30 solcher Vereine; sie sind die
+    # ergiebigste Quellenart, weil sie eigene Terminseiten pflegen, waehrend
+    # die Friedhofsverwaltungen der Grossstaedte im Stadtportal haengen.
+    "https://stiftung-historische-friedhoefe.de/fuhrungen-und-veranstaltungen/",
+    "https://www.fof-ohlsdorf.de/",
+    "https://www.historische-friedhoefe-osnabrueck.de/",
+    "https://alterfriedhofschwerin.de/",
+    # Mainzer Hauptfriedhof - Vorbild fuer den Pere-Lachaise in Paris,
+    # Platz 3 der schoensten Friedhoefe Deutschlands.
+    "http://www.nekropolis-moguntia.de/info.html",
 ]
 
 DISABLED_URLS = {
@@ -484,6 +494,7 @@ REGIONS = (
         "düsseldorf", "duesseldorf", "münster", "muenster", "kassel",
         "xanten", "essen", "aachen", "mainz", "wiesbaden", "darmstadt",
         "trier", "speyer", "worms", "oppenheim", "saarbrücken",
+        "osnabrück", "osnabrueck", "düren", "dueren", "siegen", "paderborn",
         "saarbruecken", "dortmund", "bochum", "wuppertal", "duisburg",
         "oberhausen", "gelsenkirchen", "krefeld", "hagen", "bielefeld",
         "mönchengladbach", "moenchengladbach", "leverkusen", "solingen",
