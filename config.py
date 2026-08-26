@@ -165,6 +165,26 @@ TARGET_URLS = [
     "https://www.friedhoefewien.at/veranstaltungen",
     "https://www.friedhoefewien.at/friedhofsfuehrungen",
     "https://www.stadtluzern.ch/dienstleistungeninformation/159",
+    # --- Ergaenzt am 26.08.2026, gezielt fuer die Luecken Sueden und AT/CH ---
+    # Alle Adressen stammen aus Suchergebnissen mit sichtbaren Terminangaben,
+    # keine abgeleiteten Pfade.
+
+    # Kapuzinergruft Wien. Die .com-Domain ist im Lauf zweimal in ein Timeout
+    # gelaufen; .at ist die betriebene Domain mit datierten Fuehrungen.
+    "https://www.kaisergruft.at/site/de/home/familienfuehrungen",
+    "https://www.kaisergruft.com/fuehrungen",
+
+    # Friedhof Forum Zuerich. Die Uebersichtsseite ist JS-gerendert und
+    # deaktiviert; diese Unterseite listet die Rundgaenge mit Datum im HTML.
+    "https://www.stadt-zuerich.ch/friedhofforum/de/veranstaltungen/oeffentliche-rundgaenge-altes-krematorium.html",
+
+    # Frauenstadtrundgang Zuerich, Ortsseite Friedhof Sihlfeld. Der Pfad
+    # "/locations/" ist das Muster von "The Events Calendar" - dort greift
+    # womoeglich die ICS-Erkennung aus feeds.py.
+    "https://frauenstadtrundgangzuerich.ch/locations/friedhof-sihlfeld-a-aemtlerstrasse-151-haupteingang/",
+
+    # Friedhofsverwalter*innentagung des Museums fuer Sepulkralkultur.
+    "https://www.sepulkralmuseum.de/fortbildung/friedhofsverwalterinnentagung-2026/",
 ]
 
 DISABLED_URLS = {
@@ -377,13 +397,17 @@ TOPIC_PATTERN = re.compile(
 # (z. B. "Aufwind - Chor fuer trauernde Menschen" an der KapelleDREI).
 VENUE_PATTERN = re.compile(
     r"""(?:
-        friedhof | friedhöf | kirchhof | kirchhöf | beinhaus
-      | krematorium | hospiz | kolumbarium | gruft | grüfte
+        friedhof | friedhöf | friedhoef | kirchhof | kirchhöf | kirchhoef
+      | beinhaus | krematorium | hospiz | kolumbarium
+      | gruft | grüfte | gruefte
       | aussegnungshalle | trauerhalle | palliativ | katakombe
-      | sepulkralmuseum | bestattungsmuseum
+      | sepulkralmuseum | bestattungsmuseum | friedhofforum
     )""",
     re.IGNORECASE | re.VERBOSE,
 )
+# Hinweis: Das Muster wird auch auf URLs angewandt, und dort stehen
+# Umlaute transliteriert ("friedhoefe", "gruefte"). Die ASCII-Varianten
+# muessen deshalb mit in die Liste.
 
 REGIONS = (
     ("berlin-brandenburg", (
@@ -409,6 +433,8 @@ REGIONS = (
         "xanten", "essen", "aachen", "mainz", "wiesbaden", "darmstadt",
         "trier", "speyer", "worms", "oppenheim", "saarbrücken",
         "saarbruecken", "dortmund", "bochum",
+        # Domain nennt die Stadt nicht - Museum fuer Sepulkralkultur, Kassel.
+        "sepulkralmuseum",
     )),
     ("ost", (
         # "halle" allein traf "Halleschen Tor" in Berlin - daher mit Zusatz.
@@ -428,6 +454,8 @@ REGIONS = (
         "luzern", "genf", "prag", "praha", "kutná hora", "kutna hora",
         "sedlec", "brno", "brünn", "bruenn", "österreich", "oesterreich",
         "schweiz", "tschechien",
+        # Domains ohne Stadtnamen.
+        "kaisergruft", "kapuzinergruft", "friedhoefewien", "bestattungwien",
     )),
 )
 

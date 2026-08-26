@@ -116,8 +116,24 @@ def is_topically_relevant(event: dict) -> tuple[bool, str]:
     description = str(event.get("description") or "")
     location = str(event.get("location") or "")
 
-    # 1. Ort gehoert schon durch seine Art zum Thema (Friedhofskapelle,
-    #    Hospiz, Krematorium ...). Deckt Titel ab, die das Thema verschweigen.
+    # 1a. Die QUELLE gehoert durch ihre Art zum Thema. Eine Friedhofs-,
+    #     Hospiz- oder Krematoriumsverwaltung veroeffentlicht keine
+    #     Fremdtermine - alles dort Gelistete ist relevant.
+    #     Notwendig, weil das Modell die Ortsangabe kuerzt: aus
+    #     "KapelleDREI, Parkfriedhof Ohlsdorf, Hamburg" wurde "KapelleDREI,
+    #     Hamburg", womit die Ortspruefung unten ins Leere lief und vier
+    #     Termine des Ohlsdorfer Trauerprogramms verworfen wurden.
+    # Domain UND Pfad pruefen: bei "stadt-zuerich.ch/friedhofforum/..." und
+    # ".../locations/friedhof-sihlfeld-..." steht das Signal im Pfad, nicht
+    # im Hostnamen.
+    parsed_url = urlparse(str(event.get("url") or ""))
+    source_path = f"{parsed_url.netloc}{parsed_url.path}".lower()
+    host_hit = config.VENUE_PATTERN.search(source_path)
+    if host_hit:
+        return True, f"Quelle: {host_hit.group(0)}"
+
+    # 1b. Ort gehoert schon durch seine Art zum Thema (Friedhofskapelle,
+    #     Hospiz, Krematorium ...). Deckt Titel ab, die das Thema verschweigen.
     venue_hit = config.VENUE_PATTERN.search(location)
     if venue_hit:
         return True, f"Ort: {venue_hit.group(0)}"

@@ -17,8 +17,10 @@ def event_region(event: dict) -> str:
     location = database.clean_text_for_comparison(event.get("location"))
 
     # 'online' hat Vorrang: eine reine Online-Veranstaltung gehoert in keine
-    # Ortsliste, auch wenn die Domain eine Stadt nennt.
-    if not location or "online" in location or "bundesweit" in location:
+    # Ortsliste, auch wenn die Domain eine Stadt nennt. Eine FEHLENDE
+    # Ortsangabe ist dagegen kein Hinweis auf online - sie faellt unten
+    # auf die Quell-Domain zurueck.
+    if "online" in location or "bundesweit" in location:
         return "online"
 
     for name, keywords in config.REGIONS:
