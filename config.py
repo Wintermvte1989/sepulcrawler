@@ -185,6 +185,18 @@ TARGET_URLS = [
 
     # Friedhofsverwalter*innentagung des Museums fuer Sepulkralkultur.
     "https://www.sepulkralmuseum.de/fortbildung/friedhofsverwalterinnentagung-2026/",
+    # --- Baden-Wuerttemberg (bisher gar nicht vertreten) ---
+    # Karlsruhe hat eine eigene Friedhofsdomain; die zuvor eingetragene
+    # Adresse unter karlsruhe.de lief in einen 404.
+    "https://www.friedhof-karlsruhe.de/programm/fuehrungen-und-angebote.html",
+    "https://www.friedhof-karlsruhe.de/home/aktuelle-termine/",
+    "https://www.heidelberg.de/HD/Rathaus/bergfriedhof_+fuehrungen+und+spaziergaenge.html",
+    "https://kunstundreisen.com/friedhoffuhrungen-in-stuttgart/",
+
+    # --- Oesterreich ausserhalb Wiens ---
+    "https://www.barbarafriedhof.at/service-info/aktuelles/rueckblick/kulturgeschichtliche-friedhofsfuehrungen-2026",
+    "https://www.linzag.at/portal/de/privatkunden/trauer/veranstaltungen",
+    "https://www.kulturfuchs.at/friedhof/",
 ]
 
 DISABLED_URLS = {
@@ -446,7 +458,8 @@ REGIONS = (
         "münchen", "muenchen", "nürnberg", "nuernberg", "regensburg",
         "augsburg", "stuttgart", "ulm", "bamberg", "würzburg", "wuerzburg",
         "passau", "karlsruhe", "freiburg", "chammünster", "chammuenster",
-        "bayern", "schwaben",
+        "bayern", "schwaben", "heidelberg", "tübingen", "tuebingen",
+        "mannheim", "konstanz", "baden",
     )),
     ("ausland", (
         "wien", "salzburg", "innsbruck", "graz", "admont", "hallstatt",
@@ -456,6 +469,8 @@ REGIONS = (
         "schweiz", "tschechien",
         # Domains ohne Stadtnamen.
         "kaisergruft", "kapuzinergruft", "friedhoefewien", "bestattungwien",
+        "linz", "barbarafriedhof", "linzag", "kulturfuchs", "klagenfurt",
+        "winterthur", "biel", "chur",
     )),
 )
 
