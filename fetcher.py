@@ -105,14 +105,17 @@ def classify_error(exc: Exception) -> str:
     return type(exc).__name__
 
 
-def fetch_page_text(client_http: httpx.Client, url: str) -> str:
+def fetch_page_html(client_http: httpx.Client, url: str) -> str:
+    """Laedt das rohe HTML. Getrennt von der Textextraktion, weil die
+    Feed-Erkennung (feeds.find_feed_urls) das DOM braucht - Kalender-Links
+    stehen im <head> und in Attributen, nicht im sichtbaren Text."""
     last_exc: Exception | None = None
 
     for attempt in range(config.FETCH_ATTEMPTS):
         try:
             response = client_http.get(url)
             response.raise_for_status()
-            return html_to_text(response.text)
+            return response.text
         except httpx.HTTPStatusError as exc:
             raise exc
         except RETRYABLE as exc:
@@ -127,6 +130,11 @@ def fetch_page_text(client_http: httpx.Client, url: str) -> str:
             break
 
     raise last_exc if last_exc else RuntimeError("Abruf ohne Ergebnis")
+
+
+def fetch_page_text(client_http: httpx.Client, url: str) -> str:
+    """Bequemlichkeitshuelle fuer Aufrufer, die nur den Text brauchen."""
+    return html_to_text(fetch_page_html(client_http, url))
 
 
 def is_worth_sending(url: str, text: str) -> bool:

@@ -5,8 +5,46 @@ from datetime import datetime
 import config
 import database
 import extractor
+import feeds
 import fetcher
 import renderer
+
+
+def ingest(event, events_db, stats, rejected, today_str, origin):
+    """Nimmt ein Event auf - egal ob aus einem ICS-Feed oder aus der
+    KI-Extraktion. Datum, Themenfilter und Deduplizierung gelten fuer
+    beide Wege gleich."""
+    parsed_start = database.parse_date(event.get("date_start", ""))
+    if parsed_start is None:
+        print(f"  verworfen (Datum unlesbar '{event.get('date_start')}'): {event.get('title')}")
+        stats["datum_ungueltig"] += 1
+        return
+    event["date_start"] = parsed_start
+    event["date_end"] = database.parse_date(event.get("date_end") or "")
+
+    relevant = event["date_end"] or event["date_start"]
+    if relevant < today_str:
+        stats["vergangen"] += 1
+        return
+
+    on_topic, reason = database.is_topically_relevant(event)
+    if not on_topic:
+        print(f"  verworfen (Thema): {str(event.get('title'))[:70]}")
+        rejected.append({**event, "_grund": reason, "_herkunft": origin})
+        stats["thema_verfehlt"] += 1
+        return
+
+    duplicate_key = database.find_duplicate_key(event, events_db)
+    event["first_seen"] = today_str
+    event["last_seen"] = today_str
+    if duplicate_key:
+        database.merge_into(events_db[duplicate_key], event)
+        events_db[duplicate_key]["last_seen"] = today_str
+        stats["aktualisiert"] += 1
+    else:
+        events_db[database.generate_event_id(event)] = event
+        stats["neu"] += 1
+
 
 if __name__ == "__main__":
     today = datetime.now(config.BERLIN).date()
@@ -27,15 +65,28 @@ if __name__ == "__main__":
     fetched_pages = []
     problems: dict[str, list[str]] = defaultdict(list)
 
+    feed_events: list[dict] = []
+
     with fetcher.make_http_client() as client_http:
         for url in config.TARGET_URLS:
             try:
-                page_text = fetcher.fetch_page_text(client_http, url)
+                raw_html = fetcher.fetch_page_html(client_http, url)
             except Exception as e:
                 kind = fetcher.classify_error(e)
                 problems[kind].append(url)
                 print(f"  FEHLER  {kind:<24} {url}")
                 continue
+
+            # Bietet die Quelle einen ICS-Feed an, ist er dem HTML-Text
+            # immer vorzuziehen: strukturierte Felder statt Fliesstext,
+            # und die Quelle kostet keinen API-Request.
+            found, feed_url = feeds.fetch_feed_events(client_http, raw_html, url)
+            if found:
+                print(f"  FEED    {len(found):>3} Termine  {feed_url}")
+                feed_events.extend(found)
+                continue
+
+            page_text = fetcher.html_to_text(raw_html)
 
             if not fetcher.is_worth_sending(url, page_text):
                 reason = ("zu kurz" if len(page_text) < config.MIN_TEXT_LENGTH
@@ -66,8 +117,17 @@ if __name__ == "__main__":
     print(f"\n{len(selected)} von {len(fetched_pages)} Seiten gehen an die API "
           f"in {len(batches)} Paketen (Budget: {config.MAX_REQUESTS_PER_RUN})")
 
-    print("\n--- Phase 2: KI-Analyse ---")
     stats = Counter()
+
+    if feed_events:
+        print(f"\n--- Phase 1b: {len(feed_events)} Termine aus ICS-Feeds "
+              f"(ohne API-Request) ---")
+        for event in feed_events:
+            ingest(event, events_db, stats, rejected, today_str, "feed")
+        print(f"  neu {stats['neu']}, aktualisiert {stats['aktualisiert']}, "
+              f"Thema verfehlt {stats['thema_verfehlt']}")
+
+    print("\n--- Phase 2: KI-Analyse ---")
     for number, batch in enumerate(batches, start=1):
         print(f"\nPaket {number}/{len(batches)} ({len(batch)} Seiten, "
               f"{sum(len(t) for _, t in batch)} Zeichen)")
@@ -80,38 +140,7 @@ if __name__ == "__main__":
         print(f"  {len(events)} Events extrahiert")
 
         for event in events:
-            parsed_start = database.parse_date(event.get("date_start", ""))
-            if parsed_start is None:
-                print(f"  verworfen (Datum unlesbar '{event.get('date_start')}'): {event.get('title')}")
-                stats["datum_ungueltig"] += 1
-                continue
-            event["date_start"] = parsed_start
-            event["date_end"] = database.parse_date(event.get("date_end") or "")
-
-            relevant = event["date_end"] or event["date_start"]
-            if relevant < today_str:
-                stats["vergangen"] += 1
-                continue
-
-            on_topic, reason = database.is_topically_relevant(event)
-            if not on_topic:
-                print(f"  verworfen (Thema): {event.get('title')[:70]}")
-                rejected.append({**event, "_grund": reason})
-                stats["thema_verfehlt"] += 1
-                continue
-
-            duplicate_key = database.find_duplicate_key(event, events_db)
-            if duplicate_key:
-                event["first_seen"] = today_str
-                event["last_seen"] = today_str
-                database.merge_into(events_db[duplicate_key], event)
-                events_db[duplicate_key]["last_seen"] = today_str
-                stats["aktualisiert"] += 1
-            else:
-                event["first_seen"] = today_str
-                event["last_seen"] = today_str
-                events_db[database.generate_event_id(event)] = event
-                stats["neu"] += 1
+            ingest(event, events_db, stats, rejected, today_str, "api")
 
         if number < len(batches):
             time.sleep(config.API_PAUSE_SECONDS)
