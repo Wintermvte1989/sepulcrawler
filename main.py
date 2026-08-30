@@ -198,9 +198,11 @@ def run(urls: list[str]) -> None:
     if problems:
         print("\n--- Quellen ohne Ertrag ---")
         for kind in sorted(problems):
-            urls = problems[kind]
-            print(f"\n  {kind} ({len(urls)}):")
-            for url in urls:
+            # Bewusst NICHT "urls": das ist der Funktionsparameter, und ihn
+            # hier zu ueberschreiben verfaelschte die Schlusszeile.
+            gruppe = problems[kind]
+            print(f"\n  {kind} ({len(gruppe)}):")
+            for url in gruppe:
                 print(f"    {url}")
         total = sum(len(v) for v in problems.values())
         print(f"\n  {total} von {len(urls)} Quellen haben nichts geliefert.")

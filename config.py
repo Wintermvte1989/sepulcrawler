@@ -243,6 +243,36 @@ TARGET_URLS = [
     # Friedhof Forum Zuerich, Ausstellungen: 2419 Zeichen, ~4 Fundstellen.
     # Anders als die Schwesterseite /veranstaltungen.html NICHT JS-gerendert.
     "https://www.stadt-zuerich.ch/friedhofforum/de/ausstellungen.html",
+    # --- Am 27.08.2026 im Testcrawler geprueft und uebernommen ---
+    # Braunschweig: eigene Domain der Friedhofsverwaltung. Die zuvor
+    # eingetragene Adresse unter braunschweig.de gab 404.
+    "https://www.friedhofsverwaltung-braunschweig.de/termine",
+    # Volksbund-Landesverbaende. Gleiches CMS und gleicher Pfad wie das
+    # bereits laufende berlin.volksbund.de. Inhalt: Fuehrungen ueber
+    # Kriegsgraeberstaetten, Volkstrauertag, Gedenkveranstaltungen.
+    "https://saarland.volksbund.de/aktuell/termine",
+    "https://bayern.volksbund.de/aktuell/termine",
+    "https://hessen.volksbund.de/aktuell/termine",
+    "https://niedersachsen.volksbund.de/aktuell/termine",
+    # --- Volksbund-Landesverbaende, Runde 2 (Testlauf 27.08.2026) ---
+    # Mit Terminen zum Zeitpunkt des Tests:
+    "https://nrw.volksbund.de/aktuell/termine",
+    "https://baden-wuerttemberg.volksbund.de/aktuell/termine",
+    "https://rheinland-pfalz.volksbund.de/aktuell/termine",
+    "https://sachsen.volksbund.de/aktuell/termine",
+    "https://mecklenburg-vorpommern.volksbund.de/aktuell/termine",
+    #
+    # Diese sechs meldeten "Keine Termine gefunden" (162 Zeichen). Die
+    # Landesverbaende und Seiten EXISTIEREN - sie haben nur gerade nichts
+    # anstehen. Sie bleiben deshalb in der Liste: Der Laengenfilter sortiert
+    # sie ohne API-Request aus, und sobald ein Termin erscheint, liefern sie
+    # von selbst. "Zu kurz" heisst hier nicht "kaputt".
+    "https://thueringen.volksbund.de/aktuell/termine",
+    "https://brandenburg.volksbund.de/aktuell/termine",
+    "https://sachsen-anhalt.volksbund.de/aktuell/termine",
+    "https://hamburg.volksbund.de/aktuell/termine",
+    "https://bremen.volksbund.de/aktuell/termine",
+    "https://schleswig-holstein.volksbund.de/aktuell/termine",
 ]
 
 DISABLED_URLS = {
@@ -302,6 +332,10 @@ DISABLED_URLS = {
     "https://www.friedhof-mannheim.de/graeber/foerderkreis/": "Vereinsseite ohne Termine",
     # --- Testcrawler 27.08.2026 ---
     "https://zuercher-museen.ch/museen/friedhof-forum-museum-ueber-leben-und-tod": "180 Zeichen, JS-gerendert",
+    # --- Testcrawler 27.08.2026 ---
+    "https://friedhoefe.saarbruecken.de/": "Startseite ohne Termine (Grabarten, Urnenwaende)",
+    "https://nordrhein-westfalen.volksbund.de/aktuell/termine": "Subdomain existiert nicht - andere Schreibweise pruefen",
+    "https://westfalen.volksbund.de/aktuell/termine": "Subdomain existiert nicht; nrw.volksbund.de deckt NRW ab",
 }
 
 DB_FILE = os.environ.get("SEPULKRAL_DB_FILE", "events_db.json")
@@ -327,6 +361,8 @@ CANDIDATE_URLS: list[str] = [
     # Hier kommen neue Adressen zum Ausprobieren hinein, zum Beispiel:
     # "https://www.beispiel-friedhof.de/veranstaltungen/",
 ]
+
+
 
 
 # Eigene Dateien fuer den Testlauf. Sie tauchen NICHT im Workflow-Commit auf
@@ -558,6 +594,9 @@ VENUE_PATTERN = re.compile(
       | gruft | grüfte | gruefte
       | aussegnungshalle | trauerhalle | palliativ | katakombe
       | sepulkralmuseum | bestattungsmuseum | friedhofforum | epitaph
+      # Volksbund Deutsche Kriegsgraeberfuersorge - durch seinen Gegenstand
+      # einschlaegig, unabhaengig vom einzelnen Titel.
+      | volksbund | kriegsgräber | kriegsgraeber
       # "trauer" wirkt vor allem auf Quell-Domains (bv-trauerbegleitung.de,
       # trauergestalt.de, trauertaskforce.de) - solche Anbieter sind durch
       # ihren Gegenstand einschlaegig. In Ortsangaben trifft es
@@ -586,6 +625,7 @@ REGIONS = (
     ("nord", (
         "hamburg", "ohlsdorf", "kiel", "bremen", "lübeck", "luebeck",
         "schwerin", "hannover", "braunschweig", "doberan", "gottorf",
+        "niedersachsen", "holstein", "mecklenburg",
         "schleswig", "flensburg", "rostock",
     )),
     ("west", (
@@ -594,7 +634,9 @@ REGIONS = (
         "xanten", "essen", "aachen", "mainz", "wiesbaden", "darmstadt",
         "trier", "speyer", "worms", "oppenheim", "saarbrücken",
         "osnabrück", "osnabrueck", "düren", "dueren", "siegen", "paderborn",
-        "saarbruecken", "dortmund", "bochum", "wuppertal", "duisburg",
+        "saarbruecken", "saarland", "nordrhein", "westfalen", "rheinland",
+        "nrw", "pfalz",
+        "dortmund", "bochum", "wuppertal", "duisburg",
         "oberhausen", "gelsenkirchen", "krefeld", "hagen", "bielefeld",
         "mönchengladbach", "moenchengladbach", "leverkusen", "solingen",
         # Domain nennt die Stadt nicht - Museum fuer Sepulkralkultur, Kassel.
@@ -603,6 +645,7 @@ REGIONS = (
     ("ost", (
         # "halle" allein traf "Halleschen Tor" in Berlin - daher mit Zusatz.
         "leipzig", "dresden", "halle saale", "erfurt", "magdeburg", "naumburg",
+        "sachsen", "thüringen", "thueringen", "anhalt",
         "chemnitz", "quedlinburg", "striesener", "eliasfriedhof", "görlitz",
         "goerlitz", "weimar", "jena",
     )),
