@@ -9,3 +9,9 @@ pydantic==2.13.4
 # Wird in fetcher.py direkt importiert (urllib3.disable_warnings),
 # kam bisher nur transitiv ueber requests mit.
 urllib3==2.7.0
+
+# Nur fuer lokale Laeufe unter Windows noetig: dort fehlt die
+# Zeitzonendatenbank des Systems, und ZoneInfo("Europe/Berlin") in
+# config.py schlaegt mit ZoneInfoNotFoundError fehl. Linux-Runner
+# bringen die Daten mit, ignorieren das Paket also.
+tzdata==2025.2

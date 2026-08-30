@@ -233,6 +233,16 @@ TARGET_URLS = [
     "https://widget.churchdesk.com/w/333/event/evkd9VIgfKDV/0/1355280/-/-/-/-/-/or/list?frameId=evkd9VIgfKDV-1",
     "https://widget.churchdesk.com/w/333/event/evkd9VIgfKDV/1/1355280/-/-/-/-/-/or/list?frameId=evkd9VIgfKDV-1",
     "https://widget.churchdesk.com/w/333/event/evkd9VIgfKDV/2/1355280/-/-/-/-/-/or/list?frameId=evkd9VIgfKDV-1",
+    # --- Am 27.08.2026 im Testcrawler geprueft und uebernommen ---
+    # Grieneisen (AHORN-Gruppe, Berlin): 9268 Zeichen, ~35 Fundstellen,
+    # 14 Events ohne eine einzige Verwerfung. Deckt Berliner Friedhoefe ab,
+    # die sonst nirgends vorkommen: Waldfriedhof Zehlendorf und Heerstrasse,
+    # Kuenstlerfriedhof Schoeneberg III, Luisenkirchhof III sowie die
+    # Hohenzollerngruft unter dem Berliner Dom.
+    "https://www.grieneisen.de/aktuelles",
+    # Friedhof Forum Zuerich, Ausstellungen: 2419 Zeichen, ~4 Fundstellen.
+    # Anders als die Schwesterseite /veranstaltungen.html NICHT JS-gerendert.
+    "https://www.stadt-zuerich.ch/friedhofforum/de/ausstellungen.html",
 ]
 
 DISABLED_URLS = {
@@ -290,6 +300,8 @@ DISABLED_URLS = {
     "http://www.nekropolis-moguntia.de/info.html": "HTTP 404 - Seite existiert nicht mehr",
     "https://alterfriedhofbonn.de/": "Startseite ohne Termine; /fuehrungen liefert 13 Fundstellen",
     "https://www.friedhof-mannheim.de/graeber/foerderkreis/": "Vereinsseite ohne Termine",
+    # --- Testcrawler 27.08.2026 ---
+    "https://zuercher-museen.ch/museen/friedhof-forum-museum-ueber-leben-und-tod": "180 Zeichen, JS-gerendert",
 }
 
 DB_FILE = os.environ.get("SEPULKRAL_DB_FILE", "events_db.json")
@@ -312,9 +324,10 @@ HTML_OUTPUT_FILE = "index.html"
 #   4. Wenn ja: Adresse nach TARGET_URLS verschieben und hier entfernen
 #      Wenn nein: mit Begruendung nach DISABLED_URLS
 CANDIDATE_URLS: list[str] = [
-    # Beispiel - hier kommen neue Adressen zum Ausprobieren hinein:
+    # Hier kommen neue Adressen zum Ausprobieren hinein, zum Beispiel:
     # "https://www.beispiel-friedhof.de/veranstaltungen/",
 ]
+
 
 # Eigene Dateien fuer den Testlauf. Sie tauchen NICHT im Workflow-Commit auf
 # und ueberschreiben damit nie den echten Bestand.
@@ -516,6 +529,12 @@ TOPIC_PATTERN = re.compile(
       | nachlass | kriegsgräber | \bgefallenen | mahnmal | ehrenmal
       | holocaust | schoah | \bleichen | aufbahrung | aussegnung
       | totenkult | ruhestätte | ruhestätten | nekropol | katakombe
+      # Vorsorge und letzter Wille - eigenes Feld der Bestattungskultur.
+      # "testament" bewusst NICHT: das traefe auch "Altes Testament" in
+      # jeder Bibelveranstaltung.
+      | bestattungsvorsorge | vorsorgeplanung | vorsorgevollmacht
+      | patientenverfügung | patientenverfuegung | letztwillig
+      | lebensende | letzte\s+hilfe | vermächtnis | vermaechtnis
       | \bgestorben | \bverwaist | \bwaisen | sternenkind
       | totgeburt | fehlgeburt | \bverwitwet
       | hinterlassenschaft | präparat | praeparat | obduktion
