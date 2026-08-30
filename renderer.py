@@ -95,7 +95,7 @@ def render_html(events: list[dict], today: date):
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sepulkralkultur Event-Feed</title>
+    <title>Sepulcrawler &ndash; Termine zur Sepulkralkultur</title>
     <style>
         :root {{
             --bg-body: #f4f6f8;
@@ -149,6 +149,7 @@ def render_html(events: list[dict], today: date):
         
         .header-bar {{ display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--tag-active-bg); padding-bottom: 10px; margin-bottom: 10px; }}
         h1 {{ color: var(--heading-color); margin: 0; font-size: 1.8em; }}
+        .subtitle {{ margin: 2px 0 0; font-size: 0.85em; color: var(--text-muted); }}
         
         .theme-toggle-btn {{ background: var(--toggle-bg); border: 1px solid var(--filter-border); color: var(--text-main); padding: 8px 14px; border-radius: 20px; cursor: pointer; font-size: 1em; display: flex; align-items: center; gap: 6px; font-weight: 600; transition: all 0.2s; }}
         .theme-toggle-btn:hover {{ opacity: 0.85; }}
@@ -254,7 +255,11 @@ def render_html(events: list[dict], today: date):
 <body>
     <div class="container">
         <div class="header-bar">
-            <h1>Sepulkralkultur &amp; Friedhofskultur</h1>
+            <div>
+                <h1>Sepulcrawler</h1>
+                <p class="subtitle">Termine zur Sepulkral- und Friedhofskultur
+                   in Deutschland, &Ouml;sterreich, der Schweiz und Tschechien</p>
+            </div>
             <button class="theme-toggle-btn" onclick="toggleTheme()">
                 <span id="themeIcon">&#127769;</span>
                 <span id="themeLabel">Dunkel</span>
