@@ -1,0 +1,52 @@
+name: Sepulkral Crawler TEST
+
+# Nur manuell. Kein Cron: der Testcrawler laeuft, wenn du neue Quellen
+# ausprobieren willst, nicht nach Zeitplan.
+on:
+  workflow_dispatch:
+
+# Bewusst NUR Lesezugriff. Der Testlauf darf nichts ins Repository
+# schreiben - die Ergebnisse kommen ausschliesslich als Artefakt.
+permissions:
+  contents: read
+
+concurrency:
+  group: sepulkral-crawler-test
+  cancel-in-progress: true
+
+jobs:
+  test-crawler:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+
+      - name: Python einrichten
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Abhaengigkeiten installieren
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Testcrawler ausfuehren
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python test_run.py
+
+      - name: Ergebnisse als Artefakt hochladen
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: testlauf-${{ github.run_number }}
+          path: |
+            test_events_db.json
+            test_index.html
+            test_verworfen.json
+          retention-days: 14
+          if-no-files-found: warn

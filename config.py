@@ -1,3 +1,4 @@
+import os
 import re
 from zoneinfo import ZoneInfo
 
@@ -291,11 +292,73 @@ DISABLED_URLS = {
     "https://www.friedhof-mannheim.de/graeber/foerderkreis/": "Vereinsseite ohne Termine",
 }
 
-DB_FILE = "events_db.json"
+DB_FILE = os.environ.get("SEPULKRAL_DB_FILE", "events_db.json")
 HTML_OUTPUT_FILE = "index.html"
 
 # Diagnosedatei: alle thematisch verworfenen Events mit vollem Kontext.
 # Bewusst NICHT im Repository - wird im Workflow als Artefakt hochgeladen.
+# ---------------------------------------------------------------- Kandidaten
+#
+# Zweigleisiger Betrieb: Neue Quellen kommen ZUERST hier hinein, nicht in
+# TARGET_URLS. Der Testcrawler (test_run.py) crawlt nur diese Liste und
+# schreibt in eigene Dateien. Der Hauptlauf und die veroeffentlichte
+# index.html bleiben davon unberuehrt.
+#
+# Ablauf:
+#   1. Neue Adresse hier eintragen
+#   2. test_run.py laufen lassen (lokal oder ueber den Workflow
+#      "Sepulkral Crawler TEST")
+#   3. test_events_db.json ansehen: kommen brauchbare Termine?
+#   4. Wenn ja: Adresse nach TARGET_URLS verschieben und hier entfernen
+#      Wenn nein: mit Begruendung nach DISABLED_URLS
+CANDIDATE_URLS: list[str] = [
+    # Beispiel - hier kommen neue Adressen zum Ausprobieren hinein:
+    # "https://www.beispiel-friedhof.de/veranstaltungen/",
+]
+
+# Eigene Dateien fuer den Testlauf. Sie tauchen NICHT im Workflow-Commit auf
+# und ueberschreiben damit nie den echten Bestand.
+TEST_DB_FILE = "test_events_db.json"
+TEST_HTML_FILE = "test_index.html"
+TEST_REJECTED_FILE = "test_verworfen.json"
+
+
+# ---------------------------------------------------------------- Testmodus
+#
+# Ein voller Lauf kostet ~30 API-Requests. Zum Ausprobieren einer Aenderung
+# ist das zu teuer, deshalb zwei Schalter ueber Umgebungsvariablen - kein
+# eigener Branch noetig, derselbe Code laeuft lokal wie in Actions.
+#
+#   SEPULKRAL_TEST_URLS   Kommaliste von Suchbegriffen. Es werden nur die
+#                         TARGET_URLS gecrawlt, die einen davon enthalten.
+#   SEPULKRAL_DRY_RUN     "1" = kein einziger API-Request. Phase 1 laeuft
+#                         vollstaendig (Abruf, Feeds, Verdichtung,
+#                         Paketbildung), Phase 2 zeigt nur, was gesendet
+#                         WUERDE. Kostet nichts.
+#   SEPULKRAL_DB_FILE     Andere Datenbankdatei, damit ein Test den echten
+#                         Bestand nicht anfasst.
+#
+# Beispiele (PowerShell):
+#   $env:SEPULKRAL_DRY_RUN = "1"; python main.py
+#   $env:SEPULKRAL_TEST_URLS = "eliasfriedhof,karlsruhe"; python main.py
+#   Remove-Item Env:SEPULKRAL_TEST_URLS      # Testmodus wieder aus
+
+TEST_URL_FILTER = [
+    part.strip().lower()
+    for part in os.environ.get("SEPULKRAL_TEST_URLS", "").split(",")
+    if part.strip()
+]
+DRY_RUN = os.environ.get("SEPULKRAL_DRY_RUN", "") == "1"
+
+
+def active_target_urls() -> list[str]:
+    """Die tatsaechlich zu crawlenden Quellen - im Testmodus nur eine Auswahl."""
+    if not TEST_URL_FILTER:
+        return TARGET_URLS
+    return [u for u in TARGET_URLS
+            if any(part in u.lower() for part in TEST_URL_FILTER)]
+
+
 REJECTED_FILE = "verworfen.json"
 
 # Quellen, bei denen der ICS-Feed SCHLECHTER ist als die HTML-Seite.

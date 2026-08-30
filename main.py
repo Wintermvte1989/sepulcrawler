@@ -46,7 +46,11 @@ def ingest(event, events_db, stats, rejected, today_str, origin):
         stats["neu"] += 1
 
 
-if __name__ == "__main__":
+def run(urls: list[str]) -> None:
+    """Ein kompletter Crawler-Durchlauf ueber die uebergebenen Quellen.
+
+    Als Funktion, damit test_run.py denselben Ablauf mit der Kandidatenliste
+    und einer eigenen Datenbank fahren kann - ohne Codeduplikat."""
     today = datetime.now(config.BERLIN).date()
     today_str = today.isoformat()
 
@@ -58,7 +62,12 @@ if __name__ == "__main__":
     events_db = database.deduplicate_db(raw_db)
     print(f"Nach Initial-Deduplizierung: {len(events_db)} eindeutige Events")
 
-    print(f"\n--- Phase 1: Webseiten laden ({len(config.TARGET_URLS)} Quellen) ---")
+    print(f"\n--- Phase 1: Webseiten laden ({len(urls)} Quellen) ---")
+    if config.TEST_URL_FILTER:
+        print(f"    TESTMODUS: nur Quellen mit {config.TEST_URL_FILTER} "
+              f"({len(urls)} von {len(config.TARGET_URLS)})")
+    if config.DRY_RUN:
+        print("    TROCKENLAUF: es wird KEIN API-Request gesendet")
     if config.DISABLED_URLS:
         print(f"    ({len(config.DISABLED_URLS)} Quellen sind deaktiviert, siehe DISABLED_URLS)")
 
@@ -68,7 +77,7 @@ if __name__ == "__main__":
     feed_events: list[dict] = []
 
     with fetcher.make_http_client() as client_http:
-        for url in config.TARGET_URLS:
+        for url in urls:
             try:
                 raw_html = fetcher.fetch_page_html(client_http, url)
             except Exception as e:
@@ -136,6 +145,10 @@ if __name__ == "__main__":
         for batch_url, batch_text in batch:
             print(f"      {len(batch_text):>6} Z.  {batch_url}")
 
+        if config.DRY_RUN:
+            print("  TROCKENLAUF - kein Request gesendet")
+            continue
+
         events = extractor.call_with_retry(batch, today_str)
         print(f"  {len(events)} Events extrahiert")
 
@@ -156,8 +169,12 @@ if __name__ == "__main__":
             cleaned_db[event_id] = event
     stats["entfernt"] = len(events_db) - len(cleaned_db)
 
-    database.save_events_db(cleaned_db)
-    renderer.render_html(list(cleaned_db.values()), today)
+    if config.DRY_RUN:
+        print(f"\nTROCKENLAUF: {len(cleaned_db)} Events wuerden gespeichert - "
+              f"'{config.DB_FILE}' und '{config.HTML_OUTPUT_FILE}' bleiben unveraendert.")
+    else:
+        database.save_events_db(cleaned_db)
+        renderer.render_html(list(cleaned_db.values()), today)
 
     # Verworfene Events mit vollem Kontext ablegen. Im Actions-Log steht nur
     # der Titel; zum Justieren von TOPIC_PATTERN braucht man Ort und
@@ -175,7 +192,8 @@ if __name__ == "__main__":
     print(f"  Thema verfehlt: {stats['thema_verfehlt']}")
     print(f"  zusammengefuehrt:{stats['zusammengefuehrt']}")
     print(f"  DB bereinigt:   {stats['entfernt']} entfernt")
-    print(f"\n{len(cleaned_db)} aktive Events in '{config.HTML_OUTPUT_FILE}' geschrieben.")
+    if not config.DRY_RUN:
+        print(f"\n{len(cleaned_db)} aktive Events in '{config.HTML_OUTPUT_FILE}' geschrieben.")
 
     if problems:
         print("\n--- Quellen ohne Ertrag ---")
@@ -185,4 +203,8 @@ if __name__ == "__main__":
             for url in urls:
                 print(f"    {url}")
         total = sum(len(v) for v in problems.values())
-        print(f"\n  {total} von {len(config.TARGET_URLS)} Quellen haben nichts geliefert.")
+        print(f"\n  {total} von {len(urls)} Quellen haben nichts geliefert.")
+
+
+if __name__ == "__main__":
+    run(config.active_target_urls())
