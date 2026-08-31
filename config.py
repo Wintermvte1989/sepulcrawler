@@ -273,6 +273,11 @@ TARGET_URLS = [
     "https://hamburg.volksbund.de/aktuell/termine",
     "https://bremen.volksbund.de/aktuell/termine",
     "https://schleswig-holstein.volksbund.de/aktuell/termine",
+    # Traegerverein der Dresdner Friedhoefe Johannis, Trinitatis und Neuer
+    # Annenfriedhof. Im Testlauf vom 31.08.2026: die Feed-Erkennung fand
+    # /veranstaltungen/?ical=1 von selbst - 23 Termine, keine Verwerfung,
+    # kein API-Request.
+    "https://johannisfriedhof-dresden.de/",
 ]
 
 DISABLED_URLS = {
@@ -336,6 +341,23 @@ DISABLED_URLS = {
     "https://friedhoefe.saarbruecken.de/": "Startseite ohne Termine (Grabarten, Urnenwaende)",
     "https://nordrhein-westfalen.volksbund.de/aktuell/termine": "Subdomain existiert nicht - andere Schreibweise pruefen",
     "https://westfalen.volksbund.de/aktuell/termine": "Subdomain existiert nicht; nrw.volksbund.de deckt NRW ab",
+    # --- Testcrawler 31.08.2026 ---
+    "https://www.anima-et-mors.de/termine/": "HTTP 403, Cloudflare-Sperre - Termin steht in MANUAL_EVENTS",
+    "https://www.anima-et-mors.de/": "HTTP 403, Cloudflare-Sperre - Termin steht in MANUAL_EVENTS",
+    # --- Geprueft und bewusst NICHT aufgenommen (31.08.2026) ---
+    # Alle listen "Anima et Mors" korrekt, sind aber allgemeine Stadt- oder
+    # Ticketportale: unser Thema ist dort ein Bruchteil des Bestands. Sie
+    # aufzunehmen waere der Oppenheim-Fehler - viele Requests, fast alles
+    # vom Themenfilter verworfen.
+    "https://prinz.de/dresden/events/": "allgemeines Stadtportal, Thema ist Randerscheinung",
+    "https://veranstaltungen.meinestadt.de/dresden/": "allgemeines Stadtportal",
+    "https://www.eventim.de/": "Ticketportal, kein thematischer Bezug",
+    "https://www.ticketonline.de/": "Ticketportal, kein thematischer Bezug",
+    # --- Testcrawler 31.08.2026: Umwege um die Cloudflare-Sperre ---
+    # Beide gescheitert. Damit bleibt MANUAL_EVENTS der Weg fuer Termine
+    # dieser Veranstalterin - eine automatische Quelle gibt es nicht.
+    "https://anima-pluma.de/": "TLS-Handshake schlaegt fehl, trotz tolerantem SSL-Kontext",
+    "https://www.eventim-light.com/de/a/69662e7995a245200db2f1f0": "0 Zeichen, vollstaendig JS-gerendert (SPA)",
 }
 
 DB_FILE = os.environ.get("SEPULKRAL_DB_FILE", "events_db.json")
@@ -357,10 +379,40 @@ HTML_OUTPUT_FILE = "index.html"
 #   3. test_events_db.json ansehen: kommen brauchbare Termine?
 #   4. Wenn ja: Adresse nach TARGET_URLS verschieben und hier entfernen
 #      Wenn nein: mit Begruendung nach DISABLED_URLS
+# ---------------------------------------------------------------- Handpflege
+#
+# Termine von Seiten, die der Crawler nicht erreicht - etwa hinter einer
+# Cloudflare-Sperre. Sie laufen durch dieselbe Verarbeitung wie alle
+# anderen: Datumspruefung, Themenfilter, Deduplizierung.
+#
+# Bewusst sparsam halten. Abgelaufene Eintraege werden vom Crawler NICHT
+# still weiterverarbeitet: main.py prueft beim Start das Datum, ueberspringt
+# vorbeigelaufene Eintraege und weist im Log und in der Zusammenfassung
+# darauf hin, dass sie hier geloescht werden koennen. Der Crawler kann
+# config.py nicht selbst umschreiben - das bleibt ein Handgriff, aber man
+# muss nicht daran denken.
+MANUAL_EVENTS: list[dict] = [
+    {
+        "title": "ANIMA ET MORS \u2013 Kleinmesse \u00fcber Leben und Tod",
+        "date_start": "2026-10-31",
+        "date_end": None,
+        "location": "Trinitatisfriedhof, Fiedlerstra\u00dfe 1, 01307 Dresden",
+        "description": (
+            "Dresdens erste Kleinmesse zu den Themen selbstbestimmtes Leben, "
+            "selbstbestimmtes Sterben und LebensWert, mit Ausstellern, "
+            "Vortr\u00e4gen, Lesungen und Mitmachangeboten. 10-18 Uhr."
+        ),
+        "url": "https://www.anima-et-mors.de/",
+    },
+]
+
+
 CANDIDATE_URLS: list[str] = [
     # Hier kommen neue Adressen zum Ausprobieren hinein, zum Beispiel:
     # "https://www.beispiel-friedhof.de/veranstaltungen/",
 ]
+
+
 
 
 
@@ -514,7 +566,14 @@ EVENT_TYPES = (
                   "busrundfahrt", "fahrradtour", "exkursion", "tour")),
     ("aktionstag", ("tag des friedhofs", "tag des offenen denkmals",
                     "tag des denkmals", "museumsnacht", "lange nacht",
-                    "museumstag", "aktionstag", "aktionswoche", "sommerfest")),
+                    "museumstag", "aktionstag", "aktionswoche", "sommerfest",
+                    # Publikumsmessen. Als Komposita, weil das kurze "messe"
+                    # in der Kategorie gottesdienst die katholische Messe
+                    # meint. "Kleinmesse ueber Leben und Tod" wurde sonst
+                    # ueber die Beschreibung zur "Lesung".
+                    "kleinmesse", "fachmesse", "publikumsmesse",
+                    "informationsmesse", "infomesse", "bestattermesse",
+                    "messetag")),
 )
 
 _TYPE_MIN_SUBSTRING = 6

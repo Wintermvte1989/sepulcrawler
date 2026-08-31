@@ -128,6 +128,31 @@ def run(urls: list[str]) -> None:
 
     stats = Counter()
 
+    if config.MANUAL_EVENTS:
+        print(f"\n--- Phase 1a: {len(config.MANUAL_EVENTS)} handgepflegte "
+              f"Termine (siehe MANUAL_EVENTS) ---")
+        # Abgelaufene Eintraege: config.py ist Quellcode, den der Crawler
+        # nicht umschreibt. Die Datenbank bereinigt sich selbst, dieser
+        # Eintrag bliebe aber stehen und wuerde jeden Lauf erneut
+        # eingespeist - und sofort als "vergangen" verworfen. Deshalb hier
+        # ausdruecklich darauf hinweisen, statt es still zu schlucken.
+        abgelaufen = []
+        for event in config.MANUAL_EVENTS:
+            ende = event.get("date_end") or event.get("date_start") or ""
+            if ende and ende < today_str:
+                abgelaufen.append((event.get("title", "?"), ende))
+                continue
+            # Kopie einspeisen: ingest() ergaenzt Felder, und die Liste in
+            # config soll unveraendert bleiben.
+            ingest(dict(event), events_db, stats, rejected, today_str, "manuell")
+        print(f"  neu {stats['neu']}, aktualisiert {stats['aktualisiert']}")
+        if abgelaufen:
+            print(f"\n  AUFRAEUMEN: {len(abgelaufen)} Eintrag/Eintraege in "
+                  f"config.MANUAL_EVENTS sind vorbei und koennen geloescht werden:")
+            for titel, ende in abgelaufen:
+                print(f"    seit {ende}: {titel[:60]}")
+            stats["manuell_abgelaufen"] = len(abgelaufen)
+
     if feed_events:
         print(f"\n--- Phase 1b: {len(feed_events)} Termine aus ICS-Feeds "
               f"(ohne API-Request) ---")
@@ -192,6 +217,9 @@ def run(urls: list[str]) -> None:
     print(f"  Thema verfehlt: {stats['thema_verfehlt']}")
     print(f"  zusammengefuehrt:{stats['zusammengefuehrt']}")
     print(f"  DB bereinigt:   {stats['entfernt']} entfernt")
+    if stats["manuell_abgelaufen"]:
+        print(f"  MANUAL_EVENTS:  {stats['manuell_abgelaufen']} Eintrag/Eintraege "
+              f"abgelaufen - bitte aus config.py loeschen")
     if not config.DRY_RUN:
         print(f"\n{len(cleaned_db)} aktive Events in '{config.HTML_OUTPUT_FILE}' geschrieben.")
 
