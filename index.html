@@ -5,64 +5,126 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sepulcrawler &ndash; Termine zur Sepulkralkultur</title>
     <style>
+        /* Palette an das Kopfbild angelehnt: Sandstein, Patina, Granit.
+           Das bisherige Blau (#3498db) und Gruen (#27ae60) waren
+           Bootstrap-Standardfarben und standen quer zum Motiv. */
         :root {
-            --bg-body: #f4f6f8;
-            --bg-container: #ffffff;
-            --text-main: #333333;
-            --text-muted: #7f8c8d;
-            --heading-color: #2c3e50;
-            --border-color: #ecf0f1;
-            --filter-bg: #f8f9fa;
-            --filter-border: #e9ecef;
-            --tag-bg: #e9ecef;
-            --tag-text: #495057;
-            --tag-active-bg: #3498db;
+            --bg-body: #f2f0ec;          /* warmes Sandstein-Weiss */
+            --bg-container: #fbfaf8;
+            --text-main: #2e3330;
+            --text-muted: #77807b;
+            --heading-color: #232725;
+            --border-color: #e6e2db;
+            --filter-bg: #f6f4f0;
+            --filter-border: #e2ded6;
+            --tag-bg: #e8e4dc;
+            --tag-text: #4a534d;
+            --tag-active-bg: #4a7a68;     /* Patina auf Bronze */
             --tag-active-text: #ffffff;
-            --th-bg: #2c3e50;
-            --th-text: #ffffff;
-            --tr-hover: #f8f9fa;
-            --location-color: #34495e;
-            --btn-bg: #27ae60;
-            --btn-hover: #219150;
-            --input-border: #ced4da;
+            --th-bg: #3a413d;
+            --th-text: #f2f0ec;
+            --tr-hover: #f4f2ee;
+            --location-color: #3f6b5b;
+            --btn-bg: #4a7a68;
+            --btn-hover: #3c6455;
+            --input-border: #d5cfc4;
             --input-bg: #ffffff;
-            --toggle-bg: #e9ecef;
+            --toggle-bg: #e8e4dc;
+            --badge-new: #4a7a68;
+            --badge-stale: #a8791f;
+            --badge-run: #6b5b8a;
+            --shadow: 0 1px 3px rgba(35,39,37,0.08), 0 6px 20px rgba(35,39,37,0.05);
         }
 
         [data-theme="dark"] {
-            --bg-body: #121417;
-            --bg-container: #1e2227;
-            --text-main: #e1e6eb;
-            --text-muted: #8b99a8;
-            --heading-color: #8fa0b3;
-            --border-color: #2d353e;
-            --filter-bg: #181b1f;
-            --filter-border: #2d353e;
-            --tag-bg: #2d353e;
-            --tag-text: #c0caf5;
-            --tag-active-bg: #3498db;
-            --tag-active-text: #ffffff;
-            --th-bg: #2a323d;
-            --th-text: #e1e6eb;
-            --tr-hover: #252a30;
-            --location-color: #a0b2c6;
-            --btn-bg: #27ae60;
-            --btn-hover: #219150;
-            --input-border: #3d4652;
-            --input-bg: #181b1f;
-            --toggle-bg: #2d353e;
+            --bg-body: #16181a;          /* Anthrazit, leicht gruenstichig */
+            --bg-container: #1d2124;
+            --text-main: #dfe3e0;
+            --text-muted: #8b948e;
+            --heading-color: #eceeec;
+            --border-color: #2b3033;
+            --filter-bg: #191c1e;
+            --filter-border: #2b3033;
+            --tag-bg: #282d30;
+            --tag-text: #c3ccc6;
+            --tag-active-bg: #6fa38c;
+            --tag-active-text: #14201b;
+            --th-bg: #262b2e;
+            --th-text: #dfe3e0;
+            --tr-hover: #22262a;
+            --location-color: #8fbfa9;
+            --btn-bg: #4f8570;
+            --btn-hover: #5d9a83;
+            --input-border: #384044;
+            --input-bg: #191c1e;
+            --toggle-bg: #282d30;
+            --badge-new: #4f8570;
+            --badge-stale: #9a7524;
+            --badge-run: #7a6a9c;
+            --shadow: 0 1px 3px rgba(0,0,0,0.4), 0 8px 24px rgba(0,0,0,0.25);
         }
 
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--bg-body); color: var(--text-main); margin: 20px; transition: background-color 0.2s, color 0.2s; }
+        /* Bewusst nur Systemschriften: keine Google Fonts, damit beim
+           Seitenaufruf keine IP-Adresse an Dritte geht (DSGVO). Serif fuer
+           Titel und Datumsangaben, Sans fuer Fliesstext und Bedienelemente. */
+        :root {
+            --font-serif: 'Iowan Old Style', 'Palatino Linotype', Palatino,
+                          'Book Antiqua', Georgia, 'Times New Roman', serif;
+            --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+                         'Helvetica Neue', Arial, sans-serif;
+        }
+
+        body { font-family: var(--font-sans); background-color: var(--bg-body); color: var(--text-main); margin: 0; padding: 20px; line-height: 1.55; transition: background-color 0.2s, color 0.2s; }
         
-        .header-bar { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--tag-active-bg); padding-bottom: 10px; margin-bottom: 10px; }
-        h1 { color: var(--heading-color); margin: 0; font-size: 1.8em; }
-        .subtitle { margin: 2px 0 0; font-size: 0.85em; color: var(--text-muted); }
+        /* Kopfband: eigenes Friedhofsfoto (trauernder Engel, Familiengrab).
+           Der Verlauf von unten haelt die Schrift lesbar, unabhaengig davon,
+           welcher Bildbereich beim jeweiligen Fenster sichtbar ist. */
+        .header-bar {
+            position: relative;
+            min-height: 220px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 20px 24px;
+            margin-bottom: 18px;
+            border-radius: 10px;
+            overflow: hidden;
+            background-image:
+                linear-gradient(to top, rgba(18,20,19,0.88) 0%,
+                                        rgba(18,20,19,0.55) 45%,
+                                        rgba(18,20,19,0.15) 100%),
+                image-set(url("assets/header.jpg") 1x);
+            background-size: cover;
+            background-position: center 42%;
+            box-shadow: var(--shadow);
+        }
+        .header-text { color: #f4f2ee; }
+        h1 {
+            font-family: var(--font-serif);
+            color: #ffffff;
+            margin: 0;
+            font-size: 2.4em;
+            font-weight: 600;
+            letter-spacing: 0.01em;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.55);
+        }
+        .subtitle {
+            margin: 4px 0 0;
+            font-size: 0.9em;
+            color: rgba(244,242,238,0.9);
+            max-width: 46ch;
+            text-shadow: 0 1px 8px rgba(0,0,0,0.6);
+        }
+        .credit {
+            position: absolute; right: 10px; top: 8px;
+            font-size: 0.68em; color: rgba(255,255,255,0.55);
+        }
         
-        .theme-toggle-btn { background: var(--toggle-bg); border: 1px solid var(--filter-border); color: var(--text-main); padding: 8px 14px; border-radius: 20px; cursor: pointer; font-size: 1em; display: flex; align-items: center; gap: 6px; font-weight: 600; transition: all 0.2s; }
+        .theme-toggle-btn { background: rgba(255,255,255,0.14); backdrop-filter: blur(6px); border: 1px solid rgba(255,255,255,0.28); color: #f4f2ee; padding: 8px 14px; border-radius: 20px; cursor: pointer; font-size: 1em; display: flex; align-items: center; gap: 6px; font-weight: 600; transition: all 0.2s; }
         .theme-toggle-btn:hover { opacity: 0.85; }
 
-        .container { background: var(--bg-container); border-radius: 8px; padding: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); transition: background-color 0.2s; }
+        .container { background: var(--bg-container); border: 1px solid var(--border-color); border-radius: 10px; padding: 22px; box-shadow: var(--shadow); max-width: 1400px; margin: 0 auto; transition: background-color 0.2s; }
         .timestamp { font-size: 0.85em; color: var(--text-muted); margin-bottom: 20px; }
 
         .search-input { width: 100%; box-sizing: border-box; padding: 8px 12px; border: 1px solid var(--input-border); background-color: var(--input-bg); color: var(--text-main); border-radius: 4px; font-size: 0.95em; }
@@ -72,14 +134,16 @@
         .tag-btn.active { background: var(--tag-active-bg); color: var(--tag-active-text); }
 
         table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-        th { background-color: var(--th-bg); color: var(--th-text); text-align: left; padding: 10px; font-size: 0.9em; }
+        thead th:first-child { border-radius: 6px 0 0 0; }
+        thead th:last-child { border-radius: 0 6px 0 0; }
+        th { background-color: var(--th-bg); color: var(--th-text); text-align: left; padding: 11px 10px; font-size: 0.78em; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
         td { padding: 12px 10px; border-bottom: 1px solid var(--border-color); vertical-align: top; font-size: 0.95em; }
         tr:hover { background-color: var(--tr-hover); }
-        .date-badge { background-color: var(--tag-active-bg); color: white; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 0.85em; white-space: nowrap; }
+        .date-badge { font-family: var(--font-serif); background-color: var(--tag-active-bg); color: var(--tag-active-text); padding: 4px 9px; border-radius: 4px; font-weight: 600; font-size: 0.9em; white-space: nowrap; letter-spacing: 0.02em; }
         .date-end { display: block; margin-top: 4px; font-size: 0.8em; color: var(--text-muted); white-space: nowrap; }
         .location { font-weight: bold; color: var(--location-color); }
-        .badge-new { background: #27ae60; color: white; padding: 2px 6px; border-radius: 3px; font-size: 0.7em; margin-left: 6px; vertical-align: middle; }
-        .badge-stale { background: #f39c12; color: white; padding: 2px 6px; border-radius: 3px; font-size: 0.7em; margin-left: 6px; vertical-align: middle; }
+        .badge-new { background: var(--badge-new); color: white; padding: 2px 6px; border-radius: 3px; font-size: 0.7em; margin-left: 6px; vertical-align: middle; }
+        .badge-stale { background: var(--badge-stale); color: white; padding: 2px 6px; border-radius: 3px; font-size: 0.7em; margin-left: 6px; vertical-align: middle; }
         a.btn { display: inline-block; background-color: var(--btn-bg); color: white; text-decoration: none; padding: 5px 10px; border-radius: 4px; font-size: 0.85em; }
         a.btn:hover { background-color: var(--btn-hover); }
         .no-results { display: none; padding: 20px; text-align: center; color: var(--text-muted); font-style: italic; }
@@ -87,11 +151,28 @@
         .filter-group { display: flex; flex-direction: column; gap: 6px; }
         .filter-group-label { font-size: 0.72em; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); font-weight: 700; }
         .filter-row { display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; background: var(--filter-bg); padding: 15px; border-radius: 6px; border: 1px solid var(--filter-border); }
-        .badge-laufend { background: #8e44ad; color: #fff; padding: 2px 6px; border-radius: 3px; font-size: 0.7em; margin-left: 6px; vertical-align: middle; }
+        .badge-laufend { background: var(--badge-run); color: #fff; padding: 2px 6px; border-radius: 3px; font-size: 0.7em; margin-left: 6px; vertical-align: middle; }
         .reset-btn { background: none; border: 1px solid var(--input-border); color: var(--text-muted); padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 0.85em; }
         .reset-btn:hover { color: var(--text-main); }
 
         @media (max-width: 768px) {
+            /* Kopfband flacher und die kleinere Bilddatei laden: 58 statt
+               213 KB, was am Mobilfunk deutlich spuerbar ist. */
+            .header-bar {
+                min-height: 150px;
+                padding: 14px 16px;
+                border-radius: 8px;
+                background-image:
+                    linear-gradient(to top, rgba(18,20,19,0.9) 0%,
+                                            rgba(18,20,19,0.5) 55%,
+                                            rgba(18,20,19,0.12) 100%),
+                    url("assets/header-800.jpg");
+                background-position: center 45%;
+            }
+            h1 { font-size: 1.7em; }
+            .subtitle { font-size: 0.8em; }
+            .credit { display: none; }
+
             body { margin: 8px; }
             .container { padding: 12px; }
             h1 { font-size: 1.3em; }
@@ -163,7 +244,8 @@
 <body>
     <div class="container">
         <div class="header-bar">
-            <div>
+            <span class="credit">Foto: eigenes Werk</span>
+            <div class="header-text">
                 <h1>Sepulcrawler</h1>
                 <p class="subtitle">Termine zur Sepulkral- und Friedhofskultur
                    in Deutschland, &Ouml;sterreich, der Schweiz und Tschechien</p>
@@ -173,8 +255,8 @@
                 <span id="themeLabel">Dunkel</span>
             </button>
         </div>
-        <div class="timestamp">Stand: 31.08.2026 um 10:44 Uhr &nbsp;|&nbsp;
-            <span id="visibleCount">308</span> von 308 Terminen</div>
+        <div class="timestamp">Stand: 31.08.2026 um 15:05 Uhr &nbsp;|&nbsp;
+            <span id="visibleCount">325</span> von 325 Terminen</div>
 
         <div class="filter-row">
             <input type="text" id="searchInput" class="search-input"
@@ -196,11 +278,11 @@
                 <div class="filter-tags">
                 <button class="tag-btn active" data-group="region" data-value="" onclick="setFilter(this)">Alle</button>
                 <button class="tag-btn" data-group="region" data-value="west" onclick="setFilter(this)">Westen <span style="opacity:.6">80</span></button>
-                <button class="tag-btn" data-group="region" data-value="berlin-brandenburg" onclick="setFilter(this)">Berlin &amp; Brandenburg <span style="opacity:.6">60</span></button>
-                <button class="tag-btn" data-group="region" data-value="sued" onclick="setFilter(this)">S&uuml;den <span style="opacity:.6">43</span></button>
+                <button class="tag-btn" data-group="region" data-value="berlin-brandenburg" onclick="setFilter(this)">Berlin &amp; Brandenburg <span style="opacity:.6">58</span></button>
+                <button class="tag-btn" data-group="region" data-value="ost" onclick="setFilter(this)">Osten <span style="opacity:.6">55</span></button>
+                <button class="tag-btn" data-group="region" data-value="sued" onclick="setFilter(this)">S&uuml;den <span style="opacity:.6">42</span></button>
                 <button class="tag-btn" data-group="region" data-value="nord" onclick="setFilter(this)">Norden <span style="opacity:.6">36</span></button>
-                <button class="tag-btn" data-group="region" data-value="ausland" onclick="setFilter(this)">AT / CH / CZ <span style="opacity:.6">32</span></button>
-                <button class="tag-btn" data-group="region" data-value="ost" onclick="setFilter(this)">Osten <span style="opacity:.6">32</span></button>
+                <button class="tag-btn" data-group="region" data-value="ausland" onclick="setFilter(this)">AT / CH / CZ <span style="opacity:.6">29</span></button>
                 <button class="tag-btn" data-group="region" data-value="sonstige" onclick="setFilter(this)">Sonstige <span style="opacity:.6">14</span></button>
                 <button class="tag-btn" data-group="region" data-value="online" onclick="setFilter(this)">Online <span style="opacity:.6">11</span></button>
                 </div>
@@ -210,15 +292,15 @@
                 <span class="filter-group-label">Art</span>
                 <div class="filter-tags">
                 <button class="tag-btn active" data-group="art" data-value="" onclick="setFilter(this)">Alle</button>
-                <button class="tag-btn" data-group="art" data-value="fuehrung" onclick="setFilter(this)">F&uuml;hrungen <span style="opacity:.6">114</span></button>
-                <button class="tag-btn" data-group="art" data-value="sonstige" onclick="setFilter(this)">Sonstige <span style="opacity:.6">71</span></button>
-                <button class="tag-btn" data-group="art" data-value="gottesdienst" onclick="setFilter(this)">Gedenken <span style="opacity:.6">38</span></button>
-                <button class="tag-btn" data-group="art" data-value="ausstellung" onclick="setFilter(this)">Ausstellungen <span style="opacity:.6">21</span></button>
+                <button class="tag-btn" data-group="art" data-value="fuehrung" onclick="setFilter(this)">F&uuml;hrungen <span style="opacity:.6">127</span></button>
+                <button class="tag-btn" data-group="art" data-value="sonstige" onclick="setFilter(this)">Sonstige <span style="opacity:.6">73</span></button>
+                <button class="tag-btn" data-group="art" data-value="gottesdienst" onclick="setFilter(this)">Gedenken <span style="opacity:.6">39</span></button>
                 <button class="tag-btn" data-group="art" data-value="vortrag" onclick="setFilter(this)">Vortr&auml;ge <span style="opacity:.6">17</span></button>
                 <button class="tag-btn" data-group="art" data-value="konzert" onclick="setFilter(this)">Konzerte &amp; Musik <span style="opacity:.6">16</span></button>
-                <button class="tag-btn" data-group="art" data-value="aktionstag" onclick="setFilter(this)">Aktionstage <span style="opacity:.6">12</span></button>
+                <button class="tag-btn" data-group="art" data-value="aktionstag" onclick="setFilter(this)">Aktionstage <span style="opacity:.6">15</span></button>
+                <button class="tag-btn" data-group="art" data-value="ausstellung" onclick="setFilter(this)">Ausstellungen <span style="opacity:.6">15</span></button>
                 <button class="tag-btn" data-group="art" data-value="workshop" onclick="setFilter(this)">Kurse &amp; Workshops <span style="opacity:.6">12</span></button>
-                <button class="tag-btn" data-group="art" data-value="begleitung" onclick="setFilter(this)">Trauer &amp; Begleitung <span style="opacity:.6">5</span></button>
+                <button class="tag-btn" data-group="art" data-value="begleitung" onclick="setFilter(this)">Trauer &amp; Begleitung <span style="opacity:.6">9</span></button>
                 <button class="tag-btn" data-group="art" data-value="lesung" onclick="setFilter(this)">Lesungen <span style="opacity:.6">2</span></button>
                 </div>
             </div>
@@ -260,9 +342,9 @@
 
                 <tr data-tags="region-ausland art-ausstellung laufend" data-start="2026-08-01" data-end="2026-11-30">
                     <td class="cell-plain"><span class="date-badge">2026-08-01</span><span class="date-end">bis 2026-11-30</span></td>
-                    <td class="cell-plain"><strong>Ausstellung «Auf immer und ewig»</strong><span class="badge-laufend">l&auml;uft</span></td>
-                    <td class="location" data-label="Ort">Wolfgottesacker, Basel</td>
-                    <td data-label="Beschreibung">Eine mehrmonatige Ausstellung auf dem Friedhof Wolfgottesacker zum Thema Erinnerungs- und Grabkultur.</td>
+                    <td class="cell-plain"><strong>Ausstellung «Auf immer und ewig» auf dem Wolfgottesacker</strong><span class="badge-laufend">l&auml;uft</span></td>
+                    <td class="location" data-label="Ort">Friedhof Wolfgottesacker, Basel</td>
+                    <td data-label="Beschreibung">Die Stadtgärtnerei Basel präsentiert von August bis November 2026 die Ausstellung «Auf immer und ewig» auf dem Friedhof Wolfgottesacker.</td>
                     <td class="cell-plain"><a href="https://www.stadtgaertnerei.bs.ch/friedhoefe/veranstaltungen.html" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
@@ -274,32 +356,8 @@
                     <td class="cell-plain"><a href="https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
-                <tr data-tags="region-ausland art-ausstellung laufend" data-start="2026-08-25" data-end="2026-11-30">
-                    <td class="cell-plain"><span class="date-badge">2026-08-25</span><span class="date-end">bis 2026-11-30</span></td>
-                    <td class="cell-plain"><strong>Ausstellung «Auf immer und ewig» auf dem Wolfgottesacker</strong><span class="badge-laufend">l&auml;uft</span></td>
-                    <td class="location" data-label="Ort">Friedhof Wolfgottesacker, Basel</td>
-                    <td data-label="Beschreibung">Die Stadtgärtnerei Basel veranstaltet von August bis November auf dem Friedhof Wolfgottesacker die Ausstellung «Auf immer und ewig».</td>
-                    <td class="cell-plain"><a href="https://www.stadtgaertnerei.bs.ch/friedhoefe/veranstaltungen.html" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
-                </tr>
-
                 <tr data-tags="region-berlin-brandenburg art-ausstellung laufend" data-start="2026-08-25" data-end="2026-11-23">
                     <td class="cell-plain"><span class="date-badge">2026-08-25</span><span class="date-end">bis 2026-11-23</span></td>
-                    <td class="cell-plain"><strong>Ausstellung: Das Leben ist eine Collage</strong><span class="badge-laufend">l&auml;uft</span></td>
-                    <td class="location" data-label="Ort">Ricam Hospiz, Delbrückstraße 22, 12051 Berlin Neukölln</td>
-                    <td data-label="Beschreibung">Ausstellung mit Collagen der Künstlerinnen Bettina Schilling und Ilse Winckler in den Räumlichkeiten des Ricam Hospizes.</td>
-                    <td class="cell-plain"><a href="https://www.ricam-hospiz.de/events/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
-                </tr>
-
-                <tr data-tags="region-ausland art-ausstellung laufend" data-start="2026-08-26" data-end="2026-11-30">
-                    <td class="cell-plain"><span class="date-badge">2026-08-26</span><span class="date-end">bis 2026-11-30</span></td>
-                    <td class="cell-plain"><strong>Ausstellung «Auf immer und ewig» auf dem Wolfgottesacker</strong><span class="badge-laufend">l&auml;uft</span></td>
-                    <td class="location" data-label="Ort">Friedhof Wolfgottesacker, Basel</td>
-                    <td data-label="Beschreibung">Die Stadtgärtnerei Basel präsentiert von August bis November 2026 die Ausstellung «Auf immer und ewig» auf dem Friedhof Wolfgottesacker.</td>
-                    <td class="cell-plain"><a href="https://www.stadtgaertnerei.bs.ch/friedhoefe/veranstaltungen.html" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
-                </tr>
-
-                <tr data-tags="region-berlin-brandenburg art-ausstellung laufend" data-start="2026-08-26" data-end="2026-11-23">
-                    <td class="cell-plain"><span class="date-badge">2026-08-26</span><span class="date-end">bis 2026-11-23</span></td>
                     <td class="cell-plain"><strong>Ausstellung: DAS LEBEN IST EINE COLLAGE</strong><span class="badge-laufend">l&auml;uft</span></td>
                     <td class="location" data-label="Ort">Ricam Hospiz, Delbrückstraße 22, 12051 Berlin Neukölln</td>
                     <td data-label="Beschreibung">Eine Kunstausstellung mit Collagen der Künstlerinnen Bettina Schilling und Ilse Winckler in den Räumen des Ricam Hospizes.</td>
@@ -320,22 +378,6 @@
                     <td class="location" data-label="Ort">Friedhof Forum, Zürich</td>
                     <td data-label="Beschreibung">Die Ausstellung beleuchtet die letzten 200 Jahre der Zürcher Geschichte anhand der Lebensgeschichten von zehn Menschen, die auf dem Friedhof Sihlfeld bestattet wurden.</td>
                     <td class="cell-plain"><a href="https://kulturzueri.ch/db/veranstalter/veranstalter-profile/friedhof-forum/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
-                </tr>
-
-                <tr data-tags="region-ausland art-ausstellung laufend" data-start="2026-08-28" data-end="2026-11-30">
-                    <td class="cell-plain"><span class="date-badge">2026-08-28</span><span class="date-end">bis 2026-11-30</span></td>
-                    <td class="cell-plain"><strong>Ausstellung «Auf immer und ewig»</strong><span class="badge-laufend">l&auml;uft</span></td>
-                    <td class="location" data-label="Ort">Wolfgottesacker, Basel</td>
-                    <td data-label="Beschreibung">Die Stadtgärtnerei Basel präsentiert von August bis November auf dem Friedhof Wolfgottesacker die Ausstellung «Auf immer und ewig».</td>
-                    <td class="cell-plain"><a href="https://www.stadtgaertnerei.bs.ch/friedhoefe/veranstaltungen.html" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
-                </tr>
-
-                <tr data-tags="region-berlin-brandenburg art-ausstellung laufend" data-start="2026-08-29" data-end="2026-11-23">
-                    <td class="cell-plain"><span class="date-badge">2026-08-29</span><span class="date-end">bis 2026-11-23</span></td>
-                    <td class="cell-plain"><strong>Ausstellung: DAS LEBEN IST EINE COLLAGE</strong><span class="badge-laufend">l&auml;uft</span></td>
-                    <td class="location" data-label="Ort">Ricam Hospiz, Delbrückstraße 22, 12051 Berlin Neukölln</td>
-                    <td data-label="Beschreibung">Eine Kunstausstellung mit Collagen der Künstlerinnen Bettina Schilling und Ilse Winckler im Ricam Hospiz.</td>
-                    <td class="cell-plain"><a href="https://www.ricam-hospiz.de/events/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
                 <tr data-tags="region-nord art-workshop" data-start="2026-08-31" data-end="">
@@ -738,12 +780,20 @@
                     <td class="cell-plain"><a href="https://saarland.volksbund.de/aktuell/termine" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
-                <tr data-tags="region-sued art-ausstellung laufend" data-start="2026-09-07" data-end="2026-09-27">
-                    <td class="cell-plain"><span class="date-badge">2026-09-07</span><span class="date-end">bis 2026-09-27</span></td>
-                    <td class="cell-plain"><strong>Ausstellung: Friedhof - ein Ort der Begegnung</strong><span class="badge-laufend">l&auml;uft</span></td>
-                    <td class="location" data-label="Ort">Regierungspräsidium Karlsruhe / Rondellplatz</td>
-                    <td data-label="Beschreibung">Eine Ausstellung des Regierungspräsidiums Karlsruhe und des Vereins zur Pflege der Friedhofs- und Bestattungskultur rund um Friedhofs- und Bestattungskultur sowie Formen des Erinnerns.</td>
-                    <td class="cell-plain"><a href="https://www.friedhof-karlsruhe.de/home/aktuelle-termine/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
+                <tr data-tags="region-ost art-sonstige" data-start="2026-09-06" data-end="">
+                    <td class="cell-plain"><span class="date-badge">2026-09-06</span></td>
+                    <td class="cell-plain"><strong>Johannisfriedhof: Engelkummer - Engelglück</strong><span class="badge-new">neu</span></td>
+                    <td class="location" data-label="Ort">Johannisfriedhof Feierhalle (Wallotkapelle), Wehlener Straße 13, Dresden, Sachsen, 01279, Deutschland</td>
+                    <td data-label="Beschreibung">Viele der Engelsskulpturen auf unserem Johannisfriedhof wurden von namhaften Künstlern wie Selmar Werner oder Robert Diez geschaffen. Sie sind ein Sinnbild für Liebe, Geborgenheit, Trost, Frieden und Hoffnung. Für einen Teil dieser Engel, ob in Stein oder Metall gearbeitet, haben sich inzwischen sensible Grabpaten gefunden, welche sich verantwortungsvoll um diese Kunstwerke bemühen und sie mit Hil</td>
+                    <td class="cell-plain"><a href="https://johannisfriedhof-dresden.de/veranstaltung/johannisfriedhof-engelkummer-engelglueck-3/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
+                </tr>
+
+                <tr data-tags="region-ost art-fuehrung" data-start="2026-09-06" data-end="">
+                    <td class="cell-plain"><span class="date-badge">2026-09-06</span></td>
+                    <td class="cell-plain"><strong>Friedhofsrundgang &amp; Kaffeerunde</strong><span class="badge-new">neu</span></td>
+                    <td class="location" data-label="Ort">Begegnungszentrum Trinitatisfriedhof, Fiedlerstraße 1, Dresden, Sachsen, 01307, Deutschland</td>
+                    <td data-label="Beschreibung">Friedhofsrundgang &amp; Kaffeerunde – Rundgang mit Geschichten über den Trinitatisfriedhof, anschließend Kaffee und Kuchen. Die Rundgänge beginnen immer am mittleren Eingangstor an der Verwaltung. Bitte beachten Sie die unterschiedlichen Startzeiten.</td>
+                    <td class="cell-plain"><a href="https://johannisfriedhof-dresden.de/veranstaltung/friedhofsrundgang-kaffeerunde-2-2-2/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
                 <tr data-tags="region-online art-begleitung" data-start="2026-09-07" data-end="">
@@ -754,11 +804,11 @@
                     <td class="cell-plain"><a href="https://blauerfalter.de/termine" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
-                <tr data-tags="region-sued art-ausstellung laufend" data-start="2026-09-08" data-end="2026-09-27">
-                    <td class="cell-plain"><span class="date-badge">2026-09-08</span><span class="date-end">bis 2026-09-27</span></td>
+                <tr data-tags="region-sued art-ausstellung laufend" data-start="2026-09-07" data-end="2026-09-27">
+                    <td class="cell-plain"><span class="date-badge">2026-09-07</span><span class="date-end">bis 2026-09-27</span></td>
                     <td class="cell-plain"><strong>Ausstellung: Friedhof - ein Ort der Begegnung</strong><span class="badge-laufend">l&auml;uft</span></td>
                     <td class="location" data-label="Ort">Regierungspräsidium Karlsruhe / Rondellplatz</td>
-                    <td data-label="Beschreibung">Ausstellung zur Friedhofs- und Bestattungskultur, welche die Besonderheiten von Friedhöfen und verschiedene Formen der Grabgestaltung und Trauer aufzeigt.</td>
+                    <td data-label="Beschreibung">Eine Ausstellung des Regierungspräsidiums Karlsruhe und des Vereins zur Pflege der Friedhofs- und Bestattungskultur rund um Friedhofs- und Bestattungskultur sowie Formen des Erinnerns.</td>
                     <td class="cell-plain"><a href="https://www.friedhof-karlsruhe.de/home/aktuelle-termine/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
@@ -808,14 +858,6 @@
                     <td class="location" data-label="Ort">Haupteingang des Alten St.-Matthäus-Friedhofs</td>
                     <td data-label="Beschreibung">Führung über den Alten St.-Matthäus-Friedhof in Kooperation mit dem Volksbund Deutsche Kriegsgräberfürsorge e.V.</td>
                     <td class="cell-plain"><a href="https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
-                </tr>
-
-                <tr data-tags="region-sonstige art-sonstige laufend" data-start="2026-09-09" data-end="2026-09-13">
-                    <td class="cell-plain"><span class="date-badge">2026-09-09</span><span class="date-end">bis 2026-09-13</span></td>
-                    <td class="cell-plain"><strong>Wanderauszeit für Trauernde – Die Kraft der Berge spüren</strong><span class="badge-laufend">l&auml;uft</span></td>
-                    <td class="location" data-label="Ort">Wilder Kaiser / Hans-Berger-Haus</td>
-                    <td data-label="Beschreibung">Trauerreise und Wanderauszeit in den Bergen für verwaiste Eltern, Großeltern, erwachsene Geschwister und Familienmitglieder.</td>
-                    <td class="cell-plain"><a href="https://blauerfalter.de/termine" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
                 <tr data-tags="region-nord art-sonstige" data-start="2026-09-09" data-end="">
@@ -872,6 +914,22 @@
                     <td class="location" data-label="Ort">Hauptfriedhof, Torbogen Ostflügel</td>
                     <td data-label="Beschreibung">Urnenbeisetzung von Petra Pucelik-Günther auf dem Hauptfriedhof.</td>
                     <td class="cell-plain"><a href="https://www.friedhofsverwaltung-braunschweig.de/termine" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
+                </tr>
+
+                <tr data-tags="region-ost art-begleitung" data-start="2026-09-09" data-end="">
+                    <td class="cell-plain"><span class="date-badge">2026-09-09</span></td>
+                    <td class="cell-plain"><strong>Kaffeenachmittag</strong><span class="badge-new">neu</span></td>
+                    <td class="location" data-label="Ort">Begegnungszentrum Trinitatisfriedhof, Fiedlerstraße 1, Dresden, Sachsen, 01307, Deutschland</td>
+                    <td data-label="Beschreibung">Kaffeenachmittag – Zeit für Austausch, Begegnung und nette Gespräche bei Kaffee und Kuchen.</td>
+                    <td class="cell-plain"><a href="https://johannisfriedhof-dresden.de/veranstaltung/kaffeenachmittag-4-2-2-2/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
+                </tr>
+
+                <tr data-tags="region-sonstige art-sonstige laufend" data-start="2026-09-09" data-end="2026-09-13">
+                    <td class="cell-plain"><span class="date-badge">2026-09-09</span><span class="date-end">bis 2026-09-13</span></td>
+                    <td class="cell-plain"><strong>Wanderauszeit für Trauernde – Die Kraft der Berge spüren</strong><span class="badge-laufend">l&auml;uft</span></td>
+                    <td class="location" data-label="Ort">Wilder Kaiser / Hans-Berger-Haus</td>
+                    <td data-label="Beschreibung">Trauerreise und Wanderauszeit in den Bergen für verwaiste Eltern, Großeltern, erwachsene Geschwister und Familienmitglieder.</td>
+                    <td class="cell-plain"><a href="https://blauerfalter.de/termine" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
                 <tr data-tags="region-west art-vortrag" data-start="2026-09-10" data-end="">
@@ -1114,12 +1172,28 @@
                     <td class="cell-plain"><a href="https://berlin.volksbund.de/aktuell/termine" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
+                <tr data-tags="region-ost art-aktionstag" data-start="2026-09-13" data-end="">
+                    <td class="cell-plain"><span class="date-badge">2026-09-13</span></td>
+                    <td class="cell-plain"><strong>Johannisfriedhof: Tag des offenen Denkmals</strong><span class="badge-new">neu</span></td>
+                    <td class="location" data-label="Ort"></td>
+                    <td data-label="Beschreibung">Drei Veranstaltungen finden auf dem Johannisfriedhof statt. Zusätzlich öffnet der Eliasfriedhof an der Ziegelstraße 22 seine Tore mit einem eigenen Programm. Der Tag des offenen Denkmals, bundesweit von der Deutschen Stiftung Denkmalschutz koordiniert, findet jedes Jahr am zweiten Sonntag im September statt. Tausende historische Orte öffnen an diesem Tag ihre Türen – so auch unsere Friedhöfe. Im J</td>
+                    <td class="cell-plain"><a href="https://johannisfriedhof-dresden.de/veranstaltung/johannisfriedhof-tag-des-offenen-denkmals/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
+                </tr>
+
                 <tr data-tags="region-west art-vortrag" data-start="2026-09-14" data-end="">
                     <td class="cell-plain"><span class="date-badge">2026-09-14</span></td>
                     <td class="cell-plain"><strong>Vortrag des Volksbundes BV OWL</strong></td>
                     <td class="location" data-label="Ort">Löhne - Werretalhalle</td>
                     <td data-label="Beschreibung">Vortrag in Kooperation mit der VHS Löhne, dem Bündnis Gemeinsam für Vielfalt und weiteren Partnern.</td>
                     <td class="cell-plain"><a href="https://nrw.volksbund.de/aktuell/termine" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
+                </tr>
+
+                <tr data-tags="region-ost art-gottesdienst" data-start="2026-09-14" data-end="">
+                    <td class="cell-plain"><span class="date-badge">2026-09-14</span></td>
+                    <td class="cell-plain"><strong>Gedenkfeierstunde zum 170. Geburtstag von Paul Koettig</strong><span class="badge-new">neu</span></td>
+                    <td class="location" data-label="Ort"></td>
+                    <td data-label="Beschreibung">Am Montag, 14. September 2026, laden wir herzlich zu einer öffentlichen Gedenkfeierstunde auf unseren Johannisfriedhof Dresden ein. Anlass ist der 170. Geburtstag von Paul Koettig (1856–1930), dem letzten königlich-sächsischen Polizeipräsidenten, dessen Grabstätte sich auf dem Johannisfriedhof befindet. Paul Koettig gehörte zu den prägenden Persönlichkeiten der sächsischen Polizeigeschichte. Als P</td>
+                    <td class="cell-plain"><a href="https://johannisfriedhof-dresden.de/veranstaltung/gedenkfeierstunde-zum-170-geburtstag-von-paul-koettig/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
                 <tr data-tags="region-sued art-fuehrung" data-start="2026-09-15" data-end="">
@@ -1210,12 +1284,12 @@
                     <td class="cell-plain"><a href="https://berlin.volksbund.de/aktuell/termine" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
-                <tr data-tags="region-sued art-ausstellung laufend" data-start="2026-09-18" data-end="2027-08-29">
-                    <td class="cell-plain"><span class="date-badge">2026-09-18</span><span class="date-end">bis 2027-08-29</span></td>
-                    <td class="cell-plain"><strong>STONEHENGE. Uralte Geheimnisse, neue Entdeckungen</strong><span class="badge-laufend">l&auml;uft</span></td>
-                    <td class="location" data-label="Ort">Archäologische Staatssammlung München</td>
-                    <td data-label="Beschreibung">Sonderausstellung über die archäologischen Geheimnisse und Neuentdeckungen rund um die prähistorische Kult- und Grabstätte Stonehenge.</td>
-                    <td class="cell-plain"><a href="https://www.archaeologie-bayern.de/de/termine/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
+                <tr data-tags="region-ost art-fuehrung" data-start="2026-09-17" data-end="">
+                    <td class="cell-plain"><span class="date-badge">2026-09-17</span></td>
+                    <td class="cell-plain"><strong>Friedhofsrundgang &amp; Kaffeerunde</strong><span class="badge-new">neu</span></td>
+                    <td class="location" data-label="Ort">Begegnungszentrum Trinitatisfriedhof, Fiedlerstraße 1, Dresden, Sachsen, 01307, Deutschland</td>
+                    <td data-label="Beschreibung">Friedhofsrundgang &amp; Kaffeerunde – Rundgang mit Geschichten über den Trinitatisfriedhof, anschließend Kaffee und Kuchen. Die Rundgänge beginnen immer am mittleren Eingangstor an der Verwaltung. Bitte beachten Sie die unterschiedlichen Startzeiten.</td>
+                    <td class="cell-plain"><a href="https://johannisfriedhof-dresden.de/veranstaltung/friedhofsrundgang-kaffeerunde-2-2-2-2/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
                 <tr data-tags="region-sued art-fuehrung" data-start="2026-09-18" data-end="">
@@ -1226,12 +1300,12 @@
                     <td class="cell-plain"><a href="https://epitaphienkultur.de/veranstaltungen.html" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
-                <tr data-tags="region-ost art-aktionstag laufend" data-start="2026-09-19" data-end="2026-09-20">
-                    <td class="cell-plain"><span class="date-badge">2026-09-19</span><span class="date-end">bis 2026-09-20</span></td>
-                    <td class="cell-plain"><strong>Tag des Friedhofs</strong><span class="badge-laufend">l&auml;uft</span></td>
-                    <td class="location" data-label="Ort">Striesener Friedhof, Dresden</td>
-                    <td data-label="Beschreibung">Aktionstage zum Tag des Friedhofs mit verschiedenen Programmpunkten auf dem Striesener Friedhof.</td>
-                    <td class="cell-plain"><a href="https://striesener-friedhof-dresden.de/vorschau-veranstaltungen/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
+                <tr data-tags="region-sued art-ausstellung laufend" data-start="2026-09-18" data-end="2027-08-29">
+                    <td class="cell-plain"><span class="date-badge">2026-09-18</span><span class="date-end">bis 2027-08-29</span></td>
+                    <td class="cell-plain"><strong>STONEHENGE. Uralte Geheimnisse, neue Entdeckungen</strong><span class="badge-laufend">l&auml;uft</span></td>
+                    <td class="location" data-label="Ort">Archäologische Staatssammlung München</td>
+                    <td data-label="Beschreibung">Sonderausstellung über die archäologischen Geheimnisse und Neuentdeckungen rund um die prähistorische Kult- und Grabstätte Stonehenge.</td>
+                    <td class="cell-plain"><a href="https://www.archaeologie-bayern.de/de/termine/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
                 <tr data-tags="region-nord art-fuehrung" data-start="2026-09-19" data-end="">
@@ -1266,14 +1340,6 @@
                     <td class="cell-plain"><a href="https://www.dortmund.de/rathaus/verwaltung/friedhoefe-dortmund/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
-                <tr data-tags="region-sued art-fuehrung laufend" data-start="2026-09-19" data-end="2026-09-20">
-                    <td class="cell-plain"><span class="date-badge">2026-09-19</span><span class="date-end">bis 2026-09-20</span></td>
-                    <td class="cell-plain"><strong>Zeitreise auf dem St. Johannisfriedhof</strong><span class="badge-laufend">l&auml;uft</span></td>
-                    <td class="location" data-label="Ort">St. Johannisfriedhof, Nürnberg</td>
-                    <td data-label="Beschreibung">Historische Führung mit Sven Heublein über den St. Johannisfriedhof, die Einblicke in die Nürnberger Stadtgeschichte von der Dürer-Zeit über den Barock und die Industrialisierung bis in die Gegenwart vermittelt.</td>
-                    <td class="cell-plain"><a href="https://buergerverein-sankt-johannis.de/termine/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
-                </tr>
-
                 <tr data-tags="region-ost art-fuehrung" data-start="2026-09-19" data-end="">
                     <td class="cell-plain"><span class="date-badge">2026-09-19</span></td>
                     <td class="cell-plain"><strong>Friedhofsführung Nordfriedhof</strong></td>
@@ -1288,6 +1354,22 @@
                     <td class="location" data-label="Ort">Calw</td>
                     <td data-label="Beschreibung">Veranstaltung des Volksbundes Deutsche Kriegsgräberfürsorge.</td>
                     <td class="cell-plain"><a href="https://baden-wuerttemberg.volksbund.de/aktuell/termine" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
+                </tr>
+
+                <tr data-tags="region-ost art-aktionstag laufend" data-start="2026-09-19" data-end="2026-09-20">
+                    <td class="cell-plain"><span class="date-badge">2026-09-19</span><span class="date-end">bis 2026-09-20</span></td>
+                    <td class="cell-plain"><strong>Tag des Friedhofs</strong><span class="badge-laufend">l&auml;uft</span></td>
+                    <td class="location" data-label="Ort">Striesener Friedhof, Dresden</td>
+                    <td data-label="Beschreibung">Aktionstage zum Tag des Friedhofs mit verschiedenen Programmpunkten auf dem Striesener Friedhof.</td>
+                    <td class="cell-plain"><a href="https://striesener-friedhof-dresden.de/vorschau-veranstaltungen/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
+                </tr>
+
+                <tr data-tags="region-sued art-fuehrung laufend" data-start="2026-09-19" data-end="2026-09-20">
+                    <td class="cell-plain"><span class="date-badge">2026-09-19</span><span class="date-end">bis 2026-09-20</span></td>
+                    <td class="cell-plain"><strong>Zeitreise auf dem St. Johannisfriedhof</strong><span class="badge-laufend">l&auml;uft</span></td>
+                    <td class="location" data-label="Ort">St. Johannisfriedhof, Nürnberg</td>
+                    <td data-label="Beschreibung">Historische Führung mit Sven Heublein über den St. Johannisfriedhof, die Einblicke in die Nürnberger Stadtgeschichte von der Dürer-Zeit über den Barock und die Industrialisierung bis in die Gegenwart vermittelt.</td>
+                    <td class="cell-plain"><a href="https://buergerverein-sankt-johannis.de/termine/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
                 <tr data-tags="region-ost art-aktionstag" data-start="2026-09-20" data-end="">
@@ -1308,9 +1390,9 @@
 
                 <tr data-tags="region-ost art-aktionstag" data-start="2026-09-20" data-end="">
                     <td class="cell-plain"><span class="date-badge">2026-09-20</span></td>
-                    <td class="cell-plain"><strong>Tag des Friedhofs</strong></td>
-                    <td class="location" data-label="Ort">Eliasfriedhof, Ziegelstraße 22, Dresden, Sachsen, 01069, Deutschland</td>
-                    <td data-label="Beschreibung">Der Förderverein öffnet von 10 bis 18 Uhr die ansonsten geschlossenen Tore des Eliasfriedhofs. Sie erwartet ein Programm mit Führungen zur Friedhofsgeschichte, ein Verkaufsstand mit Büchern, Postkarten und anderen Kleinigkeiten zum Thema Friedhof, eine Fotoausstellung, ein Quiz für Kinder und Erwachsene, Kaffee und Kuchen. Gern können Sie auch individuell den Friedhof erkunden und sich die kunstvo</td>
+                    <td class="cell-plain"><strong>Johannisfriedhof: Tag des Friedhofs</strong></td>
+                    <td class="location" data-label="Ort">Johannisfriedhof Feierhalle (Wallotkapelle), Wehlener Straße 13, Dresden, Sachsen, 01279, Deutschland</td>
+                    <td data-label="Beschreibung">Am dritten Septemberwochenende beteiligen sich zahlreiche Städte und Gemeinden am bundesweiten „Tag des Friedhofs“. Viele Aktionen zeigen die Geschichte und Tradition einer gewachsenen Friedhofskultur vor Ort und bieten die Gelegenheit, sich dem Thema Friedhof aus unterschiedlichen Perspektiven zu nähern. Neben Religion, Kultur und Historie sind der Dialog und das lebendige Miteinander wichtige El</td>
                     <td class="cell-plain"><a href="https://eliasfriedhof.de/termin/tag-des-friedhofs-2/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
@@ -1328,6 +1410,22 @@
                     <td class="location" data-label="Ort">Frankfurter Hauptfriedhof, Frankfurt am Main</td>
                     <td data-label="Beschreibung">Veranstaltung des Volksbundes Hessen und des Grünflächenamts Frankfurt auf dem Hauptfriedhof.</td>
                     <td class="cell-plain"><a href="https://hessen.volksbund.de/aktuell/termine" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
+                </tr>
+
+                <tr data-tags="region-ost art-sonstige" data-start="2026-09-20" data-end="">
+                    <td class="cell-plain"><span class="date-badge">2026-09-20</span></td>
+                    <td class="cell-plain"><strong>„Lieblingsbeschäftigung: Grabmalskunst“</strong><span class="badge-new">neu</span></td>
+                    <td class="location" data-label="Ort"></td>
+                    <td data-label="Beschreibung">Jenny von Bary-Doussin (1874–1922) war eine deutsche Bildhauerin der späten Kaiserzeit und der Weimarer Republik. Ihr Werk umfasst Grabplastiken, Porträtskulpturen sowie verschiedene Auftragsarbeiten für städtische und private Auftraggeber.Sie war bekannt für ihre virtuose Kunstfertigkeit, einfühlsames Erfassen und die harmonische Verbindung von Symbolik und figürlicher Darstellung.Auf dem Johanni</td>
+                    <td class="cell-plain"><a href="https://johannisfriedhof-dresden.de/veranstaltung/lieblingsbeschaeftigung-grabmalskunst/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
+                </tr>
+
+                <tr data-tags="region-ost art-fuehrung" data-start="2026-09-20" data-end="">
+                    <td class="cell-plain"><span class="date-badge">2026-09-20</span></td>
+                    <td class="cell-plain"><strong>Grabskulpturen von Bildhauerinnen</strong><span class="badge-new">neu</span></td>
+                    <td class="location" data-label="Ort"></td>
+                    <td data-label="Beschreibung">Entdecken Sie beeindruckende Grabskulpturen, die von Bildhauerinnen geschaffen wurden – viele ihrer Werke sind heute kaum noch bekannt, ihre künstlerische Qualität aber unübersehbar.Bei diesem Rundgang lernen Sie u. a. Arbeiten von Julie Emilie Genthe (1869–1938) und Susanne Wagner-Teichen (um 1877–1930) kennen. Andreas Dehmer erläutert die Besonderheiten der Skulpturen und gibt Einblicke in die L</td>
+                    <td class="cell-plain"><a href="https://johannisfriedhof-dresden.de/veranstaltung/grabskulpturen-von-bildhauerinnen/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
                 <tr data-tags="region-west art-vortrag" data-start="2026-09-22" data-end="">
@@ -1386,14 +1484,6 @@
                     <td class="cell-plain"><a href="https://berlin.volksbund.de/aktuell/termine" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
-                <tr data-tags="region-west art-workshop laufend" data-start="2026-09-24" data-end="2026-09-25">
-                    <td class="cell-plain"><span class="date-badge">2026-09-24</span><span class="date-end">bis 2026-09-25</span></td>
-                    <td class="cell-plain"><strong>Trauerredner-Ausbildung</strong><span class="badge-laufend">l&auml;uft</span></td>
-                    <td class="location" data-label="Ort">AUF DAS LEBEN, Köln</td>
-                    <td data-label="Beschreibung">Fundierte Ausbildung für angehende Trauerrednerinnen und Trauerredner zur individuellen und würdevollen Gestaltung von Abschiedsfeiern.</td>
-                    <td class="cell-plain"><a href="https://aufdasleben.de/event/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
-                </tr>
-
                 <tr data-tags="region-west art-workshop" data-start="2026-09-24" data-end="">
                     <td class="cell-plain"><span class="date-badge">2026-09-24</span></td>
                     <td class="cell-plain"><strong>Bilderbuch-Lesung und Workshop „Die unglaublich alte Katze“</strong></td>
@@ -1408,6 +1498,14 @@
                     <td class="location" data-label="Ort">Bergfriedhof Bad Lauterberg</td>
                     <td data-label="Beschreibung">Gedenkveranstaltung auf dem Bergfriedhof Bad Lauterberg.</td>
                     <td class="cell-plain"><a href="https://niedersachsen.volksbund.de/aktuell/termine" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
+                </tr>
+
+                <tr data-tags="region-west art-workshop laufend" data-start="2026-09-24" data-end="2026-09-25">
+                    <td class="cell-plain"><span class="date-badge">2026-09-24</span><span class="date-end">bis 2026-09-25</span></td>
+                    <td class="cell-plain"><strong>Trauerredner-Ausbildung</strong><span class="badge-laufend">l&auml;uft</span></td>
+                    <td class="location" data-label="Ort">AUF DAS LEBEN, Köln</td>
+                    <td data-label="Beschreibung">Fundierte Ausbildung für angehende Trauerrednerinnen und Trauerredner zur individuellen und würdevollen Gestaltung von Abschiedsfeiern.</td>
+                    <td class="cell-plain"><a href="https://aufdasleben.de/event/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
                 <tr data-tags="region-berlin-brandenburg art-fuehrung" data-start="2026-09-25" data-end="">
@@ -1482,6 +1580,14 @@
                     <td class="cell-plain"><a href="https://www.fvwuppertal.de/angebote-veranstaltungen/angebote/veranstaltungen.html" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
+                <tr data-tags="region-ost art-fuehrung" data-start="2026-09-27" data-end="">
+                    <td class="cell-plain"><span class="date-badge">2026-09-27</span></td>
+                    <td class="cell-plain"><strong>Führung: zum Steinerweichen</strong><span class="badge-new">neu</span></td>
+                    <td class="location" data-label="Ort">Begegnungszentrum Trinitatisfriedhof, Fiedlerstraße 1, Dresden, Sachsen, 01307, Deutschland</td>
+                    <td data-label="Beschreibung">Führung „Zum Steinerweichen – gefährdete und gerettete Grabdenkmäler“ – Führung des Freundeskreis Start am BegegnungszentrumNicht alle Grabdenkmäler aus Stein sind für die Ewigkeit gemacht. Auf dem Trinitatisfriedhof lassen sich viele unterschiedliche Spuren von Verwitterung und Schäden entdecken – an Grabmalen aus Sand- oder Kalkstein, Marmor oder Granit.Bei dieser Führung erfahren Sie, warum Ste</td>
+                    <td class="cell-plain"><a href="https://johannisfriedhof-dresden.de/veranstaltung/fuehrung-verachtet-mir-die-meister-nicht-2/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
+                </tr>
+
                 <tr data-tags="region-west art-fuehrung" data-start="2026-09-30" data-end="">
                     <td class="cell-plain"><span class="date-badge">2026-09-30</span></td>
                     <td class="cell-plain"><strong>Kurator*innenführung mit Künstlerin: Rana Matloub</strong></td>
@@ -1530,6 +1636,14 @@
                     <td class="cell-plain"><a href="https://www.grieneisen.de/aktuelles" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
+                <tr data-tags="region-ost art-fuehrung" data-start="2026-09-30" data-end="">
+                    <td class="cell-plain"><span class="date-badge">2026-09-30</span></td>
+                    <td class="cell-plain"><strong>Trinitatisfriedhof: Kaffee, Kuchen und Geschichte(n)</strong><span class="badge-new">neu</span></td>
+                    <td class="location" data-label="Ort">Begegnungszentrum Trinitatisfriedhof, Fiedlerstraße 1, Dresden, Sachsen, 01307, Deutschland</td>
+                    <td data-label="Beschreibung">Besuchen Sie uns! Trinken Sie eine Tasse Kaffee oder Tee, kommen Sie mit uns ins Gespräch oder stöbern Sie durch unser Büchertauschregal. Am Ende unseres Kaffeenachmittages gegen 16 Uhr gibt es Geschichte(n), von oder über unsere Friedhöfe oder Wissenswertes aus Archiven, lassen Sie sich überraschen und seien Sie gespannt. Kleine Führungen sind ebenfalls in der Konzeption.</td>
+                    <td class="cell-plain"><a href="https://johannisfriedhof-dresden.de/veranstaltung/offener-mittwoch-im-begegnungszentrum-6-5-2-4-2-2-2/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
+                </tr>
+
                 <tr data-tags="region-online art-vortrag" data-start="2026-10-01" data-end="">
                     <td class="cell-plain"><span class="date-badge">2026-10-01</span></td>
                     <td class="cell-plain"><strong>Aktuelle Untersuchungen am Goldschatz der Amanishakheto</strong></td>
@@ -1546,14 +1660,6 @@
                     <td class="cell-plain"><a href="https://www.fvwuppertal.de/angebote-veranstaltungen/angebote/veranstaltungen.html" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
-                <tr data-tags="region-west art-sonstige laufend" data-start="2026-10-01" data-end="2026-10-04">
-                    <td class="cell-plain"><span class="date-badge">2026-10-01</span><span class="date-end">bis 2026-10-04</span></td>
-                    <td class="cell-plain"><strong>Studienfahrt nach Verdun</strong><span class="badge-laufend">l&auml;uft</span></td>
-                    <td class="location" data-label="Ort">Verdun, Frankreich</td>
-                    <td data-label="Beschreibung">Mehrtägige Studienfahrt des Volksbundes Hessen zu den Kriegsgräberstätten und historischen Orten in Verdun.</td>
-                    <td class="cell-plain"><a href="https://hessen.volksbund.de/aktuell/termine" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
-                </tr>
-
                 <tr data-tags="region-berlin-brandenburg art-ausstellung" data-start="2026-10-01" data-end="">
                     <td class="cell-plain"><span class="date-badge">2026-10-01</span></td>
                     <td class="cell-plain"><strong>Ausstellung Anderwelt</strong></td>
@@ -1568,6 +1674,14 @@
                     <td class="location" data-label="Ort">Friedhof Schöneberg III Friedenau</td>
                     <td data-label="Beschreibung">Veranstaltung auf dem Friedhof Schöneberg III in Friedenau.</td>
                     <td class="cell-plain"><a href="https://berlin.volksbund.de/aktuell/termine" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
+                </tr>
+
+                <tr data-tags="region-west art-sonstige laufend" data-start="2026-10-01" data-end="2026-10-04">
+                    <td class="cell-plain"><span class="date-badge">2026-10-01</span><span class="date-end">bis 2026-10-04</span></td>
+                    <td class="cell-plain"><strong>Studienfahrt nach Verdun</strong><span class="badge-laufend">l&auml;uft</span></td>
+                    <td class="location" data-label="Ort">Verdun, Frankreich</td>
+                    <td data-label="Beschreibung">Mehrtägige Studienfahrt des Volksbundes Hessen zu den Kriegsgräberstätten und historischen Orten in Verdun.</td>
+                    <td class="cell-plain"><a href="https://hessen.volksbund.de/aktuell/termine" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
                 <tr data-tags="region-sued art-fuehrung" data-start="2026-10-02" data-end="">
@@ -1656,6 +1770,22 @@
                     <td class="location" data-label="Ort">Alter Südlicher Friedhof, München</td>
                     <td data-label="Beschreibung">Eine Führung über den Alten Südlichen Friedhof in München, die Einblicke in vergangene Begräbniskultur und die Gräber bekannter Persönlichkeiten vermittelt.</td>
                     <td class="cell-plain"><a href="https://www.stattreisen-muenchen.de/fuehrungen/der-alte-sudliche-friedhof" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
+                </tr>
+
+                <tr data-tags="region-ost art-fuehrung" data-start="2026-10-04" data-end="">
+                    <td class="cell-plain"><span class="date-badge">2026-10-04</span></td>
+                    <td class="cell-plain"><strong>Sonntagsspaziergang</strong><span class="badge-new">neu</span></td>
+                    <td class="location" data-label="Ort"></td>
+                    <td data-label="Beschreibung">Mit seinen 25 ha ist der Johannisfriedhof heute der zweitgrößte Friedhof der Landeshauptstadt.Bereits 1881 wurde das erste Grab ausgehoben, denn durch die Eingemeindungen umliegender Orte und die durch die Industrialisierung stetig wachsende Bevölkerungszahl war ein neuer Friedhof dringend nötig geworden. Der ArchitektPaul Wallot übernahm die Planung des neuen Friedhofs und schuf die imposante Fei</td>
+                    <td class="cell-plain"><a href="https://johannisfriedhof-dresden.de/veranstaltung/sonntagsspaziergang-jf-oktober/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
+                </tr>
+
+                <tr data-tags="region-ost art-fuehrung" data-start="2026-10-04" data-end="">
+                    <td class="cell-plain"><span class="date-badge">2026-10-04</span></td>
+                    <td class="cell-plain"><strong>Friedhofsrundgang &amp; Kaffeerunde</strong><span class="badge-new">neu</span></td>
+                    <td class="location" data-label="Ort">Begegnungszentrum Trinitatisfriedhof, Fiedlerstraße 1, Dresden, Sachsen, 01307, Deutschland</td>
+                    <td data-label="Beschreibung">Friedhofsrundgang &amp; Kaffeerunde – Rundgang mit Geschichten über den Trinitatisfriedhof, anschließend Kaffee und Kuchen. Die Rundgänge beginnen immer am mittleren Eingangstor an der Verwaltung. Bitte beachten Sie die unterschiedlichen Startzeiten.</td>
+                    <td class="cell-plain"><a href="https://johannisfriedhof-dresden.de/veranstaltung/friedhofsrundgang-kaffeerunde-2-2-2-2-2/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
                 <tr data-tags="region-online art-begleitung" data-start="2026-10-05" data-end="">
@@ -1794,6 +1924,22 @@
                     <td class="cell-plain"><a href="https://eliasfriedhof.de/termin/themenfuehrung-dresdner-medizingeschichten-auf-dem-eliasfriedhof/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
+                <tr data-tags="region-west art-sonstige" data-start="2026-10-11" data-end="">
+                    <td class="cell-plain"><span class="date-badge">2026-10-11</span></td>
+                    <td class="cell-plain"><strong>Grünpflegetag auf dem Johannisfriedhof</strong></td>
+                    <td class="location" data-label="Ort">Kapelle Johannisfriedhof, Osnabrück</td>
+                    <td data-label="Beschreibung">Gartenarbeit und Pflegeaktion auf dem historischen Johannisfriedhof, veranstaltet vom Förderkreis Hasefriedhof-Johannisfriedhof e.V.</td>
+                    <td class="cell-plain"><a href="https://www.historische-friedhoefe-osnabrueck.de/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
+                </tr>
+
+                <tr data-tags="region-ost art-fuehrung" data-start="2026-10-11" data-end="">
+                    <td class="cell-plain"><span class="date-badge">2026-10-11</span></td>
+                    <td class="cell-plain"><strong>Frauenschicksale - Erinnerung und Begegnung</strong><span class="badge-new">neu</span></td>
+                    <td class="location" data-label="Ort"></td>
+                    <td data-label="Beschreibung">Friedhöfe erzählen nicht nur von Lebensfreude und Erfolg, sondern auch von Schicksalen, die von Leid, Diskriminierung oder tragischen Umständen geprägt waren.In dieser Führung widmen wir uns Frauen wie Grete Beier (1885–1908), Tochter eines Bürgermeisters, die durch tragische Entscheidungen in den Blick der Öffentlichkeit geriet und 1908 im Königreich Sachsen als letzte Frau öffentlich hingerichte</td>
+                    <td class="cell-plain"><a href="https://johannisfriedhof-dresden.de/veranstaltung/frauenschicksale-erinnerung-und-begegnung/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
+                </tr>
+
                 <tr data-tags="region-sonstige art-sonstige laufend" data-start="2026-10-11" data-end="2026-10-16">
                     <td class="cell-plain"><span class="date-badge">2026-10-11</span><span class="date-end">bis 2026-10-16</span></td>
                     <td class="cell-plain"><strong>Pilgertage in Südtirol: Wandern, Wandeln, Werden – auf dem Jakobsweg über den Ritten</strong><span class="badge-laufend">l&auml;uft</span></td>
@@ -1808,14 +1954,6 @@
                     <td class="location" data-label="Ort">Hotel 3 Birken, Klobenstein/Ritten</td>
                     <td data-label="Beschreibung">Wandern und Besinnen für Trauernde auf dem Jakobsweg über den Ritten.</td>
                     <td class="cell-plain"><a href="https://blauerfalter.de/termine" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
-                </tr>
-
-                <tr data-tags="region-west art-sonstige" data-start="2026-10-11" data-end="">
-                    <td class="cell-plain"><span class="date-badge">2026-10-11</span></td>
-                    <td class="cell-plain"><strong>Grünpflegetag auf dem Johannisfriedhof</strong></td>
-                    <td class="location" data-label="Ort">Kapelle Johannisfriedhof, Osnabrück</td>
-                    <td data-label="Beschreibung">Gartenarbeit und Pflegeaktion auf dem historischen Johannisfriedhof, veranstaltet vom Förderkreis Hasefriedhof-Johannisfriedhof e.V.</td>
-                    <td class="cell-plain"><a href="https://www.historische-friedhoefe-osnabrueck.de/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
                 <tr data-tags="region-west art-sonstige laufend" data-start="2026-10-11" data-end="2026-11-25">
@@ -1912,6 +2050,14 @@
                     <td class="location" data-label="Ort">Mosbach</td>
                     <td data-label="Beschreibung">Veranstaltung des Volksbundes Deutsche Kriegsgräberfürsorge.</td>
                     <td class="cell-plain"><a href="https://baden-wuerttemberg.volksbund.de/aktuell/termine" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
+                </tr>
+
+                <tr data-tags="region-ost art-begleitung" data-start="2026-10-14" data-end="">
+                    <td class="cell-plain"><span class="date-badge">2026-10-14</span></td>
+                    <td class="cell-plain"><strong>Kaffeenachmittag</strong><span class="badge-new">neu</span></td>
+                    <td class="location" data-label="Ort">Begegnungszentrum Trinitatisfriedhof, Fiedlerstraße 1, Dresden, Sachsen, 01307, Deutschland</td>
+                    <td data-label="Beschreibung">Kaffeenachmittag – Zeit für Austausch, Begegnung und nette Gespräche bei Kaffee und Kuchen.</td>
+                    <td class="cell-plain"><a href="https://johannisfriedhof-dresden.de/veranstaltung/kaffeenachmittag-4-2-2-2-2/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
                 <tr data-tags="region-west art-vortrag" data-start="2026-10-15" data-end="">
@@ -2040,6 +2186,14 @@
                     <td class="location" data-label="Ort">Hauptfriedhof Karlsruhe</td>
                     <td data-label="Beschreibung">Führung zur Geschichte der 1874–1876 erbauten Friedhofskapelle, Leichenhalle und Gruftenhalle im Stile der Renaissance.</td>
                     <td class="cell-plain"><a href="https://www.friedhof-karlsruhe.de/programm/fuehrungen-und-angebote.html" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
+                </tr>
+
+                <tr data-tags="region-ost art-fuehrung" data-start="2026-10-22" data-end="">
+                    <td class="cell-plain"><span class="date-badge">2026-10-22</span></td>
+                    <td class="cell-plain"><strong>Friedhofsrundgang &amp; Kaffeerunde</strong><span class="badge-new">neu</span></td>
+                    <td class="location" data-label="Ort">Begegnungszentrum Trinitatisfriedhof, Fiedlerstraße 1, Dresden, Sachsen, 01307, Deutschland</td>
+                    <td data-label="Beschreibung">Friedhofsrundgang &amp; Kaffeerunde – Rundgang mit Geschichten über den Trinitatisfriedhof, anschließend Kaffee und Kuchen. Die Rundgänge beginnen immer am mittleren Eingangstor an der Verwaltung. Bitte beachten Sie die unterschiedlichen Startzeiten.</td>
+                    <td class="cell-plain"><a href="https://johannisfriedhof-dresden.de/veranstaltung/friedhofsrundgang-kaffeerunde-2-2-2-2-2-2/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
                 <tr data-tags="region-ost art-gottesdienst" data-start="2026-10-23" data-end="">
@@ -2186,6 +2340,14 @@
                     <td class="cell-plain"><a href="https://baden-wuerttemberg.volksbund.de/aktuell/termine" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
+                <tr data-tags="region-ost art-fuehrung" data-start="2026-10-28" data-end="">
+                    <td class="cell-plain"><span class="date-badge">2026-10-28</span></td>
+                    <td class="cell-plain"><strong>Trinitatisfriedhof: Kaffee, Kuchen und Geschichte(n)</strong><span class="badge-new">neu</span></td>
+                    <td class="location" data-label="Ort">Begegnungszentrum Trinitatisfriedhof, Fiedlerstraße 1, Dresden, Sachsen, 01307, Deutschland</td>
+                    <td data-label="Beschreibung">Besuchen Sie uns! Trinken Sie eine Tasse Kaffee oder Tee, kommen Sie mit uns ins Gespräch oder stöbern Sie durch unser Büchertauschregal. Am Ende unseres Kaffeenachmittages gegen 16 Uhr gibt es Geschichte(n), von oder über unsere Friedhöfe oder Wissenswertes aus Archiven, lassen Sie sich überraschen und seien Sie gespannt. Kleine Führungen sind ebenfalls in der Konzeption.</td>
+                    <td class="cell-plain"><a href="https://johannisfriedhof-dresden.de/veranstaltung/offener-mittwoch-im-begegnungszentrum-6-5-2-4-2-2-2-2/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
+                </tr>
+
                 <tr data-tags="region-west art-sonstige" data-start="2026-10-29" data-end="">
                     <td class="cell-plain"><span class="date-badge">2026-10-29</span></td>
                     <td class="cell-plain"><strong>Informationsveranstaltung Koblenz</strong></td>
@@ -2224,6 +2386,22 @@
                     <td class="location" data-label="Ort">Trauer Taskforce</td>
                     <td data-label="Beschreibung">Zweisprachiger Workshop über den Umgang mit dem Tod im Rahmen der Trauerwoche.</td>
                     <td class="cell-plain"><a href="https://trauertaskforce.de/trauerwoche/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
+                </tr>
+
+                <tr data-tags="region-ost art-aktionstag" data-start="2026-10-31" data-end="">
+                    <td class="cell-plain"><span class="date-badge">2026-10-31</span></td>
+                    <td class="cell-plain"><strong>ANIMA ET MORS – Kleinmesse über Leben und Tod</strong><span class="badge-new">neu</span></td>
+                    <td class="location" data-label="Ort">Trinitatisfriedhof, Fiedlerstraße 1, 01307 Dresden</td>
+                    <td data-label="Beschreibung">Dresdens erste Kleinmesse zu den Themen selbstbestimmtes Leben, selbstbestimmtes Sterben und LebensWert, mit Ausstellern, Vorträgen, Lesungen und Mitmachangeboten. 10-18 Uhr.</td>
+                    <td class="cell-plain"><a href="https://www.anima-et-mors.de/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
+                </tr>
+
+                <tr data-tags="region-ost art-aktionstag" data-start="2026-10-31" data-end="">
+                    <td class="cell-plain"><span class="date-badge">2026-10-31</span></td>
+                    <td class="cell-plain"><strong>Anima et Mors – Das Leben und der Tod – Kleinmesse</strong><span class="badge-new">neu</span></td>
+                    <td class="location" data-label="Ort">Trinitatisfriedhof Feierhalle (gegenüber Trinitatiskirchruine), Fiedlerstraße 1, Dresden, Sachsen, 01307, Deutschland</td>
+                    <td data-label="Beschreibung">in der Feierhalle und im Begegnungszentrum sowie Außenflächen, Friedhofseingang gegenüber der Trinitatiskirchruine Selbstbestimmt lebenSelbstbestimmt sterbenLebensWert Der Tod ist oft ein großes Tabu und macht Angst. Was ist aber, wenn er gar nicht so furchteinflößend ist? Diese Veranstaltung soll Ihnen Mut machen, dem Thema zu begegnen und dem Tod seinen Platz an der Seite des Lebens geben.Leben</td>
+                    <td class="cell-plain"><a href="https://johannisfriedhof-dresden.de/veranstaltung/anima-et-mors-das-leben-und-der-tod-kleinmesse/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
                 <tr data-tags="region-west art-fuehrung" data-start="2026-11-01" data-end="">
@@ -2266,12 +2444,12 @@
                     <td class="cell-plain"><a href="https://rheinland-pfalz.volksbund.de/aktuell/termine" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
-                <tr data-tags="region-ausland art-sonstige laufend" data-start="2026-11-02" data-end="2026-11-04">
-                    <td class="cell-plain"><span class="date-badge">2026-11-02</span><span class="date-end">bis 2026-11-04</span></td>
-                    <td class="cell-plain"><strong>Klosterauszeit für trauernde Großeltern nach dem Tod des Enkelkindes</strong><span class="badge-laufend">l&auml;uft</span></td>
-                    <td class="location" data-label="Ort">Kloster Bernried am Starnberger See</td>
-                    <td data-label="Beschreibung">Heilsame Tage und Auszeit im Kloster Bernried für trauernde Großeltern nach dem Verlust eines Enkelkindes.</td>
-                    <td class="cell-plain"><a href="https://blauerfalter.de/termine" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
+                <tr data-tags="region-ost art-fuehrung" data-start="2026-11-01" data-end="">
+                    <td class="cell-plain"><span class="date-badge">2026-11-01</span></td>
+                    <td class="cell-plain"><strong>Friedhofsrundgang &amp; Kaffeerunde</strong><span class="badge-new">neu</span></td>
+                    <td class="location" data-label="Ort">Begegnungszentrum Trinitatisfriedhof, Fiedlerstraße 1, Dresden, Sachsen, 01307, Deutschland</td>
+                    <td data-label="Beschreibung">Friedhofsrundgang &amp; Kaffeerunde – Rundgang mit Geschichten über den Trinitatisfriedhof, anschließend Kaffee und Kuchen. Die Rundgänge beginnen immer am mittleren Eingangstor an der Verwaltung. Bitte beachten Sie die unterschiedlichen Startzeiten.</td>
+                    <td class="cell-plain"><a href="https://johannisfriedhof-dresden.de/veranstaltung/friedhofsrundgang-kaffeerunde-2-2-2-2-2-2-2/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
                 <tr data-tags="region-online art-begleitung" data-start="2026-11-02" data-end="">
@@ -2279,6 +2457,14 @@
                     <td class="cell-plain"><strong>Online-Trauergruppe für Verwaiste Eltern Herzverbunden</strong></td>
                     <td class="location" data-label="Ort">Online</td>
                     <td data-label="Beschreibung">Online-Treffen für verwaiste Eltern zum Austausch und zur gegenseitigen Unterstützung in der Trauer.</td>
+                    <td class="cell-plain"><a href="https://blauerfalter.de/termine" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
+                </tr>
+
+                <tr data-tags="region-ausland art-sonstige laufend" data-start="2026-11-02" data-end="2026-11-04">
+                    <td class="cell-plain"><span class="date-badge">2026-11-02</span><span class="date-end">bis 2026-11-04</span></td>
+                    <td class="cell-plain"><strong>Klosterauszeit für trauernde Großeltern nach dem Tod des Enkelkindes</strong><span class="badge-laufend">l&auml;uft</span></td>
+                    <td class="location" data-label="Ort">Kloster Bernried am Starnberger See</td>
+                    <td data-label="Beschreibung">Heilsame Tage und Auszeit im Kloster Bernried für trauernde Großeltern nach dem Verlust eines Enkelkindes.</td>
                     <td class="cell-plain"><a href="https://blauerfalter.de/termine" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
@@ -2298,14 +2484,6 @@
                     <td class="cell-plain"><a href="https://www.heidelberg.de/HD/Rathaus/bergfriedhof_+fuehrungen+und+spaziergaenge.html" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
-                <tr data-tags="region-ausland art-sonstige laufend" data-start="2026-11-05" data-end="2026-11-08">
-                    <td class="cell-plain"><span class="date-badge">2026-11-05</span><span class="date-end">bis 2026-11-08</span></td>
-                    <td class="cell-plain"><strong>Dem Leben wieder Atem schenken - Klosterauszeit</strong><span class="badge-laufend">l&auml;uft</span></td>
-                    <td class="location" data-label="Ort">Kloster Bernried</td>
-                    <td data-label="Beschreibung">Auszeit im Kloster Bernried mit Trauer-Yoga, Qi Gong und achtsamem Atmen zur Ruhefindung.</td>
-                    <td class="cell-plain"><a href="https://blauerfalter.de/termine" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
-                </tr>
-
                 <tr data-tags="region-ausland art-sonstige" data-start="2026-11-05" data-end="">
                     <td class="cell-plain"><span class="date-badge">2026-11-05</span></td>
                     <td class="cell-plain"><strong>Loslassen, ohne zu vergessen</strong></td>
@@ -2320,6 +2498,14 @@
                     <td class="location" data-label="Ort">sam – Stadtmuseum am Markt, Wiesbaden</td>
                     <td data-label="Beschreibung">Vortrag des Volksbundes Hessen in Kooperation mit der Kulturinitiative Wiesbaden im Stadtmuseum.</td>
                     <td class="cell-plain"><a href="https://hessen.volksbund.de/aktuell/termine" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
+                </tr>
+
+                <tr data-tags="region-ausland art-sonstige laufend" data-start="2026-11-05" data-end="2026-11-08">
+                    <td class="cell-plain"><span class="date-badge">2026-11-05</span><span class="date-end">bis 2026-11-08</span></td>
+                    <td class="cell-plain"><strong>Dem Leben wieder Atem schenken - Klosterauszeit</strong><span class="badge-laufend">l&auml;uft</span></td>
+                    <td class="location" data-label="Ort">Kloster Bernried</td>
+                    <td data-label="Beschreibung">Auszeit im Kloster Bernried mit Trauer-Yoga, Qi Gong und achtsamem Atmen zur Ruhefindung.</td>
+                    <td class="cell-plain"><a href="https://blauerfalter.de/termine" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
                 <tr data-tags="region-berlin-brandenburg art-gottesdienst" data-start="2026-11-08" data-end="">
@@ -2344,6 +2530,14 @@
                     <td class="location" data-label="Ort">MIX concepts, Hamburg</td>
                     <td data-label="Beschreibung">Eine Messe mit Angeboten und Inspirationen rund um die Themen Leben, Sterben, Bestattungsgestaltung und Erinnerungskultur.</td>
                     <td class="cell-plain"><a href="https://aufdasleben.de/event/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
+                </tr>
+
+                <tr data-tags="region-ost art-begleitung" data-start="2026-11-11" data-end="">
+                    <td class="cell-plain"><span class="date-badge">2026-11-11</span></td>
+                    <td class="cell-plain"><strong>Kaffeenachmittag</strong><span class="badge-new">neu</span></td>
+                    <td class="location" data-label="Ort">Begegnungszentrum Trinitatisfriedhof, Fiedlerstraße 1, Dresden, Sachsen, 01307, Deutschland</td>
+                    <td data-label="Beschreibung">Kaffeenachmittag – Zeit für Austausch, Begegnung und nette Gespräche bei Kaffee und Kuchen.</td>
+                    <td class="cell-plain"><a href="https://johannisfriedhof-dresden.de/veranstaltung/kaffeenachmittag-4-2-2-2-2-2/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
                 <tr data-tags="region-west art-workshop" data-start="2026-11-12" data-end="">
@@ -2538,14 +2732,6 @@
                     <td class="cell-plain"><a href="https://www.kulturfuchs.at/friedhof/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
-                <tr data-tags="region-west art-workshop laufend" data-start="2026-11-19" data-end="2026-11-20">
-                    <td class="cell-plain"><span class="date-badge">2026-11-19</span><span class="date-end">bis 2026-11-20</span></td>
-                    <td class="cell-plain"><strong>Trauerredner-Ausbildung</strong><span class="badge-laufend">l&auml;uft</span></td>
-                    <td class="location" data-label="Ort">AUF DAS LEBEN, Köln</td>
-                    <td data-label="Beschreibung">Ausbildungsseminar für angehende Trauerrednerinnen und Trauerredner zur Vermittlung praxistauglicher Grundlagen der Abschiedsgestaltung.</td>
-                    <td class="cell-plain"><a href="https://aufdasleben.de/event/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
-                </tr>
-
                 <tr data-tags="region-west art-vortrag" data-start="2026-11-19" data-end="">
                     <td class="cell-plain"><span class="date-badge">2026-11-19</span></td>
                     <td class="cell-plain"><strong>Tod im Spiegel - Vortrag über den Tod im Spiegel unterschiedlicher Zeiten und Kulturen</strong></td>
@@ -2554,12 +2740,20 @@
                     <td class="cell-plain"><a href="https://www.fvwuppertal.de/angebote-veranstaltungen/angebote/veranstaltungen.html" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
-                <tr data-tags="region-ost art-gottesdienst laufend" data-start="2026-11-21" data-end="2026-11-22">
-                    <td class="cell-plain"><span class="date-badge">2026-11-21</span><span class="date-end">bis 2026-11-22</span></td>
-                    <td class="cell-plain"><strong>Wochenende zum Ewigkeitssonntag</strong><span class="badge-laufend">l&auml;uft</span></td>
-                    <td class="location" data-label="Ort">Striesener Friedhof, Dresden</td>
-                    <td data-label="Beschreibung">Gedenk- und Andachtsangebote auf dem Friedhof anlässlich des Ewigkeitssonntags zum Totengedenken.</td>
-                    <td class="cell-plain"><a href="https://striesener-friedhof-dresden.de/vorschau-veranstaltungen/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
+                <tr data-tags="region-ost art-fuehrung" data-start="2026-11-19" data-end="">
+                    <td class="cell-plain"><span class="date-badge">2026-11-19</span></td>
+                    <td class="cell-plain"><strong>Friedhofsrundgang &amp; Kaffeerunde</strong><span class="badge-new">neu</span></td>
+                    <td class="location" data-label="Ort">Begegnungszentrum Trinitatisfriedhof, Fiedlerstraße 1, Dresden, Sachsen, 01307, Deutschland</td>
+                    <td data-label="Beschreibung">Friedhofsrundgang &amp; Kaffeerunde – Rundgang mit Geschichten über den Trinitatisfriedhof, anschließend Kaffee und Kuchen. Die Rundgänge beginnen immer am mittleren Eingangstor an der Verwaltung. Bitte beachten Sie die unterschiedlichen Startzeiten.</td>
+                    <td class="cell-plain"><a href="https://johannisfriedhof-dresden.de/veranstaltung/friedhofsrundgang-kaffeerunde-2-2-2-2-2-2-2-2/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
+                </tr>
+
+                <tr data-tags="region-west art-workshop laufend" data-start="2026-11-19" data-end="2026-11-20">
+                    <td class="cell-plain"><span class="date-badge">2026-11-19</span><span class="date-end">bis 2026-11-20</span></td>
+                    <td class="cell-plain"><strong>Trauerredner-Ausbildung</strong><span class="badge-laufend">l&auml;uft</span></td>
+                    <td class="location" data-label="Ort">AUF DAS LEBEN, Köln</td>
+                    <td data-label="Beschreibung">Ausbildungsseminar für angehende Trauerrednerinnen und Trauerredner zur Vermittlung praxistauglicher Grundlagen der Abschiedsgestaltung.</td>
+                    <td class="cell-plain"><a href="https://aufdasleben.de/event/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
                 <tr data-tags="region-west art-fuehrung" data-start="2026-11-21" data-end="">
@@ -2568,6 +2762,14 @@
                     <td class="location" data-label="Ort">Hauptfriedhof Frankfurt, Haupteingang (Neues Portal), Eckenheimer Landstraße 194, Frankfurt am Main</td>
                     <td data-label="Beschreibung">Ein historischer Rundgang über den Frankfurter Hauptfriedhof, der anhand von Mausoleen und Grabsteinen die Lebensgeschichten bedeutender Persönlichkeiten vermittelt.</td>
                     <td class="cell-plain"><a href="https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
+                </tr>
+
+                <tr data-tags="region-ost art-gottesdienst laufend" data-start="2026-11-21" data-end="2026-11-22">
+                    <td class="cell-plain"><span class="date-badge">2026-11-21</span><span class="date-end">bis 2026-11-22</span></td>
+                    <td class="cell-plain"><strong>Wochenende zum Ewigkeitssonntag</strong><span class="badge-laufend">l&auml;uft</span></td>
+                    <td class="location" data-label="Ort">Striesener Friedhof, Dresden</td>
+                    <td data-label="Beschreibung">Gedenk- und Andachtsangebote auf dem Friedhof anlässlich des Ewigkeitssonntags zum Totengedenken.</td>
+                    <td class="cell-plain"><a href="https://striesener-friedhof-dresden.de/vorschau-veranstaltungen/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
                 <tr data-tags="region-berlin-brandenburg art-sonstige" data-start="2026-11-22" data-end="">
@@ -2626,6 +2828,14 @@
                     <td class="cell-plain"><a href="https://rheinland-pfalz.volksbund.de/aktuell/termine" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
+                <tr data-tags="region-ost art-begleitung" data-start="2026-11-22" data-end="">
+                    <td class="cell-plain"><span class="date-badge">2026-11-22</span></td>
+                    <td class="cell-plain"><strong>Kaffeenachmittag zum Ewigkeitssonntag</strong><span class="badge-new">neu</span></td>
+                    <td class="location" data-label="Ort">Begegnungszentrum Trinitatisfriedhof, Fiedlerstraße 1, Dresden, Sachsen, 01307, Deutschland</td>
+                    <td data-label="Beschreibung">Kaffeenachmittag – Zeit für Austausch, Begegnung und nette Gespräche bei Kaffee und Kuchen.</td>
+                    <td class="cell-plain"><a href="https://johannisfriedhof-dresden.de/veranstaltung/kaffeenachmittag-4-2-2-2-2-2-2/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
+                </tr>
+
                 <tr data-tags="region-west art-ausstellung" data-start="2026-11-25" data-end="">
                     <td class="cell-plain"><span class="date-badge">2026-11-25</span></td>
                     <td class="cell-plain"><strong>Eröffnung der Winterausstellung «Am Grab des Heiligen – St.Gallen im 7. Jahrhundert»</strong></td>
@@ -2642,19 +2852,19 @@
                     <td class="cell-plain"><a href="https://www.grieneisen.de/aktuelles" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
+                <tr data-tags="region-ost art-fuehrung" data-start="2026-11-25" data-end="">
+                    <td class="cell-plain"><span class="date-badge">2026-11-25</span></td>
+                    <td class="cell-plain"><strong>Trinitatisfriedhof: Kaffee, Kuchen und Geschichte(n)</strong><span class="badge-new">neu</span></td>
+                    <td class="location" data-label="Ort">Begegnungszentrum Trinitatisfriedhof, Fiedlerstraße 1, Dresden, Sachsen, 01307, Deutschland</td>
+                    <td data-label="Beschreibung">Besuchen Sie uns! Trinken Sie eine Tasse Kaffee oder Tee, kommen Sie mit uns ins Gespräch oder stöbern Sie durch unser Büchertauschregal. Am Ende unseres Kaffeenachmittages gegen 16 Uhr gibt es Geschichte(n), von oder über unsere Friedhöfe oder Wissenswertes aus Archiven, lassen Sie sich überraschen und seien Sie gespannt. Kleine Führungen sind ebenfalls in der Konzeption.</td>
+                    <td class="cell-plain"><a href="https://johannisfriedhof-dresden.de/veranstaltung/offener-mittwoch-im-begegnungszentrum-6-5-2-4-2-2-2-2-2/" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
+                </tr>
+
                 <tr data-tags="region-ausland art-sonstige laufend" data-start="2026-11-30" data-end="2026-12-02">
                     <td class="cell-plain"><span class="date-badge">2026-11-30</span><span class="date-end">bis 2026-12-02</span></td>
                     <td class="cell-plain"><strong>Verwaist! Klosterauszeit für Mütter und Väter, deren einziges Kind gestorben ist</strong><span class="badge-laufend">l&auml;uft</span></td>
                     <td class="location" data-label="Ort">Kloster Bernried</td>
                     <td data-label="Beschreibung">Heilsame Tage im Kloster Bernried für Mütter und Väter, die ihr einziges Kind verloren haben.</td>
-                    <td class="cell-plain"><a href="https://blauerfalter.de/termine" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
-                </tr>
-
-                <tr data-tags="region-sonstige art-begleitung laufend" data-start="2026-12-06" data-end="2026-12-11">
-                    <td class="cell-plain"><span class="date-badge">2026-12-06</span><span class="date-end">bis 2026-12-11</span></td>
-                    <td class="cell-plain"><strong>Grundkurs &quot;Achtsamkeitsbasierte Trauerbegleitung&quot;</strong><span class="badge-laufend">l&auml;uft</span></td>
-                    <td class="location" data-label="Ort">Haus Domicilium Weyarn</td>
-                    <td data-label="Beschreibung">Fünftägige Fortbildung zum achtsamkeitsbasierten Trauerbegleiter im Seminarhaus Domicilium.</td>
                     <td class="cell-plain"><a href="https://blauerfalter.de/termine" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
@@ -2664,6 +2874,14 @@
                     <td class="location" data-label="Ort">St. Barbara Friedhof, Linz</td>
                     <td data-label="Beschreibung">Weihnachtliche Führung über den St. Barbara Friedhof zur Schutzpatronin der Sterbenden sowie zu historischen Grabstätten bekannter Persönlichkeiten.</td>
                     <td class="cell-plain"><a href="https://www.barbarafriedhof.at/service-info/aktuelles/rueckblick/kulturgeschichtliche-friedhofsfuehrungen-2026" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
+                </tr>
+
+                <tr data-tags="region-sonstige art-begleitung laufend" data-start="2026-12-06" data-end="2026-12-11">
+                    <td class="cell-plain"><span class="date-badge">2026-12-06</span><span class="date-end">bis 2026-12-11</span></td>
+                    <td class="cell-plain"><strong>Grundkurs &quot;Achtsamkeitsbasierte Trauerbegleitung&quot;</strong><span class="badge-laufend">l&auml;uft</span></td>
+                    <td class="location" data-label="Ort">Haus Domicilium Weyarn</td>
+                    <td data-label="Beschreibung">Fünftägige Fortbildung zum achtsamkeitsbasierten Trauerbegleiter im Seminarhaus Domicilium.</td>
+                    <td class="cell-plain"><a href="https://blauerfalter.de/termine" target="_blank" rel="noopener noreferrer" class="btn">&ouml;ffnen</a></td>
                 </tr>
 
                 <tr data-tags="region-online art-begleitung" data-start="2026-12-07" data-end="">

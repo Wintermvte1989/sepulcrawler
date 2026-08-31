@@ -1,54 +1,4 @@
 {
-  "4cf283ca8378679b66227cb98a685f9b": {
-    "title": "Ausstellung «Auf immer und ewig» auf dem Wolfgottesacker",
-    "date_start": "2026-08-26",
-    "date_end": "2026-11-30",
-    "location": "Friedhof Wolfgottesacker, Basel",
-    "description": "Die Stadtgärtnerei Basel präsentiert von August bis November 2026 die Ausstellung «Auf immer und ewig» auf dem Friedhof Wolfgottesacker.",
-    "url": "https://www.stadtgaertnerei.bs.ch/friedhoefe/veranstaltungen.html",
-    "first_seen": "2026-08-26",
-    "last_seen": "2026-08-26"
-  },
-  "95258e5e9cbf95971af1f8176a4cac77": {
-    "title": "Ausstellung: DAS LEBEN IST EINE COLLAGE",
-    "date_start": "2026-08-26",
-    "date_end": "2026-11-23",
-    "location": "Ricam Hospiz, Delbrückstraße 22, 12051 Berlin Neukölln",
-    "description": "Eine Kunstausstellung mit Collagen der Künstlerinnen Bettina Schilling und Ilse Winckler in den Räumen des Ricam Hospizes.",
-    "url": "https://www.ricam-hospiz.de/events/",
-    "first_seen": "2026-08-26",
-    "last_seen": "2026-08-26"
-  },
-  "e2a2e52ee477f83f038951be02f86466": {
-    "title": "Die Zürcher Geschichte – 200 Jahre anhand von zehn Leben auf dem Friedhof Sihlfeld",
-    "date_start": "2026-08-26",
-    "date_end": "2027-07-15",
-    "location": "Friedhof Forum, Zürich",
-    "description": "Die Ausstellung erzählt die vergangen 200 Jahre der Zürcher Stadtgeschichte anhand der Lebensgeschichten von zehn auf dem Friedhof Sihlfeld bestatteten Personen.",
-    "url": "https://kulturzueri.ch/db/veranstalter/veranstalter-profile/friedhof-forum/",
-    "first_seen": "2026-08-26",
-    "last_seen": "2026-08-26"
-  },
-  "b1fbf98265ff58643dc6d5f1fdc40c69": {
-    "title": "Zürcher Geschichte auf dem Friedhof Sihlfeld",
-    "date_start": "2026-08-26",
-    "date_end": "2027-07-15",
-    "location": "Friedhof Forum, Zürich",
-    "description": "Die Ausstellung beleuchtet die letzten 200 Jahre der Zürcher Geschichte anhand der Lebensgeschichten von zehn Menschen, die auf dem Friedhof Sihlfeld bestattet wurden.",
-    "url": "https://kulturzueri.ch/db/veranstalter/veranstalter-profile/friedhof-forum/",
-    "first_seen": "2026-08-26",
-    "last_seen": "2026-08-26"
-  },
-  "f8e4e94e5c8c82e05410729e96eb3d10": {
-    "title": "Ausstellung «Auf immer und ewig»",
-    "date_start": "2026-08-28",
-    "date_end": "2026-11-30",
-    "location": "Wolfgottesacker, Basel",
-    "description": "Die Stadtgärtnerei Basel präsentiert von August bis November auf dem Friedhof Wolfgottesacker die Ausstellung «Auf immer und ewig».",
-    "url": "https://www.stadtgaertnerei.bs.ch/friedhoefe/veranstaltungen.html",
-    "first_seen": "2026-08-28",
-    "last_seen": "2026-08-28"
-  },
   "ba8683f9b7bfafb45924c935a06f5178": {
     "title": "Kulturnacht auf dem Südwestkirchhof Stahnsdorf",
     "date_start": "2026-09-05",
@@ -289,6 +239,26 @@
     "first_seen": "2026-08-30",
     "last_seen": "2026-08-30"
   },
+  "0f105b1f3f4b9e4188110ab7297e2735": {
+    "title": "Johannisfriedhof: Engelkummer - Engelglück",
+    "date_start": "2026-09-06",
+    "date_end": null,
+    "location": "Johannisfriedhof Feierhalle (Wallotkapelle), Wehlener Straße 13, Dresden, Sachsen, 01279, Deutschland",
+    "description": "Viele der Engelsskulpturen auf unserem Johannisfriedhof wurden von namhaften Künstlern wie Selmar Werner oder Robert Diez geschaffen. Sie sind ein Sinnbild für Liebe, Geborgenheit, Trost, Frieden und Hoffnung. Für einen Teil dieser Engel, ob in Stein oder Metall gearbeitet, haben sich inzwischen sensible Grabpaten gefunden, welche sich verantwortungsvoll um diese Kunstwerke bemühen und sie mit Hil",
+    "url": "https://johannisfriedhof-dresden.de/veranstaltung/johannisfriedhof-engelkummer-engelglueck-3/",
+    "first_seen": "2026-08-31",
+    "last_seen": "2026-08-31"
+  },
+  "f006e5f26b05009fbd2a977f1da60c32": {
+    "title": "Friedhofsrundgang & Kaffeerunde",
+    "date_start": "2026-09-06",
+    "date_end": null,
+    "location": "Begegnungszentrum Trinitatisfriedhof, Fiedlerstraße 1, Dresden, Sachsen, 01307, Deutschland",
+    "description": "Friedhofsrundgang & Kaffeerunde – Rundgang mit Geschichten über den Trinitatisfriedhof, anschließend Kaffee und Kuchen. Die Rundgänge beginnen immer am mittleren Eingangstor an der Verwaltung. Bitte beachten Sie die unterschiedlichen Startzeiten.",
+    "url": "https://johannisfriedhof-dresden.de/veranstaltung/friedhofsrundgang-kaffeerunde-2-2-2/",
+    "first_seen": "2026-08-31",
+    "last_seen": "2026-08-31"
+  },
   "82d73628604f4da8f8b2576a140ee612": {
     "title": "Führung über den Alten St.-Matthäus-Friedhof",
     "date_start": "2026-09-09",
@@ -297,16 +267,6 @@
     "description": "Führung über den Alten St.-Matthäus-Friedhof in Kooperation mit dem Volksbund Deutsche Kriegsgräberfürsorge e.V.",
     "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "first_seen": "2026-08-25",
-    "last_seen": "2026-08-30"
-  },
-  "dfd51b9b8f0d1a78f3f76171ed6df0fc": {
-    "title": "Wanderauszeit für Trauernde – Die Kraft der Berge spüren",
-    "date_start": "2026-09-09",
-    "date_end": "2026-09-13",
-    "location": "Wilder Kaiser / Hans-Berger-Haus",
-    "description": "Trauerreise und Wanderauszeit in den Bergen für verwaiste Eltern, Großeltern, erwachsene Geschwister und Familienmitglieder.",
-    "url": "https://blauerfalter.de/termine",
-    "first_seen": "2026-08-26",
     "last_seen": "2026-08-30"
   },
   "f4cdc1570914d8b16a62d2ed65875c0b": {
@@ -378,6 +338,16 @@
     "url": "https://www.friedhofsverwaltung-braunschweig.de/termine",
     "first_seen": "2026-08-30",
     "last_seen": "2026-08-30"
+  },
+  "0ea9bbb8424313171ff8556174943db2": {
+    "title": "Kaffeenachmittag",
+    "date_start": "2026-09-09",
+    "date_end": null,
+    "location": "Begegnungszentrum Trinitatisfriedhof, Fiedlerstraße 1, Dresden, Sachsen, 01307, Deutschland",
+    "description": "Kaffeenachmittag – Zeit für Austausch, Begegnung und nette Gespräche bei Kaffee und Kuchen.",
+    "url": "https://johannisfriedhof-dresden.de/veranstaltung/kaffeenachmittag-4-2-2-2/",
+    "first_seen": "2026-08-31",
+    "last_seen": "2026-08-31"
   },
   "8532227c5a9120d7e4b8e948dd1e58c8": {
     "title": "Tag des Friedhofs 2026",
@@ -589,6 +559,16 @@
     "first_seen": "2026-08-30",
     "last_seen": "2026-08-30"
   },
+  "64075d54f5decc5729e29dce9d9b5c3e": {
+    "title": "Johannisfriedhof: Tag des offenen Denkmals",
+    "date_start": "2026-09-13",
+    "date_end": null,
+    "location": "",
+    "description": "Drei Veranstaltungen finden auf dem Johannisfriedhof statt. Zusätzlich öffnet der Eliasfriedhof an der Ziegelstraße 22 seine Tore mit einem eigenen Programm. Der Tag des offenen Denkmals, bundesweit von der Deutschen Stiftung Denkmalschutz koordiniert, findet jedes Jahr am zweiten Sonntag im September statt. Tausende historische Orte öffnen an diesem Tag ihre Türen – so auch unsere Friedhöfe. Im J",
+    "url": "https://johannisfriedhof-dresden.de/veranstaltung/johannisfriedhof-tag-des-offenen-denkmals/",
+    "first_seen": "2026-08-31",
+    "last_seen": "2026-08-31"
+  },
   "b9d40498ce967cabfce140b76c86a9af": {
     "title": "Führung über den Alten St.-Matthäus-Friedhof",
     "date_start": "2026-09-23",
@@ -688,6 +668,16 @@
     "url": "https://www.fvwuppertal.de/angebote-veranstaltungen/angebote/veranstaltungen.html",
     "first_seen": "2026-08-26",
     "last_seen": "2026-08-30"
+  },
+  "bbedb3c489624397c2c44560a941314c": {
+    "title": "Führung: zum Steinerweichen",
+    "date_start": "2026-09-27",
+    "date_end": null,
+    "location": "Begegnungszentrum Trinitatisfriedhof, Fiedlerstraße 1, Dresden, Sachsen, 01307, Deutschland",
+    "description": "Führung „Zum Steinerweichen – gefährdete und gerettete Grabdenkmäler“ – Führung des Freundeskreis Start am BegegnungszentrumNicht alle Grabdenkmäler aus Stein sind für die Ewigkeit gemacht. Auf dem Trinitatisfriedhof lassen sich viele unterschiedliche Spuren von Verwitterung und Schäden entdecken – an Grabmalen aus Sand- oder Kalkstein, Marmor oder Granit.Bei dieser Führung erfahren Sie, warum Ste",
+    "url": "https://johannisfriedhof-dresden.de/veranstaltung/fuehrung-verachtet-mir-die-meister-nicht-2/",
+    "first_seen": "2026-08-31",
+    "last_seen": "2026-08-31"
   },
   "98edd54c694cadb1251dca1d3cf35db1": {
     "title": "Führung über den Alten St.-Matthäus-Friedhof",
@@ -828,6 +818,16 @@
     "url": "https://baden-wuerttemberg.volksbund.de/aktuell/termine",
     "first_seen": "2026-08-30",
     "last_seen": "2026-08-30"
+  },
+  "6caac8a0cd1ab70016d91aa65aaf5714": {
+    "title": "Trinitatisfriedhof: Kaffee, Kuchen und Geschichte(n)",
+    "date_start": "2026-10-28",
+    "date_end": null,
+    "location": "Begegnungszentrum Trinitatisfriedhof, Fiedlerstraße 1, Dresden, Sachsen, 01307, Deutschland",
+    "description": "Besuchen Sie uns! Trinken Sie eine Tasse Kaffee oder Tee, kommen Sie mit uns ins Gespräch oder stöbern Sie durch unser Büchertauschregal. Am Ende unseres Kaffeenachmittages gegen 16 Uhr gibt es Geschichte(n), von oder über unsere Friedhöfe oder Wissenswertes aus Archiven, lassen Sie sich überraschen und seien Sie gespannt. Kleine Führungen sind ebenfalls in der Konzeption.",
+    "url": "https://johannisfriedhof-dresden.de/veranstaltung/offener-mittwoch-im-begegnungszentrum-6-5-2-4-2-2-2-2/",
+    "first_seen": "2026-08-31",
+    "last_seen": "2026-08-31"
   },
   "680265437348b5425b4df6fca4119edd": {
     "title": "Führung über den Alten St.-Matthäus-Friedhof",
@@ -1099,15 +1099,15 @@
     "first_seen": "2026-08-30",
     "last_seen": "2026-08-30"
   },
-  "8e3169731158d34e43f7ff2cae2afc88": {
-    "title": "Tag des Friedhofs",
-    "date_start": "2026-09-19",
-    "date_end": "2026-09-20",
-    "location": "Striesener Friedhof, Dresden",
-    "description": "Aktionstage zum Tag des Friedhofs mit verschiedenen Programmpunkten auf dem Striesener Friedhof.",
-    "url": "https://striesener-friedhof-dresden.de/vorschau-veranstaltungen/",
-    "first_seen": "2026-08-25",
-    "last_seen": "2026-08-30"
+  "e37fba0976cebbd9d5b44bed47efc915": {
+    "title": "Kaffeenachmittag zum Ewigkeitssonntag",
+    "date_start": "2026-11-22",
+    "date_end": null,
+    "location": "Begegnungszentrum Trinitatisfriedhof, Fiedlerstraße 1, Dresden, Sachsen, 01307, Deutschland",
+    "description": "Kaffeenachmittag – Zeit für Austausch, Begegnung und nette Gespräche bei Kaffee und Kuchen.",
+    "url": "https://johannisfriedhof-dresden.de/veranstaltung/kaffeenachmittag-4-2-2-2-2-2-2/",
+    "first_seen": "2026-08-31",
+    "last_seen": "2026-08-31"
   },
   "15b5c9dc150c65c5235da93a03e8030f": {
     "title": "Geschichte zum Anfassen auf dem Nordfriedhof",
@@ -1149,16 +1149,6 @@
     "first_seen": "2026-08-26",
     "last_seen": "2026-08-30"
   },
-  "6d235736ecb73135494c898003c34c99": {
-    "title": "Zeitreise auf dem St. Johannisfriedhof",
-    "date_start": "2026-09-19",
-    "date_end": "2026-09-20",
-    "location": "St. Johannisfriedhof, Nürnberg",
-    "description": "Historische Führung mit Sven Heublein über den St. Johannisfriedhof, die Einblicke in die Nürnberger Stadtgeschichte von der Dürer-Zeit über den Barock und die Industrialisierung bis in die Gegenwart vermittelt.",
-    "url": "https://buergerverein-sankt-johannis.de/termine/",
-    "first_seen": "2026-08-26",
-    "last_seen": "2026-08-30"
-  },
   "971d623031b7b14be2d33d68cb04c619": {
     "title": "Friedhofsführung Nordfriedhof",
     "date_start": "2026-09-19",
@@ -1177,16 +1167,6 @@
     "description": "Veranstaltung des Volksbundes Deutsche Kriegsgräberfürsorge.",
     "url": "https://baden-wuerttemberg.volksbund.de/aktuell/termine",
     "first_seen": "2026-08-30",
-    "last_seen": "2026-08-30"
-  },
-  "c901fd8079d4179547a4c83f21dfef1d": {
-    "title": "Wochenende zum Ewigkeitssonntag",
-    "date_start": "2026-11-21",
-    "date_end": "2026-11-22",
-    "location": "Striesener Friedhof, Dresden",
-    "description": "Gedenk- und Andachtsangebote auf dem Friedhof anlässlich des Ewigkeitssonntags zum Totengedenken.",
-    "url": "https://striesener-friedhof-dresden.de/vorschau-veranstaltungen/",
-    "first_seen": "2026-08-25",
     "last_seen": "2026-08-30"
   },
   "5da4fc4d49f7f8c5c85c4621fc05a3fe": {
@@ -1249,6 +1229,26 @@
     "first_seen": "2026-08-28",
     "last_seen": "2026-08-30"
   },
+  "1249e6d421108f50800279bf566808ac": {
+    "title": "ANIMA ET MORS – Kleinmesse über Leben und Tod",
+    "date_start": "2026-10-31",
+    "date_end": null,
+    "location": "Trinitatisfriedhof, Fiedlerstraße 1, 01307 Dresden",
+    "description": "Dresdens erste Kleinmesse zu den Themen selbstbestimmtes Leben, selbstbestimmtes Sterben und LebensWert, mit Ausstellern, Vorträgen, Lesungen und Mitmachangeboten. 10-18 Uhr.",
+    "url": "https://www.anima-et-mors.de/",
+    "first_seen": "2026-08-31",
+    "last_seen": "2026-08-31"
+  },
+  "713ce998375bf0441e6d43733a2f6143": {
+    "title": "Anima et Mors – Das Leben und der Tod – Kleinmesse",
+    "date_start": "2026-10-31",
+    "date_end": null,
+    "location": "Trinitatisfriedhof Feierhalle (gegenüber Trinitatiskirchruine), Fiedlerstraße 1, Dresden, Sachsen, 01307, Deutschland",
+    "description": "in der Feierhalle und im Begegnungszentrum sowie Außenflächen, Friedhofseingang gegenüber der Trinitatiskirchruine Selbstbestimmt lebenSelbstbestimmt sterbenLebensWert Der Tod ist oft ein großes Tabu und macht Angst. Was ist aber, wenn er gar nicht so furchteinflößend ist? Diese Veranstaltung soll Ihnen Mut machen, dem Thema zu begegnen und dem Tod seinen Platz an der Seite des Lebens geben.Leben",
+    "url": "https://johannisfriedhof-dresden.de/veranstaltung/anima-et-mors-das-leben-und-der-tod-kleinmesse/",
+    "first_seen": "2026-08-31",
+    "last_seen": "2026-08-31"
+  },
   "782e97ea95ba5fca4a7ec5a7921a8e7a": {
     "title": "Es lebe der Centralfriedhof – Der Alte Südliche Friedhof",
     "date_start": "2026-10-04",
@@ -1299,35 +1299,25 @@
     "first_seen": "2026-08-30",
     "last_seen": "2026-08-30"
   },
-  "197c2400075a927df579398561e0d221": {
-    "title": "Ausstellung «Auf immer und ewig» auf dem Wolfgottesacker",
-    "date_start": "2026-08-25",
-    "date_end": "2026-11-30",
-    "location": "Friedhof Wolfgottesacker, Basel",
-    "description": "Die Stadtgärtnerei Basel veranstaltet von August bis November auf dem Friedhof Wolfgottesacker die Ausstellung «Auf immer und ewig».",
-    "url": "https://www.stadtgaertnerei.bs.ch/friedhoefe/veranstaltungen.html",
-    "first_seen": "2026-08-25",
-    "last_seen": "2026-08-25"
+  "91619cb189c135d45590634c6613caac": {
+    "title": "Sonntagsspaziergang",
+    "date_start": "2026-10-04",
+    "date_end": null,
+    "location": "",
+    "description": "Mit seinen 25 ha ist der Johannisfriedhof heute der zweitgrößte Friedhof der Landeshauptstadt.Bereits 1881 wurde das erste Grab ausgehoben, denn durch die Eingemeindungen umliegender Orte und die durch die Industrialisierung stetig wachsende Bevölkerungszahl war ein neuer Friedhof dringend nötig geworden. Der ArchitektPaul Wallot übernahm die Planung des neuen Friedhofs und schuf die imposante Fei",
+    "url": "https://johannisfriedhof-dresden.de/veranstaltung/sonntagsspaziergang-jf-oktober/",
+    "first_seen": "2026-08-31",
+    "last_seen": "2026-08-31"
   },
-  "a020f136a7b018a0ba9170eccbc1823d": {
-    "title": "Ausstellung: Das Leben ist eine Collage",
-    "date_start": "2026-08-25",
-    "date_end": "2026-11-23",
-    "location": "Ricam Hospiz, Delbrückstraße 22, 12051 Berlin Neukölln",
-    "description": "Ausstellung mit Collagen der Künstlerinnen Bettina Schilling und Ilse Winckler in den Räumlichkeiten des Ricam Hospizes.",
-    "url": "https://www.ricam-hospiz.de/events/",
-    "first_seen": "2026-08-25",
-    "last_seen": "2026-08-26"
-  },
-  "6522bb888bdaf4d752281fc94df4bbb7": {
-    "title": "Ausstellung: DAS LEBEN IST EINE COLLAGE",
-    "date_start": "2026-08-29",
-    "date_end": "2026-11-23",
-    "location": "Ricam Hospiz, Delbrückstraße 22, 12051 Berlin Neukölln",
-    "description": "Eine Kunstausstellung mit Collagen der Künstlerinnen Bettina Schilling und Ilse Winckler im Ricam Hospiz.",
-    "url": "https://www.ricam-hospiz.de/events/",
-    "first_seen": "2026-08-28",
-    "last_seen": "2026-08-30"
+  "c9f7f1bca6ec82ff9d1c6ff871cafca9": {
+    "title": "Friedhofsrundgang & Kaffeerunde",
+    "date_start": "2026-10-04",
+    "date_end": null,
+    "location": "Begegnungszentrum Trinitatisfriedhof, Fiedlerstraße 1, Dresden, Sachsen, 01307, Deutschland",
+    "description": "Friedhofsrundgang & Kaffeerunde – Rundgang mit Geschichten über den Trinitatisfriedhof, anschließend Kaffee und Kuchen. Die Rundgänge beginnen immer am mittleren Eingangstor an der Verwaltung. Bitte beachten Sie die unterschiedlichen Startzeiten.",
+    "url": "https://johannisfriedhof-dresden.de/veranstaltung/friedhofsrundgang-kaffeerunde-2-2-2-2-2/",
+    "first_seen": "2026-08-31",
+    "last_seen": "2026-08-31"
   },
   "09418bfa6dbfc13617ff19b697326942": {
     "title": "KapelleDREI: Resilient in die Woche",
@@ -1599,6 +1589,16 @@
     "first_seen": "2026-08-30",
     "last_seen": "2026-08-30"
   },
+  "cd9dbe7e80b3d56d19d6eae78029f82e": {
+    "title": "Trinitatisfriedhof: Kaffee, Kuchen und Geschichte(n)",
+    "date_start": "2026-11-25",
+    "date_end": null,
+    "location": "Begegnungszentrum Trinitatisfriedhof, Fiedlerstraße 1, Dresden, Sachsen, 01307, Deutschland",
+    "description": "Besuchen Sie uns! Trinken Sie eine Tasse Kaffee oder Tee, kommen Sie mit uns ins Gespräch oder stöbern Sie durch unser Büchertauschregal. Am Ende unseres Kaffeenachmittages gegen 16 Uhr gibt es Geschichte(n), von oder über unsere Friedhöfe oder Wissenswertes aus Archiven, lassen Sie sich überraschen und seien Sie gespannt. Kleine Führungen sind ebenfalls in der Konzeption.",
+    "url": "https://johannisfriedhof-dresden.de/veranstaltung/offener-mittwoch-im-begegnungszentrum-6-5-2-4-2-2-2-2-2/",
+    "first_seen": "2026-08-31",
+    "last_seen": "2026-08-31"
+  },
   "af4d6cc1cd13df676e3ff8261549dbeb": {
     "title": "Der Friedhof der Märzgefallenen von 1848 bis heute",
     "date_start": "2026-09-12",
@@ -1719,16 +1719,6 @@
     "first_seen": "2026-08-30",
     "last_seen": "2026-08-30"
   },
-  "ab07988ccdcd623a7bb56fbb04243a6f": {
-    "title": "Kriegsgräbersammlung Saarland",
-    "date_start": "2026-10-17",
-    "date_end": "2026-11-22",
-    "location": "Saarland",
-    "description": "Haus- und Straßensammlung des Landesverbandes Saar für den Volksbund Deutsche Kriegsgräberfürsorge.",
-    "url": "https://saarland.volksbund.de/aktuell/termine",
-    "first_seen": "2026-08-30",
-    "last_seen": "2026-08-30"
-  },
   "8910b48923c9385dd62bc0ecf0e033ce": {
     "title": "Hauptfriedhof Frankfurt – Gräber erzählen Geschichte",
     "date_start": "2026-11-01",
@@ -1778,6 +1768,16 @@
     "url": "https://rheinland-pfalz.volksbund.de/aktuell/termine",
     "first_seen": "2026-08-30",
     "last_seen": "2026-08-30"
+  },
+  "70b4dfb07812d316a983444d5fea8bbd": {
+    "title": "Friedhofsrundgang & Kaffeerunde",
+    "date_start": "2026-11-01",
+    "date_end": null,
+    "location": "Begegnungszentrum Trinitatisfriedhof, Fiedlerstraße 1, Dresden, Sachsen, 01307, Deutschland",
+    "description": "Friedhofsrundgang & Kaffeerunde – Rundgang mit Geschichten über den Trinitatisfriedhof, anschließend Kaffee und Kuchen. Die Rundgänge beginnen immer am mittleren Eingangstor an der Verwaltung. Bitte beachten Sie die unterschiedlichen Startzeiten.",
+    "url": "https://johannisfriedhof-dresden.de/veranstaltung/friedhofsrundgang-kaffeerunde-2-2-2-2-2-2-2/",
+    "first_seen": "2026-08-31",
+    "last_seen": "2026-08-31"
   },
   "084217b4931948ea9b6ac553f81823ef": {
     "title": "Hauptfriedhof Frankfurt – Gräber erzählen Geschichte",
@@ -1939,15 +1939,15 @@
     "first_seen": "2026-08-30",
     "last_seen": "2026-08-30"
   },
-  "479b4c81f55a85a5e4845ea9bb6344a0": {
-    "title": "Trauerredner-Ausbildung",
-    "date_start": "2026-09-24",
-    "date_end": "2026-09-25",
-    "location": "AUF DAS LEBEN, Köln",
-    "description": "Fundierte Ausbildung für angehende Trauerrednerinnen und Trauerredner zur individuellen und würdevollen Gestaltung von Abschiedsfeiern.",
-    "url": "https://aufdasleben.de/event/",
-    "first_seen": "2026-08-25",
-    "last_seen": "2026-08-30"
+  "1dfe7e406fed85a74b44da998142c400": {
+    "title": "Trinitatisfriedhof: Kaffee, Kuchen und Geschichte(n)",
+    "date_start": "2026-09-30",
+    "date_end": null,
+    "location": "Begegnungszentrum Trinitatisfriedhof, Fiedlerstraße 1, Dresden, Sachsen, 01307, Deutschland",
+    "description": "Besuchen Sie uns! Trinken Sie eine Tasse Kaffee oder Tee, kommen Sie mit uns ins Gespräch oder stöbern Sie durch unser Büchertauschregal. Am Ende unseres Kaffeenachmittages gegen 16 Uhr gibt es Geschichte(n), von oder über unsere Friedhöfe oder Wissenswertes aus Archiven, lassen Sie sich überraschen und seien Sie gespannt. Kleine Führungen sind ebenfalls in der Konzeption.",
+    "url": "https://johannisfriedhof-dresden.de/veranstaltung/offener-mittwoch-im-begegnungszentrum-6-5-2-4-2-2-2/",
+    "first_seen": "2026-08-31",
+    "last_seen": "2026-08-31"
   },
   "e68c720f4c497af80ea07b5650c02e91": {
     "title": "Bilderbuch-Lesung und Workshop „Die unglaublich alte Katze“",
@@ -1989,42 +1989,12 @@
     "first_seen": "2026-08-30",
     "last_seen": "2026-08-30"
   },
-  "9fcdb3ede469f20007b4e51fccc48dbf": {
-    "title": "Trauerwoche TRAUER TASKFORCE",
-    "date_start": "2026-10-26",
-    "date_end": "2026-11-01",
-    "location": "Bundesweit",
-    "description": "Bundesweite Aktionswoche mit Impulsen und Veranstaltungen rund um die Themen Trauer, Sterben und Abschiedskultur.",
-    "url": "https://aufdasleben.de/event/",
-    "first_seen": "2026-08-25",
-    "last_seen": "2026-08-26"
-  },
-  "3470096e7fe27e8e72f6d16ce6a3d0b5": {
-    "title": "Trauerwoche",
-    "date_start": "2026-10-26",
-    "date_end": "2026-11-01",
-    "location": "TRAUER TASKFORCE, bundesweit",
-    "description": "Aktionswoche der TRAUER TASKFORCE mit bundesweiten Impulsen, Veranstaltungen und Raum für Abschied und Gedenken.",
-    "url": "https://aufdasleben.de/event/",
-    "first_seen": "2026-08-25",
-    "last_seen": "2026-08-30"
-  },
   "a98dc8efbacaacfa5dc3f384a1a0ae81": {
     "title": "Letzte Hilfe Kurs für Erwachsene",
     "date_start": "2026-11-12",
     "date_end": null,
     "location": "Zentrum für Palliativmedizin, Köln",
     "description": "Kurs über die Begleitung schwerstkranker und sterbender Menschen in ihren letzten Lebensstagen sowie praktische Tipps für Angehörige.",
-    "url": "https://aufdasleben.de/event/",
-    "first_seen": "2026-08-25",
-    "last_seen": "2026-08-30"
-  },
-  "6996d608a06c5272a9675c14cd402f31": {
-    "title": "Trauerredner-Ausbildung",
-    "date_start": "2026-11-19",
-    "date_end": "2026-11-20",
-    "location": "AUF DAS LEBEN, Köln",
-    "description": "Ausbildungsseminar für angehende Trauerrednerinnen und Trauerredner zur Vermittlung praxistauglicher Grundlagen der Abschiedsgestaltung.",
     "url": "https://aufdasleben.de/event/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-30"
@@ -2038,6 +2008,16 @@
     "url": "https://www.fvwuppertal.de/angebote-veranstaltungen/angebote/veranstaltungen.html",
     "first_seen": "2026-08-26",
     "last_seen": "2026-08-30"
+  },
+  "51e103049329779ae38182866aa5dbee": {
+    "title": "Friedhofsrundgang & Kaffeerunde",
+    "date_start": "2026-11-19",
+    "date_end": null,
+    "location": "Begegnungszentrum Trinitatisfriedhof, Fiedlerstraße 1, Dresden, Sachsen, 01307, Deutschland",
+    "description": "Friedhofsrundgang & Kaffeerunde – Rundgang mit Geschichten über den Trinitatisfriedhof, anschließend Kaffee und Kuchen. Die Rundgänge beginnen immer am mittleren Eingangstor an der Verwaltung. Bitte beachten Sie die unterschiedlichen Startzeiten.",
+    "url": "https://johannisfriedhof-dresden.de/veranstaltung/friedhofsrundgang-kaffeerunde-2-2-2-2-2-2-2-2/",
+    "first_seen": "2026-08-31",
+    "last_seen": "2026-08-31"
   },
   "b44349ac6b732e5759ae7ecfe2108c71": {
     "title": "Tag des Friedhofs",
@@ -2059,12 +2039,12 @@
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-30"
   },
-  "e2571c02a8b09766a0a9e4d09df2d062": {
-    "title": "Tag des Friedhofs",
+  "35d5e43c012fb685df740f3b7ef0ed6c": {
+    "title": "Johannisfriedhof: Tag des Friedhofs",
     "date_start": "2026-09-20",
     "date_end": null,
-    "location": "Eliasfriedhof, Ziegelstraße 22, Dresden, Sachsen, 01069, Deutschland",
-    "description": "Der Förderverein öffnet von 10 bis 18 Uhr die ansonsten geschlossenen Tore des Eliasfriedhofs. Sie erwartet ein Programm mit Führungen zur Friedhofsgeschichte, ein Verkaufsstand mit Büchern, Postkarten und anderen Kleinigkeiten zum Thema Friedhof, eine Fotoausstellung, ein Quiz für Kinder und Erwachsene, Kaffee und Kuchen. Gern können Sie auch individuell den Friedhof erkunden und sich die kunstvo",
+    "location": "Johannisfriedhof Feierhalle (Wallotkapelle), Wehlener Straße 13, Dresden, Sachsen, 01279, Deutschland",
+    "description": "Am dritten Septemberwochenende beteiligen sich zahlreiche Städte und Gemeinden am bundesweiten „Tag des Friedhofs“. Viele Aktionen zeigen die Geschichte und Tradition einer gewachsenen Friedhofskultur vor Ort und bieten die Gelegenheit, sich dem Thema Friedhof aus unterschiedlichen Perspektiven zu nähern. Neben Religion, Kultur und Historie sind der Dialog und das lebendige Miteinander wichtige El",
     "url": "https://eliasfriedhof.de/termin/tag-des-friedhofs-2/",
     "first_seen": "2026-08-26",
     "last_seen": "2026-08-31"
@@ -2089,6 +2069,26 @@
     "first_seen": "2026-08-30",
     "last_seen": "2026-08-30"
   },
+  "2e0aa553bb278a28835eba7083298e89": {
+    "title": "„Lieblingsbeschäftigung: Grabmalskunst“",
+    "date_start": "2026-09-20",
+    "date_end": null,
+    "location": "",
+    "description": "Jenny von Bary-Doussin (1874–1922) war eine deutsche Bildhauerin der späten Kaiserzeit und der Weimarer Republik. Ihr Werk umfasst Grabplastiken, Porträtskulpturen sowie verschiedene Auftragsarbeiten für städtische und private Auftraggeber.Sie war bekannt für ihre virtuose Kunstfertigkeit, einfühlsames Erfassen und die harmonische Verbindung von Symbolik und figürlicher Darstellung.Auf dem Johanni",
+    "url": "https://johannisfriedhof-dresden.de/veranstaltung/lieblingsbeschaeftigung-grabmalskunst/",
+    "first_seen": "2026-08-31",
+    "last_seen": "2026-08-31"
+  },
+  "f836fdcf4e5b8fef0bcd90582e8d8903": {
+    "title": "Grabskulpturen von Bildhauerinnen",
+    "date_start": "2026-09-20",
+    "date_end": null,
+    "location": "",
+    "description": "Entdecken Sie beeindruckende Grabskulpturen, die von Bildhauerinnen geschaffen wurden – viele ihrer Werke sind heute kaum noch bekannt, ihre künstlerische Qualität aber unübersehbar.Bei diesem Rundgang lernen Sie u. a. Arbeiten von Julie Emilie Genthe (1869–1938) und Susanne Wagner-Teichen (um 1877–1930) kennen. Andreas Dehmer erläutert die Besonderheiten der Skulpturen und gibt Einblicke in die L",
+    "url": "https://johannisfriedhof-dresden.de/veranstaltung/grabskulpturen-von-bildhauerinnen/",
+    "first_seen": "2026-08-31",
+    "last_seen": "2026-08-31"
+  },
   "07dc16e837e394722d03aecb87451c2f": {
     "title": "Veranstaltung zum 225. Todestag des Komponisten Johann Gottlieb Naumannn",
     "date_start": "2026-10-23",
@@ -2098,26 +2098,6 @@
     "url": "https://eliasfriedhof.de/termine/",
     "first_seen": "2026-08-25",
     "last_seen": "2026-08-31"
-  },
-  "69452846597d52c019ad1ee2af153a6b": {
-    "title": "Kurs: Ambulante ehrenamtliche Sterbebegleitung",
-    "date_start": "2027-01-25",
-    "date_end": "2027-06-14",
-    "location": "Warthestraße 14, 12051 Berlin",
-    "description": "Ein Vorbereitungskurs für die ehrenamtliche Mitarbeit im ambulanten Hospizdienst, der Teilnehmende in 20 Modulen und drei Hospitationen zur Sterbebegleitung befähigt.",
-    "url": "https://www.ricam-hospiz.de/events/",
-    "first_seen": "2026-08-25",
-    "last_seen": "2026-08-30"
-  },
-  "065c65f3758b0744a151ffb51a75e330": {
-    "title": "Führung über die Friedhöfe vor dem Halleschen Tor",
-    "date_start": "2026-08-09",
-    "date_end": "2026-10-31",
-    "location": "Friedhöfe am Halleschen Tor",
-    "description": "Führung über die historischen Friedhöfe am Halleschen Tor mit Norbert Haag.",
-    "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
-    "first_seen": "2026-08-25",
-    "last_seen": "2026-08-30"
   },
   "74f6f0dcec491929f3eb9be6a1706ff8": {
     "title": "4. Andacht der Andachtsreihe „Lass uns reden, lieber Gott …“",
@@ -2238,6 +2218,16 @@
     "url": "https://baden-wuerttemberg.volksbund.de/aktuell/termine",
     "first_seen": "2026-08-30",
     "last_seen": "2026-08-30"
+  },
+  "409ef535a8b0e26d4f1132ef648bb2da": {
+    "title": "Kaffeenachmittag",
+    "date_start": "2026-10-14",
+    "date_end": null,
+    "location": "Begegnungszentrum Trinitatisfriedhof, Fiedlerstraße 1, Dresden, Sachsen, 01307, Deutschland",
+    "description": "Kaffeenachmittag – Zeit für Austausch, Begegnung und nette Gespräche bei Kaffee und Kuchen.",
+    "url": "https://johannisfriedhof-dresden.de/veranstaltung/kaffeenachmittag-4-2-2-2-2/",
+    "first_seen": "2026-08-31",
+    "last_seen": "2026-08-31"
   },
   "7fd249e546d76202fb827fa2ff135180": {
     "title": "Südfriedhof - Führung zum 2. Weihnachtsfeiertag",
@@ -2409,16 +2399,6 @@
     "first_seen": "2026-08-26",
     "last_seen": "2026-08-30"
   },
-  "c4518fffad1b546fe69dff26240f7619": {
-    "title": "Studienfahrt nach Verdun",
-    "date_start": "2026-10-01",
-    "date_end": "2026-10-04",
-    "location": "Verdun, Frankreich",
-    "description": "Mehrtägige Studienfahrt des Volksbundes Hessen zu den Kriegsgräberstätten und historischen Orten in Verdun.",
-    "url": "https://hessen.volksbund.de/aktuell/termine",
-    "first_seen": "2026-08-30",
-    "last_seen": "2026-08-30"
-  },
   "5d65c80e10ef1bfaf2ab41e6f93a1915": {
     "title": "Ausstellung Anderwelt",
     "date_start": "2026-10-01",
@@ -2439,16 +2419,6 @@
     "first_seen": "2026-08-30",
     "last_seen": "2026-08-30"
   },
-  "cbe1ecca2e219c9e2a736f278c319f48": {
-    "title": "STONEHENGE. Uralte Geheimnisse, neue Entdeckungen",
-    "date_start": "2026-09-18",
-    "date_end": "2027-08-29",
-    "location": "Archäologische Staatssammlung München",
-    "description": "Sonderausstellung über die archäologischen Geheimnisse und Neuentdeckungen rund um die prähistorische Kult- und Grabstätte Stonehenge.",
-    "url": "https://www.archaeologie-bayern.de/de/termine/",
-    "first_seen": "2026-08-26",
-    "last_seen": "2026-08-26"
-  },
   "89e9b5339a7e89169b23d0b924fee282": {
     "title": "Führung Nr. 187 Medizin im Wandel - Epitaphien für Ärzte auf dem St. Johannisfriedhof",
     "date_start": "2026-09-18",
@@ -2458,16 +2428,6 @@
     "url": "https://epitaphienkultur.de/veranstaltungen.html",
     "first_seen": "2026-08-26",
     "last_seen": "2026-08-30"
-  },
-  "e48effc2edddb0e819766711dc729c61": {
-    "title": "Friedhofsfreitag: Freitags von 14-18 Uhr geöffnet",
-    "date_start": "2026-04-10",
-    "date_end": "2026-10-30",
-    "location": "Eliasfriedhof, Ziegelstraße 22, Dresden, Sachsen, 01069, Deutschland",
-    "description": "Der Eliasfriedhof ist ab dem 10.4.2026 bis 30.10.2026 immer freitags von 14-18 Uhr für individuelle Rundgänge geöffnet. Mitglieder des Fördervereins stehen vor Ort für Fragen und kurze Rundgänge zur Verfügung. Einen Übersichtsplan des Friedhofs können Sie für 2 Euro erwerben. An ausgewählten Grabmalen finden Sie Schilder, die auf bedeutende Persönlichkeiten hinweisen. Über die darauf angebrachten",
-    "url": "https://eliasfriedhof.de/termin/friedhofsfreitag-ab-12-4-immer-freitags-von-14-18-uhr-geoeffnet/",
-    "first_seen": "2026-08-26",
-    "last_seen": "2026-08-31"
   },
   "443ad2b25581abbf1b8c25907fb74b53": {
     "title": "Themenführung: Dresdner Medizingeschichte(n) auf dem Eliasfriedhof",
@@ -2479,26 +2439,6 @@
     "first_seen": "2026-08-26",
     "last_seen": "2026-08-31"
   },
-  "4d1378389f8b4cba53fdd2b434022f7e": {
-    "title": "Pilgertage in Südtirol: Wandern, Wandeln, Werden – auf dem Jakobsweg über den Ritten",
-    "date_start": "2026-10-11",
-    "date_end": "2026-10-16",
-    "location": "Hotel 3 Birken in Klobenstein/Ritten",
-    "description": "Trauerreise mit gemeinsamen Wanderungen auf dem Jakobsweg über den Ritten in Südtirol.",
-    "url": "https://blauerfalter.de/termine",
-    "first_seen": "2026-08-26",
-    "last_seen": "2026-08-30"
-  },
-  "228230e60a04700b2e7d69d450c21c6a": {
-    "title": "Pilgertage in Südtirol – Trauerreise",
-    "date_start": "2026-10-11",
-    "date_end": "2026-10-16",
-    "location": "Hotel 3 Birken, Klobenstein/Ritten",
-    "description": "Wandern und Besinnen für Trauernde auf dem Jakobsweg über den Ritten.",
-    "url": "https://blauerfalter.de/termine",
-    "first_seen": "2026-08-26",
-    "last_seen": "2026-08-26"
-  },
   "3657009261f4be67d8182ca5ee13792f": {
     "title": "Grünpflegetag auf dem Johannisfriedhof",
     "date_start": "2026-10-11",
@@ -2509,25 +2449,15 @@
     "first_seen": "2026-08-26",
     "last_seen": "2026-08-30"
   },
-  "2c606e995421098ba1ab15b982d28d84": {
-    "title": "Sammlung Rheinland-Pfalz",
+  "4f243e5c5ebff85fcb09d0a8af7c49e0": {
+    "title": "Frauenschicksale - Erinnerung und Begegnung",
     "date_start": "2026-10-11",
-    "date_end": "2026-11-25",
-    "location": "Rheinland-Pfalz",
-    "description": "Landesweite Haus- und Straßensammlung zur Unterstützung der Kriegsgräberfürsorge und der Gedenkkultur.",
-    "url": "https://rheinland-pfalz.volksbund.de/aktuell/termine",
-    "first_seen": "2026-08-30",
-    "last_seen": "2026-08-30"
-  },
-  "c64d0f17050dfae57c04da8a66a374d2": {
-    "title": "Ausstellung: Friedhof - ein Ort der Begegnung",
-    "date_start": "2026-09-07",
-    "date_end": "2026-09-27",
-    "location": "Regierungspräsidium Karlsruhe / Rondellplatz",
-    "description": "Eine Ausstellung des Regierungspräsidiums Karlsruhe und des Vereins zur Pflege der Friedhofs- und Bestattungskultur rund um Friedhofs- und Bestattungskultur sowie Formen des Erinnerns.",
-    "url": "https://www.friedhof-karlsruhe.de/home/aktuelle-termine/",
-    "first_seen": "2026-08-26",
-    "last_seen": "2026-08-30"
+    "date_end": null,
+    "location": "",
+    "description": "Friedhöfe erzählen nicht nur von Lebensfreude und Erfolg, sondern auch von Schicksalen, die von Leid, Diskriminierung oder tragischen Umständen geprägt waren.In dieser Führung widmen wir uns Frauen wie Grete Beier (1885–1908), Tochter eines Bürgermeisters, die durch tragische Entscheidungen in den Blick der Öffentlichkeit geriet und 1908 im Königreich Sachsen als letzte Frau öffentlich hingerichte",
+    "url": "https://johannisfriedhof-dresden.de/veranstaltung/frauenschicksale-erinnerung-und-begegnung/",
+    "first_seen": "2026-08-31",
+    "last_seen": "2026-08-31"
   },
   "eae7634c9877d0c970d97f14d8b5846c": {
     "title": "Online-Trauergruppe für Verwaiste Eltern Herzverbunden",
@@ -2639,26 +2569,6 @@
     "first_seen": "2026-08-28",
     "last_seen": "2026-08-28"
   },
-  "5a0f2158d7ca348a524d726f10a03188": {
-    "title": "Das graue Elend von Potsdam – Sowjetischer Haft- und Tribunalort Lindenstraße 1945–1952",
-    "date_start": "2026-01-20",
-    "date_end": "2026-10-31",
-    "location": "Gedenkstätte Lindenstraße, Potsdam",
-    "description": "Sonderausstellung zur Erinnerungs- und Gedenkkultur an die Opfer politischer Haft und Verfolgung am sowjetischen Tribunalort.",
-    "url": "https://www.potsdam.de/veranstaltungskalender",
-    "first_seen": "2026-08-26",
-    "last_seen": "2026-08-26"
-  },
-  "17a81c6daf6bf197dec961ed4a16f9f1": {
-    "title": "Klosterauszeit für trauernde Großeltern nach dem Tod des Enkelkindes",
-    "date_start": "2026-11-02",
-    "date_end": "2026-11-04",
-    "location": "Kloster Bernried am Starnberger See",
-    "description": "Heilsame Tage und Auszeit im Kloster Bernried für trauernde Großeltern nach dem Verlust eines Enkelkindes.",
-    "url": "https://blauerfalter.de/termine",
-    "first_seen": "2026-08-26",
-    "last_seen": "2026-08-30"
-  },
   "72a3b505265b73902153985c2044a08f": {
     "title": "Online-Trauergruppe für Verwaiste Eltern Herzverbunden",
     "date_start": "2026-11-02",
@@ -2667,16 +2577,6 @@
     "description": "Online-Treffen für verwaiste Eltern zum Austausch und zur gegenseitigen Unterstützung in der Trauer.",
     "url": "https://blauerfalter.de/termine",
     "first_seen": "2026-08-30",
-    "last_seen": "2026-08-30"
-  },
-  "e59cdcec0f72ef8540e4d65bc97c24ae": {
-    "title": "Dem Leben wieder Atem schenken - Klosterauszeit",
-    "date_start": "2026-11-05",
-    "date_end": "2026-11-08",
-    "location": "Kloster Bernried",
-    "description": "Auszeit im Kloster Bernried mit Trauer-Yoga, Qi Gong und achtsamem Atmen zur Ruhefindung.",
-    "url": "https://blauerfalter.de/termine",
-    "first_seen": "2026-08-26",
     "last_seen": "2026-08-30"
   },
   "b667d47a0b434319252f2dcdd4c536c7": {
@@ -2697,26 +2597,6 @@
     "description": "Vortrag des Volksbundes Hessen in Kooperation mit der Kulturinitiative Wiesbaden im Stadtmuseum.",
     "url": "https://hessen.volksbund.de/aktuell/termine",
     "first_seen": "2026-08-30",
-    "last_seen": "2026-08-30"
-  },
-  "030a7255a7ed6f7f568324ddfdd2c9ea": {
-    "title": "Winterliche Kloster-Auszeit nach dem Tod des geliebten Kindes",
-    "date_start": "2026-11-16",
-    "date_end": "2026-11-18",
-    "location": "Kloster Bernried am Starnberger See",
-    "description": "Heilsame Tage für verwaiste Eltern, Großeltern und erwachsene Geschwister zur Aufarbeitung der Trauer.",
-    "url": "https://blauerfalter.de/termine",
-    "first_seen": "2026-08-26",
-    "last_seen": "2026-08-30"
-  },
-  "6adff635bb7989b23e1708ef24da7f95": {
-    "title": "Grundkurs \"Achtsamkeitsbasierte Trauerbegleitung\"",
-    "date_start": "2026-12-06",
-    "date_end": "2026-12-11",
-    "location": "Haus Domicilium Weyarn",
-    "description": "Fünftägige Fortbildung zum achtsamkeitsbasierten Trauerbegleiter im Seminarhaus Domicilium.",
-    "url": "https://blauerfalter.de/termine",
-    "first_seen": "2026-08-26",
     "last_seen": "2026-08-30"
   },
   "58e2a4f2dee9b2fa0e7f0278f146f763": {
@@ -2769,6 +2649,16 @@
     "first_seen": "2026-08-28",
     "last_seen": "2026-08-30"
   },
+  "97280b11d3a478aee52e4062981f39dd": {
+    "title": "Friedhofsrundgang & Kaffeerunde",
+    "date_start": "2026-10-22",
+    "date_end": null,
+    "location": "Begegnungszentrum Trinitatisfriedhof, Fiedlerstraße 1, Dresden, Sachsen, 01307, Deutschland",
+    "description": "Friedhofsrundgang & Kaffeerunde – Rundgang mit Geschichten über den Trinitatisfriedhof, anschließend Kaffee und Kuchen. Die Rundgänge beginnen immer am mittleren Eingangstor an der Verwaltung. Bitte beachten Sie die unterschiedlichen Startzeiten.",
+    "url": "https://johannisfriedhof-dresden.de/veranstaltung/friedhofsrundgang-kaffeerunde-2-2-2-2-2-2/",
+    "first_seen": "2026-08-31",
+    "last_seen": "2026-08-31"
+  },
   "e5e818da9768dade8c649ed96dd8554a": {
     "title": "Führung: Weinrenners letzte Ruhestätte?",
     "date_start": "2026-09-17",
@@ -2819,6 +2709,16 @@
     "first_seen": "2026-08-30",
     "last_seen": "2026-08-30"
   },
+  "2b9103bd7d22a551d7ae19d63ca1f9a3": {
+    "title": "Friedhofsrundgang & Kaffeerunde",
+    "date_start": "2026-09-17",
+    "date_end": null,
+    "location": "Begegnungszentrum Trinitatisfriedhof, Fiedlerstraße 1, Dresden, Sachsen, 01307, Deutschland",
+    "description": "Friedhofsrundgang & Kaffeerunde – Rundgang mit Geschichten über den Trinitatisfriedhof, anschließend Kaffee und Kuchen. Die Rundgänge beginnen immer am mittleren Eingangstor an der Verwaltung. Bitte beachten Sie die unterschiedlichen Startzeiten.",
+    "url": "https://johannisfriedhof-dresden.de/veranstaltung/friedhofsrundgang-kaffeerunde-2-2-2-2/",
+    "first_seen": "2026-08-31",
+    "last_seen": "2026-08-31"
+  },
   "b1aa8f7590740ec67156d59bf413152f": {
     "title": "Führung: Die Vielfalt der Grabarten - ein Überblick",
     "date_start": "2026-10-02",
@@ -2859,26 +2759,6 @@
     "first_seen": "2026-08-30",
     "last_seen": "2026-08-30"
   },
-  "bc58e36cd61525af27331b748f00987f": {
-    "title": "Trauerwoche: Sound of Grief – Trauer trifft Töne",
-    "date_start": "2026-10-27",
-    "date_end": "2026-11-02",
-    "location": "TRAUER TASKFORCE",
-    "description": "Themenwoche, die sich intensiv der Kraft und Rolle von Musik bei der Bewältigung von Trauer widmet.",
-    "url": "https://trauertaskforce.de/trauerwoche/",
-    "first_seen": "2026-08-26",
-    "last_seen": "2026-08-30"
-  },
-  "54c4fdd22b20aeba741badf534b1c719": {
-    "title": "Die Trauerwoche 2026 – Sound of Grief",
-    "date_start": "2026-10-27",
-    "date_end": "2026-11-02",
-    "location": "Online",
-    "description": "Online-Themenwoche des Netzwerks Trauer Taskforce, die sich der Bedeutung und Kraft von Musik in der Trauer widmet.",
-    "url": "https://trauertaskforce.de/trauerwoche/",
-    "first_seen": "2026-08-26",
-    "last_seen": "2026-08-26"
-  },
   "f379fdff76987453138fefd8f1237425": {
     "title": "GRIEFYARDS",
     "date_start": "2026-10-30",
@@ -2889,16 +2769,6 @@
     "first_seen": "2026-08-26",
     "last_seen": "2026-08-26"
   },
-  "2ae0ce199373e128b4a8ccc50f02592e": {
-    "title": "Verwaist! Klosterauszeit für Mütter und Väter, deren einziges Kind gestorben ist",
-    "date_start": "2026-11-30",
-    "date_end": "2026-12-02",
-    "location": "Kloster Bernried",
-    "description": "Heilsame Tage im Kloster Bernried für Mütter und Väter, die ihr einziges Kind verloren haben.",
-    "url": "https://blauerfalter.de/termine",
-    "first_seen": "2026-08-26",
-    "last_seen": "2026-08-30"
-  },
   "c3f66c27d70a880625875c9de4573627": {
     "title": "Friedhof der Zukunft - Friedhofsspaziergang mit Vortrag",
     "date_start": "2026-09-10",
@@ -2908,16 +2778,6 @@
     "url": "https://www.fvwuppertal.de/angebote-veranstaltungen/angebote/veranstaltungen.html",
     "first_seen": "2026-08-26",
     "last_seen": "2026-08-30"
-  },
-  "78097ae988f50458f3bdefbee9ff6136": {
-    "title": "Ausstellung: Friedhof - ein Ort der Begegnung",
-    "date_start": "2026-09-08",
-    "date_end": "2026-09-27",
-    "location": "Regierungspräsidium Karlsruhe / Rondellplatz",
-    "description": "Ausstellung zur Friedhofs- und Bestattungskultur, welche die Besonderheiten von Friedhöfen und verschiedene Formen der Grabgestaltung und Trauer aufzeigt.",
-    "url": "https://www.friedhof-karlsruhe.de/home/aktuelle-termine/",
-    "first_seen": "2026-08-28",
-    "last_seen": "2026-08-28"
   },
   "ca13d7805958415bb3308e9537a62f6a": {
     "title": "älter & besser KapelleDREI",
@@ -2959,16 +2819,6 @@
     "first_seen": "2026-08-30",
     "last_seen": "2026-08-30"
   },
-  "00ef2e7329e92ab1ae53a7ea4d0e4b2e": {
-    "title": "Rauminstallation «Zehn Leben – die Geschichte einer Stadt»",
-    "date_start": "2026-09-08",
-    "date_end": "2027-07-15",
-    "location": "Friedhof Forum, Zürich",
-    "description": "Eine Rauminstallation über 200 Jahre Zürcher Stadtgeschichte anhand der Lebensgeschichten von zehn auf dem Friedhof Sihlfeld bestatteten Personen.",
-    "url": "https://www.stadt-zuerich.ch/friedhofforum/de/ausstellungen.html",
-    "first_seen": "2026-08-30",
-    "last_seen": "2026-08-30"
-  },
   "5c752fa2f0056c1f9e360de520dcb0f7": {
     "title": "Online-Trauergruppe für Verwaiste Eltern Herzverbunden",
     "date_start": "2026-10-05",
@@ -2996,26 +2846,6 @@
     "location": "Kriegsgräberstätte in Klein-Zimmern",
     "description": "Veranstaltung des Volksbundes Deutsche Kriegsgräberfürsorge auf der Kriegsgräberstätte Klein-Zimmern.",
     "url": "https://hessen.volksbund.de/aktuell/termine",
-    "first_seen": "2026-08-30",
-    "last_seen": "2026-08-30"
-  },
-  "9ed30d10689ec7d32bfae48402e8706d": {
-    "title": "Ausstellung des Volksbundes Münster",
-    "date_start": "2026-09-11",
-    "date_end": "2026-09-25",
-    "location": "Münster - Bezirksregierung Münster",
-    "description": "Ausstellung zur Gedenk- und Erinnerungskultur, veranstaltet vom Volksbund-Bezirksverband Münster.",
-    "url": "https://nrw.volksbund.de/aktuell/termine",
-    "first_seen": "2026-08-30",
-    "last_seen": "2026-08-30"
-  },
-  "3c4622276eb0e01c152b7372f934554e": {
-    "title": "Ausstellung zur Gedenkkultur",
-    "date_start": "2026-09-11",
-    "date_end": "2026-09-26",
-    "location": "Münster - Bezirksregierung Münster",
-    "description": "Ausstellung in Kooperation mit LWL-Einrichtungen, der Stadt Gelsenkirchen und weiteren Partnern.",
-    "url": "https://nrw.volksbund.de/aktuell/termine",
     "first_seen": "2026-08-30",
     "last_seen": "2026-08-30"
   },
@@ -3049,15 +2879,15 @@
     "first_seen": "2026-08-30",
     "last_seen": "2026-08-30"
   },
-  "2d39f339ab8f8c836ad1cbdbb31abb3f": {
-    "title": "Ausstellung «Auf immer und ewig»",
-    "date_start": "2026-08-01",
-    "date_end": "2026-11-30",
-    "location": "Wolfgottesacker, Basel",
-    "description": "Eine mehrmonatige Ausstellung auf dem Friedhof Wolfgottesacker zum Thema Erinnerungs- und Grabkultur.",
-    "url": "https://www.stadtgaertnerei.bs.ch/friedhoefe/veranstaltungen.html",
-    "first_seen": "2026-08-30",
-    "last_seen": "2026-08-30"
+  "96143b8063760cb4f897cabd06de875f": {
+    "title": "Gedenkfeierstunde zum 170. Geburtstag von Paul Koettig",
+    "date_start": "2026-09-14",
+    "date_end": null,
+    "location": "",
+    "description": "Am Montag, 14. September 2026, laden wir herzlich zu einer öffentlichen Gedenkfeierstunde auf unseren Johannisfriedhof Dresden ein. Anlass ist der 170. Geburtstag von Paul Koettig (1856–1930), dem letzten königlich-sächsischen Polizeipräsidenten, dessen Grabstätte sich auf dem Johannisfriedhof befindet. Paul Koettig gehörte zu den prägenden Persönlichkeiten der sächsischen Polizeigeschichte. Als P",
+    "url": "https://johannisfriedhof-dresden.de/veranstaltung/gedenkfeierstunde-zum-170-geburtstag-von-paul-koettig/",
+    "first_seen": "2026-08-31",
+    "last_seen": "2026-08-31"
   },
   "79d7c2dc534a3fedcbae98cbb4bf4399": {
     "title": "Informationsveranstaltung Koblenz",
@@ -3077,6 +2907,346 @@
     "description": "Informationsveranstaltung mit Vortrag des Volksbundes Deutsche Kriegsgräberfürsorge Landesverband Saar.",
     "url": "https://saarland.volksbund.de/aktuell/termine",
     "first_seen": "2026-08-30",
+    "last_seen": "2026-08-30"
+  },
+  "3c3995e495c231a481a97cb2b67938c3": {
+    "title": "Kaffeenachmittag",
+    "date_start": "2026-11-11",
+    "date_end": null,
+    "location": "Begegnungszentrum Trinitatisfriedhof, Fiedlerstraße 1, Dresden, Sachsen, 01307, Deutschland",
+    "description": "Kaffeenachmittag – Zeit für Austausch, Begegnung und nette Gespräche bei Kaffee und Kuchen.",
+    "url": "https://johannisfriedhof-dresden.de/veranstaltung/kaffeenachmittag-4-2-2-2-2-2/",
+    "first_seen": "2026-08-31",
+    "last_seen": "2026-08-31"
+  },
+  "dfd51b9b8f0d1a78f3f76171ed6df0fc": {
+    "title": "Wanderauszeit für Trauernde – Die Kraft der Berge spüren",
+    "date_start": "2026-09-09",
+    "date_end": "2026-09-13",
+    "location": "Wilder Kaiser / Hans-Berger-Haus",
+    "description": "Trauerreise und Wanderauszeit in den Bergen für verwaiste Eltern, Großeltern, erwachsene Geschwister und Familienmitglieder.",
+    "url": "https://blauerfalter.de/termine",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-30"
+  },
+  "8e3169731158d34e43f7ff2cae2afc88": {
+    "title": "Tag des Friedhofs",
+    "date_start": "2026-09-19",
+    "date_end": "2026-09-20",
+    "location": "Striesener Friedhof, Dresden",
+    "description": "Aktionstage zum Tag des Friedhofs mit verschiedenen Programmpunkten auf dem Striesener Friedhof.",
+    "url": "https://striesener-friedhof-dresden.de/vorschau-veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-30"
+  },
+  "6d235736ecb73135494c898003c34c99": {
+    "title": "Zeitreise auf dem St. Johannisfriedhof",
+    "date_start": "2026-09-19",
+    "date_end": "2026-09-20",
+    "location": "St. Johannisfriedhof, Nürnberg",
+    "description": "Historische Führung mit Sven Heublein über den St. Johannisfriedhof, die Einblicke in die Nürnberger Stadtgeschichte von der Dürer-Zeit über den Barock und die Industrialisierung bis in die Gegenwart vermittelt.",
+    "url": "https://buergerverein-sankt-johannis.de/termine/",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-30"
+  },
+  "c901fd8079d4179547a4c83f21dfef1d": {
+    "title": "Wochenende zum Ewigkeitssonntag",
+    "date_start": "2026-11-21",
+    "date_end": "2026-11-22",
+    "location": "Striesener Friedhof, Dresden",
+    "description": "Gedenk- und Andachtsangebote auf dem Friedhof anlässlich des Ewigkeitssonntags zum Totengedenken.",
+    "url": "https://striesener-friedhof-dresden.de/vorschau-veranstaltungen/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-30"
+  },
+  "ab07988ccdcd623a7bb56fbb04243a6f": {
+    "title": "Kriegsgräbersammlung Saarland",
+    "date_start": "2026-10-17",
+    "date_end": "2026-11-22",
+    "location": "Saarland",
+    "description": "Haus- und Straßensammlung des Landesverbandes Saar für den Volksbund Deutsche Kriegsgräberfürsorge.",
+    "url": "https://saarland.volksbund.de/aktuell/termine",
+    "first_seen": "2026-08-30",
+    "last_seen": "2026-08-30"
+  },
+  "479b4c81f55a85a5e4845ea9bb6344a0": {
+    "title": "Trauerredner-Ausbildung",
+    "date_start": "2026-09-24",
+    "date_end": "2026-09-25",
+    "location": "AUF DAS LEBEN, Köln",
+    "description": "Fundierte Ausbildung für angehende Trauerrednerinnen und Trauerredner zur individuellen und würdevollen Gestaltung von Abschiedsfeiern.",
+    "url": "https://aufdasleben.de/event/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-30"
+  },
+  "9ed30d10689ec7d32bfae48402e8706d": {
+    "title": "Ausstellung des Volksbundes Münster",
+    "date_start": "2026-09-11",
+    "date_end": "2026-09-25",
+    "location": "Münster - Bezirksregierung Münster",
+    "description": "Ausstellung zur Gedenk- und Erinnerungskultur, veranstaltet vom Volksbund-Bezirksverband Münster.",
+    "url": "https://nrw.volksbund.de/aktuell/termine",
+    "first_seen": "2026-08-30",
+    "last_seen": "2026-08-30"
+  },
+  "6996d608a06c5272a9675c14cd402f31": {
+    "title": "Trauerredner-Ausbildung",
+    "date_start": "2026-11-19",
+    "date_end": "2026-11-20",
+    "location": "AUF DAS LEBEN, Köln",
+    "description": "Ausbildungsseminar für angehende Trauerrednerinnen und Trauerredner zur Vermittlung praxistauglicher Grundlagen der Abschiedsgestaltung.",
+    "url": "https://aufdasleben.de/event/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-30"
+  },
+  "c4518fffad1b546fe69dff26240f7619": {
+    "title": "Studienfahrt nach Verdun",
+    "date_start": "2026-10-01",
+    "date_end": "2026-10-04",
+    "location": "Verdun, Frankreich",
+    "description": "Mehrtägige Studienfahrt des Volksbundes Hessen zu den Kriegsgräberstätten und historischen Orten in Verdun.",
+    "url": "https://hessen.volksbund.de/aktuell/termine",
+    "first_seen": "2026-08-30",
+    "last_seen": "2026-08-30"
+  },
+  "cbe1ecca2e219c9e2a736f278c319f48": {
+    "title": "STONEHENGE. Uralte Geheimnisse, neue Entdeckungen",
+    "date_start": "2026-09-18",
+    "date_end": "2027-08-29",
+    "location": "Archäologische Staatssammlung München",
+    "description": "Sonderausstellung über die archäologischen Geheimnisse und Neuentdeckungen rund um die prähistorische Kult- und Grabstätte Stonehenge.",
+    "url": "https://www.archaeologie-bayern.de/de/termine/",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26"
+  },
+  "4d1378389f8b4cba53fdd2b434022f7e": {
+    "title": "Pilgertage in Südtirol: Wandern, Wandeln, Werden – auf dem Jakobsweg über den Ritten",
+    "date_start": "2026-10-11",
+    "date_end": "2026-10-16",
+    "location": "Hotel 3 Birken in Klobenstein/Ritten",
+    "description": "Trauerreise mit gemeinsamen Wanderungen auf dem Jakobsweg über den Ritten in Südtirol.",
+    "url": "https://blauerfalter.de/termine",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-30"
+  },
+  "228230e60a04700b2e7d69d450c21c6a": {
+    "title": "Pilgertage in Südtirol – Trauerreise",
+    "date_start": "2026-10-11",
+    "date_end": "2026-10-16",
+    "location": "Hotel 3 Birken, Klobenstein/Ritten",
+    "description": "Wandern und Besinnen für Trauernde auf dem Jakobsweg über den Ritten.",
+    "url": "https://blauerfalter.de/termine",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26"
+  },
+  "2c606e995421098ba1ab15b982d28d84": {
+    "title": "Sammlung Rheinland-Pfalz",
+    "date_start": "2026-10-11",
+    "date_end": "2026-11-25",
+    "location": "Rheinland-Pfalz",
+    "description": "Landesweite Haus- und Straßensammlung zur Unterstützung der Kriegsgräberfürsorge und der Gedenkkultur.",
+    "url": "https://rheinland-pfalz.volksbund.de/aktuell/termine",
+    "first_seen": "2026-08-30",
+    "last_seen": "2026-08-30"
+  },
+  "c64d0f17050dfae57c04da8a66a374d2": {
+    "title": "Ausstellung: Friedhof - ein Ort der Begegnung",
+    "date_start": "2026-09-07",
+    "date_end": "2026-09-27",
+    "location": "Regierungspräsidium Karlsruhe / Rondellplatz",
+    "description": "Eine Ausstellung des Regierungspräsidiums Karlsruhe und des Vereins zur Pflege der Friedhofs- und Bestattungskultur rund um Friedhofs- und Bestattungskultur sowie Formen des Erinnerns.",
+    "url": "https://www.friedhof-karlsruhe.de/home/aktuelle-termine/",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-30"
+  },
+  "17a81c6daf6bf197dec961ed4a16f9f1": {
+    "title": "Klosterauszeit für trauernde Großeltern nach dem Tod des Enkelkindes",
+    "date_start": "2026-11-02",
+    "date_end": "2026-11-04",
+    "location": "Kloster Bernried am Starnberger See",
+    "description": "Heilsame Tage und Auszeit im Kloster Bernried für trauernde Großeltern nach dem Verlust eines Enkelkindes.",
+    "url": "https://blauerfalter.de/termine",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-30"
+  },
+  "e59cdcec0f72ef8540e4d65bc97c24ae": {
+    "title": "Dem Leben wieder Atem schenken - Klosterauszeit",
+    "date_start": "2026-11-05",
+    "date_end": "2026-11-08",
+    "location": "Kloster Bernried",
+    "description": "Auszeit im Kloster Bernried mit Trauer-Yoga, Qi Gong und achtsamem Atmen zur Ruhefindung.",
+    "url": "https://blauerfalter.de/termine",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-30"
+  },
+  "6adff635bb7989b23e1708ef24da7f95": {
+    "title": "Grundkurs \"Achtsamkeitsbasierte Trauerbegleitung\"",
+    "date_start": "2026-12-06",
+    "date_end": "2026-12-11",
+    "location": "Haus Domicilium Weyarn",
+    "description": "Fünftägige Fortbildung zum achtsamkeitsbasierten Trauerbegleiter im Seminarhaus Domicilium.",
+    "url": "https://blauerfalter.de/termine",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-30"
+  },
+  "00ef2e7329e92ab1ae53a7ea4d0e4b2e": {
+    "title": "Rauminstallation «Zehn Leben – die Geschichte einer Stadt»",
+    "date_start": "2026-09-08",
+    "date_end": "2027-07-15",
+    "location": "Friedhof Forum, Zürich",
+    "description": "Eine Rauminstallation über 200 Jahre Zürcher Stadtgeschichte anhand der Lebensgeschichten von zehn auf dem Friedhof Sihlfeld bestatteten Personen.",
+    "url": "https://www.stadt-zuerich.ch/friedhofforum/de/ausstellungen.html",
+    "first_seen": "2026-08-30",
+    "last_seen": "2026-08-30"
+  },
+  "e2a2e52ee477f83f038951be02f86466": {
+    "title": "Die Zürcher Geschichte – 200 Jahre anhand von zehn Leben auf dem Friedhof Sihlfeld",
+    "date_start": "2026-08-26",
+    "date_end": "2027-07-15",
+    "location": "Friedhof Forum, Zürich",
+    "description": "Die Ausstellung erzählt die vergangen 200 Jahre der Zürcher Stadtgeschichte anhand der Lebensgeschichten von zehn auf dem Friedhof Sihlfeld bestatteten Personen.",
+    "url": "https://kulturzueri.ch/db/veranstalter/veranstalter-profile/friedhof-forum/",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26"
+  },
+  "b1fbf98265ff58643dc6d5f1fdc40c69": {
+    "title": "Zürcher Geschichte auf dem Friedhof Sihlfeld",
+    "date_start": "2026-08-26",
+    "date_end": "2027-07-15",
+    "location": "Friedhof Forum, Zürich",
+    "description": "Die Ausstellung beleuchtet die letzten 200 Jahre der Zürcher Geschichte anhand der Lebensgeschichten von zehn Menschen, die auf dem Friedhof Sihlfeld bestattet wurden.",
+    "url": "https://kulturzueri.ch/db/veranstalter/veranstalter-profile/friedhof-forum/",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26"
+  },
+  "3c4622276eb0e01c152b7372f934554e": {
+    "title": "Ausstellung zur Gedenkkultur",
+    "date_start": "2026-09-11",
+    "date_end": "2026-09-26",
+    "location": "Münster - Bezirksregierung Münster",
+    "description": "Ausstellung in Kooperation mit LWL-Einrichtungen, der Stadt Gelsenkirchen und weiteren Partnern.",
+    "url": "https://nrw.volksbund.de/aktuell/termine",
+    "first_seen": "2026-08-30",
+    "last_seen": "2026-08-30"
+  },
+  "1c9f5894b2e37aa0c839a523718c6125": {
+    "title": "Ausstellung «Auf immer und ewig» auf dem Wolfgottesacker",
+    "date_start": "2026-08-01",
+    "date_end": "2026-11-30",
+    "location": "Friedhof Wolfgottesacker, Basel",
+    "description": "Die Stadtgärtnerei Basel präsentiert von August bis November 2026 die Ausstellung «Auf immer und ewig» auf dem Friedhof Wolfgottesacker.",
+    "url": "https://www.stadtgaertnerei.bs.ch/friedhoefe/veranstaltungen.html",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-30"
+  },
+  "a020f136a7b018a0ba9170eccbc1823d": {
+    "title": "Ausstellung: DAS LEBEN IST EINE COLLAGE",
+    "date_start": "2026-08-25",
+    "date_end": "2026-11-23",
+    "location": "Ricam Hospiz, Delbrückstraße 22, 12051 Berlin Neukölln",
+    "description": "Eine Kunstausstellung mit Collagen der Künstlerinnen Bettina Schilling und Ilse Winckler in den Räumen des Ricam Hospizes.",
+    "url": "https://www.ricam-hospiz.de/events/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-30"
+  },
+  "9fcdb3ede469f20007b4e51fccc48dbf": {
+    "title": "Trauerwoche TRAUER TASKFORCE",
+    "date_start": "2026-10-26",
+    "date_end": "2026-11-01",
+    "location": "Bundesweit",
+    "description": "Bundesweite Aktionswoche mit Impulsen und Veranstaltungen rund um die Themen Trauer, Sterben und Abschiedskultur.",
+    "url": "https://aufdasleben.de/event/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-26"
+  },
+  "3470096e7fe27e8e72f6d16ce6a3d0b5": {
+    "title": "Trauerwoche",
+    "date_start": "2026-10-26",
+    "date_end": "2026-11-01",
+    "location": "TRAUER TASKFORCE, bundesweit",
+    "description": "Aktionswoche der TRAUER TASKFORCE mit bundesweiten Impulsen, Veranstaltungen und Raum für Abschied und Gedenken.",
+    "url": "https://aufdasleben.de/event/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-30"
+  },
+  "69452846597d52c019ad1ee2af153a6b": {
+    "title": "Kurs: Ambulante ehrenamtliche Sterbebegleitung",
+    "date_start": "2027-01-25",
+    "date_end": "2027-06-14",
+    "location": "Warthestraße 14, 12051 Berlin",
+    "description": "Ein Vorbereitungskurs für die ehrenamtliche Mitarbeit im ambulanten Hospizdienst, der Teilnehmende in 20 Modulen und drei Hospitationen zur Sterbebegleitung befähigt.",
+    "url": "https://www.ricam-hospiz.de/events/",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-30"
+  },
+  "065c65f3758b0744a151ffb51a75e330": {
+    "title": "Führung über die Friedhöfe vor dem Halleschen Tor",
+    "date_start": "2026-08-09",
+    "date_end": "2026-10-31",
+    "location": "Friedhöfe am Halleschen Tor",
+    "description": "Führung über die historischen Friedhöfe am Halleschen Tor mit Norbert Haag.",
+    "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-30"
+  },
+  "5a0f2158d7ca348a524d726f10a03188": {
+    "title": "Das graue Elend von Potsdam – Sowjetischer Haft- und Tribunalort Lindenstraße 1945–1952",
+    "date_start": "2026-01-20",
+    "date_end": "2026-10-31",
+    "location": "Gedenkstätte Lindenstraße, Potsdam",
+    "description": "Sonderausstellung zur Erinnerungs- und Gedenkkultur an die Opfer politischer Haft und Verfolgung am sowjetischen Tribunalort.",
+    "url": "https://www.potsdam.de/veranstaltungskalender",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26"
+  },
+  "e48effc2edddb0e819766711dc729c61": {
+    "title": "Friedhofsfreitag: Freitags von 14-18 Uhr geöffnet",
+    "date_start": "2026-04-10",
+    "date_end": "2026-10-30",
+    "location": "Eliasfriedhof, Ziegelstraße 22, Dresden, Sachsen, 01069, Deutschland",
+    "description": "Der Eliasfriedhof ist ab dem 10.4.2026 bis 30.10.2026 immer freitags von 14-18 Uhr für individuelle Rundgänge geöffnet. Mitglieder des Fördervereins stehen vor Ort für Fragen und kurze Rundgänge zur Verfügung. Einen Übersichtsplan des Friedhofs können Sie für 2 Euro erwerben. An ausgewählten Grabmalen finden Sie Schilder, die auf bedeutende Persönlichkeiten hinweisen. Über die darauf angebrachten",
+    "url": "https://eliasfriedhof.de/termin/friedhofsfreitag-ab-12-4-immer-freitags-von-14-18-uhr-geoeffnet/",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-31"
+  },
+  "030a7255a7ed6f7f568324ddfdd2c9ea": {
+    "title": "Winterliche Kloster-Auszeit nach dem Tod des geliebten Kindes",
+    "date_start": "2026-11-16",
+    "date_end": "2026-11-18",
+    "location": "Kloster Bernried am Starnberger See",
+    "description": "Heilsame Tage für verwaiste Eltern, Großeltern und erwachsene Geschwister zur Aufarbeitung der Trauer.",
+    "url": "https://blauerfalter.de/termine",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-30"
+  },
+  "bc58e36cd61525af27331b748f00987f": {
+    "title": "Trauerwoche: Sound of Grief – Trauer trifft Töne",
+    "date_start": "2026-10-27",
+    "date_end": "2026-11-02",
+    "location": "TRAUER TASKFORCE",
+    "description": "Themenwoche, die sich intensiv der Kraft und Rolle von Musik bei der Bewältigung von Trauer widmet.",
+    "url": "https://trauertaskforce.de/trauerwoche/",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-30"
+  },
+  "54c4fdd22b20aeba741badf534b1c719": {
+    "title": "Die Trauerwoche 2026 – Sound of Grief",
+    "date_start": "2026-10-27",
+    "date_end": "2026-11-02",
+    "location": "Online",
+    "description": "Online-Themenwoche des Netzwerks Trauer Taskforce, die sich der Bedeutung und Kraft von Musik in der Trauer widmet.",
+    "url": "https://trauertaskforce.de/trauerwoche/",
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26"
+  },
+  "2ae0ce199373e128b4a8ccc50f02592e": {
+    "title": "Verwaist! Klosterauszeit für Mütter und Väter, deren einziges Kind gestorben ist",
+    "date_start": "2026-11-30",
+    "date_end": "2026-12-02",
+    "location": "Kloster Bernried",
+    "description": "Heilsame Tage im Kloster Bernried für Mütter und Väter, die ihr einziges Kind verloren haben.",
+    "url": "https://blauerfalter.de/termine",
+    "first_seen": "2026-08-26",
     "last_seen": "2026-08-30"
   }
 }
