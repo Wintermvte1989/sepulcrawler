@@ -197,8 +197,17 @@ def are_events_duplicate(ev1: dict, ev2: dict) -> bool:
     """Konservativ: nur zusammenfuehren, wenn mehrere unabhaengige Merkmale
     uebereinstimmen. Ein uebersehenes Duplikat ist sichtbar und harmlos,
     eine falsche Zusammenfuehrung loescht ein echtes Event."""
-    # 1. Datum muss identisch sein.
-    if ev1.get("date_start") != ev2.get("date_start"):
+    # 1. Datum: normalerweise muss der Beginn stimmen. Bei laufenden
+    #    Veranstaltungen ist der Beginn aber unzuverlaessig - viele Seiten
+    #    zeigen bei einer laufenden Ausstellung den HEUTIGEN Tag als Start
+    #    ("laeuft ab ..."). Dadurch entstand pro Crawl ein neuer Eintrag:
+    #    "Das Leben ist eine Collage" lag dreimal in der Datenbank, jeweils
+    #    mit dem Datum des Laufs und identischem Enddatum. Bei Formaten mit
+    #    Enddatum genuegt deshalb ein uebereinstimmendes ENDE.
+    start_gleich = ev1.get("date_start") == ev2.get("date_start")
+    ende1, ende2 = ev1.get("date_end"), ev2.get("date_end")
+    ende_gleich = bool(ende1) and ende1 == ende2
+    if not (start_gleich or ende_gleich):
         return False
 
     # 2. Quellenuebergreifend nur mit belastbarer Ortsangabe.
@@ -256,6 +265,10 @@ def merge_into(target: dict, source: dict) -> None:
             target[key] = source[key]
     if not target.get("date_end") and source.get("date_end"):
         target["date_end"] = source["date_end"]
+    # Frueheren Beginn behalten: bei laufenden Formaten ist das der Wert,
+    # der dem echten Beginn am naechsten kommt.
+    if source.get("date_start") and target.get("date_start"):
+        target["date_start"] = min(target["date_start"], source["date_start"])
     if source.get("first_seen"):
         target["first_seen"] = min(
             target.get("first_seen") or source["first_seen"], source["first_seen"]
@@ -301,22 +314,46 @@ def normalize_event(event: dict) -> dict:
     return event
 
 
-def deduplicate_db(db: dict) -> dict:
-    by_date = defaultdict(list)
-    for event in db.values():
-        by_date[normalize_event(event).get("date_start", "")].append(event)
-
-    merged = []
-    for group in by_date.values():
-        kept = []
-        for event in group:
+def _dedupe_gruppen(gruppen: dict) -> list[dict]:
+    """Vergleicht innerhalb jeder Gruppe und fuehrt Duplikate zusammen."""
+    behalten: list[dict] = []
+    for gruppe in gruppen.values():
+        kept: list[dict] = []
+        for event in gruppe:
             for existing in kept:
                 if are_events_duplicate(event, existing):
                     merge_into(existing, event)
                     break
             else:
                 kept.append(event)
-        merged.extend(kept)
+        behalten.extend(kept)
+    return behalten
+
+
+def deduplicate_db(db: dict) -> dict:
+    """Zwei Durchgaenge, weil zwei verschiedene Datumsfelder tragen koennen.
+
+    Durchgang 1 gruppiert nach Beginn - das faengt Einzeltermine, die von
+    mehreren Quellen oder in abweichender Schreibweise gemeldet werden.
+
+    Durchgang 2 gruppiert die Formate MIT Enddatum nach diesem Ende. Das
+    ist noetig, weil laufende Ausstellungen bei jedem Crawl einen neuen
+    Beginn bekommen und in Durchgang 1 deshalb in verschiedenen Gruppen
+    landen.
+    """
+    nach_beginn = defaultdict(list)
+    for event in db.values():
+        nach_beginn[normalize_event(event).get("date_start", "")].append(event)
+    zwischenstand = _dedupe_gruppen(nach_beginn)
+
+    nach_ende = defaultdict(list)
+    ohne_ende: list[dict] = []
+    for event in zwischenstand:
+        if event.get("date_end"):
+            nach_ende[event["date_end"]].append(event)
+        else:
+            ohne_ende.append(event)
+    merged = ohne_ende + _dedupe_gruppen(nach_ende)
 
     return {generate_event_id(ev): ev for ev in merged}
 

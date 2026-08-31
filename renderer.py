@@ -97,64 +97,126 @@ def render_html(events: list[dict], today: date):
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sepulcrawler &ndash; Termine zur Sepulkralkultur</title>
     <style>
+        /* Palette an das Kopfbild angelehnt: Sandstein, Patina, Granit.
+           Das bisherige Blau (#3498db) und Gruen (#27ae60) waren
+           Bootstrap-Standardfarben und standen quer zum Motiv. */
         :root {{
-            --bg-body: #f4f6f8;
-            --bg-container: #ffffff;
-            --text-main: #333333;
-            --text-muted: #7f8c8d;
-            --heading-color: #2c3e50;
-            --border-color: #ecf0f1;
-            --filter-bg: #f8f9fa;
-            --filter-border: #e9ecef;
-            --tag-bg: #e9ecef;
-            --tag-text: #495057;
-            --tag-active-bg: #3498db;
+            --bg-body: #f2f0ec;          /* warmes Sandstein-Weiss */
+            --bg-container: #fbfaf8;
+            --text-main: #2e3330;
+            --text-muted: #77807b;
+            --heading-color: #232725;
+            --border-color: #e6e2db;
+            --filter-bg: #f6f4f0;
+            --filter-border: #e2ded6;
+            --tag-bg: #e8e4dc;
+            --tag-text: #4a534d;
+            --tag-active-bg: #4a7a68;     /* Patina auf Bronze */
             --tag-active-text: #ffffff;
-            --th-bg: #2c3e50;
-            --th-text: #ffffff;
-            --tr-hover: #f8f9fa;
-            --location-color: #34495e;
-            --btn-bg: #27ae60;
-            --btn-hover: #219150;
-            --input-border: #ced4da;
+            --th-bg: #3a413d;
+            --th-text: #f2f0ec;
+            --tr-hover: #f4f2ee;
+            --location-color: #3f6b5b;
+            --btn-bg: #4a7a68;
+            --btn-hover: #3c6455;
+            --input-border: #d5cfc4;
             --input-bg: #ffffff;
-            --toggle-bg: #e9ecef;
+            --toggle-bg: #e8e4dc;
+            --badge-new: #4a7a68;
+            --badge-stale: #a8791f;
+            --badge-run: #6b5b8a;
+            --shadow: 0 1px 3px rgba(35,39,37,0.08), 0 6px 20px rgba(35,39,37,0.05);
         }}
 
         [data-theme="dark"] {{
-            --bg-body: #121417;
-            --bg-container: #1e2227;
-            --text-main: #e1e6eb;
-            --text-muted: #8b99a8;
-            --heading-color: #8fa0b3;
-            --border-color: #2d353e;
-            --filter-bg: #181b1f;
-            --filter-border: #2d353e;
-            --tag-bg: #2d353e;
-            --tag-text: #c0caf5;
-            --tag-active-bg: #3498db;
-            --tag-active-text: #ffffff;
-            --th-bg: #2a323d;
-            --th-text: #e1e6eb;
-            --tr-hover: #252a30;
-            --location-color: #a0b2c6;
-            --btn-bg: #27ae60;
-            --btn-hover: #219150;
-            --input-border: #3d4652;
-            --input-bg: #181b1f;
-            --toggle-bg: #2d353e;
+            --bg-body: #16181a;          /* Anthrazit, leicht gruenstichig */
+            --bg-container: #1d2124;
+            --text-main: #dfe3e0;
+            --text-muted: #8b948e;
+            --heading-color: #eceeec;
+            --border-color: #2b3033;
+            --filter-bg: #191c1e;
+            --filter-border: #2b3033;
+            --tag-bg: #282d30;
+            --tag-text: #c3ccc6;
+            --tag-active-bg: #6fa38c;
+            --tag-active-text: #14201b;
+            --th-bg: #262b2e;
+            --th-text: #dfe3e0;
+            --tr-hover: #22262a;
+            --location-color: #8fbfa9;
+            --btn-bg: #4f8570;
+            --btn-hover: #5d9a83;
+            --input-border: #384044;
+            --input-bg: #191c1e;
+            --toggle-bg: #282d30;
+            --badge-new: #4f8570;
+            --badge-stale: #9a7524;
+            --badge-run: #7a6a9c;
+            --shadow: 0 1px 3px rgba(0,0,0,0.4), 0 8px 24px rgba(0,0,0,0.25);
         }}
 
-        body {{ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--bg-body); color: var(--text-main); margin: 20px; transition: background-color 0.2s, color 0.2s; }}
+        /* Bewusst nur Systemschriften: keine Google Fonts, damit beim
+           Seitenaufruf keine IP-Adresse an Dritte geht (DSGVO). Serif fuer
+           Titel und Datumsangaben, Sans fuer Fliesstext und Bedienelemente. */
+        :root {{
+            --font-serif: 'Iowan Old Style', 'Palatino Linotype', Palatino,
+                          'Book Antiqua', Georgia, 'Times New Roman', serif;
+            --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+                         'Helvetica Neue', Arial, sans-serif;
+        }}
+
+        body {{ font-family: var(--font-sans); background-color: var(--bg-body); color: var(--text-main); margin: 0; padding: 20px; line-height: 1.55; transition: background-color 0.2s, color 0.2s; }}
         
-        .header-bar {{ display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--tag-active-bg); padding-bottom: 10px; margin-bottom: 10px; }}
-        h1 {{ color: var(--heading-color); margin: 0; font-size: 1.8em; }}
-        .subtitle {{ margin: 2px 0 0; font-size: 0.85em; color: var(--text-muted); }}
+        /* Kopfband: eigenes Friedhofsfoto (trauernder Engel, Familiengrab).
+           Der Verlauf von unten haelt die Schrift lesbar, unabhaengig davon,
+           welcher Bildbereich beim jeweiligen Fenster sichtbar ist. */
+        .header-bar {{
+            position: relative;
+            min-height: 220px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 20px 24px;
+            margin-bottom: 18px;
+            border-radius: 10px;
+            overflow: hidden;
+            background-image:
+                linear-gradient(to top, rgba(18,20,19,0.88) 0%,
+                                        rgba(18,20,19,0.55) 45%,
+                                        rgba(18,20,19,0.15) 100%),
+                image-set(url("assets/header.jpg") 1x);
+            background-size: cover;
+            background-position: center 42%;
+            box-shadow: var(--shadow);
+        }}
+        .header-text {{ color: #f4f2ee; }}
+        h1 {{
+            font-family: var(--font-serif);
+            color: #ffffff;
+            margin: 0;
+            font-size: 2.4em;
+            font-weight: 600;
+            letter-spacing: 0.01em;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.55);
+        }}
+        .subtitle {{
+            margin: 4px 0 0;
+            font-size: 0.9em;
+            color: rgba(244,242,238,0.9);
+            max-width: 46ch;
+            text-shadow: 0 1px 8px rgba(0,0,0,0.6);
+        }}
+        .credit {{
+            position: absolute; right: 10px; top: 8px;
+            font-size: 0.68em; color: rgba(255,255,255,0.55);
+        }}
         
-        .theme-toggle-btn {{ background: var(--toggle-bg); border: 1px solid var(--filter-border); color: var(--text-main); padding: 8px 14px; border-radius: 20px; cursor: pointer; font-size: 1em; display: flex; align-items: center; gap: 6px; font-weight: 600; transition: all 0.2s; }}
+        .theme-toggle-btn {{ background: rgba(255,255,255,0.14); backdrop-filter: blur(6px); border: 1px solid rgba(255,255,255,0.28); color: #f4f2ee; padding: 8px 14px; border-radius: 20px; cursor: pointer; font-size: 1em; display: flex; align-items: center; gap: 6px; font-weight: 600; transition: all 0.2s; }}
         .theme-toggle-btn:hover {{ opacity: 0.85; }}
 
-        .container {{ background: var(--bg-container); border-radius: 8px; padding: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); transition: background-color 0.2s; }}
+        .container {{ background: var(--bg-container); border: 1px solid var(--border-color); border-radius: 10px; padding: 22px; box-shadow: var(--shadow); max-width: 1400px; margin: 0 auto; transition: background-color 0.2s; }}
         .timestamp {{ font-size: 0.85em; color: var(--text-muted); margin-bottom: 20px; }}
 
         .search-input {{ width: 100%; box-sizing: border-box; padding: 8px 12px; border: 1px solid var(--input-border); background-color: var(--input-bg); color: var(--text-main); border-radius: 4px; font-size: 0.95em; }}
@@ -164,14 +226,16 @@ def render_html(events: list[dict], today: date):
         .tag-btn.active {{ background: var(--tag-active-bg); color: var(--tag-active-text); }}
 
         table {{ width: 100%; border-collapse: collapse; margin-top: 10px; }}
-        th {{ background-color: var(--th-bg); color: var(--th-text); text-align: left; padding: 10px; font-size: 0.9em; }}
+        thead th:first-child {{ border-radius: 6px 0 0 0; }}
+        thead th:last-child {{ border-radius: 0 6px 0 0; }}
+        th {{ background-color: var(--th-bg); color: var(--th-text); text-align: left; padding: 11px 10px; font-size: 0.78em; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }}
         td {{ padding: 12px 10px; border-bottom: 1px solid var(--border-color); vertical-align: top; font-size: 0.95em; }}
         tr:hover {{ background-color: var(--tr-hover); }}
-        .date-badge {{ background-color: var(--tag-active-bg); color: white; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 0.85em; white-space: nowrap; }}
+        .date-badge {{ font-family: var(--font-serif); background-color: var(--tag-active-bg); color: var(--tag-active-text); padding: 4px 9px; border-radius: 4px; font-weight: 600; font-size: 0.9em; white-space: nowrap; letter-spacing: 0.02em; }}
         .date-end {{ display: block; margin-top: 4px; font-size: 0.8em; color: var(--text-muted); white-space: nowrap; }}
         .location {{ font-weight: bold; color: var(--location-color); }}
-        .badge-new {{ background: #27ae60; color: white; padding: 2px 6px; border-radius: 3px; font-size: 0.7em; margin-left: 6px; vertical-align: middle; }}
-        .badge-stale {{ background: #f39c12; color: white; padding: 2px 6px; border-radius: 3px; font-size: 0.7em; margin-left: 6px; vertical-align: middle; }}
+        .badge-new {{ background: var(--badge-new); color: white; padding: 2px 6px; border-radius: 3px; font-size: 0.7em; margin-left: 6px; vertical-align: middle; }}
+        .badge-stale {{ background: var(--badge-stale); color: white; padding: 2px 6px; border-radius: 3px; font-size: 0.7em; margin-left: 6px; vertical-align: middle; }}
         a.btn {{ display: inline-block; background-color: var(--btn-bg); color: white; text-decoration: none; padding: 5px 10px; border-radius: 4px; font-size: 0.85em; }}
         a.btn:hover {{ background-color: var(--btn-hover); }}
         .no-results {{ display: none; padding: 20px; text-align: center; color: var(--text-muted); font-style: italic; }}
@@ -179,11 +243,28 @@ def render_html(events: list[dict], today: date):
         .filter-group {{ display: flex; flex-direction: column; gap: 6px; }}
         .filter-group-label {{ font-size: 0.72em; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); font-weight: 700; }}
         .filter-row {{ display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; background: var(--filter-bg); padding: 15px; border-radius: 6px; border: 1px solid var(--filter-border); }}
-        .badge-laufend {{ background: #8e44ad; color: #fff; padding: 2px 6px; border-radius: 3px; font-size: 0.7em; margin-left: 6px; vertical-align: middle; }}
+        .badge-laufend {{ background: var(--badge-run); color: #fff; padding: 2px 6px; border-radius: 3px; font-size: 0.7em; margin-left: 6px; vertical-align: middle; }}
         .reset-btn {{ background: none; border: 1px solid var(--input-border); color: var(--text-muted); padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 0.85em; }}
         .reset-btn:hover {{ color: var(--text-main); }}
 
         @media (max-width: 768px) {{
+            /* Kopfband flacher und die kleinere Bilddatei laden: 58 statt
+               213 KB, was am Mobilfunk deutlich spuerbar ist. */
+            .header-bar {{
+                min-height: 150px;
+                padding: 14px 16px;
+                border-radius: 8px;
+                background-image:
+                    linear-gradient(to top, rgba(18,20,19,0.9) 0%,
+                                            rgba(18,20,19,0.5) 55%,
+                                            rgba(18,20,19,0.12) 100%),
+                    url("assets/header-800.jpg");
+                background-position: center 45%;
+            }}
+            h1 {{ font-size: 1.7em; }}
+            .subtitle {{ font-size: 0.8em; }}
+            .credit {{ display: none; }}
+
             body {{ margin: 8px; }}
             .container {{ padding: 12px; }}
             h1 {{ font-size: 1.3em; }}
@@ -255,7 +336,8 @@ def render_html(events: list[dict], today: date):
 <body>
     <div class="container">
         <div class="header-bar">
-            <div>
+            <span class="credit">Foto: eigenes Werk</span>
+            <div class="header-text">
                 <h1>Sepulcrawler</h1>
                 <p class="subtitle">Termine zur Sepulkral- und Friedhofskultur
                    in Deutschland, &Ouml;sterreich, der Schweiz und Tschechien</p>
