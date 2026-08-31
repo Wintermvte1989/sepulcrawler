@@ -358,6 +358,16 @@ DISABLED_URLS = {
     # dieser Veranstalterin - eine automatische Quelle gibt es nicht.
     "https://anima-pluma.de/": "TLS-Handshake schlaegt fehl, trotz tolerantem SSL-Kontext",
     "https://www.eventim-light.com/de/a/69662e7995a245200db2f1f0": "0 Zeichen, vollstaendig JS-gerendert (SPA)",
+    # --- Testcrawler 31.08.2026: Freilichtmuseum Finsterau ---
+    # Alle drei Seiten laden und liefern Text, die KI extrahierte daraus aber
+    # nur einen einzigen Termin. Die Sonderausstellung "Jetzt geht's dahi"
+    # laeuft bis April 2027 und steht deshalb in MANUAL_EVENTS - ein
+    # Handeintrag ist hier stabiler als drei Seiten, die pro Lauf Requests
+    # kosten. Wenn spaeter Begleitveranstaltungen dazukommen, lohnt ein
+    # neuer Versuch mit dem Jahresprogramm.
+    "https://www.freilichtmuseum.de/termine-finsterau/": "5802 Zeichen, nur 3 Fundstellen - Termine nicht im erkannten Format",
+    "https://www.freilichtmuseum.de/museum-finsterau/sonderausstellungen-museum-finsterau/": "20 Fundstellen, aber keine verwertbaren Termine",
+    "https://www.freilichtmuseum.de/angebote/sa-finsterau/jetzt-gehts-dahi-sterben-tod-und-trauer/": "Einzelausstellung - steht in MANUAL_EVENTS",
 }
 
 DB_FILE = os.environ.get("SEPULKRAL_DB_FILE", "events_db.json")
@@ -404,6 +414,24 @@ MANUAL_EVENTS: list[dict] = [
         ),
         "url": "https://www.anima-et-mors.de/",
     },
+    {
+        "title": ("Jetzt geht\u2019s dahi \u2013 Sterben, Tod und Trauer. "
+                  "In Niederbayern und anderswo"),
+        "date_start": "2026-03-28",
+        "date_end": "2027-04-04",
+        "location": ("Freilichtmuseum Finsterau, Museumsstra\u00dfe 51, "
+                     "94151 Finsterau"),
+        "description": (
+            "Sonderausstellung zu Ritualen und gesellschaftlichem Umgang mit "
+            "Sterben und Trauer. Leitobjekt ist ein historischer Leichenwagen "
+            "aus F\u00fcrholz, inszeniert als Leichenzug. Drei Kapitel: "
+            "Sterben, Tod zwischen Diesseits und Jenseits, Trauer. Dazu eine "
+            "zweite Ebene mit zeitgen\u00f6ssischen k\u00fcnstlerischen "
+            "Positionen der Leir Foundation."
+        ),
+        "url": ("https://www.freilichtmuseum.de/angebote/sa-finsterau/"
+                "jetzt-gehts-dahi-sterben-tod-und-trauer/"),
+    },
 ]
 
 
@@ -411,6 +439,7 @@ CANDIDATE_URLS: list[str] = [
     # Hier kommen neue Adressen zum Ausprobieren hinein, zum Beispiel:
     # "https://www.beispiel-friedhof.de/veranstaltungen/",
 ]
+
 
 
 
@@ -623,6 +652,13 @@ TOPIC_PATTERN = re.compile(
       | vergänglichkeit | memento\s+mori | vanitas | jenseits
       | nachlass | kriegsgräber | \bgefallenen | mahnmal | ehrenmal
       | holocaust | schoah | \bleichen | aufbahrung | aussegnung
+      # Volkskundliches Vokabular der Bestattungskultur. Kam ueber die
+      # Ausstellung "Jetzt geht's dahi" in Finsterau dazu: Begleittermine
+      # tragen diese Woerter im Titel, waehrend die Uebersichtsseite eines
+      # Freilichtmuseums kein Quellensignal hat.
+      | leichenwagen | leichenzug | leichenschmaus | leichenhalle
+      | totenbrett | totenwache | totentoilette | totenglocke
+      | sterbekultur | abschiedskultur | grabbeigabe | seelenmesse
       | totenkult | ruhestätte | ruhestätten | nekropol | katakombe
       # Vorsorge und letzter Wille - eigenes Feld der Bestattungskultur.
       # "testament" bewusst NICHT: das traefe auch "Altes Testament" in
@@ -744,6 +780,7 @@ REGIONS = (
         "passau", "karlsruhe", "freiburg", "chammünster", "chammuenster",
         "bayern", "schwaben", "heidelberg", "tübingen", "tuebingen",
         "ingolstadt", "dmm-ingolstadt", "epitaphienkultur", "greding",
+        "finsterau", "massing", "niederbayern", "freyung", "grafenau",
         "fürth", "fuerth", "erlangen",
         "mannheim", "konstanz", "baden",
     )),
