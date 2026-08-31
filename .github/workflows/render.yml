@@ -1,0 +1,69 @@
+name: Sepulcrawler Seite neu bauen
+
+# Nur manuell und ohne Crawl: baut index.html aus dem vorhandenen
+# events_db.json neu. Kein API-Request, keine Kosten. Gedacht fuer
+# Aenderungen an renderer.py - Farben, Schrift, Kopfband, Texte.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sepulcrawler-render
+  cancel-in-progress: true
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Python einrichten
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Abhaengigkeiten installieren
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # Kein GEMINI_API_KEY: dieser Lauf spricht die API nicht an.
+      - name: Seite neu erzeugen
+        run: python render_only.py
+
+      - name: Sicherstellen, dass die Datenbank unveraendert ist
+        run: |
+          if ! git diff --quiet -- events_db.json; then
+            echo "::error::events_db.json wurde veraendert - das darf dieser Workflow nicht."
+            exit 1
+          fi
+          echo "events_db.json unveraendert."
+
+      - name: index.html committen
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add index.html
+          if git diff --staged --quiet; then
+            echo "index.html unveraendert - kein Commit."
+            exit 0
+          fi
+
+          git commit -m "Seite neu gebaut ($(date -u +%Y-%m-%d))"
+
+          for i in 1 2 3; do
+            git pull --rebase -X ours origin main && git push && exit 0
+            echo "Push-Versuch $i fehlgeschlagen, neuer Versuch in 5s"
+            sleep 5
+          done
+          echo "::error::Push nach 3 Versuchen fehlgeschlagen"
+          exit 1
