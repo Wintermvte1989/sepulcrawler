@@ -95,7 +95,7 @@ def render_html(events: list[dict], today: date):
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sepulcrawler &ndash; Termine zur Sepulkralkultur</title>
+    <title>Sepulcrawler &ndash; Termine zur Friedhofs- und Sepulkralkultur</title>
     <style>
         /* Palette an das Kopfbild angelehnt: Sandstein, Patina, Granit.
            Das bisherige Blau (#3498db) und Gruen (#27ae60) waren
@@ -344,8 +344,9 @@ def render_html(events: list[dict], today: date):
             <span class="credit">Foto: eigenes Werk</span>
             <div class="header-text">
                 <h1>Sepulcrawler</h1>
-                <p class="subtitle">Termine zur Sepulkral- und Friedhofskultur
-                   in Deutschland, &Ouml;sterreich, der Schweiz und Tschechien</p>
+                <p class="subtitle">F&uuml;hrungen, Ausstellungen und Gedenktermine
+                   zur Sepulkral- und Friedhofskultur in Deutschland,
+                   &Ouml;sterreich und der Schweiz</p>
             </div>
             <button class="theme-toggle-btn" onclick="toggleTheme()">
                 <span id="themeIcon">&#127769;</span>
