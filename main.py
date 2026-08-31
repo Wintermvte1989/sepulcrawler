@@ -57,6 +57,17 @@ def run(urls: list[str]) -> None:
     rejected: list[dict] = []
 
     raw_db = database.load_events_db()
+
+    # Einzelne Bestattungen aus dem Bestand entfernen. Der Themenfilter
+    # greift nur bei NEUEN Events; bereits gespeicherte Namen Verstorbener
+    # blieben sonst stehen, bis ihr Datum vorbei ist.
+    persoenlich = [k for k, e in raw_db.items()
+                   if config.PERSONAL_FUNERAL_PATTERN.search(str(e.get("title") or ""))]
+    if persoenlich:
+        for key in persoenlich:
+            del raw_db[key]
+        print(f"  {len(persoenlich)} einzelne Bestattungen aus dem Bestand entfernt "
+              f"(Namen Verstorbener gehoeren nicht in den Feed)")
     print(f"Bestand geladen: {len(raw_db)} Roh-Events")
 
     events_db = database.deduplicate_db(raw_db)

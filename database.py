@@ -116,6 +116,12 @@ def is_topically_relevant(event: dict) -> tuple[bool, str]:
     description = str(event.get("description") or "")
     location = str(event.get("location") or "")
 
+    # 0. Einzelne Bestattungen zuerst ausschliessen. Sie tragen die
+    #    Themenwoerter ("Beisetzung", "Trauerfeier") im Titel und kaemen
+    #    sonst durch jede weitere Pruefung.
+    if config.PERSONAL_FUNERAL_PATTERN.search(title):
+        return False, "einzelne Bestattung, keine oeffentliche Veranstaltung"
+
     # 1a. Die QUELLE gehoert durch ihre Art zum Thema. Eine Friedhofs-,
     #     Hospiz- oder Krematoriumsverwaltung veroeffentlicht keine
     #     Fremdtermine - alles dort Gelistete ist relevant.

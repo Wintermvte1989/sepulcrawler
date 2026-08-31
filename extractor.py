@@ -114,6 +114,16 @@ def extract_events_batch(batch_sources: list[tuple[str, str]], today_str: str) -
     - Sprachkurse, Yoga, Floh- und Weihnachtsmaerkte
     - reine Oeffnungszeiten, Eintrittspreise, Dauerangebote ohne Termin
 
+    NIEMALS ERFASSEN - einzelne Bestattungen:
+    Manche Friedhofsverwaltungen veroeffentlichen ihre Belegungsplaene, also
+    Trauerfeiern und Beisetzungen namentlich genannter Verstorbener
+    ("Beisetzung Petra Mueller", "Trauerfeier fuer Hans Schmidt",
+    "Urnenbeisetzung von Anna Weber"). Das sind keine oeffentlichen
+    Veranstaltungen. Diese Eintraege bitte vollstaendig uebergehen.
+    Gedenkfeiern OHNE Namensnennung, etwa "Gedenkfeier fuer einsam
+    Verstorbene" oder "Gottesdienst fuer Sternenkinder", sind dagegen
+    oeffentlich und gehoeren dazu.
+
     FORMAT:
     - Nur Veranstaltungen am oder nach dem heutigen Datum ({today_str}).
     - date_start strikt YYYY-MM-DD.

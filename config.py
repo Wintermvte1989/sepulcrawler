@@ -643,6 +643,36 @@ TOPIC_PATTERN = re.compile(
     re.IGNORECASE | re.VERBOSE,
 )
 
+# Einzelne Bestattungen. Manche Friedhofsverwaltungen veroeffentlichen ihre
+# Belegungsplaene: "Beisetzung Petra Pucelik-Guenther", "Trauerfeier fuer
+# Vladimir Afonichev". Das sind keine oeffentlichen Veranstaltungen, und die
+# Namen frisch Verstorbener gehoeren nicht in einen bundesweiten
+# Kulturkalender - die Verwaltung stellt sie fuer Angehoerige und Trauergaeste
+# online, nicht zur Weiterverbreitung.
+#
+# Erkennungsmerkmal: Der Titel BEGINNT mit der Bestattungsart und es folgt
+# ein grossgeschriebener Name. Das trennt sie von Veranstaltungen, die
+# dieselben Woerter enthalten:
+#   "Redner-Workshop: Zweisprachige Trauerfeiern"          -> bleibt
+#   "Gottesdienst und Festakt zur Wiederbeisetzung Ottos"  -> bleibt
+#   "Gedenkfeier fuer einsam Verstorbene"                  -> bleibt
+PERSONAL_FUNERAL_PATTERN = re.compile(
+    r"""^\s*
+        # Bestattungsart - Gross-/Kleinschreibung hier egal. Das \b am Ende
+        # ist entscheidend: ohne es matcht "Beisetzung" auch in
+        # "Beisetzungsformen im Wandel", einem Vortragstitel.
+        (?i:(?:urnen|erd|feuer|see|baum)?\s*
+            (?:beisetzung | bestattung | trauerfeier | beerdigung |
+               trauerandacht | aussegnung))\b
+        \s* (?i:f\u00fcr|von)? \s*
+        # Personenname: hier MUSS gross geschrieben sein, deshalb steht
+        # re.IGNORECASE nicht in den Flags, sondern nur oben in den Gruppen.
+        [A-Z\u00c4\u00d6\u00dc][\w\u00e4\u00f6\u00fc\u00df-]+
+        \s+ [A-Z\u00c4\u00d6\u00dc]
+    """,
+    re.VERBOSE,
+)
+
 # Orte, die durch ihre Art zum Thema gehoeren. Eine Veranstaltung in einer
 # Friedhofskapelle ist relevant, auch wenn der Titel es nicht verraet
 # (z. B. "Aufwind - Chor fuer trauernde Menschen" an der KapelleDREI).
