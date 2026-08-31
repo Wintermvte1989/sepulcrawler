@@ -173,7 +173,7 @@ def render_html(events: list[dict], today: date):
            welcher Bildbereich beim jeweiligen Fenster sichtbar ist. */
         .header-bar {{
             position: relative;
-            min-height: 220px;
+            min-height: 280px;
             display: flex;
             align-items: flex-end;
             justify-content: space-between;
@@ -188,7 +188,12 @@ def render_html(events: list[dict], today: date):
                                         rgba(18,20,19,0.15) 100%),
                 image-set(url("assets/header.jpg") 1x);
             background-size: cover;
-            background-position: center 42%;
+            /* Oben ausrichten: Bei einem so flachen Band schneidet "cover"
+               kraeftig vertikal weg. Der Engelskopf sitzt im oberen Viertel
+               des Bildes - mit "center 42%" (Bildmitte) fiel er heraus.
+               Von oben gerechnet landet er bei rund einem Drittel Bandhoehe,
+               unabhaengig von der Fensterbreite. */
+            background-position: center top;
             box-shadow: var(--shadow);
         }}
         .header-text {{ color: #f4f2ee; }}
