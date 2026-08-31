@@ -60,8 +60,8 @@ def _filter_buttons(group: str, counts: dict, labels: dict) -> str:
         label = labels.get(value, value.capitalize())
         parts.append(
             f'<button class="tag-btn" data-group="{group}" data-value="{value}" '
-            f'onclick="setFilter(this)">{label} <span style="opacity:.6">'
-            f'{count}</span></button>'
+            f'onclick="setFilter(this)">{label} '
+            f'<span class="count">{count}</span></button>'
         )
     return "\n                ".join(parts)
 
@@ -229,6 +229,13 @@ def render_html(events: list[dict], today: date):
         .tag-btn {{ background: var(--tag-bg); border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 0.85em; color: var(--tag-text); font-weight: 600; transition: all 0.2s; }}
         .tag-btn:hover {{ opacity: 0.85; }}
         .tag-btn.active {{ background: var(--tag-active-bg); color: var(--tag-active-text); }}
+        /* Ziffern in Tabellenbreite, damit die Knoepfe beim Aktualisieren
+           der Zahlen nicht springen. */
+        .count {{ opacity: 0.6; margin-left: 3px; font-variant-numeric: tabular-nums; }}
+        /* Knopf ohne Treffer unter der aktuellen Auswahl: sichtbar, aber
+           erkennbar leer - so sieht man, dass die Kombination nichts ergibt,
+           bevor man klickt. */
+        .tag-btn.leer {{ opacity: 0.4; }}
 
         table {{ width: 100%; border-collapse: collapse; margin-top: 10px; }}
         thead th:first-child {{ border-radius: 6px 0 0 0; }}
@@ -365,9 +372,9 @@ def render_html(events: list[dict], today: date):
                 <span class="filter-group-label">Zeitraum</span>
                 <div class="filter-tags">
                     <button class="tag-btn active" data-group="zeit" data-value="" onclick="setFilter(this)">Alle</button>
-                    <button class="tag-btn" data-group="zeit" data-value="7" onclick="setFilter(this)">N&auml;chste 7 Tage</button>
-                    <button class="tag-btn" data-group="zeit" data-value="30" onclick="setFilter(this)">N&auml;chste 30 Tage</button>
-                    <button class="tag-btn" data-group="zeit" data-value="90" onclick="setFilter(this)">N&auml;chste 3 Monate</button>
+                    <button class="tag-btn" data-group="zeit" data-value="7" onclick="setFilter(this)">N&auml;chste 7 Tage <span class="count"></span></button>
+                    <button class="tag-btn" data-group="zeit" data-value="30" onclick="setFilter(this)">N&auml;chste 30 Tage <span class="count"></span></button>
+                    <button class="tag-btn" data-group="zeit" data-value="90" onclick="setFilter(this)">N&auml;chste 3 Monate <span class="count"></span></button>
                 </div>
             </div>
 
@@ -510,18 +517,34 @@ def render_html(events: list[dict], today: date):
             return start <= iso(limit) && end >= iso(today);
         }
 
+        // Prueft eine Zeile gegen EINE Filterdimension.
+        function passtDimension(row, dimension, wert, term) {
+            if (!wert) return true;
+            if (dimension === 'suche') return row.innerText.toLowerCase().includes(wert);
+            if (dimension === 'zeit') return inWindow(row, wert);
+            const tags = row.getAttribute('data-tags');
+            return tags.includes(dimension + '-' + wert);
+        }
+
+        // Prueft eine Zeile gegen alle Filter, optional eine Dimension
+        // ausgenommen. Das Auslassen ist die Grundlage der Zahlen an den
+        // Knoepfen: Wie viele Treffer gaebe es, WENN man in dieser Gruppe
+        // anders waehlt?
+        function passt(row, term, ausser) {
+            if (ausser !== 'suche' && !passtDimension(row, 'suche', term, term)) return false;
+            if (ausser !== 'region' && !passtDimension(row, 'region', filters.region)) return false;
+            if (ausser !== 'art' && !passtDimension(row, 'art', filters.art)) return false;
+            if (ausser !== 'zeit' && !passtDimension(row, 'zeit', filters.zeit)) return false;
+            return true;
+        }
+
         function applyFilters() {
             const term = document.getElementById('searchInput').value.toLowerCase();
             const rows = document.querySelectorAll('#eventsTable tbody tr');
             let visible = 0;
 
             rows.forEach(row => {
-                const tags = row.getAttribute('data-tags');
-                const ok =
-                    (!term || row.innerText.toLowerCase().includes(term)) &&
-                    (!filters.region || tags.includes('region-' + filters.region)) &&
-                    (!filters.art || tags.includes('art-' + filters.art)) &&
-                    inWindow(row, filters.zeit);
+                const ok = passt(row, term, null);
                 row.style.display = ok ? '' : 'none';
                 if (ok) visible++;
             });
@@ -529,9 +552,28 @@ def render_html(events: list[dict], today: date):
             document.getElementById('visibleCount').innerText = visible;
             document.getElementById('noResults').style.display =
                 (visible === 0 && rows.length > 0) ? 'block' : 'none';
+
+            // Zahlen an den Knoepfen neu berechnen. Vorher kamen sie aus
+            // Python und galten fuer den GESAMTEN Bestand - nach der Auswahl
+            // "Berlin & Brandenburg" behauptete "Fuehrungen" weiter 127,
+            // obwohl in Berlin nur ein Teil davon liegt.
+            document.querySelectorAll('.tag-btn').forEach(btn => {
+                const gruppe = btn.getAttribute('data-group');
+                const wert = btn.getAttribute('data-value');
+                let treffer = 0;
+                rows.forEach(row => {
+                    if (passt(row, term, gruppe) &&
+                        passtDimension(row, gruppe, wert, term)) treffer++;
+                });
+                const feld = btn.querySelector('.count');
+                if (feld) feld.innerText = treffer;
+                // "Alle" bleibt ohne Zahl, wird aber nie ausgegraut.
+                btn.classList.toggle('leer', treffer === 0 && wert !== '');
+            });
         }
 
         initTheme();
+        applyFilters();
     </script>
 </body>
 </html>
