@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sepulcrawler &ndash; Termine zur Sepulkralkultur</title>
+    <title>Sepulcrawler &ndash; Termine zur Friedhofs- und Sepulkralkultur</title>
     <style>
         /* Palette an das Kopfbild angelehnt: Sandstein, Patina, Granit.
            Das bisherige Blau (#3498db) und Gruen (#27ae60) waren
@@ -81,7 +81,7 @@
            welcher Bildbereich beim jeweiligen Fenster sichtbar ist. */
         .header-bar {
             position: relative;
-            min-height: 220px;
+            min-height: 280px;
             display: flex;
             align-items: flex-end;
             justify-content: space-between;
@@ -96,7 +96,12 @@
                                         rgba(18,20,19,0.15) 100%),
                 image-set(url("assets/header.jpg") 1x);
             background-size: cover;
-            background-position: center 42%;
+            /* Oben ausrichten: Bei einem so flachen Band schneidet "cover"
+               kraeftig vertikal weg. Der Engelskopf sitzt im oberen Viertel
+               des Bildes - mit "center 42%" (Bildmitte) fiel er heraus.
+               Von oben gerechnet landet er bei rund einem Drittel Bandhoehe,
+               unabhaengig von der Fensterbreite. */
+            background-position: center top;
             box-shadow: var(--shadow);
         }
         .header-text { color: #f4f2ee; }
@@ -247,15 +252,16 @@
             <span class="credit">Foto: eigenes Werk</span>
             <div class="header-text">
                 <h1>Sepulcrawler</h1>
-                <p class="subtitle">Termine zur Sepulkral- und Friedhofskultur
-                   in Deutschland, &Ouml;sterreich, der Schweiz und Tschechien</p>
+                <p class="subtitle">F&uuml;hrungen, Ausstellungen und Gedenktermine
+                   zur Sepulkral- und Friedhofskultur in Deutschland,
+                   &Ouml;sterreich und der Schweiz</p>
             </div>
             <button class="theme-toggle-btn" onclick="toggleTheme()">
                 <span id="themeIcon">&#127769;</span>
                 <span id="themeLabel">Dunkel</span>
             </button>
         </div>
-        <div class="timestamp">Stand: 31.08.2026 um 15:05 Uhr &nbsp;|&nbsp;
+        <div class="timestamp">Stand: 31.08.2026 um 19:12 Uhr &nbsp;|&nbsp;
             <span id="visibleCount">325</span> von 325 Terminen</div>
 
         <div class="filter-row">
