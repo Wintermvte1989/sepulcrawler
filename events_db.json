@@ -1,494 +1,4 @@
 {
-  "14bdd04cf40a6f2ba62184bd998e3ac2": {
-    "title": "Ewigkeitssonntag - Tag der Entschlafenen",
-    "date_start": "2026-11-22",
-    "date_end": null,
-    "location": "Südwestkirchhof Stahnsdorf",
-    "description": "Veranstaltung und Gedenken zum Ewigkeitssonntag bzw. Tag der Entschlafenen auf dem Südwestkirchhof Stahnsdorf.",
-    "url": "https://www.suedwestkirchhof.de/veranstaltungen.html",
-    "first_seen": "2026-08-25",
-    "last_seen": "2026-11-20"
-  },
-  "379536d9756f69f5c21f52b6c4c6a782": {
-    "title": "Andacht zum Ewigkeitssonntag mit Verlesung der Verstorbenen und Orgelbegleitung",
-    "date_start": "2026-11-22",
-    "date_end": null,
-    "location": "Südwestkirchhof Stahnsdorf",
-    "description": "Andacht zum Ewigkeitssonntag mit namentlicher Verlesung der Verstorbenen und orchester/orgel-musikalischer Begleitung.",
-    "url": "https://www.suedwestkirchhof.de/veranstaltungen.html",
-    "first_seen": "2026-08-25",
-    "last_seen": "2026-11-20"
-  },
-  "ba68adbf1819eaf204814612cc7d531d": {
-    "title": "Gedenkveranstaltung zum Totensonntag mit Andreas Gottschald",
-    "date_start": "2026-11-22",
-    "date_end": null,
-    "location": "Potsdam (Kommunale Friedhöfe)",
-    "description": "Gedenkveranstaltung mit Andreas Gottschald am Totensonntag um 15 Uhr auf den kommunalen Friedhöfen in Potsdam.",
-    "url": "https://www.friedhof-in-potsdam.de/allgemeines/aktuelles",
-    "first_seen": "2026-08-25",
-    "last_seen": "2026-11-20"
-  },
-  "237f3786510dbb813b362cfe96efbbbb": {
-    "title": "Totensonntag-Konzert mit Andreas Gottschald",
-    "date_start": "2026-11-22",
-    "date_end": null,
-    "location": "Kommunale Friedhöfe Potsdam",
-    "description": "Konzert von Andreas Gottschald am Totensonntag im Rahmen der Reihe Klangbrücken für Potsdamer Friedenscarillon.",
-    "url": "https://www.friedhof-in-potsdam.de/allgemeines/aktuelles",
-    "first_seen": "2026-08-25",
-    "last_seen": "2026-11-06"
-  },
-  "79904e99ddba35aa0f7753121e8db7e9": {
-    "title": "Carillon-Konzert zum Totensonntag",
-    "date_start": "2026-11-22",
-    "date_end": null,
-    "location": "Potsdamer Friedenscarillon, Potsdam",
-    "description": "Konzert der Reihe Klangbruecken fuer Potsdamer Friedenscarillon anlaesslich des Totensonntags, gespielt von Andreas Gottschald.",
-    "url": "https://www.friedhof-in-potsdam.de/allgemeines/aktuelles",
-    "first_seen": "2026-08-25",
-    "last_seen": "2026-08-31"
-  },
-  "e2523c88309c5dab6017c82289cea377": {
-    "title": "Shelter Sounds – Zwischen-Welten (Konzert zum Totensonntag)",
-    "date_start": "2026-11-22",
-    "date_end": null,
-    "location": "Museum fuer Sepulkralkultur, Kassel",
-    "description": "Ein Konzert des TRIO PRISMA zum Totensonntag als musikalische Brücke zwischen den Welten zur Besinnung, zum Gedenken und für Trost.",
-    "url": "https://www.sepulkralmuseum.de/veranstaltungen/",
-    "first_seen": "2026-08-28",
-    "last_seen": "2026-11-20"
-  },
-  "7b97cea7247d0deeae237ba872dd89f1": {
-    "title": "Gedenkveranstaltung zum Totensonntag",
-    "date_start": "2026-11-22",
-    "date_end": null,
-    "location": "Rheinland-Pfalz",
-    "description": "Gedenkveranstaltung am Totensonntag zum Verharren und Erinnern an die Verstorbenen.",
-    "url": "https://rheinland-pfalz.volksbund.de/aktuell/termine",
-    "first_seen": "2026-08-31",
-    "last_seen": "2026-11-13"
-  },
-  "e37fba0976cebbd9d5b44bed47efc915": {
-    "title": "Kaffeenachmittag zum Ewigkeitssonntag",
-    "date_start": "2026-11-22",
-    "date_end": null,
-    "location": "Begegnungszentrum Trinitatisfriedhof, Fiedlerstraße 1, Dresden, Sachsen, 01307, Deutschland",
-    "description": "Kaffeenachmittag – Zeit für Austausch, Begegnung und nette Gespräche bei Kaffee und Kuchen.",
-    "url": "https://johannisfriedhof-dresden.de/veranstaltung/kaffeenachmittag-4-2-2-2-2-2-2/",
-    "first_seen": "2026-08-31",
-    "last_seen": "2026-11-20"
-  },
-  "61400b4200b31230c1fd0bc9bf82887d": {
-    "title": "Konzert zum Totensonntag: Klangbrücken für Potsdamer Friedenscarillon",
-    "date_start": "2026-11-22",
-    "date_end": null,
-    "location": "Neuer Friedhof Potsdam",
-    "description": "Gedenkkonzert zum Totensonntag von Andreas Gottschald auf dem Neuen Friedhof Potsdam.",
-    "url": "https://www.friedhof-in-potsdam.de/allgemeines/aktuelles",
-    "first_seen": "2026-09-07",
-    "last_seen": "2026-09-07"
-  },
-  "7f91e42bf78f7fdeb5834383b0640fc4": {
-    "title": "Stadtspaziergang: Nordfriedhof - Der Friedhof und seine Kunstwerke",
-    "date_start": "2026-11-22",
-    "date_end": null,
-    "location": "Nordfriedhof, Dortmund",
-    "description": "Ein Rundgang über den Nordfriedhof in Dortmund mit Fokus auf den Friedhof sowie seine historischen und künstlerischen Grabmale.",
-    "url": "https://www.dortmund.de/rathaus/verwaltung/friedhoefe-dortmund/",
-    "first_seen": "2026-09-21",
-    "last_seen": "2026-11-20"
-  },
-  "7fb97e0641749270dc94d508697081f1": {
-    "title": "Rundgang über den Waldfriedhof Dahlem",
-    "date_start": "2026-11-22",
-    "date_end": null,
-    "location": "Waldfriedhof Dahlem",
-    "description": "Rundgang zu den Grabstätten bekannter Persönlichkeiten auf dem Waldfriedhof Dahlem.",
-    "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
-    "first_seen": "2026-09-25",
-    "last_seen": "2026-11-20"
-  },
-  "3193ab3bb57aee8d5d283958c52c4f67": {
-    "title": "Gedenkveranstaltung des Volksbundes",
-    "date_start": "2026-11-22",
-    "date_end": null,
-    "location": "Rheinland-Pfalz",
-    "description": "Gedenkveranstaltung des Volksbundes Deutsche Kriegsgräberfürsorge am Totensonntag.",
-    "url": "https://rheinland-pfalz.volksbund.de/aktuell/termine",
-    "first_seen": "2026-09-28",
-    "last_seen": "2026-10-12"
-  },
-  "bfc1719fc5adcf22081bfb8e969b3168": {
-    "title": "Kostenloser Fahrdienst über den Heidefriedhof in Mariendorf am Totensonntag",
-    "date_start": "2026-11-22",
-    "date_end": null,
-    "location": "Heidefriedhof Mariendorf",
-    "description": "Kostenloser Fahrdienst am Totensonntag, angeboten vom Berlin-Brandenburger Verein zur Förderung der Friedhofskultur e.V.",
-    "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
-    "first_seen": "2026-10-05",
-    "last_seen": "2026-10-09"
-  },
-  "859a2a676def3df7746b3f5f0093f591": {
-    "title": "Kostenloser Fahrdienst über den Friedhof in den Kisseln am Totensonntag",
-    "date_start": "2026-11-22",
-    "date_end": null,
-    "location": "Friedhof in den Kisseln",
-    "description": "Kostenloser Fahrdienst auf dem Friedhof In den Kisseln am Totensonntag, angeboten vom Berlin-Brandenburger Verein zur Förderung der Friedhofskultur e.V.",
-    "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
-    "first_seen": "2026-10-05",
-    "last_seen": "2026-11-20"
-  },
-  "d297c3235e122f48e7be88a9f7195ad0": {
-    "title": "“Der Friedhof leuchtet” auf dem Heidefriedhof Mariendorf am Totensonntag",
-    "date_start": "2026-11-22",
-    "date_end": null,
-    "location": "Heidefriedhof Mariendorf",
-    "description": "Veranstaltung am Totensonntag, organisiert vom Berlin-Brandenburger Verein zur Förderung der Friedhofskultur e.V.",
-    "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
-    "first_seen": "2026-10-05",
-    "last_seen": "2026-10-09"
-  },
-  "043f6a457a1d21bdc9408e9d1f91addc": {
-    "title": "Gedenkveranstaltung",
-    "date_start": "2026-11-22",
-    "date_end": null,
-    "location": "Inland",
-    "description": "Ganztägige Gedenkveranstaltung am Totensonntag / Ewigkeitssonntag, 22. November 2026.",
-    "url": "https://rheinland-pfalz.volksbund.de/aktuell/termine",
-    "first_seen": "2026-10-09",
-    "last_seen": "2026-10-09"
-  },
-  "2fb6bde368fe832941ea1f61257ed4ef": {
-    "title": "Andacht auf dem Zentralfriedhof am Ewigkeitssonntag „Wir sind auf dem Weg in die Wohnungen Gottes“",
-    "date_start": "2026-11-22",
-    "date_end": null,
-    "location": "Zentralfriedhof Münster",
-    "description": "Gedenkandacht auf dem Zentralfriedhof Münster zum Ewigkeitssonntag unter dem Motto „Wir sind auf dem Weg in die Wohnungen Gottes“.",
-    "url": "https://www.zentralfriedhof-muenster.de/",
-    "first_seen": "2026-10-23",
-    "last_seen": "2026-11-09"
-  },
-  "e9a8be10e1d398e33e420a018a53fdff": {
-    "title": "Tag des Krematoriums 2026",
-    "date_start": "2026-11-22",
-    "date_end": null,
-    "location": "Krematorium Berlin-Baumschulenweg",
-    "description": "Informationstag im Krematorium Berlin-Baumschulenweg mit Führungen, Filmen, Konzerten und weiteren Angeboten.",
-    "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
-    "first_seen": "2026-10-26",
-    "last_seen": "2026-11-20"
-  },
-  "d3bfeb76ddb65517e988e8c98702a2bc": {
-    "title": "Gottesdienst zum Ewigkeitssonntag",
-    "date_start": "2026-11-22",
-    "date_end": null,
-    "location": "Friedrichswerderscher Friedhof",
-    "description": "Gottesdienst zum Ewigkeitssonntag auf dem Friedrichswerderschen Friedhof (Friedhöfe Bergmannstraße).",
-    "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
-    "first_seen": "2026-11-13",
-    "last_seen": "2026-11-20"
-  },
-  "592d21c99c4a6fb3b0e85e1862d9670e": {
-    "title": "Gottesdienst zum Ewigkeitssonntag",
-    "date_start": "2026-11-22",
-    "date_end": null,
-    "location": "Augustinerkirche, Erfurt",
-    "description": "Evangelischer Gottesdienst zum Ewigkeitssonntag im Erfurter Augustinerkloster im Zeichen des Totengedenkens.",
-    "url": "https://www.augustinerkloster.de/veranstaltungen/",
-    "first_seen": "2026-10-26",
-    "last_seen": "2026-11-20"
-  },
-  "f2b86a09de5eb2e5bcefbd3e6efc6a5a": {
-    "title": "Trost in der Philosophie",
-    "date_start": "2026-11-22",
-    "date_end": null,
-    "location": "Kapelle 6, Parkfriedhof Ohlsdorf, Hamburg",
-    "description": "Veranstaltung mit Autor Dietmar Bittrich über philosophische Antworten auf Fragen nach Trost und Mut.",
-    "url": "https://www.ohlsdorf-derpark.de/termine-ohlsdorf/",
-    "first_seen": "2026-10-30",
-    "last_seen": "2026-11-20"
-  },
-  "da81679894625cdd00dceacb1331acb7": {
-    "title": "Friedhofsandacht zum Ewigkeitssonntag",
-    "date_start": "2026-11-22",
-    "date_end": null,
-    "location": "Rote Kapelle, Friedhof Georgen-Parochial II, Berlin",
-    "description": "Andacht zum Ewigkeitssonntag auf dem Georgen-Parochial-II-Friedhof mit Pfarrer Michael Kösling.",
-    "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
-    "first_seen": "2026-11-02",
-    "last_seen": "2026-11-20"
-  },
-  "426cf82d5bff7f3afc9eeff485b52a6c": {
-    "title": "Offene Kapelle zum Ewigkeitssonntag",
-    "date_start": "2026-11-22",
-    "date_end": null,
-    "location": "Friedhof St. Thomas",
-    "description": "Offene Friedhofskapelle zum Ewigkeitssonntag auf dem Friedhof St. Thomas in Neukölln.",
-    "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
-    "first_seen": "2026-11-02",
-    "last_seen": "2026-11-20"
-  },
-  "bc99d2c3d1cd646b2ed5340e20744414": {
-    "title": "Andachten zum Ewigkeitssonntag (14:00 Uhr)",
-    "date_start": "2026-11-22",
-    "date_end": null,
-    "location": "Evangelischer Friedhofsverband Berlin Stadtmitte",
-    "description": "Andachten zum Ewigkeitssonntag an verschiedenen Friedhofsstandorten in Reinickendorf, Mitte, Friedrichshain, Neukölln, Tempelhof und Kreuzberg.",
-    "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
-    "first_seen": "2026-11-13",
-    "last_seen": "2026-11-20"
-  },
-  "c008d63e634f03b9543831c37d2e5ff0": {
-    "title": "Abendmahlsgottesdienst zum Ewigkeitssonntag",
-    "date_start": "2026-11-22",
-    "date_end": null,
-    "location": "Dom St. Mauritius und Katharina zu Magdeburg",
-    "description": "Gottesdienst zum Ewigkeitssonntag (Totensonntag) mit Totengedenken im Magdeburger Dom mit Domprediger Jörg Uhle-Wettler.",
-    "url": "https://www.magdeburgerdom.de/",
-    "first_seen": "2026-11-09",
-    "last_seen": "2026-11-20"
-  },
-  "3b086b94c3986a70ed9e48d6ecd24b3c": {
-    "title": "Märchen aus aller Welt",
-    "date_start": "2026-11-22",
-    "date_end": null,
-    "location": "KapelleDREI, Parkfriedhof Ohlsdorf, Hamburg",
-    "description": "Lesung überlieferter Geschichten und Märchen in der KapelleDREI auf dem Parkfriedhof Ohlsdorf.",
-    "url": "https://www.friedhof-hamburg.de/besucher/veranstaltungen/",
-    "first_seen": "2026-11-13",
-    "last_seen": "2026-11-20"
-  },
-  "22cb2e6160e51885ae6d03e35ef9c2d5": {
-    "title": "Gottesdienst zum Ewigkeitssonntag",
-    "date_start": "2026-11-22",
-    "date_end": null,
-    "location": "Fritz-Schumacher-Halle, Parkfriedhof Ohlsdorf, Hamburg",
-    "description": "Gedenkgottesdienst zum Ewigkeitssonntag in der Fritz-Schumacher-Halle auf dem Ohlsdorfer Friedhof.",
-    "url": "https://www.friedhof-hamburg.de/besucher/veranstaltungen/",
-    "first_seen": "2026-11-13",
-    "last_seen": "2026-11-20"
-  },
-  "23d77f667db2019ae507437b9e61185e": {
-    "title": "Totensonntag 2026 auf dem Ostfriedhof",
-    "date_start": "2026-11-22",
-    "date_end": null,
-    "location": "Ostfriedhof, Klausdorfer Weg 277, Kiel",
-    "description": "Am Totensonntag bietet der Ostfriedhof Raum für Gedenken, Besinnung und Begegnung bei einem offenen Büro mit Gesprächen, Punsch und Gebäck an der Feuerschale.",
-    "url": "https://www.kiel.de/de/umwelt_verkehr/friedhoefe/",
-    "first_seen": "2026-11-13",
-    "last_seen": "2026-11-20"
-  },
-  "cca1866160b0cf48ce9c4ec8cdd231f7": {
-    "title": "Totensonntag 2026 auf dem Nordfriedhof",
-    "date_start": "2026-11-22",
-    "date_end": null,
-    "location": "Nordfriedhof, Westring 481, Kiel",
-    "description": "Am Totensonntag lädt der Nordfriedhof zum Gedenken und Innehalten ein mit ein offenes Büro, Gesprächen, Punsch und Gebäck an der Feuerschale.",
-    "url": "https://www.kiel.de/de/umwelt_verkehr/friedhoefe/",
-    "first_seen": "2026-11-13",
-    "last_seen": "2026-11-20"
-  },
-  "4d030c0e812f767813c03d6acb509a54": {
-    "title": "Totensonntag 2026 auf dem Friedhof Russee",
-    "date_start": "2026-11-22",
-    "date_end": null,
-    "location": "Friedhof Russee, Rendsburger Landstraße 445, Kiel",
-    "description": "Am Totensonntag bietet der Friedhof Russee Möglichkeiten zum Gedenken, Gespräche bei Punsch und Gebäck sowie eine Bildervorführung zum historischen Kiel in der Friedhofskapelle.",
-    "url": "https://www.kiel.de/de/umwelt_verkehr/friedhoefe/",
-    "first_seen": "2026-11-13",
-    "last_seen": "2026-11-20"
-  },
-  "49364df2f4d6c2ca98ee9300402ff817": {
-    "title": "Totensonntag 2026 auf dem Alten Urnenfriedhof",
-    "date_start": "2026-11-22",
-    "date_end": null,
-    "location": "Alter Urnenfriedhof, Eichhofstraße 48a, Kiel",
-    "description": "Am Totensonntag bietet der Alte Urnenfriedhof ein offenes Büro mit Gesprächen, Informationen, Gebäck und Punsch an der Feuerschale als Ort des Abschieds und Gedenkens.",
-    "url": "https://www.kiel.de/de/umwelt_verkehr/friedhoefe/",
-    "first_seen": "2026-11-13",
-    "last_seen": "2026-11-20"
-  },
-  "e3fec7afa926db69b49111daa57f5d00": {
-    "title": "Totensonntag-Gedenken mit Andreas Gottschald",
-    "date_start": "2026-11-22",
-    "date_end": null,
-    "location": "Potsdamer Friedhöfe",
-    "description": "Gedenkveranstaltung zum Totensonntag auf den Potsdamer Friedhöfen mit Andreas Gottschald.",
-    "url": "https://www.friedhof-in-potsdam.de/allgemeines/aktuelles",
-    "first_seen": "2026-11-13",
-    "last_seen": "2026-11-13"
-  },
-  "f5442852671b0be0ee1fba2f7dc76f85": {
-    "title": "Gedenkveranstaltung auf der Kriegsgräberstätte Brumleytal",
-    "date_start": "2026-11-22",
-    "date_end": null,
-    "location": "Kriegsgräberstätte Brumleytal",
-    "description": "Gedenkveranstaltung des Volksbundes Deutsche Kriegsgräberfürsorge auf der Kriegsgräberstätte Brumleytal.",
-    "url": "https://nrw.volksbund.de/aktuell/termine",
-    "first_seen": "2026-11-16",
-    "last_seen": "2026-11-20"
-  },
-  "c3435a1179d5018086ccd1cd59168583": {
-    "title": "Trinitatisfriedhof: Andacht zum Ewigkeitssonntag",
-    "date_start": "2026-11-22",
-    "date_end": null,
-    "location": "",
-    "description": "Der Ewigkeitssonntag, der letzte Sonntag im Kirchenjahr, ist ein Tag des Erinnerns. Wir halten inne und denken an die Menschen, die nicht mehr bei uns sind – an ihre Geschichten, ihre Nähe, ihre Spuren in unserem Leben. Zu dieser gemeinsamen Andacht laden wir Sie herzlich ein. Sie findet am Sonntag, dem 22. November 2026, um 14.00 Uhr in der Feierhalle auf dem Trinitatisfriedhof statt. Die musikal",
-    "url": "https://johannisfriedhof-dresden.de/veranstaltung/trinitatisfriedhof-andacht-zum-ewigkeitssonntag/",
-    "first_seen": "2026-11-20",
-    "last_seen": "2026-11-20"
-  },
-  "8d018b96355584682cd3fdfbc67c5230": {
-    "title": "Johannisfriedhof: Andacht zum Ewigkeitssonntag",
-    "date_start": "2026-11-22",
-    "date_end": null,
-    "location": "",
-    "description": "Der Ewigkeitssonntag, der letzte Sonntag im Kirchenjahr, ist ein Tag des Erinnerns. Wir halten inne und denken an die Menschen, die nicht mehr bei uns sind – an ihre Geschichten, ihre Nähe, ihre Spuren in unserem Leben. Zu dieser gemeinsamen Andacht laden wir Sie herzlich ein. Sie findet am Sonntag, dem 22. November 2025, um 15.00 Uhr in der Feierhalle auf dem Johannisfriedhof statt. Die musikalis",
-    "url": "https://johannisfriedhof-dresden.de/veranstaltung/johannisfriedhof-andacht-zum-ewigkeitssonntag/",
-    "first_seen": "2026-11-20",
-    "last_seen": "2026-11-20"
-  },
-  "629ed473c24bfa122d79d369f2aede73": {
-    "title": "Gottesdienst am Ewigkeitssonntag mit Abendmahl",
-    "date_start": "2026-11-22",
-    "date_end": null,
-    "location": "St. Marienkirche Mitte, Berlin",
-    "description": "Gottesdienst mit Abendmahl zum Totengedenken am Ewigkeitssonntag in der St. Marienkirche.",
-    "url": "https://marienkirche-berlin.de/",
-    "first_seen": "2026-11-20",
-    "last_seen": "2026-11-20"
-  },
-  "999920cc14a101fbc3d81f24f97eb1d6": {
-    "title": "Ev. Messe zum Entschlafenengedächtnis",
-    "date_start": "2026-11-22",
-    "date_end": null,
-    "location": "Hauptkirche St. Michaelis, Hamburg",
-    "description": "Evangelische Messe zum Gedenken an die Verstorbenen mit Auszügen aus Johannes Brahms' 'Ein deutsches Requiem'.",
-    "url": "https://www.st-michaelis.de/veranstaltungen-am-michel",
-    "first_seen": "2026-11-20",
-    "last_seen": "2026-11-20"
-  },
-  "5f18037d8d7affadfd1f399b5aa12fe2": {
-    "title": "Live Speaking auf dem Friedhof der Märzgefallenen",
-    "date_start": "2026-11-22",
-    "date_end": null,
-    "location": "Friedhof der Märzgefallenen, Berlin",
-    "description": "Gesprächs- und Bildungsangebot vor Ort auf dem Friedhof der Märzgefallenen.",
-    "url": "https://forum1848.de/veranstaltungen/",
-    "first_seen": "2026-11-20",
-    "last_seen": "2026-11-20"
-  },
-  "48e56f4975173dbc24c4b7a0fe486a64": {
-    "title": "Vortrag auf dem Friedhof In den Kisseln",
-    "date_start": "2026-11-22",
-    "date_end": null,
-    "location": "Friedhof In den Kisseln, Berlin",
-    "description": "Vortragsveranstaltung direkt auf dem Friedhof In den Kisseln in Berlin-Spandau.",
-    "url": "https://berlin.volksbund.de/aktuell/termine",
-    "first_seen": "2026-11-20",
-    "last_seen": "2026-11-20"
-  },
-  "5da4fc4d49f7f8c5c85c4621fc05a3fe": {
-    "title": "Hauptfriedhof Frankfurt – Gräber erzählen Geschichte",
-    "date_start": "2026-11-21",
-    "date_end": null,
-    "location": "Hauptfriedhof Frankfurt, Haupteingang (Neues Portal), Eckenheimer Landstraße 194, Frankfurt am Main",
-    "description": "Ein historischer Rundgang über den Frankfurter Hauptfriedhof, der anhand von Mausoleen und Grabsteinen die Lebensgeschichten bedeutender Persönlichkeiten vermittelt.",
-    "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
-    "first_seen": "2026-08-25",
-    "last_seen": "2026-11-09"
-  },
-  "ab07e3811bf583909ad54685a8aff38b": {
-    "title": "Führung über den Waldfriedhof Zehlendorf",
-    "date_start": "2026-11-21",
-    "date_end": null,
-    "location": "Waldfriedhof Zehlendorf",
-    "description": "Friedhofsführung mit Ulrich Thom über den Waldfriedhof Zehlendorf.",
-    "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
-    "first_seen": "2026-09-25",
-    "last_seen": "2026-11-20"
-  },
-  "2fdb20d5510c2a9857258d937fad2678": {
-    "title": "Alfred Schnittke: Requiem – Jubiläumskonzert 100 Jahre Leipziger Universitätschor",
-    "date_start": "2026-11-21",
-    "date_end": null,
-    "location": "Thomaskirche, Leipzig",
-    "description": "Jubiläumskonzert des Leipziger Universitätschors mit Werken über Vergänglichkeit, Erinnerung und Transzendenz, darunter Alfred Schnittkes Requiem.",
-    "url": "https://www.leipzig-im.de/index.php?auswahl=Veranstaltungen&section=home",
-    "first_seen": "2026-10-23",
-    "last_seen": "2026-11-20"
-  },
-  "142ca5da52c22c0431d47e7a9f475a18": {
-    "title": "Mozart-Requiem: Domkonzert zum 30-jährigen Jubiläum des Vokalensemble Kölner Dom",
-    "date_start": "2026-11-21",
-    "date_end": null,
-    "location": "Kölner Dom",
-    "description": "Aufführung von Mozarts Requiem im Kölner Dom anlässlich des 30-jährigen Jubiläums des Vokalensembles.",
-    "url": "https://www.koelner-dom.de/aktuelles",
-    "first_seen": "2026-10-30",
-    "last_seen": "2026-11-09"
-  },
-  "2a834e29f90c07d005ff9c7decccad4a": {
-    "title": "ZuhörZeit in Ohlsdorf",
-    "date_start": "2026-11-21",
-    "date_end": null,
-    "location": "KapelleDREI, Parkfriedhof Ohlsdorf, Hamburg",
-    "description": "Gesprächs- und Begegnungsangebot im Rahmen der Kooperation ZuhörZeit in der KapelleDREI.",
-    "url": "https://www.ohlsdorf-derpark.de/termine-ohlsdorf/",
-    "first_seen": "2026-10-30",
-    "last_seen": "2026-11-20"
-  },
-  "3f3769721795b86be9808d25dd6078a9": {
-    "title": "Letzte Hilfe",
-    "date_start": "2026-11-21",
-    "date_end": null,
-    "location": "Kapelle 6, Parkfriedhof Ohlsdorf, Hamburg",
-    "description": "Letzte-Hilfe-Kurs über die Normalität des Sterbens und die Begleitung schwerstkranker Menschen am Lebensende.",
-    "url": "https://www.friedhof-hamburg.de/besucher/veranstaltungen/",
-    "first_seen": "2026-11-02",
-    "last_seen": "2026-11-16"
-  },
-  "ee385869a360ff760ca3334f163f0d6b": {
-    "title": "Ein literarischer Nachmittag über das Sterben und das Sein",
-    "date_start": "2026-11-21",
-    "date_end": null,
-    "location": "Friedhof In den Kisseln",
-    "description": "Literarische Veranstaltung über das Sterben und das Sein im Rahmen des 140-jährigen Friedhofsjubiläums.",
-    "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
-    "first_seen": "2026-11-13",
-    "last_seen": "2026-11-20"
-  },
-  "8ac8aa149a1367e700fd2c8c8558c1b1": {
-    "title": "Nächtliche Krimilesung",
-    "date_start": "2026-11-21",
-    "date_end": null,
-    "location": "Friedhof In den Kisseln",
-    "description": "Nächtliche Lesung von Kriminalgeschichten auf dem Friedhof In den Kisseln zum 140-jährigen Jubiläum.",
-    "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
-    "first_seen": "2026-11-13",
-    "last_seen": "2026-11-20"
-  },
-  "8fa778d8c54a1d8f286c5e048fcf7863": {
-    "title": "Letzte Hilfe Kurs",
-    "date_start": "2026-11-21",
-    "date_end": null,
-    "location": "Kapelle 6, Parkfriedhof Ohlsdorf, Hamburg",
-    "description": "Kurs über die Normalität des Sterbens sowie das Begleiten von Menschen in ihren letzten Lebensphasen.",
-    "url": "https://www.friedhof-hamburg.de/besucher/veranstaltungen/",
-    "first_seen": "2026-11-20",
-    "last_seen": "2026-11-20"
-  },
-  "acd7271a32a2e4628e4f354ee761f986": {
-    "title": "Führung auf dem Frankfurter Hauptfriedhof",
-    "date_start": "2026-11-21",
-    "date_end": null,
-    "location": "Eckenheimer Landstraße 194, Frankfurt am Main",
-    "description": "Ein geführter Rundgang über den Frankfurter Hauptfriedhof mit Björn Wissenbach.",
-    "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
-    "first_seen": "2026-11-20",
-    "last_seen": "2026-11-20"
-  },
   "61f880771941f2d07e086ab5a73f70b0": {
     "title": "Eröffnung der Winterausstellung «Am Grab des Heiligen – St.Gallen im 7. Jahrhundert»",
     "date_start": "2026-11-25",
@@ -497,17 +7,17 @@
     "description": "Feierliche Eröffnung der Winterausstellung über St. Gallen im 7. Jahrhundert und das Grab des Heiligen mit Ansprachen unter anderem von Stadtpräsidentin Maria Pappa und Stiftsbibliothekar Dr. Cornel Dora.",
     "url": "https://www.stiftsbezirk.ch/de/veranstaltungen",
     "first_seen": "2026-08-25",
-    "last_seen": "2026-11-20"
+    "last_seen": "2026-11-23"
   },
   "27a6ddf248fcf3d56d327c3511278763": {
     "title": "Exklusivführung durch die Hohenzollerngruft",
     "date_start": "2026-11-25",
     "date_end": null,
     "location": "Berlin - Hohenzollerngruft im Berliner Dom",
-    "description": "Exklusivführung durch die historische Hohenzollerngruft unter dem Berliner Dom in besonderer Atmosphäre.",
+    "description": "Eine Sonderführung durch die historische Hohenzollerngruft unter dem Berliner Dom in besonderer Atmosphäre.",
     "url": "https://www.grieneisen.de/aktuelles",
     "first_seen": "2026-08-30",
-    "last_seen": "2026-11-20"
+    "last_seen": "2026-11-23"
   },
   "cd9dbe7e80b3d56d19d6eae78029f82e": {
     "title": "Trinitatisfriedhof: Kaffee, Kuchen und Geschichte(n)",
@@ -517,7 +27,7 @@
     "description": "Besuchen Sie uns! Trinken Sie eine Tasse Kaffee oder Tee, kommen Sie mit uns ins Gespräch oder stöbern Sie durch unser Büchertauschregal. Am Ende unseres Kaffeenachmittages gegen 16 Uhr gibt es Geschichte(n), von oder über unsere Friedhöfe oder Wissenswertes aus Archiven, lassen Sie sich überraschen und seien Sie gespannt. Kleine Führungen sind ebenfalls in der Konzeption.",
     "url": "https://johannisfriedhof-dresden.de/veranstaltung/offener-mittwoch-im-begegnungszentrum-6-5-2-4-2-2-2-2-2/",
     "first_seen": "2026-08-31",
-    "last_seen": "2026-11-20"
+    "last_seen": "2026-11-23"
   },
   "e60a7bc8f0678dff613683054141218c": {
     "title": "Kurator*innenführung: Unsterblich lebendig",
@@ -527,7 +37,7 @@
     "description": "Kustodin Dr. Ulrike Neurath führt durch die Ausstellung und beleuchtet vielfältige Mythen und Vorstellungen der Unsterblichkeit.",
     "url": "https://www.sepulkralmuseum.de/veranstaltungen/",
     "first_seen": "2026-10-02",
-    "last_seen": "2026-11-20"
+    "last_seen": "2026-11-23"
   },
   "33fba8412b7e957e237bd5845c346550": {
     "title": "Ausstellungseröffnung: Lost Worlds. Werden und Vergehen in den Tuschezeichnungen von Maarten Thiel",
@@ -547,7 +57,7 @@
     "description": "Workshop zur traditionellen japanischen Praxis Kintsugi und der Frage, wie diese Philosophie bei der eigenen Trauerverarbeitung helfen kann.",
     "url": "https://www.sepulkralmuseum.de/veranstaltungen/",
     "first_seen": "2026-10-30",
-    "last_seen": "2026-11-20"
+    "last_seen": "2026-11-23"
   },
   "003d4368a89a34070e6110e69b7e0456": {
     "title": "Ausstellungseröffnung: Maarten Thiel – Lost Worlds",
@@ -557,27 +67,27 @@
     "description": "Eröffnung der Sonderausstellung mit Tuschezeichnungen, Farbradierungen und Ölbildern von Maarten Thiel aus den 1970er-Jahren.",
     "url": "https://www.sepulkralmuseum.de/veranstaltungen/",
     "first_seen": "2026-10-30",
-    "last_seen": "2026-11-20"
+    "last_seen": "2026-11-23"
   },
   "a1a3df903b57e07920de8b482f7a28d8": {
     "title": "ZuhörZeit in Ohlsdorf",
     "date_start": "2026-11-25",
     "date_end": null,
     "location": "KapelleDREI, Parkfriedhof Ohlsdorf, Hamburg",
-    "description": "Gesprächs- und Begegnungsangebot im Rahmen des Projekts ZuhörZeit in der KapelleDREI.",
+    "description": "Das neue Projekt „ZuhörZeit“ lädt in die KapelleDREI auf dem Parkfriedhof Ohlsdorf ein.",
     "url": "https://www.ohlsdorf-derpark.de/termine-ohlsdorf/",
     "first_seen": "2026-11-02",
-    "last_seen": "2026-11-20"
+    "last_seen": "2026-11-23"
   },
   "90e97fbc413df9f2951f00796e0c5f15": {
     "title": "Aufwind an KapelleDREI - Hamburgs Chor für trauernde Menschen",
     "date_start": "2026-11-25",
     "date_end": null,
     "location": "KapelleDREI, Parkfriedhof Ohlsdorf, Hamburg",
-    "description": "Chorangebot für trauernde Menschen sowie Personen, die mit Verlust durch Krankheit oder Brüche im Leben zu tun haben.",
+    "description": "Ein Chorangebot für trauernde Menschen sowie für Personen, die von Verlusterfahrungen durch Krankheit oder biographische Brüche betroffen sind.",
     "url": "https://www.ohlsdorf-derpark.de/termine-ohlsdorf/",
     "first_seen": "2026-11-09",
-    "last_seen": "2026-11-20"
+    "last_seen": "2026-11-23"
   },
   "3fa8b0bc80f0c618a1acb8d6a9cbfcec": {
     "title": "Hauptfriedhof Frankfurt – Gräber erzählen Geschichte",
@@ -597,7 +107,7 @@
     "description": "Sonderführung zur Kunst- und Kulturgeschichte über den Südfriedhof in Leipzig während der Weihnachtstage.",
     "url": "https://paul-benndorf-gesellschaft.de/fuehrungen.html",
     "first_seen": "2026-08-25",
-    "last_seen": "2026-11-20"
+    "last_seen": "2026-11-23"
   },
   "b5486af7b37574bf5beec76ce82dbf69": {
     "title": "Führung auf dem Frankfurter Hauptfriedhof",
@@ -609,6 +119,16 @@
     "first_seen": "2026-11-20",
     "last_seen": "2026-11-20"
   },
+  "1a549cb0a35d1a3d08500c104eab5818": {
+    "title": "Führung auf dem Hauptfriedhof Frankfurt",
+    "date_start": "2026-12-27",
+    "date_end": null,
+    "location": "Eckenheimer Landstraße 194, Frankfurt am Main",
+    "description": "Führung über den Frankfurter Hauptfriedhof mit Björn Wissenbach.",
+    "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23"
+  },
   "7fd249e546d76202fb827fa2ff135180": {
     "title": "Südfriedhof - Führung zum 2. Weihnachtsfeiertag",
     "date_start": "2026-12-26",
@@ -617,7 +137,7 @@
     "description": "Sonderführung über den Südfriedhof Leipzig zur Kunst- und Kulturgeschichte der Begräbnisstätte am zweiten Weihnachtsfeiertag.",
     "url": "https://paul-benndorf-gesellschaft.de/fuehrungen.html",
     "first_seen": "2026-08-25",
-    "last_seen": "2026-11-20"
+    "last_seen": "2026-11-23"
   },
   "47da4e3dd8b1210c1d7fe0a79607bbee": {
     "title": "Die heilige Barbara und andere bemerkenswerte Menschen. Weihnachtliche Führung am St. Barbara Friedhof",
@@ -637,7 +157,7 @@
     "description": "Raumangebot für Trauernde in der Kiezkapelle, präsentiert von Beyond Death.",
     "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "first_seen": "2026-10-09",
-    "last_seen": "2026-11-20"
+    "last_seen": "2026-11-23"
   },
   "8ebec1f0b06d24f2f45693a78f074241": {
     "title": "Friedhofsführung: Die heilige Barbara und andere bemerkenswerte Menschen",
@@ -657,7 +177,7 @@
     "description": "Familienworkshop über den ägyptischen Totengott Osiris, Mythologie sowie Konzepte von Vegetation und Wiedergeburt im Alten Ägypten.",
     "url": "https://www.smb.museum/museen-einrichtungen/aegyptisches-museum-und-papyrussammlung/veranstaltungen/",
     "first_seen": "2026-11-09",
-    "last_seen": "2026-11-20"
+    "last_seen": "2026-11-23"
   },
   "2848611638cc4f93ba0511d35fe6f02f": {
     "title": "Sunday Morning Flow",
@@ -667,7 +187,17 @@
     "description": "Workshop und Aktivität am Sonntagmorgen in der KapelleDREI auf dem Parkfriedhof Ohlsdorf.",
     "url": "https://www.friedhof-hamburg.de/besucher/veranstaltungen/",
     "first_seen": "2026-11-20",
-    "last_seen": "2026-11-20"
+    "last_seen": "2026-11-23"
+  },
+  "d07328ab2f259889132dab6b44938ac6": {
+    "title": "Die heilige Barbara und andere bemerkenswerte Menschen – Weihnachtliche Führung",
+    "date_start": "2026-12-06",
+    "date_end": null,
+    "location": "St. Barbara Friedhof, Linz",
+    "description": "Kulturgeschichtliche Friedhofsführung am St. Barbara Friedhof über die Schutzpatronin der Sterbenden sowie bedeutende Grabstätten.",
+    "url": "https://www.barbarafriedhof.at/service-info/aktuelles/rueckblick/kulturgeschichtliche-friedhofsfuehrungen-2026",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23"
   },
   "b7b873d448d22ee984cab1aef66a57b8": {
     "title": "Online-Trauergruppe für Verwaiste Eltern Herzverbunden",
@@ -677,7 +207,7 @@
     "description": "Online-Treffen für verwaiste Eltern zum Austausch und zur gegenseitigen Unterstützung in der Trauer.",
     "url": "https://blauerfalter.de/termine",
     "first_seen": "2026-08-30",
-    "last_seen": "2026-11-20"
+    "last_seen": "2026-11-23"
   },
   "1d7f540a68555dce20b658f277d2edb8": {
     "title": "Trauerraum",
@@ -687,17 +217,17 @@
     "description": "Raumangebot für Trauernde in der Kiezkapelle, präsentiert von Beyond Death.",
     "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "first_seen": "2026-10-09",
-    "last_seen": "2026-11-20"
+    "last_seen": "2026-11-23"
   },
   "e7028536ad7714fdf054f9fe45c71214": {
     "title": "Stadtspaziergang: Jüdischer Friedhof",
     "date_start": "2026-12-13",
     "date_end": null,
     "location": "Jüdischer Friedhof Dortmund",
-    "description": "Ein städtischer Spaziergang über den Jüdischen Friedhof in Dortmund zur Geschichte und Gestaltung des Ortes.",
+    "description": "Ein städtischer Spaziergang über den Jüdischen Friedhof in Dortmund mit Einblicken in die lokale Friedhofs- und Erinnerungskultur.",
     "url": "https://www.dortmund.de/rathaus/verwaltung/friedhoefe-dortmund/",
     "first_seen": "2026-09-18",
-    "last_seen": "2026-11-20"
+    "last_seen": "2026-11-23"
   },
   "468165de02954ec26af80f605beb3c05": {
     "title": "Worldwide Candle Lighting – Gedenktag für verstorbene Kinder",
@@ -707,27 +237,17 @@
     "description": "Am weltweiten Gedenktag werden Kerzen für verstorbene Kinder entzündet, um gemeinsam innezuhalten und den Verstorbenen zu gedenken.",
     "url": "https://www.sepulkralmuseum.de/veranstaltungen/",
     "first_seen": "2026-09-18",
-    "last_seen": "2026-11-20"
+    "last_seen": "2026-11-23"
   },
-  "fe9bdbd866771912e3f38554437015f3": {
-    "title": "... denn die Liebe bleibt - Lichtergedenkfeier für verstorbene Kinder",
+  "1c993394f7d99cd297c5ae3bde66e9b4": {
+    "title": "... denn die Liebe bleibt - Lichtergedenkfeier für verstorbene Kinder (Worldwide Candle Lighting)",
     "date_start": "2026-12-13",
     "date_end": null,
     "location": "Große Kapelle am Hauptfriedhof Karlsruhe, Karlsruhe",
-    "description": "Offene Gedenkfeier im Rahmen des weltweiten Worldwide Candle Lighting zum Gedenken an verstorbene Kinder, Geschwister und Enkel.",
+    "description": "Gedenkfeier für verstorbene Kinder im Rahmen des weltweiten Candle Lightings, bei dem Kerzen als Zeichen der Erinnerung und Hoffnung entzündet werden.",
     "url": "https://www.friedhof-karlsruhe.de/home/aktuelle-termine/",
     "first_seen": "2026-10-26",
-    "last_seen": "2026-11-20"
-  },
-  "69d798895cd1b5ebee3a9f8e91e7b207": {
-    "title": "Denn die Liebe bleibt – Lichtergedenkfeier für verstorbene Kinder (Worldwide Candle Lighting)",
-    "date_start": "2026-12-13",
-    "date_end": null,
-    "location": "Große Kapelle am Hauptfriedhof Karlsruhe",
-    "description": "Eine Gedenkfeier für verstorbene Kinder im Rahmen des weltweiten Worldwide Candle Lighting, bei der gemeinsam Kerzen zum Gedenken entzündet werden.",
-    "url": "https://www.friedhof-karlsruhe.de/programm/fuehrungen-und-angebote.html",
-    "first_seen": "2026-11-02",
-    "last_seen": "2026-11-16"
+    "last_seen": "2026-11-23"
   },
   "f055a83660b3c5d073b8cac33d763062": {
     "title": "Adventssingen auf dem Friedhof Russee",
@@ -737,7 +257,7 @@
     "description": "Adventssingen an der Friedhofskapelle des Friedhofs Russee zum gemeinsamen Innehalten und Einstimmen auf die Weihnachtszeit.",
     "url": "https://www.kiel.de/de/umwelt_verkehr/friedhoefe/",
     "first_seen": "2026-11-13",
-    "last_seen": "2026-11-20"
+    "last_seen": "2026-11-23"
   },
   "df4049ee2fb4fce5362251eb6f68ff4c": {
     "title": "Orte – Druckwerkstatt",
@@ -747,7 +267,7 @@
     "description": "Druckwerkstatt-Workshop, der sich mit persönlichen, berührenden und bewegenden Orten auseinandersetzt.",
     "url": "https://www.sepulkralmuseum.de/veranstaltungen/",
     "first_seen": "2026-11-16",
-    "last_seen": "2026-11-20"
+    "last_seen": "2026-11-23"
   },
   "63f5f8f40e4a18135cef752b1a590f3c": {
     "title": "Skandinavische Weihnachten - eine musikalische Lesung",
@@ -757,7 +277,7 @@
     "description": "Musikalische Lesung in der Norwegischen Holzkirche auf dem Südwestkirchhof Stahnsdorf.",
     "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "first_seen": "2026-11-20",
-    "last_seen": "2026-11-20"
+    "last_seen": "2026-11-23"
   },
   "436498da9e668909bc83a07c01f14a8f": {
     "title": "Führung: Zwischen Revolution und Demokratie – Der Friedhof der Märzgefallenen 1918",
@@ -769,105 +289,45 @@
     "first_seen": "2026-11-20",
     "last_seen": "2026-11-20"
   },
-  "75cfc61288d168bc22f1f0eca1b2a15a": {
-    "title": "Von Windhauch, Vergeblichkeit und der Freude am Leben",
-    "date_start": "2026-11-20",
+  "17b848924e4d7c7bbe869c3021f105ef": {
+    "title": "Sys willekommen Heire Kerst",
+    "date_start": "2026-12-13",
     "date_end": null,
-    "location": "Bischöfliches Dom- und Diözesanmuseum Mainz",
-    "description": "Eine Erzählveranstaltung zum Vorlesetag Rheinland-Pfalz mit Dr. Claudia Sticher, bei der biblische Geschichten sowie Kunstwerke wie eine Vanitas-Kasel und das Thema Vergeblichkeit im Mittelpunkt stehen.",
-    "url": "https://www.dommuseum-mainz.de/programm/kalender/aktuelle-termine-kalender/",
-    "first_seen": "2026-09-21",
-    "last_seen": "2026-11-20"
+    "location": "Kapelle 6, Parkfriedhof Ohlsdorf, Hamburg",
+    "description": "Das Ensemble Ditlumdei nimmt die Zuhörer mit auf eine musikalische Reise durch 500 Jahre Weihnachten in Europa.",
+    "url": "https://www.friedhof-hamburg.de/besucher/veranstaltungen/",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23"
   },
-  "4147560458a704eddb03c809cfe0594f": {
-    "title": "Nora Gomringer liest aus „Am Meerschwein übt das Kind den Tod“",
-    "date_start": "2026-11-20",
-    "date_end": null,
-    "location": "Museum fuer Sepulkralkultur, Kassel",
-    "description": "Buchpremiere von „HALT. Das Jahrbuch für Sepulkralkultur“ mit einer Lesung der Autorin Nora Gomringer aus ihrem autobiografischen Roman.",
-    "url": "https://www.sepulkralmuseum.de/veranstaltungen/",
-    "first_seen": "2026-09-25",
-    "last_seen": "2026-11-20"
-  },
-  "438e9de52732772416a603fa1affafcd": {
-    "title": "Lesung aus den Sarggeschichten",
-    "date_start": "2026-11-20",
-    "date_end": null,
-    "location": "Ambulantes Hospiz Caritasverband Meschede e.V., Steinstraße 30, 59872 Meschede",
-    "description": "Lesung der Autorinnen der Sarggeschichten mit Gespräch und Impulsen zu Themen wie Abschiednehmen, Sterben und Bestattung.",
-    "url": "https://www.sarggeschichten.de/",
-    "first_seen": "2026-09-28",
-    "last_seen": "2026-11-06"
-  },
-  "bf74741d03f1c7ef8255904df1b822e2": {
-    "title": "Coming Home",
-    "date_start": "2026-11-20",
-    "date_end": null,
-    "location": "Friedhofskapelle In den Kisseln",
-    "description": "Besonderes Konzert des Popchors Spandau in der Friedhofskapelle In den Kisseln.",
-    "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
-    "first_seen": "2026-10-30",
-    "last_seen": "2026-11-09"
-  },
-  "8322ddd3e6f6a2146db415aa87058f16": {
-    "title": "STILLE.KONZERT.ZEIT – „Deep Flow Guitar“ mit Stefan Schulte ter Hardt",
-    "date_start": "2026-11-20",
+  "276f62552190d3b47d0c6e546badbce1": {
+    "title": "Sunday Morning Flow",
+    "date_start": "2026-12-13",
     "date_end": null,
     "location": "KapelleDREI, Parkfriedhof Ohlsdorf, Hamburg",
-    "description": "Konzert in der KapelleDREI auf dem Parkfriedhof Ohlsdorf mit Gitarrenmusik von Stefan Schulte ter Hardt.",
+    "description": "Sonntagmorgen-Veranstaltung in der KapelleDREI auf dem Parkfriedhof Ohlsdorf.",
     "url": "https://www.friedhof-hamburg.de/besucher/veranstaltungen/",
-    "first_seen": "2026-10-30",
-    "last_seen": "2026-11-20"
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23"
   },
-  "0380818055cf5803f4154966e5abf75c": {
-    "title": "Lesung Sarggeschichten",
-    "date_start": "2026-11-20",
+  "572dd06b16ba22c301f593198ef26153": {
+    "title": "Weihnachtskonzert für alle",
+    "date_start": "2026-12-13",
     "date_end": null,
-    "location": "Ambulantes Hospiz Caritasverband Meschede e.V., Steinstraße 30, 59872 Meschede",
-    "description": "Lesung aus dem Buch 'Sarggeschichten' mit Gesprächen und Impulsen zu Themen wie Sterben, Tod, selbstbestimmtes Abschiednehmen und Trauer.",
-    "url": "https://www.sarggeschichten.de/",
-    "first_seen": "2026-11-09",
-    "last_seen": "2026-11-20"
-  },
-  "82c469ce4026ead1d9cdbb45caa505be": {
-    "title": "Coming Home - ein besonderes Konzert des Popchor Spandau",
-    "date_start": "2026-11-20",
-    "date_end": null,
-    "location": "Friedhof In den Kisseln",
-    "description": "Konzert des Popchor Spandau im Rahmen der Feiern zum 140-jährigen Jubiläum des Friedhofs In den Kisseln.",
-    "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
-    "first_seen": "2026-11-13",
-    "last_seen": "2026-11-20"
-  },
-  "d6f63bd79b9dc5aa1e8e706d5c49c807": {
-    "title": "Führung: Victor Frankenstein und die Anatomie",
-    "date_start": "2026-11-20",
-    "date_end": null,
-    "location": "Deutsches Medizinhistorisches Museum Ingolstadt",
-    "description": "Themenführung im Deutschen Medizinhistorischen Museum zum historischen Bezug zwischen Victor Frankenstein und der Anatomiegeschichte.",
-    "url": "https://www.dmm-ingolstadt.de/",
-    "first_seen": "2026-11-13",
-    "last_seen": "2026-11-20"
-  },
-  "fc1ec8226d94a075c181d01e11ed6141": {
-    "title": "Ausstellung «Auf immer und ewig» auf dem Wolfgottesacker",
-    "date_start": "2026-11-20",
-    "date_end": null,
-    "location": "Wolfgottesacker, Basel",
-    "description": "Eine temporäre Ausstellung auf dem Basler Friedhof Wolfgottesacker.",
-    "url": "https://www.stadtgaertnerei.bs.ch/friedhoefe/veranstaltungen.html",
-    "first_seen": "2026-11-20",
-    "last_seen": "2026-11-20"
+    "location": "Fritz-Schumacher-Halle, Parkfriedhof Ohlsdorf, Hamburg",
+    "description": "Ein musikalischer Nachmittag bei Kerzenschein, veranstaltet von der Familie Föhring von Föhring Bestattungen.",
+    "url": "https://www.friedhof-hamburg.de/besucher/veranstaltungen/",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23"
   },
   "4e2cb2f945b3d7413df256645610120e": {
     "title": "Rundgang über den Friedhof Heerstraße",
     "date_start": "2026-11-28",
     "date_end": null,
-    "location": "Friedhof Heerstraße",
+    "location": "Friedhof Heerstraße, Berlin",
     "description": "Führung und Spaziergang über den Friedhof Heerstraße mit Ulrich Thom.",
     "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "first_seen": "2026-10-02",
-    "last_seen": "2026-11-20"
+    "last_seen": "2026-11-23"
   },
   "76311e225a474f8220d1b905a83a955a": {
     "title": "Workshop | Traurig wegen Bäumen. Trauer und Widerstand um ökologische Verluste",
@@ -883,11 +343,11 @@
     "title": "Workshop “Traurig wegen Bäumen” auf dem Neuen St. Jacobi Friedhof",
     "date_start": "2026-11-28",
     "date_end": null,
-    "location": "Neuer St. Jacobi Friedhof",
+    "location": "Neuer St. Jacobi Friedhof, Berlin",
     "description": "Workshop im Rahmen der Veranstaltungsreihe Beyond Death beim Prinzessinnengarten Kollektiv Berlin.",
     "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "first_seen": "2026-11-06",
-    "last_seen": "2026-11-16"
+    "last_seen": "2026-11-23"
   },
   "179d068165ab76a1e1d2faaa63a7f985": {
     "title": "Konzert des Volksbundes Bremen",
@@ -937,7 +397,7 @@
     "description": "Ein architektonischer und historischer Rundgang durch nicht öffentlich zugängliche Bereiche des Alten Krematoriums, einschließlich der alten Verbrennungsöfen sowie einer Sammlung von Grabsteinen, Grabschmuck und Urnen.",
     "url": "https://www.stadt-zuerich.ch/friedhofforum/de/veranstaltungen/oeffentliche-rundgaenge-altes-krematorium.html",
     "first_seen": "2026-10-02",
-    "last_seen": "2026-11-20"
+    "last_seen": "2026-11-23"
   },
   "497732b4170817735bd99f17c06654cb": {
     "title": "Öffentlicher Rundgang: Mysteriöses Zürich – das Alte Krematorium",
@@ -959,6 +419,16 @@
     "first_seen": "2026-11-06",
     "last_seen": "2026-11-06"
   },
+  "a6c2d97748df2161bcece8c23bc6452e": {
+    "title": "Trauergruppe für Eltern von verstorbenen Jugendlichen und Erwachsenen",
+    "date_start": "2026-12-08",
+    "date_end": null,
+    "location": "Julius Grieneisen Haus, Berlin",
+    "description": "Ein Trauergruppe-Treffen speziell für Eltern, die ein jugendliches oder erwachsenes Kind verloren haben.",
+    "url": "https://www.grieneisen.de/aktuelles",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23"
+  },
   "c5ab9ba9ba67aabd6b22398d9387c1b1": {
     "title": "Fokus Ausstellung 1: Gallus und sein Grab",
     "date_start": "2027-01-11",
@@ -967,17 +437,17 @@
     "description": "Ein Blick auf die Exponate der Winterausstellung mit Fokus auf den heiligen Gallus und seine Grabstätte, geführt von Stiftsbibliothekar Dr. Cornel Dora.",
     "url": "https://www.stiftsbezirk.ch/de/veranstaltungen",
     "first_seen": "2026-10-16",
-    "last_seen": "2026-11-20"
+    "last_seen": "2026-11-23"
   },
   "7ff16c3c5119309fe69b65cdaa5bf912": {
     "title": "Biografien aus dem Boden – frühmittelalterliche Skelette aus St.Gallen und ihre Geschichten",
     "date_start": "2027-01-24",
     "date_end": null,
     "location": "Kulturmuseum St. Gallen",
-    "description": "Kurzführung und Gespräch über anthropologische Erkenntnisse aus frühmittelalterlichen Skelettfunden mit Dr. Viera Trancik Petitpierre und Dr. Martin Peter Schindler.",
+    "description": "Kurzführung und Gespräch mit der Anthropologin Dr. Viera Trancik Petitpierre und Kantonsarchäologe Dr. Martin Peter Schindler über anthropologische Funde und frühmittelalterliche Skelette.",
     "url": "https://www.stiftsbezirk.ch/de/veranstaltungen",
     "first_seen": "2026-10-16",
-    "last_seen": "2026-11-20"
+    "last_seen": "2026-11-23"
   },
   "5df112c62ce846451b993529043be2b2": {
     "title": "Archäologischer Spaziergang: Frühmittelalterlichen Gräbern auf der Spur",
@@ -997,7 +467,7 @@
     "description": "Sebastian Becker („Tschief“) liest aus seinem Debütroman über den Tod seines Vaters, Erschütterung, Sprachlosigkeit und Liebe.",
     "url": "https://www.sepulkralmuseum.de/veranstaltungen/",
     "first_seen": "2026-10-19",
-    "last_seen": "2026-11-20"
+    "last_seen": "2026-11-23"
   },
   "efd99c1493f3ef3ddde4b9399fc388b4": {
     "title": "Kintsugi-Workshop mit Julia Domke",
@@ -1017,7 +487,7 @@
     "description": "Ein Gesprächs- und Zuhörangebot in der KapelleDREI auf dem Ohlsdorfer Friedhof.",
     "url": "https://www.friedhof-hamburg.de/besucher/veranstaltungen/",
     "first_seen": "2026-11-16",
-    "last_seen": "2026-11-20"
+    "last_seen": "2026-11-23"
   },
   "040c49cabb5e352893354eefcfc0c6dd": {
     "title": "Aufwind an KapelleDREI - Hamburgs Chor für trauernde Menschen",
@@ -1027,7 +497,17 @@
     "description": "Chorangebot für trauernde Menschen sowie Personen, die mit Trauer durch Verlusterfahrungen zu tun haben.",
     "url": "https://www.friedhof-hamburg.de/besucher/veranstaltungen/",
     "first_seen": "2026-11-16",
-    "last_seen": "2026-11-20"
+    "last_seen": "2026-11-23"
+  },
+  "1a78cc2014fe43f6c5febab0872083ef": {
+    "title": "Die Kunst des Abschiednehmens: Lesung mit Charlotte Wiedemann",
+    "date_start": "2026-12-02",
+    "date_end": null,
+    "location": "Julius Grieneisen Haus, Berlin",
+    "description": "Eine Lesung mit der Autorin Charlotte Wiedemann über das Abschiednehmen und das Sprechen über den Tod.",
+    "url": "https://www.grieneisen.de/aktuelles",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23"
   },
   "8e3c90877c919f1a742ea88c192a0e48": {
     "title": "Hauptfriedhof Frankfurt – Gräber erzählen Geschichte",
@@ -1049,6 +529,16 @@
     "first_seen": "2026-11-20",
     "last_seen": "2026-11-20"
   },
+  "c64f6085b7a9e657085d491025149451": {
+    "title": "Führung auf dem Hauptfriedhof Frankfurt",
+    "date_start": "2027-01-30",
+    "date_end": null,
+    "location": "Eckenheimer Landstraße 194, Frankfurt am Main",
+    "description": "Führung über den Frankfurter Hauptfriedhof mit Sascha Stefan Ruehlow.",
+    "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23"
+  },
   "6a79ef787cada6f6ddace67087d59662": {
     "title": "Hauptfriedhof Frankfurt – Gräber erzählen Geschichte",
     "date_start": "2027-03-13",
@@ -1068,6 +558,16 @@
     "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
     "first_seen": "2026-11-20",
     "last_seen": "2026-11-20"
+  },
+  "c80f6479c20c9d504848c2f8138cae4b": {
+    "title": "Führung auf dem Hauptfriedhof Frankfurt",
+    "date_start": "2027-03-13",
+    "date_end": null,
+    "location": "Eckenheimer Landstraße 194, Frankfurt am Main",
+    "description": "Führung über den Frankfurter Hauptfriedhof mit Sascha Stefan Ruehlow.",
+    "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23"
   },
   "9a59a295ca7a3834a81fe0a455322c5c": {
     "title": "Hauptfriedhof Frankfurt – Gräber erzählen Geschichte",
@@ -1089,6 +589,16 @@
     "first_seen": "2026-11-20",
     "last_seen": "2026-11-20"
   },
+  "de4e96269081f295e575c7c330fff7fe": {
+    "title": "Führung auf dem Hauptfriedhof Frankfurt",
+    "date_start": "2027-05-16",
+    "date_end": null,
+    "location": "Eckenheimer Landstraße 194, Frankfurt am Main",
+    "description": "Führung über den Frankfurter Hauptfriedhof mit Sascha Stefan Ruehlow.",
+    "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23"
+  },
   "306e317a1489d2100efa1be2ca5dd112": {
     "title": "Hauptfriedhof Frankfurt – Gräber erzählen Geschichte",
     "date_start": "2027-07-24",
@@ -1108,6 +618,16 @@
     "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
     "first_seen": "2026-11-20",
     "last_seen": "2026-11-20"
+  },
+  "fa7a5addc429fba10eaae854bbb5ecbf": {
+    "title": "Führung auf dem Hauptfriedhof Frankfurt",
+    "date_start": "2027-07-24",
+    "date_end": null,
+    "location": "Eckenheimer Landstraße 194, Frankfurt am Main",
+    "description": "Führung über den Frankfurter Hauptfriedhof mit Sascha Stefan Ruehlow.",
+    "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23"
   },
   "5d6cee9e8a65f0194500ef3544b77036": {
     "title": "Hauptfriedhof Frankfurt – Gräber erzählen Geschichte",
@@ -1129,6 +649,16 @@
     "first_seen": "2026-11-20",
     "last_seen": "2026-11-20"
   },
+  "379c28c48b81d1bbb83e9881305efb84": {
+    "title": "Führung auf dem Hauptfriedhof Frankfurt",
+    "date_start": "2027-09-26",
+    "date_end": null,
+    "location": "Eckenheimer Landstraße 194, Frankfurt am Main",
+    "description": "Führung über den Frankfurter Hauptfriedhof mit Sascha Stefan Ruehlow.",
+    "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23"
+  },
   "1ed980d7d50cc0a30ffc992e35acb0f1": {
     "title": "Hauptfriedhof Frankfurt – Gräber erzählen Geschichte",
     "date_start": "2027-11-06",
@@ -1149,6 +679,16 @@
     "first_seen": "2026-11-20",
     "last_seen": "2026-11-20"
   },
+  "d8136bb14cd201d235c13c5da983c20e": {
+    "title": "Führung auf dem Hauptfriedhof Frankfurt",
+    "date_start": "2027-11-06",
+    "date_end": null,
+    "location": "Eckenheimer Landstraße 194, Frankfurt am Main",
+    "description": "Führung über den Frankfurter Hauptfriedhof mit Sascha Stefan Ruehlow.",
+    "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23"
+  },
   "70cf6a3b632beeac16d14689fa2d69b8": {
     "title": "Informationsveranstaltung des Volksbundes",
     "date_start": "2026-11-23",
@@ -1159,6 +699,16 @@
     "first_seen": "2026-10-30",
     "last_seen": "2026-11-02"
   },
+  "33282de8fc4ef0b821b0310382a634f6": {
+    "title": "Ausstellung «Auf immer und ewig» auf dem Wolfgottesacker",
+    "date_start": "2026-11-23",
+    "date_end": null,
+    "location": "Wolfgottesacker, Basel",
+    "description": "Ausstellung der Stadtgärtnerei Basel auf dem historischen Friedhof Wolfgottesacker.",
+    "url": "https://www.stadtgaertnerei.bs.ch/friedhoefe/veranstaltungen.html",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23"
+  },
   "ff73f09f77b6ed75fb7c0360a22b9ca1": {
     "title": "Das Erwachen des Osiris – Vegetation und Wiedergeburt im Alten Ägypten",
     "date_start": "2026-11-29",
@@ -1167,7 +717,7 @@
     "description": "Familien-Workshop zur Symbolik des altägyptischen Gottes Osiris sowie zu Themen wie Rebirth, Totenkult und Fruchtbarkeit im Alten Ägypten.",
     "url": "https://www.smb.museum/museen-einrichtungen/aegyptisches-museum-und-papyrussammlung/veranstaltungen/",
     "first_seen": "2026-11-02",
-    "last_seen": "2026-11-20"
+    "last_seen": "2026-11-23"
   },
   "1a3fda44eb9670da4655da5bd4b49126": {
     "title": "Historische Führung über das Gelände des ehemaligen Krematoriums",
@@ -1177,7 +727,7 @@
     "description": "Historische Führung über das Gelände des ehemaligen Krematoriums Wedding und heutigen Kulturquartiers silent green.",
     "url": "https://www.silent-green.net/programm/",
     "first_seen": "2026-11-06",
-    "last_seen": "2026-11-06"
+    "last_seen": "2026-11-23"
   },
   "75854692166f900952abe26d562e23c2": {
     "title": "Sunday Morning Flow",
@@ -1199,6 +749,16 @@
     "first_seen": "2026-11-20",
     "last_seen": "2026-11-20"
   },
+  "e5fdc431fecc2db2050b59fb1aa29a49": {
+    "title": "Führung über den Alten Luisenstädtischen Friedhof",
+    "date_start": "2026-11-29",
+    "date_end": null,
+    "location": "Alter Luisenstädtischer Friedhof, Berlin",
+    "description": "Friedhofsrundgang mit Jakob Preuss über den Alten Luisenstädtischen Friedhof.",
+    "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23"
+  },
   "76700870aaedb2a5d4e38e86529ae64f": {
     "title": "Nikolausführung: Wohin mit dem Hund?",
     "date_start": "2026-12-09",
@@ -1207,17 +767,27 @@
     "description": "Führung mit Kuratorin Tatjana Ahle-Rosental durch die Sonderausstellung zum Umgang mit verstorbenen Heimtieren.",
     "url": "https://www.sepulkralmuseum.de/veranstaltungen/",
     "first_seen": "2026-11-06",
-    "last_seen": "2026-11-20"
+    "last_seen": "2026-11-23"
   },
   "3977b5baae99484c608e7c986d50b0fc": {
     "title": "ZuhörZeit in Ohlsdorf",
     "date_start": "2026-12-09",
     "date_end": null,
     "location": "KapelleDREI, Parkfriedhof Ohlsdorf, Hamburg",
-    "description": "Regelmäßiges Angebot des Projekts ZuhörZeit in der KapelleDREI.",
+    "description": "Projekt „ZuhörZeit“ in der KapelleDREI auf dem Parkfriedhof Ohlsdorf.",
     "url": "https://www.ohlsdorf-derpark.de/termine-ohlsdorf/",
     "first_seen": "2026-11-20",
-    "last_seen": "2026-11-20"
+    "last_seen": "2026-11-23"
+  },
+  "eebc53d3f29be850a0636137ca01668f": {
+    "title": "Aufwind an KapelleDREI - Hamburgs Chor für trauernde Menschen",
+    "date_start": "2026-12-09",
+    "date_end": null,
+    "location": "KapelleDREI, Parkfriedhof Ohlsdorf, Hamburg",
+    "description": "Chorprobe und Gemeinschaft für Trauernde sowie Menschen mit Verlusterfahrungen.",
+    "url": "https://www.friedhof-hamburg.de/besucher/veranstaltungen/",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23"
   },
   "96f36531c39b2b9cbfd02c2239068936": {
     "title": "Sonderführung: Tier-Darstellungen in der Fürstengrablege im Münster",
@@ -1227,7 +797,7 @@
     "description": "Öffentliche Sonderführung mit Diplom-Biologin Ina Sakowski zu den Tier-Darstellungen, -Reliefs und -Abbildungen in der Fürstengrablege des Doberaner Münsters.",
     "url": "https://www.muenster-doberan.de/",
     "first_seen": "2026-11-06",
-    "last_seen": "2026-11-20"
+    "last_seen": "2026-11-23"
   },
   "12320890f5263f05d1d6f2173d95c4bc": {
     "title": "Sonderführung zu den Tier-Darstellungen in der Fürstengrablege",
@@ -1247,7 +817,7 @@
     "description": "Veranstaltung zum gemeinsamen Singen traditioneller Weihnachtslieder und Innehalten auf dem Friedhofsgelände bei Punsch und Gebäck.",
     "url": "https://www.kiel.de/de/umwelt_verkehr/friedhoefe/",
     "first_seen": "2026-11-13",
-    "last_seen": "2026-11-20"
+    "last_seen": "2026-11-23"
   },
   "48740bf42bf477e47dd25c8a7f948994": {
     "title": "Adventsmusik bei Kerzenschein mit dem Rupenhorner Kammerchor",
@@ -1257,7 +827,17 @@
     "description": "Adventskonzert in der Norwegischen Holzkirche auf dem Südwestkirchhof Stahnsdorf.",
     "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "first_seen": "2026-11-16",
-    "last_seen": "2026-11-20"
+    "last_seen": "2026-11-23"
+  },
+  "0e9e112e1afd6c172be9d02d1835cc7f": {
+    "title": "Trauergruppe",
+    "date_start": "2026-12-12",
+    "date_end": null,
+    "location": "Julius Grieneisen Haus, Berlin",
+    "description": "Ein offenes Angebot für alle Menschen, die um einen nahestehenden Verstorbenen trauern.",
+    "url": "https://www.grieneisen.de/aktuelles",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23"
   },
   "4e55ac735326945f646e4682028650b3": {
     "title": "Führung zu den Grabstätten wichtiger Berlinerinnen und Berliner und zur Geschichte des Friedhofs",
@@ -1267,7 +847,7 @@
     "description": "Ein öffentlicher Rundgang über den Jüdischen Friedhof Berlin-Weißensee zu den Grabstätten bedeutender Berliner Persönlichkeiten sowie zur Geschichte der Begräbnisstätte.",
     "url": "https://jewish-cemetery-weissensee.org/entdecken/fuehrungen/",
     "first_seen": "2026-11-06",
-    "last_seen": "2026-11-20"
+    "last_seen": "2026-11-23"
   },
   "1197f13a6c6a262339ac97a357e0ed35": {
     "title": "Winterlicher Friedhofsspaziergang über den Südwestkirchhof (11:00 Uhr)",
@@ -1277,7 +857,7 @@
     "description": "Winterlicher Rundgang über den Südwestkirchhof Stahnsdorf mit Olaf Ihlefeldt um 14:00 Uhr.",
     "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "first_seen": "2026-11-09",
-    "last_seen": "2026-11-20"
+    "last_seen": "2026-11-23"
   },
   "853001996f9502c4422c3163337361e2": {
     "title": "ZuhörZeit in Ohlsdorf",
@@ -1287,37 +867,47 @@
     "description": "Ein Gesprächs- und Zuhörangebot in der KapelleDREI auf dem Ohlsdorfer Friedhof.",
     "url": "https://www.ohlsdorf-derpark.de/termine-ohlsdorf/",
     "first_seen": "2026-11-16",
-    "last_seen": "2026-11-20"
+    "last_seen": "2026-11-23"
   },
   "0ee1b311eae2f3acdd49da615e9a0a57": {
     "title": "Christmas Gospel von The Golden Harmonies Voices",
     "date_start": "2026-12-05",
     "date_end": null,
     "location": "Fritz-Schumacher-Halle, Parkfriedhof Ohlsdorf, Hamburg",
-    "description": "Festliches Weihnachts-Gospelkonzert mit The Golden Harmonies Voices in der Fritz-Schumacher-Halle.",
+    "description": "Ein Weihnachts-Gospel-Abend voller Lieder und festlicher Stimmung mit The Golden Harmonies Voices in der historischen Fritz-Schumacher-Halle.",
     "url": "https://www.friedhof-hamburg.de/besucher/veranstaltungen/",
     "first_seen": "2026-11-20",
-    "last_seen": "2026-11-20"
+    "last_seen": "2026-11-23"
+  },
+  "99dc414cfa843cc9264d742d33488dd2": {
+    "title": "Winterlicher Friedhofsspaziergang über den Südwestkirchhof (Nachmittag)",
+    "date_start": "2026-12-05",
+    "date_end": null,
+    "location": "Südwestkirchhof Stahnsdorf",
+    "description": "Führung über den Südwestkirchhof Stahnsdorf mit Olaf Ihlefeldt.",
+    "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23"
   },
   "e63b584e457976ddd4a6fd6445d8dbc3": {
     "title": "Das letzte Wort – Hamburgs neue Lesereihe: Vom Lichter anzünden und auslöschen",
     "date_start": "2026-12-01",
     "date_end": null,
     "location": "KapelleDREI, Parkfriedhof Ohlsdorf, Hamburg",
-    "description": "Premiere der Lesereihe mit Gesprächen und Texten über Leben und Tod unter dem Titel „Vom Lichter anzünden und auslöschen“.",
+    "description": "Premiere der neuen Lesereihe unter dem Titel „Vom Lichter anzünden und auslöschen – Gespräche und Texte über Leben & Tod mit Brot“.",
     "url": "https://www.friedhof-hamburg.de/besucher/veranstaltungen/",
     "first_seen": "2026-11-13",
-    "last_seen": "2026-11-20"
+    "last_seen": "2026-11-23"
   },
   "f1e8a65163d3fd376d8384c1d799e2b4": {
     "title": "Silent Book Club mit der Bücherhalle Bramfeld",
     "date_start": "2026-12-01",
     "date_end": null,
     "location": "KapelleDREI, Parkfriedhof Ohlsdorf, Hamburg",
-    "description": "Gemeinsames stilles Lesen in Kooperation mit der Bücherhalle Bramfeld in der KapelleDREI.",
+    "description": "Gemeinsames lesebegeistertes Beisammensein im Silent Book Club in der KapelleDREI in Kooperation mit der Bücherhalle Bramfeld.",
     "url": "https://www.friedhof-hamburg.de/besucher/veranstaltungen/",
     "first_seen": "2026-11-16",
-    "last_seen": "2026-11-20"
+    "last_seen": "2026-11-23"
   },
   "c54d86775b8fad243b5cccd5d07914e2": {
     "title": "älter & besser KapelleDREI",
@@ -1327,7 +917,7 @@
     "description": "Treffen des Chors für den Ohlsdorfer Parkfriedhof in der KapelleDREI.",
     "url": "https://www.friedhof-hamburg.de/besucher/veranstaltungen/",
     "first_seen": "2026-11-16",
-    "last_seen": "2026-11-20"
+    "last_seen": "2026-11-23"
   },
   "f1778b6e1f5dd3e9775087f1ffbdb270": {
     "title": "Unter der Landschaft des Holocaust: Räume jüdischer Flüchtlinge in Osteuropa",
@@ -1349,6 +939,16 @@
     "first_seen": "2026-11-20",
     "last_seen": "2026-11-20"
   },
+  "aab99ba767268f4dc45e1ec0b1322c7e": {
+    "title": "Lidia Zessin-Jurek – Unter der Holocaust-Landschaft: Jüdische Zufluchtsräume",
+    "date_start": "2026-12-10",
+    "date_end": null,
+    "location": "Auditorium OVK, Prag",
+    "description": "Vortrag von Lidia Zessin-Jurek über jüdische Zufluchtsräume und Erinnerungskultur im Kontext des Holocausts.",
+    "url": "https://www.jewishmuseum.cz/en/info/visit/",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23"
+  },
   "11e7f00e2bda5b138d437fa0c80fd495": {
     "title": "Weihnachtliche Andacht",
     "date_start": "2026-12-24",
@@ -1357,7 +957,7 @@
     "description": "Musikalisch gestaltete weihnachtliche Andacht mit Andie Gabauer in der Aufbahrungshalle des Urnenhains Urfahr zur Einstimmung auf die Feiertage.",
     "url": "https://www.linzag.at/portal/de/privatkunden/trauer/veranstaltungen",
     "first_seen": "2026-11-16",
-    "last_seen": "2026-11-20"
+    "last_seen": "2026-11-23"
   },
   "6fd9abfec4e5ed43753039d700cd3cfc": {
     "title": "Licht für den Frieden",
@@ -1367,7 +967,7 @@
     "description": "Abholmöglichkeit für das Friedenslicht an Heiligabend auf den Friedhöfen der LINZ AG zugunsten der Aktion Licht ins Dunkel.",
     "url": "https://www.linzag.at/portal/de/privatkunden/trauer/veranstaltungen",
     "first_seen": "2026-11-20",
-    "last_seen": "2026-11-20"
+    "last_seen": "2026-11-23"
   },
   "a39be2d6c8d01bae6a8f5a17549f784d": {
     "title": "Führung auf dem Frankfurter Hauptfriedhof",
@@ -1379,6 +979,16 @@
     "first_seen": "2026-11-20",
     "last_seen": "2026-11-20"
   },
+  "162fa3ddb5bf15f5601bace7033b2834": {
+    "title": "Führung auf dem Hauptfriedhof Frankfurt",
+    "date_start": "2027-01-31",
+    "date_end": null,
+    "location": "Eckenheimer Landstraße 194, Frankfurt am Main",
+    "description": "Führung über den Frankfurter Hauptfriedhof mit Christian Setzepfandt.",
+    "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23"
+  },
   "961936048e440f8a0acf5afe276f5386": {
     "title": "Führung auf dem Frankfurter Hauptfriedhof",
     "date_start": "2027-03-07",
@@ -1388,6 +998,16 @@
     "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
     "first_seen": "2026-11-20",
     "last_seen": "2026-11-20"
+  },
+  "2299f0a30aa840144e06d16e71d37cb3": {
+    "title": "Führung auf dem Hauptfriedhof Frankfurt",
+    "date_start": "2027-03-07",
+    "date_end": null,
+    "location": "Eckenheimer Landstraße 194, Frankfurt am Main",
+    "description": "Führung über den Frankfurter Hauptfriedhof mit Christian Setzepfandt.",
+    "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23"
   },
   "35f3a6e26d53dad398dd0ab95bfa5598": {
     "title": "Führung auf dem Frankfurter Hauptfriedhof",
@@ -1399,6 +1019,16 @@
     "first_seen": "2026-11-20",
     "last_seen": "2026-11-20"
   },
+  "5a2f5aacf548df4be70f73707d35576c": {
+    "title": "Führung auf dem Hauptfriedhof Frankfurt",
+    "date_start": "2027-03-27",
+    "date_end": null,
+    "location": "Eckenheimer Landstraße 194, Frankfurt am Main",
+    "description": "Führung über den Frankfurter Hauptfriedhof mit Christian Setzepfandt.",
+    "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23"
+  },
   "f75c6e7f3ea9fd0e4ef5b5ebeba60308": {
     "title": "Führung auf dem Frankfurter Hauptfriedhof",
     "date_start": "2027-04-18",
@@ -1408,6 +1038,16 @@
     "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
     "first_seen": "2026-11-20",
     "last_seen": "2026-11-20"
+  },
+  "7c8cd85160519652fa25bd06e2955ada": {
+    "title": "Führung auf dem Hauptfriedhof Frankfurt",
+    "date_start": "2027-04-18",
+    "date_end": null,
+    "location": "Eckenheimer Landstraße 194, Frankfurt am Main",
+    "description": "Führung über den Frankfurter Hauptfriedhof mit Christian Setzepfandt.",
+    "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23"
   },
   "0cc94883240c02981dd6ec8daf14a9f8": {
     "title": "Führung auf dem Frankfurter Hauptfriedhof",
@@ -1419,6 +1059,16 @@
     "first_seen": "2026-11-20",
     "last_seen": "2026-11-20"
   },
+  "705d287a51baa43cfd7dcc046a63989a": {
+    "title": "Führung auf dem Hauptfriedhof Frankfurt",
+    "date_start": "2027-04-24",
+    "date_end": null,
+    "location": "Eckenheimer Landstraße 194, Frankfurt am Main",
+    "description": "Führung über den Frankfurter Hauptfriedhof mit Christian Setzepfandt.",
+    "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23"
+  },
   "b6054209f985764f315ec4e628359861": {
     "title": "Führung auf dem Frankfurter Hauptfriedhof",
     "date_start": "2027-05-08",
@@ -1428,6 +1078,16 @@
     "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
     "first_seen": "2026-11-20",
     "last_seen": "2026-11-20"
+  },
+  "fc7b9f422bea2ae7fd4022937b2e5d47": {
+    "title": "Führung auf dem Hauptfriedhof Frankfurt",
+    "date_start": "2027-05-08",
+    "date_end": null,
+    "location": "Eckenheimer Landstraße 194, Frankfurt am Main",
+    "description": "Führung über den Frankfurter Hauptfriedhof mit Christian Setzepfandt.",
+    "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23"
   },
   "bff006ab28cc0e5a70f1d892d55cc2aa": {
     "title": "Führung auf dem Frankfurter Hauptfriedhof",
@@ -1439,6 +1099,16 @@
     "first_seen": "2026-11-20",
     "last_seen": "2026-11-20"
   },
+  "7ecad64256113901638fc09a010f781a": {
+    "title": "Führung auf dem Hauptfriedhof Frankfurt",
+    "date_start": "2027-05-23",
+    "date_end": null,
+    "location": "Eckenheimer Landstraße 194, Frankfurt am Main",
+    "description": "Führung über den Frankfurter Hauptfriedhof mit Christian Setzepfandt.",
+    "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23"
+  },
   "7c715682564c9a8c9272316781c5d2c5": {
     "title": "Führung auf dem Frankfurter Hauptfriedhof",
     "date_start": "2027-06-13",
@@ -1448,6 +1118,16 @@
     "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
     "first_seen": "2026-11-20",
     "last_seen": "2026-11-20"
+  },
+  "8f74567b725c9b60a9d7027bae597932": {
+    "title": "Führung auf dem Hauptfriedhof Frankfurt",
+    "date_start": "2027-06-13",
+    "date_end": null,
+    "location": "Eckenheimer Landstraße 194, Frankfurt am Main",
+    "description": "Führung über den Frankfurter Hauptfriedhof mit Christian Setzepfandt.",
+    "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23"
   },
   "fb5151d680b90b0348d727cdf7894952": {
     "title": "Führung auf dem Frankfurter Hauptfriedhof",
@@ -1459,6 +1139,16 @@
     "first_seen": "2026-11-20",
     "last_seen": "2026-11-20"
   },
+  "f150bd1bab4277c5be9478d9c9823627": {
+    "title": "Führung auf dem Hauptfriedhof Frankfurt",
+    "date_start": "2027-07-31",
+    "date_end": null,
+    "location": "Eckenheimer Landstraße 194, Frankfurt am Main",
+    "description": "Führung über den Frankfurter Hauptfriedhof mit Christian Setzepfandt.",
+    "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23"
+  },
   "3c7a9ec13bd245ef52dde1f93fc24f9d": {
     "title": "Führung auf dem Frankfurter Hauptfriedhof",
     "date_start": "2027-08-22",
@@ -1468,6 +1158,16 @@
     "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
     "first_seen": "2026-11-20",
     "last_seen": "2026-11-20"
+  },
+  "f7dd7ada96fd4c7d3c19d1547680e9ce": {
+    "title": "Führung auf dem Hauptfriedhof Frankfurt",
+    "date_start": "2027-08-22",
+    "date_end": null,
+    "location": "Eckenheimer Landstraße 194, Frankfurt am Main",
+    "description": "Führung über den Frankfurter Hauptfriedhof mit Christian Setzepfandt.",
+    "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23"
   },
   "75ae85c7a1f17f3a53e85d1e71a148fc": {
     "title": "Führung auf dem Frankfurter Hauptfriedhof",
@@ -1479,6 +1179,16 @@
     "first_seen": "2026-11-20",
     "last_seen": "2026-11-20"
   },
+  "70cb831e592e8ed6dc238527d6f12369": {
+    "title": "Führung auf dem Hauptfriedhof Frankfurt",
+    "date_start": "2027-09-05",
+    "date_end": null,
+    "location": "Eckenheimer Landstraße 194, Frankfurt am Main",
+    "description": "Führung über den Frankfurter Hauptfriedhof mit Christian Setzepfandt.",
+    "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23"
+  },
   "746355a1ef02998b54040a75d16fe6b5": {
     "title": "Führung auf dem Frankfurter Hauptfriedhof",
     "date_start": "2027-09-25",
@@ -1488,6 +1198,16 @@
     "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
     "first_seen": "2026-11-20",
     "last_seen": "2026-11-20"
+  },
+  "47dad62a98342f295a30a818b292c732": {
+    "title": "Führung auf dem Hauptfriedhof Frankfurt",
+    "date_start": "2027-09-25",
+    "date_end": null,
+    "location": "Eckenheimer Landstraße 194, Frankfurt am Main",
+    "description": "Führung über den Frankfurter Hauptfriedhof mit Christian Setzepfandt.",
+    "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23"
   },
   "db414bcb1f837170c7055e66f747c6ed": {
     "title": "Führung auf dem Frankfurter Hauptfriedhof",
@@ -1499,6 +1219,16 @@
     "first_seen": "2026-11-20",
     "last_seen": "2026-11-20"
   },
+  "6f769b124ac92235292592c076c17c83": {
+    "title": "Führung auf dem Hauptfriedhof Frankfurt",
+    "date_start": "2027-10-30",
+    "date_end": null,
+    "location": "Eckenheimer Landstraße 194, Frankfurt am Main",
+    "description": "Führung über den Frankfurter Hauptfriedhof mit Christian Setzepfandt.",
+    "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23"
+  },
   "32044530bfa5c4d9240570aebe6b6b22": {
     "title": "Führung auf dem Frankfurter Hauptfriedhof - Allerheiligen Spezial",
     "date_start": "2027-11-01",
@@ -1508,6 +1238,16 @@
     "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
     "first_seen": "2026-11-20",
     "last_seen": "2026-11-20"
+  },
+  "d560687e580945c1503f7dafb6af461f": {
+    "title": "Führung auf dem Hauptfriedhof Frankfurt – Allerheiligen Spezial",
+    "date_start": "2027-11-01",
+    "date_end": null,
+    "location": "Eckenheimer Landstraße 194, Frankfurt am Main",
+    "description": "Sonderführung über den Frankfurter Hauptfriedhof zu Allerheiligen mit Björn Wissenbach.",
+    "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23"
   },
   "33f68cabb3bff12b4f4a5e594b633da3": {
     "title": "Führung auf dem Frankfurter Hauptfriedhof - Volkstrauertag Spezial",
@@ -1519,6 +1259,16 @@
     "first_seen": "2026-11-20",
     "last_seen": "2026-11-20"
   },
+  "a4de7f2b8b41c59cb6239b69114ef47d": {
+    "title": "Führung auf dem Hauptfriedhof Frankfurt – Volkstrauertag Spezial",
+    "date_start": "2027-11-14",
+    "date_end": null,
+    "location": "Eckenheimer Landstraße 194, Frankfurt am Main",
+    "description": "Sonderführung über den Frankfurter Hauptfriedhof am Volkstrauertag mit Björn Wissenbach.",
+    "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23"
+  },
   "e335f67eb42634d6a435512ccd9df0b2": {
     "title": "Führung auf dem Frankfurter Hauptfriedhof - Totensonntag Spezial",
     "date_start": "2027-11-21",
@@ -1528,6 +1278,16 @@
     "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
     "first_seen": "2026-11-20",
     "last_seen": "2026-11-20"
+  },
+  "aea39e9f83d1acff506e7071a7d15bcd": {
+    "title": "Führung auf dem Hauptfriedhof Frankfurt – Totensonntag Spezial",
+    "date_start": "2027-11-21",
+    "date_end": null,
+    "location": "Eckenheimer Landstraße 194, Frankfurt am Main",
+    "description": "Sonderführung über den Frankfurter Hauptfriedhof am Totensonntag mit Björn Wissenbach.",
+    "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23"
   },
   "67cda353fc197dba95a524701b410228": {
     "title": "Führung auf dem Frankfurter Hauptfriedhof",
@@ -1539,6 +1299,16 @@
     "first_seen": "2026-11-20",
     "last_seen": "2026-11-20"
   },
+  "7f8b762c190436fa5ca509b9f01e5af1": {
+    "title": "Führung auf dem Hauptfriedhof Frankfurt",
+    "date_start": "2027-11-27",
+    "date_end": null,
+    "location": "Eckenheimer Landstraße 194, Frankfurt am Main",
+    "description": "Führung über den Frankfurter Hauptfriedhof mit Christian Setzepfandt.",
+    "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23"
+  },
   "35fbf69ee898c60a6312ac38b67024b7": {
     "title": "Führung auf dem Frankfurter Hauptfriedhof",
     "date_start": "2027-12-04",
@@ -1549,115 +1319,145 @@
     "first_seen": "2026-11-20",
     "last_seen": "2026-11-20"
   },
-  "c901fd8079d4179547a4c83f21dfef1d": {
-    "title": "Wochenende zum Ewigkeitssonntag",
-    "date_start": "2026-11-21",
-    "date_end": "2026-11-22",
-    "location": "Striesener Friedhof, Dresden",
-    "description": "Veranstaltung zum Ewigkeitssonntag auf dem Striesener Friedhof im Zeichen des Totengedenkens und der Besinnung.",
-    "url": "https://striesener-friedhof-dresden.de/vorschau-veranstaltungen/",
-    "first_seen": "2026-08-25",
-    "last_seen": "2026-11-20"
+  "5a79c41587c91b77cae38ebbe1404477": {
+    "title": "Führung auf dem Hauptfriedhof Frankfurt",
+    "date_start": "2027-12-04",
+    "date_end": null,
+    "location": "Eckenheimer Landstraße 194, Frankfurt am Main",
+    "description": "Führung über den Frankfurter Hauptfriedhof mit Christian Setzepfandt.",
+    "url": "https://www.frankfurter-stadtevents.de/Themen/Friedhfe-Parks/Hauptfriedhof-Frankfurt-Grber-erzhlen-Geschichte_20010010/",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23"
   },
-  "9ddb51f9483e348b09d0b1eab5954013": {
-    "title": "Endlich - Das Festival zu Trauer, Trost und Sterben",
-    "date_start": "2026-11-19",
-    "date_end": "2026-11-22",
-    "location": "St.-Thomas-Kirche, Berlin",
-    "description": "Ein meertägiges Festival mit vielfältigen Impulsen, Kultur- und Bildungsangeboten rund um die Themen Trauer, Trost und Sterben.",
+  "5fd9a4f35046d544dd7fb4f4814c6708": {
+    "title": "Digitaler Workshop zum Lernort Friedhof",
+    "date_start": "2026-11-30",
+    "date_end": null,
+    "location": "Online",
+    "description": "Online-Workshop des Kuratoriums Immaterielles Erbe Friedhofskultur zur Bildungsarbeit auf Friedhöfen.",
     "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
-    "first_seen": "2026-09-21",
-    "last_seen": "2026-11-20"
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23"
   },
-  "c25b40c4480578a101f68dea63eb9f16": {
-    "title": "Eine Woche voller Leben – 140 Jahre Friedhof in den Kisseln",
-    "date_start": "2026-11-17",
-    "date_end": "2026-11-22",
-    "location": "Friedhof In den Kisseln",
-    "description": "Jubiläumsprogramm anlässlich des 140-jährigen Bestehens des Friedhofs In den Kisseln.",
+  "35b15cb5625fe33c8294c3e96d48d087": {
+    "title": "Zum Internationalen Frauentag: Führung zu den Grabstätten bedeutender Frauen",
+    "date_start": "2027-03-08",
+    "date_end": null,
+    "location": "Jüdischer Friedhof Berlin-Weißensee",
+    "description": "Themenführung anlässlich des Internationalen Frauentags über die Grabstätten bedeutender Frauen auf dem Jüdischen Friedhof Weißensee.",
+    "url": "https://jewish-cemetery-weissensee.org/entdecken/fuehrungen/",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23"
+  },
+  "3bb776e07779850dd4444c586bc7690c": {
+    "title": "Verwalterhaus: Invisible Architects",
+    "date_start": "2026-11-26",
+    "date_end": null,
+    "location": "Verwalterhaus, Berlin",
+    "description": "Ausstellung und Veranstaltung im Verwalterhaus auf dem Friedhofsgelände.",
     "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
-    "first_seen": "2026-11-09",
-    "last_seen": "2026-11-20"
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23"
   },
-  "bc13b71d1c5f1f81847c3fc0f3cd694a": {
-    "title": "Informationsveranstaltung des Landesverbandes M-V",
-    "date_start": "2026-10-26",
-    "date_end": "2026-11-22",
-    "location": "Mecklenburg-Vorpommern",
-    "description": "Mehrwöchige Informationsveranstaltung des Volksbundes Landesverband Mecklenburg-Vorpommern zur Erinnerungs- und Gedenkkultur.",
-    "url": "https://mecklenburg-vorpommern.volksbund.de/aktuell/termine",
-    "first_seen": "2026-09-28",
-    "last_seen": "2026-10-23"
+  "cdc6bf855d61c67ae08fd9fea0a41ab8": {
+    "title": "Das Völkerschlachtdenkmal zum Kennenlernen",
+    "date_start": "2026-11-26",
+    "date_end": null,
+    "location": "Völkerschlachtdenkmal, Leipzig",
+    "description": "Eine Führung durch das Völkerschlachtdenkmal, welches als Mahnmal und Gedenkstätte an die Gefallenen der Völkerschlacht bei Leipzig erinnert.",
+    "url": "https://www.stadtgeschichtliches-museum-leipzig.de/besuch/veranstaltungen/",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23"
   },
-  "ff69ee207c612ec947c2ef2ea3ed1cd8": {
-    "title": "Informationsveranstaltung des Volksbundes M-V",
-    "date_start": "2026-10-26",
-    "date_end": "2026-11-22",
-    "location": "Landesverband Mecklenburg-Vorpommern",
-    "description": "Mehrtägige Informationsveranstaltung des Landesverbands Mecklenburg-Vorpommern des Volksbundes Deutsche Kriegsgräberfürsorge.",
-    "url": "https://mecklenburg-vorpommern.volksbund.de/aktuell/termine",
-    "first_seen": "2026-10-02",
-    "last_seen": "2026-10-05"
+  "ce4ee89144fb6ad2e7aba7d33b97302c": {
+    "title": "Digitales Salongespräch mit der „Schwarzen Witwe“ Dr. Anja Kretschmer",
+    "date_start": "2026-12-17",
+    "date_end": null,
+    "location": "Online",
+    "description": "Salongespräch zum Thema „Kultur-Lernort Friedhof – Chancen nutzen“.",
+    "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23"
   },
-  "1b937bec7b79ec162ea1d43184c16ce4": {
-    "title": "Kriegsgräbersammlung im Saarland",
-    "date_start": "2026-10-17",
-    "date_end": "2026-11-22",
-    "location": "Saarland",
-    "description": "Haus- und Straßensammlung des Landesverbandes Saar für den Volksbund Deutsche Kriegsgräberfürsorge.",
-    "url": "https://saarland.volksbund.de/aktuell/termine",
-    "first_seen": "2026-08-30",
-    "last_seen": "2026-10-16"
+  "89fc786f68681c95c370070ef1bbe541": {
+    "title": "Neujahrsspaziergang über den Südwestkirchhof",
+    "date_start": "2027-01-01",
+    "date_end": null,
+    "location": "Südwestkirchhof Stahnsdorf",
+    "description": "Neujahrsführung mit Olaf Ihlefeldt und Ehrenamtlichen des Fördervereins.",
+    "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23"
   },
-  "d7dc94db12cba69c315044d9cf2b92a9": {
-    "title": "Sammlung",
-    "date_start": "2026-10-17",
-    "date_end": "2026-11-22",
-    "location": "Saarland",
-    "description": "Sammlung des Volksbundes Deutsche Kriegsgräberfürsorge e. V., Landesverband Saar.",
-    "url": "https://saarland.volksbund.de/aktuell/termine",
-    "first_seen": "2026-09-18",
-    "last_seen": "2026-09-18"
+  "aeaa8da2eba696059949e8c149aad802": {
+    "title": "Digitales Salongespräch - Naturlernort Friedhof",
+    "date_start": "2027-01-14",
+    "date_end": null,
+    "location": "Online",
+    "description": "Online-Salongespräch über den Friedhof als ökologischen und natürlichen Lernort.",
+    "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23"
   },
-  "67c0641aed9021e7a6b56b42c3095aff": {
-    "title": "Haus- und Straßensammlung des Volksbundes Saarland",
-    "date_start": "2026-10-17",
-    "date_end": "2026-11-22",
-    "location": "Saarland",
-    "description": "Haus- und Straßensammlung des Volksbundes Deutsche Kriegsgräberfürsorge Landesverband Saar.",
-    "url": "https://saarland.volksbund.de/aktuell/termine",
-    "first_seen": "2026-09-21",
-    "last_seen": "2026-09-21"
+  "29b26e09d90c6bfe181caa75f3911f94": {
+    "title": "ZuhörZeit in Ohlsdorf",
+    "date_start": "2026-12-16",
+    "date_end": null,
+    "location": "KapelleDREI, Parkfriedhof Ohlsdorf, Hamburg",
+    "description": "Projekt „ZuhörZeit“ in der KapelleDREI auf dem Parkfriedhof Ohlsdorf.",
+    "url": "https://www.friedhof-hamburg.de/besucher/veranstaltungen/",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23"
   },
-  "13081c5fd78bbe473d563054ae494a97": {
-    "title": "Haus- und Straßensammlung des Volksbundes Deutsche Kriegsgräberfürsorge",
-    "date_start": "2026-10-17",
-    "date_end": "2026-11-22",
-    "location": "Saarland",
-    "description": "Landesweite Haus- und Straßensammlung des Volksbundes Deutsche Kriegsgräberfürsorge e. V. im Saarland.",
-    "url": "https://saarland.volksbund.de/aktuell/termine",
-    "first_seen": "2026-10-02",
-    "last_seen": "2026-10-09"
+  "fe07a473e6f0f370bc5c75552a433e90": {
+    "title": "Aufwind an KapelleDREI - Hamburgs Chor für trauernde Menschen",
+    "date_start": "2026-12-16",
+    "date_end": null,
+    "location": "KapelleDREI, Parkfriedhof Ohlsdorf, Hamburg",
+    "description": "Ein Chorangebot an der KapelleDREI für Menschen in Trauer- und Verlustsituationen.",
+    "url": "https://www.friedhof-hamburg.de/besucher/veranstaltungen/",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23"
   },
-  "5e560980edc70cf521bd6f4678bdd5c5": {
-    "title": "Trauerredner-Ausbildung AUF DAS LEBEN",
-    "date_start": "2026-11-19",
-    "date_end": "2026-11-20",
-    "location": "AUF DAS LEBEN, Köln",
-    "description": "Ausbildungsseminar für angehende Trauerrednerinnen und Trauerredner zur Vermittlung praxistauglicher Grundlagen der Abschiedsgestaltung.",
-    "url": "https://aufdasleben.de/event/",
-    "first_seen": "2026-08-25",
-    "last_seen": "2026-11-20"
+  "8bdb2477584ea234a0e8dc31e7f56044": {
+    "title": "ZuhörZeit in Ohlsdorf",
+    "date_start": "2026-12-19",
+    "date_end": null,
+    "location": "KapelleDREI, Parkfriedhof Ohlsdorf, Hamburg",
+    "description": "Angebot zum Zuhören und Austausch in der KapelleDREI auf dem Parkfriedhof Ohlsdorf.",
+    "url": "https://www.friedhof-hamburg.de/besucher/veranstaltungen/",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23"
   },
-  "de02d5266fefb3c813d6eb09d90ded1b": {
-    "title": "Kunstausstellung \"Naturerlebnisse\" – Malerei von Peter Jaschinski",
-    "date_start": "2026-10-09",
-    "date_end": "2026-11-20",
-    "location": "Räumlichkeiten des Christlichen Friedhofsverbandes Wuppertal",
-    "description": "Die Kunstausstellung präsentiert Acrylbilder von Peter Jaschinski mit Naturmotiven aus dem Bergischen Land in den Räumlichkeiten des Christlichen Friedhofsverbandes Wuppertal.",
-    "url": "https://www.fvwuppertal.de/angebote-veranstaltungen/angebote/veranstaltungen.html",
-    "first_seen": "2026-09-25",
-    "last_seen": "2026-10-09"
+  "50efcb3e2e5c144682be295663e0ba72": {
+    "title": "Informationsveranstaltung des Volksbundes",
+    "date_start": "2027-06-17",
+    "date_end": null,
+    "location": "Ehemalige Bocholter Synagoge, Europaplatz, 46399 Bocholt",
+    "description": "Informationsveranstaltung des Volksbundes Deutsche Kriegsgräberfürsorge (Bezirksverband Münster) am Gedenkort Ehemalige Bocholter Synagoge.",
+    "url": "https://nrw.volksbund.de/aktuell/termine",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23"
+  },
+  "175aa05865dacd533d27392eb355dd80": {
+    "title": "Adventssingen auf dem Nordfriedhof",
+    "date_start": "2026-12-20",
+    "date_end": null,
+    "location": "Kapelle am Nordfriedhof, Kiel",
+    "description": "Besinnliches Adventssingen auf dem Kapellenvorplatz am Nordfriedhof in Kiel.",
+    "url": "https://www.kiel.de/de/umwelt_verkehr/friedhoefe/",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23"
+  },
+  "599b06b335ebbd16dc2a219e9f1a5daf": {
+    "title": "Ausstellung: NATUR MOMENTE",
+    "date_start": "2026-11-25",
+    "date_end": "2027-03-31",
+    "location": "Ricam Hospiz, Delbrückstraße 22, 12051 Berlin",
+    "description": "Ausstellung mit Naturfotografien von Markus Podszus im Ricam Hospiz.",
+    "url": "https://www.ricam-hospiz.de/events/",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23"
   },
   "6adff635bb7989b23e1708ef24da7f95": {
     "title": "Grundkurs \"Achtsamkeitsbasierte Trauerbegleitung\"",
@@ -1667,7 +1467,7 @@
     "description": "Fünftägige Fortbildung zur Qualifizierung als achtsamkeitsbasierte Trauerbegleiterin bzw. Trauerbegleiter.",
     "url": "https://blauerfalter.de/termine",
     "first_seen": "2026-08-26",
-    "last_seen": "2026-11-20"
+    "last_seen": "2026-11-23"
   },
   "63343b0f2827656e000d487ad7a01d0e": {
     "title": "Kiez[Kunst]Markt 2025 (Kopie)",
@@ -1678,6 +1478,16 @@
     "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
     "first_seen": "2026-11-09",
     "last_seen": "2026-11-20"
+  },
+  "ae4e7cfbbf22f6f1e68dd767ee8efabc": {
+    "title": "Kiez[Kunst]Markt 2026",
+    "date_start": "2026-11-28",
+    "date_end": "2026-11-29",
+    "location": "Neuer St. Jacobi Friedhof, Berlin",
+    "description": "Kunstmarkt auf dem Friedhofsgelände mit Kunsthandwerk, Workshops, Verpflegung und Bühnenprogramm.",
+    "url": "https://www.meinkiez-meinfriedhof.berlin.de/veranstaltungen",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23"
   },
   "58b6753b45723bb36bb64b12039de53f": {
     "title": "Verwalterhaus: Invisible Architects",
@@ -1704,10 +1514,10 @@
     "date_start": "2026-11-06",
     "date_end": "2026-11-26",
     "location": "Hellweg-Museum Unna, Burgstraße 8, Unna",
-    "description": "Ausstellung des Volksbundes Deutsche Kriegsgräberfürsorge e.V. im Hellweg-Museum Unna.",
+    "description": "Ausstellung des Volksbundes Deutsche Kriegsgräberfürsorge (Bezirksverband Arnsberg) im Hellweg-Museum Unna.",
     "url": "https://nrw.volksbund.de/aktuell/termine",
     "first_seen": "2026-11-13",
-    "last_seen": "2026-11-16"
+    "last_seen": "2026-11-23"
   },
   "1b3d04f7ec5a42503ffaa8080694288d": {
     "title": "Kintsugi-Workshop mit Julia Domke",
@@ -1747,7 +1557,7 @@
     "description": "Eine Rauminstallation und Ausstellung im Friedhof Forum erzählt die Zürcher Stadtgeschichte der letzten 200 Jahre anhand der Lebensläufe von zehn auf dem Friedhof Sihlfeld bestatteten Personen.",
     "url": "https://www.stadt-zuerich.ch/friedhofforum/de/ausstellungen.html",
     "first_seen": "2026-08-30",
-    "last_seen": "2026-11-20"
+    "last_seen": "2026-11-23"
   },
   "e2a2e52ee477f83f038951be02f86466": {
     "title": "Die Zürcher Geschichte – 200 Jahre anhand von zehn Leben auf dem Friedhof Sihlfeld",
@@ -1857,7 +1667,7 @@
     "description": "Sonderausstellung zu Ritualen und gesellschaftlichem Umgang mit Sterben und Trauer. Leitobjekt ist ein historischer Leichenwagen aus Fürholz, inszeniert als Leichenzug. Drei Kapitel: Sterben, Tod zwischen Diesseits und Jenseits, Trauer. Dazu eine zweite Ebene mit zeitgenössischen künstlerischen Positionen der Leir Foundation.",
     "url": "https://www.freilichtmuseum.de/angebote/sa-finsterau/jetzt-gehts-dahi-sterben-tod-und-trauer/",
     "first_seen": "2026-08-31",
-    "last_seen": "2026-11-20"
+    "last_seen": "2026-11-23"
   },
   "94c4b6e9b9d08862970fa3ba143ba24a": {
     "title": "Verwaist! Klosterauszeit für Mütter und Väter, deren einziges Kind gestorben ist",
@@ -1867,7 +1677,7 @@
     "description": "Heilsame Tage im Kloster Bernried speziell für Eltern, die ihr einziges Kind verloren haben.",
     "url": "https://blauerfalter.de/termine",
     "first_seen": "2026-09-18",
-    "last_seen": "2026-11-20"
+    "last_seen": "2026-11-23"
   },
   "5455552de941b538beb0b2eea76e3b09": {
     "title": "Verwaist! Klosterauszeit fuer Muetter und Vaeter",
@@ -1887,7 +1697,7 @@
     "description": "Heilsame Tage für verwaiste Eltern, Großeltern und erwachsene Geschwister, um nach dem Verlust eines Kindes zurück ins Leben zu finden.",
     "url": "https://blauerfalter.de/termine",
     "first_seen": "2026-09-25",
-    "last_seen": "2026-11-20"
+    "last_seen": "2026-11-23"
   },
   "83e4a88f72a9d7b3268f6b1a73a5447f": {
     "title": "Ausstellung des Volksbundes Deutsche Kriegsgräberfürsorge",
@@ -1899,6 +1709,16 @@
     "first_seen": "2026-11-20",
     "last_seen": "2026-11-20"
   },
+  "e12e627707fd1f2ff299868d77e4e90e": {
+    "title": "Ausstellung und Gedenkveranstaltung des Volksbundes Deutsche Kriegsgräberfürsorge",
+    "date_start": "2026-09-01",
+    "date_end": "2026-12-31",
+    "location": "Katholische Akademie des Bistums Fulda, Neuenberger Straße 3-5, 36041 Fulda",
+    "description": "Ausstellung und Gedenkveranstaltung des Volksbundes Deutsche Kriegsgräberfürsorge e.V. (Landesverband Hessen) im Gedenken an Opfer von Krieg und Gewalt.",
+    "url": "https://hessen.volksbund.de/aktuell/termine",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23"
+  },
   "574525904b81169c9be38b89508820d2": {
     "title": "Yoga und Qi Gong fuer Trauernde im Kloster Bernried",
     "date_start": "2027-03-08",
@@ -1907,7 +1727,7 @@
     "description": "Seminar zur Wiedererlangung der inneren Balance und zum Schöpfen neuer Kraft durch Yoga und Qi Gong in Zeiten der Trauer.",
     "url": "https://blauerfalter.de/termine",
     "first_seen": "2026-09-25",
-    "last_seen": "2026-11-20"
+    "last_seen": "2026-11-23"
   },
   "093ba8e81c77ea47fb9e5e9fb336c814": {
     "title": "Oasentage im Kloster Bernried",
@@ -1917,17 +1737,17 @@
     "description": "Heilsame Oasentage im Kloster für Trauernde zur Orientierung und Hoffnungsschöpfung.",
     "url": "https://blauerfalter.de/termine",
     "first_seen": "2026-09-28",
-    "last_seen": "2026-11-20"
+    "last_seen": "2026-11-23"
   },
   "5646897e32b2e09d3534024ef7477e47": {
     "title": "Kurs: Ambulante ehrenamtliche Sterbebegleitung",
     "date_start": "2027-01-18",
     "date_end": "2027-06-07",
-    "location": "Warthestraße 14, 12051 Berlin",
+    "location": "Ricam Hospiz, Warthestraße 14, 12051 Berlin",
     "description": "Vorbereitungskurs für die ehrenamtliche Mitarbeit im ambulanten Hospizdienst, der in 20 Modulen und Hospitationen zur Sterbebegleitung befähigt.",
     "url": "https://www.ricam-hospiz.de/events/",
     "first_seen": "2026-10-12",
-    "last_seen": "2026-11-20"
+    "last_seen": "2026-11-23"
   },
   "31b9b17ffefa2d76cadc567d05e46cdf": {
     "title": "Online-Trauergruppe für Verwaiste Eltern Herzverbunden",
@@ -1947,7 +1767,7 @@
     "description": "Heilsame Einkehrtage nach dem Tod eines geliebten Menschen unter dem Motto 'Greif dir im Leeren die Osterblume'.",
     "url": "https://blauerfalter.de/termine",
     "first_seen": "2026-10-19",
-    "last_seen": "2026-11-20"
+    "last_seen": "2026-11-23"
   },
   "4e8383028155dae2b9ad8e2ea2756a6e": {
     "title": "Einkehrtage im Kloster fuer Trauernde",
@@ -1977,7 +1797,7 @@
     "description": "Kunstausstellung von Peter Beckmann rund um das Thema Totentanz in der Kirche St. Johann Baptist in Bruchhausen.",
     "url": "https://www.totentanz-online.de/veranstaltungen.php",
     "first_seen": "2026-11-09",
-    "last_seen": "2026-11-20"
+    "last_seen": "2026-11-23"
   },
   "552a715bd3820a29d9f02c02c9aa9523": {
     "title": "Ausstellung: Trommler. Tiere. Totentänze",
@@ -1987,17 +1807,17 @@
     "description": "Ausstellung im Kunstmuseum Heidenheim mit künstlerischen Darstellungen und Auseinandersetzungen zum Totentanz.",
     "url": "https://www.totentanz-online.de/veranstaltungen.php",
     "first_seen": "2026-11-09",
-    "last_seen": "2026-11-20"
+    "last_seen": "2026-11-23"
   },
-  "b74608bcab02510668a830af0765c9cd": {
-    "title": "Tagung der Europäischen Totentanz-Vereinigung",
+  "838655d716beeadf6a138dff432844cb": {
+    "title": "Tagung der Europäischen Totentanz-Vereinigung 2027",
     "date_start": "2027-05-22",
     "date_end": "2027-05-23",
     "location": "Akademie Franz Hitze Haus, Münster",
     "description": "Jahrestagung der Europäischen Totentanz-Vereinigung (Danses Macabres d'Europe) zur Erforschung und Vermittlung von Totentänzen.",
     "url": "https://www.totentanz-online.de/veranstaltungen.php",
     "first_seen": "2026-11-09",
-    "last_seen": "2026-11-20"
+    "last_seen": "2026-11-23"
   },
   "d2f8feb1c634251744807177f3ea9380": {
     "title": "Wanderauszeit für Trauernde: Die Kraft der Berge spüren",
@@ -2007,7 +1827,7 @@
     "description": "Trauerreise in den Bergen für verwaiste Eltern, Großeltern, erwachsene Geschwister und andere betroffene Familienmitglieder.",
     "url": "https://blauerfalter.de/termine",
     "first_seen": "2026-11-09",
-    "last_seen": "2026-11-20"
+    "last_seen": "2026-11-23"
   },
   "a0d5584a556dde9b7bdb94dfb8e7d1b5": {
     "title": "Pilgertage auf dem Jakobsweg im Werdenfelser Land - Trauer-Wander-Reise",
@@ -2017,6 +1837,16 @@
     "description": "Eine Trauer-Wander-Reise rund um das Kloster Schlehdorf zum Wandern, Wandeln und Werden.",
     "url": "https://blauerfalter.de/termine",
     "first_seen": "2026-11-16",
-    "last_seen": "2026-11-20"
+    "last_seen": "2026-11-23"
+  },
+  "3ec1c3654e449cf0f20b5e9a3c42c912": {
+    "title": "Studienfahrt ins Elsass",
+    "date_start": "2027-06-14",
+    "date_end": "2027-06-18",
+    "location": "Elsass",
+    "description": "Studienfahrt und Informationsveranstaltung des Volksbundes Deutsche Kriegsgräberfürsorge (Bezirksverband OWL) im Rahmen des Gedenkens an Kriegsopfer.",
+    "url": "https://nrw.volksbund.de/aktuell/termine",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23"
   }
 }
